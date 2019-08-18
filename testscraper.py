@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 
 import time
 
-version='windows'
+version='linux'
 
 if version =='windows':
     chromepath='chromedriver/chromedriver.exe'
