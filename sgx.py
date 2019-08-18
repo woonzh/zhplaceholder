@@ -16,11 +16,12 @@ import analysis
 version='windows'
 host='cloud'
 
-if version =='windows':
-    chromepath='chromedriver/chromedriver.exe'
-
-else:
-    chromepath='chromedriver(linux)/chromedriver'
+chromepath=""
+#if version =='windows':
+#    chromepath='chromedriver/chromedriver.exe'
+#
+#else:
+#    chromepath='chromedriver(linux)/chromedriver'
 
 if host == 'local':
     capabilities = webdriver.DesiredCapabilities.CHROME
