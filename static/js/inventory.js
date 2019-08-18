@@ -7,7 +7,8 @@ function onload(){
 }
 
 function testScrape(){
-  url="http://localhost:80/test";
+  url="https://zhplaceholder.herokuapp.com/test";
+  //url="http://localhost:80/test"
   $.ajax({
     url: url,
     type: 'GET',
