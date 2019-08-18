@@ -14,28 +14,32 @@ import util
 import analysis
 
 version='windows'
+host='cloud'
 
 if version =='windows':
     chromepath='chromedriver/chromedriver.exe'
 
 else:
     chromepath='chromedriver(linux)/chromedriver'
-    
-capabilities = webdriver.DesiredCapabilities.CHROME
-options=webdriver.ChromeOptions()
-options.add_argument('--headless')
-driver = webdriver.Chrome(chromepath, chrome_options=options)
-driver.maximize_window()
 
-#options.add_argument('headless')
-#GOOGLE_CHROME_BIN = os.environ.get('GOOGLE_CHROME_BIN', None)
-#CHROMEDRIVER_PATH= os.environ.get('CHROMEDRIVER_PATH', None)
-#options.binary_location = GOOGLE_CHROME_BIN
-#options.add_argument('--headless')
-#options.add_argument('--disable-gpu')
-#options.add_argument('--no-sandbox')
-#driver = webdriver.Chrome(CHROMEDRIVER_PATH, chrome_options=options)
-#driver.maximize_window()
+if host == 'local':
+    capabilities = webdriver.DesiredCapabilities.CHROME
+    options=webdriver.ChromeOptions()
+    options.add_argument('--headless')
+    driver = webdriver.Chrome(chromepath, chrome_options=options)
+    driver.maximize_window()
+else:
+    GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
+    CHROMEDRIVER_PATH=os.environ.get('CHROMEDRIVER_PATH', None)
+    
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = GOOGLE_CHROME_BIN
+    chrome_options.add_argument('--headless')
+    chrome_options.add_argument('--disable-gpu')
+    chrome_options.add_argument('--no-sandbox')
+    driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+
+
 mainURL="https://www2.sgx.com/securities/securities-prices"
 summaryFName='data/summary.csv'
 companyInfoFName='data/companyInfo.csv'
