@@ -14,14 +14,14 @@ import util
 import analysis
 
 version='windows'
-host='cloud'
+host='local'
 
 chromepath=""
-#if version =='windows':
-#    chromepath='chromedriver/chromedriver.exe'
-#
-#else:
-#    chromepath='chromedriver(linux)/chromedriver'
+if version =='windows':
+    chromepath='chromedriver/chromedriver.exe'
+
+else:
+    chromepath='chromedriver(linux)/chromedriver'
 
 if host == 'local':
     capabilities = webdriver.DesiredCapabilities.CHROME
