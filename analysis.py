@@ -262,14 +262,14 @@ def filterData(fname=newFile, industry=[]):
                 keepList.append(count)
                 
     df=df.loc[keepList]
-    df=df[(df['peratio']>1)&(df['openPrice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
+#    df=df[(df['peratio']>1)&(df['openPrice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
     return df
 
 if __name__ == "__main__":
     dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
 
 industries, industriesDf, clusters=extractIndustries()
-a=filterData(industry=['Services'])
+a=filterData(industry=['Real Estate'])
 a.to_csv('to_explore.csv')
 
 #df_pca = pcaFiles(industriesDf)

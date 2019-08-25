@@ -11,11 +11,19 @@ import psycopg2 as ps
 from psycopg2.extras import execute_batch
 from datetime import datetime
 import pandas as pd
+import numpy as np
 
-queryLst=0
+connList=None
+
+dbList={
+    'summary': 'summary',
+    'rawData': 'rawdata'
+    }
 
 def connectToDatabase():
-    url='postgres://bmmoobheozofxs:ac8ba0f76a53e13844126695d8bad3d6826d1e087773b87bef85cebc43664f30@ec2-54-225-196-122.compute-1.amazonaws.com:5432/d20apms1nhd8do'
+    global connList
+    connList={}
+    url='postgres://gwbzmyoayqpank:52e661da399acf81878730af4b33746d838e3193fbe69b5794af3c1bbe0e05a8@ec2-54-221-198-156.compute-1.amazonaws.com:5432/dd11g91285ue9f'
 
     os.environ['DATABASE_URL'] = url
                
@@ -32,144 +40,244 @@ def connectToDatabase():
     
     cur=conn.cursor()
     
-    return cur, conn
+    connList['cur']=cur
+    connList['conn']=conn
 
-def runquery(query, lst=True, connected=False, valList=(), connList={}):
-    if connected:
-        cur=connList['cur']
-        conn=connList['conn']
-    else:
-        cur, conn=connectToDatabase()
+def runquery(query, resultExpected=False, valList=(), close=True):
+    global connList
+    if connList is None:
+        connectToDatabase()
+    cur=connList['cur']
+    conn=connList['conn']
         
-    result=None
+    result={
+        'msg':None,
+        'result':None,
+        'error':None}
     try:
         if len(valList)==0:
             cur.execute(query)
         else:
             print("batch")
             execute_batch(cur, query, valList)
-            
-        if lst:
-            result=list(cur)
-        else:
-            result=['success']
-    except ps.Error as e:
-        result=['error']
-        print(e)
-    except ValueError as e:
-        result=['error']
-        print(e)
-    except:
-        result=['error']
-#        print(ps.Error)
-    
-    print(result)
-    
-    if connected==False:
-        cur.close()
-        conn.commit()
         
-    return result
-
-def updateCompanyRows(lst, connList):    
-    lst.sort()
-    
-    #get current company names and new names to add
-    query="SELECT name from PRICE"
-    names = [i[0] for i in runquery(query, connected=True, connList=connList)]
-    names.sort()
-    
-    addList=[]
-    
-    for i in lst:
-        try:
-            names.remove(i)
-        except:
-            addList.append(i)
-            
-    print(addList)
-    
-    #get all column names
-    query="SELECT column_name FROM information_schema.columns WHERE table_name = 'price'"
-    colNames=[i[0] for i in runquery(query, connected=True, connList=connList)]
-    
-    valList=""
-    count=0
-    for i in addList:
-        if count == 0:
-            valList="('%s'%s %s)"%(i, ((len(colNames)>1)* ", "), str([0]*(len(colNames)-1))[1:-1])
-        else:
-            valList= valList +", ('%s'%s %s)"%(i, ((len(colNames)>1)* ", "), str([0]*(len(colNames)-1))[1:-1])
-        count += 1
-        print(valList)
+        result['msg']=cur.statusmessage
+#        print(result['msg'])
+        if resultExpected:
+            result['result']=cur.fetchall()
         
-    print(valList)
+        if close==True:
+            closeConn()
+            
+    except BaseException as e:
+        result['error']=[e]
+#        print('error!!!')
+        closeConn()
     
-    #create new row
-    if len(addList)>0:
-        query="INSERT INTO price(%s) VALUES %s" % (str(colNames)[1:-1].replace("'",""), valList)
-        print(query)
-        result=runquery(query,lst=False, connected=True, connList=connList)
-    else:
-        result=["table already up to date."]
-    
+#    print(result)
     return result
 
-def createNewRow(connList):
-    curDate=datetime.now()
-    colName="date%s%s%s"%(format(curDate.day, '02d'), format(curDate.month, '02d'), curDate.year)
-    query="ALTER TABLE price ADD %s float"%(colName)
+def closeConn():
+    global connList
     
-    print(query)
-    
-    result=runquery(query, lst=False, connected=True, connList=connList)
-    return result, colName
-
-def updatePrice(df, connList, colName):
-    global queryLst
-    queryLst=()
-    query="UPDATE price SET %s"%(colName)+""" = %s WHERE name = %s"""
-#    query="UPDATE price SET date9122018 = 110.0 WHERE name = 'test'"
-    print(query)
-    try:
-        for i in range(len(df.index)):
-            queryLst+=((float(df.iloc[i,1]), df.iloc[i,0]),)
-    except:
-        print(df.iloc[i,0])
-        print(i)
-#    print(queryLst)
-    result=runquery(query, lst=False, connected=True, valList=queryLst, connList=connList)
-#    result=runquery(query, lst=False, connected=True, connList=connList)
-    
-    return result
-
-def updateDB(df):
-    cur, conn=connectToDatabase()
-    conn.autocommit=True
-    connList={
-        'cur': cur,
-        'conn': conn
-        }
-    try:
-        comNames=list(df['name'])
-        result=updateCompanyRows(comNames, connList)
-        if result[0] =='error':
-            return False, 'error updating / checking companies in DB'
-        else:
-            result, colName=createNewRow(connList)
-            result2=updatePrice(df, connList, colName) 
-    except ValueError as e:
-        print(e)
-        cur.close()
-        conn.commit()  
-    except:
-        cur.close()
-        conn.commit()
+    cur=connList['cur']
+    conn=connList['conn']
     
     cur.close()
     conn.commit()
+    connList=None
 
-#df=pd.DataFrame(columns=['name', 'price'])
-#df.loc[0]=['def2', '110.0']
-#df.loc[1]=['test', '112.0']
-#updateDB(df)
+def dtypeConverter(df, calType=1):
+    ref={
+        'object': 'varchar(255)',
+        'float64':'float',
+        'int64': 'int'
+            }
+    
+    ref2={
+        'object': '%s',
+        'float64':'%s',
+        'int64': '%s'
+            }
+    
+    if calType==1:
+        types=df.dtypes
+        tIndex=list(types.index)
+        tType=[x.name for x in list(types)]
+        
+        store=''
+        
+        for count, val in enumerate(tIndex):
+            store+='%s %s, '%(val.replace(' ', '_'), ref[tType[count]])
+        
+        return store[:-2]
+    
+    if calType==2:
+        store=''
+        for i in df.dtypes:
+            store+=ref2[i.name]
+            store+=', '
+        
+        return store[:-2]
+    
+
+def recreateTable(dbName, df, cont=0):
+    tblResult=findTable(dbName)
+    if tblResult['error'] is not None:
+        return tblResult
+    else:
+        tblName=tblResult['result']
+        
+    queries={
+        'dropTbl':'drop table %s' %(tblName),
+        'createTbl':'CREATE TABLE %s (%s)' % (tblName,dtypeConverter(df))
+        }
+    
+#    print(queries)
+    
+#    return queries['createTbl']
+    indexes=list(queries)
+    
+    try:
+        for ind in range(cont, len(queries)):
+            query=queries[indexes[ind]]
+            result=runquery(query, close=False)
+            print(indexes[ind], '--', result)
+        
+        closeConn()
+    except:
+        print(indexes[ind], '-- error --')
+        if ind<(len(queries)-1):
+            recreateTable(tblName, df, cont=(ind+1))
+        else:
+            closeConn()
+
+def rewriteTable(dbName, df):
+    tblResult=findTable(dbName)
+    if tblResult['error'] is not None:
+        return tblResult
+    else:
+        tblName=tblResult['result']
+        
+    result=getColumnName(tblName)
+    if len(result)==0:
+        recreateTable(dbName, df, cont=1)
+        
+    cols=str([x.replace(' ','_') for x in list(df)]).replace("'","")[1:-1]
+    vals=[]
+    for i in df.index:
+#        vals.append(str(list(df.loc[i]))[1:-1])
+        lst=list(df.loc[i])
+        lst=[int(x) if type(x)==np.int64 else x for x in lst]
+        vals.append(lst)
+        
+    query='INSERT INTO %s (%s) VALUES(%s)'%(tblName, cols, dtypeConverter(df, calType=2))
+    
+#    return query, vals
+    
+    result = runquery(query, valList=vals, close=False)
+    
+    try:
+        closeConn()
+    except BaseException as e:
+        print(e)
+        
+    print('rewrite table --', result)
+    return result
+
+def getColumnName(tblName, close=True):
+    query="SELECT column_name FROM information_schema.columns WHERE table_name = '%s'"%(tblName)
+    qresult=runquery(query, resultExpected=True, close=close)
+    
+    if qresult['error'] is not None:
+        return None
+    
+    result=[x[0] for x in qresult['result']]
+    
+    print('extract cols of %s --- '%(tblName), str(qresult['msg']), str(qresult['error']))
+    
+    return result
+
+def extractTable(dbName):
+    tblResult=findTable(dbName)
+    if tblResult['error'] is not None:
+        return tblResult
+    else:
+        tblName=tblResult['result']
+        
+    result={
+        'msg':None,
+        'error':None,
+        'result':None
+            }
+    
+    tblCols=getColumnName(tblName, close=False)
+    
+    if len(tblCols)==0:
+        result['error']='tbl not found'
+        return result
+    
+    query='SELECT * FROM %s'%(tblName)
+    qresult=runquery(query, resultExpected=True)
+    
+    result['msg']=qresult['msg']
+    result['error']=qresult['error']
+    
+    if qresult['error'] is None:
+        df=pd.DataFrame(columns=tblCols)
+        for val in qresult['result']:
+            df.loc[len(df)]=[x for x in val]
+        
+        result['result']=df
+        
+    print('extract %s --- '%(tblName), str(qresult['msg']), str(qresult['error']))
+    
+    return result
+
+def findTable(dbName):
+    result={
+        'msg':None,
+        'result':None,
+        'error':None}
+    try:
+        result['result']=dbList[dbName]
+    except:
+        result['msg']='tbl Not found'
+        result['error']='tbl Not found'
+    
+    return result
+
+def insertRow(dbName, lst):
+    tblResult=findTable(dbName)
+    if tblResult['error'] is not None:
+        return tblResult
+    else:
+        tblName=tblResult['result']
+        
+    result={
+        'msg':None,
+        'result':None,
+        'error':None}
+    
+    cols=getColumnName(tblName, close=False)
+    
+    if cols is None:
+        closeConn()
+        result['error']= 'table dun exist'
+        return result
+    else:
+        cols=str(cols).replace("'","")[1:-1]
+    
+    query='INSERT INTO %s (%s) VALUES(%s)' %(tblName, cols, str(lst)[1:-1])
+#    print(query)
+    
+    result=runquery(query)
+    
+    return result
+
+#df=pd.read_csv('data/summary.csv')
+#df['testing']=([1]*len(df))
+#a=recreateTable('summary', df)
+#b=rewriteTable('summary', df)
+#df2=extractTable('summary')
+a=insertRow('summary', ['test', 'test','test', 'test', 'test'])

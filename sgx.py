@@ -8,18 +8,20 @@ import time
 import pandas as pd
 import os
 import argparse
+import util
 
 import dbConnector as db
-import util
 import analysis
 
 version='windows'
 host='local'
+batchUpload=2
+
+timec=util.timeClass()
 
 chromepath=""
 if version =='windows':
     chromepath='chromedriver/chromedriver.exe'
-
 else:
     chromepath='chromedriver(linux)/chromedriver'
 
@@ -28,7 +30,6 @@ if host == 'local':
     options=webdriver.ChromeOptions()
     options.add_argument('--headless')
     driver = webdriver.Chrome(chromepath, chrome_options=options)
-    driver.maximize_window()
 else:
     GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
     CHROMEDRIVER_PATH=os.environ.get('CHROMEDRIVER_PATH', None)
@@ -38,8 +39,10 @@ else:
     chrome_options.add_argument('--headless')
     chrome_options.add_argument('--disable-gpu')
     chrome_options.add_argument('--no-sandbox')
+    
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
+driver.maximize_window()
 
 mainURL="https://www2.sgx.com/securities/securities-prices"
 summaryFName='data/summary.csv'
@@ -129,7 +132,7 @@ def crawlSummary():
 
 def processData(df):
     vals=pd.DataFrame()
-    vals['name']=df['names']
+    vals['names']=df['names']
     vals['price']=df['last price']
     
     for i in range(len(vals)):
@@ -188,20 +191,20 @@ def getCompanyInfo(name, url):
         'prevCloseDate':'Previous Close Date',
         'marketCap':'Total Market Cap',
         'sharesOutstanding':'Shares Outstanding',
-        'float':'Float',
+        'p_float':'Float',
         'avgVolume':'Average 3-month Volume',
         'normalizedEPS':'Normalised Diluted EPS',
         'mthvwap':'Average 3-month Volume',
         'unadjVWAP':'Unadj. 6-month VWAP',
         'adjVWAP':'Adj. 6-month VWAP',
         'peratio':'P/E Ratio',
-        'price/Sales':'Price/Sales',
-        'price/CF':'Price/CF',
+        'price_Sales':'Price/Sales',
+        'price_CF':'Price/CF',
         'pricebookvalue':'Price/Book Value',
         'dividend':'Dividend Yield',
         'divident_5_yr_avg':'Dividend Yield 5-yr avg',
         'debt':'Net Debt',
-        'long term debt/equity':'Long Term Debt / Equity',
+        'long term debt_equity':'Long Term Debt / Equity',
         'enterpriseValue':'Enterprise Value',
         'assets':'Total Assets',
         'cash':'Cash & Short Term Investments',
@@ -236,7 +239,7 @@ def getCompanyInfo(name, url):
                 counter+=1
             else:
                 df=pd.DataFrame()
-                df['name']=[name]
+                df['names']=[name]
                 for i in headerDict:
                     df[i]=['-']
                 return df
@@ -255,7 +258,7 @@ def getCompanyInfo(name, url):
             td2.append(text)
     
     df=pd.DataFrame()
-    df['name']=[name]
+    df['names']=[name]
     
     for i in headerDict:
         header=headerDict[i]
@@ -372,56 +375,91 @@ def getTime(prev):
     cur=time.time()
     return cur, str((time.time()-prev)/60)
 
-def collateCompanyInfo(comList, fname=[companyInfoFName], start=0):
-    cur, elapsedTime=getTime(start)
-    
-    print('got list of companies in %s mins'%(elapsedTime))
-    
+def collateCompanyInfo(comList, fname=[companyInfoFName], start=0, host=host, batchUpload=batchUpload):
     if start!=0:
-        store=pd.read_csv(fname)
+        if host=='local':
+            store=pd.read_csv(fname)
+        else:
+            result=db.extractTable('rawData')
+            if result['error'] is not None:
+                start=0
+                store=''
+            else:
+                store=result['result']
     else:
         store=''
     
+    uploadTrack=0
     for i in range(start, len(comList)):
         name=comList.iloc[i,0]
         url=comList.iloc[i,4]
-        cur, elapsedTime=getTime(cur)
-        print('processing %s: %s in %s mins'%(str(i), name, elapsedTime))
-        cur=time.time()
         companyinfo=getCompanyInfo(name, url)
         if i ==0:
             store=companyinfo
             print(store)
+            if host=='cloud':
+                db.recreateTable('rawData', store)
         else:
             store.loc[i]=companyinfo.loc[0]
             print(store.loc[i])
         
-        for name in fname:
-            store.to_csv(name, index=False)
-    
-    cur, elapsedTime=getTime(start)        
-    print('total time: %s mins'%(elapsedTime))
+        if host=='local':
+            for name in fname:
+                store.to_csv(name, index=False)
+        else:
+            if (i%batchUpload)==batchUpload-1:
+                df=store.loc[list(range(i-batchUpload+1, i+1))]
+                db.rewriteTable('rawData', df)
+                uploadTrack=i+1
+        timec.getTimeSplit('%s extracted:'%(name))
+        
+    if host=='cloud':
+        df=store.loc[list(range(uploadTrack, i+1))]
+        db.rewriteTable('rawData', df)
     
     return store
 
-def extractSummary(fname):
+def extractSummary(fname):   
     df, df2=crawlSummary()
     df=df.reset_index(drop=True)
-    df.to_csv(summaryFName, index=False)
-    
+    if host!='cloud':
+        df.to_csv(summaryFName, index=False)
+        
+    timec.getTimeSplit('summary extracted')
     return df, df2
 
-def getFullDetails(index=0, summaryBool=False):
+def getFullDetails(index=0, summaryBool=False, host=host):
+    timec.startTimer()
+    
     if summaryBool==False:
-        try:
-            df=pd.read_csv(summaryFName)
-        except:
+        if host=='cloud':
+            dbName='summary'
+            result=db.extractTable(dbName)
+            if result['error'] is not None:
+                df, df2=extractSummary(summaryFName)
+                db.recreateTable(dbName, df)
+                db.rewriteTable(dbName, df)
+            else:
+                df=result['result']
+        else:
+            try:
+                df=pd.read_csv(summaryFName)
+            except:
                 df, df2=extractSummary(summaryFName)
     else:
         df, df2=extractSummary(summaryFName)
+        if host=='cloud':
+            db.recreateTable(dbName)
+            db.rewriteTable(dbName, df)
+    
+    
+#    df=df.loc[[0,1,2]]
+    companyFullInfo=collateCompanyInfo(df, start=index, host=host)
+#    results=analysis.cleanAndProcess(infoName=companyInfoFName)
+    timec.stopTime()
+#    return df, companyFullInfo
 
-    companyFullInfo=collateCompanyInfo(df, start=index)
-    results=analysis.cleanAndProcess(infoName=companyInfoFName)
+#a,b=getFullDetails(host='cloud')
     
 def updatePriceHist(df):
     try:
@@ -471,33 +509,37 @@ def updateCompanyInfo():
     
     return results
 
+def closeDriver():
+    driver.quit()
+
 #vals=processData(df)
 #db.updateDB(vals)
 
 #test='https://www2.sgx.com/securities/equities/J36'
 #store=getCompanyInfo('test', test)
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser("simple_example")
-    parser.add_argument("--index", help="index to start.", type=int, default=0)
-    parser.add_argument("--function", help="0 to crawl full summary and details. 1 to crawl summary for price update.", type=int, default=0)
-    parser.add_argument("--summaryBool", help="0 to crawl re-crawl summary as well. 1 to not re-crawl summary", type=int, default=1)
-    args = parser.parse_args()
-    if args.function==0:
-        print(args.index)
-        getFullDetails(args.index, args.summaryBool==0)
-    else:
-        results=updateCompanyInfo()
-        print('to just do ssummary')
-else:
-    index=0
-    function=1
-    if function ==0:
-        getFullDetails(index)
-    else:
-        updateCompanyInfo()
-    
-#a=updateCompanyInfo()
-#df,df2=extractSummary(summaryFName)
-
-driver.quit()
+#if __name__ == "__main__":
+#    parser = argparse.ArgumentParser("simple_example")
+#    parser.add_argument("--index", help="index to start.", type=int, default=0)
+#    parser.add_argument("--function", help="0 to crawl full summary and details. 1 to crawl summary for price update.", type=int, default=0)
+#    parser.add_argument("--summaryBool", help="0 to crawl re-crawl summary as well. 1 to not re-crawl summary", type=int, default=1)
+#    args = parser.parse_args()
+#    if args.function==0:
+#        print(args.index)
+#        getFullDetails(args.index, args.summaryBool==0)
+#    else:
+#        results=updateCompanyInfo()
+#        print('to just do summary')
+#        
+#        #a=updateCompanyInfo()
+#        #df,df2=extractSummary(summaryFName)
+#    
+#    driver.quit()
+#    
+#else:
+#    index=0
+#    function=1
+#    if function ==0:
+#        getFullDetails(index)
+#    else:
+#        updateCompanyInfo()

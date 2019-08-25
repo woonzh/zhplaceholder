@@ -63,8 +63,6 @@
             <div class="container-fluid">
                 <a href="#menu-toggle" class="btn btn-secondary" id="menu-toggle"><b>Toggle Menu</b></a>
                 <h1>Inventory</h1>
-                <p>Check or sync inventory here</code>.</p>
-                <p><b>Loading may take awhile.</b></p>
             </div>
 
             <select id="account" onchange="acctChange()">
@@ -73,18 +71,12 @@
 
             <button onclick="testScrape()"> Test </button>
 
-            <p id="testing"> placeholder test1 </p>
-
             <div id="table" class="table-editable">
               <!--<span class="table-add glyphicon glyphicon-plus"></span>-->
               <table class="table" id="acctTable">
                 <tr>
-                  <th>Account</th>
-                  <th>MCCP SKU</th>
-                  <th>MCCP Inventory</th>
-                  <th>IMS SKU</th>
-                  <th>IMS Inventory</th>
-                  <th>Recon</th>
+                  <th>Analysis</th>
+                  <th>Portfolio</th>
                   <th>
                     <span class="table-allsync glyphicon glyphicon-refresh"> Sync</span>
                   </th>
