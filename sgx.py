@@ -11,7 +11,7 @@ import argparse
 import util
 
 import dbConnector as db
-import analysis
+#import analysis
 
 version='windows'
 host='cloud'
@@ -505,9 +505,9 @@ def updateCompanyInfo():
     companyFullInfo.to_csv(infoLogs+now+'.csv', index=False)
     updatePriceHist(df)
     
-    results=analysis.cleanAndProcess(infoName=companyUpdatedInfoFName)
+#    results=analysis.cleanAndProcess(infoName=companyUpdatedInfoFName)
     
-    return results
+#    return results
 
 def closeDriver():
     driver.quit()
