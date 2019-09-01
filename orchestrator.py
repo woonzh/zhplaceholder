@@ -21,9 +21,9 @@ class workerClass:
                 }
         try:
             if params==None:
-                returnVal['result']=self.q.enqueue(func)
+                returnVal['result']=self.q.enqueue(func).get_id()
             else:
-                returnVal['result']=self.q.enqueue(func, params)
+                returnVal['result']=self.q.enqueue(func, params).get_id()
             
         except BaseException as e:
             returnVal['error']=e
@@ -36,5 +36,5 @@ def testFunc(num):
     r=10*3
     return r
 
-#wc=workerClass()
-#result=wc.queueFunc(testFunc, 1)
+wc=workerClass()
+result=wc.queueFunc(testFunc, 1)
