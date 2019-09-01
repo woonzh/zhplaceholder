@@ -52,6 +52,21 @@ def workerCheck():
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
 
+@app.route('/workerResult', methods=['GET', 'OPTIONS'])
+def workerResult():
+    ret={}
+    if request.method == 'GET':
+        jobid = request.args.get("params" ,type = str, default="")
+        result=orc.wc.getResult(jobid)
+        ret={
+            'answer':result
+            }
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
+
 #@app.route('/passwordcheck', methods=['GET', 'OPTIONS'])
 #def passwordcheck():
 #    ret={}

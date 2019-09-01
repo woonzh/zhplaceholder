@@ -7,6 +7,9 @@ Created on Tue Apr 23 11:21:59 2019
 
 import datetime
 import pandas as pd
+from rq import Queue
+from rq.job import Job
+from worker import conn
 
 class timeClass:
     def __init__(self):
@@ -35,4 +38,29 @@ class timeClass:
         self.history.loc[len(self.history)]=['end', now, split]
         
         print('total time taken: %s mins'%(str(split)))
+
+class workerClass:
+    def __init__(self):
+        self.q=Queue(connection=conn)
+        
+    def queueFunc(self, func, params=None):
+        returnVal={
+            'result':None,
+            'error': None
+                }
+        try:
+            if params==None:
+                returnVal['result']=self.q.enqueue(func).get_id()
+            else:
+                returnVal['result']=self.q.enqueue(func, params).get_id()
+            
+        except BaseException as e:
+            returnVal['error']=e
+        
+        return returnVal
+    
+    def getResult(self, jobId):
+        job=Job.fetch(jobId, connection=conn)
+        
+        return job.result
         
