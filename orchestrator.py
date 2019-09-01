@@ -17,4 +17,4 @@ def testFunc(num):
     r=10*3
     return r
 
-result=wc.queueFunc('test', testFunc, 1)
+#result=wc.queueFunc('test', testFunc, 1)
