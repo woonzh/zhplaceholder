@@ -11,6 +11,7 @@ from flask_restful import Resource, Api
 import json
 import testscraper as ts
 import orchestrator as orc
+import sgx
 
 app = Flask(__name__)
 api = Api(app)
@@ -42,7 +43,7 @@ def workerCheck():
     ret={}
     if request.method == 'GET':
         params = request.args.get("params" ,type = str, default="")
-        result=orc.wc.queueFunc('test', orc.testFunc, params)
+        result=orc.wc.queueFunc('test', orc.testFunc, None)
         ret={
             'answer':result}
             
@@ -56,8 +57,7 @@ def workerCheck():
 def workerSGX():
     ret={}
     if request.method == 'GET':
-        params = request.args.get("params" ,type = str, default="")
-        result=orc.wc.queueFunc('test', orc.testFunc, params)
+        result=orc.wc.queueFunc('test', sgx.getFullDetails, None)
         ret={
             'answer':result}
             
