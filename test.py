@@ -6,3 +6,10 @@ params={
         }
 
 result=requests.get(url, params)
+jobid=result['answer']['result']
+
+#url='https://zhplaceholder.herokuapp.com/workerResult'
+#params={
+#    'jobId':jobid
+#        }
+#result=requests.get(url, params)
