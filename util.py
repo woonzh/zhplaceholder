@@ -75,7 +75,8 @@ class workerClass:
             'result':None,
             'start': None,
             'end':None,
-            'duration':None
+            'duration':None,
+            'query':None
             }
         result['status']=job.get_status()
         if result['status']=='finished':
@@ -83,11 +84,11 @@ class workerClass:
             result['start']=self.timeConverter(job.started_at)
             result['end'] = self.timeConverter(job.ended_at)
             result['duration']=str(job.ended_at-job.started_at)
-            db.editRow('jobs', ['lastchecked', 'jobstatus','jobstart', 'jobend', 'duration'], \
+            result['query']=db.editRow('jobs', ['lastchecked', 'jobstatus','jobstart', 'jobend', 'duration'], \
                        [self.timeConverter(datetime.now()),'finished', result['start'], \
                         result['end'], result['duration']], 'jobid', jobId)
         else:
-            db.editRow('jobs',['lastchecked', 'jobstatus'],[self.timeConverter(datetime.now()),result['status']],'jobid', jobId)
+            result['query']=db.editRow('jobs',['lastchecked', 'jobstatus'],[self.timeConverter(datetime.now()),result['status']],'jobid', jobId)
         
         return result
         

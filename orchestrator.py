@@ -13,7 +13,7 @@ from util import workerClass
 
 wc=workerClass()
     
-def testFunc(num):
+def testFunc():
     r=10*3
     return r
 

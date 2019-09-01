@@ -14,7 +14,7 @@ import dbConnector as db
 import analysis
 
 version='windows'
-host='local'
+host='cloud'
 batchUpload=2
 
 timec=util.timeClass()
