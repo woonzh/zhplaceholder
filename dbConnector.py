@@ -308,9 +308,9 @@ def editRow(dbName, edColNames, edColVals, colName, colVal):
     query="UPDATE %s SET %s WHERE %s='%s'"%(tblName, store,colName, colVal)
     print(query)
     
-#    result=runquery(query)
+    result=runquery(query)
 #    
-#    return result
+    return result
     
 
 #df=pd.read_csv('data/summary.csv')
