@@ -10,6 +10,7 @@ from flask_cors import CORS
 from flask_restful import Resource, Api
 import json
 import testscraper as ts
+import orchestrator as orc
 
 app = Flask(__name__)
 api = Api(app)
@@ -29,6 +30,21 @@ def sessioncheck():
     if request.method == 'GET':
         ret={
             'answer':ts.test()}
+            
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
+
+@app.route('/testWorker', methods=['GET', 'OPTIONS'])
+def workerCheck():
+    ret={}
+    if request.method == 'GET':
+        params = request.args.get("params" ,type = str, default="")
+        result=orc.wc.queueFunc(orc.testFunc, params)
+        ret={
+            'answer':result}
             
         resp = flask.Response(json.dumps(ret))
         resp.headers['Access-Control-Allow-Origin'] = '*'

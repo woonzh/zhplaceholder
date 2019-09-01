@@ -29,10 +29,12 @@ class workerClass:
             returnVal['error']=e
         
         return returnVal
+
+wc=workerClass()
     
 def testFunc(num):
     r=10*3
     return r
 
-wc=workerClass()
-result=wc.queueFunc(testFunc, 1)
+#wc=workerClass()
+#result=wc.queueFunc(testFunc, 1)
