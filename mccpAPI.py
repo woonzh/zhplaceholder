@@ -57,10 +57,7 @@ def workerResult():
     ret={}
     if request.method == 'GET':
         jobid = request.args.get("jobId" ,type = str, default="")
-        result=orc.wc.getResult(jobid)
-        ret={
-            'answer':result
-            }
+        ret=orc.wc.getResult(jobid)
         resp = flask.Response(json.dumps(ret))
         resp.headers['Access-Control-Allow-Origin'] = '*'
         resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'

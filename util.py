@@ -10,6 +10,7 @@ import pandas as pd
 from rq import Queue
 from rq.job import Job
 from worker import conn
+from datetime import datetime
 
 class timeClass:
     def __init__(self):
@@ -70,8 +71,8 @@ class workerClass:
         result['status']=job.get_status()
         if result['status']=='finished':
             result['result']=job.result
-            result['start']=job.started_at
-            result['end'] = job.ended_at
+            result['start']=job.started_at.strftime("%m/%d/%Y, %H:%M:%S")
+            result['end'] = job.ended_at.strftime("%m/%d/%Y, %H:%M:%S")
         
         return result
         
