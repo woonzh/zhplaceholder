@@ -61,9 +61,17 @@ class workerClass:
     
     def getResult(self, jobId):
         job=Job.fetch(jobId, connection=conn)
-        result={}
+        result={
+            'status':None,
+            'result':None,
+            'start': None,
+            'end':None
+            }
         result['status']=job.get_status()
-        result['result']=job.result
+        if result['status']=='finished':
+            result['result']=job.result
+            result['start']=job.started_at
+            result['end'] = job.ended_at
         
         return result
         
