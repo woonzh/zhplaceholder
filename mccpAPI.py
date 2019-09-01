@@ -56,7 +56,7 @@ def workerCheck():
 def workerResult():
     ret={}
     if request.method == 'GET':
-        jobid = request.args.get("params" ,type = str, default="")
+        jobid = request.args.get("jobId" ,type = str, default="")
         result=orc.wc.getResult(jobid)
         ret={
             'answer':result
