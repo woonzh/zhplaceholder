@@ -15,7 +15,7 @@ import dbConnector as db
 
 version='windows'
 host='cloud'
-batchUpload=2
+batchUpload=10
 
 timec=util.timeClass()
 
@@ -453,7 +453,7 @@ def getFullDetails(index=0, summaryBool=False, host=host):
             db.rewriteTable(dbName, df)
     
     
-    df=df.loc[[0,1,2]]
+#    df=df.loc[[0,1,2]]
     companyFullInfo=collateCompanyInfo(df, start=index, host=host)
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)
     timec.stopTime()

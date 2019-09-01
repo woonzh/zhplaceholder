@@ -57,7 +57,7 @@ def workerCheck():
 def workerSGX():
     ret={}
     if request.method == 'GET':
-        result=orc.wc.queueFunc('test', sgx.getFullDetails, None)
+        result=orc.wc.queueFunc('sgx raw data', sgx.getFullDetails, None)
         ret={
             'answer':result}
             
