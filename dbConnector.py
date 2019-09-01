@@ -72,7 +72,7 @@ def runquery(query, resultExpected=False, valList=(), close=True):
             
     except BaseException as e:
         result['error']=[e]
-#        print('error!!!')
+        print('error!!!')
         closeConn()
     
 #    print(result)
@@ -273,6 +273,8 @@ def insertRow(dbName, lst):
 #    print(query)
     
     result=runquery(query)
+    
+    print('insert row to %s --- '%(tblName), str(result['msg']), str(result['error']))
     
     return result
 
