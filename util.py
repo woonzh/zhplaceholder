@@ -61,6 +61,9 @@ class workerClass:
     
     def getResult(self, jobId):
         job=Job.fetch(jobId, connection=conn)
+        result={}
+        result['status']=job.get_status()
+        result['result']=job.result
         
-        return job.result
+        return result
         
