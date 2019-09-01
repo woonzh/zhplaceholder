@@ -42,7 +42,7 @@ def workerCheck():
     ret={}
     if request.method == 'GET':
         params = request.args.get("params" ,type = str, default="")
-        result=orc.wc.queueFunc(orc.testFunc, params)
+        result=orc.wc.queueFunc('test', orc.testFunc, params)
         ret={
             'answer':result}
             

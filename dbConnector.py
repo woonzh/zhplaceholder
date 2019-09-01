@@ -17,7 +17,8 @@ connList=None
 
 dbList={
     'summary': 'summary',
-    'rawData': 'rawdata'
+    'rawData': 'rawdata',
+    'jobs':'jobs'
     }
 
 def connectToDatabase():
@@ -275,9 +276,45 @@ def insertRow(dbName, lst):
     
     return result
 
+def editRow(dbName, edColNames, edColVals, colName, colVal):
+    tblResult=findTable(dbName)
+    if tblResult['error'] is not None:
+        return tblResult
+    else:
+        tblName=tblResult['result']
+        
+    result={
+        'msg':None,
+        'result':None,
+        'error':None}
+    
+    cols=getColumnName(tblName, close=False)
+    
+    if cols is None:
+        closeConn()
+        result['error']= 'table dun exist'
+        return result
+    else:
+        cols=cols
+#        cols=str(cols).replace("'","")[1:-1]
+    
+    store=""
+    for count, val in enumerate(edColNames):
+        store+="%s = '%s', "%(val, edColVals[count])
+    store=store[:-2]
+    
+    query="UPDATE %s SET %s WHERE %s='%s'"%(tblName, store,colName, colVal)
+    print(query)
+    
+#    result=runquery(query)
+#    
+#    return result
+    
+
 #df=pd.read_csv('data/summary.csv')
 #df['testing']=([1]*len(df))
 #a=recreateTable('summary', df)
 #b=rewriteTable('summary', df)
 #df2=extractTable('summary')
-a=insertRow('summary', ['test', 'test','test', 'test', 'test'])
+#a=insertRow('summary', ['test', 'test','test', 'test', 'test'])
+#a=editRow('jobs',['tc', 'te'], [1,2], 'jobid', 'test')

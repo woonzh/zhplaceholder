@@ -15,3 +15,4 @@ params={
     'jobId':jobid
         }
 result=requests.get(url, params)
+print(result.text)
