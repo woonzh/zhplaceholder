@@ -42,7 +42,7 @@ class timeClass:
 
 class workerClass:
     def __init__(self):
-        self.q=Queue(connection=conn)
+        self.q=Queue(connection=conn, default_timeout=18000)
     
     def timeConverter(self, dtVal, convert=True):
         if convert:
