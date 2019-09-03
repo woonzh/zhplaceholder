@@ -5,7 +5,7 @@ import json
 #params={
 #    'params': 10
 #        }
-
+#
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #
 #result=requests.get(url)
@@ -14,7 +14,7 @@ import json
 
 url='https://zhplaceholder.herokuapp.com/workerResult'
 params={
-    'jobId':jobid
+    'jobId':'dee61d86-9cb1-4f72-b114-5573aa865d7e'
         }
 result=requests.get(url, params)
 print(result.text)
