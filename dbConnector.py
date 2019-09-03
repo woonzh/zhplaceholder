@@ -72,7 +72,7 @@ def runquery(query, resultExpected=False, valList=(), close=True):
             
     except BaseException as e:
         result['error']=[e]
-        print('error!!!')
+        print(e)
         closeConn()
     
 #    print(result)
@@ -173,7 +173,7 @@ def rewriteTable(dbName, df):
         vals.append(lst)
         
     query='INSERT INTO %s (%s) VALUES(%s)'%(tblName, cols, dtypeConverter(df, calType=2))
-    
+    print(query)
 #    return query, vals
     
     result = runquery(query, valList=vals, close=False)
@@ -183,7 +183,7 @@ def rewriteTable(dbName, df):
     except BaseException as e:
         print(e)
         
-    print('rewrite table --', result)
+    print('rewrite table %s --'%(tblName), result)
     return result
 
 def getColumnName(tblName, close=True):

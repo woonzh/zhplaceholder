@@ -27,7 +27,8 @@ def timeConverter(dtVal, convert=True):
 
 def standard_handler(job, exc_type, exc_value, traceback):
     jobid=job.id
-    error=exc_type+'\n'+exc_value
+    error=exc_type+'----'+exc_value
+    print("error---:", error)
     db.editRow('jobs',['lastchecked', 'jobstatus'],[timeConverter(datetime.now()),error],'jobid', jobid)
 
 if __name__ == '__main__':

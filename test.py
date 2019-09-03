@@ -14,7 +14,7 @@ import json
 
 url='https://zhplaceholder.herokuapp.com/workerResult'
 params={
-    'jobId':'dee61d86-9cb1-4f72-b114-5573aa865d7e'
+    'jobId':jobid
         }
 result=requests.get(url, params)
 print(result.text)
