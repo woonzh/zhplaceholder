@@ -416,7 +416,8 @@ def collateCompanyInfo(comList, fname=[companyInfoFName], start=0, host=host, ba
         
     if host=='cloud':
         df=store.loc[list(range(uploadTrack, i+1))]
-        db.rewriteTable('rawData', df)
+        if len(df)>0:
+            db.rewriteTable('rawData', df)
     
     return store
 
@@ -454,7 +455,7 @@ def getFullDetails(index=0, summaryBool=False, host=host):
             db.rewriteTable(dbName, df)
     
     
-    df=df.loc[list(range(0,50))]
+#    df=df.loc[list(range(0,50))]
     companyFullInfo=collateCompanyInfo(df, start=index, host=host)
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)
     timec.stopTime()
