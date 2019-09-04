@@ -402,6 +402,7 @@ def collateCompanyInfo(comList, fname=[companyInfoFName], start=0, host=host, ba
         else:
             store.loc[i]=companyinfo.loc[0]
             print(store.loc[i])
+            print(len(comList), start, i)
         
         if host=='local':
             for name in fname:
