@@ -315,10 +315,10 @@ def editRow(dbName, edColNames, edColVals, colName, colVal):
     return result
     
 
-df=pd.read_csv('data/summary.csv')
-df['testing']=([1]*len(df))
+#df=pd.read_csv('data/summary.csv')
+#df['testing']=([1]*len(df))
 #a=recreateTable('summary', df)
-b=rewriteTable('summary', df)
+#b=rewriteTable('summary', df)
 #df2=extractTable('summary')
 #a=insertRow('summary', ['test', 'test','test', 'test', 'test'])
 #a=editRow('jobs',['tc', 'te'], [1,2], 'jobid', 'test')
