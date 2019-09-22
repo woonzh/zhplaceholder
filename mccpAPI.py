@@ -9,7 +9,7 @@ from flask import Flask, request, make_response, render_template, redirect
 from flask_cors import CORS
 from flask_restful import Resource, Api
 import json
-import testscraper as ts
+#import testscraper as ts
 import orchestrator as orc
 #import sgx
 

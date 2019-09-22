@@ -1698,3 +1698,203 @@
 2019-09-22T11:21:37+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.05 sample#load-avg-5m=0.085 sample#load-avg-15m=0.09 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12353584kB sample#memory-cached=1140728kB sample#memory-redis=323952bytes sample#hit-rate=0.33167 sample#evicted-keys=0
 2019-09-22T11:24:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.02 sample#load-avg-5m=0.07 sample#load-avg-15m=0.08 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12355600kB sample#memory-cached=1140728kB sample#memory-redis=323952bytes sample#hit-rate=0.33167 sample#evicted-keys=0
 2019-09-22T11:24:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.055 sample#load-avg-5m=0.075 sample#load-avg-15m=0.085 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12356684kB sample#memory-cached=1140732kB sample#memory-redis=323952bytes sample#hit-rate=0.33167 sample#evicted-keys=0
+2019-09-22T13:37:52.267462+00:00 app[worker.1]: cash                                                                     1,949.30M
+2019-09-22T13:37:52.267464+00:00 app[worker.1]: roe                                                                          6.673
+2019-09-22T13:37:52.267466+00:00 app[worker.1]: roa                                                                          6.654
+2019-09-22T13:37:52.267468+00:00 app[worker.1]: capEx                                                                     -981.90M
+2019-09-22T13:37:52.267470+00:00 app[worker.1]: EBIT                                                                             -
+2019-09-22T13:37:52.267472+00:00 app[worker.1]: revenue                                                                 26,132.71M
+2019-09-22T13:37:52.267474+00:00 app[worker.1]: operating_income                                                         1,719.90M
+2019-09-22T13:37:52.267476+00:00 app[worker.1]: operating_margin                                                            10.562
+2019-09-22T13:37:52.267479+00:00 app[worker.1]: netincome                                                                  927.73M
+2019-09-22T13:37:52.267481+00:00 app[worker.1]: net_profit_margin                                                            9.369
+2019-09-22T13:37:52.267483+00:00 app[worker.1]: revenue_per_share_5_yr_growth                                               -2.344
+2019-09-22T13:37:52.267485+00:00 app[worker.1]: eps_per_share_5_yr_growth                                                  -15.755
+2019-09-22T13:37:52.267487+00:00 app[worker.1]: ebita                                                                            -
+2019-09-22T13:37:52.267489+00:00 app[worker.1]: industry                         Automobiles & Auto Parts / Auto & Truck Manufa...
+2019-09-22T13:37:52.267537+00:00 app[worker.1]: Name: 20, dtype: object
+2019-09-22T13:37:52.267540+00:00 app[worker.1]: 50 0 20
+2019-09-22T13:37:52.272722+00:00 app[worker.1]: Jardine C&C extracted:: 0:00:00.290825 mins
+2019-09-22T13:37:54.623350+00:00 app[worker.1]: click failed
+2019-09-22T13:38:09.818129+00:00 app[worker.1]: names                                                                      CityDev
+2019-09-22T13:38:09.818172+00:00 app[worker.1]: openPrice                                                                    9.890
+2019-09-22T13:38:09.818175+00:00 app[worker.1]: high_low                                                                     9.870
+2019-09-22T13:38:09.818177+00:00 app[worker.1]: close                                                                            -
+2019-09-22T13:38:09.818179+00:00 app[worker.1]: prevCloseDate                                                          20 Sep 2019
+2019-09-22T13:38:09.818181+00:00 app[worker.1]: marketCap                                                                8,974.80M
+2019-09-22T13:38:09.818183+00:00 app[worker.1]: sharesOutstanding                                                          906.90M
+2019-09-22T13:38:09.818185+00:00 app[worker.1]: p_float                                                                     42.20%
+2019-09-22T13:38:09.818187+00:00 app[worker.1]: avgVolume                                                                   34.72M
+2019-09-22T13:38:09.818189+00:00 app[worker.1]: normalizedEPS                                                                 0.62
+2019-09-22T13:38:09.818191+00:00 app[worker.1]: mthvwap                                                                          -
+2019-09-22T13:38:09.818193+00:00 app[worker.1]: unadjVWAP                                                              SGD 9.15582
+2019-09-22T13:38:09.818195+00:00 app[worker.1]: adjVWAP                                                                SGD 9.16093
+2019-09-22T13:38:09.818197+00:00 app[worker.1]: peratio                                                                     15.123
+2019-09-22T13:38:09.818200+00:00 app[worker.1]: price_Sales                                                                  2.638
+2019-09-22T13:38:09.818202+00:00 app[worker.1]: price_CF                                                                     9.837
+2019-09-22T13:38:09.818204+00:00 app[worker.1]: pricebookvalue                                                               0.875
+2019-09-22T13:38:09.818206+00:00 app[worker.1]: dividend                                                                     1.418
+2019-09-22T13:38:09.818209+00:00 app[worker.1]: divident_5_yr_avg                                                            1.258
+2019-09-22T13:38:09.818211+00:00 app[worker.1]: debt                                                                     5,700.71M
+2019-09-22T13:38:09.818213+00:00 app[worker.1]: long term debt_equity                                                       50.483
+2019-09-22T13:38:09.818215+00:00 app[worker.1]: enterpriseValue                                                         13,911.72M
+2019-09-22T13:38:09.818217+00:00 app[worker.1]: assets                                                                  20,885.69M
+2019-09-22T13:38:09.818219+00:00 app[worker.1]: cash                                                                     1,953.60M
+2019-09-22T13:38:09.818221+00:00 app[worker.1]: roe                                                                          5.801
+2019-09-22T13:38:09.818224+00:00 app[worker.1]: roa                                                                          3.157
+2019-09-22T13:38:09.818226+00:00 app[worker.1]: capEx                                                                     -201.13M
+2019-09-22T13:38:09.818228+00:00 app[worker.1]: EBIT                                                                             -
+2019-09-22T13:38:09.818230+00:00 app[worker.1]: revenue                                                                  3,401.72M
+2019-09-22T13:38:09.818233+00:00 app[worker.1]: operating_income                                                           904.58M
+2019-09-22T13:38:09.818235+00:00 app[worker.1]: operating_margin                                                            23.895
+2019-09-22T13:38:09.818237+00:00 app[worker.1]: netincome                                                                  615.13M
+2019-09-22T13:38:09.818240+00:00 app[worker.1]: net_profit_margin                                                           20.169
+2019-09-22T13:38:09.818242+00:00 app[worker.1]: revenue_per_share_5_yr_growth                                                5.631
+2019-09-22T13:38:09.818244+00:00 app[worker.1]: eps_per_share_5_yr_growth                                                   -4.510
+2019-09-22T13:38:09.818246+00:00 app[worker.1]: ebita                                                                            -
+2019-09-22T13:38:09.818248+00:00 app[worker.1]: industry                         Real Estate / Real Estate Development & Operat...
+2019-09-22T13:38:09.818331+00:00 app[worker.1]: Name: 21, dtype: object
+2019-09-22T13:38:09.818373+00:00 app[worker.1]: 50 0 21
+2019-09-22T13:38:09.826441+00:00 app[worker.1]: CityDev extracted:: 0:00:00.292522 mins
+2019-09-22T13:38:13.101976+00:00 app[worker.1]: click failed
+2019-09-22T13:38:28.174919+00:00 app[worker.1]: names                                                                     Rex Intl
+2019-09-22T13:38:28.174962+00:00 app[worker.1]: openPrice                                                                    0.086
+2019-09-22T13:38:28.174965+00:00 app[worker.1]: high_low                                                                     0.084
+2019-09-22T13:38:28.174967+00:00 app[worker.1]: close                                                                            -
+2019-09-22T13:38:28.174969+00:00 app[worker.1]: prevCloseDate                                                          20 Sep 2019
+2019-09-22T13:38:28.174971+00:00 app[worker.1]: marketCap                                                                  108.46M
+2019-09-22T13:38:28.174973+00:00 app[worker.1]: sharesOutstanding                                                            1.29B
+2019-09-22T13:38:28.174975+00:00 app[worker.1]: p_float                                                                     47.36%
+2019-09-22T13:38:28.174977+00:00 app[worker.1]: avgVolume                                                                  507.03M
+2019-09-22T13:38:28.174979+00:00 app[worker.1]: normalizedEPS                                                                -0.02
+2019-09-22T13:38:28.174981+00:00 app[worker.1]: mthvwap                                                                          -
+2019-09-22T13:38:28.174983+00:00 app[worker.1]: unadjVWAP                                                               SGD 0.0762
+2019-09-22T13:38:28.174985+00:00 app[worker.1]: adjVWAP                                                                 SGD 0.0762
+2019-09-22T13:38:28.174987+00:00 app[worker.1]: peratio                                                                      2.756
+2019-09-22T13:38:28.174989+00:00 app[worker.1]: price_Sales                                                                427.679
+2019-09-22T13:38:28.174991+00:00 app[worker.1]: price_CF                                                                     2.363
+2019-09-22T13:38:28.174993+00:00 app[worker.1]: pricebookvalue                                                               0.553
+2019-09-22T13:38:28.174996+00:00 app[worker.1]: dividend                                                                         -
+2019-09-22T13:38:28.174998+00:00 app[worker.1]: divident_5_yr_avg                                                                -
+2019-09-22T13:38:28.175000+00:00 app[worker.1]: debt                                                                       -53.85M
+2019-09-22T13:38:28.175002+00:00 app[worker.1]: long term debt_equity                                                            -
+2019-09-22T13:38:28.175005+00:00 app[worker.1]: enterpriseValue                                                             97.83M
+2019-09-22T13:38:28.175007+00:00 app[worker.1]: assets                                                                     208.90M
+2019-09-22T13:38:28.175009+00:00 app[worker.1]: cash                                                                        34.12M
+2019-09-22T13:38:28.175011+00:00 app[worker.1]: roe                                                                          0.962
+2019-09-22T13:38:28.175013+00:00 app[worker.1]: roa                                                                         16.445
+2019-09-22T13:38:28.175015+00:00 app[worker.1]: capEx                                                                      -35.95M
+2019-09-22T13:38:28.175017+00:00 app[worker.1]: EBIT                                                                             -
+2019-09-22T13:38:28.175019+00:00 app[worker.1]: revenue                                                                      0.25M
+2019-09-22T13:38:28.175021+00:00 app[worker.1]: operating_income                                                            14.04M
+2019-09-22T13:38:28.175023+00:00 app[worker.1]: operating_margin                                                        24,225.540
+2019-09-22T13:38:28.175025+00:00 app[worker.1]: netincome                                                                   39.35M
+2019-09-22T13:38:28.175027+00:00 app[worker.1]: net_profit_margin                                                       17,488.040
+2019-09-22T13:38:28.175030+00:00 app[worker.1]: revenue_per_share_5_yr_growth                                                    -
+2019-09-22T13:38:28.175032+00:00 app[worker.1]: eps_per_share_5_yr_growth                                                        -
+2019-09-22T13:38:28.175034+00:00 app[worker.1]: ebita                                                                            -
+2019-09-22T13:38:28.175036+00:00 app[worker.1]: industry                         Energy - Fossil Fuels / Oil & Gas Exploration ...
+2019-09-22T13:38:28.175116+00:00 app[worker.1]: Name: 22, dtype: object
+2019-09-22T13:38:28.175185+00:00 app[worker.1]: 50 0 22
+2019-09-22T13:38:28.184182+00:00 app[worker.1]: Rex Intl extracted:: 0:00:00.305948 mins
+2019-09-22T13:38:30.724793+00:00 app[worker.1]: click failed
+2019-09-22T13:39:05.826187+00:00 app[worker.1]: cash                                                        837.72M
+2019-09-22T13:39:05.826189+00:00 app[worker.1]: roe                                                          -3.121
+2019-09-22T13:39:05.826191+00:00 app[worker.1]: roa                                                          -0.409
+2019-09-22T13:39:05.826193+00:00 app[worker.1]: capEx                                                      -343.40M
+2019-09-22T13:39:05.826196+00:00 app[worker.1]: EBIT                                                              -
+2019-09-22T13:39:05.826198+00:00 app[worker.1]: revenue                                                   3,622.22M
+2019-09-22T13:39:05.826200+00:00 app[worker.1]: operating_income                                            -52.32M
+2019-09-22T13:39:05.826202+00:00 app[worker.1]: operating_margin                                             -0.459
+2019-09-22T13:39:05.826204+00:00 app[worker.1]: netincome                                                   -30.66M
+2019-09-22T13:39:05.826206+00:00 app[worker.1]: net_profit_margin                                            -0.963
+2019-09-22T13:39:05.826208+00:00 app[worker.1]: revenue_per_share_5_yr_growth                                -2.411
+2019-09-22T13:39:05.826211+00:00 app[worker.1]: eps_per_share_5_yr_growth                                         -
+2019-09-22T13:39:05.826213+00:00 app[worker.1]: ebita                                                             -
+2019-09-22T13:39:05.826215+00:00 app[worker.1]: industry                         Industrial Goods / Shipbuilding /
+2019-09-22T13:39:05.826296+00:00 app[worker.1]: Name: 24, dtype: object
+2019-09-22T13:39:05.826364+00:00 app[worker.1]: 50 0 24
+2019-09-22T13:39:05.833457+00:00 app[worker.1]: Sembcorp Marine extracted:: 0:00:00.318855 mins
+2019-09-22T13:39:08.016882+00:00 app[worker.1]: click failed
+2019-09-22T13:39:21.707546+00:00 app[worker.1]: names                                                                      JSH USD
+2019-09-22T13:39:21.707561+00:00 app[worker.1]: openPrice                                                               USD 31.650
+2019-09-22T13:39:21.707564+00:00 app[worker.1]: high_low                                                                USD 31.680
+2019-09-22T13:39:21.707566+00:00 app[worker.1]: close                                                                            -
+2019-09-22T13:39:21.707568+00:00 app[worker.1]: prevCloseDate                                                          20 Sep 2019
+2019-09-22T13:39:21.707571+00:00 app[worker.1]: marketCap                                                               35,104.04M
+2019-09-22T13:39:21.707573+00:00 app[worker.1]: sharesOutstanding                                                            1.11B
+2019-09-22T13:39:21.707575+00:00 app[worker.1]: p_float                                                                     15.75%
+2019-09-22T13:39:21.707578+00:00 app[worker.1]: avgVolume                                                                    4.39M
+2019-09-22T13:39:21.707582+00:00 app[worker.1]: normalizedEPS                                                                 3.18
+2019-09-22T13:39:21.707584+00:00 app[worker.1]: mthvwap                                                                          -
+2019-09-22T13:39:21.707586+00:00 app[worker.1]: unadjVWAP                                                             USD 35.35639
+2019-09-22T13:39:21.707588+00:00 app[worker.1]: adjVWAP                                                               USD 35.18187
+2019-09-22T13:39:21.707590+00:00 app[worker.1]: peratio                                                                      7.106
+2019-09-22T13:39:21.707592+00:00 app[worker.1]: price_Sales                                                                  1.059
+2019-09-22T13:39:21.707594+00:00 app[worker.1]: price_CF                                                                     5.172
+2019-09-22T13:39:21.707596+00:00 app[worker.1]: pricebookvalue                                                               1.000
+2019-09-22T13:39:21.707599+00:00 app[worker.1]: dividend                                                                     1.089
+2019-09-22T13:39:21.707601+00:00 app[worker.1]: divident_5_yr_avg                                                            0.886
+2019-09-22T13:39:21.707602+00:00 app[worker.1]: debt                                                                    13,939.00M
+2019-09-22T13:39:21.707604+00:00 app[worker.1]: long term debt_equity                                                       32.685
+2019-09-22T13:39:21.707605+00:00 app[worker.1]: enterpriseValue                                                         48,340.04M
+2019-09-22T13:39:21.707607+00:00 app[worker.1]: assets                                                                  88,533.00M
+2019-09-22T13:39:21.707609+00:00 app[worker.1]: cash                                                                     4,640.00M
+2019-09-22T13:39:21.707610+00:00 app[worker.1]: roe                                                                          5.862
+2019-09-22T13:39:21.707612+00:00 app[worker.1]: roa                                                                          5.175
+2019-09-22T13:39:21.707613+00:00 app[worker.1]: capEx                                                                   -1,289.00M
+2019-09-22T13:39:21.707615+00:00 app[worker.1]: EBIT                                                                             -
+2019-09-22T13:39:21.707616+00:00 app[worker.1]: revenue                                                                 33,154.00M
+2019-09-22T13:39:21.707618+00:00 app[worker.1]: operating_income                                                         4,210.00M
+2019-09-22T13:39:21.707620+00:00 app[worker.1]: operating_margin                                                            11.091
+2019-09-22T13:39:21.707621+00:00 app[worker.1]: netincome                                                                2,522.00M
+2019-09-22T13:39:21.707623+00:00 app[worker.1]: net_profit_margin                                                           14.053
+2019-09-22T13:39:21.707624+00:00 app[worker.1]: revenue_per_share_5_yr_growth                                                2.273
+2019-09-22T13:39:21.707625+00:00 app[worker.1]: eps_per_share_5_yr_growth                                                    2.681
+2019-09-22T13:39:21.707627+00:00 app[worker.1]: ebita                                                                            -
+2019-09-22T13:39:21.707628+00:00 app[worker.1]: industry                         Industrial Conglomerates / Industrial Conglome...
+2019-09-22T13:39:21.707636+00:00 app[worker.1]: Name: 25, dtype: object
+2019-09-22T13:39:21.707638+00:00 app[worker.1]: 50 0 25
+2019-09-22T13:39:21.711529+00:00 app[worker.1]: JSH USD extracted:: 0:00:00.264685 mins
+2019-09-22T13:39:23.837938+00:00 app[worker.1]: click failed
+2019-09-22T13:39:43.115996+00:00 app[worker.1]: names                                                              Raffles Medical
+2019-09-22T13:39:43.116011+00:00 app[worker.1]: openPrice                                                                    1.040
+2019-09-22T13:39:43.116014+00:00 app[worker.1]: high_low                                                                     1.020
+2019-09-22T13:39:43.116016+00:00 app[worker.1]: close                                                                            -
+2019-09-22T13:39:43.116018+00:00 app[worker.1]: prevCloseDate                                                          20 Sep 2019
+2019-09-22T13:39:43.116021+00:00 app[worker.1]: marketCap                                                                1,864.82M
+2019-09-22T13:39:43.116023+00:00 app[worker.1]: sharesOutstanding                                                            1.83B
+2019-09-22T13:39:43.116025+00:00 app[worker.1]: p_float                                                                     45.65%
+2019-09-22T13:39:43.116027+00:00 app[worker.1]: avgVolume                                                                   26.88M
+2019-09-22T13:39:43.116029+00:00 app[worker.1]: normalizedEPS                                                                 0.04
+2019-09-22T13:39:43.116031+00:00 app[worker.1]: mthvwap                                                                          -
+2019-09-22T13:39:43.116033+00:00 app[worker.1]: unadjVWAP                                                              SGD 1.02291
+2019-09-22T13:39:43.116035+00:00 app[worker.1]: adjVWAP                                                                SGD 1.02288
+2019-09-22T13:39:43.116037+00:00 app[worker.1]: peratio                                                                     27.717
+2019-09-22T13:39:43.116039+00:00 app[worker.1]: price_Sales                                                                  3.700
+2019-09-22T13:39:43.116041+00:00 app[worker.1]: price_CF                                                                    20.836
+2019-09-22T13:39:43.116043+00:00 app[worker.1]: pricebookvalue                                                               2.274
+2019-09-22T13:39:43.116045+00:00 app[worker.1]: dividend                                                                     2.451
+2019-09-22T13:39:43.116048+00:00 app[worker.1]: divident_5_yr_avg                                                            2.421
+2019-09-22T13:39:43.116071+00:00 app[worker.1]: debt                                                                        43.04M
+2019-09-22T13:39:43.116074+00:00 app[worker.1]: long term debt_equity                                                       12.141
+2019-09-22T13:39:43.116076+00:00 app[worker.1]: enterpriseValue                                                          1,875.34M
+2019-09-22T13:39:43.116078+00:00 app[worker.1]: assets                                                                   1,116.29M
+2019-09-22T13:39:43.116080+00:00 app[worker.1]: cash                                                                       105.98M
+2019-09-22T13:39:43.116082+00:00 app[worker.1]: roe                                                                          9.261
+2019-09-22T13:39:43.116085+00:00 app[worker.1]: roa                                                                          5.963
+2019-09-22T13:39:43.116088+00:00 app[worker.1]: capEx                                                                      -31.41M
+2019-09-22T13:39:43.116090+00:00 app[worker.1]: EBIT                                                                             -
+2019-09-22T13:39:43.116092+00:00 app[worker.1]: revenue                                                                    504.00M
+2019-09-22T13:39:43.116094+00:00 app[worker.1]: operating_income                                                            84.24M
+2019-09-22T13:39:43.116096+00:00 app[worker.1]: operating_margin                                                            15.847
+2019-09-22T13:39:43.116098+00:00 app[worker.1]: netincome                                                                   66.25M
+2019-09-22T13:39:43.116100+00:00 app[worker.1]: net_profit_margin                                                           13.181
+2019-09-22T13:39:43.116103+00:00 app[worker.1]: revenue_per_share_5_yr_growth                                                6.031
+2019-09-22T13:39:43.116105+00:00 app[worker.1]: eps_per_share_5_yr_growth                                                   -4.801
+2019-09-22T13:39:43.116107+00:00 app[worker.1]: ebita                                                                            -
+2019-09-22T13:39:43.116109+00:00 app[worker.1]: industry                         Healthcare Services / Healthcare Facilities & ...
+2019-09-22T13:39:43.116233+00:00 app[worker.1]: Name: 26, dtype: object
+2019-09-22T13:39:43.116353+00:00 app[worker.1]: 50 0 26
+2019-09-22T13:39:43.121667+00:00 app[worker.1]: Raffles Medical extracted:: 0:00:00.356814 mins
+2019-09-22T13:39:46.436359+00:00 app[worker.1]: click failed

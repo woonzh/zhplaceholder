@@ -7,11 +7,11 @@ import threading
 #    'params': 10
 #        }
 #
-#url='https://zhplaceholder.herokuapp.com/sgxWorker'
-#
-#result=requests.get(url)
-#ans=json.loads(result.text)
-#jobid=ans['answer']['result']
+url='https://zhplaceholder.herokuapp.com/sgxWorker'
+
+result=requests.get(url)
+ans=json.loads(result.text)
+jobid=ans['answer']['result']
 
 #url='https://zhplaceholder.herokuapp.com/workerResult'
 #params={

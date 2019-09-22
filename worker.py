@@ -17,7 +17,9 @@ listen = ['high', 'default', 'low']
 #redis_url = os.getenv('REDISTOGO_URL', 'redis://localhost:6379')
 redis_url=os.environ.get("REDIS_URL")
 
-conn = redis.from_url(redis_url)
+#conn = redis.from_url(redis_url)
+pool = redis.ConnectionPool(host=redis_url)
+conn = redis.Redis(connection_pool=pool)
 
 def timeConverter(dtVal, convert=True):
     if convert:
@@ -31,6 +33,18 @@ def standard_handler(job, exc_type, exc_value, traceback):
     print("error---:", error)
     db.editRow('jobs',['lastchecked', 'jobstatus'],[timeConverter(datetime.now()),error],'jobid', jobid)
 
+
+#def startWorker():
+#    global conn
+#    conn = redis.from_url(redis_url)
+#    with Connection(conn):
+#        worker = Worker(map(Queue, listen), exception_handlers=[standard_handler])
+#        worker.work()
+#
+#def stopWorker():
+#    global conn
+#    conn.close
+        
 if __name__ == '__main__':
     with Connection(conn):
         worker = Worker(map(Queue, listen), exception_handlers=[standard_handler])
