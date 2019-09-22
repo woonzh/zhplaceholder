@@ -11,7 +11,7 @@ from flask_restful import Resource, Api
 import json
 import testscraper as ts
 import orchestrator as orc
-import sgx
+#import sgx
 
 app = Flask(__name__)
 api = Api(app)
@@ -38,6 +38,19 @@ def sessioncheck():
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
 
+@app.route('/keepalive', methods=['GET', 'OPTIONS'])
+def keepAlive():
+    ret={}
+    if request.method == 'GET':
+        ret={
+            'answer':"yes"}
+            
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
+
 @app.route('/testWorker', methods=['GET', 'OPTIONS'])
 def workerCheck():
     ret={}
@@ -57,7 +70,7 @@ def workerCheck():
 def workerSGX():
     ret={}
     if request.method == 'GET':
-        result=orc.wc.queueFunc('sgx raw data', sgx.getFullDetails, None)
+        result=orc.wc.queueFunc('sgx raw data', orc.runSGXFull, None)
         ret={
             'answer':result}
             

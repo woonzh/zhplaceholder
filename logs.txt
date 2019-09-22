@@ -1598,3 +1598,103 @@
 2019-09-22T09:41:48+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.05 sample#load-avg-5m=0.065 sample#load-avg-15m=0.08 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12361172kB sample#memory-cached=1140552kB sample#memory-redis=321968bytes sample#hit-rate=0.33096 sample#evicted-keys=0
 2019-09-22T09:44:24+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.05 sample#load-avg-5m=0.06 sample#load-avg-15m=0.075 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12360884kB sample#memory-cached=1140556kB sample#memory-redis=321968bytes sample#hit-rate=0.33096 sample#evicted-keys=0
 2019-09-22T09:44:24+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.15 sample#load-avg-5m=0.1 sample#load-avg-15m=0.09 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12361552kB sample#memory-cached=1140556kB sample#memory-redis=321968bytes sample#hit-rate=0.33096 sample#evicted-keys=0
+2019-09-22T11:17:10.913950+00:00 app[worker.1]: prevCloseDate                                                          20 Sep 2019
+2019-09-22T11:17:10.913951+00:00 app[worker.1]: marketCap                                                                   43.12M
+2019-09-22T11:17:10.913953+00:00 app[worker.1]: sharesOutstanding                                                          128.73M
+2019-09-22T11:17:10.913955+00:00 app[worker.1]: p_float                                                                     31.76%
+2019-09-22T11:17:10.913956+00:00 app[worker.1]: avgVolume                                                                    1.85M
+2019-09-22T11:17:10.913958+00:00 app[worker.1]: normalizedEPS                                                                -0.01
+2019-09-22T11:17:10.913959+00:00 app[worker.1]: mthvwap                                                                          -
+2019-09-22T11:17:10.913961+00:00 app[worker.1]: unadjVWAP                                                              SGD 0.35044
+2019-09-22T11:17:10.913976+00:00 app[worker.1]: adjVWAP                                                                SGD 0.35044
+2019-09-22T11:17:10.913977+00:00 app[worker.1]: peratio                                                                          -
+2019-09-22T11:17:10.913979+00:00 app[worker.1]: price_Sales                                                                  6.228
+2019-09-22T11:17:10.913981+00:00 app[worker.1]: price_CF                                                                         -
+2019-09-22T11:17:10.913983+00:00 app[worker.1]: pricebookvalue                                                               3.525
+2019-09-22T11:17:10.913985+00:00 app[worker.1]: dividend                                                                         -
+2019-09-22T11:17:10.913987+00:00 app[worker.1]: divident_5_yr_avg                                                                -
+2019-09-22T11:17:10.913988+00:00 app[worker.1]: debt                                                                        -6.81M
+2019-09-22T11:17:10.913990+00:00 app[worker.1]: long term debt_equity                                                        5.559
+2019-09-22T11:17:10.913991+00:00 app[worker.1]: enterpriseValue                                                             36.91M
+2019-09-22T11:17:10.913993+00:00 app[worker.1]: assets                                                                      13.82M
+2019-09-22T11:17:10.913994+00:00 app[worker.1]: cash                                                                         7.20M
+2019-09-22T11:17:10.913996+00:00 app[worker.1]: roe                                                                         -7.499
+2019-09-22T11:17:10.913997+00:00 app[worker.1]: roa                                                                         -4.995
+2019-09-22T11:17:10.913999+00:00 app[worker.1]: capEx                                                                       -0.15M
+2019-09-22T11:17:10.914000+00:00 app[worker.1]: EBIT                                                                             -
+2019-09-22T11:17:10.914002+00:00 app[worker.1]: revenue                                                                      6.92M
+2019-09-22T11:17:10.914003+00:00 app[worker.1]: operating_income                                                            -0.61M
+2019-09-22T11:17:10.914004+00:00 app[worker.1]: operating_margin                                                           -10.976
+2019-09-22T11:17:10.914006+00:00 app[worker.1]: netincome                                                                   -0.76M
+2019-09-22T11:17:10.914007+00:00 app[worker.1]: net_profit_margin                                                          -10.933
+2019-09-22T11:17:10.914009+00:00 app[worker.1]: revenue_per_share_5_yr_growth                                              -34.360
+2019-09-22T11:17:10.914010+00:00 app[worker.1]: eps_per_share_5_yr_growth                                                        -
+2019-09-22T11:17:10.914012+00:00 app[worker.1]: ebita                                                                            -
+2019-09-22T11:17:10.914013+00:00 app[worker.1]: industry                         Industrial & Commercial Services / Commercial ...
+2019-09-22T11:17:10.914023+00:00 app[worker.1]: Name: 137, dtype: object
+2019-09-22T11:17:10.914024+00:00 app[worker.1]: 688 0 137
+2019-09-22T11:17:10.917455+00:00 app[worker.1]: A-Smart extracted:: 0:00:00.272919 mins
+2019-09-22T11:15:00+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.06 sample#load-avg-5m=0.095 sample#load-avg-15m=0.09 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12350824kB sample#memory-cached=1140712kB sample#memory-redis=324792bytes sample#hit-rate=0.33153 sample#evicted-keys=0
+2019-09-22T11:17:12.927688+00:00 app[worker.1]: click failed
+2019-09-22T11:17:28.658114+00:00 app[worker.1]: names                                                             Sunningdale Tech
+2019-09-22T11:17:28.658130+00:00 app[worker.1]: openPrice                                                                    1.230
+2019-09-22T11:17:28.658131+00:00 app[worker.1]: high_low                                                                     1.230
+2019-09-22T11:17:28.658133+00:00 app[worker.1]: close                                                                            -
+2019-09-22T11:17:28.658134+00:00 app[worker.1]: prevCloseDate                                                          20 Sep 2019
+2019-09-22T11:17:28.658136+00:00 app[worker.1]: marketCap                                                                  234.50M
+2019-09-22T11:17:28.658138+00:00 app[worker.1]: sharesOutstanding                                                          190.65M
+2019-09-22T11:17:28.658139+00:00 app[worker.1]: p_float                                                                     64.02%
+2019-09-22T11:17:28.658141+00:00 app[worker.1]: avgVolume                                                                    3.78M
+2019-09-22T11:17:28.658142+00:00 app[worker.1]: normalizedEPS                                                                 0.10
+2019-09-22T11:17:28.658144+00:00 app[worker.1]: mthvwap                                                                          -
+2019-09-22T11:17:28.658145+00:00 app[worker.1]: unadjVWAP                                                              SGD 1.33113
+2019-09-22T11:17:28.658147+00:00 app[worker.1]: adjVWAP                                                                SGD 1.33113
+2019-09-22T11:17:28.658148+00:00 app[worker.1]: peratio                                                                     13.341
+2019-09-22T11:17:28.658149+00:00 app[worker.1]: price_Sales                                                                  0.336
+2019-09-22T11:17:28.658151+00:00 app[worker.1]: price_CF                                                                     4.600
+2019-09-22T11:17:28.658152+00:00 app[worker.1]: pricebookvalue                                                               0.635
+2019-09-22T11:17:28.658154+00:00 app[worker.1]: dividend                                                                     6.504
+2019-09-22T11:17:28.658155+00:00 app[worker.1]: divident_5_yr_avg                                                            4.804
+2019-09-22T11:17:28.658156+00:00 app[worker.1]: debt                                                                         7.21M
+2019-09-22T11:17:28.658158+00:00 app[worker.1]: long term debt_equity                                                        6.152
+2019-09-22T11:17:28.658159+00:00 app[worker.1]: enterpriseValue                                                            255.47M
+2019-09-22T11:17:28.658161+00:00 app[worker.1]: assets                                                                     714.43M
+2019-09-22T11:17:28.658162+00:00 app[worker.1]: cash                                                                        88.75M
+2019-09-22T11:17:28.658163+00:00 app[worker.1]: roe                                                                          7.963
+2019-09-22T11:17:28.658165+00:00 app[worker.1]: roa                                                                          2.521
+2019-09-22T11:17:28.658166+00:00 app[worker.1]: capEx                                                                      -37.01M
+2019-09-22T11:17:28.658168+00:00 app[worker.1]: EBIT                                                                             -
+2019-09-22T11:17:28.658169+00:00 app[worker.1]: revenue                                                                    698.59M
+2019-09-22T11:17:28.658170+00:00 app[worker.1]: operating_income                                                            37.76M
+2019-09-22T11:17:28.658172+00:00 app[worker.1]: operating_margin                                                             3.677
+2019-09-22T11:17:28.658173+00:00 app[worker.1]: netincome                                                                   17.79M
+2019-09-22T11:17:28.658175+00:00 app[worker.1]: net_profit_margin                                                            2.546
+2019-09-22T11:17:28.658176+00:00 app[worker.1]: revenue_per_share_5_yr_growth                                                4.319
+2019-09-22T11:17:28.658177+00:00 app[worker.1]: eps_per_share_5_yr_growth                                                   12.023
+2019-09-22T11:17:28.658179+00:00 app[worker.1]: ebita                                                                            -
+2019-09-22T11:17:28.658180+00:00 app[worker.1]: industry                         Industrial Conglomerates / Industrial Conglome...
+2019-09-22T11:17:28.658187+00:00 app[worker.1]: Name: 138, dtype: object
+2019-09-22T11:17:28.658189+00:00 app[worker.1]: 688 0 138
+2019-09-22T11:17:28.661869+00:00 app[worker.1]: Sunningdale Tech extracted:: 0:00:00.295740 mins
+2019-09-22T11:17:30.897610+00:00 app[worker.1]: click failed
+2019-09-22T11:17:37.527824+00:00 heroku[web.1]: Idling
+2019-09-22T11:17:37.560599+00:00 heroku[web.1]: State changed from up to down
+2019-09-22T11:17:37.587797+00:00 heroku[worker.1]: Idling
+2019-09-22T11:17:37.595619+00:00 heroku[worker.1]: State changed from up to down
+2019-09-22T11:17:38.322421+00:00 app[worker.1]: 11:17:38 Warm shut down requested
+2019-09-22T11:17:38.330172+00:00 app[worker.1]: 11:17:38 Moving job to 'failed' queue (work-horse terminated unexpectedly; waitpid returned 15)
+2019-09-22T11:17:38.333773+00:00 app[worker.1]: 11:17:38 Stopping on request
+2019-09-22T11:17:38.312504+00:00 heroku[worker.1]: Stopping all processes with SIGTERM
+2019-09-22T11:17:38.460902+00:00 heroku[worker.1]: Process exited with status 0
+2019-09-22T11:17:38.837906+00:00 heroku[web.1]: Stopping all processes with SIGTERM
+2019-09-22T11:17:38.865715+00:00 app[web.1]: [2019-09-22 11:17:38 +0000] [10] [INFO] Worker exiting (pid: 10)
+2019-09-22T11:17:38.865811+00:00 app[web.1]: [2019-09-22 11:17:38 +0000] [4] [INFO] Handling signal: term
+2019-09-22T11:17:38.900898+00:00 app[web.1]: [2019-09-22 11:17:38 +0000] [11] [INFO] Worker exiting (pid: 11)
+2019-09-22T11:17:39.568687+00:00 app[web.1]: [2019-09-22 11:17:39 +0000] [4] [INFO] Shutting down: Master
+2019-09-22T11:17:39.688226+00:00 heroku[web.1]: Process exited with status 0
+2019-09-22T11:18:49+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.185 sample#load-avg-5m=0.115 sample#load-avg-15m=0.095 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12352104kB sample#memory-cached=1140712kB sample#memory-redis=323952bytes sample#hit-rate=0.33167 sample#evicted-keys=0
+2019-09-22T11:18:49+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.135 sample#load-avg-5m=0.13 sample#load-avg-15m=0.105 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12353988kB sample#memory-cached=1140724kB sample#memory-redis=323952bytes sample#hit-rate=0.33167 sample#evicted-keys=0
+2019-09-22T11:21:37+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.05 sample#load-avg-5m=0.105 sample#load-avg-15m=0.095 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12352484kB sample#memory-cached=1140724kB sample#memory-redis=323952bytes sample#hit-rate=0.33167 sample#evicted-keys=0
+2019-09-22T11:21:37+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.05 sample#load-avg-5m=0.085 sample#load-avg-15m=0.09 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12353584kB sample#memory-cached=1140728kB sample#memory-redis=323952bytes sample#hit-rate=0.33167 sample#evicted-keys=0
+2019-09-22T11:24:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.02 sample#load-avg-5m=0.07 sample#load-avg-15m=0.08 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12355600kB sample#memory-cached=1140728kB sample#memory-redis=323952bytes sample#hit-rate=0.33167 sample#evicted-keys=0
+2019-09-22T11:24:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.055 sample#load-avg-5m=0.075 sample#load-avg-15m=0.085 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664220kB sample#memory-free=12356684kB sample#memory-cached=1140732kB sample#memory-redis=323952bytes sample#hit-rate=0.33167 sample#evicted-keys=0

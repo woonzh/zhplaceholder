@@ -11,6 +11,10 @@ from rq.job import Job
 from worker import conn
 from datetime import datetime, timedelta
 import dbConnector as db
+from threading import Timer
+from threading import Barrier
+import requests
+import time
 
 class timeClass:
     def __init__(self):
@@ -39,6 +43,11 @@ class timeClass:
         self.history.loc[len(self.history)]=['end', now, split]
         
         print('total time taken: %s mins'%(str(split)))    
+    
+    def getCurTime(self):
+        now=datetime.now()
+        timeElapsed=(now-self.startTime)/60
+        return timeElapsed
 
 class workerClass:
     def __init__(self):
@@ -91,4 +100,29 @@ class workerClass:
             result['query']=db.editRow('jobs',['lastchecked', 'jobstatus'],[self.timeConverter(datetime.now()),result['status']],'jobid', jobId)
         
         return result
+    
+def pollFunc(pollTime):
+    timer=Timer(pollTime,pollFunc,[pollTime])
+    timer.start()
+    url='https://zhplaceholder.herokuapp.com/keepalive'
+    result=requests.get(url)
+    print("refreshed")
+    
+def actFunc():
+    print("test2")
         
+def runFunc(actFunc, pollFunc=pollFunc, pollTime=5*60):
+    pollFunc(pollTime)
+    actFunc()
+
+#runFunc(actFunc=actFunc,pollTime=5)
+
+#b = Barrier(2, timeout=3)
+#
+#def sleepCheck():
+#    time.sleep(3)
+#    print("slept")
+#
+#sleepCheck()
+#b.wait()
+#print("check")
