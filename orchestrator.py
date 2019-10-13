@@ -15,12 +15,7 @@ import util
 wc=workerClass()
 
 def runSGXFull(jobId=""):
-    params={
-        'index': 0,
-        'summaryBool':False, 
-        'host':'cloud', 
-        'intJobId': jobId
-            }
+    params=(0, False, 'cloud', jobId)
     util.runFunc(actFunc=sgx.getFullDetails, actFuncParams=params)
     
 #def testFunc():

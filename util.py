@@ -126,7 +126,7 @@ def actFunc(t=1234):
 def runFunc(actFunc, pollFunc=pollFunc, pollTime=5*60, actFuncParams=()):
     pollFunc(pollTime)
     if len(actFuncParams)>0:
-        actFunc(actFuncParams)
+        actFunc(*actFuncParams)
     else:
         actFunc()
 
