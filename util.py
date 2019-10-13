@@ -34,7 +34,7 @@ def durCalculator(start,end):
     diff=str(endTime-startTime)
     return diff
 
-def updateJobStatus(stat="Completed", intJobId):
+def updateJobStatus(intJobId, stat="Completed"):
     curTime=timeConverter()
     start=db.runquery("SELECT jobstart FROM joblist WHERE intjobid='%s'"%(intJobId), True)['result'][0][0]
     duration=durCalculator(start, curTime)
