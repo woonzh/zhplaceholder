@@ -314,6 +314,7 @@ def editRow(dbName, edColNames, edColVals, colName, colVal):
 #    
     return result
     
+#a=runquery("SELECT intjobid from joblist WHERE jobid ='%s'"%('test2'),True)
 
 #df=pd.read_csv('data/summary.csv')
 #df['testing']=([1]*len(df))

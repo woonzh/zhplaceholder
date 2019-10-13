@@ -15,6 +15,18 @@ from threading import Timer
 from threading import Barrier
 import requests
 import time
+import string
+import random
+
+def stringGenerator(length=15):
+    letters = string.ascii_lowercase
+    return ''.join(random.choice(letters) for i in range(length))
+
+def timeConverter(dtVal=datetime.now(), convert=True):
+    if convert:
+        dtVal=dtVal+timedelta(hours=8)
+    
+    return dtVal.strftime("%d/%m/%Y, %H:%M:%S")
 
 class timeClass:
     def __init__(self):
@@ -59,7 +71,7 @@ class workerClass:
         
         return dtVal.strftime("%d/%m/%Y, %H:%M:%S")
         
-    def queueFunc(self, jobName, func, params=None):
+    def queueFunc(self, jobName, func, params=None, intId=""):
         returnVal={
             'result':None,
             'error': None
@@ -70,7 +82,7 @@ class workerClass:
             else:
                 returnVal['result']=self.q.enqueue(func, params).get_id()
             
-            db.insertRow('jobs',[returnVal['result'], jobName, self.timeConverter(datetime.now()),"","","","",""])
+            db.insertRow('jobs',[returnVal['result'], jobName, self.timeConverter(datetime.now()),"","","","","", intId])
             
         except BaseException as e:
             returnVal['error']=e
@@ -108,14 +120,17 @@ def pollFunc(pollTime):
     result=requests.get(url)
     print("refreshed")
     
-def actFunc():
-    print("test2")
+def actFunc(t=1234):
+    print(t)
         
-def runFunc(actFunc, pollFunc=pollFunc, pollTime=5*60):
+def runFunc(actFunc, pollFunc=pollFunc, pollTime=5*60, actFuncParams=()):
     pollFunc(pollTime)
-    actFunc()
+    if len(actFuncParams)>0:
+        actFunc(actFuncParams)
+    else:
+        actFunc()
 
-#runFunc(actFunc=actFunc,pollTime=5)
+#runFunc(actFunc=actFunc,pollTime=5, actFuncParams=('err'))
 
 #b = Barrier(2, timeout=3)
 #

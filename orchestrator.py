@@ -14,8 +14,8 @@ import util
 
 wc=workerClass()
 
-def runSGXFull():
-    util.runFunc(sgx.getFullDetails)
+def runSGXFull(jobId=""):
+    util.runFunc(actFunc=sgx.getFullDetails, actFuncParams=(jobId))
     
 #def testFunc():
 #    r=10*3

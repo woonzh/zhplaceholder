@@ -11,6 +11,7 @@ from flask_restful import Resource, Api
 import json
 #import testscraper as ts
 import orchestrator as orc
+import util
 #import sgx
 
 app = Flask(__name__)
@@ -70,7 +71,8 @@ def workerCheck():
 def workerSGX():
     ret={}
     if request.method == 'GET':
-        result=orc.wc.queueFunc('sgx raw data', orc.runSGXFull, None)
+        intJobId=util.stringGenerator()
+        result=orc.wc.queueFunc('sgx raw data', orc.runSGXFull, (intJobId), intJobId)
         ret={
             'answer':result}
             

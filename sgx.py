@@ -11,6 +11,7 @@ import argparse
 import util
 
 import dbConnector as db
+import util
 #import analysis
 
 version='windows'
@@ -430,7 +431,7 @@ def extractSummary(fname):
     timec.getTimeSplit('summary extracted')
     return df, df2
 
-def getFullDetails(index=0, summaryBool=False, host=host):
+def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
     timec.startTimer()
     
     if summaryBool==False:
@@ -455,10 +456,12 @@ def getFullDetails(index=0, summaryBool=False, host=host):
             db.rewriteTable(dbName, df)
     
     
-#    df=df.loc[list(range(0,50))]
+    df=df.loc[list(range(0,1))]
     companyFullInfo=collateCompanyInfo(df, start=index, host=host)
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)
     timec.stopTime()
+    if intJobId != '':
+        result=db.editRow('jobs',['lastchecked', 'jobstatus'],[util.timeConverter(),'Completed'],'intjobid', intJobId)
 #    return df, companyFullInfo
 
 #a,b=getFullDetails(host='cloud')
