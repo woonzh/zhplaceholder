@@ -28,6 +28,18 @@ def timeConverter(dtVal=datetime.now(), convert=True):
     
     return dtVal.strftime("%d/%m/%Y, %H:%M:%S")
 
+def durCalculator(start,end):
+    startTime=datetime.strptime(start, "%d/%m/%Y, %H:%M:%S")
+    endTime=datetime.strptime(end, "%d/%m/%Y, %H:%M:%S")
+    diff=str(endTime-startTime)
+    return diff
+
+def updateJobStatus(status="complete", intJobId):
+    curTime=timeConverter()
+    start=db.runquery("SELECT jobstart FROM joblist WHERE intjobid='%s'"%(intJobId), True)['result'][0][0]
+    duration=durCalculator(start, curTime)
+    db.editRow('jobs',['lastchecked', 'jobstatus', 'jobend', 'duration'],[curTime,'Completed', curTime, duration],'intjobid', intJobId)
+
 class timeClass:
     def __init__(self):
         self.startTime=None
@@ -82,7 +94,7 @@ class workerClass:
             else:
                 returnVal['result']=self.q.enqueue(func, params).get_id()
             
-            db.insertRow('jobs',[returnVal['result'], jobName, self.timeConverter(datetime.now()),"","","","","", intId])
+            db.insertRow('jobs',[returnVal['result'], jobName, self.timeConverter(datetime.now()),"","",self.timeConverter(datetime.now()),"","", intId])
             
         except BaseException as e:
             returnVal['error']=e
