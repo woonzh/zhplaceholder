@@ -391,7 +391,7 @@ def collateCompanyInfo(comList, fname=[companyInfoFName], start=0, host=host, ba
         store=''
     
     uploadTrack=0
-    for i in range(start, len(comList)):
+    for i in range(int(start), int(len(comList))):
         name=comList.iloc[i,0]
         url=comList.iloc[i,4]
         companyinfo=getCompanyInfo(name, url)
@@ -457,6 +457,7 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
     
     
     df=df.loc[list(range(0,3))]
+    print(df)
     companyFullInfo=collateCompanyInfo(df, start=index, host=host)
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)
     timec.stopTime()
