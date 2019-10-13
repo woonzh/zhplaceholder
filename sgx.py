@@ -463,7 +463,7 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)
     timec.stopTime()
     if intJobId != '':
-        result=db.editRow('jobs',['lastchecked', 'jobstatus'],[util.timeConverter(),'Completed'],'intjobid', intJobId)
+        util.updateJobStatus(intJobId=intJobId)
 #    return df, companyFullInfo
 
 #a,b=getFullDetails(host='cloud')

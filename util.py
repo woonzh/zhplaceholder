@@ -34,11 +34,11 @@ def durCalculator(start,end):
     diff=str(endTime-startTime)
     return diff
 
-def updateJobStatus(status="complete", intJobId):
+def updateJobStatus(stat="Completed", intJobId):
     curTime=timeConverter()
     start=db.runquery("SELECT jobstart FROM joblist WHERE intjobid='%s'"%(intJobId), True)['result'][0][0]
     duration=durCalculator(start, curTime)
-    db.editRow('jobs',['lastchecked', 'jobstatus', 'jobend', 'duration'],[curTime,'Completed', curTime, duration],'intjobid', intJobId)
+    db.editRow('jobs',['lastchecked', 'jobstatus', 'jobend', 'duration'],[curTime,stat, curTime, duration],'intjobid', intJobId)
 
 class timeClass:
     def __init__(self):
