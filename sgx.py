@@ -456,7 +456,7 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
             db.rewriteTable(dbName, df)
     
     
-    df=df.loc[list(range(0,1))]
+    df=df.loc[list(range(0,3))]
     companyFullInfo=collateCompanyInfo(df, start=index, host=host)
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)
     timec.stopTime()
