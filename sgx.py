@@ -393,7 +393,8 @@ def collateCompanyInfo(comList, fname=[companyInfoFName], start=0, host=host, ba
     uploadTrack=0
     print("start:", start)
     print(comList)
-    for i in range(int(start), int(len(comList))):
+    print(len(comList))
+    for i in range(start, len(comList)):
         name=comList.iloc[i,0]
         url=comList.iloc[i,4]
         companyinfo=getCompanyInfo(name, url)
