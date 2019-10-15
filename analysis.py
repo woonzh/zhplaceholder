@@ -6,8 +6,6 @@ Created on Fri Feb 22 21:54:43 2019
 """
 
 import os
-import tensorflow as tf
-from tensorflow.contrib.tensorboard.plugins import projector
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
@@ -16,6 +14,7 @@ from sklearn.cluster import KMeans
 from sklearn.neighbors import LocalOutlierFactor
 import matplotlib.pyplot as plt
 import scipy.cluster.hierarchy as spc
+import dbConnector as db
 
 file='data/companyInfo.csv'
 newFile='data/companyInfo(cleaned).csv'
@@ -31,7 +30,7 @@ clf = LocalOutlierFactor(contamination=0.3)
 def replace(string, old, new):
     string.replace(old, new)
 
-def dfCleaner(df, cleanCol='prevCloseDate', exceptions=[]):
+def dfCleaner(df, cleanCol='prevclosedate', exceptions=[]):
     dfNew=df[df[cleanCol]!='-']
     dfDel=df[df[cleanCol]=='-']
     print('%s with empty values deleted.'%(len(dfDel)))
@@ -77,15 +76,15 @@ def dfCleaner(df, cleanCol='prevCloseDate', exceptions=[]):
     return df, dfDel, dfNew, summary
 
 def featuresEngineering(df, details):
-    eps=df['normalizedEPS']
-    price=df['openPrice']
+    eps=df['normalizedeps']
+    price=df['openprice']
     income=df['netincome']
     cash=df['cash']
     assets=df['assets']
     debt=df['debt']
-    enterpriseVal=df['enterpriseValue']
-    sharesOutstanding=df['sharesOutstanding']
-    floatv=[float(x.split('%')[0])/100 if x!='-' else 0 for x in list(df['float'])]
+    enterpriseVal=df['enterprisevalue']
+    sharesOutstanding=df['sharesoutstanding']
+    floatv=[float(x.split('%')[0])/100 if x!='-' else 0 for x in list(df['p_float'])]
     
     #new PEratio
 #    df['new PE ratio']=[x/(y/z) if (x!=0 and y!=0 and z!=0) else 0 for x, y,z in zip(price,income, sharesOutstanding)]
@@ -113,11 +112,8 @@ def featuresEngineering(df, details):
     df['normalized aquirer multiple']=[y/x if (x!=0 and y!=0) else 0 for x,y in zip(df['aquirer multiple'], price)]
     
     # get the % of shares traded
-    df['volume traded %']=[x/(z*y) if (x!=0 and y!=0) else 0 for x,y, z in zip(df['avgVolume'], sharesOutstanding, floatv)]
+    df['volume traded %']=[x/(z*y) if (x!=0 and y!=0) else 0 for x,y, z in zip(df['avgvolume'], sharesOutstanding, floatv)]
     
-    df=pd.merge(df, details[['names','address']], how='left',left_on='name',right_on='names')
-    
-    df=df.drop(['names'], axis=1)
     return df
 
 def removeNull(df, inclusions=[]):
@@ -166,17 +162,23 @@ def plotKMeans(df, clusters=1):
 
 #check infoName
 def cleanAndProcess(sumName=summaryFName, infoName=file, newFileName=newFile):
-    details=pd.read_csv(sumName)
-    df=pd.read_csv(infoName)
+    if type(sumName)==type('string'):
+        details=pd.read_csv(sumName)
+    else:
+        details=sumName
+        
+    if type(infoName)==type('string'):
+        df=pd.read_csv(infoName)
+    else:
+        df=infoName
     
-    dfMain, dfDel, dfCheck, summary=dfCleaner(df, exceptions=['name', 'prevCloseDate', 'float', 'industry'])
+    dfMain, dfDel, dfCheck, summary=dfCleaner(df, exceptions=['name', 'prevclosedate', 'p_float', 'industry'])
     dfNew=featuresEngineering(dfMain, details)
     
     dfNew.to_csv(newFileName, index=False)
-    dfNew=dfNew.set_index(dfNew['name'], drop=True)
     
-    dfCompare=dfNew[['name', 'address','openPrice', 'normalizedEPS', 'peratio', 'new PE ratio', 'netincome', 'operating_margin', 'net_profit_margin','aquirer multiple','normalized aquirer multiple', 'cash', 'assets', 'roe', 'new roe', 'roa', 'new roa', 'price/Sales', 'price/CF','long term debt/equity', 'revenue_per_share_5_yr_growth', 'eps_per_share_5_yr_growth']]
-    a=dfCompare[(dfCompare['new PE ratio']>0)&(dfCompare['openPrice']>0.2)]
+    dfCompare=dfNew[['names','openprice', 'normalizedeps', 'peratio', 'new PE ratio', 'netincome', 'operating_margin', 'net_profit_margin','aquirer multiple','normalized aquirer multiple', 'cash', 'assets', 'roe', 'new roe', 'roa', 'new roa', 'price_sales', 'price_cf','long_term_debt_equity', 'revenue_per_share_5_yr_growth', 'eps_per_share_5_yr_growth']]
+    a=dfCompare[(dfCompare['new PE ratio']>0)&(dfCompare['openprice']>0.2)]
     a['compare']=a['new PE ratio']-a['peratio']
     
     return dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a
@@ -213,8 +215,9 @@ def addToMatrix(df, a, b):
     
     return df
 
-def extractIndustries(fname=newFile):
-    df=pd.read_csv(fname)
+def extractIndustries(fname=newFile, df=None):
+    if df is None:
+        df=pd.read_csv(fname)
     industry=list(df['industry'])
     store={}
     dfStore=pd.DataFrame()
@@ -244,15 +247,16 @@ def extractIndustries(fname=newFile):
     
     return store, dfStore, clusters
 
-def filterData(fname=newFile, industry=[]):
+def filterData(fname=newFile, industry=[], df=None):
     stats={
         'Consumer':{
             'peratio':1,
-            'openPrice': 0.2,
+            'openprice': 0.2,
             'net_profit_margin': 8
                 }
             }
-    df=pd.read_csv(fname)
+    if df is None:
+        df=pd.read_csv(fname)
     industries=[str(x) for x in df['industry']]
     keepList=[]
     for count, val in enumerate(industries):
@@ -265,48 +269,26 @@ def filterData(fname=newFile, industry=[]):
 #    df=df[(df['peratio']>1)&(df['openPrice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
     return df
 
-if __name__ == "__main__":
-    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
+def extractFileFromDB(fname=file, dbName='rawData'):
+    df=db.extractTable(dbName)['result']
+    return df
+    
+def getFilteredResult(industry=[], cloud=True):
+    if cloud:
+        rawData=extractFileFromDB()
+        summary=extractFileFromDB(dbName='summary')
+    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summary, rawData, newFile)
+    df=filterData(industry=industry, df=dfNew)
+    return df
 
-industries, industriesDf, clusters=extractIndustries()
-a=filterData(industry=['Real Estate'])
-a.to_csv('to_explore.csv')
+#if __name__ == "__main__":
+#    pullFromDB=False
+#    if pullFromDB:
+#        df=extractFileFromDB()
+#        df.to_csv(file, index=False)
+#        
+#    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
 
-#df_pca = pcaFiles(industriesDf)
-#clusters.to_csv(metadata, sep='\t')
-#tf_data = tf.Variable(df_pca)
-#
-#with tf.Session() as sess:
-#    saver = tf.train.Saver([tf_data])
-#    sess.run(tf_data.initializer)
-#    saver.save(sess, filedir+'/tf_data.ckpt')
-#    config = projector.ProjectorConfig()
-#    embedding = config.embeddings.add()
-#    embedding.tensor_name = tf_data.name
-#    embedding.metadata_path = metadata
-#    projector.visualize_embeddings(tf.summary.FileWriter(filedir), config)
-
-#df_pca = pcaFiles(dfProcess)
-#
-#newdf2=removeOutlier(df_pca, df2)
-#newdfProcess=newdf2[['dividend', 'pricebookvalue','new PE ratio', 'margin', 'newevebita', 'roe']]
-#newdf2.to_csv()
-#
-#df_pca = pcaFiles(newdfProcess)
-#
-#plotKMeans(df_pca)
-#
-#compare=dfNew[['name','peratio', 'new PE ratio', 'enterpriseValue', 'EBIT','aquirer multiple', 'ebita', 'netincome', 'roe']]
-#compare=compare[(compare['aquirer multiple']!=0) & (compare['EBIT']>0)]
-
-#tf_data = tf.Variable(df_pca)
-#
-#with tf.Session() as sess:
-#    saver = tf.train.Saver([tf_data])
-#    sess.run(tf_data.initializer)
-#    saver.save(sess, filedir+'/tf_data.ckpt')
-#    config = projector.ProjectorConfig()
-#    embedding = config.embeddings.add()
-#    embedding.tensor_name = tf_data.name
-#    embedding.metadata_path = metadata
-#    projector.visualize_embeddings(tf.summary.FileWriter(filedir), config)
+#industries, industriesDf, clusters=extractIndustries()
+#a=filterData(industry=['Real Estate'])
+#a.to_csv('to_explore.csv')

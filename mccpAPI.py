@@ -10,9 +10,12 @@ from flask_cors import CORS
 from flask_restful import Resource, Api
 import json
 #import testscraper as ts
+#import sgx
+
+##Test disable
 import orchestrator as orc
 import util
-#import sgx
+import analysis
 
 app = Flask(__name__)
 api = Api(app)
@@ -45,6 +48,23 @@ def keepAlive():
     if request.method == 'GET':
         ret={
             'answer':"yes"}
+            
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
+    
+@app.route('/getFilterResult', methods=['GET', 'OPTIONS'])
+def filterResult():
+    ret={}
+    if request.method == 'GET':
+        industries = request.args.get("industries" ,type = str, default="") #split by ,
+        industries=list(filter(lambda x: x!='',[x.strip() for x in industries.split(',')]))
+        print(industries)
+        
+        ret={
+            'answer':analysis.getFilteredResult()}
             
         resp = flask.Response(json.dumps(ret))
         resp.headers['Access-Control-Allow-Origin'] = '*'

@@ -1,4 +1,4 @@
-names,last price,vol,val traded,address
+names,last_price,vol,val_traded,address
 DBS,24.390,"4,793.1",117.16,https://www2.sgx.com/securities/equities/D05
 UOB,24.650,"3,094.5",76.7,https://www2.sgx.com/securities/equities/U11
 SingTel,3.250,"17,839.9",57.9,https://www2.sgx.com/securities/equities/Z74
