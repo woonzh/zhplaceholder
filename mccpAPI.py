@@ -62,10 +62,11 @@ def filterResult():
     if request.method == 'GET':
         industries = request.args.get("industries" ,type = str, default="") #split by ,
         industries=list(filter(lambda x: x!='',[x.strip() for x in industries.split(',')]))
+        filters=request.args.get("industries" ,type = str, default="")
         print(industries)
         
         ret={
-            'answer':analysis.getFilteredResult().to_json(orient='split')}
+            'answer':analysis.getFilteredResult(industry=industries, filters=filters).to_json(orient='split')}
             
         resp = flask.Response(json.dumps(ret))
         resp.headers['Access-Control-Allow-Origin'] = '*'

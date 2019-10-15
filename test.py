@@ -4,8 +4,16 @@ import threading
 import pandas as pd
 
 url='https://zhplaceholder.herokuapp.com/getFilterResult'
-
-result=requests.get(url)
+filters={
+    'peratio':['>',1],
+    'openprice':['>',0.2],
+    'net_profit_margin':['>', 5],
+    'volume traded %':['>', 0.01]
+        }
+params={
+    'filters':filters
+        }
+result=requests.get(url, params)
 ans=json.loads(result.text)
 raw=ans['answer']
 test=json.loads(raw)
