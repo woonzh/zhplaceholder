@@ -247,7 +247,14 @@ def extractIndustries(fname=newFile, df=None):
     
     return store, dfStore, clusters
 
-def filterData(fname=newFile, industry=[], df=None):
+def filterData(fname=newFile, industry=[], df=None, filters=None):
+    if filters is None:
+        filters={
+            'peratio':['>',1],
+            'openprice':['>',0.2],
+            'net_profit_margin':['>', 5],
+            'volume traded %':['>', 0.01]
+                }
     stats={
         'Consumer':{
             'peratio':1,
@@ -268,29 +275,37 @@ def filterData(fname=newFile, industry=[], df=None):
                     keepList.append(count)
                     
         df=df.loc[keepList]
-    df=df[(df['peratio']>1)&(df['openprice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
+    for i in filters:
+        if filters[i][0]=='>':
+            df=df[df[i]>filters[i][1]]
+        if filters[i][0]=='<':
+            df=df[df[i]<filters[i][1]]
+        if filters[i][0]=='=':
+            df=df[df[i]==filters[i][1]]
+    
+#    df=df[(df['peratio']>1)&(df['openprice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
     return df
 
 def extractFileFromDB(fname=file, dbName='rawData'):
     df=db.extractTable(dbName)['result']
     return df
     
-def getFilteredResult(industry=[], cloud=True):
+def getFilteredResult(industry=[], cloud=True, filters=None):
     if cloud:
         rawData=extractFileFromDB()
         summary=extractFileFromDB(dbName='summary')
     dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summary, rawData, newFile)
-    df=filterData(industry=industry, df=dfNew)
+    df=filterData(industry=industry, df=dfNew, filters=None)
     return df
 
-#if __name__ == "__main__":
-#    pullFromDB=False
-#    if pullFromDB:
-#        df=extractFileFromDB()
-#        df.to_csv(file, index=False)
-#        
-#    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
+if __name__ == "__main__":
+    pullFromDB=False
+    if pullFromDB:
+        df=extractFileFromDB()
+        df.to_csv(file, index=False)
+        
+    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
 
 #industries, industriesDf, clusters=extractIndustries()
-#a=filterData(industry=['Real Estate'])
-#a.to_csv('to_explore.csv')
+#a=filterData(industry=[])
+#a=getFilteredResult()
