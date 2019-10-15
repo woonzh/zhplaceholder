@@ -266,7 +266,7 @@ def filterData(fname=newFile, industry=[], df=None):
                 keepList.append(count)
                 
     df=df.loc[keepList]
-    df=df[(df['peratio']>1)&(df['openPrice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
+    df=df[(df['peratio']>1)&(df['openprice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
     return df
 
 def extractFileFromDB(fname=file, dbName='rawData'):
