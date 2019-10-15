@@ -257,15 +257,17 @@ def filterData(fname=newFile, industry=[], df=None):
             }
     if df is None:
         df=pd.read_csv(fname)
-    industries=[str(x) for x in df['industry']]
-    keepList=[]
-    for count, val in enumerate(industries):
-        val=[x.strip() for x in val.split('/')]
-        for ind in industry:
-            if ind in val:
-                keepList.append(count)
-                
-    df=df.loc[keepList]
+        
+    if len(industry)>0:
+        industries=[str(x) for x in df['industry']]
+        keepList=[]
+        for count, val in enumerate(industries):
+            val=[x.strip() for x in val.split('/')]
+            for ind in industry:
+                if ind in val:
+                    keepList.append(count)
+                    
+        df=df.loc[keepList]
     df=df[(df['peratio']>1)&(df['openprice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
     return df
 
