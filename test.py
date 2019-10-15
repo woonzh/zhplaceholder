@@ -1,11 +1,15 @@
 import requests
 import json
 import threading
+import pandas as pd
 
-url='https://zhplaceholder.herokuapp.com/getFilterResult'
-
-result=requests.get(url)
-ans=json.loads(result.text)
+#url='https://zhplaceholder.herokuapp.com/getFilterResult'
+#
+#result=requests.get(url)
+#ans=json.loads(result.text)
+raw=ans['answer']
+test=json.loads(raw)
+df=pd.read_json(raw)
 #jobid=ans['answer']['result']
 
 #url='https://zhplaceholder.herokuapp.com/testWorker'

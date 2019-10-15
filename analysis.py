@@ -172,7 +172,7 @@ def cleanAndProcess(sumName=summaryFName, infoName=file, newFileName=newFile):
     else:
         df=infoName
     
-    dfMain, dfDel, dfCheck, summary=dfCleaner(df, exceptions=['name', 'prevclosedate', 'p_float', 'industry'])
+    dfMain, dfDel, dfCheck, summary=dfCleaner(df, exceptions=['names', 'prevclosedate', 'p_float', 'industry'])
     dfNew=featuresEngineering(dfMain, details)
     
     dfNew.to_csv(newFileName, index=False)
