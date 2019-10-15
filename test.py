@@ -2,16 +2,22 @@ import requests
 import json
 import threading
 
+url='https://zhplaceholder.herokuapp.com/getFilterResult'
+
+result=requests.get(url)
+ans=json.loads(result.text)
+#jobid=ans['answer']['result']
+
 #url='https://zhplaceholder.herokuapp.com/testWorker'
 #params={
 #    'params': 10
 #        }
 #
-url='https://zhplaceholder.herokuapp.com/sgxWorker'
-
-result=requests.get(url)
-ans=json.loads(result.text)
-jobid=ans['answer']['result']
+#url='https://zhplaceholder.herokuapp.com/sgxWorker'
+#
+#result=requests.get(url)
+#ans=json.loads(result.text)
+#jobid=ans['answer']['result']
 
 #url='https://zhplaceholder.herokuapp.com/workerResult'
 #params={
