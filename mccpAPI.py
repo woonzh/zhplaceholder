@@ -9,6 +9,7 @@ from flask import Flask, request, make_response, render_template, redirect
 from flask_cors import CORS
 from flask_restful import Resource, Api
 import json
+import pandas as pd
 #import testscraper as ts
 #import sgx
 
@@ -64,7 +65,7 @@ def filterResult():
         print(industries)
         
         ret={
-            'answer':analysis.getFilteredResult()}
+            'answer':analysis.getFilteredResult().to_json(orient='split')}
             
         resp = flask.Response(json.dumps(ret))
         resp.headers['Access-Control-Allow-Origin'] = '*'
