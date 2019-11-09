@@ -253,7 +253,7 @@ def filterData(fname=newFile, industry=[], df=None, filters=None):
             'peratio':['>',1],
             'openprice':['>',0.2],
             'net_profit_margin':['>', 5],
-            'volume traded %':['>', 0.01]
+            'volume traded %':['>', 0.00]
                 }
     stats={
         'Consumer':{
@@ -299,13 +299,15 @@ def getFilteredResult(industry=[], cloud=True, filters=None):
     return df
 
 if __name__ == "__main__":
-    pullFromDB=False
+    pullFromDB=True
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)
         
     dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
 
-#industries, industriesDf, clusters=extractIndustries()
-#a=filterData(industry=[])
+industries, industriesDf, clusters=extractIndustries()
+a=filterData(industry=[])
+
+#b=dfNew[dfNew['names']=='ISEC']
 #a=getFilteredResult()

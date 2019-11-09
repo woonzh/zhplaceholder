@@ -18,7 +18,8 @@ connList=None
 dbList={
     'summary': 'summary',
     'rawData': 'rawdata',
-    'jobs':'joblist'
+    'jobs':'joblist',
+    'friar':'friar'
     }
 
 def connectToDatabase():

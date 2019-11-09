@@ -11,12 +11,16 @@ from rq.job import Job
 from worker import conn
 from util import workerClass
 import util
+import test2
 
 wc=workerClass()
 
 def runSGXFull(jobId=""):
     params=(0, False, 'cloud', jobId)
     util.runFunc(actFunc=sgx.getFullDetails, actFuncParams=params)
+    
+def runFriar(jobId=""):
+    util.runFunc(actFunc=test2.runProg)
     
 #def testFunc():
 #    r=10*3

@@ -104,6 +104,21 @@ def workerSGX():
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
 
+@app.route('/friar', methods=['GET', 'OPTIONS'])
+def friar():
+    ret={}
+    if request.method == 'GET':
+        intJobId=util.stringGenerator()
+        result=orc.wc.queueFunc('friar', orc.runFriar, None, intJobId)
+        ret={
+            'answer':result}
+            
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
+
 @app.route('/workerResult', methods=['GET', 'OPTIONS'])
 def workerResult():
     ret={}
