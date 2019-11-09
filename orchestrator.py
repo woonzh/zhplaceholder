@@ -19,8 +19,8 @@ def runSGXFull(jobId=""):
     params=(0, False, 'cloud', jobId)
     util.runFunc(actFunc=sgx.getFullDetails, actFuncParams=params)
     
-def runFriar(mode=1):
-    params=(mode)
+def runFriar(mode=1, jobId=''):
+    params=(mode, jobId)
     util.runFunc(actFunc=test2.runProg, actFuncParams=params)
     
 #def testFunc():

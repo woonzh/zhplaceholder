@@ -80,6 +80,7 @@ def defShiftAlloc(mode=1):
     
     if mode==1:
         print("mode 1")
+#        model.Maximize(shiftAlloc[('2019-12-31', 'Adam', 'DO')] * shiftAlloc[('2019-12-31', 'Adam', 'DO')])
         model.Maximize(sum(shiftAlloc[(i, j, k)] for i in dates for j in nurses for k in shifts))
 
 def checkDate(dateVal, purpose=1):
@@ -279,7 +280,13 @@ def returnAns():
     df.to_csv(fname, index=True)
     return df
 
-def runProg(mode=1):
+def updateJobDone(jobId, elapsed):
+    cols=['duration']
+    ans=[str(elapsed)]
+    db.editRow('jobs',cols,ans,'intjobid',jobId)
+    
+    
+def runProg(mode=1, jobId=''):
     start=time.time()
     
     initModel()
@@ -301,7 +308,8 @@ def runProg(mode=1):
     
     print("ready to model at %s" %(str((time.time()-start)/60)))
     status=solver.Solve(model)
-    print("done at %s" %(str((time.time()-start)/60)))
+    elapsed=str((time.time()-start)/60)
+    print("done at %s" %(str(elapsed)))
     
     if status==cp_model.INFEASIBLE:
         print("infeasible")
@@ -315,6 +323,9 @@ def runProg(mode=1):
         print("Optimal")
         a=returnAns()
         writeAnsToDB()
+    
+    if jobId!='':
+        updateJobDone(jobId, elapsed)
 
 if __name__ == "__main__":
     runProg()
