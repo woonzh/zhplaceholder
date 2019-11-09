@@ -28,7 +28,10 @@ import pandas as pd
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #
 url='https://zhplaceholder.herokuapp.com/friar'
-result=requests.get(url)
+params={
+    'mode':1
+        }
+result=requests.get(url, params)
 ans=json.loads(result.text)
 jobid=ans['answer']['result']
 

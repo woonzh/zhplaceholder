@@ -109,7 +109,8 @@ def friar():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('friar', orc.runFriar, None, intJobId)
+        mode = request.args.get("mode" ,default=1)
+        result=orc.wc.queueFunc('friar', orc.runFriar, (mode), intJobId)
         ret={
             'answer':result}
             

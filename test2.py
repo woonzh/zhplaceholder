@@ -41,7 +41,7 @@ def initModel():
     global model, dates, test
     model=cp_model.CpModel()
             
-def defShiftAlloc():
+def defShiftAlloc(mode=1):
     global shiftAlloc, model
     for i in dates:
         for j in nurses:
@@ -49,34 +49,36 @@ def defShiftAlloc():
                 shiftAlloc[(i, j, k)]=model.NewBoolVar(i+"-"+str(j)+"-"+str(k))
             model.Add(sum(shiftAlloc[(i, j, p)] for p in shifts)==1)
     
-#    no afternoon shift after day off
-#    dateList=list(dates)
-#    dateList1=list(dates)[1:-1]
-##    dateList2=list(dates)[1:]
-#    aftSess=['A1','A2']
-#    allSess=['A1','A2','DO']
-#    model.Maximize(sum(shiftAlloc[(i, j, k)]*2 for i in dateList1 for j in nurses for k in allSess)+\
-#                   sum(shiftAlloc[(dateList[0], j, 'DO')] for j in nurses)+\
-#                   sum(shiftAlloc[(dateList[len(dateList)-2], j, k)] for j in nurses for k in aftSess))
+    if mode==2:
+    #    no afternoon shift after day off
+    #    dateList=list(dates)
+    #    dateList1=list(dates)[1:-1]
+    ##    dateList2=list(dates)[1:]
+    #    aftSess=['A1','A2']
+    #    allSess=['A1','A2','DO']
+    #    model.Maximize(sum(shiftAlloc[(i, j, k)]*2 for i in dateList1 for j in nurses for k in allSess)+\
+    #                   sum(shiftAlloc[(dateList[0], j, 'DO')] for j in nurses)+\
+    #                   sum(shiftAlloc[(dateList[len(dateList)-2], j, k)] for j in nurses for k in aftSess))
+        
+        #no consecutive 3 Aft shift
+    #    dateList3=list(dates)[:-2]
+    #    dateList4=list(dates)[1:-2]
+    #    dateList5=list(dates)[2:]
+    #    
+    #    model.Minimize(sum(shiftAlloc[(i, j, 'DO')] for i in dateList1 for j in nurses)+\
+    #                   sum(shiftAlloc[(i, j, k)] for i in dateList2 for j in nurses for k in aftSess)-\
+    #                   len(dateList1)+\
+    #                   sum(shiftAlloc[(i, j, k)] for i in dateList3 for j in nurses for k in aftSess)+\
+    #                   sum(shiftAlloc[(i, j, k)] for i in dateList4 for j in nurses for k in aftSess)+\
+    #                   sum(shiftAlloc[(i, j, k)] for i in dateList5 for j in nurses for k in aftSess)-\
+    #                   (2*len(dateList3)))
+        aftAfterOffLst, aftAfterOffCount=noAftAfterOff(2)
+    #    model.Minimize(sum(aftAfterOffLst)-aftAfterOffCount)
+        consecAftLst, consecAftCount=noConsecutiveAftShit(purpose=2)
+        model.Minimize(sum(aftAfterOffLst)-aftAfterOffCount+sum(consecAftLst)-consecAftCount)
     
-    #no consecutive 3 Aft shift
-#    dateList3=list(dates)[:-2]
-#    dateList4=list(dates)[1:-2]
-#    dateList5=list(dates)[2:]
-#    
-#    model.Minimize(sum(shiftAlloc[(i, j, 'DO')] for i in dateList1 for j in nurses)+\
-#                   sum(shiftAlloc[(i, j, k)] for i in dateList2 for j in nurses for k in aftSess)-\
-#                   len(dateList1)+\
-#                   sum(shiftAlloc[(i, j, k)] for i in dateList3 for j in nurses for k in aftSess)+\
-#                   sum(shiftAlloc[(i, j, k)] for i in dateList4 for j in nurses for k in aftSess)+\
-#                   sum(shiftAlloc[(i, j, k)] for i in dateList5 for j in nurses for k in aftSess)-\
-#                   (2*len(dateList3)))
-#    aftAfterOffLst, aftAfterOffCount=noAftAfterOff(2)
-#    model.Minimize(sum(aftAfterOffLst)-aftAfterOffCount)
-#    consecAftLst, consecAftCount=noConsecutiveAftShit(purpose=2)
-#    model.Minimize(sum(aftAfterOffLst)-aftAfterOffCount+sum(consecAftLst)-consecAftCount)
-            
-    model.Maximize(sum(shiftAlloc[(i, j, k)] for i in dates for j in nurses for k in shifts))
+    if mode==1:
+        model.Maximize(sum(shiftAlloc[(i, j, k)] for i in dates for j in nurses for k in shifts))
 
 def checkDate(dateVal, purpose=1):
     #check for holiday
@@ -151,7 +153,7 @@ def hoursPerWeek():
         for p in range(4):
             curDates=list(dates)[p*7:p*7+7]
 #            store=[calHours(x,y) for x in curDates for y in shifts]
-            model.Add(sum(shiftAlloc[(i,j,k)]*calHours(i,k) for i in curDates for k in shifts)>=44)
+            model.Add(sum(shiftAlloc[(i,j,k)]*calHours(i,k) for i in curDates for k in shifts)==44)
 
 def dayOff():
     for j in nurses:
