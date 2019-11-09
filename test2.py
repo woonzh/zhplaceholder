@@ -275,7 +275,7 @@ def returnAns():
     df.to_csv(fname, index=True)
     return df
 
-def runProg():
+def runProg(mode=1):
     start=time.time()
     
     initModel()
@@ -283,7 +283,7 @@ def runProg():
     defNurses()
     defShifts()
     
-    defShiftAlloc()
+    defShiftAlloc(mode)
     #publicHol()
     halfday()
     hoursPerWeek()
