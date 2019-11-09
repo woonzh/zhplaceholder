@@ -287,7 +287,7 @@ def updateJobDone(jobId, elapsed):
     
     
 def runProg(mode=1, jobId=''):
-    print("mode: %s"%(mode))
+    print("mode: %s"%str(mode))
     print("jobId: %s"%(jobId))
     start=time.time()
     
