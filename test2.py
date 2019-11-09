@@ -40,9 +40,11 @@ def defShifts():
 def initModel():
     global model, dates, test
     model=cp_model.CpModel()
+    print("init model")
             
 def defShiftAlloc(mode=1):
     global shiftAlloc, model
+    print("def shift Alloc")
     for i in dates:
         for j in nurses:
             for k in shifts:
