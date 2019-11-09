@@ -50,6 +50,7 @@ def defShiftAlloc(mode=1):
             model.Add(sum(shiftAlloc[(i, j, p)] for p in shifts)==1)
     
     if mode==2:
+        print ("mode 2")
     #    no afternoon shift after day off
     #    dateList=list(dates)
     #    dateList1=list(dates)[1:-1]
@@ -78,6 +79,7 @@ def defShiftAlloc(mode=1):
         model.Minimize(sum(aftAfterOffLst)-aftAfterOffCount+sum(consecAftLst)-consecAftCount)
     
     if mode==1:
+        print("mode 1")
         model.Maximize(sum(shiftAlloc[(i, j, k)] for i in dates for j in nurses for k in shifts))
 
 def checkDate(dateVal, purpose=1):
