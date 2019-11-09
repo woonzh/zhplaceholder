@@ -289,6 +289,16 @@ def updateJobDone(jobId, elapsed):
 def runProg(mode=1, jobId=''):
     print("mode: %s"%str(mode))
     print("jobId: %s"%(jobId))
+    
+    try:
+        jobId=mode[1]
+        mode=mode[0]
+    except:
+        mode=1
+        
+    print("mode: %s"%str(mode))
+    print("jobId: %s"%(jobId))
+    
     start=time.time()
     
     initModel()
