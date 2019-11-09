@@ -287,6 +287,8 @@ def updateJobDone(jobId, elapsed):
     
     
 def runProg(mode=1, jobId=''):
+    print("mode: %s"%(mode))
+    print("jobId: %s"%(jobId))
     start=time.time()
     
     initModel()
@@ -324,7 +326,6 @@ def runProg(mode=1, jobId=''):
         a=returnAns()
         writeAnsToDB()
     
-    print(jobId)
     if jobId!='':
         updateJobDone(jobId, elapsed)
 
