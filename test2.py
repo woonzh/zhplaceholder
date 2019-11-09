@@ -150,12 +150,16 @@ def calHours(dateVal, shift):
     else:
         return shifts[shift]['Work hours']
 
-def hoursPerWeek():
+def hoursPerWeek(mode=1):
     for j in nurses:
         for p in range(4):
             curDates=list(dates)[p*7:p*7+7]
 #            store=[calHours(x,y) for x in curDates for y in shifts]
-            model.Add(sum(shiftAlloc[(i,j,k)]*calHours(i,k) for i in curDates for k in shifts)==44)
+            if mode==1:
+                model.Add(sum(shiftAlloc[(i,j,k)]*calHours(i,k) for i in curDates for k in shifts)>=44)
+
+            if mode==2:
+                model.Add(sum(shiftAlloc[(i,j,k)]*calHours(i,k) for i in curDates for k in shifts)==44)
 
 def dayOff():
     for j in nurses:
@@ -286,7 +290,7 @@ def runProg(mode=1):
     defShiftAlloc(mode)
     #publicHol()
     halfday()
-    hoursPerWeek()
+    hoursPerWeek(mode)
     dayOff()
     aftSeniority()
     minNurse()
