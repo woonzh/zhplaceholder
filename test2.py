@@ -245,7 +245,7 @@ def noConsecutiveAftShit(days=3, purpose=1):
     
 def writeAnsToDB():
     colLst=['n1','n2','n3','n4','n5','n6','n7','n8','n9']
-    df=pd.DataFrame(index=colLst)
+    df=pd.DataFrame(index=list(dates))
     for count,j in enumerate(nurses):
         lst=[]
         for i in dates:
@@ -253,6 +253,8 @@ def writeAnsToDB():
                 if(solver.Value(shiftAlloc[(i,j,k)])==1):
                     lst.append(k)
         df[colLst[count]]=lst
+        
+#    return df
     
     db.rewriteTable('friar', df)
     
