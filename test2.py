@@ -324,6 +324,7 @@ def runProg(mode=1, jobId=''):
         a=returnAns()
         writeAnsToDB()
     
+    print(jobId)
     if jobId!='':
         updateJobDone(jobId, elapsed)
 

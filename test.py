@@ -29,7 +29,7 @@ import pandas as pd
 #
 url='https://zhplaceholder.herokuapp.com/friar'
 params={
-    'mode':2
+    'mode':1
         }
 result=requests.get(url, params)
 ans=json.loads(result.text)
