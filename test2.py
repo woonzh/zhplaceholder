@@ -294,7 +294,7 @@ def runProg(mode=1, jobId=''):
     
     try:
         jobId=mode[1]
-        mode=mode[0]
+        mode=int(mode[0])
     except:
         mode=1
         
