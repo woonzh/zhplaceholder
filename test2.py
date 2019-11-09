@@ -328,16 +328,16 @@ def runProg(mode=1, jobId=''):
     if status==cp_model.FEASIBLE:
         print("feasible")
         a=returnAns()
-        writeAnsToDB()
     if status==cp_model.MODEL_INVALID:
         print("Invalid")
     if status==cp_model.OPTIMAL:
         print("Optimal")
         a=returnAns()
-        writeAnsToDB()
     
     if jobId!='':
         updateJobDone(jobId, elapsed)
+        if status==cp_model.FEASIBLE or status==cp_model.OPTIMAL:
+            writeAnsToDB()
 
 if __name__ == "__main__":
-    runProg()
+    runProg((2,''))
