@@ -11,6 +11,49 @@ shiftAlloc={}
 fname='results.csv'
 solver=cp_model.CpSolver()
 
+class VarArrayAndObjectiveSolutionPrinter(cp_model.CpSolverSolutionCallback):
+    """Print intermediate solutions."""
+
+    def __init__(self, variables, df):
+        cp_model.CpSolverSolutionCallback.__init__(self)
+        self.__variables = variables
+        self.__solution_count = 0
+        self.__start_time = time.time()
+        self.__curObj=-1
+        self.__df=df
+        
+    def printCurSolution(self):
+        for v in self.__variables:
+            val=self.Value(v)
+            
+            if val==1:
+                dateval=v[0]
+                name=v[1]
+                shift=v[2]
+                horOff=list(self.__df).index(name)
+                vertOff=list(self.__df.index).index(dateval)
+                
+                self.__df.iloc[vertOff,horOff]=shift
+                
+        
+        print(self.__df)
+        db.rewriteTable('friar', self.__df)
+
+    def on_solution_callback(self):
+        """Called on each new solution."""
+        current_time = time.time()
+        conflicts=self.NumConflicts()
+        print("conflicts: %s" %(str(conflicts)))
+        if conflicts==0:
+            obj = self.ObjectiveValue()
+            print("objective: %s"%(str(obj)))
+            if obj<self.__curObj or self.__curObj==-1:
+                self.printCurSolution()
+                self.cur_Obj=obj
+
+    def solution_count(self):
+        return self.__solution_count
+
 def convertDfToDict(df, keyCol):
     store={}
     indexes=list(df.index)
@@ -82,7 +125,6 @@ def defShiftAlloc(mode=1):
     
     if mode==1:
         print("mode 1")
-#        model.Maximize(shiftAlloc[('2019-12-31', 'Adam', 'DO')] * shiftAlloc[('2019-12-31', 'Adam', 'DO')])
         model.Maximize(sum(shiftAlloc[(i, j, k)] for i in dates for j in nurses for k in shifts))
 
 def checkDate(dateVal, purpose=1):
@@ -255,7 +297,7 @@ def noConsecutiveAftShit(days=3, purpose=1):
         return lst, count
     
 def writeAnsToDB():
-    colLst=['n1','n2','n3','n4','n5','n6','n7','n8','n9']
+#    colLst=['n1','n2','n3','n4','n5','n6','n7','n8','n9']
     df=pd.DataFrame(index=list(dates))
     for count,j in enumerate(nurses):
         lst=[]
@@ -263,7 +305,7 @@ def writeAnsToDB():
             for k in shifts:
                 if(solver.Value(shiftAlloc[(i,j,k)])==1):
                     lst.append(k)
-        df[colLst[count]]=lst
+        df[j]=lst
         
 #    return df
     
@@ -321,7 +363,14 @@ def runProg(mode=1, jobId=''):
     #noConsecutiveAftShit()
     
     print("ready to model at %s" %(str((time.time()-start)/60)))
-    status=solver.Solve(model)
+#    status=solver.Solve(model)
+    df=pd.DataFrame(index=list(dates))
+    for i in nurses:
+        df[i]=['DO']*len(dates)
+        
+    solution_printer = VarArrayAndObjectiveSolutionPrinter(shiftAlloc, df)
+    status = solver.SolveWithSolutionCallback(model, solution_printer)
+    
     elapsed=str((time.time()-start)/60)
     print("done at %s" %(str(elapsed)))
     
@@ -338,8 +387,8 @@ def runProg(mode=1, jobId=''):
     
     if jobId!='':
         updateJobDone(jobId, elapsed)
-        if status==cp_model.FEASIBLE or status==cp_model.OPTIMAL:
-            writeAnsToDB()
+#        if status==cp_model.FEASIBLE or status==cp_model.OPTIMAL:
+#            writeAnsToDB()
 
 if __name__ == "__main__":
-    runProg((2,''))
+    runProg((1,'idhnyjkrlczqrxj'))
