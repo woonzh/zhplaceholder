@@ -22,7 +22,8 @@ class VarArrayAndObjectiveSolutionPrinter(cp_model.CpSolverSolutionCallback):
         self.__curObj=-1
         self.__df=df
         self.__curConflicts=0
-        self.__lastConflict=0
+        self.__lastConflict=100000000
+        self.__start=False
         
     def printCurSolution(self):
         for v in self.__variables:
@@ -50,18 +51,25 @@ class VarArrayAndObjectiveSolutionPrinter(cp_model.CpSolverSolutionCallback):
         
         print("solution count:%s  conflicts: %s  curConflicts:%s  bestConflict: %s  time:%s" %(str(self.solution_count()),\
                                                             str(conflicts), str(curConflict), str(self.__lastConflict), elapsed))
+        obj = self.ObjectiveValue()
+        print("objective: %s"%(str(obj)))
         
-        if (curConflict<=self.__lastConflict) or self.__curConflicts==0:
-            obj = self.ObjectiveValue()
-            print("objective: %s"%(str(obj)))
-            
-            if (self.__lastConflict==0 and obj<self.__curObj) or self.__curObj==-1:
+        if self.__start==False:
+            self.printCurSolution()
+            self.cur_Obj=obj
+            self.__start=True
+        else:
+            if curConflict==self.__lastConflict and obj<self.__curObj:
                 self.printCurSolution()
                 self.cur_Obj=obj
             
-            self.__curConflicts=conflicts
-            self.__lastConflict=curConflict
-
+            if curConflict<self.__lastConflict:
+                self.printCurSolution()
+                self.cur_Obj=obj
+                self.__lastConflict=curConflict
+            
+        self.__curConflicts=conflicts
+        
     def solution_count(self):
         return self.__solution_count
 
