@@ -105,6 +105,7 @@ def initModel():
     print("init model")
             
 def defShiftAlloc(mode=1):
+    #mode 1 is for testing
     global shiftAlloc, model
     print("def shift Alloc")
     for i in dates:
@@ -141,7 +142,7 @@ def defShiftAlloc(mode=1):
     #    model.Minimize(sum(aftAfterOffLst)-aftAfterOffCount)
         consecAftLst, consecAftCount=noConsecutiveAftShit(purpose=2)
         model.Minimize(sum(aftAfterOffLst)-aftAfterOffCount+sum(consecAftLst)-consecAftCount)
-    
+    # for testing
     if mode==1:
         print("mode 1")
         model.Maximize(sum(shiftAlloc[(i, j, k)] for i in dates for j in nurses for k in shifts))
@@ -378,9 +379,9 @@ def runProg(mode=1, jobId=''):
     aftSeniority()
     minNurse()
     
-    #sameShift(1)
-    #noAftAfterOff()
-    #noConsecutiveAftShit()
+#    sameShift(2)
+#    noAftAfterOff()
+    noConsecutiveAftShit()
     
     print("ready to model at %s" %(str((time.time()-start)/60)))
 #    status=solver.Solve(model)
