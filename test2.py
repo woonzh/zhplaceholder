@@ -21,6 +21,8 @@ class VarArrayAndObjectiveSolutionPrinter(cp_model.CpSolverSolutionCallback):
         self.__start_time = time.time()
         self.__curObj=-1
         self.__df=df
+        self.__curConflicts=0
+        self.__lastConflict=0
         
     def printCurSolution(self):
         for v in self.__variables:
@@ -43,8 +45,16 @@ class VarArrayAndObjectiveSolutionPrinter(cp_model.CpSolverSolutionCallback):
         """Called on each new solution."""
         current_time = time.time()
         conflicts=self.NumConflicts()
-        print("conflicts: %s" %(str(conflicts)))
-        if conflicts==0:
+        elapsed=str(round((current_time-self.__start_time)/60,2))
+        curConflict=conflicts-self.__curConflicts
+        
+        print("solution count:%s  conflicts: %s  curConflicts:%s  bestConflict: %s  time:%s" %(str(self.solution_count()),\
+                                                            str(conflicts), str(curConflict), str(self.__lastConflict), elapsed))
+        
+        if (curConflict<=self.__lastConflict) or self.__curConflicts==0:
+            self.__curConflicts=conflicts
+            self.__lastConflict=curConflict
+            
             obj = self.ObjectiveValue()
             print("objective: %s"%(str(obj)))
             if obj<self.__curObj or self.__curObj==-1:
@@ -298,6 +308,7 @@ def noConsecutiveAftShit(days=3, purpose=1):
     
 def writeAnsToDB():
 #    colLst=['n1','n2','n3','n4','n5','n6','n7','n8','n9']
+    print(solver.NumConflicts())
     df=pd.DataFrame(index=list(dates))
     for count,j in enumerate(nurses):
         lst=[]
@@ -387,8 +398,8 @@ def runProg(mode=1, jobId=''):
     
     if jobId!='':
         updateJobDone(jobId, elapsed)
-#        if status==cp_model.FEASIBLE or status==cp_model.OPTIMAL:
-#            writeAnsToDB()
+        if status==cp_model.FEASIBLE or status==cp_model.OPTIMAL:
+            writeAnsToDB()
 
 if __name__ == "__main__":
     runProg((1,'idhnyjkrlczqrxj'))
