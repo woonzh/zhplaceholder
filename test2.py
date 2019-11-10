@@ -52,14 +52,15 @@ class VarArrayAndObjectiveSolutionPrinter(cp_model.CpSolverSolutionCallback):
                                                             str(conflicts), str(curConflict), str(self.__lastConflict), elapsed))
         
         if (curConflict<=self.__lastConflict) or self.__curConflicts==0:
-            self.__curConflicts=conflicts
-            self.__lastConflict=curConflict
-            
             obj = self.ObjectiveValue()
             print("objective: %s"%(str(obj)))
-            if obj<self.__curObj or self.__curObj==-1:
+            
+            if (self.__lastConflict==0 and obj<self.__curObj) or self.__curObj==-1:
                 self.printCurSolution()
                 self.cur_Obj=obj
+            
+            self.__curConflicts=conflicts
+            self.__lastConflict=curConflict
 
     def solution_count(self):
         return self.__solution_count
