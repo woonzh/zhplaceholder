@@ -478,7 +478,7 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
 def updatePriceHist(df, companyFullInfo,updateDatabase=True):
     tdayDate=util.currentDate()
     if updateDatabase:
-        db.rewriteTable('rawData', companyFullInfo)
+        db.rewriteTable('rawData', companyFullInfo, True)
         result=db.extractTable('history')
         if result['error'] is None:
             hist=result['result']
@@ -498,7 +498,7 @@ def updatePriceHist(df, companyFullInfo,updateDatabase=True):
             hist['names']=df['names']
             hist[tdayDate]=df['last price']
         
-        db.rewriteTable('history', hist)
+        db.rewriteTable('history', hist, True)
     #update local csv
     t=1
         

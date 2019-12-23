@@ -165,7 +165,7 @@ def lstCompare(lst1, lst2):
     
     return True
 
-def rewriteTable(dbName, df):
+def rewriteTable(dbName, df, rewrite=False):
     tblResult=findTable(dbName)
     if tblResult['error'] is not None:
         return tblResult
