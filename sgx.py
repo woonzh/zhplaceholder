@@ -121,7 +121,10 @@ def crawlSummary():
             #9, 10, 12 13 14 15 16 694
             print(j)
             actionChains.click_and_hold(option).move_by_offset(0,16).release().perform()
-            time.sleep(0.2)
+            if host=='cloud':
+                time.sleep(1)
+            else:
+                time.sleep(0.2)
             
         #    new_height = driver.execute_script("return arguments[0].scrollHeight", cont)
         #    print(new_height)
