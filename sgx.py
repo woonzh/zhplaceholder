@@ -13,8 +13,8 @@ import util
 import dbConnector as db
 #import analysis
 
-version='windows'
-host='local'
+version='linux'
+host='cloud'
 batchUpload=10
 
 timec=util.timeClass()
@@ -533,7 +533,7 @@ def updateCompanyInfo(downloadData=True):
     
     updatePriceHist(df, companyFullInfo)
     
-    return df, companyFullInfo
+#    return df, companyFullInfo
     
 #    results=analysis.cleanAndProcess(infoName=companyUpdatedInfoFName)
     
