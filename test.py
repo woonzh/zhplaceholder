@@ -55,3 +55,6 @@ print(result.text)
 #timer=threading.Timer(3.0,test)
 #timer.start()
 #test2()
+
+#update summary also
+#solve update history and rawdata bug when doing price update

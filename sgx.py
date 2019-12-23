@@ -13,7 +13,7 @@ import util
 import dbConnector as db
 #import analysis
 
-version='linux'
+version='windows'
 host='cloud'
 batchUpload=10
 
@@ -480,10 +480,12 @@ def updatePriceHist(df, companyFullInfo,updateDatabase=True):
     if updateDatabase:
         db.rewriteTable('rawData', companyFullInfo, True)
         result=db.extractTable('history')
+        
         if result['error'] is None:
             hist=result['result']
+            
             temLst=['']*len(hist)
-            nameLst=hist['names']
+            nameLst=list(hist['names'])
             for count, name in enumerate(df['names']):
                 if name in nameLst:
                     rowCount=nameLst.index(name)
@@ -552,8 +554,9 @@ def updateCompanyInfo(downloadData=True):
 def closeDriver():
     driver.quit()
     
+#df,df2=extractSummary(summaryFName)
 #df, companyFullInfo= updateCompanyInfo()
-#updatePriceHist(df, companyFullInfo)
+#a,b=updatePriceHist(df, companyFullInfo)
 
 #if __name__ == "__main__":
 #    parser = argparse.ArgumentParser("simple_example")
