@@ -171,13 +171,16 @@ def rewriteTable(dbName, df, rewrite=False):
         return tblResult
     else:
         tblName=tblResult['result']
-        
-    result=getColumnName(tblName)
-    if len(result)==0:
-        recreateTable(dbName, df, cont=1)
     
-    if lstCompare(list(df), result) ==False:
+    if rewrite==True:
         recreateTable(dbName, df)
+    else:
+        result=getColumnName(tblName)
+        if len(result)==0:
+            recreateTable(dbName, df, cont=1)
+        
+        if lstCompare(list(df), result) ==False:
+            recreateTable(dbName, df)
         
     cols=str([x.replace(' ','_') for x in list(df)]).replace("'","")[1:-1]
     vals=[]
