@@ -117,6 +117,7 @@ def crawlSummary():
         #org 8
         # 8.5 694
         #9, 10, 12 13 14 15 16 694
+        print(j)
         actionChains.click_and_hold(option).move_by_offset(0,16).release().perform()
         time.sleep(0.2)
         
