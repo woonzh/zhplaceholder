@@ -26,14 +26,17 @@ import pandas as pd
 #        }
 #
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
+#result=requests.get(url)
+#ans=json.loads(result.text)
+#jobid=ans['answer']['result']
 #
-url='https://zhplaceholder.herokuapp.com/friar'
-params={
-    'mode':2
-        }
-result=requests.get(url, params)
-ans=json.loads(result.text)
-jobid=ans['answer']['result']
+#url='https://zhplaceholder.herokuapp.com/friar'
+#params={
+#    'mode':2
+#        }
+#result=requests.get(url, params)
+#ans=json.loads(result.text)
+#jobid=ans['answer']['result']
 
 url='https://zhplaceholder.herokuapp.com/workerResult'
 params={

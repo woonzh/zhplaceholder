@@ -6,7 +6,9 @@ Created on Sun Nov 26 18:28:55 2017
 """
 
 from apscheduler.schedulers.blocking import BlockingScheduler
-import master
+import orchestrator as orc
+import dbConnector as db
+import util
 
 sched = BlockingScheduler()
 
@@ -16,8 +18,8 @@ sched = BlockingScheduler()
 
 @sched.scheduled_job('cron', day_of_week='mon-fri', hour=10)
 def scheduled_job():
-    master.updateSGXPriceBackground()
-    
+    intJobId=util.stringGenerator()
+    result=orc.wc.queueFunc('sgx update', orc.runSGXUpdate, (intJobId), intJobId)
     print('success')
     
 #@sched.scheduled_job('interval', minute=5)

@@ -6,9 +6,12 @@ Created on Tue Apr 23 11:21:59 2019
 """
 
 import pandas as pd
-from rq import Queue
-from rq.job import Job
-from worker import conn
+try:
+    from rq import Queue
+    from rq.job import Job
+    from worker import conn
+except:
+    t=1
 from datetime import datetime, timedelta
 import dbConnector as db
 from threading import Timer
@@ -54,7 +57,10 @@ class timeClass:
     
     def getTimeSplit(self, event):
         now=datetime.now()
-        split=(now - self.curTime)/60
+        try:
+            split=(now - self.curTime)/60
+        except:
+            split='Nil'
         self.history.loc[len(self.history)]=[event, now, split]
         
         print(event + ': %s mins'%(str(split)))
@@ -141,6 +147,10 @@ def runFunc(actFunc, pollFunc=pollFunc, pollTime=5*60, actFuncParams=()):
         actFunc(*actFuncParams)
     else:
         actFunc()
+
+def currentDate():
+    now=datetime.now()
+    return now.strftime("%b_%d_%Y").lower()
 
 #runFunc(actFunc=actFunc,pollTime=5, actFuncParams=('err'))
 

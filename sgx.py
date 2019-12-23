@@ -11,14 +11,14 @@ import argparse
 import util
 
 import dbConnector as db
-import util
 #import analysis
 
 version='windows'
-host='cloud'
+host='local'
 batchUpload=10
 
 timec=util.timeClass()
+timec.startTimer()
 
 chromepath=""
 if version =='windows':
@@ -433,7 +433,6 @@ def extractSummary(fname):
     return df, df2
 
 def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
-    timec.startTimer()
     
     if summaryBool==False:
         if host=='cloud':
@@ -465,20 +464,33 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
     if intJobId != '':
         util.updateJobStatus(intJobId=intJobId)
 #    return df, companyFullInfo
-
-#a,b=getFullDetails(host='cloud')
     
-def updatePriceHist(df):
-    try:
-        priceHist=pd.read_csv(priceHistFName)
-        priceHist=pd.merge(priceHist, df[['names','last price']], how='outer', left_on='name', right_on='names')
-        priceHist[util.currentDate()]=priceHist['last price']
-        priceHist.drop(['last price', 'names'], axis=1, inplace=True)
-        priceHist.to_csv(priceHistFName, index=False)
-    except:
-        priceHist=df[['names', 'last price']]
-        priceHist.columns=['name',util.currentDate()]
-        priceHist.to_csv(priceHistFName, index=False)
+def updatePriceHist(df, companyFullInfo,updateDatabase=True):
+    tdayDate=util.currentDate()
+    if updateDatabase:
+        db.rewriteTable('rawData', companyFullInfo)
+        result=db.extractTable('history')
+        if result['error'] is None:
+            hist=result['result']
+            temLst=['']*len(hist)
+            nameLst=hist['names']
+            for count, name in enumerate(df['names']):
+                if name in nameLst:
+                    rowCount=nameLst.index(name)
+                    temLst[rowCount]=df['last price'][count]
+                else:
+                    hist.loc[len(hist)]=[name]+['']*(len(list(hist))-1)
+                    temLst.append(df['last price'][count])
+            hist[tdayDate]=temLst
+             
+        else:
+            hist=pd.DataFrame()
+            hist['names']=df['names']
+            hist[tdayDate]=df['last price']
+        
+        db.rewriteTable('history', hist)
+    #update local csv
+    t=1
         
 def isInt(val):
     try:
@@ -488,29 +500,40 @@ def isInt(val):
         return False
         
 def updateRatios(companyInfo):
-    ratios=[float(x)/float(y) if (isInt(x) and isInt(y)) else 1 for x, y in zip(companyInfo['last price'], companyInfo['openPrice'])]
-    colList=['marketCap','peratio','price/Sales','price/CF','price/Sales']
+    ratios=[float(x)/float(y) if (isInt(x) and isInt(y)) else 1 for x, y in zip(companyInfo['last price'], companyInfo['openprice'])]
+    colList=['marketcap','peratio','price_sales','price_cf','price_sales']
     for col in colList:
         companyInfo[col]=[float(x)*float(y) if (isInt(x)==True and isInt(y)==True) else x for x,y in zip(companyInfo[col], ratios)]
     
     return companyInfo
     
-def updateCompanyInfo():
+def updateCompanyInfo(downloadData=True):
     now=util.currentDate()
     
     df,df2=extractSummary(summaryFName)
     
-    companyFullInfo=pd.read_csv(companyInfoFName)
-    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price']], how='outer', left_on='name', right_on='names')
-#    return companyFullInfo
+    if downloadData:
+        result=db.extractTable('rawData')
+        if result is None:
+            companyFullInfo=result['result']
+        else:
+            companyFullInfo=pd.read_csv(companyInfoFName)
+    else:
+        companyFullInfo=pd.read_csv(companyInfoFName)
+        
+    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price']], how='outer', left_on='names', right_on='names')
     companyFullInfo=updateRatios(companyFullInfo)
-    companyFullInfo['openPrice']=companyFullInfo['last price']
-    companyFullInfo.drop(['last price', 'names'], axis=1, inplace=True)
-    companyFullInfo['prevCloseDate']=[now]*len(companyFullInfo)
+    companyFullInfo['openprice']=companyFullInfo['last price']
+    companyFullInfo.drop(['last price'], axis=1, inplace=True)
+    companyFullInfo['prevclosedate']=[now]*len(companyFullInfo)
+    print('done')
     
     companyFullInfo.to_csv(companyUpdatedInfoFName, index=False)
     companyFullInfo.to_csv(infoLogs+now+'.csv', index=False)
-    updatePriceHist(df)
+    
+    updatePriceHist(df, companyFullInfo)
+    
+    return df, companyFullInfo
     
 #    results=analysis.cleanAndProcess(infoName=companyUpdatedInfoFName)
     
@@ -518,31 +541,28 @@ def updateCompanyInfo():
 
 def closeDriver():
     driver.quit()
+    
+#df, companyFullInfo= updateCompanyInfo()
+#updatePriceHist(df, companyFullInfo)
 
-#vals=processData(df)
-#db.updateDB(vals)
-
-#test='https://www2.sgx.com/securities/equities/J36'
-#store=getCompanyInfo('test', test)
-
-#if __name__ == "__main__":
-#    parser = argparse.ArgumentParser("simple_example")
-#    parser.add_argument("--index", help="index to start.", type=int, default=0)
-#    parser.add_argument("--function", help="0 to crawl full summary and details. 1 to crawl summary for price update.", type=int, default=0)
-#    parser.add_argument("--summaryBool", help="0 to crawl re-crawl summary as well. 1 to not re-crawl summary", type=int, default=1)
-#    args = parser.parse_args()
-#    if args.function==0:
-#        print(args.index)
-#        getFullDetails(args.index, args.summaryBool==0)
-#    else:
-#        results=updateCompanyInfo()
-#        print('to just do summary')
-#        
-#        #a=updateCompanyInfo()
-#        #df,df2=extractSummary(summaryFName)
-#    
-#    driver.quit()
-#    
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser("simple_example")
+    parser.add_argument("--index", help="index to start.", type=int, default=0)
+    parser.add_argument("--function", help="0 to crawl full summary and details. 1 to crawl summary for price update.", type=int, default=0)
+    parser.add_argument("--summaryBool", help="0 to crawl re-crawl summary as well. 1 to not re-crawl summary", type=int, default=1)
+    args = parser.parse_args()
+    if args.function==0:
+        print(args.index)
+        getFullDetails(args.index, args.summaryBool==0)
+    else:
+        results=updateCompanyInfo()
+        print('to just do summary')
+        
+        #a=updateCompanyInfo()
+        #df,df2=extractSummary(summaryFName)
+    
+    driver.quit()
+    
 #else:
 #    index=0
 #    function=1

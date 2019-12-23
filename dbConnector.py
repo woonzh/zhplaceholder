@@ -19,7 +19,8 @@ dbList={
     'summary': 'summary',
     'rawData': 'rawdata',
     'jobs':'joblist',
-    'friar':'friar'
+    'friar':'friar',
+    'history':'history'
     }
 
 def connectToDatabase():
@@ -250,6 +251,9 @@ def findTable(dbName):
         result['error']='tbl Not found'
     
     return result
+
+def insertCol(dbName, colName, colType):
+    t=1
 
 def insertRow(dbName, lst):
     tblResult=findTable(dbName)

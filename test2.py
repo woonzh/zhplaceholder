@@ -145,7 +145,8 @@ def defShiftAlloc(mode=1):
     # for testing
     if mode==1:
         print("mode 1")
-        model.Maximize(sum(shiftAlloc[(i, j, k)] for i in dates for j in nurses for k in shifts))
+        shiftLst=['A1','A2','M1','M2','M3']
+        model.Minimize(sum(shiftAlloc[(i, j, k)] for i in dates for j in nurses for k in shiftLst))
 
 def checkDate(dateVal, purpose=1):
     #check for holiday
