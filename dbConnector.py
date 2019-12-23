@@ -154,6 +154,16 @@ def recreateTable(dbName, df, cont=0):
             recreateTable(tblName, df, cont=(ind+1))
         else:
             closeConn()
+            
+def lstCompare(lst1, lst2):
+    if len(lst1)!=len(lst2):
+        return False
+    
+    for i in lst1:
+        if i not in lst2:
+            return False
+    
+    return True
 
 def rewriteTable(dbName, df):
     tblResult=findTable(dbName)
@@ -165,6 +175,9 @@ def rewriteTable(dbName, df):
     result=getColumnName(tblName)
     if len(result)==0:
         recreateTable(dbName, df, cont=1)
+    
+    if lstCompare(list(df), result) ==False:
+        recreateTable(dbName, df)
         
     cols=str([x.replace(' ','_') for x in list(df)]).replace("'","")[1:-1]
     vals=[]

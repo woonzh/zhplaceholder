@@ -545,23 +545,23 @@ def closeDriver():
 #df, companyFullInfo= updateCompanyInfo()
 #updatePriceHist(df, companyFullInfo)
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser("simple_example")
-    parser.add_argument("--index", help="index to start.", type=int, default=0)
-    parser.add_argument("--function", help="0 to crawl full summary and details. 1 to crawl summary for price update.", type=int, default=0)
-    parser.add_argument("--summaryBool", help="0 to crawl re-crawl summary as well. 1 to not re-crawl summary", type=int, default=1)
-    args = parser.parse_args()
-    if args.function==0:
-        print(args.index)
-        getFullDetails(args.index, args.summaryBool==0)
-    else:
-        results=updateCompanyInfo()
-        print('to just do summary')
-        
-        #a=updateCompanyInfo()
-        #df,df2=extractSummary(summaryFName)
-    
-    driver.quit()
+#if __name__ == "__main__":
+#    parser = argparse.ArgumentParser("simple_example")
+#    parser.add_argument("--index", help="index to start.", type=int, default=0)
+#    parser.add_argument("--function", help="0 to crawl full summary and details. 1 to crawl summary for price update.", type=int, default=0)
+#    parser.add_argument("--summaryBool", help="0 to crawl re-crawl summary as well. 1 to not re-crawl summary", type=int, default=1)
+#    args = parser.parse_args()
+#    if args.function==0:
+#        print(args.index)
+#        getFullDetails(args.index, args.summaryBool==0)
+#    else:
+#        results=updateCompanyInfo()
+#        print('to just do summary')
+#        
+#        a=updateCompanyInfo()
+#        df,df2=extractSummary(summaryFName)
+#    
+#    driver.quit()
     
 #else:
 #    index=0
