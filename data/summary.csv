@@ -1,680 +1,677 @@
 names,last price,vol,val traded,address
-JMH USD,54.770,"1,522.2",82.61,https://www2.sgx.com/securities/equities/J36
-YZJ Shipbldg SGD,1.140,"57,145.1",65.19,https://www2.sgx.com/securities/equities/BS6
-DBS,25.890,825.2,21.35,https://www2.sgx.com/securities/equities/D05
-SingTel,3.340,"6,385",21.26,https://www2.sgx.com/securities/equities/Z74
-OCBC Bank,10.950,930.6,10.19,https://www2.sgx.com/securities/equities/O39
-UOB,26.340,317.6,8.37,https://www2.sgx.com/securities/equities/U11
-CapitaLand,3.730,"2,045.4",7.63,https://www2.sgx.com/securities/equities/C31
-Wilmar Intl,4.120,"1,775.2",7.27,https://www2.sgx.com/securities/equities/F34
-ComfortDelGro,2.350,"2,617.9",6.14,https://www2.sgx.com/securities/equities/C52
-CityDev,10.970,538,5.91,https://www2.sgx.com/securities/equities/C09
-Golden Agri-Res,0.210,"26,143.97",5.51,https://www2.sgx.com/securities/equities/E5H
-HongkongLand USD,5.650,808.7,4.58,https://www2.sgx.com/securities/equities/H78
-Keppel Corp,6.710,632.9,4.25,https://www2.sgx.com/securities/equities/BN4
-ST Engineering,3.920,999.7,3.92,https://www2.sgx.com/securities/equities/S63
-ThaiBev,0.885,"4,399.9",3.9,https://www2.sgx.com/securities/equities/Y92
-Broadway Ind,0.106,"36,546.5",3.84,https://www2.sgx.com/securities/equities/B69
-SGX,9.020,398.3,3.59,https://www2.sgx.com/securities/equities/S68
-SIA,9.050,375.5,3.4,https://www2.sgx.com/securities/equities/C6L
-JSH USD,31.170,109.9,3.39,https://www2.sgx.com/securities/equities/J37
-UOL,8.240,398.3,3.28,https://www2.sgx.com/securities/equities/U14
-Venture,15.960,199.8,3.2,https://www2.sgx.com/securities/equities/V03
-Rex Intl,0.188,"15,905",2.97,https://www2.sgx.com/securities/equities/5WH
-Raffles Medical,1.000,"2,961.8",2.94,https://www2.sgx.com/securities/equities/BSL
-AEM,1.850,"1,528.8",2.84,https://www2.sgx.com/securities/equities/AWX
-United Engineers,2.690,975.9,2.63,https://www2.sgx.com/securities/equities/U04
-SPH,2.170,"1,126.2",2.45,https://www2.sgx.com/securities/equities/T39
-Hi-P,1.460,"1,456.9",2.12,https://www2.sgx.com/securities/equities/H17
-BreadTalk,0.650,"3,230.9",2.09,https://www2.sgx.com/securities/equities/CTN
-SATS,5.070,408.3,2.06,https://www2.sgx.com/securities/equities/S58
-UMS,0.990,"2,055",2.03,https://www2.sgx.com/securities/equities/558
-Genting Sing,0.925,"1,888.3",1.75,https://www2.sgx.com/securities/equities/G13
-G Invacom,0.162,"8,871.1",1.42,https://www2.sgx.com/securities/equities/QS9
-Sembcorp Marine,1.270,859.9,1.09,https://www2.sgx.com/securities/equities/S51
-Jardine C&C,30.420,35.4,1.08,https://www2.sgx.com/securities/equities/C07
-DairyFarm USD,5.770,182.4,1.05,https://www2.sgx.com/securities/equities/D01
-StarHub,1.400,686.5,0.96,https://www2.sgx.com/securities/equities/CC3
-Citic Envirotech,0.545,"1,759.2",0.95,https://www2.sgx.com/securities/equities/CEE
-Interra Resource,0.082,"10,494",0.85,https://www2.sgx.com/securities/equities/5GI
-Yoma Strategic,0.340,"2,530.1",0.85,https://www2.sgx.com/securities/equities/Z59
-Vividthree,0.134,"5,970",0.8,https://www2.sgx.com/securities/equities/OMK
-Japfa,0.590,"1,306.3",0.77,https://www2.sgx.com/securities/equities/UD2
-Sunpower,0.575,"1,218.2",0.7,https://www2.sgx.com/securities/equities/5GD
-Sembcorp Ind,2.260,295.6,0.67,https://www2.sgx.com/securities/equities/U96
-COSCO SHP SG,0.315,"2,119.3",0.67,https://www2.sgx.com/securities/equities/F83
-Valuetronics,0.815,821.3,0.66,https://www2.sgx.com/securities/equities/BN2
-Yanlord Land,1.180,501.9,0.6,https://www2.sgx.com/securities/equities/Z25
-Fu Yu,0.250,"2,298.1",0.57,https://www2.sgx.com/securities/equities/F13
-Olam Intl,1.800,315.8,0.57,https://www2.sgx.com/securities/equities/O32
-SingPost,0.930,600.7,0.56,https://www2.sgx.com/securities/equities/S08
-Sheng Siong,1.230,443,0.54,https://www2.sgx.com/securities/equities/OV8
-First Resources,1.860,279.1,0.52,https://www2.sgx.com/securities/equities/EB5
-SIA Engineering,2.790,169,0.47,https://www2.sgx.com/securities/equities/S59
-Frencken,0.895,506.1,0.45,https://www2.sgx.com/securities/equities/E28
-SunMoonFood,0.048,"8,938",0.43,https://www2.sgx.com/securities/equities/AAJ
-Thomson Medical,0.059,"7,007.6",0.41,https://www2.sgx.com/securities/equities/A50
-Oxley,0.355,950,0.34,https://www2.sgx.com/securities/equities/5UX
-TEE Land,0.155,"1,903.5",0.29,https://www2.sgx.com/securities/equities/S9B
-Koufu,0.780,367.3,0.29,https://www2.sgx.com/securities/equities/VL6
-Haw Par,12.720,20.7,0.26,https://www2.sgx.com/securities/equities/H02
-Straits Trading,2.100,124.3,0.26,https://www2.sgx.com/securities/equities/S20
-Roxy-Pacific,0.380,676.7,0.26,https://www2.sgx.com/securities/equities/E8Z
-MM2 Asia,0.300,845.6,0.25,https://www2.sgx.com/securities/equities/1B0
-Spackman,0.014,"17,700.1",0.25,https://www2.sgx.com/securities/equities/40E
-Chasen,0.075,"3,019.2",0.23,https://www2.sgx.com/securities/equities/5NV
-Addvalue Tech,0.029,"7,870.5",0.23,https://www2.sgx.com/securities/equities/A31
-Silverlake Axis,0.400,548,0.22,https://www2.sgx.com/securities/equities/5CP
-OEL,0.008,"24,605.2",0.2,https://www2.sgx.com/securities/equities/584
-Sarine Tech,0.350,544.3,0.19,https://www2.sgx.com/securities/equities/U77
-Wing Tai,2.000,94.4,0.19,https://www2.sgx.com/securities/equities/W05
-Frasers Property,1.680,108.9,0.18,https://www2.sgx.com/securities/equities/TQ5
-UnUsUaL,0.285,636,0.18,https://www2.sgx.com/securities/equities/1D1
-Riverstone,0.915,194.5,0.18,https://www2.sgx.com/securities/equities/AP4
-Tritech,0.025,"5,635",0.14,https://www2.sgx.com/securities/equities/5G9
-Penguin Intl,0.730,165.5,0.12,https://www2.sgx.com/securities/equities/BTM
-Overseas Edu,0.360,322.6,0.12,https://www2.sgx.com/securities/equities/RQ1
-Synagie,0.104,"1,116.2",0.12,https://www2.sgx.com/securities/equities/V2Y
-Singapore-eDev,0.040,"2,735.5",0.11,https://www2.sgx.com/securities/equities/40V
-Procurri,0.485,222.1,0.11,https://www2.sgx.com/securities/equities/BVQ
-Metro,0.930,114.9,0.11,https://www2.sgx.com/securities/equities/M01
-ChinaSunsine,0.505,195.5,0.1,https://www2.sgx.com/securities/equities/QES
-China Aviation,1.270,76.2,0.1,https://www2.sgx.com/securities/equities/G92
-Medtecs Intl,0.036,"2,648",0.1,https://www2.sgx.com/securities/equities/546
-Delfi,1.000,92,0.09,https://www2.sgx.com/securities/equities/P34
-HRnetGroup,0.620,143.4,0.09,https://www2.sgx.com/securities/equities/CHZ
-China Everbright,0.315,270.2,0.09,https://www2.sgx.com/securities/equities/U9E
-GSS Energy,0.087,"1,996.3",0.18,https://www2.sgx.com/securities/equities/41F
-TEE Intl,0.055,"3,248.8",0.18,https://www2.sgx.com/securities/equities/M1Z
-Y Ventures,0.109,"1,590.4",0.17,https://www2.sgx.com/securities/equities/1F1
-BRC Asia,1.510,101.6,0.15,https://www2.sgx.com/securities/equities/BEC
-Bukit Sembawang,4.770,31.2,0.15,https://www2.sgx.com/securities/equities/B61
-Dyna-Mac,0.132,"1,132.4",0.15,https://www2.sgx.com/securities/equities/NO4
-CSE Global,0.540,262.9,0.14,https://www2.sgx.com/securities/equities/544
-Food Empire,0.640,220.5,0.14,https://www2.sgx.com/securities/equities/F03
-APAC Realty,0.490,175.2,0.09,https://www2.sgx.com/securities/equities/CLN
-OUE,1.490,57.8,0.09,https://www2.sgx.com/securities/equities/LJ3
-Hong Leong Fin,2.660,28.2,0.07,https://www2.sgx.com/securities/equities/S41
-Capital World,0.008,"9,220",0.07,https://www2.sgx.com/securities/equities/1D5
-SBS Transit,3.830,18.8,0.07,https://www2.sgx.com/securities/equities/S61
-Chip Eng Seng,0.615,114.5,0.07,https://www2.sgx.com/securities/equities/C29
-Lum Chang,0.360,192.9,0.07,https://www2.sgx.com/securities/equities/L19
-PropNex,0.520,128.4,0.07,https://www2.sgx.com/securities/equities/OYY
-Avarga,0.150,442.2,0.07,https://www2.sgx.com/securities/equities/U09
-Mermaid Maritime,0.098,675,0.07,https://www2.sgx.com/securities/equities/DU4
-Jadason,0.035,"1,878.9",0.06,https://www2.sgx.com/securities/equities/J03
-Wee Hur,0.215,301.2,0.06,https://www2.sgx.com/securities/equities/E3B
-SingTel 10,3.330,19.1,0.06,https://www2.sgx.com/securities/equities/Z77
-Boustead Proj,0.880,71.1,0.06,https://www2.sgx.com/securities/equities/AVM
-Halcyon Agri,0.455,136.8,0.06,https://www2.sgx.com/securities/equities/5VJ
-Trendlines,0.094,646,0.06,https://www2.sgx.com/securities/equities/42T
-Sunningdale Tech,1.310,46.9,0.06,https://www2.sgx.com/securities/equities/BHQ
-Creative,2.940,20.35,0.06,https://www2.sgx.com/securities/equities/C76
-GuocoLand,1.960,29.9,0.06,https://www2.sgx.com/securities/equities/F17
-TheHourGlass,0.810,71.7,0.06,https://www2.sgx.com/securities/equities/AGS
-Jasper Inv,0.005,"12,550",0.06,https://www2.sgx.com/securities/equities/FQ7
-CSC,0.024,"2,100",0.05,https://www2.sgx.com/securities/equities/C06
-Chuan Hup,0.235,195.5,0.05,https://www2.sgx.com/securities/equities/C33
-Ying Li Intl,0.108,427.3,0.05,https://www2.sgx.com/securities/equities/5DM
-Clearbridge,0.136,325.6,0.04,https://www2.sgx.com/securities/equities/1H3
-Uni-Asia Grp,0.740,57.9,0.04,https://www2.sgx.com/securities/equities/CHJ
-UIC,2.880,14.8,0.04,https://www2.sgx.com/securities/equities/U06
-UOI,7.010,6,0.04,https://www2.sgx.com/securities/equities/U13
-Singapore O&G,0.295,141.1,0.04,https://www2.sgx.com/securities/equities/1D8
-GS Hldg,0.710,56.6,0.04,https://www2.sgx.com/securities/equities/43A
-Kimly,0.240,164.9,0.04,https://www2.sgx.com/securities/equities/1D0
-A-Smart,0.340,113.1,0.04,https://www2.sgx.com/securities/equities/BQC
-Koh Bros,0.220,166.7,0.04,https://www2.sgx.com/securities/equities/K75
-Man Oriental USD,1.760,19.8,0.03,https://www2.sgx.com/securities/equities/M04
-Centurion,0.435,76.3,0.03,https://www2.sgx.com/securities/equities/OU8
-InnoTek,0.450,124.6,0.06,https://www2.sgx.com/securities/equities/M14
-Sen Yue,0.032,"1,748.1",0.06,https://www2.sgx.com/securities/equities/5BS
-Hotel Grand,1.300,42.2,0.05,https://www2.sgx.com/securities/equities/H18
-Baker Technology,0.380,143.7,0.05,https://www2.sgx.com/securities/equities/BTP
-Far East Orchard,1.170,42.4,0.05,https://www2.sgx.com/securities/equities/O10
-Sino Grandness,0.036,"1,342.4",0.05,https://www2.sgx.com/securities/equities/T4B
-AusGroup,0.033,"1,000",0.03,https://www2.sgx.com/securities/equities/OU8
-P5 Capital,0.031,"1,084",0.03,https://www2.sgx.com/securities/equities/5GJ
-Pacific Century,0.315,103.3,0.03,https://www2.sgx.com/securities/equities/5AI
-IHH,1.830,17.4,0.03,https://www2.sgx.com/securities/equities/P15
-Duty Free Intl,0.152,206,0.03,https://www2.sgx.com/securities/equities/Q0F
-Golden Energy,0.158,194.4,0.03,https://www2.sgx.com/securities/equities/5SO
-Jumbo,0.380,80.5,0.03,https://www2.sgx.com/securities/equities/AUE
-UOB Kay Hian,1.220,24.2,0.03,https://www2.sgx.com/securities/equities/42R
-Moya Asia,0.071,420,0.03,https://www2.sgx.com/securities/equities/P8Z
-Koh Eco,0.053,558,0.03,https://www2.sgx.com/securities/equities/U10
-GL,0.805,36.3,0.03,https://www2.sgx.com/securities/equities/5WE
-Zheneng Jinjiang,0.595,47.2,0.03,https://www2.sgx.com/securities/equities/5HV
-Bumitama Agri,0.755,37.2,0.03,https://www2.sgx.com/securities/equities/B16
-ASTI,0.029,932.6,0.03,https://www2.sgx.com/securities/equities/BWM
-Hotung Inv,1.740,15.9,0.03,https://www2.sgx.com/securities/equities/575
-Tiong Woon,0.530,51.5,0.03,https://www2.sgx.com/securities/equities/BLS
-Straco,0.680,40,0.03,https://www2.sgx.com/securities/equities/BQM
-Hong Leong Asia,0.665,40.3,0.03,https://www2.sgx.com/securities/equities/S85
-Jackspeed,0.130,198,0.03,https://www2.sgx.com/securities/equities/H22
-Hong Fok,0.790,32.9,0.03,https://www2.sgx.com/securities/equities/J17
-GSH,0.350,61.3,0.03,https://www2.sgx.com/securities/equities/H30
-JB Foods,0.630,30,0.02,https://www2.sgx.com/securities/equities/BEW
-JEP,0.225,80,0.02,https://www2.sgx.com/securities/equities/1J4
-SingReinsurance,0.285,62,0.02,https://www2.sgx.com/securities/equities/S49
-Hanwell,0.210,81.1,0.02,https://www2.sgx.com/securities/equities/DM0
-CosmoSteel,0.086,202,0.02,https://www2.sgx.com/securities/equities/B9S
-MarcoPolo Marine,0.018,950,0.02,https://www2.sgx.com/securities/equities/5LY
-OKP,0.200,79,0.02,https://www2.sgx.com/securities/equities/5CF
-Metal Component,0.031,501.1,0.02,https://www2.sgx.com/securities/equities/5DX
-SingHaiyi,0.090,160.9,0.01,https://www2.sgx.com/securities/equities/5H0
-Koyo Intl,0.070,200,0.01,https://www2.sgx.com/securities/equities/5OC
-SIIC Environment,0.265,51.9,0.01,https://www2.sgx.com/securities/equities/BHK
-IX Biopharma,0.205,65,0.01,https://www2.sgx.com/securities/equities/42C
-NSL,0.925,14.3,0.01,https://www2.sgx.com/securities/equities/N02
-MeGroup,0.220,59.8,0.01,https://www2.sgx.com/securities/equities/SJY
-Yeo Hiap Seng,0.945,12.6,0.01,https://www2.sgx.com/securities/equities/Y03
-LionGold,0.002,"11,423.4",0.01,https://www2.sgx.com/securities/equities/A78
-Stamford Land,0.500,50.3,0.03,https://www2.sgx.com/securities/equities/H07
-Sunright,0.515,41,0.02,https://www2.sgx.com/securities/equities/S71
-SingMedical,0.300,70,0.02,https://www2.sgx.com/securities/equities/5OT
-Elec & Eltek USD,1.570,12.4,0.02,https://www2.sgx.com/securities/equities/E16
-Hwa Hong,0.320,37.2,0.01,https://www2.sgx.com/securities/equities/H19
-Tianjin ZX USD,0.840,13.6,0.01,https://www2.sgx.com/securities/equities/T14
-Tuan Sing,0.320,35.2,0.01,https://www2.sgx.com/securities/equities/T24
-Great Eastern,21.650,0.5,0.01,https://www2.sgx.com/securities/equities/G07
-KingsmenCreative,0.430,25,0.01,https://www2.sgx.com/securities/equities/5MZ
-Koda,0.595,17.6,0.01,https://www2.sgx.com/securities/equities/BJZ
-VICOM,7.780,1.3,0.01,https://www2.sgx.com/securities/equities/V01
-Hock Lian Seng,0.370,25.5,0.01,https://www2.sgx.com/securities/equities/J2T
-IFAST,1.030,9,0.01,https://www2.sgx.com/securities/equities/AIY
-Micro-Mechanics,1.850,5,0.01,https://www2.sgx.com/securities/equities/5DD
-China Star Food,0.026,340.8,0.01,https://www2.sgx.com/securities/equities/42W
-Yongmao,0.910,10,0.01,https://www2.sgx.com/securities/equities/BKX
-SingShipping,0.290,30,0.01,https://www2.sgx.com/securities/equities/S19
-Yongnam,0.150,58,0.01,https://www2.sgx.com/securities/equities/AXB
-QAF,0.800,10.6,0.01,https://www2.sgx.com/securities/equities/Q01
-VibroPower,0.105,80,0.01,https://www2.sgx.com/securities/equities/BJD
-Cheung Woh,0.152,55,0.01,https://www2.sgx.com/securities/equities/C50
-CNMC Goldmine,0.245,34,0.01,https://www2.sgx.com/securities/equities/5TP
-AA,0.008,"1,000",0.01,https://www2.sgx.com/securities/equities/5GZ
-Intl Cement,0.022,350.4,0.01,https://www2.sgx.com/securities/equities/KUO
-Boustead,0.775,9.4,0.01,https://www2.sgx.com/securities/equities/F9D
-GP Industries,0.600,10,0.01,https://www2.sgx.com/securities/equities/G20
-Sinostar Pec,0.198,29.4,0.01,https://www2.sgx.com/securities/equities/C9Q
-EuroSports Gbl,0.190,30,0.01,https://www2.sgx.com/securities/equities/5G1
-NeraTel,0.265,20,0.01,https://www2.sgx.com/securities/equities/N01
-Datapulse Tech,0.210,24,0.01,https://www2.sgx.com/securities/equities/BKW
-KSH,0.430,11.1,0,https://www2.sgx.com/securities/equities/ER0
-Isetan,4.800,1,0,https://www2.sgx.com/securities/equities/I15
-AsiaMedic,0.012,397,0,https://www2.sgx.com/securities/equities/505
-Heeton,0.465,10,0,https://www2.sgx.com/securities/equities/5DP
-Vibrant Group,0.128,37,0,https://www2.sgx.com/securities/equities/BIP
-IFS Capital,0.225,20,0,https://www2.sgx.com/securities/equities/I49
-Neo,0.440,10,0,https://www2.sgx.com/securities/equities/5UJ
-Q&M Dental,0.475,9,0,https://www2.sgx.com/securities/equities/QC7
-Banyan Tree,0.410,10,0,https://www2.sgx.com/securities/equities/B58
-Civmec,0.380,10.6,0,https://www2.sgx.com/securities/equities/P9D
-Hiap Hoe,0.785,5,0,https://www2.sgx.com/securities/equities/5JK
-CWX Global,0.003,"1,959.9",0,https://www2.sgx.com/securities/equities/594
-Shinvest,2.350,3,0.01,https://www2.sgx.com/securities/equities/BJW
-PanUnited,0.355,20,0.01,https://www2.sgx.com/securities/equities/P52
-Aspen,0.075,88.6,0.01,https://www2.sgx.com/securities/equities/1F3
-Hiap Tong,0.064,59.9,0,https://www2.sgx.com/securities/equities/5PO
-Healthway Med,0.026,150,0,https://www2.sgx.com/securities/equities/5NG
-Fragrance,0.126,30,0,https://www2.sgx.com/securities/equities/F31
-MindChamps,0.460,8.1,0,https://www2.sgx.com/securities/equities/CNE
-GRP,0.176,20,0,https://www2.sgx.com/securities/equities/BLU
-China Haida,0.011,324,0,https://www2.sgx.com/securities/equities/C92
-The Place Hldg,0.017,187.9,0,https://www2.sgx.com/securities/equities/E27
-ASL Marine,0.030,100,0,https://www2.sgx.com/securities/equities/A04
-World Class Gbl,0.155,20,0,https://www2.sgx.com/securities/equities/1E6
-Asiatic,0.006,500,0,https://www2.sgx.com/securities/equities/5CR
-Ntegrator Intl,0.006,500,0,https://www2.sgx.com/securities/equities/5HC
-Thakral,0.490,6,0,https://www2.sgx.com/securities/equities/AWI
-Global Inv,0.142,20,0,https://www2.sgx.com/securities/equities/B73
-Sri Trang Agro,0.450,6.3,0,https://www2.sgx.com/securities/equities/NC2
-BlackGoldNatural,0.009,300,0,https://www2.sgx.com/securities/equities/41H
-RH PetroGas,0.027,100,0,https://www2.sgx.com/securities/equities/T13
-IPS Securex,0.040,65,0,https://www2.sgx.com/securities/equities/42N
-Japan Foods,0.425,6,0,https://www2.sgx.com/securities/equities/5OI
-ValueMax,0.315,8,0,https://www2.sgx.com/securities/equities/T6I
-Boldtek,0.083,30,0,https://www2.sgx.com/securities/equities/5VI
-ISEC,0.375,6.2,0,https://www2.sgx.com/securities/equities/40T
-Reclaims Global,0.310,7,0,https://www2.sgx.com/securities/equities/NEX
-Bund Center,0.545,3.8,0,https://www2.sgx.com/securities/equities/BTE
-Hatten Land,0.082,25,0,https://www2.sgx.com/securities/equities/PH0
-Union Gas,0.245,8.2,0,https://www2.sgx.com/securities/equities/1F2
-MDR,0.001,"2,000.2",0,https://www2.sgx.com/securities/equities/A27
-LY Corp,0.185,10,0,https://www2.sgx.com/securities/equities/1H8
-POSH,0.210,8.8,0,https://www2.sgx.com/securities/equities/U6C
-SamuderaShipping,0.150,12,0,https://www2.sgx.com/securities/equities/S56
-Jiutian Chemical,0.016,117.7,0,https://www2.sgx.com/securities/equities/C8R
-SEVAK,2.860,0.6,0,https://www2.sgx.com/securities/equities/BAI
-Second Chance,0.235,7,0,https://www2.sgx.com/securities/equities/528
-Karin Tech,0.320,5.1,0,https://www2.sgx.com/securities/equities/K29
-SP Corp,0.505,3.1,0,https://www2.sgx.com/securities/equities/AWE
-Tye Soon,0.102,15,0,https://www2.sgx.com/securities/equities/BFU
-HPL,3.690,0.4,0,https://www2.sgx.com/securities/equities/H15
-Geo Energy Res,0.145,10.1,0,https://www2.sgx.com/securities/equities/RE4
-Kori,0.280,5,0,https://www2.sgx.com/securities/equities/5VC
-Pavillon,0.018,71,0,https://www2.sgx.com/securities/equities/596
-Grand Venture,0.225,5,0,https://www2.sgx.com/securities/equities/JLB
-Cordlife,0.455,5,0,https://www2.sgx.com/securities/equities/P8A
-Miyoshi,0.031,70,0,https://www2.sgx.com/securities/equities/M03
-AliPictures HKD,1.320,0.8,0,https://www2.sgx.com/securities/equities/S91
-Sim Leisure,0.215,5,0,https://www2.sgx.com/securities/equities/URR
-Keong Hong,0.445,2.4,0,https://www2.sgx.com/securities/equities/5TT
-CDW,0.170,6,0,https://www2.sgx.com/securities/equities/BXE
-Maxi-Cash Fin,0.137,7.3,0,https://www2.sgx.com/securities/equities/5UF
-QT Vascular,0.002,350,0,https://www2.sgx.com/securities/equities/5I0
-ST Group Food,0.260,3.6,0,https://www2.sgx.com/securities/equities/DRX
-King Wan,0.084,10,0,https://www2.sgx.com/securities/equities/554
-Union Steel,0.330,2.5,0,https://www2.sgx.com/securities/equities/BLA
-RE&S Hldg,0.160,4.5,0,https://www2.sgx.com/securities/equities/1G1
-Indofood Agri,0.325,2.1,0,https://www2.sgx.com/securities/equities/5JS
-KimHeng Offshore,0.046,15,0,https://www2.sgx.com/securities/equities/5G2
-Sinarmas Land,0.245,2,0,https://www2.sgx.com/securities/equities/A26
-MFG Integration,0.087,5,0,https://www2.sgx.com/securities/equities/M11
-ETC Singapore,0.013,32.2,0,https://www2.sgx.com/securities/equities/1C0
-Nordic,0.280,1.4,0,https://www2.sgx.com/securities/equities/MR7
-IPC Corp,0.295,1.3,0,https://www2.sgx.com/securities/equities/AZA
-Old Chang Kee,0.730,0.5,0,https://www2.sgx.com/securities/equities/5ML
-Sin Ghee Huat,0.210,1.6,0,https://www2.sgx.com/securities/equities/B7K
-GCCP,0.005,65,0,https://www2.sgx.com/securities/equities/41T
-KOP,0.058,5,0,https://www2.sgx.com/securities/equities/5I1
-Hyphens Pharma,0.210,1.2,0,https://www2.sgx.com/securities/equities/1J5
-ISOTeam,0.240,1,0,https://www2.sgx.com/securities/equities/5WF
-KTMG,0.120,2,0,https://www2.sgx.com/securities/equities/XCF
-Medinex,0.265,0.9,0,https://www2.sgx.com/securities/equities/OTX
-United Food,0.055,4.2,0,https://www2.sgx.com/securities/equities/AZR
-Zhongmin Baihui,0.740,0.3,0,https://www2.sgx.com/securities/equities/5SR
-TCIL HK$,2.110,0.1,0,https://www2.sgx.com/securities/equities/T15
-Katrina,0.168,1,0,https://www2.sgx.com/securities/equities/1A0
-Sinjia Land,0.015,10,0,https://www2.sgx.com/securities/equities/5HH
-Sapphire,0.060,2.3,0,https://www2.sgx.com/securities/equities/BRD
-Eneco Energy,0.034,4,0,https://www2.sgx.com/securities/equities/R14
-SingMyanmar,0.044,3,0,https://www2.sgx.com/securities/equities/Y45
-Global Testing,0.500,0.2,0,https://www2.sgx.com/securities/equities/AYN
-CEI,0.970,0.1,0,https://www2.sgx.com/securities/equities/AVV
-AsiaPhos,0.009,9.7,0,https://www2.sgx.com/securities/equities/5WV
-Leader Env,0.007,10,0,https://www2.sgx.com/securities/equities/LS9
-Dutech,0.265,0.2,0,https://www2.sgx.com/securities/equities/CZ4
-MegaChem,0.300,0.2,0,https://www2.sgx.com/securities/equities/5DS
-Arion Ent,0.006,8.3,0,https://www2.sgx.com/securities/equities/YYB
-Matex Intl,0.012,25,0,https://www2.sgx.com/securities/equities/M15
-Abundance Intl,0.009,0,0,https://www2.sgx.com/securities/equities/541
-Informatics,0.041,0.9,0,https://www2.sgx.com/securities/equities/BOU
-Raffles Edu,0.088,0.4,0,https://www2.sgx.com/securities/equities/NR7
-Tai Sin Electric,0.325,0.1,0,https://www2.sgx.com/securities/equities/500
-Advanced,0.118,0.2,0,https://www2.sgx.com/securities/equities/BLZ
-TIH,0.225,0.1,0,https://www2.sgx.com/securities/equities/T55
-Heatec Jietong,0.039,0.5,0,https://www2.sgx.com/securities/equities/5OR
-Ocean Sky Intl,0.052,0.1,0,https://www2.sgx.com/securities/equities/1B6
-Anchor Resources,0.006,0.6,0,https://www2.sgx.com/securities/equities/43E
-Nippecraft,0.032,0.1,0,https://www2.sgx.com/securities/equities/N32
-ICP Ltd,0.008,0.2,0,https://www2.sgx.com/securities/equities/5I4
-CPH,0.006,0.2,0,https://www2.sgx.com/securities/equities/539
-KLW,0.004,0.2,0,https://www2.sgx.com/securities/equities/504
+DBS,25.880,"2,217.8",57.21,https://www2.sgx.com/securities/equities/D05
+UOB,26.410,"1,795.4",47.31,https://www2.sgx.com/securities/equities/U11
+YZJ Shipbldg SGD,1.120,"40,608.8",45.02,https://www2.sgx.com/securities/equities/BS6
+SingTel,3.370,"12,847.7",43.26,https://www2.sgx.com/securities/equities/Z74
+OCBC Bank,10.980,"3,284.7",35.83,https://www2.sgx.com/securities/equities/O39
+CapitaLand,3.750,"5,838.9",21.81,https://www2.sgx.com/securities/equities/C31
+SGX,8.860,"2,089.7",18.56,https://www2.sgx.com/securities/equities/S68
+Wilmar Intl,4.120,"3,635.2",14.99,https://www2.sgx.com/securities/equities/F34
+Keppel Corp,6.770,"2,014.4",13.58,https://www2.sgx.com/securities/equities/BN4
+AEM,2.020,"6,667",13.39,https://www2.sgx.com/securities/equities/AWX
+Genting Sing,0.920,"11,421.9",10.55,https://www2.sgx.com/securities/equities/G13
+SIA,9.040,"1,157.7",10.49,https://www2.sgx.com/securities/equities/C6L
+CityDev,10.950,900.4,9.85,https://www2.sgx.com/securities/equities/C09
+UOL,8.320,"1,079.5",8.98,https://www2.sgx.com/securities/equities/U14
+Mermaid Maritime,0.135,"61,052.8",8.56,https://www2.sgx.com/securities/equities/DU4
+ST Engineering,3.940,"2,064.3",8.14,https://www2.sgx.com/securities/equities/S63
+HongkongLand USD,5.750,"1,174",6.75,https://www2.sgx.com/securities/equities/H78
+JMH USD,55.600,113.8,6.33,https://www2.sgx.com/securities/equities/J36
+ComfortDelGro,2.380,"2,570.5",6.11,https://www2.sgx.com/securities/equities/C52
+Jardine C&C,30.100,193.4,5.84,https://www2.sgx.com/securities/equities/C07
+Venture,16.200,332.3,5.37,https://www2.sgx.com/securities/equities/V03
+Yanlord Land,1.210,"4,174.9",5.09,https://www2.sgx.com/securities/equities/Z25
+SATS,5.060,962.7,4.87,https://www2.sgx.com/securities/equities/S58
+UMS,1.030,"4,740.1",4.84,https://www2.sgx.com/securities/equities/558
+Golden Agri-Res,0.235,"20,461.6",4.82,https://www2.sgx.com/securities/equities/E5H
+Hi-P,1.530,"3,134.8",4.81,https://www2.sgx.com/securities/equities/H17
+DairyFarm USD,5.710,806.7,4.61,https://www2.sgx.com/securities/equities/D01
+SPH,2.180,"2,004.8",4.33,https://www2.sgx.com/securities/equities/T39
+Rex Intl,0.205,"20,567.3",4.11,https://www2.sgx.com/securities/equities/5WH
+Broadway Ind,0.133,"25,880.1",3.47,https://www2.sgx.com/securities/equities/B69
+Dyna-Mac,0.168,"19,294.5",3.27,https://www2.sgx.com/securities/equities/NO4
+Sembcorp Ind,2.290,"1,396.4",3.18,https://www2.sgx.com/securities/equities/U96
+First Resources,1.900,"1,639.6",3.11,https://www2.sgx.com/securities/equities/EB5
+JSH USD,30.650,94.4,2.91,https://www2.sgx.com/securities/equities/J37
+Y Ventures,0.124,"19,493.7",2.43,https://www2.sgx.com/securities/equities/1F1
+Synagie,0.129,"17,540.8",2.19,https://www2.sgx.com/securities/equities/V2Y
+ThaiBev,0.890,"2,223.7",1.99,https://www2.sgx.com/securities/equities/Y92
+G Invacom,0.165,"8,219",1.38,https://www2.sgx.com/securities/equities/QS9
+Sunpower,0.620,"2,024.7",1.24,https://www2.sgx.com/securities/equities/5GD
+GSS Energy,0.104,"11,926.7",1.24,https://www2.sgx.com/securities/equities/41F
+Valuetronics,0.820,"1,332.3",1.1,https://www2.sgx.com/securities/equities/BN2
+Yoma Strategic,0.350,"2,708.8",0.95,https://www2.sgx.com/securities/equities/Z59
+Frencken,0.925,"1,003.4",0.93,https://www2.sgx.com/securities/equities/E28
+Bumitama Agri,0.800,"1,113.6",0.89,https://www2.sgx.com/securities/equities/P8Z
+StarHub,1.420,588.7,0.84,https://www2.sgx.com/securities/equities/CC3
+Man Oriental USD,1.820,459.4,0.83,https://www2.sgx.com/securities/equities/M04
+Sembcorp Marine,1.320,626.1,0.82,https://www2.sgx.com/securities/equities/S51
+Thomson Medical,0.064,"11,289.1",0.73,https://www2.sgx.com/securities/equities/A50
+AusGroup,0.037,"18,275.8",0.68,https://www2.sgx.com/securities/equities/5GJ
+Interra Resource,0.085,"7,675.5",0.67,https://www2.sgx.com/securities/equities/5GI
+Raffles Medical,1.000,592.3,0.6,https://www2.sgx.com/securities/equities/BSL
+HPL,3.850,140.1,0.54,https://www2.sgx.com/securities/equities/H15
+Vividthree,0.134,"3,460",0.47,https://www2.sgx.com/securities/equities/OMK
+SingPost,0.935,470.4,0.44,https://www2.sgx.com/securities/equities/S08
+CNMC Goldmine,0.270,"1,614",0.44,https://www2.sgx.com/securities/equities/5TP
+COSCO SHP SG,0.330,"1,147.9",0.38,https://www2.sgx.com/securities/equities/F83
+SIA Engineering,2.820,132.8,0.38,https://www2.sgx.com/securities/equities/S59
+Haw Par,12.790,26.6,0.34,https://www2.sgx.com/securities/equities/H02
+Wing Tai,2.020,164.3,0.33,https://www2.sgx.com/securities/equities/W05
+Tritech,0.025,"12,716.3",0.33,https://www2.sgx.com/securities/equities/5G9
+Chasen,0.078,"3,997.2",0.32,https://www2.sgx.com/securities/equities/5NV
+BRC Asia,1.520,204.6,0.32,https://www2.sgx.com/securities/equities/BEC
+CSE Global,0.550,566.2,0.31,https://www2.sgx.com/securities/equities/544
+Olam Intl,1.810,160.2,0.29,https://www2.sgx.com/securities/equities/O32
+SHS,0.170,"1,708",0.28,https://www2.sgx.com/securities/equities/566
+Bukit Sembawang,4.680,55.4,0.26,https://www2.sgx.com/securities/equities/B61
+China Aviation,1.270,199.4,0.26,https://www2.sgx.com/securities/equities/G92
+Singapore-eDev,0.043,"5,932.6",0.25,https://www2.sgx.com/securities/equities/40V
+Addvalue Tech,0.031,"7,745",0.24,https://www2.sgx.com/securities/equities/A31
+Silverlake Axis,0.410,581.6,0.24,https://www2.sgx.com/securities/equities/5CP
+Creative,3.170,71.45,0.23,https://www2.sgx.com/securities/equities/C76
+Sarine Tech,0.370,612.5,0.23,https://www2.sgx.com/securities/equities/U77
+Trendlines,0.096,"1,666.5",0.16,https://www2.sgx.com/securities/equities/42T
+HL Global Ent,0.300,524.1,0.16,https://www2.sgx.com/securities/equities/AVX
+SIIC Environment,0.265,575.6,0.15,https://www2.sgx.com/securities/equities/BHK
+OUE,1.490,102.8,0.15,https://www2.sgx.com/securities/equities/LJ3
+SingTel 10,3.320,44.88,0.15,https://www2.sgx.com/securities/equities/Z77
+SunMoonFood,0.052,"2,853.6",0.15,https://www2.sgx.com/securities/equities/AAJ
+SBS Transit,3.830,37.4,0.14,https://www2.sgx.com/securities/equities/S61
+Sheng Siong,1.240,111.8,0.14,https://www2.sgx.com/securities/equities/OV8
+UnUsUaL,0.290,467.7,0.14,https://www2.sgx.com/securities/equities/1D1
+Food Empire,0.650,208.2,0.13,https://www2.sgx.com/securities/equities/F03
+Hotung Inv,1.840,71.2,0.13,https://www2.sgx.com/securities/equities/BLS
+IEV,0.055,"2,351.4",0.13,https://www2.sgx.com/securities/equities/5TN
+Fu Yu,0.255,486.8,0.12,https://www2.sgx.com/securities/equities/F13
+MarcoPolo Marine,0.019,"11,005",0.21,https://www2.sgx.com/securities/equities/5LY
+Delfi,1.000,206.9,0.21,https://www2.sgx.com/securities/equities/P34
+Moya Asia,0.074,"2,784",0.21,https://www2.sgx.com/securities/equities/5WE
+Japfa,0.580,337.2,0.2,https://www2.sgx.com/securities/equities/UD2
+United Engineers,2.690,71.1,0.19,https://www2.sgx.com/securities/equities/U04
+Sino Grandness,0.040,"4,328.8",0.17,https://www2.sgx.com/securities/equities/T4B
+BreadTalk,0.645,266.9,0.17,https://www2.sgx.com/securities/equities/CTN
+Ho Bee Land,2.410,66.8,0.16,https://www2.sgx.com/securities/equities/H13
+Jadason,0.037,"3,350.3",0.12,https://www2.sgx.com/securities/equities/J03
+TEE Intl,0.056,"2,200.9",0.12,https://www2.sgx.com/securities/equities/M1Z
+Straits Trading,2.120,58.3,0.12,https://www2.sgx.com/securities/equities/S20
+ASTI,0.043,"2,795.9",0.12,https://www2.sgx.com/securities/equities/575
+Thakral,0.490,235,0.12,https://www2.sgx.com/securities/equities/AWI
+MM2 Asia,0.305,381,0.11,https://www2.sgx.com/securities/equities/1B0
+Oxley,0.355,311,0.11,https://www2.sgx.com/securities/equities/5UX
+China Everbright,0.320,305.8,0.1,https://www2.sgx.com/securities/equities/U9E
+Great Eastern,21.750,4.5,0.1,https://www2.sgx.com/securities/equities/G07
+VICOM,7.730,11.7,0.09,https://www2.sgx.com/securities/equities/V01
+Frasers Property,1.690,51.9,0.09,https://www2.sgx.com/securities/equities/TQ5
+SingHaiyi,0.093,945.3,0.09,https://www2.sgx.com/securities/equities/5H0
+Koh Eco,0.054,"1,587.8",0.09,https://www2.sgx.com/securities/equities/5HV
+Riverstone,0.925,80.6,0.07,https://www2.sgx.com/securities/equities/AP4
+Tuan Sing,0.330,221.3,0.07,https://www2.sgx.com/securities/equities/T24
+Sunningdale Tech,1.330,54.9,0.07,https://www2.sgx.com/securities/equities/BHQ
+ChinaSunsine,0.515,138.9,0.07,https://www2.sgx.com/securities/equities/QES
+Zheneng Jinjiang,0.600,118.9,0.07,https://www2.sgx.com/securities/equities/BWM
+A-Smart,0.370,199.6,0.07,https://www2.sgx.com/securities/equities/BQC
+ISDN,0.230,303.5,0.07,https://www2.sgx.com/securities/equities/I07
+Uni-Asia Grp,0.740,68.4,0.05,https://www2.sgx.com/securities/equities/CHJ
+GL,0.805,62.4,0.05,https://www2.sgx.com/securities/equities/B16
+JEP,0.230,217.5,0.05,https://www2.sgx.com/securities/equities/1J4
+Spackman,0.015,"3,100",0.05,https://www2.sgx.com/securities/equities/40E
+Overseas Edu,0.370,130,0.05,https://www2.sgx.com/securities/equities/RQ1
+A-Sonic Aero,0.445,107,0.05,https://www2.sgx.com/securities/equities/BTJ
+Clearbridge,0.138,340,0.05,https://www2.sgx.com/securities/equities/1H3
+Healthway Med,0.026,"1,757.6",0.05,https://www2.sgx.com/securities/equities/5NG
+UIC,2.870,15.3,0.04,https://www2.sgx.com/securities/equities/U06
+UOB Kay Hian,1.210,36.3,0.04,https://www2.sgx.com/securities/equities/U10
+Hong Leong Fin,2.670,16.2,0.04,https://www2.sgx.com/securities/equities/S41
+P5 Capital,0.031,"1,388.3",0.04,https://www2.sgx.com/securities/equities/5AI
+Koufu,0.770,54.4,0.04,https://www2.sgx.com/securities/equities/VL6
+IX Biopharma,0.225,182.7,0.04,https://www2.sgx.com/securities/equities/42C
+Grand Venture,0.265,260,0.07,https://www2.sgx.com/securities/equities/JLB
+Tianjin ZX USD,0.850,79.4,0.07,https://www2.sgx.com/securities/equities/T14
+Hong Leong Asia,0.670,97.3,0.07,https://www2.sgx.com/securities/equities/H22
+Metal Component,0.030,"1,970",0.06,https://www2.sgx.com/securities/equities/5DX
+Spindex Ind,0.970,57.1,0.06,https://www2.sgx.com/securities/equities/564
+Tiong Woon,0.525,99,0.05,https://www2.sgx.com/securities/equities/BQM
+PropNex,0.515,100,0.05,https://www2.sgx.com/securities/equities/OYY
+Sunright,0.520,76.3,0.04,https://www2.sgx.com/securities/equities/S71
+Jumbo,0.380,101.5,0.04,https://www2.sgx.com/securities/equities/42R
+Duty Free Intl,0.159,220.1,0.03,https://www2.sgx.com/securities/equities/5SO
+Boustead Proj,0.920,37.3,0.03,https://www2.sgx.com/securities/equities/AVM
+Chip Eng Seng,0.620,54.9,0.03,https://www2.sgx.com/securities/equities/C29
+Medtecs Intl,0.037,870.1,0.03,https://www2.sgx.com/securities/equities/546
+Fragrance,0.134,246.3,0.03,https://www2.sgx.com/securities/equities/F31
+Lian Beng,0.520,61.6,0.03,https://www2.sgx.com/securities/equities/L03
+APAC Realty,0.490,63.1,0.03,https://www2.sgx.com/securities/equities/CLN
+Sen Yue,0.033,953,0.03,https://www2.sgx.com/securities/equities/5BS
+Amara,0.450,68,0.03,https://www2.sgx.com/securities/equities/A34
+Nam Cheong,0.008,"3,730.1",0.03,https://www2.sgx.com/securities/equities/N4E
+Halcyon Agri,0.450,66.1,0.03,https://www2.sgx.com/securities/equities/5VJ
+Pacific Century,0.320,93.1,0.03,https://www2.sgx.com/securities/equities/P15
+Ntegrator Intl,0.008,"3,500",0.03,https://www2.sgx.com/securities/equities/5HC
+Jiutian Chemical,0.017,"1,638",0.03,https://www2.sgx.com/securities/equities/C8R
+Perennial Hldgs,0.555,49.6,0.03,https://www2.sgx.com/securities/equities/40S
+Yongnam,0.150,183,0.03,https://www2.sgx.com/securities/equities/AXB
+Procurri,0.485,55.5,0.03,https://www2.sgx.com/securities/equities/BVQ
+Straco,0.675,39.8,0.03,https://www2.sgx.com/securities/equities/S85
+First Sponsor,1.390,16.5,0.02,https://www2.sgx.com/securities/equities/ADN
+Isetan,4.870,4.7,0.02,https://www2.sgx.com/securities/equities/I15
+Global Inv,0.142,150.8,0.02,https://www2.sgx.com/securities/equities/B73
+IFS Capital,0.230,90,0.02,https://www2.sgx.com/securities/equities/I49
+GS Hldg,0.735,28.5,0.02,https://www2.sgx.com/securities/equities/43A
+Winas,0.026,761,0.02,https://www2.sgx.com/securities/equities/5CN
+F & N,1.720,11.4,0.02,https://www2.sgx.com/securities/equities/F99
+Hock Lian Seng,0.375,52,0.02,https://www2.sgx.com/securities/equities/J2T
+Asiatic,0.008,"2,772",0.02,https://www2.sgx.com/securities/equities/5CR
+AEI,0.860,21.8,0.02,https://www2.sgx.com/securities/equities/AWG
+Penguin Intl,0.740,24.5,0.02,https://www2.sgx.com/securities/equities/BTM
+Boustead,0.755,23,0.02,https://www2.sgx.com/securities/equities/F9D
+Global Testing,0.495,33.8,0.02,https://www2.sgx.com/securities/equities/AYN
+BlackGoldNatural,0.010,"1,685",0.02,https://www2.sgx.com/securities/equities/41H
+GSH,0.350,47,0.02,https://www2.sgx.com/securities/equities/BDX
+GuocoLand,1.960,13,0.03,https://www2.sgx.com/securities/equities/F17
+TEE Land,0.158,155.4,0.02,https://www2.sgx.com/securities/equities/S9B
+Shinvest,2.430,10,0.02,https://www2.sgx.com/securities/equities/BJW
+Ying Li Intl,0.118,205.2,0.02,https://www2.sgx.com/securities/equities/5DM
+Singapore O&G,0.300,78.5,0.02,https://www2.sgx.com/securities/equities/1D8
+QAF,0.805,29.1,0.02,https://www2.sgx.com/securities/equities/Q01
+HRnetGroup,0.625,25.6,0.02,https://www2.sgx.com/securities/equities/CHZ
+Hanwell,0.215,71,0.02,https://www2.sgx.com/securities/equities/DM0
+Micro-Mechanics,1.850,8.2,0.02,https://www2.sgx.com/securities/equities/5DD
+Elec & Eltek USD,1.710,9,0.02,https://www2.sgx.com/securities/equities/E16
+Aspen,0.079,182.4,0.01,https://www2.sgx.com/securities/equities/1F3
+Geo Energy Res,0.142,101,0.01,https://www2.sgx.com/securities/equities/RE4
+TrickleStar,0.310,45,0.01,https://www2.sgx.com/securities/equities/CYW
+Metro,0.935,14.9,0.01,https://www2.sgx.com/securities/equities/M01
+PEC,0.595,22.5,0.01,https://www2.sgx.com/securities/equities/IX2
+KingsmenCreative,0.435,30,0.01,https://www2.sgx.com/securities/equities/5MZ
+Banyan Tree,0.420,30,0.01,https://www2.sgx.com/securities/equities/B58
+Hwa Hong,0.320,40,0.01,https://www2.sgx.com/securities/equities/H19
+Ley Choon,0.016,800,0.01,https://www2.sgx.com/securities/equities/Q0X
+China Star Food,0.026,455,0.01,https://www2.sgx.com/securities/equities/42W
+Hotel Royal,3.010,4,0.01,https://www2.sgx.com/securities/equities/H12
+Hong Fok,0.790,15,0.01,https://www2.sgx.com/securities/equities/H30
+Mercurius,0.046,250,0.01,https://www2.sgx.com/securities/equities/5RF
+OUE Lippo HC,0.058,200,0.01,https://www2.sgx.com/securities/equities/5WA
+Hiap Hoe,0.800,14.1,0.01,https://www2.sgx.com/securities/equities/5JK
+Hai Leck,0.535,20,0.01,https://www2.sgx.com/securities/equities/BLH
+JCG Investment,0.003,"5,250.1",0.01,https://www2.sgx.com/securities/equities/VFP
+POSH,0.210,47,0.01,https://www2.sgx.com/securities/equities/U6C
+InnoTek,0.455,21,0.01,https://www2.sgx.com/securities/equities/M14
+Gallant Venture,0.119,80.1,0.01,https://www2.sgx.com/securities/equities/5IG
+Sinostar Pec,0.188,50,0.01,https://www2.sgx.com/securities/equities/C9Q
+Bund Center,0.575,16,0.01,https://www2.sgx.com/securities/equities/BTE
+Aoxin Q & M,0.182,50,0.01,https://www2.sgx.com/securities/equities/1D4
+CDW,0.180,50,0.01,https://www2.sgx.com/securities/equities/BXE
+Nam Lee Metal,0.380,23.2,0.01,https://www2.sgx.com/securities/equities/G0I
+Koh Bros,0.220,40,0.01,https://www2.sgx.com/securities/equities/K75
+Sing Inv & Fin,1.430,6,0.01,https://www2.sgx.com/securities/equities/S35
+Avi-Tech,0.420,20,0.01,https://www2.sgx.com/securities/equities/BKY
+Anchor Resources,0.009,750,0.01,https://www2.sgx.com/securities/equities/43E
+UOI,6.900,1,0.01,https://www2.sgx.com/securities/equities/U13
+TeleChoice Intl,0.205,30,0.01,https://www2.sgx.com/securities/equities/T41
+SingMedical,0.300,20,0.01,https://www2.sgx.com/securities/equities/5OT
+Keong Hong,0.440,13.6,0.01,https://www2.sgx.com/securities/equities/5TT
+Low Keng Huat,0.425,23.8,0.01,https://www2.sgx.com/securities/equities/F1E
+PNE Industries,0.935,10.7,0.01,https://www2.sgx.com/securities/equities/BDA
+Sinarmas Land,0.250,40,0.01,https://www2.sgx.com/securities/equities/A26
+Tai Sin Electric,0.330,30,0.01,https://www2.sgx.com/securities/equities/500
+SingReinsurance,0.295,20,0.01,https://www2.sgx.com/securities/equities/S49
+QT Vascular,0.003,"1,911.3",0.01,https://www2.sgx.com/securities/equities/5I0
+Pan Hong,0.112,50,0.01,https://www2.sgx.com/securities/equities/P36
+Indofood Agri,0.325,16.7,0.01,https://www2.sgx.com/securities/equities/5JS
+Ellipsiz,0.410,13.2,0.01,https://www2.sgx.com/securities/equities/BIX
+China Intl,0.305,17.3,0.01,https://www2.sgx.com/securities/equities/BEH
+Spura Finance,0.885,6,0.01,https://www2.sgx.com/securities/equities/S23
+Stamford Land,0.500,10.5,0.01,https://www2.sgx.com/securities/equities/H07
+LifeBrandz,0.006,894,0.01,https://www2.sgx.com/securities/equities/1D3
+GCCP,0.006,850,0.01,https://www2.sgx.com/securities/equities/41T
+FJ Benjamin,0.034,143.1,0,https://www2.sgx.com/securities/equities/F10
+Yeo Hiap Seng,0.940,5,0,https://www2.sgx.com/securities/equities/Y03
+IFAST,1.040,4.5,0,https://www2.sgx.com/securities/equities/AIY
+CSC,0.023,200,0,https://www2.sgx.com/securities/equities/C06
+AsiaPhos,0.009,500,0,https://www2.sgx.com/securities/equities/5WV
+Baker Technology,0.380,11.6,0,https://www2.sgx.com/securities/equities/BTP
+AsiaMedic,0.012,358,0,https://www2.sgx.com/securities/equities/505
+King Wan,0.092,43.6,0,https://www2.sgx.com/securities/equities/554
+Roxy-Pacific,0.385,10,0,https://www2.sgx.com/securities/equities/E8Z
+Lum Chang,0.360,10,0,https://www2.sgx.com/securities/equities/L19
+Maxi-Cash Fin,0.139,25,0,https://www2.sgx.com/securities/equities/5UF
+Union Gas,0.245,12,0,https://www2.sgx.com/securities/equities/1F2
+MindChamps,0.475,6.1,0,https://www2.sgx.com/securities/equities/CNE
+EcoWise,0.029,100,0,https://www2.sgx.com/securities/equities/5CT
+SK Jewellery,0.087,33,0,https://www2.sgx.com/securities/equities/42G
+Powermatic Data,2.740,1,0,https://www2.sgx.com/securities/equities/BCY
+The Place Hldg,0.018,150,0,https://www2.sgx.com/securities/equities/E27
+Raffles Edu,0.089,30,0,https://www2.sgx.com/securities/equities/NR7
+ST Group Food,0.260,10,0,https://www2.sgx.com/securities/equities/DRX
+TLV,0.069,38,0,https://www2.sgx.com/securities/equities/42L
+Medinex,0.270,9,0,https://www2.sgx.com/securities/equities/OTX
+Q&M Dental,0.480,5,0,https://www2.sgx.com/securities/equities/QC7
+Asian Healthcare,0.220,10,0,https://www2.sgx.com/securities/equities/1J3
+Ossia Intl,0.108,19.5,0,https://www2.sgx.com/securities/equities/O08
+MDR,0.001,"2,000",0,https://www2.sgx.com/securities/equities/A27
+Dutech,0.270,7,0,https://www2.sgx.com/securities/equities/CZ4
+Centurion,0.445,4.2,0,https://www2.sgx.com/securities/equities/OU8
+Asian Micro,0.004,450,0,https://www2.sgx.com/securities/equities/585
+Nordic,0.290,10.9,0,https://www2.sgx.com/securities/equities/MR7
+Grand Banks,0.290,10.5,0,https://www2.sgx.com/securities/equities/G50
+Soup Restaurant,0.150,20,0,https://www2.sgx.com/securities/equities/5KI
+VibroPower,0.109,16,0,https://www2.sgx.com/securities/equities/BJD
+Amplefield Ltd,0.023,70,0,https://www2.sgx.com/securities/equities/AOF
+LHN,0.130,12,0,https://www2.sgx.com/securities/equities/41O
+Eneco Energy,0.034,43,0,https://www2.sgx.com/securities/equities/R14
+No Signboard,0.057,25,0,https://www2.sgx.com/securities/equities/1G6
+HealthBank,0.138,10,0,https://www2.sgx.com/securities/equities/40B
+Katrina,0.136,10,0,https://www2.sgx.com/securities/equities/1A0
+Sysma,0.151,8,0,https://www2.sgx.com/securities/equities/5UO
+Polaris,0.002,599.4,0,https://www2.sgx.com/securities/equities/5BI
+Avarga,0.156,7.3,0,https://www2.sgx.com/securities/equities/U09
+Top Glove,1.560,0.6,0,https://www2.sgx.com/securities/equities/BVA
+G K Goh,0.850,1.1,0,https://www2.sgx.com/securities/equities/G41
+LY Corp,0.185,5,0,https://www2.sgx.com/securities/equities/1H8
+Tiong Seng,0.200,4.4,0,https://www2.sgx.com/securities/equities/BFI
+Soon Lian,0.060,15.1,0,https://www2.sgx.com/securities/equities/5MD
+Olive Tree,0.110,7.6,0,https://www2.sgx.com/securities/equities/1H2
+GYP Properties,0.122,6.1,0,https://www2.sgx.com/securities/equities/AWS
+Sanli Env,0.070,10,0,https://www2.sgx.com/securities/equities/1E3
+Excelpoint,0.490,1.3,0,https://www2.sgx.com/securities/equities/BDF
+Nippecraft,0.031,20,0,https://www2.sgx.com/securities/equities/N32
+SUTL Enterprise,0.530,1.1,0,https://www2.sgx.com/securities/equities/BHU
+Edition,0.004,100.1,0,https://www2.sgx.com/securities/equities/5HG
+Accrelist Ltd,0.080,5,0,https://www2.sgx.com/securities/equities/QZG
+Capital World,0.008,50,0,https://www2.sgx.com/securities/equities/1D5
+MFG Integration,0.091,3.8,0,https://www2.sgx.com/securities/equities/M11
+KimHeng Offshore,0.053,6,0,https://www2.sgx.com/securities/equities/5G2
+Lion Asiapac,0.400,0.8,0,https://www2.sgx.com/securities/equities/BAZ
+SamuderaShipping,0.157,2,0,https://www2.sgx.com/securities/equities/S56
+SEVAK,2.690,0.1,0,https://www2.sgx.com/securities/equities/BAI
+Serial System,0.082,2,0,https://www2.sgx.com/securities/equities/S69
+Intl Cement,0.020,5.1,0,https://www2.sgx.com/securities/equities/KUO
+Chuan Hup,0.230,0.4,0,https://www2.sgx.com/securities/equities/C33
+CosmoSteel,0.080,1,0,https://www2.sgx.com/securities/equities/B9S
+Fuxing China,0.780,0.1,0,https://www2.sgx.com/securities/equities/AWK
+IPC Corp,0.290,0.2,0,https://www2.sgx.com/securities/equities/AZA
+TalkMed,0.515,0.1,0,https://www2.sgx.com/securities/equities/5G3
+Blumont,0.001,20,0,https://www2.sgx.com/securities/equities/A33
+Incredible,0.014,1,0,https://www2.sgx.com/securities/equities/RDR
+ICP Ltd,0.007,0.1,0,https://www2.sgx.com/securities/equities/5I4
+Regal Intl,0.015,35.6,0,https://www2.sgx.com/securities/equities/UV1
+Progen,0.020,22.1,0,https://www2.sgx.com/securities/equities/583
+Arion Ent,0.006,0.1,0,https://www2.sgx.com/securities/equities/YYB
 New Wave,0.005,0.1,0,https://www2.sgx.com/securities/equities/5FX
-LifeBrandz,0.004,0.1,0,https://www2.sgx.com/securities/equities/1D3
+CPH,0.004,0.1,0,https://www2.sgx.com/securities/equities/539
+KLW,0.002,0.1,0,https://www2.sgx.com/securities/equities/504
+China Real Estate,0.002,0.1,0,https://www2.sgx.com/securities/equities/5RA
+Renaissance United,0.002,0.1,0,https://www2.sgx.com/securities/equities/I11
 3Cnergy,0.008,0,0,https://www2.sgx.com/securities/equities/502
 Fuji Offset,0.420,0,0,https://www2.sgx.com/securities/equities/508
 Hiap Seng,0.020,0,0,https://www2.sgx.com/securities/equities/510
-DISA,0.001,0,0,https://www2.sgx.com/securities/equities/532
-ABR,0.700,0,0,https://www2.sgx.com/securities/equities/533
-Tung Lok Rest,0.168,0,0,https://www2.sgx.com/securities/equities/540
+Second Chance,0.235,0,0,https://www2.sgx.com/securities/equities/528
+DISA,0.002,0,0,https://www2.sgx.com/securities/equities/532
+ABR,0.740,0,0,https://www2.sgx.com/securities/equities/533
+Tung Lok Rest,0.147,0,0,https://www2.sgx.com/securities/equities/540
+Abundance Intl,0.009,0,0,https://www2.sgx.com/securities/equities/541
 Noel Gifts Intl,0.245,0,0,https://www2.sgx.com/securities/equities/543
 Viking Offshore,0.004,0,0,https://www2.sgx.com/securities/equities/557
-Teckwah,0.460,0,0,https://www2.sgx.com/securities/equities/561
-Spindex Ind,0.965,0,0,https://www2.sgx.com/securities/equities/564
-SHS,0.170,0,0,https://www2.sgx.com/securities/equities/566
+Teckwah,0.465,0,0,https://www2.sgx.com/securities/equities/561
 Colex,0.195,0,0,https://www2.sgx.com/securities/equities/567
 Vicplas Intl,0.100,0,0,https://www2.sgx.com/securities/equities/569
-Transit Concrete,0.075,0,0,https://www2.sgx.com/securities/equities/570
+Transit Concrete,0.073,0,0,https://www2.sgx.com/securities/equities/570
 IP Softcom,0.009,0,0,https://www2.sgx.com/securities/equities/571
-Challenger,0.530,0,0,https://www2.sgx.com/securities/equities/573
-KS Energy,0.015,0,0,https://www2.sgx.com/securities/equities/578
+KS Energy,0.011,0,0,https://www2.sgx.com/securities/equities/578
 Oceanus,0.004,0,0,https://www2.sgx.com/securities/equities/579
 Santak,0.090,0,0,https://www2.sgx.com/securities/equities/580
 Sunrise Shares,0.026,0,0,https://www2.sgx.com/securities/equities/581
-Progen,0.020,0,0,https://www2.sgx.com/securities/equities/583
-Asian Micro,0.003,0,0,https://www2.sgx.com/securities/equities/585
+OEL,0.008,0,0,https://www2.sgx.com/securities/equities/584
 Global Dragon,0.062,0,0,https://www2.sgx.com/securities/equities/586
-HMI,0.725,0,0,https://www2.sgx.com/securities/equities/588
-GKE,0.063,0,0,https://www2.sgx.com/securities/equities/595
+CWX Global,0.004,0,0,https://www2.sgx.com/securities/equities/594
+GKE,0.072,0,0,https://www2.sgx.com/securities/equities/595
+Pavillon,0.018,0,0,https://www2.sgx.com/securities/equities/596
 Hyflux,0.210,0,0,https://www2.sgx.com/securities/equities/600
-Amara,0.450,0,0,https://www2.sgx.com/securities/equities/A34
-AMOS,0.042,0,0,https://www2.sgx.com/securities/equities/RF7
 8Telecom,0.069,0,0,https://www2.sgx.com/securities/equities/AZG
-A-Sonic Aero,0.365,0,0,https://www2.sgx.com/securities/equities/BTJ
+AA,0.009,0,0,https://www2.sgx.com/securities/equities/5GZ
 Abterra,0.045,0,0,https://www2.sgx.com/securities/equities/L5I
-Accrelist Ltd,0.084,0,0,https://www2.sgx.com/securities/equities/QZG
 Ace Achieve Info,0.008,0,0,https://www2.sgx.com/securities/equities/A75
 Acesian Partners,0.011,0,0,https://www2.sgx.com/securities/equities/5FW
-Acma,0.104,0,0,https://www2.sgx.com/securities/equities/AYV
+Acma,0.102,0,0,https://www2.sgx.com/securities/equities/AYV
 Acromec,0.079,0,0,https://www2.sgx.com/securities/equities/43F
 Advanced Systems,0.001,0,0,https://www2.sgx.com/securities/equities/5TY
-Advancer Global,0.150,0,0,https://www2.sgx.com/securities/equities/43Q
+Advanced,0.112,0,0,https://www2.sgx.com/securities/equities/BLZ
+Challenger,0.530,0,0,https://www2.sgx.com/securities/equities/573
+Advancer Global,0.136,0,0,https://www2.sgx.com/securities/equities/43Q
 Adventus,0.004,0,0,https://www2.sgx.com/securities/equities/5EF
-AEI,0.865,0,0,https://www2.sgx.com/securities/equities/AWG
-AF Global,0.149,0,0,https://www2.sgx.com/securities/equities/L38
+AF Global,0.150,0,0,https://www2.sgx.com/securities/equities/L38
 AGV,0.025,0,0,https://www2.sgx.com/securities/equities/1A4
-AIMS Property,1.330,0,0,https://www2.sgx.com/securities/equities/BVP
+AIMS Property,1.490,0,0,https://www2.sgx.com/securities/equities/BVP
+AliPictures HKD,1.320,0,0,https://www2.sgx.com/securities/equities/S91
 Alita Resources,0.078,0,0,https://www2.sgx.com/securities/equities/40F
 Alliance HC,0.140,0,0,https://www2.sgx.com/securities/equities/MIJ
 Allied Tech,0.011,0,0,https://www2.sgx.com/securities/equities/A13
 Alpha Energy,0.032,0,0,https://www2.sgx.com/securities/equities/5TS
-Amplefield Ltd,0.024,0,0,https://www2.sgx.com/securities/equities/AOF
-AnAn Intl,0.002,0,0,https://www2.sgx.com/securities/equities/Y35
-Anchun Intl,0.320,0,0,https://www2.sgx.com/securities/equities/BTX
+AMOS,0.041,0,0,https://www2.sgx.com/securities/equities/RF7
+AnAn Intl,0.004,0,0,https://www2.sgx.com/securities/equities/Y35
+Anchun Intl,0.315,0,0,https://www2.sgx.com/securities/equities/BTX
 AnnAik,0.064,0,0,https://www2.sgx.com/securities/equities/A52
 Annica,0.001,0,0,https://www2.sgx.com/securities/equities/5AL
-Aoxin Q & M,0.200,0,0,https://www2.sgx.com/securities/equities/1D4
 AP Oil,0.172,0,0,https://www2.sgx.com/securities/equities/5AU
 Artivision Tech,0.003,0,0,https://www2.sgx.com/securities/equities/5NK
-Asia Enterprises,0.153,0,0,https://www2.sgx.com/securities/equities/A55
+Asia Enterprises,0.160,0,0,https://www2.sgx.com/securities/equities/A55
 Asia Fashion,0.064,0,0,https://www2.sgx.com/securities/equities/BQI
 Asia Vets,0.130,0,0,https://www2.sgx.com/securities/equities/5RE
 AsiaMedic R,﹣,0,0,https://www2.sgx.com/securities/equities/FAWR
-Asian Healthcare,0.225,0,0,https://www2.sgx.com/securities/equities/1J3
 Asiatravel.com,0.027,0,0,https://www2.sgx.com/securities/equities/5AM
-Aspial,0.154,0,0,https://www2.sgx.com/securities/equities/A30
+ASL Marine,0.033,0,0,https://www2.sgx.com/securities/equities/A04
+Aspial,0.153,0,0,https://www2.sgx.com/securities/equities/A30
 Astaka,0.088,0,0,https://www2.sgx.com/securities/equities/42S
-Atlantic Nav,0.034,0,0,https://www2.sgx.com/securities/equities/5UL
-Avi-Tech,0.410,0,0,https://www2.sgx.com/securities/equities/BKY
+Atlantic Nav,0.035,0,0,https://www2.sgx.com/securities/equities/5UL
 AVIC,0.149,0,0,https://www2.sgx.com/securities/equities/O2I
-AVJennings A$,0.545,0,0,https://www2.sgx.com/securities/equities/A05
+AVJennings A$,0.610,0,0,https://www2.sgx.com/securities/equities/A05
 Axcelasia,0.044,0,0,https://www2.sgx.com/securities/equities/42U
-Captii,0.370,0,0,https://www2.sgx.com/securities/equities/AWV
-Casa,0.056,0,0,https://www2.sgx.com/securities/equities/C04
-CFM,0.017,0,0,https://www2.sgx.com/securities/equities/5EB
 Ayondo,0.048,0,0,https://www2.sgx.com/securities/equities/1I5
 Azeus,0.950,0,0,https://www2.sgx.com/securities/equities/BBW
 B&M Hldg,3.500,0,0,https://www2.sgx.com/securities/equities/CJN
-Ban Leong,0.230,0,0,https://www2.sgx.com/securities/equities/B26
+Ban Leong,0.235,0,0,https://www2.sgx.com/securities/equities/B26
 BBR,0.162,0,0,https://www2.sgx.com/securities/equities/KJ5
-Beng Kuang,0.050,0,0,https://www2.sgx.com/securities/equities/BEZ
+Beng Kuang,0.047,0,0,https://www2.sgx.com/securities/equities/BEZ
 Berlian LajuTank,0.027,0,0,https://www2.sgx.com/securities/equities/B66
 Best World,1.360,0,0,https://www2.sgx.com/securities/equities/CGN
-BH Global,0.074,0,0,https://www2.sgx.com/securities/equities/BQN
-Biolidics,0.230,0,0,https://www2.sgx.com/securities/equities/8YY
-Blumont,0.002,0,0,https://www2.sgx.com/securities/equities/A33
+BH Global,0.075,0,0,https://www2.sgx.com/securities/equities/BQN
+Biolidics,0.245,0,0,https://www2.sgx.com/securities/equities/8YY
 BMM,0.007,0,0,https://www2.sgx.com/securities/equities/I9T
-Bonvests,1.230,0,0,https://www2.sgx.com/securities/equities/B28
-Brook Crompton,0.900,0,0,https://www2.sgx.com/securities/equities/AWC
-C&G Env Protect,0.001,0,0,https://www2.sgx.com/securities/equities/D79
+Boldtek,0.089,0,0,https://www2.sgx.com/securities/equities/5VI
+Bonvests,1.190,0,0,https://www2.sgx.com/securities/equities/B28
+China Hongxing,0.115,0,0,https://www2.sgx.com/securities/equities/BR9
+Brook Crompton,0.840,0,0,https://www2.sgx.com/securities/equities/AWC
 Cacola,0.001,0,0,https://www2.sgx.com/securities/equities/D2U
 Camsing Hc,1.070,0,0,https://www2.sgx.com/securities/equities/BAC
-CH Offshore,0.050,0,0,https://www2.sgx.com/securities/equities/C13
+Captii,0.370,0,0,https://www2.sgx.com/securities/equities/AWV
+Casa,0.056,0,0,https://www2.sgx.com/securities/equities/C04
+CEI,0.960,0,0,https://www2.sgx.com/securities/equities/AVV
+CFM,0.017,0,0,https://www2.sgx.com/securities/equities/5EB
+CH Offshore,0.053,0,0,https://www2.sgx.com/securities/equities/C13
 Charisma Energy,0.002,0,0,https://www2.sgx.com/securities/equities/5QT
 ChasWood Res,0.009,0,0,https://www2.sgx.com/securities/equities/5TW
-Chemical Ind,0.720,0,0,https://www2.sgx.com/securities/equities/C05
+Chemical Ind,0.740,0,0,https://www2.sgx.com/securities/equities/C05
+Cheung Woh,0.151,0,0,https://www2.sgx.com/securities/equities/C50
 China Env,0.037,0,0,https://www2.sgx.com/securities/equities/5OU
 China Env Res,0.020,0,0,https://www2.sgx.com/securities/equities/RS1
 China Essence,0.014,0,0,https://www2.sgx.com/securities/equities/G54
 China Fishery,0.076,0,0,https://www2.sgx.com/securities/equities/B0Z
 China Gaoxian,0.003,0,0,https://www2.sgx.com/securities/equities/AZZ
 China Great Land,0.005,0,0,https://www2.sgx.com/securities/equities/D50
-China Hongxing,0.115,0,0,https://www2.sgx.com/securities/equities/BR9
-China Intl,0.295,0,0,https://www2.sgx.com/securities/equities/BEH
-China Jishan,0.170,0,0,https://www2.sgx.com/securities/equities/J18
+China Haida,0.011,0,0,https://www2.sgx.com/securities/equities/C92
+China Jishan,0.168,0,0,https://www2.sgx.com/securities/equities/J18
 China Mining,0.102,0,0,https://www2.sgx.com/securities/equities/BHD
 China Paper,0.024,0,0,https://www2.sgx.com/securities/equities/C71
-China Real Estate,0.002,0,0,https://www2.sgx.com/securities/equities/5RA
 China Sky Chem,0.027,0,0,https://www2.sgx.com/securities/equities/E90
 China Sports,0.011,0,0,https://www2.sgx.com/securities/equities/FQ8
 China Taisan,0.028,0,0,https://www2.sgx.com/securities/equities/AZW
-China Yuanbang,0.315,0,0,https://www2.sgx.com/securities/equities/BCD
+China Yuanbang,0.350,0,0,https://www2.sgx.com/securities/equities/BCD
 ChinaKangdaFood,0.110,0,0,https://www2.sgx.com/securities/equities/P74
-EcoWise,0.026,0,0,https://www2.sgx.com/securities/equities/5CT
-Edition,0.005,0,0,https://www2.sgx.com/securities/equities/5HG
-Eindec,0.023,0,0,https://www2.sgx.com/securities/equities/42Z
-Ellipsiz,0.390,0,0,https://www2.sgx.com/securities/equities/BIX
-EMAS Offshore,0.050,0,0,https://www2.sgx.com/securities/equities/UQ4
-ChinaKundaTech,0.007,0,0,https://www2.sgx.com/securities/equities/GU5
+ChinaKundaTech,0.011,0,0,https://www2.sgx.com/securities/equities/GU5
 Chinese Global,0.010,0,0,https://www2.sgx.com/securities/equities/5CJ
 Choo Chiang,0.250,0,0,https://www2.sgx.com/securities/equities/42E
+Citic Envirotech,0.545,0,0,https://www2.sgx.com/securities/equities/CEE
 Citicode,0.001,0,0,https://www2.sgx.com/securities/equities/5FH
+Civmec,0.370,0,0,https://www2.sgx.com/securities/equities/P9D
 CNA,0.026,0,0,https://www2.sgx.com/securities/equities/5GC
-Combine Will,1.060,0,0,https://www2.sgx.com/securities/equities/N0Z
-Cortina,1.500,0,0,https://www2.sgx.com/securities/equities/C41
+Combine Will,1.080,0,0,https://www2.sgx.com/securities/equities/N0Z
+Cordlife,0.465,0,0,https://www2.sgx.com/securities/equities/P8A
+Cortina,1.540,0,0,https://www2.sgx.com/securities/equities/C41
 Courage Inv,0.020,0,0,https://www2.sgx.com/securities/equities/CIN
-Darco Water Tech,0.210,0,0,https://www2.sgx.com/securities/equities/BLR
+Darco Water Tech,0.180,0,0,https://www2.sgx.com/securities/equities/BLR
+Datapulse Tech,0.210,0,0,https://www2.sgx.com/securities/equities/BKW
+Fabchem China,0.141,0,0,https://www2.sgx.com/securities/equities/BFT
+Falcon Energy,0.027,0,0,https://www2.sgx.com/securities/equities/5FL
 Debao Property,0.067,0,0,https://www2.sgx.com/securities/equities/BTF
-Del Monte Pac,0.144,0,0,https://www2.sgx.com/securities/equities/D03
+Del Monte Pac,0.137,0,0,https://www2.sgx.com/securities/equities/D03
 Design Studio,0.090,0,0,https://www2.sgx.com/securities/equities/D11
 DLF,0.185,0,0,https://www2.sgx.com/securities/equities/KUX
 Dragon,0.004,0,0,https://www2.sgx.com/securities/equities/MT1
 Dukang,0.055,0,0,https://www2.sgx.com/securities/equities/BKV
 Dynamic Colours,0.190,0,0,https://www2.sgx.com/securities/equities/D6U
-EnGro,0.970,0,0,https://www2.sgx.com/securities/equities/S44
+Eindec,0.023,0,0,https://www2.sgx.com/securities/equities/42Z
+EMAS Offshore,0.050,0,0,https://www2.sgx.com/securities/equities/UQ4
+EnGro,0.965,0,0,https://www2.sgx.com/securities/equities/S44
 Envictus,0.112,0,0,https://www2.sgx.com/securities/equities/BQD
 Enviro-Hub,0.024,0,0,https://www2.sgx.com/securities/equities/L23
 Epicentre,0.018,0,0,https://www2.sgx.com/securities/equities/5MQ
 ES,0.020,0,0,https://www2.sgx.com/securities/equities/5RC
-Excelpoint,0.450,0,0,https://www2.sgx.com/securities/equities/BDF
+ETC Singapore,0.020,0,0,https://www2.sgx.com/securities/equities/1C0
+EuroSports Gbl,0.180,0,0,https://www2.sgx.com/securities/equities/5G1
 Ezion,0.043,0,0,https://www2.sgx.com/securities/equities/5ME
 Ezra,0.011,0,0,https://www2.sgx.com/securities/equities/5DN
-F & N,1.730,0,0,https://www2.sgx.com/securities/equities/F99
-Fabchem China,0.141,0,0,https://www2.sgx.com/securities/equities/BFT
-Falcon Energy,0.027,0,0,https://www2.sgx.com/securities/equities/5FL
-Far East,0.122,0,0,https://www2.sgx.com/securities/equities/5TJ
-Federal Int,0.200,0,0,https://www2.sgx.com/securities/equities/BDU
-Figtree,0.103,0,0,https://www2.sgx.com/securities/equities/5F4
-First Sponsor,1.350,0,0,https://www2.sgx.com/securities/equities/ADN
-FJ Benjamin,0.031,0,0,https://www2.sgx.com/securities/equities/F10
-Forise Intl,0.002,0,0,https://www2.sgx.com/securities/equities/I5H
-FortressMinerals,0.200,0,0,https://www2.sgx.com/securities/equities/OAJ
+Far East,0.124,0,0,https://www2.sgx.com/securities/equities/5TJ
+Far East Orchard,1.190,0,0,https://www2.sgx.com/securities/equities/O10
+Federal Int,0.198,0,0,https://www2.sgx.com/securities/equities/BDU
+Figtree,0.101,0,0,https://www2.sgx.com/securities/equities/5F4
+Forise Intl,0.003,0,0,https://www2.sgx.com/securities/equities/I5H
+FortressMinerals,0.235,0,0,https://www2.sgx.com/securities/equities/OAJ
 Fujian Zhenyun,0.149,0,0,https://www2.sgx.com/securities/equities/5KT
 Full Apex,0.405,0,0,https://www2.sgx.com/securities/equities/BTY
-HG Metal,0.220,0,0,https://www2.sgx.com/securities/equities/BTG
-HL Global Ent,0.300,0,0,https://www2.sgx.com/securities/equities/AVX
-Hoe Leong,0.002,0,0,https://www2.sgx.com/securities/equities/H20
-Hong Lai Huat,0.172,0,0,https://www2.sgx.com/securities/equities/CTO
-Hor Kew,0.215,0,0,https://www2.sgx.com/securities/equities/BBP
-Hosen,0.031,0,0,https://www2.sgx.com/securities/equities/5EV
-Fuxing China,0.780,0,0,https://www2.sgx.com/securities/equities/AWK
-G K Goh,0.855,0,0,https://www2.sgx.com/securities/equities/G41
-Gallant Venture,0.114,0,0,https://www2.sgx.com/securities/equities/5IG
-GDS Global,0.350,0,0,https://www2.sgx.com/securities/equities/5VP
-Global Palm Res,0.154,0,0,https://www2.sgx.com/securities/equities/BLW
-Goodland,0.189,0,0,https://www2.sgx.com/securities/equities/5PC
-Grand Banks,0.290,0,0,https://www2.sgx.com/securities/equities/G50
+GDS Global,0.200,0,0,https://www2.sgx.com/securities/equities/5VP
+Global Palm Res,0.150,0,0,https://www2.sgx.com/securities/equities/BLW
+Golden Energy,0.157,0,0,https://www2.sgx.com/securities/equities/AUE
+Goodland,0.187,0,0,https://www2.sgx.com/securities/equities/5PC
+GP Industries,0.595,0,0,https://www2.sgx.com/securities/equities/G20
 Green Build,0.035,0,0,https://www2.sgx.com/securities/equities/Y06
+GRP,0.195,0,0,https://www2.sgx.com/securities/equities/BLU
 Guoan Intl,0.007,0,0,https://www2.sgx.com/securities/equities/G11
-GYP Properties,0.110,0,0,https://www2.sgx.com/securities/equities/AWS
 Hafary,0.150,0,0,https://www2.sgx.com/securities/equities/5VS
-Hai Leck,0.535,0,0,https://www2.sgx.com/securities/equities/BLH
-HC Surgical,0.520,0,0,https://www2.sgx.com/securities/equities/1B1
-HealthBank,0.080,0,0,https://www2.sgx.com/securities/equities/40B
+Hatten Land,0.090,0,0,https://www2.sgx.com/securities/equities/PH0
+HC Surgical,0.525,0,0,https://www2.sgx.com/securities/equities/1B1
+Heatec Jietong,0.039,0,0,https://www2.sgx.com/securities/equities/5OR
+Heeton,0.305,0,0,https://www2.sgx.com/securities/equities/5DP
+Intraco,0.285,0,0,https://www2.sgx.com/securities/equities/I06
+IPS Securex,0.040,0,0,https://www2.sgx.com/securities/equities/42N
+ISEC,0.355,0,0,https://www2.sgx.com/securities/equities/40T
 Hengyang Petro,0.157,0,0,https://www2.sgx.com/securities/equities/5PD
-Hotel Royal,3.010,0,0,https://www2.sgx.com/securities/equities/H12
+HG Metal,0.215,0,0,https://www2.sgx.com/securities/equities/BTG
+Hiap Tong,0.066,0,0,https://www2.sgx.com/securities/equities/5PO
+Hoe Leong,0.002,0,0,https://www2.sgx.com/securities/equities/H20
+Hong Lai Huat,0.173,0,0,https://www2.sgx.com/securities/equities/CTO
+Hor Kew,0.235,0,0,https://www2.sgx.com/securities/equities/BBP
+Hosen,0.036,0,0,https://www2.sgx.com/securities/equities/5EV
+Hotel Grand,1.300,0,0,https://www2.sgx.com/securities/equities/H18
 Hu An Cable,0.009,0,0,https://www2.sgx.com/securities/equities/KI3
 HuanHsin,0.014,0,0,https://www2.sgx.com/securities/equities/H16
-Huationg Global,0.090,0,0,https://www2.sgx.com/securities/equities/41B
-IEV,0.050,0,0,https://www2.sgx.com/securities/equities/5TN
-Imperium Crown,0.014,0,0,https://www2.sgx.com/securities/equities/5HT
+Huationg Global,0.117,0,0,https://www2.sgx.com/securities/equities/41B
+Hyphens Pharma,0.210,0,0,https://www2.sgx.com/securities/equities/1J5
+IHH,1.860,0,0,https://www2.sgx.com/securities/equities/Q0F
+Imperium Crown,0.015,0,0,https://www2.sgx.com/securities/equities/5HT
 Inch Kenneth,﹣,0,0,https://www2.sgx.com/securities/equities/I4R
-Incredible,0.008,0,0,https://www2.sgx.com/securities/equities/RDR
+Informatics,0.041,0,0,https://www2.sgx.com/securities/equities/BOU
 InnoPac,0.002,0,0,https://www2.sgx.com/securities/equities/I26
-Intraco,0.285,0,0,https://www2.sgx.com/securities/equities/I06
-ISDN,0.215,0,0,https://www2.sgx.com/securities/equities/I07
-Jason Marine,0.120,0,0,https://www2.sgx.com/securities/equities/5PF
+ISOTeam,0.240,0,0,https://www2.sgx.com/securities/equities/5WF
+Jackspeed,0.130,0,0,https://www2.sgx.com/securities/equities/J17
+Japan Foods,0.500,0,0,https://www2.sgx.com/securities/equities/5OI
+Jason Marine,0.123,0,0,https://www2.sgx.com/securities/equities/5PF
+Jasper Inv,0.004,0,0,https://www2.sgx.com/securities/equities/FQ7
 Jawala,0.240,0,0,https://www2.sgx.com/securities/equities/1J7
-JCG Investment,0.002,0,0,https://www2.sgx.com/securities/equities/VFP
+JB Foods,0.630,0,0,https://www2.sgx.com/securities/equities/BEW
 JES Intl,0.026,0,0,https://www2.sgx.com/securities/equities/EG0
 Joyas Intl,0.001,0,0,https://www2.sgx.com/securities/equities/E9L
-Jubilee,0.080,0,0,https://www2.sgx.com/securities/equities/NHD
+Jubilee,0.104,0,0,https://www2.sgx.com/securities/equities/NHD
+Karin Tech,0.325,0,0,https://www2.sgx.com/securities/equities/K29
 Kencana Agri,0.120,0,0,https://www2.sgx.com/securities/equities/BNE
 Khong Guan,1.850,0,0,https://www2.sgx.com/securities/equities/K03
+Kimly,0.245,0,0,https://www2.sgx.com/securities/equities/1D0
 Kitchen Culture,0.081,0,0,https://www2.sgx.com/securities/equities/5TI
+Koda,0.590,0,0,https://www2.sgx.com/securities/equities/BJZ
 Koon,0.042,0,0,https://www2.sgx.com/securities/equities/5DL
+KOP,0.056,0,0,https://www2.sgx.com/securities/equities/5I1
+Kori,0.280,0,0,https://www2.sgx.com/securities/equities/5VC
+Koyo Intl,0.067,0,0,https://www2.sgx.com/securities/equities/5OC
+KrisEnergy,0.030,0,0,https://www2.sgx.com/securities/equities/SK3
+M Development,0.002,0,0,https://www2.sgx.com/securities/equities/N14
+Magnus Energy,0.001,0,0,https://www2.sgx.com/securities/equities/41S
+Manhattan Res,0.067,0,0,https://www2.sgx.com/securities/equities/L02
+Maruwa Yen1k,﹣,0,0,https://www2.sgx.com/securities/equities/M12
+Mary Chia,0.075,0,0,https://www2.sgx.com/securities/equities/5OX
+KSH,0.450,0,0,https://www2.sgx.com/securities/equities/ER0
+KTL Global,0.045,0,0,https://www2.sgx.com/securities/equities/EB7
+KTMG,0.120,0,0,https://www2.sgx.com/securities/equities/XCF
+Lafe,0.650,0,0,https://www2.sgx.com/securities/equities/AYB
+Lasseters Intl,0.035,0,0,https://www2.sgx.com/securities/equities/5EL
+LCT,0.420,0,0,https://www2.sgx.com/securities/equities/BJL
+Leader Env,0.019,0,0,https://www2.sgx.com/securities/equities/LS9
+LHT,0.520,0,0,https://www2.sgx.com/securities/equities/BEI
+Libra,0.035,0,0,https://www2.sgx.com/securities/equities/5TR
+Linc Energy,0.089,0,0,https://www2.sgx.com/securities/equities/BRE
+LionGold,0.002,0,0,https://www2.sgx.com/securities/equities/A78
+Lonza,79.970,0,0,https://www2.sgx.com/securities/equities/O6Z
 Lorenzo Intl,0.016,0,0,https://www2.sgx.com/securities/equities/5IE
-Low Keng Huat,0.435,0,0,https://www2.sgx.com/securities/equities/F1E
 Lung Kee Bermuda,0.450,0,0,https://www2.sgx.com/securities/equities/L09
 Luxking,0.380,0,0,https://www2.sgx.com/securities/equities/BKK
 Luzhou Bio-Chem,0.012,0,0,https://www2.sgx.com/securities/equities/L46
-M Development,0.002,0,0,https://www2.sgx.com/securities/equities/N14
-Magnus Energy,0.001,0,0,https://www2.sgx.com/securities/equities/41S
-Manhattan Res,0.037,0,0,https://www2.sgx.com/securities/equities/L02
-KrisEnergy,0.030,0,0,https://www2.sgx.com/securities/equities/SK3
-KTL Global,0.046,0,0,https://www2.sgx.com/securities/equities/EB7
-Lafe,0.650,0,0,https://www2.sgx.com/securities/equities/AYB
-Lasseters Intl,0.035,0,0,https://www2.sgx.com/securities/equities/5EL
-LCT,0.500,0,0,https://www2.sgx.com/securities/equities/BJL
-Ley Choon,0.015,0,0,https://www2.sgx.com/securities/equities/Q0X
-LHN,0.126,0,0,https://www2.sgx.com/securities/equities/41O
-LHT,0.525,0,0,https://www2.sgx.com/securities/equities/BEI
-Lian Beng,0.510,0,0,https://www2.sgx.com/securities/equities/L03
-Libra,0.035,0,0,https://www2.sgx.com/securities/equities/5TR
-Linc Energy,0.089,0,0,https://www2.sgx.com/securities/equities/BRE
-Lion Asiapac,0.415,0,0,https://www2.sgx.com/securities/equities/BAZ
-Lonza,79.970,0,0,https://www2.sgx.com/securities/equities/O6Z
-Maruwa Yen1k,﹣,0,0,https://www2.sgx.com/securities/equities/M12
-Mary Chia,0.075,0,0,https://www2.sgx.com/securities/equities/5OX
+Matex Intl,0.013,0,0,https://www2.sgx.com/securities/equities/M15
+MegaChem,0.300,0,0,https://www2.sgx.com/securities/equities/5DS
+MeGroup,0.220,0,0,https://www2.sgx.com/securities/equities/SJY
 Memories,0.095,0,0,https://www2.sgx.com/securities/equities/1H4
 Memstar Tech,0.001,0,0,https://www2.sgx.com/securities/equities/5MS
-Mencast,0.071,0,0,https://www2.sgx.com/securities/equities/5NF
-Mercurius,0.045,0,0,https://www2.sgx.com/securities/equities/5RF
-Metech Intl,0.116,0,0,https://www2.sgx.com/securities/equities/V3M
-Mewah Intl,0.235,0,0,https://www2.sgx.com/securities/equities/MV4
+Mencast,0.088,0,0,https://www2.sgx.com/securities/equities/5NF
+Metech Intl,0.110,0,0,https://www2.sgx.com/securities/equities/V3M
+Mewah Intl,0.240,0,0,https://www2.sgx.com/securities/equities/MV4
 Midas,0.192,0,0,https://www2.sgx.com/securities/equities/5EN
-Mirach Energy,0.169,0,0,https://www2.sgx.com/securities/equities/AWO
-MMP Resources,0.003,0,0,https://www2.sgx.com/securities/equities/F3V
-MoneyMax Fin,0.154,0,0,https://www2.sgx.com/securities/equities/5WJ
+Mirach Energy,0.132,0,0,https://www2.sgx.com/securities/equities/AWO
+Miyoshi,0.037,0,0,https://www2.sgx.com/securities/equities/M03
+MMP Resources,0.004,0,0,https://www2.sgx.com/securities/equities/F3V
+MoneyMax Fin,0.157,0,0,https://www2.sgx.com/securities/equities/5WJ
 MS Hldgs,0.050,0,0,https://www2.sgx.com/securities/equities/40U
 MSC,0.280,0,0,https://www2.sgx.com/securities/equities/NPW
-MSM Intl,0.025,0,0,https://www2.sgx.com/securities/equities/5QR
-MTQ,0.235,0,0,https://www2.sgx.com/securities/equities/M05
-Multi-Chem,0.755,0,0,https://www2.sgx.com/securities/equities/AWZ
+MSM Intl,0.035,0,0,https://www2.sgx.com/securities/equities/5QR
+MTQ,0.250,0,0,https://www2.sgx.com/securities/equities/M05
+Multi-Chem,0.780,0,0,https://www2.sgx.com/securities/equities/AWZ
 Mun Siong Engg,0.039,0,0,https://www2.sgx.com/securities/equities/MF6
 Murata Yen1k,﹣,0,0,https://www2.sgx.com/securities/equities/PJX
-MYP,0.108,0,0,https://www2.sgx.com/securities/equities/F86
-NutryFarm,0.083,0,0,https://www2.sgx.com/securities/equities/AZT
-OKH Global,0.016,0,0,https://www2.sgx.com/securities/equities/S3N
-Olive Tree,0.060,0,0,https://www2.sgx.com/securities/equities/1H2
-OneApex,0.140,0,0,https://www2.sgx.com/securities/equities/5SY
-Ossia Intl,0.110,0,0,https://www2.sgx.com/securities/equities/O08
-OUE Lippo HC,0.059,0,0,https://www2.sgx.com/securities/equities/5WA
+OKH Global,0.017,0,0,https://www2.sgx.com/securities/equities/S3N
+OKP,0.205,0,0,https://www2.sgx.com/securities/equities/5CF
+Old Chang Kee,0.745,0,0,https://www2.sgx.com/securities/equities/5ML
+OneApex,0.190,0,0,https://www2.sgx.com/securities/equities/5SY
 Ouhua Energy,0.009,0,0,https://www2.sgx.com/securities/equities/AJ2
 Pacific Andes,0.022,0,0,https://www2.sgx.com/securities/equities/P11
-Pacific Radiance,0.104,0,0,https://www2.sgx.com/securities/equities/T8V
-Nam Cheong,0.008,0,0,https://www2.sgx.com/securities/equities/N4E
-Nam Lee Metal,0.375,0,0,https://www2.sgx.com/securities/equities/G0I
+MYP,0.102,0,0,https://www2.sgx.com/securities/equities/F86
 Natural Cool,0.070,0,0,https://www2.sgx.com/securities/equities/5IF
 NauticAWT,0.010,0,0,https://www2.sgx.com/securities/equities/42D
-Net Pacific Fin,0.019,0,0,https://www2.sgx.com/securities/equities/5QY
-New Silkroutes,0.220,0,0,https://www2.sgx.com/securities/equities/BMT
-New Toyo,0.165,0,0,https://www2.sgx.com/securities/equities/N08
+Neo,0.420,0,0,https://www2.sgx.com/securities/equities/5UJ
+NeraTel,0.280,0,0,https://www2.sgx.com/securities/equities/N01
+Net Pacific Fin,0.021,0,0,https://www2.sgx.com/securities/equities/5QY
+New Silkroutes,0.225,0,0,https://www2.sgx.com/securities/equities/BMT
+New Toyo,0.156,0,0,https://www2.sgx.com/securities/equities/N08
 NGSC,0.001,0,0,https://www2.sgx.com/securities/equities/B07
-Nico Steel,0.003,0,0,https://www2.sgx.com/securities/equities/5GF
-No Signboard,0.054,0,0,https://www2.sgx.com/securities/equities/1G6
+Nico Steel,0.004,0,0,https://www2.sgx.com/securities/equities/5GF
 Noble,0.081,0,0,https://www2.sgx.com/securities/equities/CGP
 Nomura Yen1k,1.990,0,0,https://www2.sgx.com/securities/equities/N33
-Pacific Star Dev,0.138,0,0,https://www2.sgx.com/securities/equities/1C5
+NSL,0.940,0,0,https://www2.sgx.com/securities/equities/N02
+NutryFarm,0.084,0,0,https://www2.sgx.com/securities/equities/AZT
+Ocean Sky Intl,0.050,0,0,https://www2.sgx.com/securities/equities/1B6
+Pacific Radiance,0.104,0,0,https://www2.sgx.com/securities/equities/T8V
+Pacific Star Dev,0.105,0,0,https://www2.sgx.com/securities/equities/1C5
 Pan Asian,0.022,0,0,https://www2.sgx.com/securities/equities/5EW
-Pan Hong,0.113,0,0,https://www2.sgx.com/securities/equities/P36
 Pan Ocean,5.080,0,0,https://www2.sgx.com/securities/equities/AZY
+PanUnited,0.360,0,0,https://www2.sgx.com/securities/equities/P52
 Parkson Retail,0.008,0,0,https://www2.sgx.com/securities/equities/O9E
-PEC,0.595,0,0,https://www2.sgx.com/securities/equities/IX2
-Perennial Hldgs,0.530,0,0,https://www2.sgx.com/securities/equities/40S
 Pharmesis Intl,0.215,0,0,https://www2.sgx.com/securities/equities/BFK
 Pine Cap,0.001,0,0,https://www2.sgx.com/securities/equities/ADJ
 Plastoform,0.013,0,0,https://www2.sgx.com/securities/equities/AYD
-Plato Capital,0.095,0,0,https://www2.sgx.com/securities/equities/5PI
-PNE Industries,0.930,0,0,https://www2.sgx.com/securities/equities/BDA
-Polaris,0.002,0,0,https://www2.sgx.com/securities/equities/5BI
-Pollux Prop,0.035,0,0,https://www2.sgx.com/securities/equities/5AE
-Powermatic Data,2.700,0,0,https://www2.sgx.com/securities/equities/BCY
+Plato Capital,0.048,0,0,https://www2.sgx.com/securities/equities/5PI
+Pollux Prop,0.030,0,0,https://www2.sgx.com/securities/equities/5AE
 Prudential USD,16.000,0,0,https://www2.sgx.com/securities/equities/K6S
-PSL,0.100,0,0,https://www2.sgx.com/securities/equities/BLL
-Qian Hu,0.127,0,0,https://www2.sgx.com/securities/equities/BCV
-Raffles Infrastructure,0.330,0,0,https://www2.sgx.com/securities/equities/LUY
-Raffles United,0.066,0,0,https://www2.sgx.com/securities/equities/K22
+PSL,0.086,0,0,https://www2.sgx.com/securities/equities/BLL
+Qian Hu,0.126,0,0,https://www2.sgx.com/securities/equities/BCV
+Raffles Infrastructure,0.270,0,0,https://www2.sgx.com/securities/equities/LUY
+RE&S Hldg,0.159,0,0,https://www2.sgx.com/securities/equities/1G1
+Reclaims Global,0.310,0,0,https://www2.sgx.com/securities/equities/NEX
 Reenova Investment,0.003,0,0,https://www2.sgx.com/securities/equities/5EC
-Sanli Env,0.075,0,0,https://www2.sgx.com/securities/equities/1E3
+Renewable Energy,0.022,0,0,https://www2.sgx.com/securities/equities/5DW
+Resources Prima,0.026,0,0,https://www2.sgx.com/securities/equities/5MM
+Shopper360,0.128,0,0,https://www2.sgx.com/securities/equities/1F0
+Silkroad Nickel,0.295,0,0,https://www2.sgx.com/securities/equities/STP
+Sim Leisure,0.220,0,0,https://www2.sgx.com/securities/equities/URR
+Sin Ghee Huat,0.220,0,0,https://www2.sgx.com/securities/equities/B7K
+Sin Heng Mach,0.260,0,0,https://www2.sgx.com/securities/equities/BKA
+Sincap,0.006,0,0,https://www2.sgx.com/securities/equities/5UN
+SingaporeKitchen,0.110,0,0,https://www2.sgx.com/securities/equities/5WG
+Revez,0.185,0,0,https://www2.sgx.com/securities/equities/RCU
+RH PetroGas,0.031,0,0,https://www2.sgx.com/securities/equities/T13
+Rich Capital,0.003,0,0,https://www2.sgx.com/securities/equities/5G4
+Ryobi Kiso,0.130,0,0,https://www2.sgx.com/securities/equities/BDN
+Sakae,0.070,0,0,https://www2.sgx.com/securities/equities/5DO
+Samko Timber,0.019,0,0,https://www2.sgx.com/securities/equities/E6R
+Samurai,0.800,0,0,https://www2.sgx.com/securities/equities/1C3
+Sapphire,0.057,0,0,https://www2.sgx.com/securities/equities/BRD
 SBI Offshore,0.048,0,0,https://www2.sgx.com/securities/equities/5PL
-Secura,0.055,0,0,https://www2.sgx.com/securities/equities/43B
-Serial System,0.080,0,0,https://www2.sgx.com/securities/equities/S69
-Seroja Inv,0.064,0,0,https://www2.sgx.com/securities/equities/IW5
+Secura,0.051,0,0,https://www2.sgx.com/securities/equities/43B
+Seroja Inv,0.072,0,0,https://www2.sgx.com/securities/equities/IW5
 Serrano,0.031,0,0,https://www2.sgx.com/securities/equities/40R
 Shanghai Turbo,1.000,0,0,https://www2.sgx.com/securities/equities/AWM
 Shangri-La HKD,8.310,0,0,https://www2.sgx.com/securities/equities/S07
-Shopper360,0.128,0,0,https://www2.sgx.com/securities/equities/1F0
-Silkroad Nickel,0.230,0,0,https://www2.sgx.com/securities/equities/STP
-Regal Intl,0.015,0,0,https://www2.sgx.com/securities/equities/UV1
-Renaissance United,0.002,0,0,https://www2.sgx.com/securities/equities/I11
-Renewable Energy,0.022,0,0,https://www2.sgx.com/securities/equities/5DW
-Resources Prima,0.026,0,0,https://www2.sgx.com/securities/equities/5MM
-Revez,0.185,0,0,https://www2.sgx.com/securities/equities/RCU
-Rich Capital,0.003,0,0,https://www2.sgx.com/securities/equities/5G4
-Ryobi Kiso,0.130,0,0,https://www2.sgx.com/securities/equities/BDN
-Sakae,0.073,0,0,https://www2.sgx.com/securities/equities/5DO
-Samko Timber,0.019,0,0,https://www2.sgx.com/securities/equities/E6R
-Samurai,0.800,0,0,https://www2.sgx.com/securities/equities/1C3
-Sin Heng Mach,0.260,0,0,https://www2.sgx.com/securities/equities/BKA
-Sincap,0.006,0,0,https://www2.sgx.com/securities/equities/5UN
-Sing Inv & Fin,1.430,0,0,https://www2.sgx.com/securities/equities/S35
-SingaporeKitchen,0.110,0,0,https://www2.sgx.com/securities/equities/5WG
 SingHoldings,0.395,0,0,https://www2.sgx.com/securities/equities/5IC
+SingMyanmar,0.050,0,0,https://www2.sgx.com/securities/equities/Y45
+SingShipping,0.290,0,0,https://www2.sgx.com/securities/equities/S19
+Sinjia Land,0.023,0,0,https://www2.sgx.com/securities/equities/5HH
 Sino Techfibre,0.090,0,0,https://www2.sgx.com/securities/equities/AD8
 SinoCloud,0.001,0,0,https://www2.sgx.com/securities/equities/5EK
 Sinopipe,0.130,0,0,https://www2.sgx.com/securities/equities/X06
 Sitra,0.011,0,0,https://www2.sgx.com/securities/equities/5LE
-SK Jewellery,0.087,0,0,https://www2.sgx.com/securities/equities/42G
 SLB Dev,0.122,0,0,https://www2.sgx.com/securities/equities/1J0
-Soilbuild Const,0.052,0,0,https://www2.sgx.com/securities/equities/S7P
-Soon Lian,0.051,0,0,https://www2.sgx.com/securities/equities/5MD
-Soup Restaurant,0.154,0,0,https://www2.sgx.com/securities/equities/5KI
+Soilbuild Const,0.058,0,0,https://www2.sgx.com/securities/equities/S7P
 Southern Pkg,0.380,0,0,https://www2.sgx.com/securities/equities/BQP
-Spura Finance,0.875,0,0,https://www2.sgx.com/securities/equities/S23
-Stamford Tyres,0.245,0,0,https://www2.sgx.com/securities/equities/S29
+SP Corp,0.505,0,0,https://www2.sgx.com/securities/equities/AWE
+Sri Trang Agro,0.435,0,0,https://www2.sgx.com/securities/equities/NC2
+Stamford Tyres,0.240,0,0,https://www2.sgx.com/securities/equities/S29
 Starburst,0.365,0,0,https://www2.sgx.com/securities/equities/40D
 Starland,0.116,0,0,https://www2.sgx.com/securities/equities/5UA
 StratechGroup,0.066,0,0,https://www2.sgx.com/securities/equities/BRR
 Suntar Eco-City,0.255,0,0,https://www2.sgx.com/securities/equities/BKZ
-TalkMed,0.515,0,0,https://www2.sgx.com/securities/equities/5G3
-Tat Seng Pkg,0.515,0,0,https://www2.sgx.com/securities/equities/T12
-Tech Oil & Gas,0.071,0,0,https://www2.sgx.com/securities/equities/5CQ
-Teho Intl,0.015,0,0,https://www2.sgx.com/securities/equities/5OQ
-TeleChoice Intl,0.210,0,0,https://www2.sgx.com/securities/equities/T41
-Tiong Seng,0.210,0,0,https://www2.sgx.com/securities/equities/BFI
-TLV,0.069,0,0,https://www2.sgx.com/securities/equities/42L
-Top Global,0.182,0,0,https://www2.sgx.com/securities/equities/BHO
-Top Glove,1.570,0,0,https://www2.sgx.com/securities/equities/BVA
-Tosei,9.500,0,0,https://www2.sgx.com/securities/equities/S2D
-Transcorp,0.005,0,0,https://www2.sgx.com/securities/equities/T19
-Travelite,0.129,0,0,https://www2.sgx.com/securities/equities/BCZ
 SunVic Chemical,0.022,0,0,https://www2.sgx.com/securities/equities/A7S
-SUTL Enterprise,0.500,0,0,https://www2.sgx.com/securities/equities/BHU
 Swee Hong,0.003,0,0,https://www2.sgx.com/securities/equities/QF6
+Travelite,0.129,0,0,https://www2.sgx.com/securities/equities/BCZ
+Trek 2000 Intl,0.069,0,0,https://www2.sgx.com/securities/equities/5AB
+Triyards,0.084,0,0,https://www2.sgx.com/securities/equities/RC5
+TSH,0.172,0,0,https://www2.sgx.com/securities/equities/KUH
+TT Intl,0.014,0,0,https://www2.sgx.com/securities/equities/T09
+TTJ,0.188,0,0,https://www2.sgx.com/securities/equities/K1Q
+Tye Soon,0.105,0,0,https://www2.sgx.com/securities/equities/BFU
+UG Healthcare,0.140,0,0,https://www2.sgx.com/securities/equities/41A
 Swiber,0.109,0,0,https://www2.sgx.com/securities/equities/BGK
 Swing Media Tech,0.460,0,0,https://www2.sgx.com/securities/equities/BEV
 Swissco Hldg,0.052,0,0,https://www2.sgx.com/securities/equities/ADP
-Synagie R,0.005,0,0,https://www2.sgx.com/securities/equities/YDHR
-Sysma,0.151,0,0,https://www2.sgx.com/securities/equities/5UO
-TA,0.160,0,0,https://www2.sgx.com/securities/equities/PA3
-Trek 2000 Intl,0.079,0,0,https://www2.sgx.com/securities/equities/5AB
-TrickleStar,0.330,0,0,https://www2.sgx.com/securities/equities/CYW
-Triyards,0.084,0,0,https://www2.sgx.com/securities/equities/RC5
-TSH,0.182,0,0,https://www2.sgx.com/securities/equities/KUH
-TT Intl,0.014,0,0,https://www2.sgx.com/securities/equities/T09
-TTJ,0.190,0,0,https://www2.sgx.com/securities/equities/K1Q
-UG Healthcare,0.140,0,0,https://www2.sgx.com/securities/equities/41A
-United Global,0.500,0,0,https://www2.sgx.com/securities/equities/43P
+TA,0.153,0,0,https://www2.sgx.com/securities/equities/PA3
+Tat Seng Pkg,0.505,0,0,https://www2.sgx.com/securities/equities/T12
+TCIL HK$,2.110,0,0,https://www2.sgx.com/securities/equities/T15
+Tech Oil & Gas,0.071,0,0,https://www2.sgx.com/securities/equities/5CQ
+Teho Intl,0.015,0,0,https://www2.sgx.com/securities/equities/5OQ
+TheHourGlass,0.810,0,0,https://www2.sgx.com/securities/equities/AGS
+TIH,0.225,0,0,https://www2.sgx.com/securities/equities/T55
+Top Global,0.183,0,0,https://www2.sgx.com/securities/equities/BHO
+Tosei,9.500,0,0,https://www2.sgx.com/securities/equities/S2D
+Transcorp,0.005,0,0,https://www2.sgx.com/securities/equities/T19
+Union Steel,0.350,0,0,https://www2.sgx.com/securities/equities/BLA
+United Food,0.047,0,0,https://www2.sgx.com/securities/equities/AZR
+United Global,0.490,0,0,https://www2.sgx.com/securities/equities/43P
 Universal Res,0.170,0,0,https://www2.sgx.com/securities/equities/BGO
-UOA,0.760,0,0,https://www2.sgx.com/securities/equities/EH5
-USP Group,0.087,0,0,https://www2.sgx.com/securities/equities/BRS
-Vallianz,0.085,0,0,https://www2.sgx.com/securities/equities/WPC
+UOA,0.785,0,0,https://www2.sgx.com/securities/equities/EH5
+USP Group,0.069,0,0,https://www2.sgx.com/securities/equities/BRS
+Vallianz,0.102,0,0,https://www2.sgx.com/securities/equities/WPC
+ValueMax,0.320,0,0,https://www2.sgx.com/securities/equities/T6I
 Versalink,0.149,0,0,https://www2.sgx.com/securities/equities/40N
+Vibrant Group,0.128,0,0,https://www2.sgx.com/securities/equities/BIP
+Wee Hur,0.220,0,0,https://www2.sgx.com/securities/equities/E3B
 Willas-Array,0.460,0,0,https://www2.sgx.com/securities/equities/BDR
-Wilton Resources,0.024,0,0,https://www2.sgx.com/securities/equities/5F7
-Winas,0.025,0,0,https://www2.sgx.com/securities/equities/5CN
-Wong Fong Ind,0.155,0,0,https://www2.sgx.com/securities/equities/1A1
+Wilton Resources,0.025,0,0,https://www2.sgx.com/securities/equities/5F7
+Wong Fong Ind,0.150,0,0,https://www2.sgx.com/securities/equities/1A1
+World Class Gbl,0.140,0,0,https://www2.sgx.com/securities/equities/1E6
 World Precision,0.200,0,0,https://www2.sgx.com/securities/equities/B49
 XMH,0.142,0,0,https://www2.sgx.com/securities/equities/BQF
 Yamada Green Res,0.330,0,0,https://www2.sgx.com/securities/equities/BJV
 YHI Intl,0.345,0,0,https://www2.sgx.com/securities/equities/BPF
 Yinda Infocomm,0.011,0,0,https://www2.sgx.com/securities/equities/42F
+Yongmao,0.910,0,0,https://www2.sgx.com/securities/equities/BKX
 Yorkshine,0.480,0,0,https://www2.sgx.com/securities/equities/MR8
 Yunnan Energy,0.159,0,0,https://www2.sgx.com/securities/equities/T43
 YuuZoo Networks,0.038,0,0,https://www2.sgx.com/securities/equities/AFC
 YZJ Shipbldg CNY,5.280,0,0,https://www2.sgx.com/securities/equities/SO7
+Zhongmin Baihui,0.740,0,0,https://www2.sgx.com/securities/equities/5SR
 Zhongxin Fruit,0.004,0,0,https://www2.sgx.com/securities/equities/5EG
-ZICO Hldgs,0.141,0,0,https://www2.sgx.com/securities/equities/40W
+ZICO Hldgs,0.143,0,0,https://www2.sgx.com/securities/equities/40W

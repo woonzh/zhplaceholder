@@ -13,7 +13,7 @@ import util
 import dbConnector as db
 #import analysis
 
-version='windows'
+version='linux'
 host='cloud'
 batchUpload=10
 
@@ -81,6 +81,9 @@ def extractData(df2):
     
     df2=df2.append(df)
     df2=df2[df2['names']!='']
+    
+    df2.drop_duplicates(subset ="names", keep = 'first', inplace = True)
+    
     return df2, df
 
 def closeAlerts():
@@ -102,7 +105,7 @@ def crawlSummary():
     
     closeAlerts()
     
-    time.sleep(0.5)
+    time.sleep(2)
     
     lst=[]
     df=pd.DataFrame(columns=['names', 'last price', 'vol', 'val traded', 'address'])
@@ -112,14 +115,20 @@ def crawlSummary():
     
     option=driver.find_element_by_class_name("vertical-scrolling-bar")
     
-    total=55
+    cont=True
+    curCount=0
+    consecSameCount=0
+    count=0
+    
     try:
-        for j in range(total):#55
+        while cont==True:
             actionChains = ActionChains(driver)
             #org 8
             # 8.5 694
             #9, 10, 12 13 14 15 16 694
-            print(j)
+            count+=1
+            print(count)
+            
             actionChains.click_and_hold(option).move_by_offset(0,16).release().perform()
             if host=='cloud':
                 time.sleep(1)
@@ -130,8 +139,19 @@ def crawlSummary():
         #    print(new_height)
             df, df2 = extractData(df)
             lst.append(df2)
+            print('df length: %s'%(str(len(df))))
+            
+            if len(df)==curCount:
+                consecSameCount+=1
+            else:
+                consecSameCount=0
+            
+            if consecSameCount >=3:
+                cont=False
+            
+            curCount=len(df)
     except:
-        print("stopped at %s of %s" %(str(j), str(total)))
+        print("stopped at: %s, size: %s" %(str(count), str(len(df))))
         print(len(df))
         print(len(df2))
         
@@ -443,10 +463,9 @@ def extractSummary(fname):
     return df, df2
 
 def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
-    
+    dbName='summary'
     if summaryBool==False:
         if host=='cloud':
-            dbName='summary'
             result=db.extractTable(dbName)
             if result['error'] is not None:
                 df, df2=extractSummary(summaryFName)
@@ -462,8 +481,9 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
     else:
         df, df2=extractSummary(summaryFName)
         if host=='cloud':
-            db.recreateTable(dbName)
+            db.recreateTable(dbName, df)
             db.rewriteTable(dbName, df)
+        print('done updating summary')
     
     
 #    df=df.loc[list(range(0,3))]
@@ -478,6 +498,8 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
 def updatePriceHist(df, companyFullInfo,updateDatabase=True):
     tdayDate=util.currentDate()
     if updateDatabase:
+        db.recreateTable('summary', df)
+        db.rewriteTable('summary', df)
         db.rewriteTable('rawData', companyFullInfo, True)
         result=db.extractTable('history')
         
@@ -545,7 +567,7 @@ def updateCompanyInfo(downloadData=True):
     
     updatePriceHist(df, companyFullInfo)
     
-#    return df, companyFullInfo
+    return df, companyFullInfo
     
 #    results=analysis.cleanAndProcess(infoName=companyUpdatedInfoFName)
     
@@ -557,6 +579,8 @@ def closeDriver():
 #df,df2=extractSummary(summaryFName)
 #df, companyFullInfo= updateCompanyInfo()
 #a,b=updatePriceHist(df, companyFullInfo)
+
+#getFullDetails(index=0, summaryBool=True, host='cloud', intJobId='')
 
 #if __name__ == "__main__":
 #    parser = argparse.ArgumentParser("simple_example")
