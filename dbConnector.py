@@ -180,6 +180,9 @@ def rewriteTable(dbName, df, rewrite=False):
             recreateTable(dbName, df, cont=1)
         
         if lstCompare(list(df), result) ==False:
+            print('lst compare fail')
+            print(list(df))
+            print(result)
             recreateTable(dbName, df)
         
     cols=str([x.replace(' ','_') for x in list(df)]).replace("'","")[1:-1]
