@@ -155,7 +155,16 @@ def recreateTable(dbName, df, cont=0):
         else:
             closeConn()
             
+def ConvertText(txt):
+    txt=txt.lower()
+    txt=txt.replace(' ','_')
+    txt=txt.replace("'",'')
+    return txt
+            
 def lstCompare(lst1, lst2):
+    lst1=[ConvertText(x) for x in lst1]
+    lst2=[ConvertText(x) for x in lst2]
+    
     if len(lst1)!=len(lst2):
         return False
     
