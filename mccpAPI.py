@@ -119,13 +119,11 @@ def workerSGX():
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
 
-@app.route('/friar', methods=['GET', 'OPTIONS'])
-def friar():
+@app.route('/rawdata', methods=['GET', 'OPTIONS'])
+def rawdata():
     ret={}
     if request.method == 'GET':
-        intJobId=util.stringGenerator()
-        mode = request.args.get("mode" ,default=1)
-        result=orc.wc.queueFunc('friar', orc.runFriar, (mode, intJobId), intJobId)
+        result=analysis.extractFileFromDB()
         ret={
             'answer':result}
             
