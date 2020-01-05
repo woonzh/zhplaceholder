@@ -124,10 +124,9 @@ def rawdata():
     ret={}
     if request.method == 'GET':
         result=analysis.extractFileFromDB()
-        ret={
-            'answer':result}
+        print(result)
             
-        resp = flask.Response(result)
+        resp = make_response(result.to_csv(header=True, index=False))
         resp.headers['Access-Control-Allow-Origin'] = '*'
         resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
