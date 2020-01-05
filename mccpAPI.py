@@ -127,7 +127,7 @@ def rawdata():
         ret={
             'answer':result}
             
-        resp = flask.Response(ret)
+        resp = flask.Response(result)
         resp.headers['Access-Control-Allow-Origin'] = '*'
         resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
