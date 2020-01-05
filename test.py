@@ -25,8 +25,9 @@ import pandas as pd
 #    'params': 10
 #        }
 #
-url='https://zhplaceholder.herokuapp.com/sgxWorker'
+#url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #url='https://zhplaceholder.herokuapp.com/sgxUpdate'
+url='https://zhplaceholder.herokuapp.com/rawdata'
 result=requests.get(url)
 ans=json.loads(result.text)
 jobid=ans['answer']['result']
@@ -39,12 +40,12 @@ jobid=ans['answer']['result']
 #ans=json.loads(result.text)
 #jobid=ans['answer']['result']
 
-url='https://zhplaceholder.herokuapp.com/workerResult'
-params={
-    'jobId':jobid
-        }
-result=requests.get(url, params)
-print(result.text)
+#url='https://zhplaceholder.herokuapp.com/workerResult'
+#params={
+#    'jobId':jobid
+#        }
+#result=requests.get(url, params)
+#print(result.text)
 
 #def test():
 #    print("test")
