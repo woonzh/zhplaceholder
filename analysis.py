@@ -250,10 +250,10 @@ def extractIndustries(fname=newFile, df=None):
 def filterData(fname=newFile, industry=[], df=None, filters=None):
     if filters is None:
         filters={
-            'peratio':['>',1],
-            'openprice':['>',0.2],
-            'net_profit_margin':['>', 5],
-            'volume traded %':['>', 0.00]
+            'new PE ratio':['>',0],
+            'openprice':['>',0],
+            'net_profit_margin':['>', 0],
+            'volume traded %':['>', 0.001]
                 }
     stats={
         'Consumer':{
@@ -275,6 +275,9 @@ def filterData(fname=newFile, industry=[], df=None, filters=None):
                     keepList.append(count)
                     
         df=df.loc[keepList]
+    
+#    print(len(df))
+        
     for i in filters:
         if filters[i][0]=='>':
             df=df[df[i]>filters[i][1]]
@@ -298,15 +301,15 @@ def getFilteredResult(industry=[], cloud=True, filters=None):
     df=filterData(industry=industry, df=dfNew, filters=None)
     return df
 
-if __name__ == "__main__":
-    pullFromDB=True
-    if pullFromDB:
-        df=extractFileFromDB()
-        df.to_csv(file, index=False)
-        
-    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
-
-industries, industriesDf, clusters=extractIndustries()
+#if __name__ == "__main__":
+#    pullFromDB=True
+#    if pullFromDB:
+#        df=extractFileFromDB()
+#        df.to_csv(file, index=False)
+#        
+#    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
+#
+#industries, industriesDf, clusters=extractIndustries()
 a=filterData(industry=[])
 
 #b=dfNew[dfNew['names']=='ISEC']

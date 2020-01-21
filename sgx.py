@@ -217,7 +217,7 @@ def getCompanyInfo(name, url):
     
     headerDict={
         'openPrice':'Previous Open Price',
-        'high_low':'Previous Close',
+        'high_low':'Previous Day High/Low',
         'close':'Previous Close',
         'prevCloseDate':'Previous Close Date',
         'marketCap':'Total Market Cap',
@@ -228,31 +228,29 @@ def getCompanyInfo(name, url):
         'mthvwap':'Average 3-month Volume',
         'unadjVWAP':'Unadj. 6-month VWAP',
         'adjVWAP':'Adj. 6-month VWAP',
-        'peratio':'P/E Ratio',
-        'price_Sales':'Price/Sales',
-        'price_CF':'Price/CF',
-        'pricebookvalue':'Price/Book Value',
-        'dividend':'Dividend Yield',
-        'divident_5_yr_avg':'Dividend Yield 5-yr avg',
-        'debt':'Net Debt',
+        'peratio':'P/E RatioThis ratio is calculated by dividing the current Price by the sum of the Diluted Earnings Per Share including discontinued operations AFTER Extraordinary Items and Accounting Changes over the last four interim periods.',
+        'price_Sales':'Price/SalesPrice divided by the sales per share for the trailing 12 months.',
+        'price_CF':'Price/CFPrice divided by cash flow per share for the trailing 12 months.',
+        'pricebookvalue':'Price/Book ValueThis is the Current Price divided by the latest interim period Book Value Per Share.',
+        'dividend':'Dividend YieldThis value is the current percentage dividend yield based on the present cash dividend rate. It is calculated as the Indicated Annual Dividend divided by the current Price, multiplied by 100.',
+        'divident_5_yr_avg':'Dividend Yield 5-yr avgAverage of the dividend yield over the last 60 months',
+        'debt':'Net DebtSum of all short term debt, notes payable, long term debt and preferred equity minus the total cash and equivalents and short term investments for the most recent interim period. Only reported for industrial, utility and banking companies.',
         'long term debt_equity':'Long Term Debt / Equity',
         'enterpriseValue':'Enterprise Value',
         'assets':'Total Assets',
         'cash':'Cash & Short Term Investments',
-        'roe':'Return on Equity (ROE)',
-        'roa':'Return on Assets (ROA)',
-        'capEx':'CapEx',
+        'roe':'Return on Equity (ROE)This value is calculated as the Income Available to Common Stockholders for the most recent fiscal year divided by the Average Common Equity and is expressed as a percentage. Average Common Equity is the average of the Common Equity at the beginning and the end of the year.',
+        'roa':'Return on Assets (ROA)Income after tax for the trailing 12 months divided by the average total assets.',
+        'capEx':'CapExCapital expenditures (CapEx) refer to funds that are used by a company for the purchase, improvement, or maintenance of long-term assets to improve the efficiency or capacity of the company.',
         'EBIT':'',
-        'revenue':'Total Revenue',
+        'revenue':'Total RevenueThis is the sum of all revenue (sales) reported for all operating divisions for the most recent trailing 12 month period.',
         'operating_income': 'Operating Income',
-        'operating_margin':'Operating Margin',
+        'operating_margin':'Operating MarginPercent of revenue remaining after paying all operating expenses for the trailing 12 months.',
         'netincome':'Net Income',
-        'net_profit_margin':'Net Profit Margin',
-        'revenue_per_share_5_yr_growth':'Revenue/share 5 yr growth',
-        'eps_per_share_5_yr_growth':'EPS 5 yr growth',
-        'roe':'Return on Equity (ROE)',
-        'roa':'Return on Assets (ROA)',
-        'ebita':''
+        'net_profit_margin':'Net Profit MarginReturn on sales for the trailing 12 months.',
+        'revenue_per_share_5_yr_growth':'Revenue/share 5 yr growthCompound annual growth rate of revenues per share over the last 5 years.',
+        'eps_per_share_5_yr_growth':'EPS 5 yr growthCompound annual growth rate of earnings per share excluding extraordinary items and discontinued operations over the last 5 years.',
+        'ebita':"EBITDAEarnings Before Interest, Taxes for the trailing 12 months plus the same period's Depreciation and Amortization expenses from the Statement of Cash Flows."
             }
     
     cont=True
@@ -287,6 +285,9 @@ def getCompanyInfo(name, url):
         text=i.get_attribute('innerText')
         if text!='':
             td2.append(text)
+            
+#    return th2,td2
+            
     
     df=pd.DataFrame()
     df['names']=[name]
@@ -575,6 +576,9 @@ def updateCompanyInfo(downloadData=True):
 
 def closeDriver():
     driver.quit()
+    
+#a,b=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
+#closeDriver()
     
 #df,df2=extractSummary(summaryFName)
 #df, companyFullInfo= updateCompanyInfo()
