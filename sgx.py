@@ -129,7 +129,7 @@ def crawlSummary():
             count+=1
             print(count)
             
-            actionChains.click_and_hold(option).move_by_offset(0,16).release().perform()
+            actionChains.click_and_hold(option).move_by_offset(0,10).release().perform()
             if host=='cloud':
                 time.sleep(1)
             else:
@@ -146,7 +146,7 @@ def crawlSummary():
             else:
                 consecSameCount=0
             
-            if consecSameCount >=3:
+            if consecSameCount >=5:
                 cont=False
             
             curCount=len(df)
