@@ -129,7 +129,8 @@ def crawlSummary():
             count+=1
             print(count)
             
-            actionChains.click_and_hold(option).move_by_offset(0,10).release().perform()
+            #org 15
+            actionChains.click_and_hold(option).move_by_offset(0,5).release().perform()
             if host=='cloud':
                 time.sleep(1)
             else:
