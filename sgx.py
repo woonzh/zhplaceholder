@@ -102,6 +102,7 @@ def closeAlerts():
     
 def crawlSummary():
     global dragIndex
+    global maxSummaryTries
     driver.get(mainURL)
     time.sleep(1)
     
@@ -149,7 +150,7 @@ def crawlSummary():
             else:
                 consecSameCount=0
             
-            if consecSameCount >=10:
+            if consecSameCount >=maxSummaryTries:
                 cont=False
             
             curCount=len(df)
@@ -552,10 +553,10 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     if dragCount is not None:
         dragIndex=dragCount
         
-    if sumTries is not NOne:
+    if sumTries is not None:
         maxSummaryTries=sumTries
     
-    print('dragIndex: %s'%(str(dragIndex)))
+    print('dragIndex: %s, sumTries:%s'%(str(dragIndex),str(maxSummaryTries)))
     
     df,df2=extractSummary(summaryFName)
     
