@@ -19,8 +19,8 @@ def runSGXFull(jobId=""):
     params=(0, False, 'cloud', jobId)
     util.runFunc(actFunc=sgx.getFullDetails, actFuncParams=params)
     
-def runSGXUpdate(dragIndex=None, jobId=''):
-    params=(dragIndex)
+def runSGXUpdate(dragIndex=None, sumTries=None,jobId=''):
+    params=(dragIndex, sumTries)
     util.runFunc(actFunc=sgx.updateCompanyInfo, actFuncParams=params)
     
 def runFriar(mode=1, jobId=''):

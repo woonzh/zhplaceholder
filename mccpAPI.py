@@ -95,6 +95,7 @@ def workerSGXUpdate():
     if request.method == 'GET':
         intJobId=util.stringGenerator()
         dragIndex = request.args.get("dragIndex", default=None)
+        sumTries = request.args.get("sumTries", default=None)
         result=orc.wc.queueFunc('sgx update', orc.runSGXUpdate, (dragIndex, intJobId), intJobId)
         ret={
             'answer':result}

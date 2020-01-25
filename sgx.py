@@ -52,6 +52,7 @@ companyUpdatedInfoFName='data/companyInfo(updated).csv'
 infoLogs='data/logs/companyInfo_'
 priceHistFName='data/priceHist.csv'
 dragIndex=15
+maxSummaryTries=5
 
 def retrieveText(lst, attribute="innerText"):
     store=[]
@@ -544,12 +545,15 @@ def updateRatios(companyInfo):
     
     return companyInfo
     
-def updateCompanyInfo(dragCount=None,downloadData=True):
+def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     now=util.currentDate()
     global dragIndex
     
     if dragCount is not None:
         dragIndex=dragCount
+        
+    if sumTries is not NOne:
+        maxSummaryTries=sumTries
     
     print('dragIndex: %s'%(str(dragIndex)))
     
