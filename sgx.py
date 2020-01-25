@@ -580,7 +580,8 @@ def closeDriver():
 #a,b=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
 #closeDriver()
     
-#df,df2=extractSummary(summaryFName)
+#df,df2=updateCompanyInfo()
+#closeDriver()
 #df, companyFullInfo= updateCompanyInfo()
 #a,b=updatePriceHist(df, companyFullInfo)
 

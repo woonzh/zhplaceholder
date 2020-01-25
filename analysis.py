@@ -84,7 +84,7 @@ def featuresEngineering(df, details):
     debt=df['debt']
     enterpriseVal=df['enterprisevalue']
     sharesOutstanding=df['sharesoutstanding']
-    floatv=[float(x.split('%')[0])/100 if x!='-' else 0 for x in list(df['p_float'])]
+#    floatv=[float(x.split('%')[0])/100 if x!='-' else 0 for x in list(df['p_float'])]
     
     #new PEratio
 #    df['new PE ratio']=[x/(y/z) if (x!=0 and y!=0 and z!=0) else 0 for x, y,z in zip(price,income, sharesOutstanding)]
@@ -112,7 +112,9 @@ def featuresEngineering(df, details):
     df['normalized aquirer multiple']=[y/x if (x!=0 and y!=0) else 0 for x,y in zip(df['aquirer multiple'], price)]
     
     # get the % of shares traded
-    df['volume traded %']=[x/(z*y) if (x!=0 and y!=0) else 0 for x,y, z in zip(df['avgvolume'], sharesOutstanding, floatv)]
+    df['volume traded %']=[x/(y) if (x!=0 and y!=0) else 0 for x,y in zip(df['avgvolume'], sharesOutstanding)]
+    
+    df['debt_assets_ratio']=[x/y if (x!=0 and y!=0) else 0 for x,y in zip(debt,assets)]
     
     return df
 
@@ -250,10 +252,10 @@ def extractIndustries(fname=newFile, df=None):
 def filterData(fname=newFile, industry=[], df=None, filters=None):
     if filters is None:
         filters={
-            'new PE ratio':['>',0],
-            'openprice':['>',0],
-            'net_profit_margin':['>', 0],
-            'volume traded %':['>', 0.001]
+            'peratio':['<',20],
+            'openprice':['>',0.1],
+            'net_profit_margin':['>', 5],
+            'volume traded %':['>', 0.01]
                 }
     stats={
         'Consumer':{
@@ -311,6 +313,6 @@ def getFilteredResult(industry=[], cloud=True, filters=None):
 #
 #industries, industriesDf, clusters=extractIndustries()
 a=filterData(industry=[])
-
+b=a[['names','openprice','peratio','dividend','debt_assets_ratio','revenue','operating_margin','net_profit_margin','volume traded %', 'industry']]
 #b=dfNew[dfNew['names']=='ISEC']
 #a=getFilteredResult()
