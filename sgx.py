@@ -549,6 +549,7 @@ def updateRatios(companyInfo):
 def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     now=util.currentDate()
     global dragIndex
+    global maxSummaryTries
     
     if dragCount is not None:
         dragIndex=dragCount
