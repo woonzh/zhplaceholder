@@ -28,7 +28,7 @@ import pandas as pd
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 url='https://zhplaceholder.herokuapp.com/sgxUpdate'
 params={
-    'dragIndex':3,
+    'dragIndex':15,
     'sumTries':10
         }
 #url='https://zhplaceholder.herokuapp.com/rawdata'
