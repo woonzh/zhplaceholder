@@ -27,8 +27,11 @@ import pandas as pd
 #
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 url='https://zhplaceholder.herokuapp.com/sgxUpdate'
+params={
+    'dragIndex':13
+        }
 #url='https://zhplaceholder.herokuapp.com/rawdata'
-result=requests.get(url)
+result=requests.get(url, params=params)
 ans=json.loads(result.text)
 jobid=ans['answer']['result']
 #

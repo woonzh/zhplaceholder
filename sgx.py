@@ -51,6 +51,7 @@ companyInfoFName='data/companyInfo.csv'
 companyUpdatedInfoFName='data/companyInfo(updated).csv'
 infoLogs='data/logs/companyInfo_'
 priceHistFName='data/priceHist.csv'
+dragIndex=15
 
 def retrieveText(lst, attribute="innerText"):
     store=[]
@@ -99,7 +100,7 @@ def closeAlerts():
     driver.execute_script("window.scrollBy(0,300)")
     
 def crawlSummary():
-    
+    global dragIndex
     driver.get(mainURL)
     time.sleep(1)
     
@@ -130,7 +131,7 @@ def crawlSummary():
             print(count)
             
             #org 15
-            actionChains.click_and_hold(option).move_by_offset(0,5).release().perform()
+            actionChains.click_and_hold(option).move_by_offset(0,dragIndex).release().perform()
             if host=='cloud':
                 time.sleep(1)
             else:
@@ -147,7 +148,7 @@ def crawlSummary():
             else:
                 consecSameCount=0
             
-            if consecSameCount >=5:
+            if consecSameCount >=10:
                 cont=False
             
             curCount=len(df)
@@ -543,8 +544,14 @@ def updateRatios(companyInfo):
     
     return companyInfo
     
-def updateCompanyInfo(downloadData=True):
+def updateCompanyInfo(dragCount=None,downloadData=True):
     now=util.currentDate()
+    global dragIndex
+    
+    if dragCount is not None:
+        dragIndex=dragCount
+    
+    print('dragIndex: %s'%(str(dragIndex)))
     
     df,df2=extractSummary(summaryFName)
     
