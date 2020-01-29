@@ -52,7 +52,7 @@ companyUpdatedInfoFName='data/companyInfo(updated).csv'
 infoLogs='data/logs/companyInfo_'
 priceHistFName='data/priceHist.csv'
 dragIndex=15
-maxSummaryTries=10
+maxSummaryTries=15
 
 def retrieveText(lst, attribute="innerText"):
     store=[]
