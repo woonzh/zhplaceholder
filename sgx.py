@@ -45,7 +45,7 @@ else:
 
 driver.maximize_window()
 
-mainURL="https://www2.sgx.com/securities/securities-prices"
+mainURL="https://www.sgx.com/securities/securities-prices?code=all"
 summaryFName='data/summary.csv'
 companyInfoFName='data/companyInfo.csv'
 companyUpdatedInfoFName='data/companyInfo(updated).csv'
@@ -458,11 +458,15 @@ def collateCompanyInfo(comList, fname=[companyInfoFName], start=0, host=host, ba
     
     return store
 
-def extractSummary(fname):   
+def extractSummary(fname, store=False, dbName=None):   
     df, df2=crawlSummary()
     df=df.reset_index(drop=True)
     if host!='cloud':
         df.to_csv(summaryFName, index=False)
+        
+    if store:
+        db.recreateTable(dbName, df)
+        db.rewriteTable(dbName, df)
         
     timec.getTimeSplit('summary extracted')
     return df, df2
@@ -590,6 +594,9 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 
 def closeDriver():
     driver.quit()
+    
+#df, df2=extractSummary(summaryFName, False, 'summary')
+#closeDriver()
     
 #a,b=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
 #closeDriver()
