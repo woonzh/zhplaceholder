@@ -13,8 +13,8 @@ import util
 import dbConnector as db
 #import analysis
 
-version='linux'
-host='cloud'
+version='windows'
+host='local'
 batchUpload=10
 
 timec=util.timeClass()
@@ -51,7 +51,7 @@ companyInfoFName='data/companyInfo.csv'
 companyUpdatedInfoFName='data/companyInfo(updated).csv'
 infoLogs='data/logs/companyInfo_'
 priceHistFName='data/priceHist.csv'
-dragIndex=15
+dragIndex=10
 maxSummaryTries=15
 
 def retrieveText(lst, attribute="innerText"):
@@ -595,8 +595,8 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 def closeDriver():
     driver.quit()
     
-#df, df2=extractSummary(summaryFName, False, 'summary')
-#closeDriver()
+df, df2=extractSummary(summaryFName, False, 'summary')
+closeDriver()
     
 #a,b=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
 #closeDriver()
