@@ -555,11 +555,11 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     global dragIndex
     global maxSummaryTries
     
-    if dragCount is not None:
-        dragIndex=dragCount
-        
-    if sumTries is not None:
-        maxSummaryTries=sumTries
+#    if dragCount is not None:
+#        dragIndex=dragCount
+#        
+#    if sumTries is not None:
+#        maxSummaryTries=sumTries
     
     print('dragIndex: %s, sumTries:%s'%(str(dragIndex),str(maxSummaryTries)))
     
