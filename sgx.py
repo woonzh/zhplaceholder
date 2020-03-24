@@ -595,8 +595,8 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 def closeDriver():
     driver.quit()
     
-df, df2=extractSummary(summaryFName, False, 'summary')
-closeDriver()
+#df, df2=extractSummary(summaryFName, False, 'summary')
+#closeDriver()
     
 #a,b=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
 #closeDriver()
