@@ -12,6 +12,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.cluster import KMeans
 from sklearn.neighbors import LocalOutlierFactor
+from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import scipy.cluster.hierarchy as spc
 import dbConnector as db
@@ -84,6 +85,10 @@ def featuresEngineering(df, details):
     debt=df['debt']
     enterpriseVal=df['enterprisevalue']
     sharesOutstanding=df['sharesoutstanding']
+    industry=df['industry']
+    marketcap=df['marketcap']
+    div=df['dividend']
+    div_5=df['divident_5_yr_avg']
 #    floatv=[float(x.split('%')[0])/100 if x!='-' else 0 for x in list(df['p_float'])]
     
     #new PEratio
@@ -116,6 +121,10 @@ def featuresEngineering(df, details):
     
     df['debt_assets_ratio']=[x/y if (x!=0 and y!=0) else 0 for x,y in zip(debt,assets)]
     
+    df['p_nav']=[a/(x+y-z) if (x!=0 and y!=0 and z!=0 and a!=0) else 0 for x,y,z,a in zip(cash, assets, debt, marketcap)]
+    df['type']=['reit' if ('reits' in str(x).lower()) else 'others' for x in industry]
+    df['div_val']=[x if x !=0 else y for x,y in zip(div,div_5)]
+    df['eps']=[x/y if (x!=0 and y!=0) else 0 for x, y in zip(income, sharesOutstanding)]
     return df
 
 def removeNull(df, inclusions=[]):
@@ -249,13 +258,22 @@ def extractIndustries(fname=newFile, df=None):
     
     return store, dfStore, clusters
 
+def train(x,y):
+    clf = LinearRegression().fit(x, y)
+    return clf.predict(x)
+
 def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
     if filters is None:
         filters={
             'peratio':['<',20],
             'openprice':['>',0.1],
-            'net_profit_margin':['>', 5],
-            'volume traded %':['>', 0.01]
+            'net_profit_margin':['>', 20],
+#            'volume traded %':['>', 0.01],
+#            'p_nav':['<',1],
+            'type':['=','others'],
+#            'revenue':['>',0]
+#            'debt_assets_ratio':['<',0.4],
+            'operating_margin':['>',10]
                 }
     stats={
         'Consumer':{
@@ -322,8 +340,20 @@ if __name__ == "__main__":
         
     dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
 #
-#industries, industriesDf, clusters=extractIndustries()
-a=filterData(industry=[], filters={}, name='reit')
-b=a[['names','openprice','peratio','dividend','debt_assets_ratio','revenue','operating_margin','net_profit_margin','volume traded %', 'industry']]
+industries, industriesDf, clusters=extractIndustries()
+a=filterData(industry=[])
+b=a[['names','marketcap','openprice','peratio','dividend','divident_5_yr_avg','revenue','operating_margin','net_profit_margin', 'p_nav']]
+
+x=a[['div_val','roe','roa','operating_margin','net_profit_margin', 'p_nav', 'eps']]
+y=a['peratio']
+
+result=train(x,y)
+
+z=x.copy(deep=True)
+z['y']=y
+corr=z.corr()
+
+b['pred'] = result
+b['diff']=(b['pred']-b['peratio'])/b['peratio']
 #b=dfNew[dfNew['names']=='ISEC']
 #a=getFilteredResult()

@@ -214,7 +214,7 @@ def getCompanyInfo(name, url):
     time.sleep(2)
     #
     driver.execute_script("window.scrollBy(0,700)")
-    time.sleep(2)
+    time.sleep(3)
 #    return driver
     #
 #    driver.switch_to.frame(driver.find_element_by_tag_name("iframe"))
