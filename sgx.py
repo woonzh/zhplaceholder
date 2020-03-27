@@ -13,8 +13,8 @@ import util
 import dbConnector as db
 #import analysis
 
-version='windows'
-host='local'
+version='linux'
+host='cloud'
 batchUpload=10
 
 timec=util.timeClass()
