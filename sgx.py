@@ -135,7 +135,7 @@ def crawlSummary():
             #org 15
             actionChains.click_and_hold(option).move_by_offset(0,dragIndex).release().perform()
             if host=='cloud':
-                time.sleep(1)
+                time.sleep(2)
             else:
                 time.sleep(0.2)
             
