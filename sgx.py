@@ -595,8 +595,8 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 def closeDriver():
     driver.quit()
     
-c,d=updateCompanyInfo()
-closeDriver()
+#c,d=updateCompanyInfo()
+#closeDriver()
 
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()
