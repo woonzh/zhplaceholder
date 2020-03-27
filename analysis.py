@@ -270,7 +270,7 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
             'net_profit_margin':['>', 20],
 #            'volume traded %':['>', 0.01],
 #            'p_nav':['<',1],
-            'type':['=','others'],
+            'type':['=','reit'],
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
             'operating_margin':['>',10]
@@ -333,7 +333,7 @@ def getFilteredResult(industry=[], cloud=True, filters=None):
     return df
 
 if __name__ == "__main__":
-    pullFromDB=False
+    pullFromDB=True
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)
@@ -342,7 +342,7 @@ if __name__ == "__main__":
 #
 industries, industriesDf, clusters=extractIndustries()
 a=filterData(industry=[])
-b=a[['names','marketcap','openprice','peratio','dividend','divident_5_yr_avg','revenue','operating_margin','net_profit_margin', 'p_nav']]
+b=a[['names','marketcap','close','peratio','dividend','divident_5_yr_avg','revenue','operating_margin','net_profit_margin', 'p_nav']]
 
 x=a[['div_val','roe','roa','operating_margin','net_profit_margin', 'p_nav', 'eps']]
 y=a['peratio']

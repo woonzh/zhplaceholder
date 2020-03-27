@@ -13,8 +13,8 @@ import util
 import dbConnector as db
 #import analysis
 
-version='linux'
-host='cloud'
+version='windows'
+host='local'
 batchUpload=10
 
 timec=util.timeClass()
@@ -595,6 +595,9 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 def closeDriver():
     driver.quit()
     
+c,d=updateCompanyInfo()
+closeDriver()
+
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()
     
