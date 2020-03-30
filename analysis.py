@@ -270,7 +270,7 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
             'net_profit_margin':['>', 20],
 #            'volume traded %':['>', 0.01],
 #            'p_nav':['<',1],
-            'type':['=','reit'],
+            'type':['=','others'],
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
             'operating_margin':['>',10]
@@ -333,7 +333,7 @@ def getFilteredResult(industry=[], cloud=True, filters=None):
     return df
 
 if __name__ == "__main__":
-    pullFromDB=True
+    pullFromDB=False
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)

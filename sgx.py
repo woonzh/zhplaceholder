@@ -13,8 +13,8 @@ import util
 import dbConnector as db
 #import analysis
 
-version='linux'
-host='cloud'
+version='windows'
+host='local'
 batchUpload=10
 
 timec=util.timeClass()
@@ -104,11 +104,11 @@ def crawlSummary():
     global dragIndex
     global maxSummaryTries
     driver.get(mainURL)
-    time.sleep(1)
+    time.sleep(3)
     
     closeAlerts()
     
-    time.sleep(2)
+    time.sleep(5)
     
     lst=[]
     df=pd.DataFrame(columns=['names', 'last price', 'vol', 'val traded', 'address'])
@@ -595,8 +595,8 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 def closeDriver():
     driver.quit()
     
-#c,d=updateCompanyInfo()
-#closeDriver()
+c,d=updateCompanyInfo()
+closeDriver()
 
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()
