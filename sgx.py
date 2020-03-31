@@ -13,8 +13,8 @@ import util
 import dbConnector as db
 #import analysis
 
-version='windows'
-host='local'
+version='linux'
+host='cloud'
 batchUpload=10
 
 timec=util.timeClass()
@@ -544,7 +544,7 @@ def isInt(val):
         
 def updateRatios(companyInfo):
     ratios=[float(x)/float(y) if (isInt(x) and isInt(y)) else 1 for x, y in zip(companyInfo['last price'], companyInfo['openprice'])]
-    colList=['marketcap','peratio','price_sales','price_cf','price_sales']
+    colList=['marketcap','peratio','price_sales','price_cf','price_sales', 'dividend', 'divident_5_yr_avg', 'p_nav', 'div_val', 'eps']
     for col in colList:
         companyInfo[col]=[float(x)*float(y) if (isInt(x)==True and isInt(y)==True) else x for x,y in zip(companyInfo[col], ratios)]
     
@@ -595,8 +595,8 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 def closeDriver():
     driver.quit()
     
-c,d=updateCompanyInfo()
-closeDriver()
+#c,d=updateCompanyInfo()
+#closeDriver()
 
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()

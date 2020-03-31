@@ -342,7 +342,7 @@ if __name__ == "__main__":
 #
 industries, industriesDf, clusters=extractIndustries()
 a=filterData(industry=[])
-b=a[['names','marketcap','close','peratio','dividend','divident_5_yr_avg','revenue','operating_margin','net_profit_margin', 'p_nav']]
+b=a[['names','marketcap','openprice','peratio','dividend','divident_5_yr_avg','revenue','operating_margin','net_profit_margin', 'p_nav']]
 
 x=a[['div_val','roe','roa','operating_margin','net_profit_margin', 'p_nav', 'eps']]
 y=a['peratio']
@@ -355,5 +355,5 @@ corr=z.corr()
 
 b['pred'] = result
 b['diff']=(b['pred']-b['peratio'])/b['peratio']
-#b=dfNew[dfNew['names']=='ISEC']
+#b=dfNew[dfNew['names']=='Wilmar Intl']
 #a=getFilteredResult()

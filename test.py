@@ -25,16 +25,16 @@ import pandas as pd
 #    'params': 10
 #        }
 #
-#url='https://zhplaceholder.herokuapp.com/sgxWorker'
-#result=requests.get(url)
+url='https://zhplaceholder.herokuapp.com/sgxWorker'
+result=requests.get(url)
 
-url='https://zhplaceholder.herokuapp.com/sgxUpdate'
+#url='https://zhplaceholder.herokuapp.com/sgxUpdate'
 #params={
 #    'dragIndex':5,
 #    'sumTries':10
 #        }
 #url='https://zhplaceholder.herokuapp.com/rawdata'
-result=requests.get(url)
+#result=requests.get(url)
 
 ans=json.loads(result.text)
 jobid=ans['answer']['result']
