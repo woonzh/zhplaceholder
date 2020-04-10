@@ -99,7 +99,7 @@ class crawler:
         return rows,df
     
     def store(self, df, fileLoc=None, dbName=None):
-        if self.host!='local':
+        if self.host=='local':
             df.to_csv(fileLoc, index=False)
         else:
             db.recreateTable(dbName, df)
