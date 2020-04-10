@@ -25,8 +25,11 @@ import pandas as pd
 #    'params': 10
 #        }
 #
-url='https://zhplaceholder.herokuapp.com/sgxWorker'
+url='https://zhplaceholder.herokuapp.com/hkexWorker'
 result=requests.get(url)
+
+#url='https://zhplaceholder.herokuapp.com/sgxWorker'
+#result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/sgxUpdate'
 #params={
