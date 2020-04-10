@@ -12,6 +12,7 @@ from worker import conn
 from util import workerClass
 import util
 import test2
+import hkex
 
 wc=workerClass()
 
@@ -26,6 +27,9 @@ def runSGXUpdate(dragIndex=None, sumTries=None,jobId=''):
 def runFriar(mode=1, jobId=''):
     params=(mode, jobId)
     util.runFunc(actFunc=test2.runProg, actFuncParams=params)
+    
+def runHKEXFull(dragIndex=None, sumTries=None,jobId=''):
+    util.runFunc(actFunc=hkex.run)
     
 #def testFunc():
 #    r=10*3

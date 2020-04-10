@@ -20,7 +20,8 @@ dbList={
     'rawData': 'rawdata',
     'jobs':'joblist',
     'friar':'friar',
-    'history':'history'
+    'history':'history',
+    'hksummary':'hksummary'
     }
 
 def connectToDatabase():
