@@ -23,3 +23,7 @@ def run():
     crawl.store(df, hkSum, dbName)
     
     crawl.closeDriver()
+    
+    return rows,df
+
+rows,df=run()
