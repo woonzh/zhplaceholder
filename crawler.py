@@ -44,8 +44,11 @@ class crawler:
         self.driver.maximize_window()
         
         if url is not None:
-            self.driver.get(url)
-            time.sleep(3)
+            self.urlDirect(url)
+            
+    def urlDirect(self, url):
+        self.driver.get(url)
+        time.sleep(3)
             
     def extractSum(self, df, rows):        
         for row in rows:
@@ -56,6 +59,30 @@ class crawler:
                 except:
                     lst.append('')
             df.loc[len(df)]=lst
+        
+        return df
+    
+    def crawlHKEXDetails(self, url):
+        self.urlDirect(url)
+        lst=[]
+        lst.append(self.driver.find_element_by_class_name("col_high52").text)
+        lst.append(self.driver.find_element_by_class_name("col_low52").text)
+        return lst
+    
+    def getHKEXDetails(self, df):
+        newUrl='https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sym=symbol&sc_lang=en'
+        newCols=['yearhigh', 'yearlow']
+        for col in newCols:
+            df[col]=['']*len(self.df)
+        
+        symbols=df['code']
+        for count, symbol in enumerate(symbols):
+            url=newUrl.replace('symbol',symbol)
+            newData=self.crawlHKEXDetails(url)
+            df.loc[count]=list(df.loc[count])[:-len(newData)]+newData
+            self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
+        
+        self.df=df
         
         return df
             
@@ -95,8 +122,9 @@ class crawler:
             self.timec.getTimeSplit(str(count))
         
         self.timec.stopTime()
+        self.df=df
         
-        return rows,df
+        return df
     
     def store(self, df, fileLoc=None, dbName=None):
         if self.host=='local':
