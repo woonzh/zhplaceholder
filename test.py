@@ -28,6 +28,9 @@ import pandas as pd
 url='https://zhplaceholder.herokuapp.com/hkexWorker'
 result=requests.get(url)
 
+#url='https://zhplaceholder.herokuapp.com/hkexUpdate'
+#result=requests.get(url)
+
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #result=requests.get(url)
 
