@@ -14,8 +14,8 @@ import json
 import dbConnector as db
 #import analysis
 
-version='linux'
-host='cloud'
+version='windows'
+host='local'
 batchUpload=10
 
 timec=util.timeClass()
@@ -30,7 +30,7 @@ else:
 if host == 'local':
     capabilities = webdriver.DesiredCapabilities.CHROME
     options=webdriver.ChromeOptions()
-    options.add_argument('--headless')
+#    options.add_argument('--headless')
     driver = webdriver.Chrome(chromepath, chrome_options=options)
 else:
     GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
@@ -336,6 +336,7 @@ def getCompanyInfo(name, url):
     ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
     actionChains = ActionChains(driver)
     actionChains.move_to_element(ele).perform()
+    driver.execute_script("window.scrollTo(0, %s)"%(int(ele.location['y'])+0.5))
     time.sleep(1)
     ele.click()
     
@@ -557,8 +558,8 @@ def closeDriver():
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()
     
-#a=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
-#closeDriver()
+a=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
+closeDriver()
     
 #df,df2=updateCompanyInfo()
 #closeDriver()

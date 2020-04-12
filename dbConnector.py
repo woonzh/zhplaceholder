@@ -104,6 +104,10 @@ def dtypeConverter(df, calType=1, overwrite=None):
         'int64': '%s'
             }
     
+    for ind in overwrite:
+        ref[ind]=overwrite[ind]
+        ref2[ind]='%s'
+    
     if calType==1:
         types=df.dtypes
         tIndex=list(types.index)
@@ -112,7 +116,7 @@ def dtypeConverter(df, calType=1, overwrite=None):
         if overwrite is not None:
             for ind in overwrite:
                 overwriteCol=list(df).index()
-                tType[overwriteCol]=overwrite[ind]
+                tType[overwriteCol]=ind
         
         store=''
         
