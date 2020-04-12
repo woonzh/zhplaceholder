@@ -336,8 +336,8 @@ def getCompanyInfo(name, url):
     ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
     actionChains = ActionChains(driver)
     actionChains.move_to_element(ele).perform()
-    driver.execute_script("window.scrollTo(0, %s)"%(int(ele.location['y'])+0.5))
-    time.sleep(1)
+#    driver.execute_script("window.scrollTo(0, %s)"%(int(ele.location['y'])+0.5))
+#    time.sleep(1)
     ele.click()
     
     store={}
