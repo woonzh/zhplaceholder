@@ -54,6 +54,9 @@ infoLogs='data/logs/companyInfo_'
 priceHistFName='data/priceHist.csv'
 dragIndex=10
 maxSummaryTries=15
+overwrite={
+    'financial_info': 'text'
+        }
 
 def retrieveText(lst, attribute="innerText"):
     store=[]
@@ -443,12 +446,12 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
     else:
         df, df2=extractSummary(summaryFName)
         if host=='cloud':
-            db.recreateTable(dbName, df)
+            db.recreateTable(dbName, df, overwrite=overwrite)
             db.rewriteTable(dbName, df)
         print('done updating summary')
     
     
-    df=df.loc[list(range(0,1))]
+#    df=df.loc[list(range(0,1))]
 #    print(df)
     companyFullInfo=collateCompanyInfo(df, start=index, host=host)
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)

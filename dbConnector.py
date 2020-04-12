@@ -91,7 +91,7 @@ def closeConn():
     conn.commit()
     connList=None
 
-def dtypeConverter(df, calType=1):
+def dtypeConverter(df, calType=1, overwrite):
     ref={
         'object': 'varchar(255)',
         'float64':'float',
@@ -109,6 +109,11 @@ def dtypeConverter(df, calType=1):
         tIndex=list(types.index)
         tType=[x.name for x in list(types)]
         
+        if overwrite is not None:
+            for ind in overwrite:
+                overwriteCol=list(df).index()
+                tType[overwriteCol]=overwrite[ind]
+        
         store=''
         
         for count, val in enumerate(tIndex):
@@ -125,7 +130,7 @@ def dtypeConverter(df, calType=1):
         return store[:-2]
     
 
-def recreateTable(dbName, df, cont=0):
+def recreateTable(dbName, df, cont=0, overwrite=None):
     tblResult=findTable(dbName)
     if tblResult['error'] is not None:
         return tblResult
@@ -134,7 +139,7 @@ def recreateTable(dbName, df, cont=0):
         
     queries={
         'dropTbl':'drop table %s' %(tblName),
-        'createTbl':'CREATE TABLE %s (%s)' % (tblName,dtypeConverter(df))
+        'createTbl':'CREATE TABLE %s (%s)' % (tblName,dtypeConverter(df, overwrite))
         }
     
 #    print(queries)
