@@ -211,9 +211,10 @@ def getCompanyInfo(name, url):
     #
     try:
         driver.find_element_by_xpath("//button[text()='OK']").click()
-        driver.find_element_by_xpath("//button[text()='Accept Cookies']").click()
     except:
         print('click ok failed')
+    
+    time.sleep(1)
     
     try:
         driver.find_element_by_xpath("//button[text()='Accept Cookies']").click()
