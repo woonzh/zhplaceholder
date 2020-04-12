@@ -86,6 +86,9 @@ class crawler:
                 self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
             except:
                 t=1
+            
+            if count !=0 and count%20 == 0:
+                self.store(df,None,dbname)
         
         self.df=df
         

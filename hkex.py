@@ -31,6 +31,17 @@ def run():
     
     return df
 
+def updateDetails():
+    crawl=crawler()
+    crawl.startDriver(url)
+    
+    df=crawl.getHKEXDetails(df=None, dbname=dbName)
+    crawl.store(df, hkSum, dbName)
+    
+    crawl.closeDriver()
+    
+    return df
+
 def cleanData(df):
     for col in currencyCols:
         newColVal=[float(x.split('$')[1]) if len(x.split('$'))>1 else 0 for x in df[col]]
