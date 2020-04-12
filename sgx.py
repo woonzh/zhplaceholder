@@ -14,8 +14,8 @@ import json
 import dbConnector as db
 #import analysis
 
-version='windows'
-host='local'
+version='linux'
+host='cloud'
 batchUpload=10
 
 timec=util.timeClass()
@@ -30,7 +30,7 @@ else:
 if host == 'local':
     capabilities = webdriver.DesiredCapabilities.CHROME
     options=webdriver.ChromeOptions()
-#    options.add_argument('--headless')
+    options.add_argument('--headless')
     driver = webdriver.Chrome(chromepath, chrome_options=options)
 else:
     GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
@@ -558,8 +558,8 @@ def closeDriver():
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()
     
-a=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
-closeDriver()
+#a=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
+#closeDriver()
     
 #df,df2=updateCompanyInfo()
 #closeDriver()
