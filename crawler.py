@@ -77,10 +77,13 @@ class crawler:
         
         symbols=df['code']
         for count, symbol in enumerate(symbols):
-            url=newUrl.replace('symbol',symbol)
-            newData=self.crawlHKEXDetails(url)
-            df.loc[count]=list(df.loc[count])[:-len(newData)]+newData
-            self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
+            try:
+                url=newUrl.replace('symbol',symbol)
+                newData=self.crawlHKEXDetails(url)
+                df.loc[count]=list(df.loc[count])[:-len(newData)]+newData
+                self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
+            except:
+                t=1
         
         self.df=df
         

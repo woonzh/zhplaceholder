@@ -92,6 +92,6 @@ def analytics(download=True):
     
 #df=run()
 
-#df=analytics(download=False)
+df=analytics(download=True)
 #cleanDf=cleanData(df)
 #sievedDf=sieveData(cleanDf)
