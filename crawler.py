@@ -54,9 +54,12 @@ class crawler:
         for row in rows:
             lst=[]
             for sub in self.subClassNames:
-                try:
-                    lst.append(row.find_element_by_xpath(self.subClassNames[sub]).get_attribute('innerText'))
-                except:
+                if self.subClassNames[sub]!='':
+                    try:
+                        lst.append(row.find_element_by_xpath(self.subClassNames[sub]).get_attribute('innerText'))
+                    except:
+                        lst.append('')
+                else:
                     lst.append('')
             df.loc[len(df)]=lst
         
@@ -69,11 +72,10 @@ class crawler:
         lst.append(self.driver.find_element_by_class_name("col_low52").text)
         return lst
     
-    def getHKEXDetails(self, df):
+    def getHKEXDetails(self, df=None, dbname=None):
         newUrl='https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities/Equities-Quote?sym=symbol&sc_lang=en'
-        newCols=['yearhigh', 'yearlow']
-        for col in newCols:
-            df[col]=['']*len(self.df)
+        if df is None:
+            df=db.extractTable(dbname)['result']
         
         symbols=df['code']
         for count, symbol in enumerate(symbols):
@@ -104,12 +106,14 @@ class crawler:
             'turnover':""".//td[@class="turnover"]""",
             'market_cap':""".//td[@class="market"]""",
             'pe':""".//td[@class="pe"]""",
-            'dividend':""".//td[@class="dividend"]"""}
+            'dividend':""".//td[@class="dividend"]""",
+            'yearhigh':'', 
+            'yearlow':''}
         
         cols=[x for x in self.subClassNames]
         df=pd.DataFrame(columns=cols)
         
-        while ele.location['y']>eleLoc:
+        while ele.location['y']>eleLoc and count <1:
             count+=1
             print(count*20)
             eleLoc=ele.location['y']

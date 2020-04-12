@@ -22,8 +22,9 @@ def run():
     crawl.startDriver(url)
     
     df=crawl.crawlHKEXSummary()
-    df=crawl.getHKEXDetails(df)
+    crawl.store(df, hkSum, dbName)
     
+    df=crawl.getHKEXDetails(df=df, dbname=dbName)
     crawl.store(df, hkSum, dbName)
     
     crawl.closeDriver()

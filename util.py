@@ -137,7 +137,8 @@ def pollFunc(pollTime):
     url='https://zhplaceholder.herokuapp.com/keepalive'
     result=requests.get(url)
     print("refreshed")
-    
+
+#useless will be overwritten 
 def actFunc(t=1234):
     print(t)
         
