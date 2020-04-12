@@ -9,6 +9,7 @@ import pandas as pd
 import os
 import argparse
 import util
+import json
 
 import dbConnector as db
 #import analysis
@@ -209,7 +210,12 @@ def getCompanyInfo(name, url):
         driver.find_element_by_xpath("//button[text()='OK']").click()
         driver.find_element_by_xpath("//button[text()='Accept Cookies']").click()
     except:
-        print('click failed')
+        print('click ok failed')
+    
+    try:
+        driver.find_element_by_xpath("//button[text()='Accept Cookies']").click()
+    except:
+        print('click accept cookies failed')
     #
     time.sleep(2)
     #
@@ -218,7 +224,7 @@ def getCompanyInfo(name, url):
 #    return driver
     #
 #    driver.switch_to.frame(driver.find_element_by_tag_name("iframe"))
-    
+##basic info
     headerDict={
         'openPrice':'Previous Open Price',
         'high_low':'Previous Day High/Low',
@@ -322,90 +328,37 @@ def getCompanyInfo(name, url):
             store+=' / '
     
         df[i]=store
+        
+##financial info
+    ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
+    actionChains = ActionChains(driver)
+    actionChains.move_to_element(ele).perform()
+    time.sleep(1)
+    ele.click()
+    
+    store={}
+    tables=driver.find_elements_by_xpath("""//table[@class="website-content-table"]""")
+    for table in tables:
+        header=table.find_element_by_xpath(""".//thead""")
+        headerEle=header.find_elements_by_xpath(""".//th""")
+        headerEleTitle=headerEle[0].text
+        if headerEleTitle!='':
+            store[headerEleTitle]=[x.text for x in headerEle][1:]
+        
+        contents=table.find_element_by_xpath(""".//tbody""")
+        rows=contents.find_elements_by_xpath(""".//tr""")
+        try:
+            for row in rows:
+                rowHeader=row.find_element_by_xpath(""".//th""").text
+                rowContent=row.find_elements_by_xpath(""".//td""")
+                if rowHeader!='':
+                    store[rowHeader]=[x.text for x in rowContent]
+        except:
+            t=1
+    
+    df['financial_info']=json.dumps(store)
     
     return df
-    
-    overviewDict={
-        'openPrice':"""//td[@data-bind="text: companyInfo.openPrice, formatNonZeroValue: 'dollars'"]""",
-        'high_low':"""//span[@data-bind="text: companyInfo.lowPrice != null ? companyInfo.lowPrice : '', format: 'dollars'"]""",
-        'close':"""//td[@data-bind="text: companyInfo.previousClosePrice, formatNonZeroValue: 'dollars'"]""",
-        'prevCloseDate':"""//td[@data-bind="text: companyInfo.previousCloseDate, format: 'date'"]""",
-        'marketCap':"""//td[@data-bind="text: companyInfo.marketCap, formatNonZeroValue: 'millions'"]""",
-        'mthvwap':"""//span[@data-bind="text: companyInfo.adjustedVolWeightedAvgPrice, formatNonZeroValue: 'number'"]""",
-        'sharesOutstanding':"""//td[@data-bind="text: companyInfo.sharesOutstanding, formatNonZeroValue: 'volume'"]""",
-        'normalizedEPS':"""//td[@data-bind="text: companyInfo.eps != null ? companyInfo.eps : '-', formatNonZeroValue: 'dollars'"]""",
-        'unadjVWAP':"""//td[@data-bind="visible: !companyInfo.hasOwnProperty('volWeightedAvgPrice') || companyInfo.volWeightedAvgPrice == null"]""",
-        'adjVWAP':"""//td[@data-bind="visible: !companyInfo.hasOwnProperty('adjustedVolWeightedAvgPrice') || companyInfo.adjustedVolWeightedAvgPrice == null"]""",
-        'avgVolume':"""//td[@data-bind="visible: !companyInfo.hasOwnProperty('adjustedVolWeightedAvgPrice') || companyInfo.adjustedVolWeightedAvgPrice == null"]"""
-        }
-    
-    valuationDict={
-        'peratio':"""//td[@data-bind="text: companyInfo.peRatio != null ? companyInfo.peRatio : '-', formatNonZeroValue: 'number'"]""",
-        'evebita':"""//td[@data-bind="text: companyInfo.evEbitData != null ? companyInfo.evEbitData : '-', formatNonZeroValue: 'number'"]""",
-        'pricebookvalue':"""//td[@data-bind="text: companyInfo.priceToBookRatio != null ? companyInfo.priceToBookRatio : '-', formatNonZeroValue: 'number'"]""",
-        'dividend':"""//td[@data-bind="text: companyInfo.dividendYield != null ? companyInfo.dividendYield : '-', formatNonZeroValue: 'percent'"]"""
-        }
-    
-    financialsDict={
-        'debtebita':"""//td[@data-bind="text: companyInfo.totalDebtEbitda != null ? companyInfo.totalDebtEbitda : '-', formatNonZeroValue: 'number'"]""",
-        'debt':"""//td[@data-bind="text: companyInfo.totalDebt != null ? companyInfo.totalDebt : '-', formatNonZeroValue: 'millions'"]""",
-        'enterpriseValue':"""//td[@data-bind="text: companyInfo.enterpriseValue != null ? companyInfo.enterpriseValue : '-', formatNonZeroValue: 'millions'"]""",
-        'assets':"""//td[@data-bind="text: companyInfo.totalAssets != null ? companyInfo.totalAssets : '-', formatNonZeroValue: 'millions'"]""",
-        'cash':"""//td[@data-bind="text: companyInfo.cashInvestments != null ? companyInfo.cashInvestments : '-', formatNonZeroValue: 'millions'"]""",
-        'capEx':"""//td[@data-bind="text: companyInfo.capitalExpenditures != null ? companyInfo.capitalExpenditures : '-', formatNonZeroValue: 'millions'"]""",
-        'EBIT':"""//td[@data-bind="text: companyInfo.ebit != null ? companyInfo.ebit : '-', formatNonZeroValue: 'millions'"]""",
-        'revenue':"""//td[@data-bind="text: companyInfo.totalRevenue != null ? companyInfo.totalRevenue : '-', formatNonZeroValue: 'millions'"]""",
-        'netincome':"""//td[@data-bind="text: companyInfo.netIncome != null ? companyInfo.netIncome : '-', formatNonZeroValue: 'millions'"]""",
-        'ebita':"""//td[@data-bind="text:  companyInfo.ebitda != null ? companyInfo.ebitda : '-', formatNonZeroValue: 'millions'"]"""
-        }
-    
-    generalDict={
-        'industry':"""//span[@class="widget-stocks-header-tags-container"]"""
-            }
-    
-    allDict={
-        'overview':overviewDict,
-        'valuation':valuationDict,
-        'financials':financialsDict
-        }
-    
-    dividendsDict={
-        'date':"""//td[@data-bind="text: dividendExDate, format: 'date'"]""",
-        'dividend':"""//td[@data-bind="text: dividendPrice, formatNonZeroValue: 'cents'"]"""
-            }
-    
-#    store={}
-#    processedStore={}
-#    storeDF=pd.DataFrame()
-#    storeDF['name']=[name]
-#    
-#    for j in allDict:
-#        oneDict=allDict[j]
-#        tem={}
-#        tem2={}
-#        for i in oneDict:
-#            try:
-#                info=driver.find_element_by_xpath(oneDict[i]).get_attribute('innerText')
-#            except:
-#                info='-'
-#            tem[i]=info
-#            tem2[i]=processString(info)
-#            storeDF[i]=[tem2[i]]
-#        store[j]=tem
-#        processedStore[j]=tem2
-#    
-#    dates=driver.find_elements_by_xpath(dividendsDict['date'])
-#    dividends=driver.find_elements_by_xpath(dividendsDict['dividend'])
-#    
-#    dividendList=pd.DataFrame(columns=['date', 'dividend'])
-#    for i in range(len(dates)):
-#        date=dates[i].get_attribute('innerText')
-#        dividend=dividends[i].get_attribute('innerText')
-#        dividendList.loc[i]=[date, dividend]
-#        if i == 0:
-#            storeDF['dividend']=dividend
-#        
-#    return storeDF, store, processedStore, dividendList
 
 def getTime(prev):
     cur=time.time()
@@ -495,7 +448,7 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
         print('done updating summary')
     
     
-#    df=df.loc[list(range(0,30))]
+    df=df.loc[list(range(0,30))]
 #    print(df)
     companyFullInfo=collateCompanyInfo(df, start=index, host=host)
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)
@@ -601,7 +554,7 @@ def closeDriver():
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()
     
-#a,b=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
+#a=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
 #closeDriver()
     
 #df,df2=updateCompanyInfo()

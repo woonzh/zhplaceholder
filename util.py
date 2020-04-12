@@ -61,9 +61,15 @@ class timeClass:
             split=(now - self.curTime)/60
         except:
             split='Nil'
+        
+        try:
+            elapsed=(now-self.startTime)/60
+        except:
+            elapsed = 'Nil'
+        
         self.history.loc[len(self.history)]=[event, now, split]
         
-        print(event + ': %s mins'%(str(split)))
+        print(event + ': %s mins - %s mins'%(str(split), str(elapsed)))
         
         self.curTime=now
     
@@ -78,6 +84,10 @@ class timeClass:
         now=datetime.now()
         timeElapsed=(now-self.startTime)/60
         return timeElapsed
+    
+    def getCurDate(self):
+        now=datetime.now()
+        return now.strftime('%d/%m/%Y')
 
 class workerClass:
     def __init__(self):
