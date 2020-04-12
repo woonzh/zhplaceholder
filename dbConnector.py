@@ -91,7 +91,7 @@ def closeConn():
     conn.commit()
     connList=None
 
-def dtypeConverter(df, calType=1, overwrite):
+def dtypeConverter(df, calType=1, overwrite=None):
     ref={
         'object': 'varchar(255)',
         'float64':'float',
