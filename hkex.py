@@ -12,6 +12,7 @@ import dbConnector as db
 
 url="https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en"
 hkSum='data/HKsummary.csv'
+hkSumEngine='data/HKsummaryEngineered.csv'
 dbName='hksummary'
 
 currencyCols=['price', 'yearhigh','yearlow']
@@ -83,11 +84,11 @@ def cleanData(df):
                 lst.append(numericVal)
         df[col]=lst
     
-    df['priceinc']=[float(x.split(' ')[0].replace('+','')) if str(x) !='nan' and str(x)!='' else 0 for x \
+    df['day_priceinc']=[float(x.split(' ')[0].replace('+','')) if str(x) !='nan' and str(x)!='' else 0 for x \
       in df['upval']]
-    df['perceninc']=[float(x.split(' ')[-1].replace('+','').replace("(",'').replace(')','')\
+    df['day_perceninc']=[float(x.split(' ')[-1].replace('+','').replace("(",'').replace(')','')\
       .replace('%','')) if str(x) !='nan' and str(x)!='' else 0 for x in df['upval']]
-    df=df.drop('upval', axis=1)    
+    df=df.drop('upval', axis=1)   
     return df
 
 def sieveData(df):
@@ -125,7 +126,8 @@ def analytics(download=True):
     
 #df=run()
 
-#df=analytics(download=True)
+#df=analytics(download=False)
 #cleanDf=cleanData(df)
 #engineDf=dataEngineer(cleanDf)
-#sievedDf=sieveData(cleanDf)
+#engineDf.to_csv(hkSumEngine, index=False)
+#sievedDf=sieveData(engineDf)

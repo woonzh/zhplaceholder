@@ -448,7 +448,7 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
         print('done updating summary')
     
     
-    df=df.loc[list(range(0,30))]
+    df=df.loc[list(range(0,1))]
 #    print(df)
     companyFullInfo=collateCompanyInfo(df, start=index, host=host)
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)
