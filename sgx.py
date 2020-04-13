@@ -437,7 +437,7 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
             result=db.extractTable(dbName)
             if result['error'] is not None:
                 df, df2=extractSummary(summaryFName)
-                db.recreateTable(dbName, df)
+                db.recreateTable(dbName, df, overwrite=overwrite)
                 db.rewriteTable(dbName, df)
             else:
                 df=result['result']
