@@ -563,8 +563,8 @@ def closeDriver():
 #db.recreateTable('rawData', companyinfo, overwrite=overwrite)
 #db.rewriteTable('rawData', companyinfo)
 
-c,d=updateCompanyInfo()
-closeDriver()
+#c,d=updateCompanyInfo()
+#closeDriver()
 
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()
