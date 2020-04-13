@@ -104,9 +104,10 @@ def dtypeConverter(df, calType=1, overwrite=None):
         'int64': '%s'
             }
     
-    for ind in overwrite:
-        ref[ind]=overwrite[ind]
-        ref2[ind]='%s'
+    if overwrite is not None:
+        for ind in overwrite:
+            ref[ind]=overwrite[ind]
+            ref2[ind]='%s'
     
     if calType==1:
         types=df.dtypes
@@ -115,7 +116,7 @@ def dtypeConverter(df, calType=1, overwrite=None):
         
         if overwrite is not None:
             for ind in overwrite:
-                overwriteCol=list(df).index()
+                overwriteCol=list(df).index(ind)
                 tType[overwriteCol]=ind
         
         store=''
@@ -135,6 +136,7 @@ def dtypeConverter(df, calType=1, overwrite=None):
     
 
 def recreateTable(dbName, df, cont=0, overwrite=None):
+#    print(overwrite)
     tblResult=findTable(dbName)
     if tblResult['error'] is not None:
         return tblResult
@@ -143,7 +145,7 @@ def recreateTable(dbName, df, cont=0, overwrite=None):
         
     queries={
         'dropTbl':'drop table %s' %(tblName),
-        'createTbl':'CREATE TABLE %s (%s)' % (tblName,dtypeConverter(df, overwrite))
+        'createTbl':'CREATE TABLE %s (%s)' % (tblName,dtypeConverter(df, overwrite=overwrite))
         }
     
 #    print(queries)

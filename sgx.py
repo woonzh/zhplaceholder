@@ -340,6 +340,7 @@ def getCompanyInfo(name, url):
 #    driver.execute_script("window.scrollTo(0, %s)"%(int(ele.location['y'])+0.5))
 #    time.sleep(1)
     ele.click()
+    time.sleep(1)
     
     store={}
     tables=driver.find_elements_by_xpath("""//table[@class="website-content-table"]""")
@@ -453,14 +454,14 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
         print('done updating summary')
     
     
-#    df=df.loc[list(range(0,1))]
+    df=df.loc[list(range(0,1))]
 #    print(df)
     companyFullInfo=collateCompanyInfo(df, start=index, host=host)
 #    results=analysis.cleanAndProcess(infoName=companyInfoFName)
     timec.stopTime()
     if intJobId != '':
         util.updateJobStatus(intJobId=intJobId)
-#    return df, companyFullInfo
+    return df, companyFullInfo
     
 def updatePriceHist(df, companyFullInfo,updateDatabase=True):
     tdayDate=util.currentDate()
@@ -552,7 +553,13 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 
 def closeDriver():
     driver.quit()
-    
+
+#result=db.extractTable('summary')['result']
+#companyinfo=getCompanyInfo(result.iloc[0,0], result.iloc[0,4])
+#closeDriver()
+#db.recreateTable('rawData', companyinfo, overwrite=overwrite)
+#db.rewriteTable('rawData', companyinfo)
+
 #c,d=updateCompanyInfo()
 #closeDriver()
 
@@ -561,9 +568,7 @@ def closeDriver():
     
 #a=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
 #closeDriver()
-    
-#df,df2=updateCompanyInfo()
-#closeDriver()
+
 #df, companyFullInfo= updateCompanyInfo()
 #a,b=updatePriceHist(df, companyFullInfo)
 

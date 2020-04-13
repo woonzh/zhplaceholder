@@ -99,8 +99,10 @@ def sieveData(df):
     
     filters={
         'pe1':['>',2,'pe'],
-        'pe2':['<',40,'pe'],
-        'turnover':['>',10*pow(10,6),'turnover']
+        'pe2':['<',20,'pe'],
+        'turnover':['>',1*pow(10,7),'turnover'],
+        'yearhigh_divide_price':['>',0.5,'yearhigh_divide_price'],
+        'price_divide_yearlow':['<',0.2,'price_divide_yearlow']
             }
         
     for i in filters:
@@ -126,8 +128,8 @@ def analytics(download=True):
     
 #df=run()
 
-#df=analytics(download=False)
-#cleanDf=cleanData(df)
-#engineDf=dataEngineer(cleanDf)
-#engineDf.to_csv(hkSumEngine, index=False)
-#sievedDf=sieveData(engineDf)
+df=analytics(download=False)
+cleanDf=cleanData(df)
+engineDf=dataEngineer(cleanDf)
+engineDf.to_csv(hkSumEngine, index=False)
+sievedDf=sieveData(engineDf)
