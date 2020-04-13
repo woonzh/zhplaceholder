@@ -394,7 +394,7 @@ def collateCompanyInfo(comList, fname=[companyInfoFName], start=0, host=host, ba
             store=companyinfo
             print(store)
             if host=='cloud':
-                db.recreateTable('rawData', store)
+                db.recreateTable('rawData', store, overwrite=overwrite)
         else:
             store.loc[i]=companyinfo.loc[0]
             print(store.loc[i])
@@ -437,7 +437,7 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
             result=db.extractTable(dbName)
             if result['error'] is not None:
                 df, df2=extractSummary(summaryFName)
-                db.recreateTable(dbName, df, overwrite=overwrite)
+                db.recreateTable(dbName, df)
                 db.rewriteTable(dbName, df)
             else:
                 df=result['result']
@@ -449,7 +449,7 @@ def getFullDetails(index=0, summaryBool=False, host=host, intJobId=''):
     else:
         df, df2=extractSummary(summaryFName)
         if host=='cloud':
-            db.recreateTable(dbName, df, overwrite=overwrite)
+            db.recreateTable(dbName, df)
             db.rewriteTable(dbName, df)
         print('done updating summary')
     
