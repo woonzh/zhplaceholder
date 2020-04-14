@@ -31,8 +31,11 @@ def runFriar(mode=1, jobId=''):
 def runHKEXFull(dragIndex=None, sumTries=None,jobId=''):
     util.runFunc(actFunc=hkex.run)
     
-def runHKEXUpdate(dragIndex=None, sumTries=None,jobId=''):  
+def runHKEXUpdateDetails(dragIndex=None, sumTries=None,jobId=''):  
     util.runFunc(actFunc=hkex.updateDetails)
+
+def runHKEXUpdateBasic(dragIndex=None, sumTries=None,jobId=''):  
+    util.runFunc(actFunc=hkex.updateBasic)
     
 #def testFunc():
 #    r=10*3

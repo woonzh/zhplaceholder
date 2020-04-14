@@ -136,12 +136,27 @@ def workerHKEX():
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
     
-@app.route('/hkexUpdate', methods=['GET', 'OPTIONS'])
+@app.route('/hkexUpdateDetails', methods=['GET', 'OPTIONS'])
 def workerHKEXUpdate():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('hkex raw data', orc.runHKEXUpdate, None , intJobId)
+        result=orc.wc.queueFunc('hkex raw data', orc.runHKEXUpdateDetails, None , intJobId)
+        ret={
+            'answer':result}
+            
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
+
+@app.route('/hkexUpdateBasic', methods=['GET', 'OPTIONS'])
+def workerHKEXUpdate():
+    ret={}
+    if request.method == 'GET':
+        intJobId=util.stringGenerator()
+        result=orc.wc.queueFunc('hkex raw data', orc.runHKEXUpdateBasic, None , intJobId)
         ret={
             'answer':result}
             
