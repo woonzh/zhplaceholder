@@ -334,16 +334,16 @@ def getCompanyInfo(name, url):
         df[i]=store
         
 ##financial info
-    ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
-    actionChains = ActionChains(driver)
-    actionChains.move_to_element(ele).perform()
-#    driver.execute_script("window.scrollTo(0, %s)"%(int(ele.location['y'])+0.5))
-#    time.sleep(1)
-    ele.click()
-    time.sleep(1)
-    
-    store={}
     try:
+        ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
+        actionChains = ActionChains(driver)
+        actionChains.move_to_element(ele).perform()
+    #    driver.execute_script("window.scrollTo(0, %s)"%(int(ele.location['y'])+0.5))
+    #    time.sleep(1)
+        ele.click()
+        time.sleep(1)
+        
+        store={}
         tables=driver.find_elements_by_xpath("""//table[@class="website-content-table"]""")
         for table in tables:
             header=table.find_element_by_xpath(""".//thead""")

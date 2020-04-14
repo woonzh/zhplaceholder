@@ -8,6 +8,7 @@ import time
 import pandas as pd
 
 import dbConnector as db
+import hkexDict
 #import analysis
 
 url="https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en"
@@ -17,6 +18,7 @@ dbName='hksummary'
 
 currencyCols=['price', 'yearhigh','yearlow']
 numericCols=['turnover','market_cap','pe','dividend']
+comDict=hkexDict.companyTag
 
 def run():
     crawl=crawler()
@@ -125,7 +127,11 @@ def analytics(download=True):
         df=pd.read_csv(hkSum)
     
     return df
-    
+
+def getIndustryCompany(df, industry='bank'):
+    lst=comDict[industry]
+    boolCheck=[True if x.lower() in lst else False for x in df['com_name']]
+    return df[boolCheck]
 #df=run()
 
 df=analytics(download=False)
@@ -133,3 +139,6 @@ cleanDf=cleanData(df)
 engineDf=dataEngineer(cleanDf)
 engineDf.to_csv(hkSumEngine, index=False)
 sievedDf=sieveData(engineDf)
+
+indDf=getIndustryCompany(engineDf, industry='oil')
+#comDf=engineDf[engineDf['com_name']=='ICBC']
