@@ -75,7 +75,7 @@ class crawler:
                 colNum=list(df).index('price')
                 dateColNum=list(df).index('date_update')
                 lowColNum=list(df).index('yearlow')
-                highColNum=list(df).index('highlow')
+                highColNum=list(df).index('yearhigh')
                 
                 if price<df.iloc[ind,lowColNum]:
                     df.iloc[ind,lowColNum]=price
