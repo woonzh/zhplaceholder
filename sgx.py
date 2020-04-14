@@ -45,6 +45,7 @@ else:
     driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 
 driver.maximize_window()
+actionChains = ActionChains(driver)
 
 mainURL="https://www.sgx.com/securities/securities-prices?code=all"
 summaryFName='data/summary.csv'
@@ -129,7 +130,7 @@ def crawlSummary():
     
     try:
         while cont==True:
-            actionChains = ActionChains(driver)
+#            actionChains = ActionChains(driver)
             #org 8
             # 8.5 694
             #9, 10, 12 13 14 15 16 694
@@ -336,8 +337,8 @@ def getCompanyInfo(name, url):
 ##financial info
     try:
         ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
-        actionChains = ActionChains(driver)
-        actionChains.move_to_element(ele).perform()
+        scrollEle=driver.find_element_by_xpath("""//div[@class="widget-stocks-financial-statements-timestamps text-caption float-right mt-2"]""")
+        actionChains.move_to_element(scrollEle).perform()
     #    driver.execute_script("window.scrollTo(0, %s)"%(int(ele.location['y'])+0.5))
     #    time.sleep(1)
         ele.click()
