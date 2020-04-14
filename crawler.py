@@ -65,11 +65,11 @@ class crawler:
 ##update price
     
     def updatePrice(self,df, updateCount, rows):
-        print(rows)
+#        print(rows)
         for row in rows:
             code=row.find_element_by_xpath(self.subClassNames['code']).text
             price=row.find_element_by_xpath(self.subClassNames['price']).text
-            print("%s-%s"%(code, price))
+#            print("%s-%s"%(code, price))
             
             filterdf=df[df['code']==code]
             if len(filterdf)>0:
@@ -115,7 +115,7 @@ class crawler:
         if df is None:
             df=db.extractTable(dbname)['result']
         
-        while ele.location['y']>eleLoc and count <1:
+        while ele.location['y']>eleLoc:
             count+=1
             print(count*20)
             eleLoc=ele.location['y']
