@@ -113,7 +113,7 @@ class crawler:
         if df is None:
             df=db.extractTable(dbname)['result']
         
-        while ele.location['y']>eleLoc:
+        while ele.location['y']>eleLoc and count <1:
             count+=1
             print(count*20)
             eleLoc=ele.location['y']
