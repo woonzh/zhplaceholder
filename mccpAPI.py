@@ -137,7 +137,7 @@ def workerHKEX():
         return resp
     
 @app.route('/hkexUpdateDetails', methods=['GET', 'OPTIONS'])
-def workerHKEXUpdate():
+def workerHKEXUpdateDetails():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
@@ -152,7 +152,7 @@ def workerHKEXUpdate():
         return resp
 
 @app.route('/hkexUpdateBasic', methods=['GET', 'OPTIONS'])
-def workerHKEXUpdate():
+def workerHKEXUpdateBasic():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
