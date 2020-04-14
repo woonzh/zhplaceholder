@@ -65,9 +65,11 @@ class crawler:
 ##update price
     
     def updatePrice(self,df, updateCount, rows):
+        print(rows)
         for row in rows:
-            code=self.driver.find_element_by_xpath(self.subClassNames['code']).text
-            price=self.driver.find_element_by_xpath(self.subClassNames['price']).text
+            code=row.find_element_by_xpath(self.subClassNames['code']).text
+            price=row.find_element_by_xpath(self.subClassNames['price']).text
+            print("%s-%s"%(code, price))
             
             filterdf=df[df['code']==code]
             if len(filterdf)>0:

@@ -148,7 +148,7 @@ def recreateTable(dbName, df, cont=0, overwrite=None):
         'createTbl':'CREATE TABLE %s (%s)' % (tblName,dtypeConverter(df, overwrite=overwrite))
         }
     
-    print(queries)
+#    print(queries)
     
 #    return queries['createTbl']
     indexes=list(queries)
@@ -215,8 +215,8 @@ def rewriteTable(dbName, df, rewrite=False):
         vals.append(lst)
         
     query='INSERT INTO %s (%s) VALUES(%s)'%(tblName, cols, dtypeConverter(df, calType=2))
-    print(query)
-    print(vals)
+#    print(query)
+#    print(vals)
 #    return query, vals
     
     result = runquery(query, valList=vals, close=False)

@@ -53,6 +53,8 @@ def updateBasic():
     crawl.store(df, hkSum, dbName)
     
     crawl.closeDriver()
+    
+    return df
 
 def dataEngineer(df):
     df['price_divide_yearlow']=[round((x-y)/x,2) if x!=0 and y!=0 and x!='nan' and y!='nan' \
@@ -133,6 +135,7 @@ def getIndustryCompany(df, industry='bank'):
     boolCheck=[True if x.lower() in lst else False for x in df['com_name']]
     return df[boolCheck]
 #df=run()
+#a=updateBasic()
 
 #df=analytics(download=False)
 #cleanDf=cleanData(df)
