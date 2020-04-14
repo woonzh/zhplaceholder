@@ -99,10 +99,10 @@ def closeAlerts():
     except:
         print('cannot click ok')
     time.sleep(0.1)
-#    try:
-#        driver.find_element_by_xpath("//button[text()='Accept Cookies']").click()
-#    except:
-#        print('cannot accept cookies')
+    try:
+        driver.find_element_by_xpath("//button[text()='Accept Cookies']").click()
+    except:
+        print('cannot accept cookies')
     driver.execute_script("window.scrollBy(0,300)")
     
 def crawlSummary():
@@ -337,11 +337,12 @@ def getCompanyInfo(name, url):
 ##financial info
     try:
         ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
-        scrollEle=driver.find_element_by_xpath("""//widget-section-title[@data-analytics-category="Company Announcements"]""")
-        actionChains.move_to_element(scrollEle).perform()
+#        scrollEle=driver.find_element_by_xpath("""//widget-section-title[@data-analytics-category="Company Announcements"]""")
+#        actionChains.move_to_element(ele).perform()
+#        time.sleep(1)
+#        actionChains.move_to_element(scrollEle).perform()
+        driver.execute_script("window.scrollBy(0,1100)")
         time.sleep(1)
-    #    driver.execute_script("window.scrollTo(0, %s)"%(int(ele.location['y'])+0.5))
-    #    time.sleep(1)
         ele.click()
         time.sleep(1)
         
@@ -572,6 +573,8 @@ def closeDriver():
 #closeDriver()
 
 #driver.get('https://www2.sgx.com/securities/equities/D05')
+#time.sleep(2)
+#driver.execute_script("window.scrollTo(0, %s)"%(12))
 #a=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
 #closeDriver()
 
