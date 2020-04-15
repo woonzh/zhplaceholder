@@ -161,7 +161,7 @@ class crawler:
         cols=[x for x in self.subClassNames]
         df=pd.DataFrame(columns=cols)
         
-        while ele.location['y']>eleLoc and count<1:
+        while ele.location['y']>eleLoc:
             count+=1
             print(count*20)
             eleLoc=ele.location['y']
