@@ -336,7 +336,7 @@ def getFilteredResult(industry=[], cloud=True, filters=None):
     return df
 
 if __name__ == "__main__":
-    pullFromDB=False
+    pullFromDB=True
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)

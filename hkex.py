@@ -49,7 +49,8 @@ def updateBasic():
     crawl=crawler()
     crawl.startDriver(url)
     
-    df=crawl.getPriceUpdate(df=None, dbname=dbName)
+    df=crawl.crawlHKEXSummary()
+    df=crawl.updatePrice(df=df, dbname=dbName)
     crawl.store(df, hkSum, dbName)
     
     crawl.closeDriver()
@@ -137,7 +138,7 @@ def getIndustryCompany(df, industry='bank'):
 #df=run()
 #a=updateBasic()
 
-#df=analytics(download=False)
+#df=analytics(download=True)
 #cleanDf=cleanData(df)
 #engineDf=dataEngineer(cleanDf)
 #engineDf.to_csv(hkSumEngine, index=False)

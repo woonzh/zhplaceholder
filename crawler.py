@@ -13,6 +13,7 @@ class crawler:
         self.batchUpload=10
         
         self.timec=util.timeClass()
+        self.dateStr=self.timec.getCurDate()
         
         self.subClassNames={
             'code':""".//td[@class="code"]""",
@@ -64,73 +65,41 @@ class crawler:
         
 ##update price
     
-    def updatePrice(self,df, updateCount, rows):
-#        print(rows)
-        for row in rows:
-            code=row.find_element_by_xpath(self.subClassNames['code']).text
-            price=row.find_element_by_xpath(self.subClassNames['price']).text
-#            print("%s-%s"%(code, price))
-            
+    def updatePrice(self,df, dbname):
+        orgDf=db.extractTable(dbname)['result']
+        
+        priceList=df['price']
+        codeList=df['code']
+        
+        for count, val in enumerate(priceList):
+            code=codeList[count]
+            price=codeList[count]
             filterdf=df[df['code']==code]
+            
             if len(filterdf)>0:
                 ind=filterdf.index[0]
-                colNum=list(df).index('price')
-                dateColNum=list(df).index('date_update')
-                lowColNum=list(df).index('yearlow')
-                highColNum=list(df).index('yearhigh')
+                colNum=list(orgDf).index('price')
+                dateColNum=list(orgDf).index('date_update')
+                lowColNum=list(orgDf).index('yearlow')
+                highColNum=list(orgDf).index('yearhigh')
                 
-                if price<df.iloc[ind,lowColNum]:
-                    df.iloc[ind,lowColNum]=price
+                if price<orgDf.iloc[ind,lowColNum]:
+                    orgDf.iloc[ind,lowColNum]=price
                 
-                if price>df.iloc[ind,highColNum]:
-                    df.iloc[ind,highColNum]=price
+                if price>orgDf.iloc[ind,highColNum]:
+                    orgDf.iloc[ind,highColNum]=price
                 
-                df.iloc[ind, colNum]=price
-                df.iloc[ind,dateColNum]=self.dateStr
-            else:
-                for sub in self.subClassNames:
-                    val=self.driver.find_element_by_xpath(self.subClassNames[sub]).text
-                    filterdf[sub]=[val]
-                    
+                orgDf.iloc[ind, colNum]=price
+                orgDf.iloc[ind,dateColNum]=self.dateStr
+            else:                    
                 high_lows=self.crawlHKEXDetails(code)
                 for data in high_lows:
                     filterdf[data]=[high_lows[data]]
                 
                 filterdf['date_update']=[self.dateStr]
-                df.loc[len(df)]=list(filterdf)
-            
-            updateCount+=1
+                orgDf.loc[len(df)]=list(filterdf)
         
-        return df, updateCount
-    
-    def getPriceUpdate(self, df=None, dbname='hksummary'):
-        self.timec.startTimer()
-        eleLoc=0
-        count=0
-        ele=self.driver.find_element_by_class_name("load")
-        updateCount=0
-        
-        self.dateStr=self.timec.getCurDate()
-        
-        if df is None:
-            df=db.extractTable(dbname)['result']
-        
-        while ele.location['y']>eleLoc:
-            count+=1
-            print(count*20)
-            eleLoc=ele.location['y']
-            self.actions.move_to_element(ele).perform()
-            time.sleep(1)
-            
-            rows=self.driver.find_elements_by_class_name("datarow")
-            df, updateCount=self.updatePrice(df,updateCount,rows[updateCount:])
-            
-            ele.click()
-            time.sleep(1)
-            
-            self.timec.getTimeSplit(str(count))
-        
-        return df
+        return orgDf
 
 #crawl details
     
@@ -192,7 +161,7 @@ class crawler:
         cols=[x for x in self.subClassNames]
         df=pd.DataFrame(columns=cols)
         
-        while ele.location['y']>eleLoc:
+        while ele.location['y']>eleLoc and count<1:
             count+=1
             print(count*20)
             eleLoc=ele.location['y']
