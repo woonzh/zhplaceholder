@@ -339,11 +339,9 @@ def getCompanyInfo(name, url):
 ##financial info
     try:
         ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
-#        scrollEle=driver.find_element_by_xpath("""//widget-section-title[@data-analytics-category="Company Announcements"]""")
-#        actionChains.move_to_element(ele).perform()
-#        time.sleep(1)
-#        actionChains.move_to_element(scrollEle).perform()
-        driver.execute_script("window.scrollBy(0,1100)")
+        actionChains.move_to_element(ele).perform()
+        time.sleep(1)
+        driver.execute_script("window.scrollBy(0,400)")
         time.sleep(1)
         ele.click()
         time.sleep(1)
@@ -575,8 +573,7 @@ def closeDriver():
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()
 
-#driver.get(mainURL)
-#time.sleep(2)
+#driver.get('https://www2.sgx.com/securities/equities/D05')
 #closeAlerts()
 #ele=driver.find_elements_by_xpath("""//div[@class="sgx-scroll-shield-button--down sgx-icon--before"]""")
 
