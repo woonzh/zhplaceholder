@@ -30,7 +30,7 @@ else:
 if host == 'local':
     capabilities = webdriver.DesiredCapabilities.CHROME
     options=webdriver.ChromeOptions()
-#    options.add_argument('--headless')
+    options.add_argument('--headless')
     driver = webdriver.Chrome(chromepath, chrome_options=options)
 else:
     GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
@@ -339,37 +339,45 @@ def getCompanyInfo(name, url):
 ##financial info
     try:
         time.sleep(1)
-        ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
-        print("found ele")
-        actionChains.move_to_element(ele).perform()
-        print("moved to ele")
-        time.sleep(2)
+        cont=True
+        counter=0
+        while cont and counter <8:
+            try:
+                ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
+                time.sleep(1)
+                ele.click()
+                cont=False
+            except:
+                counter+=1
+                driver.execute_script("window.scrollBy(0,300)")
+                time.sleep(1)
+        
         driver.execute_script("window.scrollBy(0,300)")
-        print("scrolled")
-        time.sleep(1)
-        ele.click()
-        time.sleep(2)
+        print("%s-%s"%(cont, counter))
         
         store={}
-        try:
+        if cont==False:
             tables=driver.find_elements_by_xpath("""//table[@class="website-content-table"]""")
             for table in tables:
-                header=table.find_element_by_xpath(""".//thead""")
-                headerEle=header.find_elements_by_xpath(""".//th""")
-                headerEleTitle=headerEle[0].text
-                if headerEleTitle!='':
-                    store[headerEleTitle]=[x.text for x in headerEle][1:]
-                
-                contents=table.find_element_by_xpath(""".//tbody""")
-                rows=contents.find_elements_by_xpath(""".//tr""")
-                
-                for row in rows:
-                    rowHeader=row.find_element_by_xpath(""".//th""").text
-                    rowContent=row.find_elements_by_xpath(""".//td""")
-                    if rowHeader!='':
-                        store[rowHeader]=[x.text for x in rowContent]
-        except:
-            print("read table error")
+                try:
+                    if table.text!='':
+                        header=table.find_element_by_xpath(""".//thead""")
+                        headerEle=header.find_elements_by_xpath(""".//th""")
+                        headerEleTitle=headerEle[0].text
+                        if headerEleTitle!='':
+                            store[headerEleTitle]=[x.text for x in headerEle][1:]
+                        
+                        contents=table.find_element_by_xpath(""".//tbody""")
+                        rows=contents.find_elements_by_xpath(""".//tr""")
+                        
+                        for row in rows:
+                            rowHeader=row.find_element_by_xpath(""".//th""").text
+    #                        print(rowHeader)
+                            rowContent=row.find_elements_by_xpath(""".//td""")
+                            if rowHeader!='':
+                                store[rowHeader]=[x.text for x in rowContent]
+                except:
+                    print("read one table error")
         
         df['financial_info']=json.dumps(store)
     except:
