@@ -53,7 +53,8 @@ companyInfoFName='data/companyInfo.csv'
 companyUpdatedInfoFName='data/companyInfo(updated).csv'
 infoLogs='data/logs/companyInfo_'
 priceHistFName='data/priceHist.csv'
-dragIndex=10
+dragIndex=2
+clickCount=5
 maxSummaryTries=15
 overwrite={
     'financial_info': 'text'
@@ -99,21 +100,22 @@ def closeAlerts():
     except:
         print('cannot click ok')
     time.sleep(0.1)
+    driver.execute_script("window.scrollBy(0,450)")
+    time.sleep(0.5)
     try:
-        driver.find_element_by_xpath("//button[text()='Accept Cookies']").click()
+        driver.find_element_by_xpath("""//button[@data-i18n="sgx-consent-banner.accept-button"]""").click()
     except:
         print('cannot accept cookies')
-    driver.execute_script("window.scrollBy(0,300)")
     
 def crawlSummary():
     global dragIndex
     global maxSummaryTries
     driver.get(mainURL)
     time.sleep(3)
-    
     closeAlerts()
-    
-    time.sleep(5)
+    time.sleep(2)
+#    driver.execute_script("document.body.style.zoom='70%'")
+    time.sleep(1)
     
     lst=[]
     df=pd.DataFrame(columns=['names', 'last price', 'vol', 'val traded', 'address'])
@@ -121,7 +123,8 @@ def crawlSummary():
     df, df2 = extractData(df)
     lst.append(df2)
     
-    option=driver.find_element_by_class_name("vertical-scrolling-bar")
+#    option=driver.find_element_by_class_name("vertical-scrolling-bar")
+    downBut=driver.find_element_by_xpath("""//div[@class="sgx-scroll-shield-button--down sgx-icon--before"]""")
     
     cont=True
     curCount=0
@@ -130,15 +133,14 @@ def crawlSummary():
     
     try:
         while cont==True:
-#            actionChains = ActionChains(driver)
-            #org 8
-            # 8.5 694
-            #9, 10, 12 13 14 15 16 694
             count+=1
             print(count)
             
             #org 15
-            actionChains.click_and_hold(option).move_by_offset(0,dragIndex).release().perform()
+            for ind in range(clickCount):
+                downBut.click()
+                time.sleep(0.1)
+#            actionChains.click_and_hold(option).move_by_offset(0,dragIndex).release().perform()
             if host=='cloud':
                 time.sleep(2)
             else:
@@ -474,7 +476,8 @@ def updatePriceHist(df, companyFullInfo,updateDatabase=True):
     if updateDatabase:
         db.recreateTable('summary', df)
         db.rewriteTable('summary', df)
-        db.rewriteTable('rawData', companyFullInfo, True)
+        db.recreateTable('rawData', companyFullInfo, overwrite=overwrite)
+        db.rewriteTable('rawData', companyFullInfo)
         result=db.extractTable('history')
         
         if result['error'] is None:
@@ -565,15 +568,20 @@ def closeDriver():
 #closeDriver()
 #db.recreateTable('rawData', companyinfo, overwrite=overwrite)
 #db.rewriteTable('rawData', companyinfo)
-
+#
 #c,d=updateCompanyInfo()
 #closeDriver()
 
 #df, df2=extractSummary(summaryFName, False, 'summary')
 #closeDriver()
 
-#driver.get('https://www2.sgx.com/securities/equities/D05')
+#driver.get(mainURL)
 #time.sleep(2)
+#closeAlerts()
+#ele=driver.find_elements_by_xpath("""//div[@class="sgx-scroll-shield-button--down sgx-icon--before"]""")
+
+#driver.execute_script("window.scrollBy(0,450)")
+#driver.execute_script("document.body.style.zoom='50%'")
 #driver.execute_script("window.scrollTo(0, %s)"%(12))
 #a=getCompanyInfo('test','https://www2.sgx.com/securities/equities/D05')
 #closeDriver()
