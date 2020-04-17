@@ -30,7 +30,7 @@ else:
 if host == 'local':
     capabilities = webdriver.DesiredCapabilities.CHROME
     options=webdriver.ChromeOptions()
-    options.add_argument('--headless')
+#    options.add_argument('--headless')
     driver = webdriver.Chrome(chromepath, chrome_options=options)
 else:
     GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
@@ -338,13 +338,17 @@ def getCompanyInfo(name, url):
         
 ##financial info
     try:
-        ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
-        actionChains.move_to_element(ele).perform()
         time.sleep(1)
-        driver.execute_script("window.scrollBy(0,400)")
+        ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
+        print("found ele")
+        actionChains.move_to_element(ele).perform()
+        print("moved to ele")
+        time.sleep(2)
+        driver.execute_script("window.scrollBy(0,300)")
+        print("scrolled")
         time.sleep(1)
         ele.click()
-        time.sleep(1)
+        time.sleep(2)
         
         store={}
         try:
@@ -576,6 +580,13 @@ def closeDriver():
 #closeDriver()
 
 #driver.get('https://www2.sgx.com/securities/equities/D05')
+#time.sleep(3)
+#ele=driver.find_element_by_xpath("""//span[@class="sgx-accordion-expandAll-btn"]""")
+#actionChains.move_to_element(ele).perform()
+#time.sleep(1)
+#driver.execute_script("window.scrollBy(0,300)")
+#time.sleep(1)
+#ele.click()
 #closeAlerts()
 #ele=driver.find_elements_by_xpath("""//div[@class="sgx-scroll-shield-button--down sgx-icon--before"]""")
 
