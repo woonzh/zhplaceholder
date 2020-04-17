@@ -36,7 +36,7 @@ bankdict={
         'biz breakdown':{
             'corp': '',
             'retail':'',
-            'com': ',
+            'com': '',
             'private': ''
                 },
         'profit':'6.39b',
