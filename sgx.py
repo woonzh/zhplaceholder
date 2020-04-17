@@ -347,28 +347,30 @@ def getCompanyInfo(name, url):
         time.sleep(1)
         
         store={}
-        tables=driver.find_elements_by_xpath("""//table[@class="website-content-table"]""")
-        for table in tables:
-            header=table.find_element_by_xpath(""".//thead""")
-            headerEle=header.find_elements_by_xpath(""".//th""")
-            headerEleTitle=headerEle[0].text
-            if headerEleTitle!='':
-                store[headerEleTitle]=[x.text for x in headerEle][1:]
-            
-            contents=table.find_element_by_xpath(""".//tbody""")
-            rows=contents.find_elements_by_xpath(""".//tr""")
-            try:
+        try:
+            tables=driver.find_elements_by_xpath("""//table[@class="website-content-table"]""")
+            for table in tables:
+                header=table.find_element_by_xpath(""".//thead""")
+                headerEle=header.find_elements_by_xpath(""".//th""")
+                headerEleTitle=headerEle[0].text
+                if headerEleTitle!='':
+                    store[headerEleTitle]=[x.text for x in headerEle][1:]
+                
+                contents=table.find_element_by_xpath(""".//tbody""")
+                rows=contents.find_elements_by_xpath(""".//tr""")
+                
                 for row in rows:
                     rowHeader=row.find_element_by_xpath(""".//th""").text
                     rowContent=row.find_elements_by_xpath(""".//td""")
                     if rowHeader!='':
                         store[rowHeader]=[x.text for x in rowContent]
-            except:
-                t=1
+        except:
+            print("read table error")
         
         df['financial_info']=json.dumps(store)
     except:
         df['financial_info']=''
+        print("click expand error")
     
     return df
 
