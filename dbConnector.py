@@ -48,6 +48,7 @@ def connectToDatabase():
     connList['conn']=conn
 
 def runquery(query, resultExpected=False, valList=(), close=True):
+    print(query)
     global connList
     if connList is None:
         connectToDatabase()
