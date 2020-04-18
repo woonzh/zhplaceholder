@@ -238,7 +238,7 @@ def getCompanyInfo(name, url):
         'high_low':'Previous Day High/Low',
         'close':'Previous Close',
         'prevCloseDate':'Previous Close Date',
-        '52weekHighLow':'52 Week High/Low',
+        'yearHighLow':'52 Week High/Low',
         'beta':'5-Year Beta',
         'marketCap':'Total Market Cap',
         'sharesOutstanding':'Shares Outstanding',

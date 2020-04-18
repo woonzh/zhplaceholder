@@ -1,100 +1,100 @@
-2019-11-10T09:06:51.810895+00:00 app[web.1]: 10.7.214.204 - - [10/Nov/2019:09:06:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:06:51.813301+00:00 app[worker.1]: refreshed
-2019-11-10T09:05:46+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.175 sample#load-avg-5m=0.1 sample#load-avg-15m=0.095 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083780kB sample#memory-cached=609688kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:08:38+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.075 sample#load-avg-5m=0.085 sample#load-avg-15m=0.09 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083760kB sample#memory-cached=609692kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:08:38+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.06 sample#load-avg-5m=0.075 sample#load-avg-15m=0.085 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083704kB sample#memory-cached=609692kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:11:51.820846+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=70f75697-b5ae-427b-890e-ba5f29028589 fwd="3.95.0.131" dyno=web.1 connect=1ms service=2ms status=200 bytes=308 protocol=https
-2019-11-10T09:11:51.820105+00:00 app[web.1]: 10.7.242.21 - - [10/Nov/2019:09:11:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:11:51.827508+00:00 app[worker.1]: refreshed
-2019-11-10T09:11:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.045 sample#load-avg-5m=0.06 sample#load-avg-15m=0.08 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083416kB sample#memory-cached=609700kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:11:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.295 sample#load-avg-5m=0.125 sample#load-avg-15m=0.1 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083368kB sample#memory-cached=609708kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:14:25+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.185 sample#load-avg-5m=0.13 sample#load-avg-15m=0.105 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083572kB sample#memory-cached=609708kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:16:51.811978+00:00 app[web.1]: 10.43.250.98 - - [10/Nov/2019:09:16:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:16:51.814852+00:00 app[worker.1]: refreshed
-2019-11-10T09:16:51.812138+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=6bbeb774-365f-4ba3-94a5-73acb0d3ae7f fwd="3.95.0.131" dyno=web.1 connect=0ms service=2ms status=200 bytes=308 protocol=https
-2019-11-10T09:17:24+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.19 sample#load-avg-5m=0.14 sample#load-avg-15m=0.105 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083448kB sample#memory-cached=609716kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:17:24+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.15 sample#load-avg-5m=0.135 sample#load-avg-15m=0.105 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083368kB sample#memory-cached=609716kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:20:29+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.055 sample#load-avg-5m=0.11 sample#load-avg-15m=0.095 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083924kB sample#memory-cached=609716kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:21:51.807276+00:00 app[web.1]: 10.63.251.11 - - [10/Nov/2019:09:21:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:21:51.809471+00:00 app[worker.1]: refreshed
-2019-11-10T09:21:51.807616+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=f277b39d-1008-4b70-aff0-8f9fdde823fa fwd="3.95.0.131" dyno=web.1 connect=0ms service=1ms status=200 bytes=308 protocol=https
-2019-11-10T09:20:29+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.04 sample#load-avg-5m=0.09 sample#load-avg-15m=0.09 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083564kB sample#memory-cached=609724kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:23:18+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.18 sample#load-avg-5m=0.135 sample#load-avg-15m=0.105 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083608kB sample#memory-cached=609724kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:23:18+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.245 sample#load-avg-5m=0.155 sample#load-avg-15m=0.11 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083152kB sample#memory-cached=609728kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:26:51.811735+00:00 app[worker.1]: refreshed
-2019-11-10T09:26:51.807166+00:00 app[web.1]: 10.63.103.37 - - [10/Nov/2019:09:26:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:26:51.807459+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=ce7ae64e-d0de-41b0-bef4-b9f1a00debf8 fwd="3.95.0.131" dyno=web.1 connect=0ms service=1ms status=200 bytes=308 protocol=https
-2019-11-10T09:26:21+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.25 sample#load-avg-5m=0.165 sample#load-avg-15m=0.12 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083268kB sample#memory-cached=609728kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:29:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.125 sample#load-avg-5m=0.16 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083384kB sample#memory-cached=609736kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:29:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.115 sample#load-avg-5m=0.145 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083944kB sample#memory-cached=609744kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:31:51.805410+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=2623918f-3cd6-450c-b99c-f440c0372002 fwd="3.95.0.131" dyno=web.1 connect=0ms service=2ms status=200 bytes=308 protocol=https
-2019-11-10T09:31:51.804948+00:00 app[web.1]: 10.31.231.42 - - [10/Nov/2019:09:31:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:31:51.806620+00:00 app[worker.1]: refreshed
-2019-11-10T09:32:35+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.075 sample#load-avg-5m=0.125 sample#load-avg-15m=0.115 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083408kB sample#memory-cached=609744kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:32:35+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.125 sample#load-avg-5m=0.13 sample#load-avg-15m=0.12 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083624kB sample#memory-cached=609720kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:35:42+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.085 sample#load-avg-5m=0.115 sample#load-avg-15m=0.115 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083416kB sample#memory-cached=609720kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:36:51.821448+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=3764cafb-ef04-4964-8834-2a0f0b58c591 fwd="3.95.0.131" dyno=web.1 connect=1ms service=5ms status=200 bytes=308 protocol=https
-2019-11-10T09:36:51.817431+00:00 app[web.1]: 10.5.179.3 - - [10/Nov/2019:09:36:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:36:51.822617+00:00 app[worker.1]: refreshed
-2019-11-10T09:35:42+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.07 sample#load-avg-5m=0.1 sample#load-avg-15m=0.11 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083492kB sample#memory-cached=609720kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:38:50+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.305 sample#load-avg-5m=0.15 sample#load-avg-15m=0.12 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083208kB sample#memory-cached=609720kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:38:50+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.2 sample#load-avg-5m=0.16 sample#load-avg-15m=0.13 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083860kB sample#memory-cached=609720kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:41:51.820230+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=1e598e1d-a234-4bcf-9a22-43d7095df92f fwd="3.95.0.131" dyno=web.1 connect=0ms service=2ms status=200 bytes=308 protocol=https
-2019-11-10T09:41:51.819481+00:00 app[web.1]: 10.47.238.26 - - [10/Nov/2019:09:41:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:41:51.822973+00:00 app[worker.1]: refreshed
-2019-11-10T09:41:57+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.115 sample#load-avg-5m=0.145 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083344kB sample#memory-cached=609720kB sample#memory-redis=338768bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:41:57+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.1 sample#load-avg-5m=0.13 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083424kB sample#memory-cached=609728kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:45:02+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.11 sample#load-avg-5m=0.13 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083432kB sample#memory-cached=609728kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:46:51.817073+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=55a0f486-5743-4720-96ef-d2fa932a9f79 fwd="3.95.0.131" dyno=web.1 connect=0ms service=1ms status=200 bytes=308 protocol=https
-2019-11-10T09:46:51.816717+00:00 app[web.1]: 10.67.208.135 - - [10/Nov/2019:09:46:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:46:51.819577+00:00 app[worker.1]: refreshed
-2019-11-10T09:45:02+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.055 sample#load-avg-5m=0.115 sample#load-avg-15m=0.12 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083588kB sample#memory-cached=609732kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:48:10+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.17 sample#load-avg-5m=0.125 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083044kB sample#memory-cached=609736kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:50:58+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.165 sample#load-avg-5m=0.14 sample#load-avg-15m=0.13 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083780kB sample#memory-cached=609748kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:51:51.811990+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=bfe8c551-8ff5-41ed-a845-a4cb563afe9a fwd="3.95.0.131" dyno=web.1 connect=0ms service=1ms status=200 bytes=308 protocol=https
-2019-11-10T09:51:51.811885+00:00 app[web.1]: 10.101.178.182 - - [10/Nov/2019:09:51:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:51:51.813634+00:00 app[worker.1]: refreshed
-2019-11-10T09:50:58+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.095 sample#load-avg-5m=0.12 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083400kB sample#memory-cached=609748kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:53:36+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.165 sample#load-avg-5m=0.14 sample#load-avg-15m=0.13 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083788kB sample#memory-cached=609736kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:56:16+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.23 sample#load-avg-5m=0.16 sample#load-avg-15m=0.14 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083416kB sample#memory-cached=609740kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:56:51.825487+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=9d683bc0-9972-4376-ba25-a8bd2b1b34dc fwd="3.95.0.131" dyno=web.1 connect=0ms service=1ms status=200 bytes=308 protocol=https
-2019-11-10T09:56:51.825545+00:00 app[web.1]: 10.61.240.57 - - [10/Nov/2019:09:56:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T09:56:51.831100+00:00 app[worker.1]: refreshed
-2019-11-10T09:56:16+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.115 sample#load-avg-5m=0.14 sample#load-avg-15m=0.135 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083820kB sample#memory-cached=609740kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:59:01+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.15 sample#load-avg-5m=0.135 sample#load-avg-15m=0.13 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083688kB sample#memory-cached=609748kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T09:59:01+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.19 sample#load-avg-5m=0.16 sample#load-avg-15m=0.14 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083680kB sample#memory-cached=609756kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:01:51.820629+00:00 app[worker.1]: refreshed
-2019-11-10T10:01:51.818557+00:00 app[web.1]: 10.16.206.35 - - [10/Nov/2019:10:01:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T10:01:51.818885+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=2c5d413c-02e5-4686-b997-59ed941fdae4 fwd="3.95.0.131" dyno=web.1 connect=0ms service=2ms status=200 bytes=308 protocol=https
-2019-11-10T10:01:46+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.075 sample#load-avg-5m=0.125 sample#load-avg-15m=0.13 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083332kB sample#memory-cached=609760kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:04:36+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.025 sample#load-avg-5m=0.1 sample#load-avg-15m=0.12 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083292kB sample#memory-cached=609760kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:04:36+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.115 sample#load-avg-5m=0.12 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083532kB sample#memory-cached=609768kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:06:51.827138+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=268f8478-6965-4c6d-b9fe-63f90523ec8b fwd="3.95.0.131" dyno=web.1 connect=0ms service=1ms status=200 bytes=308 protocol=https
-2019-11-10T10:06:51.826749+00:00 app[web.1]: 10.148.121.8 - - [10/Nov/2019:10:06:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T10:06:51.831035+00:00 app[worker.1]: refreshed
-2019-11-10T10:07:24+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.2 sample#load-avg-5m=0.135 sample#load-avg-15m=0.13 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083516kB sample#memory-cached=609768kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:07:24+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.105 sample#load-avg-5m=0.125 sample#load-avg-15m=0.13 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083400kB sample#memory-cached=609768kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:10:16+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.04 sample#load-avg-5m=0.1 sample#load-avg-15m=0.12 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083224kB sample#memory-cached=609776kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:11:51.828919+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=71f7c669-ec71-45ad-b5e1-b4ffebb04c7c fwd="3.95.0.131" dyno=web.1 connect=0ms service=2ms status=200 bytes=308 protocol=https
-2019-11-10T10:11:51.831215+00:00 app[worker.1]: refreshed
-2019-11-10T10:11:51.828667+00:00 app[web.1]: 10.9.226.141 - - [10/Nov/2019:10:11:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T10:12:56+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.05 sample#load-avg-5m=0.09 sample#load-avg-15m=0.115 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083324kB sample#memory-cached=609784kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:12:56+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.16 sample#load-avg-5m=0.115 sample#load-avg-15m=0.12 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083944kB sample#memory-cached=609784kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:15:46+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.115 sample#load-avg-5m=0.11 sample#load-avg-15m=0.115 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083836kB sample#memory-cached=609784kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:16:51.831221+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=0b4aae9f-fa79-4c85-9aba-bf2f44a067e9 fwd="3.95.0.131" dyno=web.1 connect=1ms service=2ms status=200 bytes=308 protocol=https
-2019-11-10T10:16:51.830685+00:00 app[web.1]: 10.9.213.124 - - [10/Nov/2019:10:16:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T10:16:51.833384+00:00 app[worker.1]: refreshed
-2019-11-10T10:15:46+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.115 sample#load-avg-5m=0.13 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083880kB sample#memory-cached=609776kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:18:46+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.145 sample#load-avg-5m=0.145 sample#load-avg-15m=0.13 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083700kB sample#memory-cached=609780kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:21:51.839437+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=4617b277-46a2-4dae-8380-fc82b32be686 fwd="3.95.0.131" dyno=web.1 connect=0ms service=1ms status=200 bytes=308 protocol=https
-2019-11-10T10:21:51.839224+00:00 app[web.1]: 10.7.195.59 - - [10/Nov/2019:10:21:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T10:21:51.844144+00:00 app[worker.1]: refreshed
-2019-11-10T10:21:43+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.13 sample#load-avg-5m=0.14 sample#load-avg-15m=0.13 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083996kB sample#memory-cached=609780kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:21:43+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.095 sample#load-avg-5m=0.12 sample#load-avg-15m=0.125 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083804kB sample#memory-cached=609780kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:24:45+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.185 sample#load-avg-5m=0.145 sample#load-avg-15m=0.135 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083804kB sample#memory-cached=609792kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:26:51.831359+00:00 app[web.1]: 10.63.251.11 - - [10/Nov/2019:10:26:51 +0000] "GET /keepalive HTTP/1.1" 200 17 "-" "python-requests/2.18.4"
-2019-11-10T10:26:51.835037+00:00 app[worker.1]: refreshed
-2019-11-10T10:26:51.831541+00:00 heroku[router]: at=info method=GET path="/keepalive" host=zhplaceholder.herokuapp.com request_id=0578cade-ebf3-4d20-a669-53821f280cf2 fwd="3.95.0.131" dyno=web.1 connect=0ms service=1ms status=200 bytes=308 protocol=https
-2019-11-10T10:24:45+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.175 sample#load-avg-5m=0.155 sample#load-avg-15m=0.14 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083912kB sample#memory-cached=609792kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:27:46+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.205 sample#load-avg-5m=0.17 sample#load-avg-15m=0.145 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083836kB sample#memory-cached=609796kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
-2019-11-10T10:27:46+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=1 sample#load-avg-1m=0.14 sample#load-avg-5m=0.165 sample#load-avg-15m=0.145 sample#read-iops=0 sample#write-iops=0 sample#memory-total=15664216kB sample#memory-free=12083732kB sample#memory-cached=609796kB sample#memory-redis=338392bytes sample#hit-rate=0.32174 sample#evicted-keys=0
+2020-04-18T09:07:28.237749+00:00 app[worker.1]: click ok failed
+2020-04-18T09:07:44.365139+00:00 app[worker.1]: False-0
+2020-04-18T09:08:03.773097+00:00 app[worker.1]: names openPrice         high_low   close prevCloseDate    52weekHighLow  \
+2020-04-18T09:08:03.773114+00:00 app[worker.1]: 0   DBS    19.800  19.940 - 19.200  19.280   17 Apr 2020  28.640 - 16.650
+2020-04-18T09:08:03.773115+00:00 app[worker.1]: 
+2020-04-18T09:08:03.773117+00:00 app[worker.1]: beta   marketCap sharesOutstanding p_float  \
+2020-04-18T09:08:03.773117+00:00 app[worker.1]: 0  1.43  49,432.70M             2.55B       -
+2020-04-18T09:08:03.773117+00:00 app[worker.1]: 
+2020-04-18T09:08:03.773118+00:00 app[worker.1]: ...                             revenue  \
+2020-04-18T09:08:03.773118+00:00 app[worker.1]: 0                        ...                          15,592.00M
+2020-04-18T09:08:03.773119+00:00 app[worker.1]: 
+2020-04-18T09:08:03.773119+00:00 app[worker.1]: operating_income operating_margin  netincome net_profit_margin  \
+2020-04-18T09:08:03.773119+00:00 app[worker.1]: 0                -           50.332  6,299.00M            42.672
+2020-04-18T09:08:03.773120+00:00 app[worker.1]: 
+2020-04-18T09:08:03.773120+00:00 app[worker.1]: revenue_per_share_5_yr_growth eps_per_share_5_yr_growth       ebita  \
+2020-04-18T09:08:03.773120+00:00 app[worker.1]: 0                         9.319                     8.918  10,029.00M
+2020-04-18T09:08:03.773121+00:00 app[worker.1]: 
+2020-04-18T09:08:03.773121+00:00 app[worker.1]: industry  \
+2020-04-18T09:08:03.773122+00:00 app[worker.1]: 0  Banking & Investment Services / Banks /
+2020-04-18T09:08:03.773122+00:00 app[worker.1]: 
+2020-04-18T09:08:03.773123+00:00 app[worker.1]: financial_info
+2020-04-18T09:08:03.773123+00:00 app[worker.1]: 0  {"Fiscal Year": ["2015", "2016", "2017", "2018...
+2020-04-18T09:08:03.773123+00:00 app[worker.1]: 
+2020-04-18T09:08:03.773178+00:00 app[worker.1]: [1 rows x 41 columns]
+2020-04-18T09:08:03.773936+00:00 app[worker.1]: drop table rawdata
+2020-04-18T09:08:03.801870+00:00 app[worker.1]: dropTbl -- {'msg': 'DROP TABLE', 'result': None, 'error': None}
+2020-04-18T09:08:03.801879+00:00 app[worker.1]: CREATE TABLE rawdata (names varchar(255), openPrice varchar(255), high_low varchar(255), close varchar(255), prevCloseDate varchar(255), 52weekHighLow varchar(255), beta varchar(255), marketCap varchar(255), sharesOutstanding varchar(255), p_float varchar(255), avgVolume varchar(255), normalizedEPS varchar(255), mthvwap varchar(255), unadjVWAP varchar(255), adjVWAP varchar(255), peratio varchar(255), price_Sales varchar(255), price_CF varchar(255), pricebookvalue varchar(255), dividend varchar(255), divident_5_yr_avg varchar(255), shortDebt varchar(255), totalDebt varchar(255), long_term_debt_equity varchar(255), enterpriseValue varchar(255), assets varchar(255), cash varchar(255), roe varchar(255), roa varchar(255), capEx varchar(255), EBIT varchar(255), revenue varchar(255), operating_income varchar(255), operating_margin varchar(255), netincome varchar(255), net_profit_margin varchar(255), revenue_per_share_5_yr_growth varchar(255), eps_per_share_5_yr_growth varchar(255), ebita varchar(255), industry varchar(255), financial_info text)
+2020-04-18T09:08:03.803474+00:00 app[worker.1]: syntax error at or near "52"
+2020-04-18T09:08:03.803475+00:00 app[worker.1]: LINE 1: ..., close varchar(255), prevCloseDate varchar(255), 52weekHigh...
+2020-04-18T09:08:03.803476+00:00 app[worker.1]: ^
+2020-04-18T09:08:03.803532+00:00 app[worker.1]: 
+2020-04-18T09:08:03.804746+00:00 app[worker.1]: createTbl -- {'msg': None, 'result': None, 'error': [ProgrammingError('syntax error at or near "52"\nLINE 1: ..., close varchar(255), prevCloseDate varchar(255), 52weekHigh...\n                                                             ^\n',)]}
+2020-04-18T09:08:03.804812+00:00 app[worker.1]: createTbl -- error --
+2020-04-18T09:08:03.811089+00:00 app[worker.1]: 09:08:03 TypeError: 'NoneType' object is not subscriptable
+2020-04-18T09:08:03.811091+00:00 app[worker.1]: Traceback (most recent call last):
+2020-04-18T09:08:03.811091+00:00 app[worker.1]: File "/app/dbConnector.py", line 163, in recreateTable
+2020-04-18T09:08:03.811092+00:00 app[worker.1]: closeConn()
+2020-04-18T09:08:03.811093+00:00 app[worker.1]: File "/app/dbConnector.py", line 88, in closeConn
+2020-04-18T09:08:03.811093+00:00 app[worker.1]: cur=connList['cur']
+2020-04-18T09:08:03.811093+00:00 app[worker.1]: TypeError: 'NoneType' object is not subscriptable
+2020-04-18T09:08:03.811094+00:00 app[worker.1]: 
+2020-04-18T09:08:03.811095+00:00 app[worker.1]: During handling of the above exception, another exception occurred:
+2020-04-18T09:08:03.811095+00:00 app[worker.1]: 
+2020-04-18T09:08:03.811095+00:00 app[worker.1]: Traceback (most recent call last):
+2020-04-18T09:08:03.811111+00:00 app[worker.1]: File "/app/.heroku/python/lib/python3.6/site-packages/rq/worker.py", line 789, in perform_job
+2020-04-18T09:08:03.811112+00:00 app[worker.1]: rv = job.perform()
+2020-04-18T09:08:03.811112+00:00 app[worker.1]: File "/app/.heroku/python/lib/python3.6/site-packages/rq/job.py", line 573, in perform
+2020-04-18T09:08:03.811113+00:00 app[worker.1]: self._result = self._execute()
+2020-04-18T09:08:03.811113+00:00 app[worker.1]: File "/app/.heroku/python/lib/python3.6/site-packages/rq/job.py", line 579, in _execute
+2020-04-18T09:08:03.811114+00:00 app[worker.1]: return self.func(*self.args, **self.kwargs)
+2020-04-18T09:08:03.811114+00:00 app[worker.1]: File "/app/orchestrator.py", line 21, in runSGXFull
+2020-04-18T09:08:03.811114+00:00 app[worker.1]: util.runFunc(actFunc=sgx.getFullDetails, actFuncParams=params)
+2020-04-18T09:08:03.811115+00:00 app[worker.1]: File "/app/util.py", line 160, in runFunc
+2020-04-18T09:08:03.811115+00:00 app[worker.1]: actFunc(*actFuncParams)
+2020-04-18T09:08:03.811115+00:00 app[worker.1]: File "/app/sgx.py", line 483, in getFullDetails
+2020-04-18T09:08:03.811116+00:00 app[worker.1]: companyFullInfo=collateCompanyInfo(df, start=index, host=host)
+2020-04-18T09:08:03.811116+00:00 app[worker.1]: File "/app/sgx.py", line 421, in collateCompanyInfo
+2020-04-18T09:08:03.811117+00:00 app[worker.1]: db.recreateTable('rawData', store, overwrite=overwrite)
+2020-04-18T09:08:03.811117+00:00 app[worker.1]: File "/app/dbConnector.py", line 169, in recreateTable
+2020-04-18T09:08:03.811118+00:00 app[worker.1]: closeConn()
+2020-04-18T09:08:03.811118+00:00 app[worker.1]: File "/app/dbConnector.py", line 88, in closeConn
+2020-04-18T09:08:03.811119+00:00 app[worker.1]: cur=connList['cur']
+2020-04-18T09:08:03.811119+00:00 app[worker.1]: TypeError: 'NoneType' object is not subscriptable
+2020-04-18T09:08:03.811119+00:00 app[worker.1]: Traceback (most recent call last):
+2020-04-18T09:08:03.811120+00:00 app[worker.1]: File "/app/dbConnector.py", line 163, in recreateTable
+2020-04-18T09:08:03.811120+00:00 app[worker.1]: closeConn()
+2020-04-18T09:08:03.811120+00:00 app[worker.1]: File "/app/dbConnector.py", line 88, in closeConn
+2020-04-18T09:08:03.811121+00:00 app[worker.1]: cur=connList['cur']
+2020-04-18T09:08:03.811121+00:00 app[worker.1]: TypeError: 'NoneType' object is not subscriptable
+2020-04-18T09:08:03.811122+00:00 app[worker.1]: 
+2020-04-18T09:08:03.811122+00:00 app[worker.1]: During handling of the above exception, another exception occurred:
+2020-04-18T09:08:03.811122+00:00 app[worker.1]: 
+2020-04-18T09:08:03.811123+00:00 app[worker.1]: Traceback (most recent call last):
+2020-04-18T09:08:03.811123+00:00 app[worker.1]: File "/app/.heroku/python/lib/python3.6/site-packages/rq/worker.py", line 789, in perform_job
+2020-04-18T09:08:03.811124+00:00 app[worker.1]: rv = job.perform()
+2020-04-18T09:08:03.811124+00:00 app[worker.1]: File "/app/.heroku/python/lib/python3.6/site-packages/rq/job.py", line 573, in perform
+2020-04-18T09:08:03.811124+00:00 app[worker.1]: self._result = self._execute()
+2020-04-18T09:08:03.811125+00:00 app[worker.1]: File "/app/.heroku/python/lib/python3.6/site-packages/rq/job.py", line 579, in _execute
+2020-04-18T09:08:03.811125+00:00 app[worker.1]: return self.func(*self.args, **self.kwargs)
+2020-04-18T09:08:03.811125+00:00 app[worker.1]: File "/app/orchestrator.py", line 21, in runSGXFull
+2020-04-18T09:08:03.811126+00:00 app[worker.1]: util.runFunc(actFunc=sgx.getFullDetails, actFuncParams=params)
+2020-04-18T09:08:03.811126+00:00 app[worker.1]: File "/app/util.py", line 160, in runFunc
+2020-04-18T09:08:03.811126+00:00 app[worker.1]: actFunc(*actFuncParams)
+2020-04-18T09:08:03.811126+00:00 app[worker.1]: File "/app/sgx.py", line 483, in getFullDetails
+2020-04-18T09:08:03.811127+00:00 app[worker.1]: companyFullInfo=collateCompanyInfo(df, start=index, host=host)
+2020-04-18T09:08:03.811127+00:00 app[worker.1]: File "/app/sgx.py", line 421, in collateCompanyInfo
+2020-04-18T09:08:03.811127+00:00 app[worker.1]: db.recreateTable('rawData', store, overwrite=overwrite)
+2020-04-18T09:08:03.811127+00:00 app[worker.1]: File "/app/dbConnector.py", line 169, in recreateTable
+2020-04-18T09:08:03.811128+00:00 app[worker.1]: closeConn()
+2020-04-18T09:08:03.811128+00:00 app[worker.1]: File "/app/dbConnector.py", line 88, in closeConn
+2020-04-18T09:08:03.811128+00:00 app[worker.1]: cur=connList['cur']
+2020-04-18T09:08:03.811134+00:00 app[worker.1]: TypeError: 'NoneType' object is not subscriptable
+2020-04-18T09:08:03.811187+00:00 app[worker.1]: error---: <class TypeError>----NoneType object is not subscriptable
+2020-04-18T09:08:03.811302+00:00 app[worker.1]: SELECT column_name FROM information_schema.columns WHERE table_name = 'joblist'
+2020-04-18T09:08:03.848424+00:00 app[worker.1]: extract cols of joblist ---  SELECT 9 None
+2020-04-18T09:08:03.848461+00:00 app[worker.1]: UPDATE joblist SET lastchecked = '18/04/2020, 17:08:03', jobstatus = '<class TypeError>----NoneType object is not subscriptable' WHERE jobid='0aa09449-2296-4aeb-8258-ed9a4cdeddd8'
+2020-04-18T09:08:03.848487+00:00 app[worker.1]: UPDATE joblist SET lastchecked = '18/04/2020, 17:08:03', jobstatus = '<class TypeError>----NoneType object is not subscriptable' WHERE jobid='0aa09449-2296-4aeb-8258-ed9a4cdeddd8'
+2020-04-18T09:08:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=4 sample#load-avg-1m=0.23 sample#load-avg-5m=0.18 sample#load-avg-15m=0.17 sample#read-iops=0 sample#write-iops=0.05 sample#memory-total=15664264kB sample#memory-free=11625628kB sample#memory-cached=1002940kB sample#memory-redis=435720bytes sample#hit-rate=0.32465 sample#evicted-keys=0
+2020-04-18T09:08:30+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=2 sample#load-avg-1m=0.19 sample#load-avg-5m=0.185 sample#load-avg-15m=0.175 sample#read-iops=0 sample#write-iops=0.082645 sample#memory-total=15664264kB sample#memory-free=11626972kB sample#memory-cached=1002952kB sample#memory-redis=394360bytes sample#hit-rate=0.32535 sample#evicted-keys=0
+2020-04-18T09:12:01+00:00 app[heroku-redis]: source=REDIS addon=redis-corrugated-22276 sample#active-connections=2 sample#load-avg-1m=0.25 sample#load-avg-5m=0.21 sample#load-avg-15m=0.185 sample#read-iops=0 sample#write-iops=0.05 sample#memory-total=15664264kB sample#memory-free=11623248kB sample#memory-cached=1002964kB sample#memory-redis=394360bytes sample#hit-rate=0.32535 sample#evicted-keys=0
