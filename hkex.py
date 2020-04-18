@@ -138,7 +138,7 @@ def getIndustryCompany(df, industry='bank'):
 #df=run()
 #a=updateBasic()
 
-df=analytics(download=True)
+#df=analytics(download=True)
 #cleanDf=cleanData(df)
 #engineDf=dataEngineer(cleanDf)
 #engineDf.to_csv(hkSumEngine, index=False)

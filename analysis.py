@@ -90,6 +90,8 @@ def featuresEngineering(df, details):
     marketcap=sharesOutstanding*price
     div=df['dividend']
     div_5=df['divident_5_yr_avg']
+    revGrowth=df['revenue_per_share_5_yr_growth']
+    earningGrowth=df['eps_per_share_5_yr_growth']
     
 #    #aquirer multiple
     df['aquirer multiple']=[x/y if (x!=0 and y!=0) else 0 for x, y in zip(income, enterpriseVal) ]
@@ -105,12 +107,13 @@ def featuresEngineering(df, details):
     df['p_nav']=[a/(x+y-z) if (x!=0 and y!=0 and z!=0 and a!=0) else 0 for x,y,z,a in zip(cash, assets, debt, marketcap)]
     df['type']=['reit' if ('reits' in str(x).lower()) else 'others' for x in industry]
     df['div_val']=[x if x !=0 else y for x,y in zip(div,div_5)]
-    df['profitGrowth']=df['div_val']
+    df['profitMarginGrowth']=[y/x if (x!=0 and y!=0) else 0 for x,y in zip(revGrowth, earningGrowth)]
     
     cols_to_drop=['high_low', 'close','prevclosedate','p_float','avgvolume','normalizedeps',\
                   'mthvwap','unadjvwap','adjvwap', 'dividend','divident_5_yr_avg','debt', \
-                  'long_term_debt_equity','operating_income','netincome'
-                  ]
+                  'long_term_debt_equity','ebit','operating_income','netincome', 'ebita']
+    
+    df=df.drop(cols_to_drop, axis=1)
     
     return df
 
