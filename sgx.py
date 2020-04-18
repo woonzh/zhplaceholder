@@ -16,6 +16,7 @@ import dbConnector as db
 
 version='linux'
 host='cloud'
+cloud=(host=='cloud')
 batchUpload=10
 
 timec=util.timeClass()
@@ -237,6 +238,8 @@ def getCompanyInfo(name, url):
         'high_low':'Previous Day High/Low',
         'close':'Previous Close',
         'prevCloseDate':'Previous Close Date',
+        '52weekHighLow':'52 Week High/Low',
+        'beta':'5-Year Beta',
         'marketCap':'Total Market Cap',
         'sharesOutstanding':'Shares Outstanding',
         'p_float':'Float',
@@ -251,7 +254,8 @@ def getCompanyInfo(name, url):
         'pricebookvalue':'Price/Book ValueThis is the Current Price divided by the latest interim period Book Value Per Share.',
         'dividend':'Dividend YieldThis value is the current percentage dividend yield based on the present cash dividend rate. It is calculated as the Indicated Annual Dividend divided by the current Price, multiplied by 100.',
         'divident_5_yr_avg':'Dividend Yield 5-yr avgAverage of the dividend yield over the last 60 months',
-        'debt':'Net DebtSum of all short term debt, notes payable, long term debt and preferred equity minus the total cash and equivalents and short term investments for the most recent interim period. Only reported for industrial, utility and banking companies.',
+        'shortDebt':'Net DebtSum of all short term debt, notes payable, long term debt and preferred equity minus the total cash and equivalents and short term investments for the most recent interim period. Only reported for industrial, utility and banking companies.',
+        'totalDebt':'Total Debt',
         'long term debt_equity':'Long Term Debt / Equity',
         'enterpriseValue':'Enterprise Value',
         'assets':'Total Assets',
@@ -531,7 +535,7 @@ def updateRatios(companyInfo):
     return companyInfo
     
 def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
-    now=util.currentDate()
+    now=timec.getCurDate(cloud=cloud)
     global dragIndex
     global maxSummaryTries
     

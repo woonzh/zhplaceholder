@@ -85,8 +85,10 @@ class timeClass:
         timeElapsed=(now-self.startTime)/60
         return timeElapsed
     
-    def getCurDate(self):
+    def getCurDate(self, cloud=False):
         now=datetime.now()
+        if cloud:
+            now=now+timedelta(hours=8)
         return now.strftime('%d/%m/%Y')
 
 class workerClass:

@@ -10,10 +10,11 @@ class crawler:
     def __init__(self):
         self.version='linux'
         self.host='cloud'
+        self.cloud=(self.host=='cloud')
         self.batchUpload=10
         
         self.timec=util.timeClass()
-        self.dateStr=self.timec.getCurDate()
+        self.dateStr=self.timec.getCurDate(cloud=self.cloud)
         
         self.subClassNames={
             'code':""".//td[@class="code"]""",
@@ -176,7 +177,7 @@ class crawler:
             
             self.timec.getTimeSplit(str(count))
         
-        df['date_update']=[self.timec.getCurDate()]*len(df)
+        df['date_update']=[self.timec.getCurDate(cloud=self.cloud)]*len(df)
         self.timec.stopTime()
         self.df=df
         

@@ -90,27 +90,7 @@ def featuresEngineering(df, details):
     marketcap=sharesOutstanding*price
     div=df['dividend']
     div_5=df['divident_5_yr_avg']
-#    floatv=[float(x.split('%')[0])/100 if x!='-' else 0 for x in list(df['p_float'])]
     
-    #new PEratio
-#    df['new PE ratio']=[x/(y/z) if (x!=0 and y!=0 and z!=0) else 0 for x, y,z in zip(price,income, sharesOutstanding)]
-    df['new PE ratio']=[x/y if (x!=0 and y!=0) else 0 for x, y in zip(price, eps)]
-    
-#    #pricebook value
-#    df['pbvratio']=[c/((x+y+z-a)/b) if (x!=0 and y!=0 and z!=0 and a!=0 and b!=0 and c!=0) else 0 \
-#      for x, y, z, a, b, c in zip(cash, assets, enterpriseVal, debt, outstandingshares, closePrice)]
-#    
-#    #enterprice value over ebita
-#    newebita=[x if x!=0 else y for x, y in zip(ebita, income)]
-#    df['newevebita']=[x/y if (x!=0 and y!=0) else 0 for x, y in zip(enterpriseVal, newebita)]
-#    
-#    #ROE
-    df['new roe']=[x/(y+z-a) if (x!=0 and y!=0 and z!=0 and a!=0) else 0 \
-      for x, y, z, a in zip(income, cash, assets, debt)]
-
-#    #ROA
-    df['new roa']=[x/y if (x!=0 and y!=0) else 0 \
-      for x, y in zip(income, assets)]
 #    #aquirer multiple
     df['aquirer multiple']=[x/y if (x!=0 and y!=0) else 0 for x, y in zip(income, enterpriseVal) ]
     
@@ -125,7 +105,13 @@ def featuresEngineering(df, details):
     df['p_nav']=[a/(x+y-z) if (x!=0 and y!=0 and z!=0 and a!=0) else 0 for x,y,z,a in zip(cash, assets, debt, marketcap)]
     df['type']=['reit' if ('reits' in str(x).lower()) else 'others' for x in industry]
     df['div_val']=[x if x !=0 else y for x,y in zip(div,div_5)]
-    df['eps']=[x/y if (x!=0 and y!=0) else 0 for x, y in zip(income, sharesOutstanding)]
+    df['profitGrowth']=df['div_val']
+    
+    cols_to_drop=['high_low', 'close','prevclosedate','p_float','avgvolume','normalizedeps',\
+                  'mthvwap','unadjvwap','adjvwap', 'dividend','divident_5_yr_avg','debt', \
+                  'long_term_debt_equity','operating_income','netincome'
+                  ]
+    
     return df
 
 def removeNull(df, inclusions=[]):
@@ -190,10 +176,8 @@ def cleanAndProcess(sumName=summaryFName, infoName=file, newFileName=newFile):
     dfNew.to_csv(newFileName, index=False)
     
     dfCompare=dfNew[['names','openprice', 'normalizedeps', 'peratio', 'new PE ratio', 'netincome', 'operating_margin', 'net_profit_margin','aquirer multiple','normalized aquirer multiple', 'cash', 'assets', 'roe', 'new roe', 'roa', 'new roa', 'price_sales', 'price_cf','long_term_debt_equity', 'revenue_per_share_5_yr_growth', 'eps_per_share_5_yr_growth']]
-    a=dfCompare[(dfCompare['new PE ratio']>0)&(dfCompare['openprice']>0.2)]
-    a['compare']=a['new PE ratio']-a['peratio']
     
-    return dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a
+    return dfMain, dfDel, dfCheck, summary, dfNew, dfCompare
 
 def addToMatrix(df, a, b):
     cols=list(df)
@@ -331,7 +315,7 @@ def getFilteredResult(industry=[], cloud=True, filters=None):
     if cloud:
         rawData=extractFileFromDB()
         summary=extractFileFromDB(dbName='summary')
-    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summary, rawData, newFile)
+    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare=cleanAndProcess(summary, rawData, newFile)
     df=filterData(industry=industry, df=dfNew, filters=None)
     return df
 
@@ -341,7 +325,7 @@ if __name__ == "__main__":
         df=extractFileFromDB()
         df.to_csv(file, index=False)
         
-    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare, a=cleanAndProcess(summaryFName, file, newFile)
+    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare=cleanAndProcess(summaryFName, file, newFile)
 #
 #industries, industriesDf, clusters=extractIndustries()
 #a=filterData(industry=[])
