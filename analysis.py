@@ -490,12 +490,12 @@ def run():
     dfMain, dfDel, dfCheck, summary, dfNew, f=cleanAndProcess(summaryFName, file, newFile)
     return df,dfNew, dfMain, f
 
-df,dfNew, dfMain, financial = run()
-stats=getStats(dfNew)
-#
-dfFilter=filterData(industry=[],df=dfNew)
-dfCmp=cleanCols(dfFilter)
-dfCmp.to_csv(cmpFile, index=False)
+#df,dfNew, dfMain, financial = run()
+#stats=getStats(dfNew)
+##
+#dfFilter=filterData(industry=[],df=dfNew)
+#dfCmp=cleanCols(dfFilter)
+#dfCmp.to_csv(cmpFile, index=False)
 #
 #f, fsummary=processFinancialInfo(dfNew)
 #fstats=getStats(fsummary)
