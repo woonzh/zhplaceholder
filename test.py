@@ -29,10 +29,11 @@ import pandas as pd
 #result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
-#result=requests.get(url)
-
-url='https://zhplaceholder.herokuapp.com/sgxWorker'
+url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
 result=requests.get(url)
+
+#url='https://zhplaceholder.herokuapp.com/sgxWorker'
+#result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/sgxUpdate'
 #params={

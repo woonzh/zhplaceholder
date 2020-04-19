@@ -121,6 +121,7 @@ class crawler:
         for count, symbol in enumerate(symbols):
             try:
                 newData=self.crawlHKEXDetails(symbol)
+                print('%s-%s'%(symbol, newData))
                 for data in newData:
                     ind=list(df).index(data)
                     df.iloc[count,ind]=newData[data]

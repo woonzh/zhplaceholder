@@ -16,9 +16,12 @@ from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import scipy.cluster.hierarchy as spc
 import dbConnector as db
+import statistics
+import json
 
 file='data/companyInfo.csv'
 newFile='data/companyInfo(cleaned).csv'
+cmpFile='data/companyInfo(cmp).csv'
 summaryFName='data/summary.csv'
 filedir='logs'
 metadata = 'D:\stuff\scrapy\sgx\logs\metadata.txt'
@@ -74,15 +77,21 @@ def dfCleaner(df, cleanCol='prevclosedate', exceptions=[]):
             df[header]=newLst
             errorCount=sum(df[header]==0)
             summary.loc[len(summary)]=[header, errorCount,round(errorCount/len(df),1)]
+        else:
+            newLst=[x if (str(x)!='nan' and str(x)!='-') else '' for x in df[header]]
+            df[header]=newLst
+            
     return df, dfDel, dfNew, summary
 
 def featuresEngineering(df, details):
     eps=df['normalizedeps']
+    yearhighlow=df['yearhighlow']
     price=df['openprice']
     income=df['netincome']
     cash=df['cash']
     assets=df['assets']
-    debt=df['debt']
+    debt=df['totaldebt']
+    shortdebt=df['shortdebt']
     enterpriseVal=df['enterprisevalue']
     sharesOutstanding=df['sharesoutstanding']
     industry=df['industry']
@@ -108,12 +117,17 @@ def featuresEngineering(df, details):
     df['type']=['reit' if ('reits' in str(x).lower()) else 'others' for x in industry]
     df['div_val']=[x if x !=0 else y for x,y in zip(div,div_5)]
     df['profitMarginGrowth']=[y/x if (x!=0 and y!=0) else 0 for x,y in zip(revGrowth, earningGrowth)]
+    df['cash_percen']=[x/y if (x!=0 and y!=0) else 0 for x,y in zip(cash, assets)]
     
-    cols_to_drop=['high_low', 'close','prevclosedate','p_float','avgvolume','normalizedeps',\
-                  'mthvwap','unadjvwap','adjvwap', 'dividend','divident_5_yr_avg','debt', \
-                  'long_term_debt_equity','ebit','operating_income','netincome', 'ebita']
+    df['shortdebt_over_profit']=[x/y if (x!=0 and y!=0) else 0 for x,y in zip(shortdebt, income)]
     
-    df=df.drop(cols_to_drop, axis=1)
+    yearhighsplit=[x.split('-') if len(x.split('-'))>1 else ['0','0'] for x in yearhighlow]
+    df['yearhigh']=[float(x[0].replace(',','').replace(' ','')) for x in yearhighsplit]
+    df['yearlow']=[float(x[1].replace(',','').replace(' ','')) for x in yearhighsplit]
+    
+    df['highlowvar']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], df['yearlow'])]
+    df['upside']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], price)]
+    df['downside']= [(y-x)/y if (x!=0 and y!=0) else 0 for x,y in zip(price, df['yearlow'])]
     
     return df
 
@@ -173,14 +187,16 @@ def cleanAndProcess(sumName=summaryFName, infoName=file, newFileName=newFile):
     else:
         df=infoName
     
-    dfMain, dfDel, dfCheck, summary=dfCleaner(df, exceptions=['names', 'prevclosedate', 'p_float', 'industry'])
+    dfMain, dfDel, dfCheck, summary=dfCleaner(df, exceptions=['names', 'prevclosedate', 'p_float', 'industry', 'financial_info', 'yearhighlow', 'highlow'])
+    print('cleaned')
     dfNew=featuresEngineering(dfMain, details)
     
+    f, fsummary=processFinancialInfo(dfNew)
+    dfNew=pd.merge(dfNew, fsummary, on='names')
+    
     dfNew.to_csv(newFileName, index=False)
-    
-    dfCompare=dfNew[['names','openprice', 'normalizedeps', 'peratio', 'new PE ratio', 'netincome', 'operating_margin', 'net_profit_margin','aquirer multiple','normalized aquirer multiple', 'cash', 'assets', 'roe', 'new roe', 'roa', 'new roa', 'price_sales', 'price_cf','long_term_debt_equity', 'revenue_per_share_5_yr_growth', 'eps_per_share_5_yr_growth']]
-    
-    return dfMain, dfDel, dfCheck, summary, dfNew, dfCompare
+        
+    return dfMain, dfDel, dfCheck, summary, dfNew, f
 
 def addToMatrix(df, a, b):
     cols=list(df)
@@ -254,14 +270,21 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
     if filters is None:
         filters={
             'peratio':['!=','nan'],
+            'industry':['!=',''],
             'openprice':['>',0.1],
-#            'net_profit_margin':['>', 20],
-#            'volume traded %':['>', 0.01],
-#            'p_nav':['<',1],
+            'net_profit_margin':['>', 10],
+            'volume traded %':['>', 0.0001],
+            'p_nav':['<',1],
             'type':['=','others'],
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
-            'operating_margin':['>',10]
+            'operating_margin':['>',10],
+#            'profitMarginGrowth':['>',0]
+#            'cash_percen':['>',0.05],
+            'downside':['>',-0.4],
+            'upside':['>',0.3],
+            'revenue':['>',100*pow(10,6)],
+            'Accumulated Depreciation, Total growth':['<',1]
                 }
     stats={
         'Consumer':{
@@ -272,6 +295,9 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
             }
     if df is None:
         df=pd.read_csv(fname)
+        dfStore=pd.read_csv(fname)
+    else:
+        dfStore=df.copy(deep=True)
         
     if len(industry)>0:
         industries=[str(x) for x in df['industry']]
@@ -306,6 +332,13 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
             df=df[df[i]==filters[i][1]]
         if filters[i][0]=='!=':
             df=df[df[i]!=filters[i][1]]
+            dfStore=dfStore[dfStore[i]!=filters[i][1]]
+        
+        if type(filters[i][1])!=type('s'):
+            temDf=dfStore[dfStore[i]==0]
+            df=df.append(temDf)
+            df.drop_duplicates(subset='names', inplace=True)
+            dfStore=df.copy(deep=True)
     
 #    df=df[(df['peratio']>1)&(df['openprice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
     return df
@@ -318,24 +351,154 @@ def getFilteredResult(industry=[], cloud=True, filters=None):
     if cloud:
         rawData=extractFileFromDB()
         summary=extractFileFromDB(dbName='summary')
-    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare=cleanAndProcess(summary, rawData, newFile)
+    dfMain, dfDel, dfCheck, summary, dfNew, f=cleanAndProcess(summary, rawData, newFile)
     df=filterData(industry=industry, df=dfNew, filters=None)
     return df
 
-if __name__ == "__main__":
-    pullFromDB=True
+def cleanCols(df):
+    cols_to_drop=['high_low', 'close','prevclosedate','p_float','avgvolume','normalizedeps',\
+              'mthvwap','unadjvwap','adjvwap', 'dividend','divident_5_yr_avg','debt', \
+              'long_term_debt_equity','ebit','operating_income','netincome', 'ebita',\
+              'sharesoutstanding', 'pricebookvalue', 'type', 'industry', 'enterprisevalue', \
+              'assets', 'cash', 'capex', 'financial_info']
+    
+    display=['names','openprice','upside','downside','revenue','div_val','marketcap','peratio',\
+             'operating_margin','net_profit_margin','debt_assets_ratio','shortdebt_over_profit',\
+             'p_nav','profitMarginGrowth','cash_percen', 'volume traded %',\
+             'Revenue growth', 'Operating Income growth', 'Net Income growth', 'Cash growth', \
+             'Total Receivables, Net growth', 'Accumulated Depreciation, Total growth', \
+             'Total Assets growth', 'Total Current Liabilities growth', \
+             'Total Long Term Debt growth', 'Total Debt growth', 'Common Stock, Total growth', \
+             'receiveables over revenue', 'cash over assets', 'long term debt over debt']
+    
+#    df=df.drop(cols_to_drop, axis=1)
+    df=df[display]
+    return df
+
+def checkNum(txt):
+    try:
+        a=float(txt)
+        return True
+    except:
+        return False
+
+def getStats(df):
+    cols=list(df)
+    store={}
+    
+    percen=[0.1,0.25,0.5,0.75,0.9]
+    
+    for col in cols:
+        try:
+            temDf=pd.DataFrame()
+            temDf['store']=[float(x) if checkNum(x)==True else 0 for x in df[col]]
+            tem=list(temDf[temDf['store']>0]['store'])
+            tem.sort()
+            lst={}
+            lst['avg']=statistics.mean(tem)
+            for p in percen:
+                ind=int(round(p*len(tem),0))
+                lst[str(p)]=tem[ind]
+            
+                store[col]=lst
+        except:
+            store[col]=''
+    
+    return store
+
+def cleanFinancial(info):
+    tem=json.loads(info)
+    for t in tem:
+        lst=tem[t]
+        newLst=[]
+        for i in lst:
+            i=i.replace(',','')
+            try:
+                a=float(i)
+            except:
+                a=0
+            newLst.append(a)
+        tem[t]=newLst
+    return tem
+
+def getGrowth(lst):
+    lst=[(x-y)/y if (x!=0 and y!=0 ) else 0 for x,y in zip(lst[1:],lst[:-1])]
+    return lst
+
+def getRatio(lst1, lst2):
+    return [x/y if (x!=0 and y!=0) else 0 for x,y in zip(lst1, lst2)]
+
+def getMean(lst):
+    count=0
+    for i in lst:
+        if i !=0:
+            count+=1
+    if count>0:
+        return round(sum(lst)/count,2)
+    else:
+        return 0
+
+def processFinancialInfo(df):
+    financialInfo=list(df['financial_info'])
+    names=list(df['names'])
+    
+    growths=['Revenue','Operating Income','Net Income', 'Cash', 'Total Receivables, Net', \
+             'Accumulated Depreciation, Total', 'Total Assets','Total Current Liabilities',\
+             'Total Long Term Debt', 'Total Debt', 'Common Stock, Total']
+    ratio={
+        'receiveables over revenue':['Total Receivables, Net','Revenue'],
+        'cash over assets':['Cash', 'Total Assets'],
+        'long term debt over debt':['Total Long Term Debt', 'Total Debt'],
+        'debt over revenue':['Total Debt','Net Income']
+        }
+    
+    addName=' growth'
+    summary=pd.DataFrame(columns=['names']+[x+addName for x in growths]+list(ratio))
+    store={}
+    for count, info in enumerate(financialInfo):
+        if info!='' and str(info)!='nan' and str(info)!='{}':
+            lst=[names[count]]
+            store2={}
+            store2['info']=cleanFinancial(info)
+#            print(names[count])
+            
+            tem={}
+            for g in growths:
+                tem[g+addName]=getGrowth(store2['info'][g])
+                lst.append(getMean(tem[g+addName]))
+            store2['growth']=tem
+            
+            tem2={}
+            for r in ratio:
+                tem2[r]=getRatio(tem[ratio[r][0]+addName],tem[ratio[r][1]+addName])
+                lst.append(getMean(tem2[r]))
+            store2['ratio']=tem2
+            store[names[count]]=store2
+            
+            summary.loc[len(summary)]=lst
+        else:
+            summary.loc[len(summary)]=[names[count]]+[0]*(len(list(summary))-1)
+    
+    return store, summary
+    
+def run():
+    pullFromDB=False
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)
-        
-    dfMain, dfDel, dfCheck, summary, dfNew, dfCompare=cleanAndProcess(summaryFName, file, newFile)
+    df=pd.read_csv(file)
+    dfMain, dfDel, dfCheck, summary, dfNew, f=cleanAndProcess(summaryFName, file, newFile)
+    return df,dfNew, dfMain, f
+
+df,dfNew, dfMain, financial = run()
+stats=getStats(dfNew)
 #
-#industries, industriesDf, clusters=extractIndustries()
-#a=filterData(industry=[])
-#b=a[['names','marketcap','openprice','peratio','dividend','divident_5_yr_avg','revenue','operating_margin','net_profit_margin', 'p_nav']]
+dfFilter=filterData(industry=[],df=dfNew)
+dfCmp=cleanCols(dfFilter)
+dfCmp.to_csv(cmpFile, index=False)
 #
-#x=a[['div_val','roe','roa','operating_margin','net_profit_margin', 'p_nav', 'eps']]
-#y=a['peratio']
+#f, fsummary=processFinancialInfo(dfNew)
+#fstats=getStats(fsummary)
 #
 #result=train(x,y)
 #

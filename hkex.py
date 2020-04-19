@@ -16,8 +16,8 @@ hkSum='data/HKsummary.csv'
 hkSumEngine='data/HKsummaryEngineered.csv'
 dbName='hksummary'
 
-currencyCols=['price', 'yearhigh','yearlow']
-numericCols=['turnover','market_cap','pe','dividend']
+currencyCols=['yearhigh']
+numericCols=['price','turnover','market_cap','pe','dividend', 'yearlow']
 comDict=hkexDict.companyTag
 
 def run():
@@ -66,26 +66,36 @@ def dataEngineer(df):
     return df
 
 def cleanData(df):
-    
+    df=df.copy(deep=True)
     for col in currencyCols:
         newColVal=[float(x.split('$')[1].replace(',','')) if len(str(x).split('$'))>1 else 0 \
                    for x in df[col]]
         df[col]=newColVal
     
     for col in numericCols:
+#        print(col)
         lst=[]
-        for val in df[col]:
-            val=val.strip().replace('*','').replace(',','')
-            if val == '-':
+        for count,val in enumerate(df[col]):
+#            print('%s-%s'%(count,val))
+            val=str(val).strip().replace('*','').replace(',','').replace('x','')
+            if str(val) == '-' or str(val)=='nan':
                 lst.append(0)
             else:
-                numericVal=float(val[:-1])
-                if 'B' in val:
-                    numericVal=numericVal * pow(10,9)
-                if 'M' in val:
-                    numericVal=numericVal * pow(10,6)
-                if 'K' in val:
-                    numericVal=numericVal * pow(10,3)
+                try:
+                    numericVal=float(val)
+                except:
+                    try:
+                        if 'B' in val:
+                            numericVal=float(val[:-1])
+                            numericVal=numericVal * pow(10,9)
+                        if 'M' in val:
+                            numericVal=float(val[:-1])
+                            numericVal=numericVal * pow(10,6)
+                        if 'K' in val:
+                            numericVal=float(val[:-1])
+                            numericVal=numericVal * pow(10,3)
+                    except:
+                        numericVal=0
                 lst.append(numericVal)
         df[col]=lst
     
@@ -106,7 +116,7 @@ def sieveData(df):
         'pe1':['>',2,'pe'],
         'pe2':['<',20,'pe'],
         'turnover':['>',1*pow(10,7),'turnover'],
-        'yearhigh_divide_price':['>',0.5,'yearhigh_divide_price'],
+        'yearhigh_divide_price':['>',0.4,'yearhigh_divide_price'],
         'price_divide_yearlow':['<',0.2,'price_divide_yearlow']
             }
         
@@ -126,9 +136,7 @@ def analytics(download=True):
     if download:
         df=db.extractTable(dbName)['result']
         df.to_csv(hkSum, index=False)
-    else:
-        df=pd.read_csv(hkSum)
-    
+    df=pd.read_csv(hkSum)
     return df
 
 def getIndustryCompany(df, industry='bank'):
@@ -138,11 +146,11 @@ def getIndustryCompany(df, industry='bank'):
 #df=run()
 #a=updateBasic()
 
-#df=analytics(download=True)
-#cleanDf=cleanData(df)
-#engineDf=dataEngineer(cleanDf)
-#engineDf.to_csv(hkSumEngine, index=False)
-#sievedDf=sieveData(engineDf)
+df=analytics(download=False)
+cleanDf=cleanData(df)
+engineDf=dataEngineer(cleanDf)
+engineDf.to_csv(hkSumEngine, index=False)
+sievedDf=sieveData(engineDf)
 #
 #indDf=getIndustryCompany(engineDf, industry='oil')
 #comDf=engineDf[engineDf['com_name']=='ICBC']
