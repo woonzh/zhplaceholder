@@ -29,8 +29,8 @@ import pandas as pd
 #result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
-url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
-result=requests.get(url)
+#url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
+#result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #result=requests.get(url)
@@ -51,15 +51,15 @@ result=requests.get(url)
 #    'mode':2
 #        }
 #result=requests.get(url, params)
-ans=json.loads(result.text)
-jobid=ans['answer']['result']
-
-url='https://zhplaceholder.herokuapp.com/workerResult'
-params={
-    'jobId':jobid
-        }
-result=requests.get(url, params)
-print(result.text)
+#ans=json.loads(result.text)
+#jobid=ans['answer']['result']
+#
+#url='https://zhplaceholder.herokuapp.com/workerResult'
+#params={
+#    'jobId':jobid
+#        }
+#result=requests.get(url, params)
+#print(result.text)
 
 #def test():
 #    print("test")

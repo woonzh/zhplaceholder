@@ -146,11 +146,11 @@ def getIndustryCompany(df, industry='bank'):
 #df=run()
 #a=updateBasic()
 
-df=analytics(download=False)
-cleanDf=cleanData(df)
-engineDf=dataEngineer(cleanDf)
-engineDf.to_csv(hkSumEngine, index=False)
-sievedDf=sieveData(engineDf)
+#df=analytics(download=False)
+#cleanDf=cleanData(df)
+#engineDf=dataEngineer(cleanDf)
+#engineDf.to_csv(hkSumEngine, index=False)
+#sievedDf=sieveData(engineDf)
 #
 #indDf=getIndustryCompany(engineDf, industry='oil')
 #comDf=engineDf[engineDf['com_name']=='ICBC']
