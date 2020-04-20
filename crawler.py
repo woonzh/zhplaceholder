@@ -64,7 +64,7 @@ class crawler:
         self.driver.get(url)
         time.sleep(3)
         
-##update price
+##update price and highlows
     
     def updatePrice(self,df, dbname):
         orgDf=db.extractTable(dbname)['result']
@@ -95,6 +95,44 @@ class crawler:
                 orgDf.loc[len(orgDf)]=lst
         
         return orgDf
+    
+    def updateHighLow(self,df):
+        df=df.copy(deep=True)
+        data={
+            'price':df['price'],
+            'yearhigh':df['yearhigh'],
+            'yearlow':df['yearlow']
+            }
+        
+        for d in data:
+            lst=[]
+            lst2=[]
+            for x in data[d]:
+                try:
+                    lst.append(float(x[3:]))
+                    lst2.append(x)
+                except:
+                    lst.append(0)
+                    lst2.append('-')
+            df[d]=lst2
+            data[d]=lst
+        
+        for i in range(len(data['price'])):
+            price=data['price'][i]
+            high=data['yearhigh'][i]
+            low=data['yearlow'][i]
+            
+            priceInd=list(df).index('price')
+            highInd=list(df).index('yearhigh')
+            lowInd=list(df).index('yearlow')
+            
+            if price > high:
+                df.iloc[i,highInd]=df.iloc[i,priceInd]
+            
+            if price <low:
+                df.iloc[i,lowInd]=df.iloc[i,priceInd]
+        
+        return df
 
 #crawl details
     
@@ -157,7 +195,7 @@ class crawler:
         cols=[x for x in self.subClassNames]
         df=pd.DataFrame(columns=cols)
         
-        while ele.location['y']>eleLoc:
+        while ele.location['y']>eleLoc and count < 1:
             count+=1
             print(count*20)
             eleLoc=ele.location['y']

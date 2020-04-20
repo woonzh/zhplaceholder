@@ -16,8 +16,8 @@ hkSum='data/HKsummary.csv'
 hkSumEngine='data/HKsummaryEngineered.csv'
 dbName='hksummary'
 
-currencyCols=['yearhigh', 'yearlow']
-numericCols=['price','turnover','market_cap','pe','dividend']
+currencyCols=['price','yearhigh', 'yearlow']
+numericCols=['turnover','market_cap','pe','dividend']
 comDict=hkexDict.companyTag
 
 def run():
@@ -26,6 +26,8 @@ def run():
     
     df=crawl.crawlHKEXSummary()
     crawl.store(df, hkSum, dbName)
+    
+    df=df.loc[0]
     
     df=crawl.getHKEXDetails(df=df, dbname=dbName)
     crawl.store(df, hkSum, dbName)
@@ -53,14 +55,18 @@ def updateBasic():
     df2=crawl.updatePrice(df=df, dbname=dbName)
     crawl.store(df2, hkSum, dbName)
     
+    df3=crawl.updateHighLow(df2)
+    crawl.store(df3, hkSum, dbName)
+    
     crawl.closeDriver()
     
     return df,df2
 
 def dataEngineer(df):
-    df['price_divide_yearlow']=[round((x-y)/x,2) if x!=0 and y!=0 and x!='nan' and y!='nan' \
+    df=df.copy(deep=True)
+    df['downside']=[round((x-y)/x,2) if (x!=0 and y!=0 and x!='nan' and y!='nan') \
       else 0 for x,y in zip(df['price'],df['yearlow'])]
-    df['yearhigh_divide_price']=[round((y-x)/x,2) if x!=0 and y!=0 and x!='nan' and y!='nan' \
+    df['upside']=[round((y-x)/x,2) if (x!=0 and y!=0 and x!='nan' and y!='nan') \
       else 0 for x,y in zip(df['price'],df['yearhigh'])]
     
     return df
@@ -114,10 +120,10 @@ def sieveData(df):
     
     filters={
         'pe1':['>',1,'pe'],
-        'pe2':['<',20,'pe'],
-        'turnover':['>',1*pow(10,7),'turnover']
-#        'yearhigh_divide_price':['>',0.3,'yearhigh_divide_price'],
-#        'price_divide_yearlow':['<',0.2,'price_divide_yearlow']
+        'pe2':['<',30,'pe'],
+        'turnover':['>',5*pow(10,7),'turnover'],
+        'upside':['>',0.4,'upside']
+#        'downside':['<',0.3,'downside']
             }
         
     for i in filters:
@@ -144,6 +150,12 @@ def getIndustryCompany(df, industry='bank'):
     boolCheck=[True if x.lower() in lst else False for x in df['com_name']]
     return df[boolCheck]
 
+def filterView(df):
+    cols_to_show=['com_name', 'price', 'day_priceinc', 'day_perceninc', 'downside', 'upside',\
+                  'turnover', 'market_cap', 'pe', 'dividend']
+    
+    return df[cols_to_show]
+
 #df=run()
 #a=updateBasic()
 
@@ -152,6 +164,7 @@ def getIndustryCompany(df, industry='bank'):
 #engineDf=dataEngineer(cleanDf)
 #engineDf.to_csv(hkSumEngine, index=False)
 #sievedDf=sieveData(engineDf)
+#viewDf=filterView(sievedDf)
 #
 #indDf=getIndustryCompany(engineDf, industry='oil')
 #comDf=engineDf[engineDf['com_name']=='ICBC']
@@ -163,9 +176,6 @@ def getIndustryCompany(df, industry='bank'):
 #df2=crawl.updatePrice(df=df, dbname=dbName)
 
 #crawl.closeDriver()
-
-
-
 
 
 

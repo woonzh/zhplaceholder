@@ -565,8 +565,9 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     companyFullInfo['prevclosedate']=[now]*len(companyFullInfo)
     print('done')
     
-    companyFullInfo.to_csv(companyUpdatedInfoFName, index=False)
-    companyFullInfo.to_csv(infoLogs+now+'.csv', index=False)
+    if host=='local':
+        companyFullInfo.to_csv(companyUpdatedInfoFName, index=False)
+        companyFullInfo.to_csv(infoLogs+now+'.csv', index=False)
     
     updatePriceHist(df, companyFullInfo)
     
