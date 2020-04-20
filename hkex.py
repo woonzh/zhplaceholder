@@ -27,7 +27,7 @@ def run():
     df=crawl.crawlHKEXSummary()
     crawl.store(df, hkSum, dbName)
     
-    df=df.loc[[0,1]]
+#    df=df.loc[[0,1]]
     
     df=crawl.getHKEXDetails(df=df, dbname=dbName)
     crawl.store(df, hkSum, dbName)
