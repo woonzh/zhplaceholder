@@ -20,7 +20,7 @@ class crawler:
             'code':""".//td[@class="code"]""",
             'com_name':""".//td[@class="name"]""",
             'price':""".//td[@class="price"]//bdo""",
-            'upval':""".//td[@class="price"]//div[@class="upval"]""",
+            'upval':""".//td[@class="price"]//div""",
             'turnover':""".//td[@class="turnover"]""",
             'market_cap':""".//td[@class="market"]""",
             'pe':""".//td[@class="pe"]""",
@@ -69,36 +69,30 @@ class crawler:
     def updatePrice(self,df, dbname):
         orgDf=db.extractTable(dbname)['result']
         
-        priceList=df['price']
-        codeList=df['code']
+        colLst=['price','code','upval','market_cap','pe','dividend']
         
-        for count, val in enumerate(priceList):
-            code=codeList[count]
-            price=codeList[count]
-            filterdf=df[df['code']==code]
+        for count in range(len(df)):
+            code=df['code'][count] 
+            filterdf=orgDf[orgDf['code']==code]
             
             if len(filterdf)>0:
                 ind=filterdf.index[0]
-                colNum=list(orgDf).index('price')
+                for col in colLst:
+                    colNum=list(orgDf).index(col)
+                    val=df[col][count]
+                    orgDf.iloc[ind,colNum]=val
+
+#missing high low update
+                
                 dateColNum=list(orgDf).index('date_update')
-                lowColNum=list(orgDf).index('yearlow')
-                highColNum=list(orgDf).index('yearhigh')
-                
-                if price<orgDf.iloc[ind,lowColNum]:
-                    orgDf.iloc[ind,lowColNum]=price
-                
-                if price>orgDf.iloc[ind,highColNum]:
-                    orgDf.iloc[ind,highColNum]=price
-                
-                orgDf.iloc[ind, colNum]=price
                 orgDf.iloc[ind,dateColNum]=self.dateStr
-            else:                    
-                high_lows=self.crawlHKEXDetails(code)
-                for data in high_lows:
-                    filterdf[data]=[high_lows[data]]
+            else:                   
+#                high_lows=self.crawlHKEXDetails(code)
+#                for data in high_lows:
+#                    filterdf[data]=[high_lows[data]]
                 
-                filterdf['date_update']=[self.dateStr]
-                orgDf.loc[len(df)]=list(filterdf)
+                lst=list(df.loc[count])
+                orgDf.loc[len(orgDf)]=lst
         
         return orgDf
 

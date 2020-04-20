@@ -16,8 +16,8 @@ hkSum='data/HKsummary.csv'
 hkSumEngine='data/HKsummaryEngineered.csv'
 dbName='hksummary'
 
-currencyCols=['yearhigh']
-numericCols=['price','turnover','market_cap','pe','dividend', 'yearlow']
+currencyCols=['yearhigh', 'yearlow']
+numericCols=['price','turnover','market_cap','pe','dividend']
 comDict=hkexDict.companyTag
 
 def run():
@@ -50,12 +50,12 @@ def updateBasic():
     crawl.startDriver(url)
     
     df=crawl.crawlHKEXSummary()
-    df=crawl.updatePrice(df=df, dbname=dbName)
-    crawl.store(df, hkSum, dbName)
+    df2=crawl.updatePrice(df=df, dbname=dbName)
+    crawl.store(df2, hkSum, dbName)
     
     crawl.closeDriver()
     
-    return df
+    return df,df2
 
 def dataEngineer(df):
     df['price_divide_yearlow']=[round((x-y)/x,2) if x!=0 and y!=0 and x!='nan' and y!='nan' \
@@ -113,11 +113,11 @@ def sieveData(df):
         df=df[df[col]>0]
     
     filters={
-        'pe1':['>',2,'pe'],
+        'pe1':['>',1,'pe'],
         'pe2':['<',20,'pe'],
-        'turnover':['>',1*pow(10,7),'turnover'],
-        'yearhigh_divide_price':['>',0.4,'yearhigh_divide_price'],
-        'price_divide_yearlow':['<',0.2,'price_divide_yearlow']
+        'turnover':['>',1*pow(10,7),'turnover']
+#        'yearhigh_divide_price':['>',0.3,'yearhigh_divide_price'],
+#        'price_divide_yearlow':['<',0.2,'price_divide_yearlow']
             }
         
     for i in filters:
@@ -143,6 +143,7 @@ def getIndustryCompany(df, industry='bank'):
     lst=comDict[industry]
     boolCheck=[True if x.lower() in lst else False for x in df['com_name']]
     return df[boolCheck]
+
 #df=run()
 #a=updateBasic()
 
@@ -154,3 +155,22 @@ def getIndustryCompany(df, industry='bank'):
 #
 #indDf=getIndustryCompany(engineDf, industry='oil')
 #comDf=engineDf[engineDf['com_name']=='ICBC']
+
+#crawl=crawler()
+#crawl.startDriver(url)
+#
+#df=crawl.crawlHKEXSummary()
+#df2=crawl.updatePrice(df=df, dbname=dbName)
+
+#crawl.closeDriver()
+
+
+
+
+
+
+
+
+
+
+
