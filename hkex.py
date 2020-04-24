@@ -91,15 +91,21 @@ def cleanData(df):
                     numericVal=float(val)
                 except:
                     try:
+                        hit=False
                         if 'B' in val:
                             numericVal=float(val[:-1])
                             numericVal=numericVal * pow(10,9)
+                            hit=True
                         if 'M' in val:
                             numericVal=float(val[:-1])
                             numericVal=numericVal * pow(10,6)
+                            hit=True
                         if 'K' in val:
                             numericVal=float(val[:-1])
                             numericVal=numericVal * pow(10,3)
+                            hit=True
+                        if hit==False:
+                            numericVal=float(val[:-1])
                     except:
                         numericVal=0
                 lst.append(numericVal)
@@ -119,11 +125,13 @@ def sieveData(df):
         df=df[df[col]>0]
     
     filters={
-        'pe1':['>',1,'pe'],
-        'pe2':['<',30,'pe'],
-        'turnover':['>',5*pow(10,7),'turnover'],
-        'upside':['>',0.4,'upside']
-#        'downside':['<',0.3,'downside']
+        'price':['>',1,'price']
+#        'pe1':['>',1,'pe'],
+#        'pe2':['<',20,'pe'],
+#        'marketcap':['>',10*pow(10,8),'market_cap'],
+##        'turnover':['>',5*pow(10,7),'turnover'],
+#        'upside':['>',0.4,'upside'],
+#        'downside':['<',0.5,'downside']
             }
         
     for i in filters:
@@ -138,7 +146,7 @@ def sieveData(df):
     
     return df
 
-def analytics(download=True):
+def analytics(download=False):
     if download:
         df=db.extractTable(dbName)['result']
         df.to_csv(hkSum, index=False)
@@ -156,6 +164,14 @@ def filterView(df):
     
     return df[cols_to_show]
 
+def findCompany(df, comName=None, code=None):
+    if comName is not None:
+        return df[df['com_name']==comName]
+    if code is not None:
+        return df[df['code']==code]
+    
+    return df
+
 #df=run()
 #a=updateBasic()
 
@@ -163,20 +179,16 @@ def filterView(df):
 #cleanDf=cleanData(df)
 #engineDf=dataEngineer(cleanDf)
 #engineDf.to_csv(hkSumEngine, index=False)
+#enginerViewDf=filterView(engineDf)
+##
 #sievedDf=sieveData(engineDf)
 #viewDf=filterView(sievedDf)
+
+#comDf=findCompany(engineDf, comName='STANCHART')
 #
-#indDf=getIndustryCompany(engineDf, industry='oil')
+#indDf=getIndustryCompany(engineDf, industry='energy')
+#indDf2=filterView(indDf)
 #comDf=engineDf[engineDf['com_name']=='ICBC']
-
-#crawl=crawler()
-#crawl.startDriver(url)
-#
-#df=crawl.crawlHKEXSummary()
-#df2=crawl.updatePrice(df=df, dbname=dbName)
-
-#crawl.closeDriver()
-
 
 
 

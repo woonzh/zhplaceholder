@@ -2,12 +2,13 @@ companyTag={
     'bank':['ICBC', 'CCB', 'BANK OF CHINA', 'BANK OF GUIZHOU','BANK OF TIANJIN', 'BANKOFJINZHOU', \
             'BANKOFJIUJIANG', 'BANKOFZHENGZHOU', 'ABC', 'BANK OF GANSU'],
     'oil':['CNOOC', 'PetroChina','kunlun energy','SINOPEC CORP','SINOPEC KANTONS','SINOPEC SEG',\
-           'SINOPEC SSC', 'YANCHANG PETRO']   
+           'SINOPEC SSC', 'YANCHANG PETRO'],
+    'energy':['AGRITRADE RES', 'BE CLEAN ENERGY', 'GCL NEWENERGY', 'JNEC', 'XINYI ENERGY', 'CH RENEW EN INV']
         }
 
 bankdict={
     'stanchart':{
-        'rev': '16 mil',
+        'rev': '16 bil',
         'geog breakdown':{
             'china':'43%',
             'asia':'28%',
@@ -19,7 +20,7 @@ bankdict={
             'com': '7%',
             'private': '3%'
                 },
-        'profit':'4 mil',
+        'profit':'4 bil',
         'loanbook': ['274b','322 b', '35% collateral'],
         'cash':'52b',
         'investment':'143b',

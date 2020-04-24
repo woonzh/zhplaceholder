@@ -78,14 +78,18 @@ def extractData(df2):
     lastPrice=driver.find_elements_by_xpath('//sgx-table-cell-number[@data-column-id="lt"]')
     vol=driver.find_elements_by_xpath("""//sgx-table-cell-number[@data-column-id="vl"]""")
     valTraded=driver.find_elements_by_xpath('//sgx-table-cell-number[@data-column-id="v"]')
+    changeVal=driver.find_elements_by_xpath('//sgx-table-cell-number[@data-column-id="c"]')
+    changePercen=driver.find_elements_by_xpath('//sgx-table-cell-number[@data-column-id="p"]')
     
     lst=vol
     
     df=pd.DataFrame()
     df['names']=retrieveText(names)
     df['last price']=retrieveText(lastPrice)
+    df['change']=retrieveText(changeVal)
+    df['changePercen']=retrieveText(changePercen)
     df['vol']=retrieveText(vol)
-    df['val traded']=retrieveText(valTraded)
+    df['valTraded']=retrieveText(valTraded)
     df['address']=retrieveText(names, "href")
     
     df2=df2.append(df)
@@ -119,7 +123,7 @@ def crawlSummary():
     time.sleep(1)
     
     lst=[]
-    df=pd.DataFrame(columns=['names', 'last price', 'vol', 'val traded', 'address'])
+    df=pd.DataFrame(columns=['names', 'last price', 'change','changePercen','vol', 'valTraded', 'address'])
     
     df, df2 = extractData(df)
     lst.append(df2)
@@ -558,10 +562,21 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     else:
         companyFullInfo=pd.read_csv(companyInfoFName)
         
-    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price']], how='outer', left_on='names', right_on='names')
+    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price','change','changePercen','vol', 'valTraded']], how='outer', left_on='names', right_on='names')
     companyFullInfo=updateRatios(companyFullInfo)
-    companyFullInfo['openprice']=companyFullInfo['last price']
-    companyFullInfo.drop(['last price'], axis=1, inplace=True)
+    
+    replace={
+        'openPrice':'last price',
+        'priceChange': 'change',
+        'percenChange': 'changePercen',
+        'tradedVol': 'vol',
+        'tradedVal':'valTraded'
+            }
+    
+    for itm in replace:
+        companyFullInfo[itm]=companyFullInfo[replace[itm]]
+        companyFullInfo.drop(replace[itm], axis=1, inplace=True)
+
     companyFullInfo['prevclosedate']=[now]*len(companyFullInfo)
     print('done')
     

@@ -271,20 +271,20 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
         filters={
             'peratio':['!=','nan'],
             'industry':['!=',''],
-            'openprice':['>',0.1],
+            'openprice':['>',1],
             'net_profit_margin':['>', 10],
             'volume traded %':['>', 0.0001],
-            'p_nav':['<',1],
+#            'p_nav':['<',1],
             'type':['=','others'],
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
             'operating_margin':['>',10],
 #            'profitMarginGrowth':['>',0]
 #            'cash_percen':['>',0.05],
-            'downside':['>',-0.4],
-            'upside':['>',0.3],
-            'revenue':['>',100*pow(10,6)],
-            'Accumulated Depreciation, Total growth':['<',1]
+#            'downside':['>',-0.4],
+            'upside':['>',0.3]
+#            'revenue':['>',100*pow(10,6)],
+#            'Accumulated Depreciation, Total growth':['<',1]
                 }
     stats={
         'Consumer':{
@@ -310,6 +310,7 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
                     
         df=df.loc[keepList]
         df=df.reset_index(drop=True)
+        dfStore=df.copy(deep=True)
         
     if name is not None:
         name=name.lower()
@@ -482,7 +483,7 @@ def processFinancialInfo(df):
     return store, summary
     
 def run():
-    pullFromDB=True
+    pullFromDB=False
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)
@@ -492,10 +493,13 @@ def run():
 
 #df,dfNew, dfMain, financial = run()
 #stats=getStats(dfNew)
-##
+#
 #dfFilter=filterData(industry=[],df=dfNew)
 #dfCmp=cleanCols(dfFilter)
 #dfCmp.to_csv(cmpFile, index=False)
+
+#store, dfStore, clusters=extractIndustries(df=dfNew)
+
 #
 #f, fsummary=processFinancialInfo(dfNew)
 #fstats=getStats(fsummary)

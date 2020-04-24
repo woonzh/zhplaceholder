@@ -37,7 +37,7 @@ class crawler:
         if self.host == 'local':
             self.capabilities = webdriver.DesiredCapabilities.CHROME
             self.options=webdriver.ChromeOptions()
-            self.options.add_argument('--headless')
+#            self.options.add_argument('--headless')
         else:
             self.GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
             self.CHROMEDRIVER_PATH=os.environ.get('CHROMEDRIVER_PATH', None)
@@ -50,7 +50,7 @@ class crawler:
             
     def startDriver(self, url=None):
         if self.host=='local':
-            self.driver = webdriver.Chrome(self.chromepath, chrome_options=self.options)
+            self.driver = webdriver.Chrome(executable_path=self.chromepath, chrome_options=self.options)
         else:
             self.driver = webdriver.Chrome(executable_path=self.CHROMEDRIVER_PATH, chrome_options=self.chrome_options)
         
@@ -63,6 +63,68 @@ class crawler:
     def urlDirect(self, url):
         self.driver.get(url)
         time.sleep(3)
+        
+###get nasdaq price
+        
+    def getNasdaqData(self,df):
+        try:
+            but=self.driver.find_element_by_xpath("""//button[@id="_evh-ric-c"]""")
+            but.click()
+            time.sleep(1)
+            print('clicked')
+        except:
+            t=1
+        
+        ele=self.driver.find_element_by_xpath("""//div[@class="featured-symbols__header"]""")
+        self.actions.move_to_element(ele).perform()
+        time.sleep(1)
+        
+        rows=self.driver.find_elements_by_xpath("""//tr[@class="symbol-screener__row"]""")
+        for row in rows:
+            lst=[]
+            for ind in self.data:
+                try:
+                    path=self.data[ind][0]
+                    lst.append(row.find_element_by_xpath(path).text)
+                except:
+                    try:
+                        path=self.data[ind][1]
+                        lst.append(row.find_element_by_xpath(path).text)
+                    except:
+                        lst.append('--')
+            df.loc[len(df)]=lst
+        
+        return df
+    
+    def getNasdaqPrice(self, url=None):
+        self.data={
+            'symbol':[""".//th[@class="symbol-screener__cell symbol-screener__cell--ticker"]"""],
+            'company':[""".//td[@class="symbol-screener__cell symbol-screener__cell--company"]"""],
+            'price':[""".//td[@class="symbol-screener__cell"]"""],
+            'change':[""".//td[@class="symbol-screener__cell symbol-screener__cell--change--up"]""",\
+                      """.//td[@class="symbol-screener__cell symbol-screener__cell--change--down"]"""],
+            'percen_change':[""".//td[@class="symbol-screener__cell symbol-screener__cell--percent--up"]""",\
+                             """.//td[@class="symbol-screener__cell symbol-screener__cell--change--down"]"""], 
+            'volume':[""".//td[@class="symbol-screener__cell symbol-screener__cell--volume"]"""]
+                }
+        df=pd.DataFrame(columns=list(self.data))
+        
+        self.startDriver(url)
+        
+        cont=True
+        count=0
+        
+        while cont==True and count <2:
+            print(count)
+            try:
+                df=self.getNasdaqData(df)
+                nextBut=self.driver.find_element_by_xpath("""//li[@class="next"]//a""")
+                nextBut.click()
+            except:
+                cont=False
+            count+=1
+        
+        return df
         
 ##update price and highlows
     
