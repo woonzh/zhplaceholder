@@ -566,7 +566,7 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     companyFullInfo=updateRatios(companyFullInfo)
     
     replace={
-        'openPrice':'last price',
+        'openprice':'last price',
         'priceChange': 'change',
         'percenChange': 'changePercen',
         'tradedVol': 'vol',
