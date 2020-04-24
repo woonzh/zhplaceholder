@@ -26,7 +26,9 @@ class crawler:
             'pe':""".//td[@class="pe"]""",
             'dividend':""".//td[@class="dividend"]""",
             'yearhigh':'', 
-            'yearlow':''}
+            'yearlow':'',
+            'volume':'',
+            'suspended':""".//td[@class="code"]"""}
         
         self.chromepath=""
         if self.version =='windows':
@@ -47,6 +49,8 @@ class crawler:
             self.chrome_options.add_argument('--headless')
             self.chrome_options.add_argument('--disable-gpu')
             self.chrome_options.add_argument('--no-sandbox')
+        
+        self.startDriver()
             
     def startDriver(self, url=None):
         if self.host=='local':
@@ -205,6 +209,7 @@ class crawler:
         lst={}
         lst['yearhigh']=self.driver.find_element_by_class_name("col_high52").text
         lst['yearlow']=self.driver.find_element_by_class_name("col_low52").text
+        lst['volume']=self.driver.find_element_by_class_name('col_volume').text
         return lst
     
     def getHKEXDetails(self, df=None, dbname=None):
@@ -238,7 +243,15 @@ class crawler:
             for sub in self.subClassNames:
                 if self.subClassNames[sub]!='':
                     try:
-                        lst.append(row.find_element_by_xpath(self.subClassNames[sub]).get_attribute('innerText'))
+                        itm=row.find_element_by_xpath(self.subClassNames[sub]).get_attribute('innerText')
+                        if sub=='code' and 'suspended' in itm:
+                            itm=itm.split('\n')[1]
+                        if sub=='suspended':
+                            if 'suspended' in itm:
+                                itm='Y'
+                            else:
+                                itm='N'
+                        lst.append(itm)                                
                     except:
                         lst.append('')
                 else:

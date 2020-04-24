@@ -22,7 +22,7 @@ comDict=hkexDict.companyTag
 
 def run():
     crawl=crawler()
-    crawl.startDriver(url)
+    crawl.urlDirect(url)
     
     df=crawl.crawlHKEXSummary()
     crawl.store(df, hkSum, dbName)
@@ -38,7 +38,7 @@ def run():
 
 def updateDetails():
     crawl=crawler()
-    crawl.startDriver(url)
+    crawl.urlDirect(url)
     
     df=crawl.getHKEXDetails(df=None, dbname=dbName)
     crawl.store(df, hkSum, dbName)
@@ -49,7 +49,7 @@ def updateDetails():
 
 def updateBasic():
     crawl=crawler()
-    crawl.startDriver(url)
+    crawl.urlDirect(url)
     
     df=crawl.crawlHKEXSummary()
     df2=crawl.updatePrice(df=df, dbname=dbName)

@@ -101,6 +101,8 @@ def featuresEngineering(df, details):
     div_5=df['divident_5_yr_avg']
     revGrowth=df['revenue_per_share_5_yr_growth']
     earningGrowth=df['eps_per_share_5_yr_growth']
+    tradedVal=df['tradedval']
+    tradedVol=df['tradedvol']
     
 #    #aquirer multiple
     df['aquirer multiple']=[x/y if (x!=0 and y!=0) else 0 for x, y in zip(income, enterpriseVal) ]
@@ -128,6 +130,8 @@ def featuresEngineering(df, details):
     df['highlowvar']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], df['yearlow'])]
     df['upside']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], price)]
     df['downside']= [(y-x)/y if (x!=0 and y!=0) else 0 for x,y in zip(price, df['yearlow'])]
+    
+    df['dayVolume']=[float(x/y) if (x!=0 and y!=0) else 0 for x,y in zip(tradedVol, sharesOutstanding)]
     
     return df
 
@@ -282,7 +286,8 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
 #            'profitMarginGrowth':['>',0]
 #            'cash_percen':['>',0.05],
 #            'downside':['>',-0.4],
-            'upside':['>',0.3]
+            'upside':['>',0.3],
+            'dayVolume':['>',0]
 #            'revenue':['>',100*pow(10,6)],
 #            'Accumulated Depreciation, Total growth':['<',1]
                 }
@@ -363,9 +368,9 @@ def cleanCols(df):
               'sharesoutstanding', 'pricebookvalue', 'type', 'industry', 'enterprisevalue', \
               'assets', 'cash', 'capex', 'financial_info']
     
-    display=['names','openprice','upside','downside','revenue','div_val','marketcap','peratio',\
+    display=['names','openprice','upside','downside','percenchange','revenue','div_val','marketcap','peratio',\
              'operating_margin','net_profit_margin','debt_assets_ratio','shortdebt_over_profit',\
-             'p_nav','profitMarginGrowth','cash_percen', 'volume traded %',\
+             'p_nav','profitMarginGrowth','cash_percen', 'volume traded %','dayVolume',\
              'Revenue growth', 'Operating Income growth', 'Net Income growth', 'Cash growth', \
              'Total Receivables, Net growth', 'Accumulated Depreciation, Total growth', \
              'Total Assets growth', 'Total Current Liabilities growth', \
@@ -493,6 +498,7 @@ def run():
 
 #df,dfNew, dfMain, financial = run()
 #stats=getStats(dfNew)
+#dfNewCmp=cleanCols(dfNew)
 #
 #dfFilter=filterData(industry=[],df=dfNew)
 #dfCmp=cleanCols(dfFilter)
