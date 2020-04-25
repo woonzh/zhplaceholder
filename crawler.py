@@ -56,6 +56,8 @@ class crawler:
             self.chrome_options.add_argument('--headless')
             self.chrome_options.add_argument('--disable-gpu')
             self.chrome_options.add_argument('--no-sandbox')
+#            self.options.add_argument("--start-maximized")
+            self.chrome_options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
         
         self.startDriver()
             
@@ -141,17 +143,47 @@ class crawler:
         cont=True
         count=0
         
-        while cont==True and count <3:
+        while cont==True and count <1:
             print(count)
             try:
                 df=self.getNasdaqData(df)
                 nextBut=self.driver.find_element_by_xpath("""//li[@class="next"]//a""")
                 nextBut.click()
                 time.sleep(3)
+                print(len(df))
             except:
                 print('fail')
                 cont=False
             count+=1
+        
+        return df
+    
+    def getNasdaqDetails(self, url, df=None, dbname=None):
+        if df is None:
+            df=db.extractTable(dbname)['result']
+        else:
+            df=df.copy(deep=True)
+        
+        self.nasdaqDetailsHeaders=['Market Cap', 'Sector', 'Industry','P/E Ratio', 'Forward P/E 1 Yr.',\
+                 '1 Year Target','Earnings Per Share(EPS)',"Today's High/Low", \
+                 "Annualized Dividend",'Current Yield','Ex Dividend Date','Dividend Pay Date', \
+                 '50 Day Average Vol.', '52 Week High/Low','Beta']
+        
+        for col in self.nasdaqDetailsHeaders:
+            df[col]=['']*len(df)
+            
+        indexes=list(df.index)
+        
+        indexes=[0]
+        
+        for ind in indexes:
+            row=df.loc[ind]
+            symbol=row['symbol']
+            data=self.getSymbolData(symbol,url)
+            for itm in data:
+                row[itm]=[data[itm]]
+            
+            df.loc[ind]=list(row)
         
         return df
     
@@ -161,10 +193,7 @@ class crawler:
         self.urlDirect(url)
         self.closeCookies()
         
-        headers=['Market Cap', 'Sector', 'Industry','P/E Ratio', 'Forward P/E 1 Yr.',\
-                 '1 Year Target','Earnings Per Share(EPS)',"Today's High/Low", \
-                 "Annualized Dividend",'Current Yield','Ex Dividend Date','Dividend Pay Date', \
-                 '50 Day Average Vol.', '52 Week High/Low','Beta']
+        headers=self.nasdaqDetailsHeaders
         
         store={}
         for itm in headers:
