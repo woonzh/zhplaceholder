@@ -22,7 +22,8 @@ dbList={
     'friar':'friar',
     'history':'history',
     'hksummary':'hksummary',
-    'nasdaqsummary':'nasdaqsummary'
+    'nasdaqsummary':'nasdaqsummary',
+    'nasdaqdetails':'nasdaqdetails'
     }
 
 def connectToDatabase():

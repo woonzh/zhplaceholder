@@ -18,6 +18,7 @@ class crawler:
         self.batchUpload=10
         
         self.timec=util.timeClass()
+        self.timec.startTimer()
         self.dateStr=self.timec.getCurDate(cloud=self.cloud)
         
         self.subClassNames={
@@ -33,6 +34,23 @@ class crawler:
             'yearlow':'',
             'volume':'',
             'suspended':""".//td[@class="code"]"""}
+        
+        self.nasdaqDetailsHeaders={
+            'market_cap':'Market Cap', 
+            'sector':'Sector', 
+            'industry':'Industry',
+            'pe_ratio':'P/E Ratio', 
+            'forward pe':'Forward P/E 1 Yr.',
+            '1_yr_tar':'1 Year Target',
+            'eps':'Earnings Per Share(EPS)',
+            'day_high_low':"Today's High/Low",
+            'div':"Annualized Dividend",
+            'yield':'Current Yield',
+            'ex_div_date':'Ex Dividend Date',
+            'div_pay_date':'Dividend Pay Date',
+            'fifty_day_vol':'50 Day Average Vol.',
+            'year_high_low':'52 Week High/Low',
+            'beta':'Beta'}
         
         self.chromepath=""
         if self.version =='windows':
@@ -93,7 +111,10 @@ class crawler:
         
         time.sleep(2)
         
-        print(cont)
+        if cont:
+            print('close cookies failed')
+        else:
+            print('closed cookies')
     
     def getNasdaqData(self,df):
         time.sleep(1)        
@@ -101,11 +122,9 @@ class crawler:
         
         ele=self.driver.find_element_by_xpath("""//div[@class="featured-symbols__header"]""")
         self.actions.move_to_element(ele).perform()
-        print('scrolled')
         time.sleep(1)
         
         rows=self.driver.find_elements_by_xpath("""//tr[@class="symbol-screener__row"]""")
-        print('rows found %s'%(str(len(rows))))
         for row in rows:
             lst=[]
             for ind in self.data:
@@ -143,19 +162,18 @@ class crawler:
         cont=True
         count=0
         
-        while cont==True and count <1:
-            print(count)
+        while cont==True:
             try:
                 df=self.getNasdaqData(df)
                 nextBut=self.driver.find_element_by_xpath("""//li[@class="next"]//a""")
                 nextBut.click()
                 time.sleep(3)
-                print(len(df))
+                print('success')
             except:
                 print('fail')
                 cont=False
             count+=1
-        
+            self.timec.getTimeSplit('%s-%s data'%(str(count),len(df)))
         return df
     
     def getNasdaqDetails(self, url, df=None, dbname=None):
@@ -164,19 +182,33 @@ class crawler:
         else:
             df=df.copy(deep=True)
         
-        self.nasdaqDetailsHeaders=['Market Cap', 'Sector', 'Industry','P/E Ratio', 'Forward P/E 1 Yr.',\
-                 '1 Year Target','Earnings Per Share(EPS)',"Today's High/Low", \
-                 "Annualized Dividend",'Current Yield','Ex Dividend Date','Dividend Pay Date', \
-                 '50 Day Average Vol.', '52 Week High/Low','Beta']
+        self.nasdaqDetailsHeaders={
+            'market_cap':'Market Cap', 
+            'sector':'Sector', 
+            'industry':'Industry',
+            'pe_ratio':'P/E Ratio', 
+            'forward pe':'Forward P/E 1 Yr.',
+            'one_yr_tar':'1 Year Target',
+            'eps':'Earnings Per Share(EPS)',
+            'day_high_low':"Today's High/Low",
+            'div':"Annualized Dividend",
+            'yield':'Current Yield',
+            'ex_div_date':'Ex Dividend Date',
+            'div_pay_date':'Dividend Pay Date',
+            'fifty_day_vol':'50 Day Average Vol.',
+            'year_high_low':'52 Week High/Low',
+            'beta':'Beta'}
         
         for col in self.nasdaqDetailsHeaders:
             df[col]=['']*len(df)
             
         indexes=list(df.index)
         
-        indexes=[0]
+#        indexes=[0,1,2]
         
-        for ind in indexes:
+        print('scraping details-%s'%(str(len(indexes))))
+        
+        for count, ind in enumerate(indexes):
             row=df.loc[ind]
             symbol=row['symbol']
             data=self.getSymbolData(symbol,url)
@@ -184,6 +216,7 @@ class crawler:
                 row[itm]=data[itm]
             
             df.loc[ind]=list(row)
+            self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
         
         return df
     
@@ -193,19 +226,26 @@ class crawler:
         self.urlDirect(url)
         self.closeCookies()
         
-        headers=self.nasdaqDetailsHeaders
+        headers={}
+        for itm in self.nasdaqDetailsHeaders:
+            headers[self.nasdaqDetailsHeaders[itm]]=itm
+        
+        headerLst=list(headers)
         
         store={}
-        for itm in headers:
+        for itm in self.nasdaqDetailsHeaders:
             store[itm]=''
             
         modules=self.driver.find_elements_by_xpath("""//h2[@class="module-header"]""")
         cont=True
         for mod in modules:
-            if 'Key Data' in mod.text and cont==True:
-                self.actions.move_to_element(mod).perform()
-                time.sleep(1)
-                cont=False
+            try:
+                if 'Key Data' in mod.text and cont==True:
+                    self.actions.move_to_element(mod).perform()
+                    time.sleep(1)
+                    cont=False
+            except:
+                t=1
         
         self.driver.execute_script("window.scrollBy(0,500)")
         time.sleep(3)
@@ -214,8 +254,8 @@ class crawler:
         for row in rows:
             header=row.find_element_by_xpath(""".//td[@class="summary-data__cellheading"]""").text
             data=row.find_element_by_xpath(""".//td[@class="summary-data__cell"]""").text
-            if header in headers:
-                store[header]=data
+            if header in headerLst:
+                store[headers[header]]=data
         return store
         
 ##update price and highlows
