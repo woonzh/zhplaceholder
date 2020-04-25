@@ -21,7 +21,8 @@ dbList={
     'jobs':'joblist',
     'friar':'friar',
     'history':'history',
-    'hksummary':'hksummary'
+    'hksummary':'hksummary',
+    'nasdaqsummary':'nasdaqsummary'
     }
 
 def connectToDatabase():

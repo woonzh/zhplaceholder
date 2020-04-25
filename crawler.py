@@ -39,14 +39,14 @@ class crawler:
         if self.host == 'local':
             self.capabilities = webdriver.DesiredCapabilities.CHROME
             self.options=webdriver.ChromeOptions()
-#            self.options.add_argument('--headless')
+            self.options.add_argument('--headless')
         else:
             self.GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
             self.CHROMEDRIVER_PATH=os.environ.get('CHROMEDRIVER_PATH', None)
             
             self.chrome_options = webdriver.ChromeOptions()
             self.chrome_options.binary_location = self.GOOGLE_CHROME_BIN
-            self.chrome_options.add_argument('--headless')
+#            self.chrome_options.add_argument('--headless')
             self.chrome_options.add_argument('--disable-gpu')
             self.chrome_options.add_argument('--no-sandbox')
         
@@ -69,21 +69,34 @@ class crawler:
         time.sleep(3)
         
 ###get nasdaq price
+    
+    def closeCookies(self):
+        buttonlinks=["""//button[@id="_evh-ric-c"]""","""//button[@id="_evidon-decline-button"]""",\
+                     """//button[@id="_evidon-accept-button"]"""]
+        cont=True
+        for link in buttonlinks:
+            try:
+                but=self.driver.find_element_by_xpath(link)
+                but.click()
+                cont=False
+            except:
+                t=1
         
+        time.sleep(2)
+        
+        print(cont)
+    
     def getNasdaqData(self,df):
-        try:
-            but=self.driver.find_element_by_xpath("""//button[@id="_evh-ric-c"]""")
-            but.click()
-            time.sleep(1)
-            print('clicked')
-        except:
-            t=1
+#        time.sleep(1)
+        self.closeCookies()
         
         ele=self.driver.find_element_by_xpath("""//div[@class="featured-symbols__header"]""")
         self.actions.move_to_element(ele).perform()
+        print('scrolled')
         time.sleep(1)
         
         rows=self.driver.find_elements_by_xpath("""//tr[@class="symbol-screener__row"]""")
+        print('rows found %s'%(str(len(rows))))
         for row in rows:
             lst=[]
             for ind in self.data:
@@ -108,27 +121,64 @@ class crawler:
             'change':[""".//td[@class="symbol-screener__cell symbol-screener__cell--change--up"]""",\
                       """.//td[@class="symbol-screener__cell symbol-screener__cell--change--down"]"""],
             'percen_change':[""".//td[@class="symbol-screener__cell symbol-screener__cell--percent--up"]""",\
-                             """.//td[@class="symbol-screener__cell symbol-screener__cell--change--down"]"""], 
+                             """.//td[@class="symbol-screener__cell symbol-screener__cell--percent--down"]"""], 
             'volume':[""".//td[@class="symbol-screener__cell symbol-screener__cell--volume"]"""]
                 }
         df=pd.DataFrame(columns=list(self.data))
         
-        self.startDriver(url)
+        self.urlDirect(url)
+        time.sleep(3)
         
         cont=True
         count=0
         
-        while cont==True and count <2:
+        while cont==True and count <3:
             print(count)
             try:
                 df=self.getNasdaqData(df)
                 nextBut=self.driver.find_element_by_xpath("""//li[@class="next"]//a""")
                 nextBut.click()
+                time.sleep(3)
             except:
+                print('fail')
                 cont=False
             count+=1
         
         return df
+    
+    def getSymbolData(self, symbol, url):
+        url=url%(symbol)
+        
+        self.urlDirect(url)
+        self.closeCookies()
+        
+        headers=['Market Cap', 'Sector', 'Industry','P/E Ratio', 'Forward P/E 1 Yr.',\
+                 '1 Year Target','Earnings Per Share(EPS)',"Today's High/Low", \
+                 "Annualized Dividend",'Current Yield','Ex Dividend Date','Dividend Pay Date', \
+                 '50 Day Average Vol.', '52 Week High/Low','Beta']
+        
+        store={}
+        for itm in headers:
+            store[itm]=''
+            
+        modules=self.driver.find_elements_by_xpath("""//h2[@class="module-header"]""")
+        cont=True
+        for mod in modules:
+            if 'Key Data' in mod.text and cont==True:
+                self.actions.move_to_element(mod).perform()
+                time.sleep(1)
+                cont=False
+        
+        self.driver.execute_script("window.scrollBy(0,500)")
+        time.sleep(3)
+        
+        rows=self.driver.find_elements_by_xpath("""//tr[@class="summary-data__row"]""")
+        for row in rows:
+            header=row.find_element_by_xpath(""".//td[@class="summary-data__cellheading"]""").text
+            data=row.find_element_by_xpath(""".//td[@class="summary-data__cell"]""").text
+            if header in headers:
+                store[header]=data
+        return store
         
 ##update price and highlows
     
@@ -291,10 +341,12 @@ class crawler:
         
         return df
     
-    def store(self, df, fileLoc=None, dbName=None):
-        if self.host=='local':
+    def store(self, df, fileLoc=None, dbName=None, write='local'):
+#        print(write)
+        if self.host=='local' and write=='local':
             df.to_csv(fileLoc, index=False)
         else:
+#            print('db')
             db.recreateTable(dbName, df)
             db.rewriteTable(dbName, df)
     

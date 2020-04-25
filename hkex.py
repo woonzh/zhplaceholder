@@ -9,7 +9,7 @@ import pandas as pd
 
 import dbConnector as db
 import hkexDict
-#import analysis
+import statistics
 
 url="https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en"
 hkSum='data/HKsummary.csv'
@@ -17,7 +17,8 @@ hkSumEngine='data/HKsummaryEngineered.csv'
 dbName='hksummary'
 
 currencyCols=['price','yearhigh', 'yearlow']
-numericCols=['turnover','market_cap','pe','dividend']
+numericCols=['turnover','market_cap','pe','dividend', 'volume']
+percenCols=['day_perceninc','percen_traded', 'downside','upside']
 comDict=hkexDict.companyTag
 
 def run():
@@ -64,10 +65,13 @@ def updateBasic():
 
 def dataEngineer(df):
     df=df.copy(deep=True)
-    df['downside']=[round((x-y)/x,2) if (x!=0 and y!=0 and x!='nan' and y!='nan') \
+    df['downside']=[(x-y)/x if (x!=0 and y!=0 and x!='nan' and y!='nan') \
       else 0 for x,y in zip(df['price'],df['yearlow'])]
-    df['upside']=[round((y-x)/x,2) if (x!=0 and y!=0 and x!='nan' and y!='nan') \
+    df['upside']=[(y-x)/x if (x!=0 and y!=0 and x!='nan' and y!='nan') \
       else 0 for x,y in zip(df['price'],df['yearhigh'])]
+    
+    for col in percenCols:
+        df[col]=[round(x*100,2) if x>0 else 0 for x in df[col]]
     
     return df
 
@@ -115,7 +119,10 @@ def cleanData(df):
       in df['upval']]
     df['day_perceninc']=[float(x.split(' ')[-1].replace('+','').replace("(",'').replace(')','')\
       .replace('%','')) if str(x) !='nan' and str(x)!='' else 0 for x in df['upval']]
-    df=df.drop('upval', axis=1)   
+    df=df.drop('upval', axis=1)
+    
+    df['percen_traded']=[x/y if (x >0 and y>0 )else 0 for x,y in zip(df['volume'],df['market_cap'])]
+    
     return df
 
 def sieveData(df):
@@ -125,13 +132,14 @@ def sieveData(df):
         df=df[df[col]>0]
     
     filters={
-        'price':['>',1,'price']
+        'price':['>',1,'price'],
 #        'pe1':['>',1,'pe'],
 #        'pe2':['<',20,'pe'],
 #        'marketcap':['>',10*pow(10,8),'market_cap'],
 ##        'turnover':['>',5*pow(10,7),'turnover'],
-#        'upside':['>',0.4,'upside'],
-#        'downside':['<',0.5,'downside']
+        'upside':['>',0.4,'upside'],
+#        'downside':['<',0.5,'downside'],
+        'percen_traded':['>',0,'percen_traded']
             }
         
     for i in filters:
@@ -145,6 +153,37 @@ def sieveData(df):
             df=df[df[filters[i][2]]!=filters[i][1]]
     
     return df
+
+def checkNum(txt):
+    try:
+        a=float(txt)
+        return True
+    except:
+        return False
+
+def getStats(df):
+    cols=list(df)
+    store={}
+    
+    percen=[0.1,0.25,0.5,0.75,0.9]
+    
+    for col in cols:
+        try:
+            temDf=pd.DataFrame()
+            temDf['store']=[float(x) if checkNum(x)==True else 0 for x in df[col]]
+            tem=list(temDf[temDf['store']>0]['store'])
+            tem.sort()
+            lst={}
+            lst['avg']=statistics.mean(tem)
+            for p in percen:
+                ind=int(round(p*len(tem),0))
+                lst[str(p)]=tem[ind]
+            
+                store[col]=lst
+        except:
+            store[col]=''
+    
+    return store
 
 def analytics(download=False):
     if download:
@@ -160,7 +199,7 @@ def getIndustryCompany(df, industry='bank'):
 
 def filterView(df):
     cols_to_show=['com_name', 'price', 'day_priceinc', 'day_perceninc', 'downside', 'upside',\
-                  'turnover', 'market_cap', 'pe', 'dividend']
+                  'turnover', 'market_cap', 'pe', 'dividend', 'percen_traded']
     
     return df[cols_to_show]
 
@@ -178,9 +217,8 @@ def findCompany(df, comName=None, code=None):
 #df=analytics(download=False)
 #cleanDf=cleanData(df)
 #engineDf=dataEngineer(cleanDf)
-#engineDf.to_csv(hkSumEngine, index=False)
-#enginerViewDf=filterView(engineDf)
-##
+#stats=getStats(engineDf)
+#
 #sievedDf=sieveData(engineDf)
 #viewDf=filterView(sievedDf)
 
