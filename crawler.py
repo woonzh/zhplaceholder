@@ -181,7 +181,7 @@ class crawler:
             symbol=row['symbol']
             data=self.getSymbolData(symbol,url)
             for itm in data:
-                row[itm]=[data[itm]]
+                row[itm]=data[itm]
             
             df.loc[ind]=list(row)
         

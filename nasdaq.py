@@ -15,10 +15,24 @@ def run(local=False):
     crawl.closeDriver()
     return df
 
-crawl=crawler(local=True)
-df=crawl.getNasdaqPrice(url)
-df2=crawl.getNasdaqDetails(symbolUrl,df=df)
+#crawl=crawler(local=True)
+#df=crawl.getNasdaqPrice(url)
+#df2=crawl.getNasdaqDetails(symbolUrl,df=df)
 #crawl.store(df, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
 #store=crawl.getSymbolData('msft',symbolUrl)
 
 #crawl.closeDriver()
+    
+#indexes=[0]
+#
+#for col in a:
+#    df[col]=['']*len(df)
+#
+#for ind in indexes:
+#    row=df.loc[ind]
+#    symbol=row['symbol']
+#    data=store
+#    for itm in data:
+#        row[itm]=data[itm]
+#    
+#    df.loc[ind]=list(row)
