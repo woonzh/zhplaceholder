@@ -11,9 +11,9 @@ def run(local=False):
     print('run nasdaq full')
     crawl=crawler(local)
     df=crawl.getNasdaqPrice(url)
-#    crawl.store(df, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
-#    df2=crawl.getNasdaqDetails(symbolUrl,df=df)
-#    crawl.store(df2, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
+    crawl.store(df, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
+    df2=crawl.getNasdaqDetails(symbolUrl,df=df)
+    crawl.store(df2, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
     
     crawl.closeDriver()
     return df
