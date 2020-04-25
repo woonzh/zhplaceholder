@@ -7,9 +7,13 @@ import pandas as pd
 import dbConnector as db
 
 class crawler:
-    def __init__(self):
-        self.version='linux'
-        self.host='cloud'
+    def __init__(self, local=False):
+        if local:
+            self.version='windows'
+            self.host='local' 
+        else:
+            self.version='linux'
+            self.host='cloud'
         self.cloud=(self.host=='cloud')
         self.batchUpload=10
         
@@ -40,6 +44,9 @@ class crawler:
             self.capabilities = webdriver.DesiredCapabilities.CHROME
             self.options=webdriver.ChromeOptions()
             self.options.add_argument('--headless')
+            self.options.add_argument('--window-size=1920,1080')
+            self.options.add_argument("--start-maximized")
+            self.options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
         else:
             self.GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
             self.CHROMEDRIVER_PATH=os.environ.get('CHROMEDRIVER_PATH', None)
@@ -72,7 +79,7 @@ class crawler:
     
     def closeCookies(self):
         buttonlinks=["""//button[@id="_evh-ric-c"]""","""//button[@id="_evidon-decline-button"]""",\
-                     """//button[@id="_evidon-accept-button"]"""]
+                     """//button[@id="_evidon-accept-button"]""","""//svg[@class="evidon-banner-icon"]"""]
         cont=True
         for link in buttonlinks:
             try:
@@ -87,7 +94,7 @@ class crawler:
         print(cont)
     
     def getNasdaqData(self,df):
-#        time.sleep(1)
+        time.sleep(1)        
         self.closeCookies()
         
         ele=self.driver.find_element_by_xpath("""//div[@class="featured-symbols__header"]""")
@@ -128,6 +135,8 @@ class crawler:
         
         self.urlDirect(url)
         time.sleep(3)
+        
+#        self.closeCookies()
         
         cont=True
         count=0
