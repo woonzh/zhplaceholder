@@ -4,7 +4,7 @@ selenium==3.141.0
 pandas==0.21.0
 numpy==1.12.1
 numpydoc==0.6.0
-requests==2.18.4
+requests==2.20.0
 simplejson==3.13.2
 urllib3==1.22
 psycopg2==2.7.3.1
