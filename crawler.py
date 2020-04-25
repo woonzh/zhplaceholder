@@ -64,7 +64,7 @@ class crawler:
             self.options.add_argument('--headless')
             self.options.add_argument('--window-size=1920,1080')
             self.options.add_argument("--start-maximized")
-            self.options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
+            self.options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
         else:
             self.GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
             self.CHROMEDRIVER_PATH=os.environ.get('CHROMEDRIVER_PATH', None)
@@ -74,8 +74,8 @@ class crawler:
             self.chrome_options.add_argument('--headless')
             self.chrome_options.add_argument('--disable-gpu')
             self.chrome_options.add_argument('--no-sandbox')
-#            self.options.add_argument("--start-maximized")
-            self.chrome_options.add_argument("user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
+            self.chrome_options.add_argument("--start-maximized")
+            self.chrome_options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
         
         self.startDriver()
             
@@ -94,6 +94,8 @@ class crawler:
     def urlDirect(self, url):
         self.driver.get(url)
         time.sleep(3)
+        source=self.driver.page_source[:300]
+        print(source)
         
 ###get nasdaq price
     
