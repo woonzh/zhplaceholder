@@ -18,7 +18,7 @@ def run(local=False):
     crawl.closeDriver()
     return df
 
-#df=run(local=True)
+df=run(local=True)
 
 #crawl=crawler(local=True)
 #df=crawl.getNasdaqPrice(url)

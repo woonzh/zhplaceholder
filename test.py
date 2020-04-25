@@ -28,8 +28,8 @@ import pandas as pd
 #url='https://zhplaceholder.herokuapp.com/hkexWorker'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
-url='https://zhplaceholder.herokuapp.com/nasdaqfull'
-result=requests.get(url)
+#url='https://zhplaceholder.herokuapp.com/nasdaqfull'
+#result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #result=requests.get(url)
