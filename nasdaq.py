@@ -11,7 +11,7 @@ detailDbname='nasdaqdetails'
 def run(local=False):
     print('run nasdaq full')
     crawl=crawler(local)
-    df=crawl.getNasdaqPrice(dbname=dbname,url)
+    df=crawl.getNasdaqPrice(dbname=dbname,url=url)
     crawl.store(df, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
     df2=crawl.getNasdaqDetails(symbolUrl,df=df, dbname=detailDbname)
     crawl.store(df2, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
