@@ -261,15 +261,27 @@ class crawler:
         for itm in self.nasdaqDetailsHeaders:
             store[itm]=''
             
-        self.driver.execute_script("window.scrollBy(0,1300)")
+        cont=True
+        count=0
+        
+        while cont and count < 10:
+            self.driver.execute_script("window.scrollBy(0,200)")
+            time.sleep(1)
+            modules=self.driver.find_elements_by_xpath("""//h2[@class="module-header"]""")
+            for mod in modules:
+                if 'Key Data' in mod.text:
+                    cont=False
+            count+=1
+        self.driver.execute_script("window.scrollBy(0,500)")
+        time.sleep(1)
             
-        modules=self.driver.find_elements_by_xpath("""//h2[@class="module-header"]""")
-        check=False
-        for mod in modules:
-            if 'Key Data' in mod.text:
-                check=True
-                
-        if check:
+#        modules=self.driver.find_elements_by_xpath("""//h2[@class="module-header"]""")
+#        check=False
+#        for mod in modules:
+#            if 'Key Data' in mod.text:
+#                check=True
+#                
+        if cont==False:
             print('navigate to key data success')
         else:
             print('navigate to key data fail')
@@ -293,6 +305,7 @@ class crawler:
         time.sleep(6)
         
         rows=self.driver.find_elements_by_xpath("""//tr[@class="summary-data__row"]""")
+        print('rows-%s'%(str(len(rows))))
         count=0
         for row in rows:
             header=row.find_element_by_xpath(""".//td[@class="summary-data__cellheading"]""").text
