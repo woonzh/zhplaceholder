@@ -144,6 +144,8 @@ class crawler:
                     except:
                         lst.append('--')
             df.loc[len(df)]=lst
+            
+        df.drop_duplicates(subset='symbol', inplace=True)
         
         return df
     
@@ -263,20 +265,30 @@ class crawler:
             try:
                 if 'Key Data' in mod.text and cont==True:
                     self.actions.move_to_element(mod).perform()
-                    time.sleep(1)
+                    time.sleep(4)
                     cont=False
             except:
                 t=1
+        
+        if cont:
+            print('navigate to key data fail')
+        else:
+            print('navigate to key data success')
         
         self.driver.execute_script("window.scrollBy(0,500)")
         time.sleep(3)
         
         rows=self.driver.find_elements_by_xpath("""//tr[@class="summary-data__row"]""")
+        count=0
         for row in rows:
             header=row.find_element_by_xpath(""".//td[@class="summary-data__cellheading"]""").text
             data=row.find_element_by_xpath(""".//td[@class="summary-data__cell"]""").text
             if header in headerLst:
                 store[headers[header]]=data
+                count+=1
+        
+        print("%s data returned"%(str(count)))
+        
         return store
         
 ##update price and highlows
