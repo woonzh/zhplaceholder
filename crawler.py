@@ -20,6 +20,7 @@ class crawler:
         self.timec=util.timeClass()
         self.timec.startTimer()
         self.dateStr=self.timec.getCurDate(cloud=self.cloud)
+        self.dbBatch=50
         
         self.subClassNames={
             'code':""".//td[@class="code"]""",
@@ -143,7 +144,7 @@ class crawler:
         
         return df
     
-    def getNasdaqPrice(self, url=None):
+    def getNasdaqPrice(self, dbname,url=None):
         self.data={
             'symbol':[""".//th[@class="symbol-screener__cell symbol-screener__cell--ticker"]"""],
             'company':[""".//td[@class="symbol-screener__cell symbol-screener__cell--company"]"""],
@@ -176,11 +177,15 @@ class crawler:
                 cont=False
             count+=1
             self.timec.getTimeSplit('%s-%s data'%(str(count),len(df)))
+            
+            if count%self.dbBatch==0 and count > 1:
+                self.store(df,dbName=dbname)
+            
         return df
     
-    def getNasdaqDetails(self, url, df=None, dbname=None):
+    def getNasdaqDetails(self, url, df=None, readdbname=None, storedbname=None):
         if df is None:
-            df=db.extractTable(dbname)['result']
+            df=db.extractTable(readdbname)['result']
         else:
             df=df.copy(deep=True)
         
@@ -219,7 +224,9 @@ class crawler:
             
             df.loc[ind]=list(row)
             self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
-        
+            
+            if count%self.dbBatch==0 and count >1:
+                self.store(df,dbname=storedbname)
         return df
     
     def getSymbolData(self, symbol, url):

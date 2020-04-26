@@ -38,9 +38,11 @@ def runHKEXUpdateDetails(dragIndex=None, sumTries=None,jobId=''):
 def runHKEXUpdateBasic(dragIndex=None, sumTries=None,jobId=''):  
     util.runFunc(actFunc=hkex.updateBasic)
     
-    
 def runNasdaqFull(jobId=''):
     util.runFunc(actFunc=nasdaq.run)
+    
+def runNasdaqDetailsUpdate(jobId=''):
+    util.runFunc(actFunc=nasdaq.updateDetails)
     
 #def testFunc():
 #    r=10*3

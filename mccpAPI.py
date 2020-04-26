@@ -141,7 +141,7 @@ def workerHKEXUpdateDetails():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('hkex raw data', orc.runHKEXUpdateDetails, None , intJobId)
+        result=orc.wc.queueFunc('hkex update details', orc.runHKEXUpdateDetails, None , intJobId)
         ret={
             'answer':result}
             
@@ -156,7 +156,7 @@ def workerHKEXUpdateBasic():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('hkex raw data', orc.runHKEXUpdateBasic, None , intJobId)
+        result=orc.wc.queueFunc('hkex update basic', orc.runHKEXUpdateBasic, None , intJobId)
         ret={
             'answer':result}
             
@@ -171,7 +171,22 @@ def workerNasdaqFull():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('hkex raw data', orc.runNasdaqFull, None , intJobId)
+        result=orc.wc.queueFunc('nasdaq full', orc.runNasdaqFull, None , intJobId)
+        ret={
+            'answer':result}
+            
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
+    
+@app.route('/nasdaqupdatedetails', methods=['GET', 'OPTIONS'])
+def workerNasdaqUpdateDetails():
+    ret={}
+    if request.method == 'GET':
+        intJobId=util.stringGenerator()
+        result=orc.wc.queueFunc('nasdaq full', orc.runNasdaqDetailsUpdate, None , intJobId)
         ret={
             'answer':result}
             
