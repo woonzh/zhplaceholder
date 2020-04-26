@@ -1,6 +1,7 @@
 from crawler import crawler
 import pandas as pd
 import dbConnector as db
+import time
 
 url='https://www.nasdaq.com/market-activity/stocks/screener'
 symbolUrl='https://www.nasdaq.com/market-activity/stocks/%s'
@@ -107,6 +108,35 @@ def analytics(download=False):
     df=pd.read_csv(nasdaqDetailsFile)
     
     return summary,df
+
+#url=symbolUrl%('msft')
+#crawl=crawler(local=True)
+#data=crawl.getSymbolData('msft',symbolUrl)
+#crawl.closeDriver()
+#crawl.urlDirect(url)
+##time.sleep(2)
+#crawl.closeCookies()
+#time.sleep(2)
+#
+#modules=crawl.driver.find_elements_by_xpath("""//h2[@class="module-header"]""")
+#cont=True
+#for mod in modules:
+#    try:
+#        if 'Key Data' in mod.text and cont==True:
+#            self.actions.move_to_element(mod).perform()
+#            time.sleep(2)
+#            cont=False
+#    except:
+#        t=1
+#
+#if cont:
+#    print('navigate to key data fail')
+#else:
+#    print('navigate to key data success')
+
+
+#url=symbolUrl%('msft)
+
 
 #df=run(local=True)
 #summary,df=analytics(True)

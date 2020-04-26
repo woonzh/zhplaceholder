@@ -261,23 +261,35 @@ class crawler:
         for itm in self.nasdaqDetailsHeaders:
             store[itm]=''
             
+        self.driver.execute_script("window.scrollBy(0,1300)")
+            
         modules=self.driver.find_elements_by_xpath("""//h2[@class="module-header"]""")
-        cont=True
+        check=False
         for mod in modules:
-            try:
-                if 'Key Data' in mod.text and cont==True:
-                    self.actions.move_to_element(mod).perform()
-                    time.sleep(2)
-                    cont=False
-            except:
-                t=1
-        
-        if cont:
-            print('navigate to key data fail')
-        else:
+            if 'Key Data' in mod.text:
+                check=True
+                
+        if check:
             print('navigate to key data success')
+        else:
+            print('navigate to key data fail')
         
-        self.driver.execute_script("window.scrollBy(0,500)")
+#        cont=True
+#        for mod in modules:
+#            try:
+#                if 'Key Data' in mod.text and cont==True:
+#                    self.actions.move_to_element(mod).perform()
+#                    time.sleep(2)
+#                    cont=False
+#            except:
+#                t=1
+#        
+#        if cont:
+#            print('navigate to key data fail')
+#        else:
+#            print('navigate to key data success')
+#        
+#        self.driver.execute_script("window.scrollBy(0,500)")
         time.sleep(6)
         
         rows=self.driver.find_elements_by_xpath("""//tr[@class="summary-data__row"]""")
