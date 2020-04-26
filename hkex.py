@@ -18,7 +18,7 @@ dbName='hksummary'
 
 currencyCols=['price','yearhigh', 'yearlow']
 numericCols=['turnover','market_cap','pe','dividend', 'volume']
-percenCols=['day_perceninc','percen_traded', 'downside','upside']
+percenCols=['percen_traded', 'downside','upside']
 comDict=hkexDict.companyTag
 
 def run():
@@ -71,7 +71,7 @@ def dataEngineer(df):
       else 0 for x,y in zip(df['price'],df['yearhigh'])]
     
     for col in percenCols:
-        df[col]=[round(x*100,2) if x>0 else 0 for x in df[col]]
+        df[col]=[round(x*100,5) if x>0 else 0 for x in df[col]]
     
     return df
 
@@ -117,8 +117,8 @@ def cleanData(df):
     
     df['day_priceinc']=[float(x.split(' ')[0].replace('+','')) if str(x) !='nan' and str(x)!='' else 0 for x \
       in df['upval']]
-    df['day_perceninc']=[float(x.split(' ')[1].replace("(",'').replace(')','')\
-      .replace('%','')) if str(x) !='nan' and str(x)!='' else 0 for x in df['upval']]
+    df['day_perceninc']=[float(x.split(' ')[1].replace("(",'').replace(')','').replace('%',''))\
+      if str(x) !='nan' and str(x)!='' else 0 for x in df['upval']]
     df=df.drop('upval', axis=1)
     
     df['percen_traded']=[x/y if (x >0 and y>0 )else 0 for x,y in zip(df['volume'],df['market_cap'])]
@@ -214,10 +214,10 @@ def findCompany(df, comName=None, code=None):
 #df=run()
 #a=updateBasic()
 
-#df=analytics(download=False)
-#dfClean=cleanData(df)
-#dfEngine=dataEngineer(dfClean)
-#stats=getStats(dfEngine)
+df=analytics(download=False)
+dfClean=cleanData(df)
+dfEngine=dataEngineer(dfClean)
+stats=getStats(dfEngine)
 ##
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
