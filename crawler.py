@@ -233,7 +233,7 @@ class crawler:
             self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
             
             if count%self.dbBatch==0 and count >1:
-                self.store(df,dbname=storedbname)
+                self.store(df,dbName=storedbname)
         return df
     
     def getSymbolData(self, symbol, url):
