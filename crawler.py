@@ -218,7 +218,11 @@ class crawler:
         for count, ind in enumerate(indexes):
             row=df.loc[ind]
             symbol=row['symbol']
-            data=self.getSymbolData(symbol,url)
+            try:
+                data=self.getSymbolData(symbol,url)
+            except:
+                print('get data failed - %s'%(symbol))
+                data={}
             for itm in data:
                 row[itm]=data[itm]
             
@@ -232,8 +236,12 @@ class crawler:
     def getSymbolData(self, symbol, url):
         url=url%(symbol)
         
-        self.urlDirect(url)
-        self.closeCookies()
+        try:
+            self.urlDirect(url)
+            self.closeCookies()
+        except:
+            print('unable to get url')
+            return {}
         
         headers={}
         for itm in self.nasdaqDetailsHeaders:
