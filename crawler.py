@@ -65,7 +65,7 @@ class crawler:
             self.options.add_argument('--headless')
             self.options.add_argument('--window-size=1920,1080')
             self.options.add_argument("--start-maximized")
-            self.options.add_argument("'--lang=en-us'")
+            self.options.add_argument("--lang=en-us")
             self.options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
         else:
             self.GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
@@ -76,7 +76,8 @@ class crawler:
             self.chrome_options.add_argument('--headless')
             self.chrome_options.add_argument('--disable-gpu')
             self.chrome_options.add_argument('--no-sandbox')
-            self.chrome_options.add_argument("'--lang=en-us'")
+            self.chrome_options.add_argument("--lang=en-us")
+            self.chrome_options.add_argument('--disable-dev-shm-usage')
 #            self.chrome_options.add_argument("--start-maximized")
             self.chrome_options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
         
@@ -242,6 +243,7 @@ class crawler:
             self.urlDirect(url)
             self.closeCookies()
         except:
+            print(Exception)
             print('unable to get url')
             return {}
         
