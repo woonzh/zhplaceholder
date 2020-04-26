@@ -1,5 +1,6 @@
 from crawler import crawler
 import pandas as pd
+import dbConnector as db
 
 url='https://www.nasdaq.com/market-activity/stocks/screener'
 symbolUrl='https://www.nasdaq.com/market-activity/stocks/%s'
@@ -41,9 +42,10 @@ def analytics(download=False):
     return summary,df
 
 #df=run(local=True)
+#summary,df=analytics(True)
 
 #crawl=crawler(local=True)
-#df=crawl.getNasdaqPrice(url)
+#df=crawl.getNasdaqPrice(dbname=dbname,url=url)
 #df2=crawl.getNasdaqDetails(symbolUrl,df=df)
 #crawl.store(df, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
 #store=crawl.getSymbolData('msft',symbolUrl)
