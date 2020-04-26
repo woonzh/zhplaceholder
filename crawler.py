@@ -243,7 +243,9 @@ class crawler:
         
         try:
             self.urlDirect(url)
+            time.sleep(2)
             self.closeCookies()
+            time.sleep(3)
         except:
             print(Exception)
             print('unable to get url')

@@ -117,7 +117,7 @@ def cleanData(df):
     
     df['day_priceinc']=[float(x.split(' ')[0].replace('+','')) if str(x) !='nan' and str(x)!='' else 0 for x \
       in df['upval']]
-    df['day_perceninc']=[float(x.split(' ')[-1].replace('+','').replace("(",'').replace(')','')\
+    df['day_perceninc']=[float(x.split(' ')[1].replace("(",'').replace(')','')\
       .replace('%','')) if str(x) !='nan' and str(x)!='' else 0 for x in df['upval']]
     df=df.drop('upval', axis=1)
     
@@ -214,13 +214,13 @@ def findCompany(df, comName=None, code=None):
 #df=run()
 #a=updateBasic()
 
-#df=analytics(download=False)
-#cleanDf=cleanData(df)
-#engineDf=dataEngineer(cleanDf)
-#stats=getStats(engineDf)
+df=analytics(download=False)
+dfClean=cleanData(df)
+dfEngine=dataEngineer(dfClean)
+stats=getStats(dfEngine)
 #
-#sievedDf=sieveData(engineDf)
-#viewDf=filterView(sievedDf)
+dfSieve=sieveData(dfEngine)
+dfView=filterView(dfSieve)
 
 #comDf=findCompany(engineDf, comName='STANCHART')
 #
