@@ -214,10 +214,10 @@ def findCompany(df, comName=None, code=None):
 #df=run()
 #a=updateBasic()
 
-df=analytics(download=False)
-dfClean=cleanData(df)
-dfEngine=dataEngineer(dfClean)
-stats=getStats(dfEngine)
+#df=analytics(download=False)
+#dfClean=cleanData(df)
+#dfEngine=dataEngineer(dfClean)
+#stats=getStats(dfEngine)
 ##
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
