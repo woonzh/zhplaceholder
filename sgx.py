@@ -529,12 +529,39 @@ def isInt(val):
         return True
     except:
         return False
+    
+def cleanCurrency(itm):
+#    print(itm)
+    itm=itm.strip().split(' ')
+    if len(itm)>1:
+        itm=itm[1]
+    else:
+        itm=itm[0]
+    
+    itm=itm.replace(',','').replace('USD','').replace('HKD','').replace('AUD','').strip()
+    itm=float(itm)
+    return itm
         
 def updateRatios(companyInfo):
     ratios=[float(x)/float(y) if (isInt(x) and isInt(y)) else 1 for x, y in zip(companyInfo['last price'], companyInfo['openprice'])]
     colList=['marketcap','peratio','price_sales','price_cf','price_sales', 'dividend', 'divident_5_yr_avg']
     for col in colList:
         companyInfo[col]=[float(x)*float(y) if (isInt(x)==True and isInt(y)==True) else x for x,y in zip(companyInfo[col], ratios)]
+    
+    year_high=[cleanCurrency(x.split('-')[0]) if (str(x)!= '-' and str(x)!='NaN' and str(x)!='nan') else 0 for x in companyInfo['yearhighlow']]
+    year_low=[cleanCurrency(x.split('-')[1]) if (str(x)!= '-' and str(x)!='NaN' and str(x)!='nan') else 0 for x in companyInfo['yearhighlow']]
+#    print('done with high low')
+    price=[cleanCurrency(x) if (str(x.strip())!= '﹣' and str(x)!='-' and str(x)!='NaN'and str(x)!='nan') else 0 for x in companyInfo['last price']]
+    
+    for count in range(len(price)):
+        if year_high[count]>0 and year_low[count]>0 and price[count]>0:
+            if price[count] > year_high[count]:
+                year_high[count]=price[count]
+            if price[count] < year_low[count]:
+                year_low[count]=price[count]
+    
+    new_year=[(str(x)+' - '+str(y)) if (x>0 and y>0) else'-' for x,y in zip(year_high,year_low)]
+    companyInfo['yearhighlow']=new_year
     
     return companyInfo
     
@@ -594,6 +621,11 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 
 def closeDriver():
     driver.quit()
+    
+#df, companyFullInfo=updateCompanyInfo()
+#closeDriver()
+
+#a=updateRatios(df)
 
 #result=db.extractTable('summary')['result']
 #companyinfo=getCompanyInfo(result.iloc[0,0], result.iloc[0,4])

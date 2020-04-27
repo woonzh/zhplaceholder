@@ -2,6 +2,7 @@ from crawler import crawler
 import pandas as pd
 import dbConnector as db
 import time
+import scipy.cluster.hierarchy as spc
 
 url='https://www.nasdaq.com/market-activity/stocks/screener'
 symbolUrl='https://www.nasdaq.com/market-activity/stocks/%s'
@@ -33,6 +34,21 @@ def updateDetails(local=False):
     
     crawl.closeDriver()
     return df
+
+def extractIndustries(df, colName):
+    industry=list(df[colName])
+    store={}
+    
+    for count, line in enumerate(industry):
+        tem=[x.strip() for x in str(line).split('/')]
+        for cur in tem:
+            if cur!='':
+                try:
+                    store[cur]=store[cur]+1
+                except:
+                    store[cur]=1
+    
+    return store
 
 def dataCleaning(df):
     df=df.drop_duplicates(subset='symbol')
@@ -71,18 +87,34 @@ def dataEngineering(df):
     return df
 
 def cleanView(df):
-    cols=['company','price','percen_change', 'market_cap', 'pe', 'pe_ratio', 'yield', \
+    cols=['company','price','percen_change', 'market_cap', 'pe_ratio', 'yield', \
           'upside', 'downside', 'dayVolatility','day_percen_traded','fifty_day_percen_traded', 'sector','industry']
     return df[cols]
 
-def sieveData(df):
+def sieveData(df, industryCol=None, industries=[]):
     nonullcols=['price','volume']
+    df=df.copy(deep=True)
     
     for col in nonullcols:
         df=df[df[col]>0]
-    
+        
+        
+    if industryCol is not None:
+        for ind in list(df.index):
+            data=df.loc[ind][industryCol]
+            keep=False
+            for industry in industries:
+                if industry in data:
+                    keep=True
+            if keep==False:
+                df.drop(ind,axis=0,inplace=True)
+                
     filters={
-        'price':['>',1,'price']
+        'price':['>',1,'price'],
+        'pe_ratio':['<',40,'pe_ratio'],
+        'day_percen_traded':['>',0,'day_percen_traded'],
+        'upside':['>',30,'upside']
+        
             }
         
     for i in filters:
@@ -104,43 +136,20 @@ def analytics(download=False):
         summary.to_csv(nasdaqFile, index=False)
         df.to_csv(nasdaqDetailsFile, index=False)
         
+#    return summary,df
+        
     summary=pd.read_csv(nasdaqFile)
     df=pd.read_csv(nasdaqDetailsFile)
     
     return summary,df
 
-#url=symbolUrl%('msft')
-#crawl=crawler(local=True)
-#data=crawl.getSymbolData('msft',symbolUrl)
-#crawl.closeDriver()
-#crawl.urlDirect(url)
-##time.sleep(2)
-#crawl.closeCookies()
-#time.sleep(2)
-#
-#modules=crawl.driver.find_elements_by_xpath("""//h2[@class="module-header"]""")
-#cont=True
-#for mod in modules:
-#    try:
-#        if 'Key Data' in mod.text and cont==True:
-#            self.actions.move_to_element(mod).perform()
-#            time.sleep(2)
-#            cont=False
-#    except:
-#        t=1
-#
-#if cont:
-#    print('navigate to key data fail')
-#else:
-#    print('navigate to key data success')
-
-
-#url=symbolUrl%('msft)
-
-
 #df=run(local=True)
-#summary,df=analytics(True)
+
+#summary,df=analytics(False)
 #dfClean=dataCleaning(df)
 #dfEngine=dataEngineering(dfClean)
-#dfFilter=sieveData(dfEngine)
+#dfFilter=sieveData(dfEngine, industryCol='industry', industries=['Computer Software: Prepackaged Software'])
 #dfView=cleanView(dfFilter)
+#
+#breakdownIndustry=extractIndustries(df,'industry')
+#breakdownSector=extractIndustries(df,'sector')

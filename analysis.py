@@ -275,19 +275,19 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
         filters={
             'peratio':['!=','nan'],
             'industry':['!=',''],
-            'openprice':['>',1],
-            'net_profit_margin':['>', 10],
+#            'openprice':['>',1],
+#            'net_profit_margin':['>', 10],
             'volume traded %':['>', 0.0001],
-#            'p_nav':['<',1],
+            'p_nav':['>',1],
             'type':['=','others'],
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
-            'operating_margin':['>',10],
+#            'operating_margin':['>',10],
 #            'profitMarginGrowth':['>',0]
 #            'cash_percen':['>',0.05],
-#            'downside':['>',-0.4],
-            'upside':['>',0.3],
-            'dayVolume':['>',0]
+            'downside':['<',-0.4],
+#            'upside':['<',0.2],
+#            'dayVolume':['>',0]
 #            'revenue':['>',100*pow(10,6)],
 #            'Accumulated Depreciation, Total growth':['<',1]
                 }
@@ -336,6 +336,7 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
             df=df[df[i]<filters[i][1]]
         if filters[i][0]=='=':
             df=df[df[i]==filters[i][1]]
+            dfStore=dfStore[dfStore[i]==filters[i][1]]
         if filters[i][0]=='!=':
             df=df[df[i]!=filters[i][1]]
             dfStore=dfStore[dfStore[i]!=filters[i][1]]
@@ -488,7 +489,7 @@ def processFinancialInfo(df):
     return store, summary
     
 def run():
-    pullFromDB=False
+    pullFromDB=True
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)
@@ -499,7 +500,7 @@ def run():
 #df,dfNew, dfMain, financial = run()
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
-#
+##
 #dfFilter=filterData(industry=[],df=dfNew)
 #dfCmp=cleanCols(dfFilter)
 #dfCmp.to_csv(cmpFile, index=False)

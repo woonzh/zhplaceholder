@@ -132,14 +132,15 @@ def sieveData(df):
         df=df[df[col]>0]
     
     filters={
-        'price':['>',1,'price'],
-#        'pe1':['>',1,'pe'],
+        'price':['>',0.1,'price'],
+        'pe1':['>',1,'pe'],
 #        'pe2':['<',20,'pe'],
 #        'marketcap':['>',10*pow(10,8),'market_cap'],
 ##        'turnover':['>',5*pow(10,7),'turnover'],
-        'upside':['>',0.4,'upside'],
-#        'downside':['<',0.5,'downside'],
-        'percen_traded':['>',0,'percen_traded']
+        'upside':['<',10,'upside'],
+        'downside':['>',40,'downside'],
+        'percen_traded':['>',0,'percen_traded'],
+        'suspended':['=','N','suspended']
             }
         
     for i in filters:
@@ -214,17 +215,18 @@ def findCompany(df, comName=None, code=None):
 #df=run()
 #a=updateBasic()
 
-#df=analytics(download=False)
-#dfClean=cleanData(df)
-#dfEngine=dataEngineer(dfClean)
-#stats=getStats(dfEngine)
-##
-#dfSieve=sieveData(dfEngine)
-#dfView=filterView(dfSieve)
+df=analytics(download=False)
+dfClean=cleanData(df)
+dfEngine=dataEngineer(dfClean)
+dfEngineView=filterView(dfEngine)
+stats=getStats(dfEngine)
+###
+dfSieve=sieveData(dfEngine)
+dfView=filterView(dfSieve)
 
 #comDf=findCompany(engineDf, comName='STANCHART')
 #
-#indDf=getIndustryCompany(engineDf, industry='energy')
+#indDf=getIndustryCompany(dfEngine, industry='energy')
 #indDf2=filterView(indDf)
 #comDf=engineDf[engineDf['com_name']=='ICBC']
 
