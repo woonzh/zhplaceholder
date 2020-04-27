@@ -594,10 +594,10 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     
     replace={
         'openprice':'last price',
-        'priceChange': 'change',
-        'percenChange': 'changePercen',
-        'tradedVol': 'vol',
-        'tradedVal':'valTraded'
+        'pricechange': 'change',
+        'percenchange': 'changePercen',
+        'tradedvol': 'vol',
+        'tradedval':'valTraded'
             }
     
     for itm in replace:
