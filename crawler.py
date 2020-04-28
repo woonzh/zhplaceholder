@@ -43,7 +43,7 @@ class crawler:
             'industry':'Industry',
             'pe_ratio':'P/E Ratio', 
             'forward pe':'Forward P/E 1 Yr.',
-            '1_yr_tar':'1 Year Target',
+            'one_yr_tar':'1 Year Target',
             'eps':'Earnings Per Share(EPS)',
             'day_high_low':"Today's High/Low",
             'div':"Annualized Dividend",

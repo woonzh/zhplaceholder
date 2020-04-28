@@ -173,7 +173,7 @@ def analytics(download=True):
         summary.to_csv(nasdaqFile, index=False)
         df.to_csv(nasdaqDetailsFile, index=False)
         
-#    return summary,df
+    return summary,df
         
     summary=pd.read_csv(nasdaqFile)
     df=pd.read_csv(nasdaqDetailsFile)
@@ -184,6 +184,7 @@ def analytics(download=True):
 #df=run(local=True)
 
 #summary,df=analytics(False)
+
 #dfClean=dataCleaning(df)
 #dfEngine=dataEngineering(dfClean)
 #dfFilter=sieveData(dfEngine, industryCol='industry', industries=['Computer Software: Prepackaged Software'])
