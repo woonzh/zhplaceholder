@@ -275,18 +275,18 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
         filters={
             'peratio':['!=','nan'],
             'industry':['!=',''],
-#            'openprice':['>',1],
+            'openprice':['>',1],
 #            'net_profit_margin':['>', 10],
             'volume traded %':['>', 0.0001],
-            'p_nav':['<',1],
-            'type':['=','reit'],
+#            'p_nav':['<',1],
+            'type':['=','others']
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
 #            'operating_margin':['>',10],
 #            'profitMarginGrowth':['>',0]
 #            'cash_percen':['>',0.05],
 #            'downside':['<',-0.4],
-            'upside':['>',0.3],
+#            'upside':['>',0.3],
 #            'dayVolume':['>',0]
 #            'revenue':['>',100*pow(10,6)],
 #            'Accumulated Depreciation, Total growth':['<',1]
@@ -342,9 +342,10 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
             dfStore=dfStore[dfStore[i]!=filters[i][1]]
         
         if type(filters[i][1])!=type('s'):
-            temDf=dfStore[dfStore[i]==0]
-            df=df.append(temDf)
-            df.drop_duplicates(subset='names', inplace=True)
+            if filters[i][2]:
+                temDf=dfStore[dfStore[i]==0]
+                df=df.append(temDf)
+                df.drop_duplicates(subset='names', inplace=True)
             dfStore=df.copy(deep=True)
     
 #    df=df[(df['peratio']>1)&(df['openprice']>0.2)&(df['net_profit_margin']>5)&(df['volume traded %']>0.01)]
@@ -488,8 +489,7 @@ def processFinancialInfo(df):
     
     return store, summary
     
-def run():
-    pullFromDB=False
+def run(pullFromDB=False):
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)
@@ -497,28 +497,43 @@ def run():
     dfMain, dfDel, dfCheck, summary, dfNew, f=cleanAndProcess(summaryFName, file, newFile)
     return df,dfNew, dfMain, f
 
-#df,dfNew, dfMain, financial = run()
+dailyChangeFilter={
+    'peratio':['!=','nan',True],
+    'industry':['!=','',True],
+    'openprice':['>',1,False],
+    'volume traded %':['>', 0.0001,False]}
+
+upsideFilter={
+    'peratio':['!=','nan',True],
+    'industry':['!=','',True],
+    'openprice':['>',1,False],
+    'net_profit_margin':['>', 0,True],
+    'volume traded %':['>', 0.00001,False],
+#    'dayVolume':['>', 0,False],
+#    'p_nav':['>',1],
+    'type':['=','others',True],
+    'revenue':['>',100*pow(10,6),True],
+#    'operating_margin':['>',10],
+    'downside':['>',-0.4,True],
+    'upside':['>',0.3,True]
+        }
+
+#df,dfNew, dfMain, financial = run(False)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
-##
+
+dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
+dfDailyChangeCmp=cleanCols(dfDailyChange)
+
+dfUpside=filterData(filters=upsideFilter,df=dfNew)
+dfUpsideCmp=cleanCols(dfUpside)
+
 #dfFilter=filterData(industry=[],df=dfNew)
 #dfCmp=cleanCols(dfFilter)
 #dfCmp.to_csv(cmpFile, index=False)
 
 #store, dfStore, clusters=extractIndustries(df=dfNew)
-
 #
 #f, fsummary=processFinancialInfo(dfNew)
 #fstats=getStats(fsummary)
-#
-#result=train(x,y)
-#
-#z=x.copy(deep=True)
-#z['y']=y
-#corr=z.corr()
-#
-#b['pred'] = result
-#b['diff']=(b['pred']-b['peratio'])/b['peratio']
 
-#b=dfNew[dfNew['names']=='Wilmar Intl']
-#a=getFilteredResult()

@@ -213,16 +213,15 @@ def findCompany(df, comName=None, code=None):
     return df
 
 #df=run()
-#a=updateBasic()
 
-#df=analytics(download=False)
-#dfClean=cleanData(df)
-#dfEngine=dataEngineer(dfClean)
-#dfEngineView=filterView(dfEngine)
-#stats=getStats(dfEngine)
-#
-#dfSieve=sieveData(dfEngine)
-#dfView=filterView(dfSieve)
+df=analytics(download=True)
+dfClean=cleanData(df)
+dfEngine=dataEngineer(dfClean)
+dfEngineView=filterView(dfEngine)
+stats=getStats(dfEngine)
+
+dfSieve=sieveData(dfEngine)
+dfView=filterView(dfSieve)
 
 #comDf=findCompany(dfEngine, comName='STANCHART')
 #

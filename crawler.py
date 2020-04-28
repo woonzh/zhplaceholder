@@ -275,6 +275,7 @@ class crawler:
             for itm in data:
                 row[itm]=data[itm]
             
+            print(row)
             df.loc[ind]=list(row)
             self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
             
@@ -329,23 +330,6 @@ class crawler:
             print('navigate to key data success')
         else:
             print('navigate to key data fail')
-        
-#        cont=True
-#        for mod in modules:
-#            try:
-#                if 'Key Data' in mod.text and cont==True:
-#                    self.actions.move_to_element(mod).perform()
-#                    time.sleep(2)
-#                    cont=False
-#            except:
-#                t=1
-#        
-#        if cont:
-#            print('navigate to key data fail')
-#        else:
-#            print('navigate to key data success')
-#        
-#        self.driver.execute_script("window.scrollBy(0,500)")
         time.sleep(6)
         
         rows=self.driver.find_elements_by_xpath("""//tr[@class="summary-data__row"]""")
