@@ -522,11 +522,11 @@ upsideFilter={
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
 
-dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
-dfDailyChangeCmp=cleanCols(dfDailyChange)
-
-dfUpside=filterData(filters=upsideFilter,df=dfNew)
-dfUpsideCmp=cleanCols(dfUpside)
+#dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
+#dfDailyChangeCmp=cleanCols(dfDailyChange)
+#
+#dfUpside=filterData(filters=upsideFilter,df=dfNew)
+#dfUpsideCmp=cleanCols(dfUpside)
 
 #dfFilter=filterData(industry=[],df=dfNew)
 #dfCmp=cleanCols(dfFilter)
