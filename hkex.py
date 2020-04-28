@@ -125,23 +125,24 @@ def cleanData(df):
     
     return df
 
-def sieveData(df):
+def sieveData(df, filters=None):
     nonullcols=['turnover','pe']
     
     for col in nonullcols:
         df=df[df[col]>0]
     
-    filters={
-        'price':['>',0.1,'price'],
-        'pe1':['>',1,'pe'],
-        'pe2':['<',30,'pe'],
-#        'marketcap':['>',10*pow(10,8),'market_cap'],
-##        'turnover':['>',5*pow(10,7),'turnover'],
-        'upside':['>',30,'upside'],
-        'downside':['<',30,'downside'],
-        'percen_traded':['>',0,'percen_traded'],
-        'suspended':['=','N','suspended']
-            }
+    if filters is None:
+        filters={
+            'price':['>',0.1,'price'],
+            'pe1':['>',1,'pe'],
+            'pe2':['<',30,'pe'],
+    #        'marketcap':['>',10*pow(10,8),'market_cap'],
+    ##        'turnover':['>',5*pow(10,7),'turnover'],
+            'upside':['>',30,'upside'],
+            'downside':['<',30,'downside'],
+            'percen_traded':['>',0,'percen_traded'],
+            'suspended':['=','N','suspended']
+                }
         
     for i in filters:
         if filters[i][0]=='>':
@@ -213,13 +214,39 @@ def findCompany(df, comName=None, code=None):
     return df
 
 #df=run()
+    
+dayChange={
+    'price':['>',1,'price'],
+    'pe1':['>',1,'pe'],
+    'pe2':['<',50,'pe'],
+    'day_perceninc':['<',-3,'day_perceninc'],
+#    'day_perceninc2':['>',3,'day_perceninc'],
+    'percen_traded':['>',0,'percen_traded'],
+    'suspended':['=','N','suspended']
+        }
 
-#df=analytics(download=True)
-#dfClean=cleanData(df)
-#dfEngine=dataEngineer(dfClean)
-#dfEngineView=filterView(dfEngine)
-#stats=getStats(dfEngine)
-#
+upside={
+    'price':['>',1,'price'],
+    'pe1':['>',1,'pe'],
+    'pe2':['<',30,'pe'],
+    'upside':['>',30,'upside'],
+    'downside':['<',30,'downside'],
+    'percen_traded':['>',0,'percen_traded'],
+    'suspended':['=','N','suspended']
+        }
+
+df=analytics(download=False)
+dfClean=cleanData(df)
+dfEngine=dataEngineer(dfClean)
+dfEngineView=filterView(dfEngine)
+stats=getStats(dfEngine)
+
+dfDayChange=sieveData(dfEngine,filters=dayChange)
+dfDayChangeView=filterView(dfDayChange)
+
+dfUpside=sieveData(dfEngine,filters=upside)
+dfUpsideView=filterView(dfUpside)
+
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
 

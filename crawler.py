@@ -275,7 +275,7 @@ class crawler:
             for itm in data:
                 row[itm]=data[itm]
             
-            print(row)
+#            print(row)
             df.loc[ind]=list(row)
             self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
             
