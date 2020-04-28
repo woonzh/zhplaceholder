@@ -156,7 +156,8 @@ class crawler:
             
             
     def updateDetails(self, summary, detailDbName):
-        df=db.extractTable(detailDbName)['result']
+#        df=db.extractTable(detailDbName)['result']
+        df=detailDbName
         
         oldPrice=[self.convertNums(x) for x in df['price']]
         newPrice=[self.convertNums(x) for x in summary['price']]

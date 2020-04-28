@@ -148,6 +148,20 @@ def sieveData(df, industryCol=None, industries=[]):
     
     return df
 
+def getCompany(df, nameCol, nameExc):
+    store=None
+    for count, name in enumerate(df[nameCol]):
+        name=name.lower()
+        nameExc=name.lower()
+        
+        if nameExc in name:
+            if store is None:
+                store=df.loc[count]
+            else:
+                store.loc[len(store)]=df.loc[count]
+    
+    return store
+
 def analytics(download=True):
     if download:
         summary=db.extractTable(dbname)['result']
@@ -170,6 +184,8 @@ def analytics(download=True):
 #dfEngine=dataEngineering(dfClean)
 #dfFilter=sieveData(dfEngine, industryCol='industry', industries=['Computer Software: Prepackaged Software'])
 #dfView=cleanView(dfFilter)
+
+#dfCmp=getCompany(dfEngine,'company', 'exxon')
 #
 #breakdownIndustry=extractIndustries(df,'industry')
 #breakdownSector=extractIndustries(df,'sector')

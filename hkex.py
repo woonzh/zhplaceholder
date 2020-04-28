@@ -224,7 +224,7 @@ def findCompany(df, comName=None, code=None):
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
 
-#comDf=findCompany(engineDf, comName='STANCHART')
+#comDf=findCompany(dfEngine, comName='STANCHART')
 #
 #indDf=getIndustryCompany(dfEngine, industry='energy')
 #indDf2=filterView(indDf)

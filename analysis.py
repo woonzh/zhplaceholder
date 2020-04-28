@@ -278,15 +278,15 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
 #            'openprice':['>',1],
 #            'net_profit_margin':['>', 10],
             'volume traded %':['>', 0.0001],
-            'p_nav':['>',1],
-            'type':['=','others'],
+            'p_nav':['<',1],
+            'type':['=','reit'],
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
 #            'operating_margin':['>',10],
 #            'profitMarginGrowth':['>',0]
 #            'cash_percen':['>',0.05],
-            'downside':['<',-0.4],
-#            'upside':['<',0.2],
+#            'downside':['<',-0.4],
+            'upside':['>',0.3],
 #            'dayVolume':['>',0]
 #            'revenue':['>',100*pow(10,6)],
 #            'Accumulated Depreciation, Total growth':['<',1]
@@ -500,7 +500,7 @@ def run():
 #df,dfNew, dfMain, financial = run()
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
-#
+##
 #dfFilter=filterData(industry=[],df=dfNew)
 #dfCmp=cleanCols(dfFilter)
 #dfCmp.to_csv(cmpFile, index=False)

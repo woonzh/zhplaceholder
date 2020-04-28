@@ -499,28 +499,28 @@ def updatePriceHist(df, companyFullInfo,updateDatabase=True):
         db.rewriteTable('summary', df)
         db.recreateTable('rawData', companyFullInfo, overwrite=overwrite)
         db.rewriteTable('rawData', companyFullInfo)
-        result=db.extractTable('history')
-        
-        if result['error'] is None:
-            hist=result['result']
-            
-            temLst=['']*len(hist)
-            nameLst=list(hist['names'])
-            for count, name in enumerate(df['names']):
-                if name in nameLst:
-                    rowCount=nameLst.index(name)
-                    temLst[rowCount]=df['last price'][count]
-                else:
-                    hist.loc[len(hist)]=[name]+['']*(len(list(hist))-1)
-                    temLst.append(df['last price'][count])
-            hist[tdayDate]=temLst
-             
-        else:
-            hist=pd.DataFrame()
-            hist['names']=df['names']
-            hist[tdayDate]=df['last price']
-        
-        db.rewriteTable('history', hist, True)
+#        result=db.extractTable('history')
+#        
+#        if result['error'] is None:
+#            hist=result['result']
+#            
+#            temLst=['']*len(hist)
+#            nameLst=list(hist['names'])
+#            for count, name in enumerate(df['names']):
+#                if name in nameLst:
+#                    rowCount=nameLst.index(name)
+#                    temLst[rowCount]=df['last price'][count]
+#                else:
+#                    hist.loc[len(hist)]=[name]+['']*(len(list(hist))-1)
+#                    temLst.append(df['last price'][count])
+#            hist[tdayDate]=temLst
+#             
+#        else:
+#            hist=pd.DataFrame()
+#            hist['names']=df['names']
+#            hist[tdayDate]=df['last price']
+#        
+#        db.rewriteTable('history', hist, True)
     #update local csv
     t=1
         
