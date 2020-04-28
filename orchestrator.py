@@ -44,8 +44,10 @@ def runNasdaqFull(jobId=''):
 def runNasdaqDetailsUpdate(jobId=''):
     util.runFunc(actFunc=nasdaq.updateDetails)
 
-def runNasdaqBasicUpdate(jobId=''):
-    util.runFunc(actFunc=nasdaq.updateBasics)
+def runNasdaqBasicUpdate(userAgentNum=0):
+    print('orc -%s'%(str(userAgentNum)))
+    params=(userAgentNum)
+    util.runFunc(actFunc=nasdaq.updateBasics,actFuncParams=params)
     
 #def testFunc():
 #    r=10*3

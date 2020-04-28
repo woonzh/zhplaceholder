@@ -26,18 +26,20 @@ def run(local=False):
     crawl.closeDriver()
     return df
 
-def updateBasics(local=False):
-    print('run nasdaq full')
-    crawl=crawler(local)
-    
-    summary=crawl.getNasdaqPrice(dbname=dbname,url=url)
-    crawl.store(summary, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
-    
-    df=crawl.updateDetails(summary, detailDbname)
-    crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
-    
-    crawl.closeDriver()
-    return df
+def updateBasics(userAgentNum=0, local=False):
+    print('run nasdaq update Basics')
+    print('nasdaq -%s'%(str(userAgentNum)))
+#    crawl=crawler(local)
+#    
+#    summary=crawl.getNasdaqPrice(dbname=dbname,url=url)
+#    crawl.store(summary, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
+#    
+#    if len(summary)>10:
+#        df=crawl.updateDetails(summary, detailDbname)
+#        crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
+#    
+#    crawl.closeDriver()
+#    return df
 
 def updateDetails(local=False):
     print('run nasdaq full')

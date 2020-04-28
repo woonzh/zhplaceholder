@@ -201,7 +201,9 @@ def workerNasdaqUpdateBasic():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('nasdaq update basic', orc.runNasdaqBasicUpdate, None , intJobId)
+        userAgentNum = request.args.get("useragent", default=0)
+        print('api -%s'%(str(userAgentNum)))
+        result=orc.wc.queueFunc('nasdaq update basic', orc.runNasdaqBasicUpdate, (userAgentNum) , intJobId)
         ret={
             'answer':result}
             
