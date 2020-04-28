@@ -180,7 +180,8 @@ def analytics(download=True):
     
     return summary,df
 
-
+#crawl=crawler(local=True)
+#crawl.urlDirect()
 #df=run(local=True)
 
 #summary,df=analytics(False)
