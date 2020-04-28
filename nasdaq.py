@@ -33,11 +33,13 @@ def updateBasics(userAgentNum=0, local=False):
     crawl=crawler(local=local,userAgentNum=userAgentNum)
     
     summary=crawl.getNasdaqPrice(dbname=dbname,url=url)
-    crawl.store(summary, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
     
     if len(summary)>10:
+        crawl.store(summary, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
         df=crawl.updateDetails(summary, detailDbname)
         crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
+    else:
+        df=summary
     
     crawl.closeDriver()
     return df
