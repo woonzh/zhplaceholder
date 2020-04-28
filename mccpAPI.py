@@ -186,7 +186,22 @@ def workerNasdaqUpdateDetails():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('nasdaq full', orc.runNasdaqDetailsUpdate, None , intJobId)
+        result=orc.wc.queueFunc('nasdaq update details', orc.runNasdaqDetailsUpdate, None , intJobId)
+        ret={
+            'answer':result}
+            
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
+    
+@app.route('/nasdaqupdatebasic', methods=['GET', 'OPTIONS'])
+def workerNasdaqUpdateBasic():
+    ret={}
+    if request.method == 'GET':
+        intJobId=util.stringGenerator()
+        result=orc.wc.queueFunc('nasdaq update basic', orc.runNasdaqBasicUpdate, None , intJobId)
         ret={
             'answer':result}
             

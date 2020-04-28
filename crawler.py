@@ -123,6 +123,56 @@ class crawler:
             print('close cookies failed')
         else:
             print('closed cookies')
+            
+    def convertNums(self, currency):
+        currency=str(currency).replace('$','').replace(',','').replace('%','')
+        try:
+            currency=float(currency)
+        except:
+            currency=0
+            
+        return currency
+    
+    def updateCol(self, ratio, colLst, suffix):
+        newColLst=[]
+        
+        for count, itm in enumerate(colLst):
+            try:
+                ratioVal=ratio[count]
+                if ratioVal!=0:
+                    newItm=round(itm*ratio[count],2)
+                else:
+                    newItm=0
+            except:
+                newItm=0
+                
+            newItm=str(newItm)+suffix
+            newColLst.append(newItm)
+        
+        return newColLst
+            
+            
+    def updateDetails(self, summary, detailDbName):
+        df=db.extractTable(detailDbName)['result']
+        
+        oldPrice=[self.convertNums(x) for x in df['price']]
+        newPrice=[self.convertNums(x) for x in summary['price']]
+        
+        ratio=[x/y if (x!=0 and y!=0) else 0 for x,y in zip(newPrice, oldPrice)]
+        
+        cols_to_update={
+            'pe_ratio':[ratio,''],
+            'forward_pe':[ratio,''],
+            'yield':[[1/x if x!=0 else 0 for x in ratio],'%']}
+        
+        for col in cols_to_update:
+            colLst=[self.convertNums(x) for x in df[col]]
+            df[col]=self.updateCol(cols_to_update[col][0],colLst,cols_to_update[col][1])
+        
+        for col in list(summary):
+            df[col]=summary[col]
+        
+        return df
     
     def getNasdaqData(self,df):
         time.sleep(1)        
@@ -136,15 +186,18 @@ class crawler:
         for row in rows:
             lst=[]
             for ind in self.data:
-                try:
-                    path=self.data[ind][0]
-                    lst.append(row.find_element_by_xpath(path).text)
-                except:
+                if len(self.data[ind])>0:
                     try:
-                        path=self.data[ind][1]
+                        path=self.data[ind][0]
                         lst.append(row.find_element_by_xpath(path).text)
                     except:
-                        lst.append('--')
+                        try:
+                            path=self.data[ind][1]
+                            lst.append(row.find_element_by_xpath(path).text)
+                        except:
+                            lst.append('--')
+                else:
+                    lst.append(self.timec.getCurDate())
             df.loc[len(df)]=lst
             
         df.drop_duplicates(subset='symbol', inplace=True)
@@ -160,7 +213,8 @@ class crawler:
                       """.//td[@class="symbol-screener__cell symbol-screener__cell--change--down"]"""],
             'percen_change':[""".//td[@class="symbol-screener__cell symbol-screener__cell--percent--up"]""",\
                              """.//td[@class="symbol-screener__cell symbol-screener__cell--percent--down"]"""], 
-            'volume':[""".//td[@class="symbol-screener__cell symbol-screener__cell--volume"]"""]
+            'volume':[""".//td[@class="symbol-screener__cell symbol-screener__cell--volume"]"""],
+            'date_updated':[]
                 }
         df=pd.DataFrame(columns=list(self.data))
         

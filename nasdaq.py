@@ -26,6 +26,19 @@ def run(local=False):
     crawl.closeDriver()
     return df
 
+def updateBasics(local=False):
+    print('run nasdaq full')
+    crawl=crawler(local)
+    
+    summary=crawl.getNasdaqPrice(dbname=dbname,url=url)
+    crawl.store(summary, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
+    
+    df=crawl.updateDetails(summary, detailDbname)
+    crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
+    
+    crawl.closeDriver()
+    return df
+
 def updateDetails(local=False):
     print('run nasdaq full')
     crawl=crawler(local)
@@ -129,7 +142,7 @@ def sieveData(df, industryCol=None, industries=[]):
     
     return df
 
-def analytics(download=False):
+def analytics(download=True):
     if download:
         summary=db.extractTable(dbname)['result']
         df=db.extractTable(detailDbname)['result']
@@ -143,9 +156,10 @@ def analytics(download=False):
     
     return summary,df
 
+
 #df=run(local=True)
 
-#summary,df=analytics(False)
+#summary,df=analytics(True)
 #dfClean=dataCleaning(df)
 #dfEngine=dataEngineering(dfClean)
 #dfFilter=sieveData(dfEngine, industryCol='industry', industries=['Computer Software: Prepackaged Software'])

@@ -91,6 +91,7 @@ def extractData(df2):
     df['vol']=retrieveText(vol)
     df['valTraded']=retrieveText(valTraded)
     df['address']=retrieveText(names, "href")
+    df['update_date']=timec.getCurDate()
     
     df2=df2.append(df)
     df2=df2[df2['names']!='']
@@ -123,7 +124,7 @@ def crawlSummary():
     time.sleep(1)
     
     lst=[]
-    df=pd.DataFrame(columns=['names', 'last price', 'change','changePercen','vol', 'valTraded', 'address'])
+    df=pd.DataFrame(columns=['names', 'last price', 'change','changePercen','vol', 'valTraded', 'address', 'update_date'])
     
     df, df2 = extractData(df)
     lst.append(df2)
@@ -551,7 +552,7 @@ def updateRatios(companyInfo):
     year_high=[cleanCurrency(x.split('-')[0]) if (str(x)!= '-' and str(x)!='NaN' and str(x)!='nan') else 0 for x in companyInfo['yearhighlow']]
     year_low=[cleanCurrency(x.split('-')[1]) if (str(x)!= '-' and str(x)!='NaN' and str(x)!='nan') else 0 for x in companyInfo['yearhighlow']]
 #    print('done with high low')
-    price=[cleanCurrency(x) if (str(x.strip())!= '﹣' and str(x)!='-' and str(x)!='NaN'and str(x)!='nan') else 0 for x in companyInfo['last price']]
+    price=[cleanCurrency(x) if ((str(x).strip())!= '﹣' and str(x)!='-' and str(x)!='NaN'and str(x)!='nan') else 0 for x in companyInfo['last price']]
     
     for count in range(len(price)):
         if year_high[count]>0 and year_low[count]>0 and price[count]>0:
@@ -589,7 +590,7 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     else:
         companyFullInfo=pd.read_csv(companyInfoFName)
         
-    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price','change','changePercen','vol', 'valTraded']], how='outer', left_on='names', right_on='names')
+    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price','change','changePercen','vol', 'valTraded', 'update_date']], how='outer', left_on='names', right_on='names')
     companyFullInfo=updateRatios(companyFullInfo)
     
     replace={
@@ -597,7 +598,8 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
         'pricechange': 'change',
         'percenchange': 'changePercen',
         'tradedvol': 'vol',
-        'tradedval':'valTraded'
+        'tradedval':'valTraded',
+        'prevclosedate':'update_date'
             }
     
     for itm in replace:
@@ -607,9 +609,9 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     companyFullInfo['prevclosedate']=[now]*len(companyFullInfo)
     print('done')
     
-    if host=='local':
-        companyFullInfo.to_csv(companyUpdatedInfoFName, index=False)
-        companyFullInfo.to_csv(infoLogs+now+'.csv', index=False)
+#    if host=='local':
+#        companyFullInfo.to_csv(companyUpdatedInfoFName, index=False)
+#        companyFullInfo.to_csv(infoLogs+now+'.csv', index=False)
     
     updatePriceHist(df, companyFullInfo)
     

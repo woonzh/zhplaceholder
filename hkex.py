@@ -134,11 +134,11 @@ def sieveData(df):
     filters={
         'price':['>',0.1,'price'],
         'pe1':['>',1,'pe'],
-#        'pe2':['<',20,'pe'],
+        'pe2':['<',30,'pe'],
 #        'marketcap':['>',10*pow(10,8),'market_cap'],
 ##        'turnover':['>',5*pow(10,7),'turnover'],
-        'upside':['<',10,'upside'],
-        'downside':['>',40,'downside'],
+        'upside':['>',30,'upside'],
+        'downside':['<',30,'downside'],
         'percen_traded':['>',0,'percen_traded'],
         'suspended':['=','N','suspended']
             }
@@ -215,14 +215,14 @@ def findCompany(df, comName=None, code=None):
 #df=run()
 #a=updateBasic()
 
-df=analytics(download=False)
-dfClean=cleanData(df)
-dfEngine=dataEngineer(dfClean)
-dfEngineView=filterView(dfEngine)
-stats=getStats(dfEngine)
-###
-dfSieve=sieveData(dfEngine)
-dfView=filterView(dfSieve)
+#df=analytics(download=False)
+#dfClean=cleanData(df)
+#dfEngine=dataEngineer(dfClean)
+#dfEngineView=filterView(dfEngine)
+#stats=getStats(dfEngine)
+#
+#dfSieve=sieveData(dfEngine)
+#dfView=filterView(dfSieve)
 
 #comDf=findCompany(engineDf, comName='STANCHART')
 #

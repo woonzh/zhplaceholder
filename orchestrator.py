@@ -43,6 +43,9 @@ def runNasdaqFull(jobId=''):
     
 def runNasdaqDetailsUpdate(jobId=''):
     util.runFunc(actFunc=nasdaq.updateDetails)
+
+def runNasdaqBasicUpdate(jobId=''):
+    util.runFunc(actFunc=nasdaq.updateBasics)
     
 #def testFunc():
 #    r=10*3

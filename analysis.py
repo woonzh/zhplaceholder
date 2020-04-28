@@ -489,7 +489,7 @@ def processFinancialInfo(df):
     return store, summary
     
 def run():
-    pullFromDB=True
+    pullFromDB=False
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)
@@ -500,7 +500,7 @@ def run():
 #df,dfNew, dfMain, financial = run()
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
-##
+#
 #dfFilter=filterData(industry=[],df=dfNew)
 #dfCmp=cleanCols(dfFilter)
 #dfCmp.to_csv(cmpFile, index=False)
