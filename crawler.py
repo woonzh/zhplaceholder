@@ -72,7 +72,9 @@ class crawler:
             self.GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
             self.CHROMEDRIVER_PATH=os.environ.get('CHROMEDRIVER_PATH', None)
             self.useragentlist=['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36',\
-                                'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36']
+                                'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36',\
+                                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36',\
+                                'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36']
             self.useragent=self.useragentlist[int(userAgentNum)]
             self.chrome_options = webdriver.ChromeOptions()
             self.chrome_options.binary_location = self.GOOGLE_CHROME_BIN
