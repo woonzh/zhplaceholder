@@ -42,7 +42,7 @@ class crawler:
             'sector':'Sector', 
             'industry':'Industry',
             'pe_ratio':'P/E Ratio', 
-            'forward pe':'Forward P/E 1 Yr.',
+            'forward_pe':'Forward P/E 1 Yr.',
             'one_yr_tar':'1 Year Target',
             'eps':'Earnings Per Share(EPS)',
             'day_high_low':"Today's High/Low",
