@@ -52,8 +52,11 @@ def updateDetails(userAgentNum=0, local=False):
     print('nasdaq -%s'%(str(userAgentNum)))
     crawl=crawler(local=local,userAgentNum=userAgentNum)
     
-    df=crawl.getNasdaqDetails(url=symbolUrl,dbName=dbname)
-    crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=dbname, write='cloud')
+    success, df=crawl.getNasdaqDetails(url=symbolUrl,dbName=dbname)
+    if success:
+        crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=dbname, write='cloud')
+    else:
+        print('access denied')
     
     crawl.closeDriver()
     return df

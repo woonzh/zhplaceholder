@@ -105,6 +105,10 @@ class crawler:
         time.sleep(3)
         source=self.driver.page_source[:300]
         print(source)
+        if 'Access Denied' in source:
+            return False
+        else:
+            return True
         
 ###get nasdaq price
     
@@ -268,7 +272,9 @@ class crawler:
             row=df.loc[ind]
             symbol=row['symbol']
             try:
-                data=self.getSymbolData(symbol,url)
+                success, data=self.getSymbolData(symbol,url)
+                if success==False:
+                    return success, None
             except:
                 print('get data failed - %s'%(symbol))
                 data={}
@@ -287,7 +293,9 @@ class crawler:
         url=url%(symbol)
         
         try:
-            self.urlDirect(url)
+            success=self.urlDirect(url)
+            if success==False:
+                return success, None
             time.sleep(2)
             self.closeCookies()
             time.sleep(3)
