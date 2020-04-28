@@ -34,7 +34,7 @@ url='https://zhplaceholder.herokuapp.com/nasdaqupdatebasic'
 params={
     'useragent': 1
         }
-result=requests.get(url, params=params)
+#result=requests.get(url, params=params)
 
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #result=requests.get(url)
