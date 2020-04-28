@@ -81,7 +81,7 @@ class crawler:
             self.chrome_options.add_argument("--lang=en-us")
             self.chrome_options.add_argument('--disable-dev-shm-usage')
 #            self.chrome_options.add_argument("--start-maximized")
-            self.chrome_options.add_argument("--user-agent=%s"%(self.useragentlist[0]))
+            self.chrome_options.add_argument("--user-agent=%s"%(self.useragentlist[1]))
         
         self.startDriver()
             

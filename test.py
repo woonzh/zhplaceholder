@@ -30,8 +30,8 @@ import pandas as pd
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
 #url='https://zhplaceholder.herokuapp.com/nasdaqfull'
 #url='https://zhplaceholder.herokuapp.com/nasdaqupdatedetails'
-#url='https://zhplaceholder.herokuapp.com/nasdaqupdatebasic'
-#result=requests.get(url)
+url='https://zhplaceholder.herokuapp.com/nasdaqupdatebasic'
+result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #result=requests.get(url)
