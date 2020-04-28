@@ -229,7 +229,7 @@ class crawler:
         cont=True
         count=0
         
-        while cont==True and count <1:
+        while cont==True:
             try:
                 df=self.getNasdaqData(df)
                 nextBut=self.driver.find_element_by_xpath("""//li[@class="next"]//a""")
