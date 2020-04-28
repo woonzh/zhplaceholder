@@ -156,8 +156,8 @@ class crawler:
             
             
     def updateDetails(self, summary, detailDbName):
-#        df=db.extractTable(detailDbName)['result']
-        df=detailDbName
+        df=db.extractTable(detailDbName)['result']
+#        df=detailDbName
         
         oldPrice=[self.convertNums(x) for x in df['price']]
         newPrice=[self.convertNums(x) for x in summary['price']]
@@ -208,7 +208,7 @@ class crawler:
         
         return df
     
-    def getNasdaqPrice(self, dbname,url=None):
+    def getNasdaqPrice(self, dbname,url=None, addRemainCols=False):
         self.data={
             'symbol':[""".//th[@class="symbol-screener__cell symbol-screener__cell--ticker"]"""],
             'company':[""".//td[@class="symbol-screener__cell symbol-screener__cell--company"]"""],
@@ -245,34 +245,18 @@ class crawler:
             
             if count%self.dbBatch==0 and count > 1:
                 self.store(df,dbName=dbname)
+        
+        if addRemainCols:
+            for col in self.nasdaqDetailsHeaders:
+                df[col]=['']*len(df)
             
         return df
     
-    def getNasdaqDetails(self, url, df=None, readdbname=None, storedbname=None):
+    def getNasdaqDetails(self, url, df=None, dbName=None):
         if df is None:
-            df=db.extractTable(readdbname)['result']
+            df=db.extractTable(dbName)['result']
         else:
             df=df.copy(deep=True)
-        
-        self.nasdaqDetailsHeaders={
-            'market_cap':'Market Cap', 
-            'sector':'Sector', 
-            'industry':'Industry',
-            'pe_ratio':'P/E Ratio', 
-            'forward pe':'Forward P/E 1 Yr.',
-            'one_yr_tar':'1 Year Target',
-            'eps':'Earnings Per Share(EPS)',
-            'day_high_low':"Today's High/Low",
-            'div':"Annualized Dividend",
-            'yield':'Current Yield',
-            'ex_div_date':'Ex Dividend Date',
-            'div_pay_date':'Dividend Pay Date',
-            'fifty_day_vol':'50 Day Average Vol.',
-            'year_high_low':'52 Week High/Low',
-            'beta':'Beta'}
-        
-        for col in self.nasdaqDetailsHeaders:
-            df[col]=['']*len(df)
             
         indexes=list(df.index)
         
@@ -295,7 +279,7 @@ class crawler:
             self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
             
             if count%self.dbBatch==0 and count >1:
-                self.store(df,dbName=storedbname)
+                self.store(df,dbName=dbName)
         return df
     
     def getSymbolData(self, symbol, url):

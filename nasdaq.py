@@ -19,10 +19,14 @@ def run(userAgentNum=0, local=False):
     print('run nasdaq full')
     print('nasdaq -%s'%(str(userAgentNum)))
     crawl=crawler(local=local,userAgentNum=userAgentNum)
-    df=crawl.getNasdaqPrice(dbname=dbname,url=url)
-    crawl.store(df, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
-    df2=crawl.getNasdaqDetails(symbolUrl,df=df, dbname=detailDbname)
-    crawl.store(df2, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
+    
+    df=crawl.getNasdaqPrice(dbname=dbname,url=url,addRemainCols=True)
+    
+    if len(df)>10:
+        crawl.store(df, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
+        
+        df2=crawl.getNasdaqDetails(url=symbolUrl,dbName=dbname)
+        crawl.store(df2, fileLoc=nasdaqDetailsFile, dbName=dbname, write='cloud')
     
     crawl.closeDriver()
     return df
@@ -35,9 +39,8 @@ def updateBasics(userAgentNum=0, local=False):
     summary=crawl.getNasdaqPrice(dbname=dbname,url=url)
     
     if len(summary)>10:
+        df=crawl.updateDetails(summary, dbname)
         crawl.store(summary, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
-        df=crawl.updateDetails(summary, detailDbname)
-        crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
     else:
         df=summary
     
@@ -48,8 +51,9 @@ def updateDetails(userAgentNum=0, local=False):
     print('run nasdaq full')
     print('nasdaq -%s'%(str(userAgentNum)))
     crawl=crawler(local=local,userAgentNum=userAgentNum)
-    df=crawl.getNasdaqDetails(symbolUrl, readdbname=dbname,storedbname=detailDbname)
-    crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
+    
+    df=crawl.getNasdaqDetails(url=symbolUrl,dbName=dbname)
+    crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=dbname, write='cloud')
     
     crawl.closeDriver()
     return df
@@ -152,11 +156,11 @@ def getCompany(df, nameCol, nameExc):
     store=None
     for count, name in enumerate(df[nameCol]):
         name=name.lower()
-        nameExc=name.lower()
+        nameExc=nameExc.lower()
         
         if nameExc in name:
             if store is None:
-                store=df.loc[count]
+                store=df.loc[[count]]
             else:
                 store.loc[len(store)]=df.loc[count]
     
@@ -179,7 +183,7 @@ def analytics(download=True):
 
 #df=run(local=True)
 
-#summary,df=analytics(True)
+#summary,df=analytics(False)
 #dfClean=dataCleaning(df)
 #dfEngine=dataEngineering(dfClean)
 #dfFilter=sieveData(dfEngine, industryCol='industry', industries=['Computer Software: Prepackaged Software'])

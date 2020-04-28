@@ -26,7 +26,7 @@ import pandas as pd
 #        }
 #t=1
 #url='https://zhplaceholder.herokuapp.com/hkexWorker'
-url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
+#url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
 #url='https://zhplaceholder.herokuapp.com/nasdaqfull'
 #url='https://zhplaceholder.herokuapp.com/nasdaqupdatedetails'
@@ -35,12 +35,12 @@ url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #    'useragent': 2
 #        }
 #result=requests.get(url, params=params)
-result=requests.get(url)
+#result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #result=requests.get(url)
 
-#url='https://zhplaceholder.herokuapp.com/sgxUpdate'
+url='https://zhplaceholder.herokuapp.com/sgxUpdate'
 #params={
 #    'dragIndex':5,
 #    'sumTries':10
