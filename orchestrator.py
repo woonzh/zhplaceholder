@@ -38,11 +38,15 @@ def runHKEXUpdateDetails(dragIndex=None, sumTries=None,jobId=''):
 def runHKEXUpdateBasic(dragIndex=None, sumTries=None,jobId=''):  
     util.runFunc(actFunc=hkex.updateBasic)
     
-def runNasdaqFull(jobId=''):
-    util.runFunc(actFunc=nasdaq.run)
+def runNasdaqFull(userAgentNum=0):
+    print('orc -%s'%(str(userAgentNum)))
+    params=(userAgentNum)
+    util.runFunc(actFunc=nasdaq.run,actFuncParams=params)
     
-def runNasdaqDetailsUpdate(jobId=''):
-    util.runFunc(actFunc=nasdaq.updateDetails)
+def runNasdaqDetailsUpdate(userAgentNum=0):
+    print('orc -%s'%(str(userAgentNum)))
+    params=(userAgentNum)
+    util.runFunc(actFunc=nasdaq.updateDetails,actFuncParams=params)
 
 def runNasdaqBasicUpdate(userAgentNum=0):
     print('orc -%s'%(str(userAgentNum)))

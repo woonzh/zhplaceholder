@@ -7,7 +7,8 @@ import pandas as pd
 import dbConnector as db
 
 class crawler:
-    def __init__(self, local=False):
+    def __init__(self, local=False, userAgentNum=0):
+        print('crawler -%s'%(str(userAgentNum)))
         if local:
             self.version='windows'
             self.host='local' 
@@ -72,7 +73,7 @@ class crawler:
             self.CHROMEDRIVER_PATH=os.environ.get('CHROMEDRIVER_PATH', None)
             self.useragentlist=['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36',\
                                 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.157 Safari/537.36']
-            
+            self.useragent=self.useragentlist[userAgentNum]
             self.chrome_options = webdriver.ChromeOptions()
             self.chrome_options.binary_location = self.GOOGLE_CHROME_BIN
             self.chrome_options.add_argument('--headless')
@@ -81,7 +82,7 @@ class crawler:
             self.chrome_options.add_argument("--lang=en-us")
             self.chrome_options.add_argument('--disable-dev-shm-usage')
 #            self.chrome_options.add_argument("--start-maximized")
-            self.chrome_options.add_argument("--user-agent=%s"%(self.useragentlist[1]))
+            self.chrome_options.add_argument("--user-agent=%s"%(self.useragent))
         
         self.startDriver()
             

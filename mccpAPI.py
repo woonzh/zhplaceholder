@@ -171,7 +171,9 @@ def workerNasdaqFull():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('nasdaq full', orc.runNasdaqFull, None , intJobId)
+        userAgentNum = request.args.get("useragent", default=0)
+        print('api -%s'%(str(userAgentNum)))
+        result=orc.wc.queueFunc('nasdaq full', orc.runNasdaqFull, (userAgentNum) , intJobId)
         ret={
             'answer':result}
             
@@ -186,7 +188,9 @@ def workerNasdaqUpdateDetails():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('nasdaq update details', orc.runNasdaqDetailsUpdate, None , intJobId)
+        userAgentNum = request.args.get("useragent", default=0)
+        print('api -%s'%(str(userAgentNum)))
+        result=orc.wc.queueFunc('nasdaq update details', orc.runNasdaqDetailsUpdate, (userAgentNum) , intJobId)
         ret={
             'answer':result}
             

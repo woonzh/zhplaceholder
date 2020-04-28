@@ -31,7 +31,10 @@ import pandas as pd
 #url='https://zhplaceholder.herokuapp.com/nasdaqfull'
 #url='https://zhplaceholder.herokuapp.com/nasdaqupdatedetails'
 url='https://zhplaceholder.herokuapp.com/nasdaqupdatebasic'
-result=requests.get(url)
+params={
+    'useragent': 1
+        }
+result=requests.get(url, params=params)
 
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #result=requests.get(url)

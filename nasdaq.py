@@ -15,9 +15,10 @@ currencyCols=['price', 'one_yr_tar', 'eps', 'div','day_high','day_low','year_hig
 numericCols=['change', 'volume', 'market_cap', 'pe_ratio', 'forward_pe', 'fifty_day_vol', 'beta']
 percenCols=['percen_change', 'yield']
 
-def run(local=False):
+def run(userAgentNum=0, local=False):
     print('run nasdaq full')
-    crawl=crawler(local)
+    print('nasdaq -%s'%(str(userAgentNum)))
+    crawl=crawler(local=local,userAgentNum=userAgentNum)
     df=crawl.getNasdaqPrice(dbname=dbname,url=url)
     crawl.store(df, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
     df2=crawl.getNasdaqDetails(symbolUrl,df=df, dbname=detailDbname)
@@ -29,21 +30,22 @@ def run(local=False):
 def updateBasics(userAgentNum=0, local=False):
     print('run nasdaq update Basics')
     print('nasdaq -%s'%(str(userAgentNum)))
-#    crawl=crawler(local)
-#    
-#    summary=crawl.getNasdaqPrice(dbname=dbname,url=url)
-#    crawl.store(summary, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
-#    
-#    if len(summary)>10:
-#        df=crawl.updateDetails(summary, detailDbname)
-#        crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
-#    
-#    crawl.closeDriver()
-#    return df
+    crawl=crawler(local=local,userAgentNum=userAgentNum)
+    
+    summary=crawl.getNasdaqPrice(dbname=dbname,url=url)
+    crawl.store(summary, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
+    
+    if len(summary)>10:
+        df=crawl.updateDetails(summary, detailDbname)
+        crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
+    
+    crawl.closeDriver()
+    return df
 
-def updateDetails(local=False):
+def updateDetails(userAgentNum=0, local=False):
     print('run nasdaq full')
-    crawl=crawler(local)
+    print('nasdaq -%s'%(str(userAgentNum)))
+    crawl=crawler(local=local,userAgentNum=userAgentNum)
     df=crawl.getNasdaqDetails(symbolUrl, readdbname=dbname,storedbname=detailDbname)
     crawl.store(df, fileLoc=nasdaqDetailsFile, dbName=detailDbname, write='cloud')
     
