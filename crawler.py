@@ -304,7 +304,7 @@ class crawler:
         except:
             print(Exception)
             print('unable to get url')
-            return {}
+            return False, {}
         
         headers={}
         for itm in self.nasdaqDetailsHeaders:
@@ -354,7 +354,7 @@ class crawler:
         
         print(store)
         
-        return store
+        return success, store
         
 ##update price and highlows
     

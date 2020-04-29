@@ -273,13 +273,13 @@ def train(x,y):
 def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
     if filters is None:
         filters={
-            'peratio':['!=','nan'],
-            'industry':['!=',''],
-            'openprice':['>',1],
+            'peratio':['!=','nan',True],
+            'industry':['!=','',True],
+#            'openprice':['>',1,False],
 #            'net_profit_margin':['>', 10],
-            'volume traded %':['>', 0.0001],
+#            'volume traded %':['>', 0.0001,False],
 #            'p_nav':['<',1],
-            'type':['=','others']
+            'type':['=','reit',True],
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
 #            'operating_margin':['>',10],
@@ -287,7 +287,7 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
 #            'cash_percen':['>',0.05],
 #            'downside':['<',-0.4],
 #            'upside':['>',0.3],
-#            'dayVolume':['>',0]
+            'dayVolume':['>',0,True]
 #            'revenue':['>',100*pow(10,6)],
 #            'Accumulated Depreciation, Total growth':['<',1]
                 }
@@ -521,13 +521,13 @@ upsideFilter={
 #df,dfNew, dfMain, financial = run(False)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
-
+#
 #dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
 #dfDailyChangeCmp=cleanCols(dfDailyChange)
 #
 #dfUpside=filterData(filters=upsideFilter,df=dfNew)
 #dfUpsideCmp=cleanCols(dfUpside)
-
+#
 #dfFilter=filterData(industry=[],df=dfNew)
 #dfCmp=cleanCols(dfFilter)
 #dfCmp.to_csv(cmpFile, index=False)

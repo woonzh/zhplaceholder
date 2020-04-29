@@ -250,7 +250,7 @@ upside={
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
 
-#comDf=findCompany(dfEngine, comName='STANCHART')
+#dfCom=findCompany(dfEngine, comName='HEC PHARM')
 #
 #indDf=getIndustryCompany(dfEngine, industry='energy')
 #indDf2=filterView(indDf)
