@@ -137,8 +137,8 @@ def featuresEngineering(df, details):
     dayhighsplit=[x.split('-') if len(x.split('-'))>1 else ['0','0'] for x in high_low]
     df['dayhigh']=[float(replaceCurrency(x[0]).replace(',','').replace(' ','')) for x in dayhighsplit]
     df['daylow']=[float(replaceCurrency(x[1]).replace(',','').replace(' ','')) for x in dayhighsplit]
-    df['dayVolatility']=[(x-y)/z if (x!=0 and y!=0 and z!=0) else 0 for x,y,z in zip(df['dayhigh'], df['daylow'], price)]
-    
+    df['dayVolatility']=[round(100*(x-y)/z,2) if (x!=0 and y!=0 and z!=0) else 0 for x,y,z in zip(df['dayhigh'], df['daylow'], price)]
+    df['weightedDayVolatility']=[abs(x)-abs(y) for x,y in zip(df['dayVolatility'], df['percenchange'])]
     
     df['yearVolatility']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], df['yearlow'])]
     df['upside']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], price)]
@@ -383,9 +383,9 @@ def cleanCols(df):
               'sharesoutstanding', 'pricebookvalue', 'type', 'industry', 'enterprisevalue', \
               'assets', 'cash', 'capex', 'financial_info']
     
-    display=['names','openprice','upside','downside','dayVolatility','percenchange','revenue','div_val','marketcap','peratio',\
+    display=['names','openprice','upside','downside','dayVolatility','percenchange','weightedDayVolatility','volume traded %','revenue','div_val','marketcap','peratio',\
              'operating_margin','net_profit_margin','debt_assets_ratio','shortdebt_over_profit',\
-             'p_nav','profitMarginGrowth','cash_percen', 'volume traded %','dayVolume',\
+             'p_nav','profitMarginGrowth','cash_percen','dayVolume',\
              'Revenue growth', 'Operating Income growth', 'Net Income growth', 'Cash growth', \
              'Total Receivables, Net growth', 'Accumulated Depreciation, Total growth', \
              'Total Assets growth', 'Total Current Liabilities growth', \
@@ -534,10 +534,10 @@ upsideFilter={
 #df,dfNew, dfMain, financial = run(False)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
-##
+###
 #dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
 #dfDailyChangeCmp=cleanCols(dfDailyChange)
-#
+##
 #dfUpside=filterData(filters=upsideFilter,df=dfNew)
 #dfUpsideCmp=cleanCols(dfUpside)
 #

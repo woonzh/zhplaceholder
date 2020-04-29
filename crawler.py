@@ -35,6 +35,8 @@ class crawler:
             'yearhigh':'', 
             'yearlow':'',
             'volume':'',
+            'dayhigh':'',
+            'daylow':'',
             'suspended':""".//td[@class="code"]"""}
         
         self.nasdaqDetailsHeaders={
@@ -76,7 +78,9 @@ class crawler:
                                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.157 Safari/537.36',\
                                 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.90 Safari/537.36',\
                                 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36',\
-                                'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36']
+                                'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.90 Safari/537.36',\
+                                'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36',\
+                                'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.129 Safari/537.36']
             self.useragent=self.useragentlist[int(userAgentNum)]
             self.chrome_options = webdriver.ChromeOptions()
             self.chrome_options.binary_location = self.GOOGLE_CHROME_BIN
@@ -436,6 +440,8 @@ class crawler:
         lst['yearhigh']=self.driver.find_element_by_class_name("col_high52").text
         lst['yearlow']=self.driver.find_element_by_class_name("col_low52").text
         lst['volume']=self.driver.find_element_by_class_name('col_volume').text
+        lst['dayhigh']=self.driver.find_element_by_class_name('col_high').text
+        lst['daylow']=self.driver.find_element_by_class_name('col_low').text
         return lst
     
     def getHKEXDetails(self, df=None, dbname=None):

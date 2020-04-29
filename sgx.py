@@ -80,7 +80,8 @@ def extractData(df2):
     valTraded=driver.find_elements_by_xpath('//sgx-table-cell-number[@data-column-id="v"]')
     changeVal=driver.find_elements_by_xpath('//sgx-table-cell-number[@data-column-id="c"]')
     changePercen=driver.find_elements_by_xpath('//sgx-table-cell-number[@data-column-id="p"]')
-    
+    dayHigh=driver.find_elements_by_xpath('//sgx-table-cell-number[@data-column-id="h"]')
+    dayLow=driver.find_elements_by_xpath('//sgx-table-cell-number[@data-column-id="l"]')
     lst=vol
     
     df=pd.DataFrame()
@@ -90,6 +91,8 @@ def extractData(df2):
     df['changePercen']=retrieveText(changePercen)
     df['vol']=retrieveText(vol)
     df['valTraded']=retrieveText(valTraded)
+    df['day_high']=retrieveText(dayHigh)
+    df['day_low']=retrieveText(dayLow)
     df['address']=retrieveText(names, "href")
     df['update_date']=timec.getCurDate()
     
@@ -124,7 +127,7 @@ def crawlSummary():
     time.sleep(1)
     
     lst=[]
-    df=pd.DataFrame(columns=['names', 'last price', 'change','changePercen','vol', 'valTraded', 'address', 'update_date'])
+    df=pd.DataFrame(columns=['names', 'last price', 'change','changePercen','vol', 'valTraded', 'day_high','day_low','address', 'update_date'])
     
     df, df2 = extractData(df)
     lst.append(df2)
@@ -138,7 +141,7 @@ def crawlSummary():
     count=0
     
     try:
-        while cont==True:
+        while cont==True and count <1:
             count+=1
             print(count)
             
@@ -564,6 +567,8 @@ def updateRatios(companyInfo):
     new_year=[(str(x)+' - '+str(y)) if (x>0 and y>0) else'-' for x,y in zip(year_high,year_low)]
     companyInfo['yearhighlow']=new_year
     
+    
+    
     return companyInfo
     
 def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
@@ -590,7 +595,7 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     else:
         companyFullInfo=pd.read_csv(companyInfoFName)
         
-    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price','change','changePercen','vol', 'valTraded', 'update_date']], how='outer', left_on='names', right_on='names')
+    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price','change','changePercen','vol', 'valTraded', 'day_high','day_low','update_date']], how='outer', left_on='names', right_on='names')
     companyFullInfo=updateRatios(companyFullInfo)
     
     replace={
@@ -623,7 +628,9 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
 
 def closeDriver():
     driver.quit()
-    
+
+#df=crawlSummary()
+
 #df, companyFullInfo=updateCompanyInfo()
 #closeDriver()
 
