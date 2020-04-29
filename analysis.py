@@ -83,6 +83,12 @@ def dfCleaner(df, cleanCol='prevclosedate', exceptions=[]):
             
     return df, dfDel, dfNew, summary
 
+def replaceCurrency(itm):
+    currencies=['USD','HKD','JPY', 'AUD', 'CNY']
+    for cur in currencies:
+        itm=itm.replace(cur,'')
+    return itm
+
 def featuresEngineering(df, details):
     eps=df['normalizedeps']
     yearhighlow=df['yearhighlow']
@@ -103,6 +109,7 @@ def featuresEngineering(df, details):
     earningGrowth=df['eps_per_share_5_yr_growth']
     tradedVal=df['tradedval']
     tradedVol=df['tradedvol']
+    high_low=df['high_low']
     
 #    #aquirer multiple
     df['aquirer multiple']=[x/y if (x!=0 and y!=0) else 0 for x, y in zip(income, enterpriseVal) ]
@@ -127,7 +134,13 @@ def featuresEngineering(df, details):
     df['yearhigh']=[float(x[0].replace(',','').replace(' ','')) for x in yearhighsplit]
     df['yearlow']=[float(x[1].replace(',','').replace(' ','')) for x in yearhighsplit]
     
-    df['highlowvar']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], df['yearlow'])]
+    dayhighsplit=[x.split('-') if len(x.split('-'))>1 else ['0','0'] for x in high_low]
+    df['dayhigh']=[float(replaceCurrency(x[0]).replace(',','').replace(' ','')) for x in dayhighsplit]
+    df['daylow']=[float(replaceCurrency(x[1]).replace(',','').replace(' ','')) for x in dayhighsplit]
+    df['dayVolatility']=[(x-y)/z if (x!=0 and y!=0 and z!=0) else 0 for x,y,z in zip(df['dayhigh'], df['daylow'], price)]
+    
+    
+    df['yearVolatility']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], df['yearlow'])]
     df['upside']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], price)]
     df['downside']= [(y-x)/y if (x!=0 and y!=0) else 0 for x,y in zip(price, df['yearlow'])]
     
@@ -191,7 +204,7 @@ def cleanAndProcess(sumName=summaryFName, infoName=file, newFileName=newFile):
     else:
         df=infoName
     
-    dfMain, dfDel, dfCheck, summary=dfCleaner(df, exceptions=['names', 'prevclosedate', 'p_float', 'industry', 'financial_info', 'yearhighlow', 'highlow'])
+    dfMain, dfDel, dfCheck, summary=dfCleaner(df, exceptions=['names', 'prevclosedate', 'p_float', 'industry', 'financial_info', 'yearhighlow', 'high_low'])
     print('cleaned')
     dfNew=featuresEngineering(dfMain, details)
     
@@ -370,7 +383,7 @@ def cleanCols(df):
               'sharesoutstanding', 'pricebookvalue', 'type', 'industry', 'enterprisevalue', \
               'assets', 'cash', 'capex', 'financial_info']
     
-    display=['names','openprice','upside','downside','percenchange','revenue','div_val','marketcap','peratio',\
+    display=['names','openprice','upside','downside','dayVolatility','percenchange','revenue','div_val','marketcap','peratio',\
              'operating_margin','net_profit_margin','debt_assets_ratio','shortdebt_over_profit',\
              'p_nav','profitMarginGrowth','cash_percen', 'volume traded %','dayVolume',\
              'Revenue growth', 'Operating Income growth', 'Net Income growth', 'Cash growth', \
@@ -521,7 +534,7 @@ upsideFilter={
 #df,dfNew, dfMain, financial = run(False)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
-#
+##
 #dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
 #dfDailyChangeCmp=cleanCols(dfDailyChange)
 #
