@@ -141,7 +141,7 @@ def crawlSummary():
     count=0
     
     try:
-        while cont==True and count <1:
+        while cont==True:
             count+=1
             print(count)
             
