@@ -235,17 +235,17 @@ upside={
     'suspended':['=','N','suspended']
         }
 
-df=analytics(download=False)
-dfClean=cleanData(df)
-dfEngine=dataEngineer(dfClean)
-dfEngineView=filterView(dfEngine)
-stats=getStats(dfEngine)
-
-dfDayChange=sieveData(dfEngine,filters=dayChange)
-dfDayChangeView=filterView(dfDayChange)
-
-dfUpside=sieveData(dfEngine,filters=upside)
-dfUpsideView=filterView(dfUpside)
+#df=analytics(download=False)
+#dfClean=cleanData(df)
+#dfEngine=dataEngineer(dfClean)
+#dfEngineView=filterView(dfEngine)
+#stats=getStats(dfEngine)
+#
+#dfDayChange=sieveData(dfEngine,filters=dayChange)
+#dfDayChangeView=filterView(dfDayChange)
+#
+#dfUpside=sieveData(dfEngine,filters=upside)
+#dfUpsideView=filterView(dfUpside)
 
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
