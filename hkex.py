@@ -16,7 +16,7 @@ hkSum='data/HKsummary.csv'
 hkSumEngine='data/HKsummaryEngineered.csv'
 dbName='hksummary'
 
-currencyCols=['price','yearhigh', 'yearlow']
+currencyCols=['price','yearhigh', 'yearlow', 'dayhigh', 'daylow']
 numericCols=['turnover','market_cap','pe','dividend', 'volume']
 percenCols=['percen_traded', 'downside','upside']
 comDict=hkexDict.companyTag
@@ -33,8 +33,7 @@ def run():
     df=crawl.getHKEXDetails(df=df, dbname=dbName)
     crawl.store(df, hkSum, dbName)
     
-    crawl.closeDriver()
-    
+    crawl.closeDriver()   
     return df
 
 def updateDetails():
@@ -69,6 +68,11 @@ def dataEngineer(df):
       else 0 for x,y in zip(df['price'],df['yearlow'])]
     df['upside']=[(y-x)/x if (x!=0 and y!=0 and x!='nan' and y!='nan') \
       else 0 for x,y in zip(df['price'],df['yearhigh'])]
+    
+    df['prev_price']=[x-y if x!=0 else 0 for x,y in zip(df['price'],df['day_priceinc'])]
+    
+    df['day_volatility']=[100*((x-y)/y) if (x!=0 and y!=0) else 0 for x,y in zip(df['dayhigh'],df['daylow'])]
+    df['day_volatility_weighted']=[abs(x)-abs(y) for x, y in zip(df['day_volatility'],df['day_perceninc'])]
     
     for col in percenCols:
         df[col]=[round(x*100,5) if x>0 else 0 for x in df[col]]
@@ -200,7 +204,7 @@ def getIndustryCompany(df, industry='bank'):
     return df[boolCheck]
 
 def filterView(df):
-    cols_to_show=['com_name', 'price', 'day_priceinc', 'day_perceninc', 'downside', 'upside',\
+    cols_to_show=['com_name', 'price', 'day_volatility', 'day_volatility_weighted','day_perceninc','downside', 'upside',\
                   'turnover', 'market_cap', 'pe', 'dividend', 'percen_traded']
     
     return df[cols_to_show]
@@ -219,7 +223,7 @@ dayChange={
     'price':['>',1,'price'],
     'pe1':['>',1,'pe'],
     'pe2':['<',50,'pe'],
-    'day_perceninc':['<',-3,'day_perceninc'],
+#    'day_perceninc':['<',-3,'day_perceninc'],
 #    'day_perceninc2':['>',3,'day_perceninc'],
     'percen_traded':['>',0,'percen_traded'],
     'suspended':['=','N','suspended']
@@ -240,13 +244,13 @@ upside={
 #dfEngine=dataEngineer(dfClean)
 #dfEngineView=filterView(dfEngine)
 #stats=getStats(dfEngine)
-#
+##
 #dfDayChange=sieveData(dfEngine,filters=dayChange)
 #dfDayChangeView=filterView(dfDayChange)
-#
+##
 #dfUpside=sieveData(dfEngine,filters=upside)
 #dfUpsideView=filterView(dfUpside)
-
+#
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
 

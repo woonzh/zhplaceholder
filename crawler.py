@@ -21,7 +21,7 @@ class crawler:
         self.timec=util.timeClass()
         self.timec.startTimer()
         self.dateStr=self.timec.getCurDate(cloud=self.cloud)
-        self.dbBatch=50
+        self.dbBatch=20
         
         self.subClassNames={
             'code':""".//td[@class="code"]""",
@@ -110,7 +110,8 @@ class crawler:
         self.driver.get(url)
         time.sleep(3)
         source=self.driver.page_source[:300]
-        print(source)
+        if self.host=='cloud':
+            print(source)
         if 'Access Denied' in source:
             return False
         else:
@@ -268,6 +269,8 @@ class crawler:
         else:
             df=df.copy(deep=True)
             
+        df=df.reset_index(drop=True)
+        
         indexes=list(df.index)
         
 #        indexes=[0,1,2]
@@ -276,7 +279,7 @@ class crawler:
         
         for count, ind in enumerate(indexes):
             row=df.loc[ind]
-            symbol=row['symbol']
+            symbol=row['symbol'].lower()
             try:
                 success, data=self.getSymbolData(symbol,url)
                 if success==False:
@@ -287,9 +290,9 @@ class crawler:
             for itm in data:
                 row[itm]=data[itm]
             
-#            print(row)
+            print(row)
             df.loc[ind]=list(row)
-            self.timec.getTimeSplit('%s-%s data'%(str(count),symbol))
+            self.timec.getTimeSplit('%s-%s data'%(str(ind),symbol))
             
             if count%self.dbBatch==0 and count >1:
                 self.store(df,dbName=dbName)

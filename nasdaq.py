@@ -117,7 +117,7 @@ def cleanView(df):
           'upside', 'downside', 'dayVolatility','day_percen_traded','fifty_day_percen_traded', 'sector','industry']
     return df[cols]
 
-def sieveData(df, industryCol=None, industries=[]):
+def sieveData(df, filters=None, industryCol=None, industries=[]):
     nonullcols=['price','volume']
     df=df.copy(deep=True)
     
@@ -135,13 +135,14 @@ def sieveData(df, industryCol=None, industries=[]):
             if keep==False:
                 df.drop(ind,axis=0,inplace=True)
                 
-    filters={
-        'price':['>',1,'price'],
-        'pe_ratio':['<',40,'pe_ratio'],
-        'day_percen_traded':['>',0,'day_percen_traded'],
-        'upside':['>',30,'upside']
-        
-            }
+    if filters is None:            
+        filters={
+            'price':['>',1,'price'],
+            'pe_ratio':['<',40,'pe_ratio'],
+            'day_percen_traded':['>',0,'day_percen_traded'],
+            'upside':['>',30,'upside']
+            
+                }
         
     for i in filters:
         if filters[i][0]=='>':
@@ -171,30 +172,54 @@ def getCompany(df, nameCol, nameExc):
 
 def analytics(download=True):
     if download:
-        summary=db.extractTable(dbname)['result']
-        df=db.extractTable(detailDbname)['result']
-        summary.to_csv(nasdaqFile, index=False)
-        df.to_csv(nasdaqDetailsFile, index=False)
+        df=db.extractTable(dbname)['result']
+        df.to_csv(nasdaqFile, index=False)
         
-    return summary,df
-        
-    summary=pd.read_csv(nasdaqFile)
     df=pd.read_csv(nasdaqDetailsFile)
     
-    return summary,df
+    return df
 
+#df=analytics(False)
+#a=[36,37,38]
+#df=df.loc[a]
+#
 #crawl=crawler(local=True)
+#data=crawl.getNasdaqDetails(symbolUrl,df=df)
+#crawl.closeDriver()
 #crawl.urlDirect()
 #df=run(local=True)
 
-#summary,df=analytics(False)
-
+#df=analytics(False)
+#
 #dfClean=dataCleaning(df)
 #dfEngine=dataEngineering(dfClean)
-#dfFilter=sieveData(dfEngine, industryCol='industry', industries=['Computer Software: Prepackaged Software'])
-#dfView=cleanView(dfFilter)
-
-#dfCmp=getCompany(dfEngine,'company', 'exxon')
-#
 #breakdownIndustry=extractIndustries(df,'industry')
 #breakdownSector=extractIndustries(df,'sector')
+#
+#dayChange={
+#    'price':['>',1,'price'],
+#    'pe_ratio1':['>',2,'pe_ratio'],
+#    'pe_ratio2':['<',40,'pe_ratio'],
+#    'day_percen_traded':['>',0,'day_percen_traded'],
+#    'upside':['>',30,'upside']
+#        }
+#
+#upside={
+#    'price':['>',1,'price'],
+#    'pe_ratio1':['>',2,'pe_ratio'],
+#    'pe_ratio2':['<',40,'pe_ratio'],
+#    'day_percen_traded':['>',0,'day_percen_traded'],
+#    'upside':['>',30,'upside']
+#        }
+#
+#dfDayVol=sieveData(dfEngine)
+#dfDayVolView=cleanView(dfDayVol)
+#
+#dfUpside=sieveData(dfEngine)
+#dfUpsideView=cleanView(dfUpside)
+#
+#
+#dfFilter=sieveData(dfEngine, industryCol='industry', industries=['Computer Software: Prepackaged Software'])
+#dfView=cleanView(dfFilter)
+#
+#dfCmp=getCompany(dfEngine,'company', 'standard')
