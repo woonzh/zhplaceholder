@@ -179,37 +179,35 @@ def analytics(download=True):
     
     return df
 
-#df=analytics(False)
-##
-#dfClean=dataCleaning(df)
-#dfEngine=dataEngineering(dfClean)
-#breakdownIndustry=extractIndustries(df,'industry')
-#breakdownSector=extractIndustries(df,'sector')
+df=analytics(False)
+dfClean=dataCleaning(df)
+dfEngine=dataEngineering(dfClean)
+breakdownIndustry=extractIndustries(df,'industry')
+breakdownSector=extractIndustries(df,'sector')
 #
-#dayChange={
-#    'price':['>',1,'price'],
-#    'pe_ratio1':['>',2,'pe_ratio'],
+dayChange={
+    'price':['>',1,'price'],
+    'pe_ratio1':['>',2,'pe_ratio'],
+    'pe_ratio2':['<',40,'pe_ratio'],
+    'day_percen_traded':['>',0,'day_percen_traded'],
+    'upside':['>',30,'upside']
+        }
+
+upside={
+    'price':['>',1,'price'],
+    'pe_ratio1':['>',2,'pe_ratio'],
 #    'pe_ratio2':['<',40,'pe_ratio'],
-#    'day_percen_traded':['>',0,'day_percen_traded'],
+    'day_percen_traded':['>',0,'day_percen_traded']
 #    'upside':['>',30,'upside']
-#        }
-#
-#upside={
-#    'price':['>',1,'price'],
-#    'pe_ratio1':['>',2,'pe_ratio'],
-#    'pe_ratio2':['<',40,'pe_ratio'],
-#    'day_percen_traded':['>',0,'day_percen_traded'],
-#    'upside':['>',30,'upside']
-#        }
-#
-#dfDayVol=sieveData(dfEngine)
+        }
+
+#dfDayVol=sieveData(dfEngine,filters=dayChange)
 #dfDayVolView=cleanView(dfDayVol)
 #
-#dfUpside=sieveData(dfEngine)
+#dfUpside=sieveData(dfEngine, filters=upside)
 #dfUpsideView=cleanView(dfUpside)
-#
-#
-#dfFilter=sieveData(dfEngine, industryCol='industry', industries=['Computer Software: Prepackaged Software'])
+##
+#dfFilter=sieveData(dfEngine)
 #dfView=cleanView(dfFilter)
 #
 #dfCmp=getCompany(dfEngine,'company', 'standard')

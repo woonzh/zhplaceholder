@@ -213,15 +213,20 @@ class crawler:
         time.sleep(1)        
         self.closeCookies()
         
+        ele=self.driver.find_element_by_xpath("""//div[@class="featured-symbols__header"]""")
         top=self.driver.find_element_by_xpath("""//span[@class="symbol-screener__results-count"]""")
-        self.actions.move_to_element(top).perform()
+        
+        self.actions.move_to_element(ele).perform()
         time.sleep(2)
         
-        ele=self.driver.find_element_by_xpath("""//div[@class="featured-symbols__header"]""")
+        self.actions.move_to_element(top).perform()
+        time.sleep(3)
+        
         self.actions.move_to_element(ele).perform()
         time.sleep(2)
         
         rows=self.driver.find_elements_by_xpath("""//tr[@class="symbol-screener__row"]""")
+        print('rows found-%s'%(len(rows)))
         for row in rows:
             lst=[]
             for ind in self.data:

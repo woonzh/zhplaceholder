@@ -28,9 +28,9 @@ import pandas as pd
 #url='https://zhplaceholder.herokuapp.com/hkexWorker'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
-url='https://zhplaceholder.herokuapp.com/nasdaqfull'
+#url='https://zhplaceholder.herokuapp.com/nasdaqfull'
 #url='https://zhplaceholder.herokuapp.com/nasdaqupdatedetails'
-#url='https://zhplaceholder.herokuapp.com/nasdaqupdatebasic'
+url='https://zhplaceholder.herokuapp.com/nasdaqupdatebasic'
 params={
     'useragent': 0
         }
