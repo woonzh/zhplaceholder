@@ -18,6 +18,7 @@ import scipy.cluster.hierarchy as spc
 import dbConnector as db
 import statistics
 import json
+from logger import logger
 
 file='data/companyInfo.csv'
 newFile='data/companyInfo(cleaned).csv'
@@ -30,6 +31,7 @@ pca = PCA(n_components=3,#len(list(dfProcess)),
          svd_solver = 'auto'
          )
 clf = LocalOutlierFactor(contamination=0.3)
+log=logger()
 
 def replace(string, old, new):
     string.replace(old, new)
@@ -515,6 +517,18 @@ def processFinancialInfo(df):
             summary.loc[len(summary)]=[names[count]]+[0]*(len(list(summary))-1)
     
     return store, summary
+
+def runLogger(df):
+    store=log.update('sgx',df, 'names','names')
+    store=log.calStats()
+    log.save()
+    
+    table=log.compileTable('sgx')
+    
+    df=pd.merge(df, table, how='outer', left_on='names', right_on='company')
+    df.drop(['symbol','company'],axis=1, inplace=True)
+    
+    return df, store, table
     
 def run(pullFromDB=False):
     if pullFromDB:
@@ -547,6 +561,7 @@ upsideFilter={
         }
 
 #df,dfNew, dfMain, financial = run(False)
+#dfNew, store, table=runLogger(dfNew)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
 ####

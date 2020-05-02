@@ -147,45 +147,65 @@ class crawler:
             
         return currency
     
-    def updateCol(self, ratio, colLst, suffix):
-        newColLst=[]
-        
-        for count, itm in enumerate(colLst):
-            try:
-                ratioVal=ratio[count]
-                if ratioVal!=0:
-                    newItm=round(itm*ratio[count],2)
-                else:
-                    newItm=0
-            except:
-                newItm=0
+    def updateCol(self, ratio, num, suffix):
+        if ratio!=0:
+            num=round(num*ratio,2)
+        else:
+            num=0
                 
-            newItm=str(newItm)+suffix
-            newColLst.append(newItm)
+        num=str(num)+suffix
         
-        return newColLst
+        return num
             
             
-    def updateDetails(self, summary, detailDbName):
-        df=db.extractTable(detailDbName)['result']
-#        df=detailDbName
+    def updateDetails(self, summary, detailDbName, df=None):
         
-        oldPrice=[self.convertNums(x) for x in df['price']]
-        newPrice=[self.convertNums(x) for x in summary['price']]
+        if df is None:
+            df=db.extractTable(detailDbName)['result']
+        else:
+            df=df.copy(deep=True)
         
-        ratio=[x/y if (x!=0 and y!=0) else 0 for x,y in zip(newPrice, oldPrice)]
-        
-        cols_to_update={
-            'pe_ratio':[ratio,''],
-            'forward_pe':[ratio,''],
-            'yield':[[1/x if x!=0 else 0 for x in ratio],'%']}
-        
-        for col in cols_to_update:
-            colLst=[self.convertNums(x) for x in df[col]]
-            df[col]=self.updateCol(cols_to_update[col][0],colLst,cols_to_update[col][1])
-        
-        for col in list(summary):
-            df[col]=summary[col]
+        for ind in list(summary.index):
+            row=summary.loc[ind]
+            symbol=row['symbol']
+            oldRow=df[df['symbol']==symbol]
+#            print(oldRow.values)
+            if len(oldRow)>0:
+                oldRowInd=list(oldRow.index)[0]
+                
+                oldPrice=self.convertNums(list(oldRow['price'])[0])
+                newPrice=self.convertNums(row['price'])
+                print('%s-%s'%(oldPrice, newPrice))
+                
+                if oldPrice!=0 and newPrice!=0:
+                    ratio=newPrice/oldPrice
+                    reverse_ratio=oldPrice/newPrice
+                else:
+                    ratio=0
+                    reverse_ratio=0
+                    
+                cols_to_update={
+                    'pe_ratio':[ratio,''],
+                    'forward_pe':[ratio,''],
+                    'yield':[reverse_ratio,'%']}
+                
+                for col in cols_to_update:
+                    ratio=cols_to_update[col][0]
+                    oldVal=self.convertNums(list(oldRow[col])[0])
+                    print('%s-%s'%(ratio,oldVal))
+                    newval=self.updateCol(ratio,oldVal,cols_to_update[col][1])
+                    oldRow[col]=newval
+#                print(oldRow.values)
+                for col in list(row.index):
+                    oldRow[col]=row[col]
+                df.loc[oldRowInd]=oldRow.values.tolist()[0]
+            else:
+                newInd=len(df)
+                df.loc[newInd]=['']*len(list(df))
+                newRow=df.loc[newInd]
+                for col in list(row.index):
+                    newRow[col]=row[col]
+                df.loc[newInd]=list(newRow)
         
         return df
     
@@ -193,9 +213,13 @@ class crawler:
         time.sleep(1)        
         self.closeCookies()
         
+        top=self.driver.find_element_by_xpath("""//span[@class="symbol-screener__results-count"]""")
+        self.actions.move_to_element(top).perform()
+        time.sleep(2)
+        
         ele=self.driver.find_element_by_xpath("""//div[@class="featured-symbols__header"]""")
         self.actions.move_to_element(ele).perform()
-        time.sleep(1)
+        time.sleep(2)
         
         rows=self.driver.find_elements_by_xpath("""//tr[@class="symbol-screener__row"]""")
         for row in rows:
@@ -219,7 +243,7 @@ class crawler:
         
         return df
     
-    def getNasdaqPrice(self, dbname,url=None, addRemainCols=False):
+    def getNasdaqPrice(self, dbname=None,url=None, addRemainCols=False):
         self.data={
             'symbol':[""".//th[@class="symbol-screener__cell symbol-screener__cell--ticker"]"""],
             'company':[""".//td[@class="symbol-screener__cell symbol-screener__cell--company"]"""],
@@ -254,8 +278,9 @@ class crawler:
             count+=1
             self.timec.getTimeSplit('%s-%s data'%(str(count),len(df)))
             
-            if count%self.dbBatch==0 and count > 1:
-                self.store(df,dbName=dbname)
+            if dbname is not None:
+                if count%self.dbBatch==0 and count > 1:
+                    self.store(df,dbName=dbname)
         
         if addRemainCols:
             for col in self.nasdaqDetailsHeaders:

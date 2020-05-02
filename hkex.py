@@ -225,15 +225,12 @@ def findCompany(df, comName=None, code=None):
     return df
 
 def runLogger(df):
-#    store=log.update('hkex',dfEngine, 'code','com_name')
-#    log.save()
-#    store=log.calStats()
-#    log.save()
-#    tables=None
-    store=None
-    tables=log.compileTable()
+    store=log.update('hkex',df, 'code','com_name')
+    store=log.calStats()
+    log.save()
+    table=log.compileTable('hkex')
     
-    return store, tables
+    return store,table
 
 #df=run()
     
@@ -263,8 +260,6 @@ upside={
 #dfEngineView=filterView(dfEngine)
 #stats=getStats(dfEngine)
 #
-#store, tables=runLogger(dfEngine)
-###
 #dfDayChange=sieveData(dfEngine,filters=dayChange)
 #dfDayChangeView=filterView(dfDayChange)
 ##
@@ -280,6 +275,7 @@ upside={
 #indDf2=filterView(indDf)
 #comDf=engineDf[engineDf['com_name']=='ICBC']
 
+#store,table=runLogger(dfEngine)
 
 
 

@@ -7,19 +7,24 @@ class logger:
     def __init__(self):
         self.storeLoc='store/store.json'
         self.backUpLoc='store/backup/%s.json'
+        self.tables={}
         self.reference={
             'sgx':{
                 'metrics':{
-                    'price':'price',
+                    'openprice':'price',
                     'upside':'upside',
-                    'downside':'downside'
+                    'downside':'downside',
+                    'dayVolatility':'day_volatility',
+                    'weightedDayVolatility':'day_volatility_weighted'
                         }
                     },
             'hkex':{
                 'metrics':{
                     'price':'price',
                     'upside':'upside',
-                    'downside':'downside'
+                    'downside':'downside',
+                    'day_volatility':'day_volatility',
+                    'day_volatility_weighted':'day_volatility_weighted'
                         }
                     },
             'nasdaq':{
@@ -29,7 +34,7 @@ class logger:
                         }
                     }
                 }
-        self.stats=['average', '5_day_avg', '30_day_avg']
+        self.stats=['average']#, '5_day_avg', '30_day_avg']
         self.load()
         self.timec=util.timeClass()
         self.curDate=self.timec.getCurDateNumeric()
@@ -45,12 +50,19 @@ class logger:
                     }
                 
     def save(self):
-        with open(self.storeLoc,'w') as wfile:
-            json.dump(self.store, wfile)
-            
-        backupFile=self.backUpLoc%(self.curDate)
-        with open(backupFile,'w') as wfile:
-            json.dump(self.store, wfile)
+        wfile=open(self.storeLoc,'w')
+        wfile.write(json.dumps(self.store))
+        wfile.close()
+#        with open(self.storeLoc,'w') as wfile:
+#            wfile.write(json.dumps(self.store))
+        
+        backupFile=self.backUpLoc%(self.curDate)        
+        jfile=open(backupFile,'w')
+        jfile.write(json.dumps(self.store))
+        jfile.close()
+#        backupFile=self.backUpLoc%(self.curDate)
+#        with open(backupFile,'w') as jfile:
+#            jfile.write(json.dumps(self.store))
     
     def nonzerocheck(self,lst):
         count=0
@@ -77,35 +89,35 @@ class logger:
             self.store[xchange]=storexchange
         return self.store
     
-    def compileTable(self):
-        tables={}
-        for xchange in self.store:
-            if len(self.store[xchange])>0:
-                cols=['symbol','company']
-                for metric in self.reference[xchange]['metrics']:
-                    cols+=[metric+'_'+x for x in self.stats]
-                df=pd.DataFrame(columns=cols)
-                df.loc[0]=['sample']+(['']*(len(list(df))-1))
-#                print(df)
-                
-                storexchange=self.store[xchange]
-                for code in storexchange:
-                    storecode=storexchange[code]['metrics']
-                    loc=df[df['symbol']=='sample']
-                    loc['symbol']=code
-                    loc['company']=storexchange[code]['company']
-                    for metric in storecode:
-                        storemetric=storecode[metric]
-                        stats=storemetric['stats']
-                        for stat in stats:
+    def compileTable(self, xchange):
+        self.timec.startTimer()
+        if len(self.store[xchange])>0:
+            cols=['symbol','company']
+            for metric in self.reference[xchange]['metrics']:
+                cols+=[self.reference[xchange]['metrics'][metric]+'_'+x for x in self.stats]
+            df=pd.DataFrame(columns=cols)
+            df.loc[0]=['']*len(list(df))
+#            print(df)
+            
+            storexchange=self.store[xchange]
+            for code in storexchange:
+                storecode=storexchange[code]['metrics']
+                loc=df.loc[0]
+                loc['symbol']=code
+                loc['company']=storexchange[code]['company']
+                for metric in storecode:
+                    storemetric=storecode[metric]
+                    stats=storemetric['stats']
+                    for stat in stats:
+                        if stat in self.stats:
                             loc[metric+'_'+stat]=stats[stat]
 #                    print(loc)
-                    df.loc[len(df)]=list(loc)
-                    if len(df)%10==0:
-                        print(len(df))
-                tables[xchange]=df
-        self.tables=tables
-        return tables
+                df.loc[len(df)]=list(loc)
+#                    if len(df)%100==0:
+#                        self.timec.getTimeSplit(str(len(df)))
+        self.tables[xchange]=df
+        self.timec.stopTime()
+        return df
                         
     
     def update(self, exchange, df, symbolCol, companyCol):
@@ -120,6 +132,7 @@ class logger:
             try:
                 storeSymbol=store[symbol]
                 storeSymbol['company']=company
+                storeSymbol=store[symbol]['metrics']
             except:
                 store[symbol]={
                     'company':company,

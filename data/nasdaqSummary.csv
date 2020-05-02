@@ -1,261 +1,381 @@
 symbol,company,price,change,percen_change,volume,date_updated,market_cap,sector,industry,pe_ratio,forward_pe,one_yr_tar,eps,day_high_low,div,yield,ex_div_date,div_pay_date,fifty_day_vol,year_high_low,beta
-SSNLF,ssnlf,--,--,--,--,01/05/2020,,,,,,,,,,,,,,,
-MSFT,Microsoft Corporation Common Stock,$176.25,-2.96,1.65%,"173,108",01/05/2020,"1,363,079,684,662",Technology,Computer Software: Prepackaged Software,29.87,32.29,$196.50,$6.00,$180.40/$176.23,$2.04,1.15%,"May 20, 2020","Jun 11, 2020",,$190.70/$119.01,1
-AAPL,Apple Inc. Common Stock,$287.02,-6.78,2.31%,"280,765",01/05/2020,"1,285,516,024,000",Technology,Computer Manufacturing,23.04,24.63,$315.00,$12.75,$294.53/$288.35,$3.08,1.07%,"Feb 7, 2020","Feb 13, 2020",,$327.85/$170.27,1
-AMZN,"Amazon.com, Inc. Common Stock",$2364.15,-109.85,4.44%,"76,419",01/05/2020,"1,233,350,906,902",Consumer Services,Catalog/Specialty Distribution,118.2,88.26,"$2,450.00",$20.93,"$2,475.00/$2,396.01",N/A,N/A,N/A,N/A,,"$2,475.00/$1,626.03",1
-GOOGL,Alphabet Inc. Class A Common Stock,$1324.05,-22.65,1.68%,970,01/05/2020,"921,105,982,569",Technology,"Computer Software: Programming, Data Processing",27.18,33.06,"$1,475.00",$49.55,"$1,350.00/$1,321.50",N/A,N/A,N/A,N/A,,"$1,530.74/$1,008.87",1
-FB,"Facebook, Inc. Class A Common Stock",$201.56,-3.15,1.54%,"99,665",01/05/2020,"583,583,849,343",Technology,"Computer Software: Programming, Data Processing",28.04,28.43,$230.00,$7.30,$209.69/$201.57,N/A,N/A,N/A,N/A,,$224.20/$137.10,1
-BABA,Alibaba Group Holding Limited American Depositary Shares each representing eight Ordinary share,$195.45,-7.22,3.56%,"140,380",01/05/2020,"543,707,477,098",Miscellaneous,Business Services,21.79,34.47,$250.00,$9.30,$206.70/$199.29,N/A,N/A,N/A,N/A,,$231.14/$147.95,1
-TCEHY,Tencent Holdings Ltd. ADR,$52.62,-1.43,2.65%,"3,097,779",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$53.97/$52.35,N/A,N/A,N/A,N/A,,N/A,
-BRK/A,Berkshire Hathaway Inc.,$214748.3647,-70000.6353,24.58%,486,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,"$214,748.36/$214,748.36",N/A,N/A,N/A,N/A,,N/A,
-BRK/B,Berkshire Hathaway Inc.,$184.58,-2.78,1.48%,"6,067",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$189.87/$186.71,N/A,N/A,N/A,N/A,,N/A,
-V,Visa Inc.,$175.00,-3.72,2.08%,"54,712",01/05/2020,"396,024,613,569",Miscellaneous,Business Services,32.2,34.04,$190.00,$5.55,$181.83/$177.66,$1.20,0.66%,"May 13, 2020","Jun 2, 2020",,$214.17/$133.93,1
-JNJ,Johnson & Johnson Common Stock,$149.10,-0.94,0.63%,"86,041",01/05/2020,"395,558,291,440",Health Care,Major Pharmaceuticals,19.85,19.54,$165.00,$7.56,$150.43/$147.16,$4.04,2.53%,"May 22, 2020","Jun 9, 2020",,$157.00/$109.16,1
-WMT,Walmart Inc. Common Stock,$120.99,-0.56,0.46%,"13,150",01/05/2020,"344,436,466,188",Consumer Services,Department/Specialty Retail Stores,23.42,23.83,$133.50,$5.19,$123.44/$121.04,$2.16,1.75%,"May 7, 2020","Jun 1, 2020",,$133.38/$98.85,1
-NSRGY,Nestle SA ADR (Sponsored) Reg Shs Ser B,$105.10,-0.41,0.39%,"1,533,744",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$106.84/$104.70,N/A,N/A,N/A,N/A,,N/A,
-NSRGF,Nestle S.A Reg Ord,$104.80,-1.075,1.02%,"307,642",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$107.05/$104.20,N/A,N/A,N/A,N/A,,N/A,
-RHHVF,Roche Holding Div Rts,$345.22,-3.05,0.88%,"21,473",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$352.45/$345.22,N/A,N/A,N/A,N/A,,N/A,
-RHHBY,Roche Holding Ltd ADR (Sponsored),$43.47,-0.31,0.71%,"6,258,019",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$43.95/$43.27,N/A,N/A,N/A,N/A,,N/A,
-JPM,JP Morgan Chase & Co. Common Stock,$93.10,-2.66,2.78%,"57,251",01/05/2020,"291,736,390,302",Finance,Major Banks,10.82,18.70,$101.00,$8.85,$96.84/$94.55,$3.60,3.68%,"Apr 3, 2020","Apr 30, 2020",,$141.10/$76.91,1
-PG,Procter & Gamble Company (The) Common Stock,$116.70,-1.17,0.99%,"1,059",01/05/2020,"291,803,994,794",Basic Industries,Package Goods/Cosmetics,66.59,23.81,$133.00,$1.77,$118.28/$115.66,$3.163,2.7%,"Apr 23, 2020","May 15, 2020",,$128.09/$94.34,1
-UNH,UnitedHealth Group Incorporated Common Stock (DE),$287.44,-5.03,1.72%,299,01/05/2020,"277,093,727,845",Health Care,Medical Specialities,20.47,17.99,$322.50,$14.29,$295.00/$285.52,$4.32,1.5%,"Mar 13, 2020","Mar 24, 2020",,$306.71/$187.72,1
-MA,Mastercard Incorporated Common Stock,$269.00,-5.97,2.17%,"5,446",01/05/2020,"276,374,811,831",Miscellaneous,Business Services,35.16,38.67,$300.00,$7.82,$281.63/$273.41,$1.60,0.56%,"Apr 8, 2020","May 8, 2020",,$347.25/$199.99,1
-TSM,Taiwan Semiconductor Manufacturing Company Ltd.,$52.60,-0.53,1.00%,"1,868",01/05/2020,"275,536,222,715",Technology,Semiconductors,21.17,19.04,$57.00,$2.51,$54.41/$52.96,$1.314,2.42%,"Jun 18, 2020","Jul 16, 2020",,$60.64/$37.18,1
-INTC,Intel Corporation Common Stock,$58.91,-1.07,1.78%,"20,543",01/05/2020,"253,955,320,000",Technology,Semiconductors,11.62,12.44,$60.00,$5.16,$61.54/$59.75,$1.32,2.14%,"May 6, 2020","Jun 1, 2020",,$69.29/$42.86,1
-IDCBF,Industrial & Coml Bk H Sh,$0.6932,-0.0168,2.37%,"1,174",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$0.69/$0.69,N/A,N/A,N/A,N/A,,N/A,
-VZ,Verizon Communications Inc. Common Stock,$57.47,+0.02,0.03%,"9,514",01/05/2020,"237,727,836,017",Public Utilities,Telecommunications Equipment,12.97,12.04,$61.00,$4.43,$57.96/$57.21,$2.46,4.23%,"Apr 9, 2020","May 1, 2020",,$62.22/$48.84,1
-IDCBY,Industrial and Commercial Bank of China Ltd ADR,$13.29,-0.43,3.13%,"42,654",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$13.67/$13.25,N/A,N/A,N/A,N/A,,N/A,
-HD,"Home Depot, Inc. (The) Common Stock",$216.00,-3.83,1.74%,"7,111",01/05/2020,"236,122,951,496",Consumer Services,RETAIL: Building Materials,21.45,22.30,$228.00,$10.25,$222.11/$216.52,$6.00,2.7%,"Mar 11, 2020","Mar 26, 2020",,$247.36/$140.63,1
-T,AT&T Inc.,$30.50,+0.03,0.10%,"53,595",01/05/2020,"217,098,750,000",Public Utilities,Telecommunications Equipment,15.47,9.26,$36.00,$1.97,$31.05/$30.28,$2.08,6.62%,"Apr 8, 2020","May 1, 2020",,$39.70/$26.08,1
-PFE,"Pfizer, Inc. Common Stock",$37.81,-0.55,1.43%,"14,200",01/05/2020,"212,807,432,232",Health Care,Major Pharmaceuticals,13.7,13.70,$38.50,$2.80,$38.51/$37.36,$1.52,3.99%,"May 7, 2020","Jun 5, 2020",,$44.56/$27.88,1
-BAC,Bank of America Corporation Common Stock,$23.35,-0.70,2.91%,"108,622",01/05/2020,"208,645,472,812",Finance,Major Banks,9.86,16.25,$27.00,$2.44,$24.38/$23.85,$0.72,2.91%,"Jun 4, 2020","Jun 26, 2020",,$35.72/$17.95,1
-KO,Coca-Cola Company (The) Common Stock,$45.4298,-0.4602,1.00%,"26,512",01/05/2020,"197,092,564,189",Consumer Non-Durables,Beverages (Production/Distribution),19.78,24.54,$52.00,$2.32,$47.00/$45.70,$1.64,3.48%,"Jun 12, 2020","Jul 1, 2020",,$60.13/$36.27,1
-MRK,"Merck & Company, Inc. Common Stock (new)",$78.58,-0.76,0.96%,"5,204",01/05/2020,"200,340,379,651",Health Care,Major Pharmaceuticals,20.09,14.86,$93.00,$3.95,$80.40/$79.14,$2.44,3.02%,"Mar 13, 2020","Apr 7, 2020",,$92.64/$65.25,1
-XOM,Exxon Mobil Corporation Common Stock,$45.81,-0.66,1.42%,"85,589",01/05/2020,"196,588,100,595",Energy,Integrated oil Companies,13.83,-47.91,$46.00,$3.36,$47.68/$45.77,$3.48,7.33%,"May 12, 2020","Jun 10, 2020",,$80.26/$30.11,1
-DIS,Walt Disney Company (The) Common Stock,$106.35,-1.80,1.66%,"48,149",01/05/2020,"195,258,189,240",Consumer Services,Services-Misc. Amusement & Recreation,17.28,38.08,$132.50,$6.26,$110.31/$106.86,$1.76,1.57%,"Dec 13, 2019","Jan 16, 2020",,$153.41/$79.07,1
-NVS,Novartis AG Common Stock,$84.01,-0.72,0.85%,203,01/05/2020,"193,919,700,243",Health Care,Major Pharmaceuticals,16.17,14.89,$103.00,$5.24,$85.94/$84.59,$2.007,2.34%,"Mar 3, 2020","Mar 12, 2020",,$99.84/$69.18,1
-LVMUY,LVMH Moet Hennessy Louis Vuitton ADR,$76.98,-1.52,1.94%,"182,553",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$77.81/$76.19,N/A,N/A,N/A,N/A,,N/A,
-CICHF,China Construction Bank Corp,$0.765,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-PIAIF,Ping An Insurance (Group) Co of China Ltd.,$10.14,-0.207,2%,"2,614",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$10.25/$10.14,N/A,N/A,N/A,N/A,,N/A,
-NFLX,"Netflix, Inc. Common Stock",$415.26,-4.59,1.09%,"10,004",01/05/2020,"184,651,724,095",Consumer Services,Consumer Electronics/Video Chains,84.99,65.30,$482.50,$4.94,$424.44/$408.00,N/A,N/A,N/A,N/A,,$449.52/$252.28,1
-PEP,"PepsiCo, Inc. Common Stock",$131.38,-0.91,0.69%,"1,101",01/05/2020,"183,552,432,282",Consumer Non-Durables,Beverages (Production/Distribution),25.69,24.23,$141.50,$5.15,$133.17/$130.42,$3.82,2.86%,"Mar 5, 2020","Mar 31, 2020",,$147.20/$101.42,1
-CSCO,"Cisco Systems, Inc. Common Stock",$41.60,-0.78,1.84%,"7,513",01/05/2020,"179,728,501,223",Technology,Computer Communications Equipment,16.55,15.36,$48.00,$2.56,$43.17/$42.17,$1.44,3.32%,"Apr 2, 2020","Apr 22, 2020",,$58.26/$32.40,1
-NVDA,NVIDIA Corporation Common Stock,$284.88,-7.40,2.53%,"32,297",01/05/2020,"173,691,720,000",Technology,Semiconductors,62.79,47.45,$300.50,$4.52,$284.35/$282.36,$0.64,0.21%,"Feb 27, 2020","Mar 20, 2020",,$316.32/$132.60,1
-TM,Toyota Motor Corporation Common Stock,$121.94,-1.65,1.34%,21,01/05/2020,"173,844,934,035",Capital Goods,Auto Manufacturing,7.79,8.38,$148.65,$15.87,$125.07/$122.97,$3.244,2.54%,"Sep 27, 2019","Dec 9, 2019",,$145.41/$108.01,1
-CVX,Chevron Corporation Common Stock,$91.45,-0.55,0.60%,"35,078",01/05/2020,"171,762,035,800",Energy,Integrated oil Companies,60.93,-102.22,$100.00,$1.51,$95.74/$90.58,$5.16,5.45%,"May 18, 2020","Jun 10, 2020",,$127.00/$51.60,1
-CMCSA,Comcast Corporation Class A Common Stock,$37.20,-0.43,1.14%,"5,819",01/05/2020,"169,992,050,482",Consumer Services,Television Services,14.78,13.44,$45.50,$2.52,$37.49/$37.10,$0.92,2.36%,"Mar 31, 2020","Apr 22, 2020",,$47.74/$31.70,1
-ADBE,Adobe Inc. Common Stock,$347.80,-5.84,1.65%,"8,121",01/05/2020,"167,965,412,327",Technology,Computer Software: Prepackaged Software,52.82,44.21,$332.00,$6.60,$349.36/$345.76,N/A,N/A,N/A,N/A,,$386.75/$255.13,1
-ORCL,Oracle Corporation Common Stock,$52.15,-0.82,1.55%,"1,209",01/05/2020,"167,045,344,480",Technology,Computer Software: Prepackaged Software,16.66,15.27,$55.00,$3.18,$53.60/$52.80,$0.96,1.78%,"Apr 8, 2020","Apr 23, 2020",,$60.50/$39.71,1
-CHL,China Mobile Limited Common Stock,$39.97,-0.61,1.5%,"1,333,164",01/05/2020,"163,681,010,263",Public Utilities,Telecommunications Equipment,N/A,10.74,$59.30,N/A,$40.61/$39.86,$1.999,4.13%,"May 21, 2020","Jul 6, 2020",,$47.89/$30.12,1
-ABT,Abbott Laboratories Common Stock,$90.795,-1.295,1.41%,"4,135",01/05/2020,"162,394,567,348",Health Care,Major Pharmaceuticals,46.28,32.77,$106.00,$1.99,$93.77/$91.85,$1.44,1.56%,"Apr 14, 2020","May 15, 2020",,$100.00/$61.61,1
-LRLCY,L'Oreal S.A. ADR,$57.80,+2.11,3.79%,"86,263",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$58.07/$57.73,N/A,N/A,N/A,N/A,,N/A,
-CHLKF,China Mobile (Hk) Ltd Ord,$7.84,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-NVO,Novo Nordisk A/S Common Stock,$64.35,+1.02,1.61%,"4,051",01/05/2020,"150,148,440,056",Health Care,Major Pharmaceuticals,26.04,23.54,$69.40,$2.46,$64.07/$63.93,$1.123,1.78%,"Mar 27, 2020","Apr 7, 2020",,$65.88/$46.47,1
-LLY,Eli Lilly and Company Common Stock,$153.15,-1.49,0.96%,"4,411",01/05/2020,"147,785,876,986",Health Care,Major Pharmaceuticals,25.52,22.71,$162.50,$6.05,$154.46/$153.50,$2.96,1.91%,"Feb 13, 2020","Mar 10, 2020",,$164.90/$101.36,1
-PYPL,"PayPal Holdings, Inc. Common Stock",$120.26,-2.74,2.23%,"120,715",01/05/2020,"141,725,472,266",Miscellaneous,Business Services,58.37,48.81,$124.50,$2.07,$121.65/$119.70,N/A,N/A,N/A,N/A,,$124.45/$82.07,1
-CRM,Salesforce.com Inc Common Stock,$158.25,-3.70,2.28%,"19,645",01/05/2020,"142,702,469,500",Technology,Computer Software: Prepackaged Software,797.22,131.67,$193.00,$0.20,$159.91/$157.96,N/A,N/A,N/A,N/A,,$195.72/$115.29,1
-TSLA,"Tesla, Inc. Common Stock",$762.42,-19.46,2.49%,"112,380",01/05/2020,"140,965,308,736",Capital Goods,Auto Manufacturing,,-407.23,$500.00,$-0.89,$772.77/$753.51,N/A,N/A,N/A,N/A,,$968.99/$176.99,1
-ACGBF,Agricultural Bank of China,$0.41,+0.01,2.5%,100,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-SAP,SAP SE ADS,$118.54,-0.61,0.51%,"641,495",01/05/2020,"139,370,559,755",Technology,Computer Software: Prepackaged Software,29.41,24.54,$125.00,$3.97,$117.25/$116.74,$1.23,1.01%,"May 21, 2020","Jun 2, 2020",,$140.67/$90.89,1
-AMGN,Amgen Inc. Common Stock,$238.00,-1.22,0.51%,403,01/05/2020,"135,138,362,967",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),18.02,15.56,$250.00,$12.76,$237.05/$228.93,$6.40,2.72%,"May 15, 2020","Jun 8, 2020",,$244.99/$166.30,1
-MCD,McDonald's Corporation Common Stock,$184.37,-3.19,1.70%,"3,647",01/05/2020,"137,456,094,759",Consumer Services,Restaurants,24.23,31.68,$198.50,$7.63,$185.54/$183.24,$5.00,2.66%,"Feb 28, 2020","Mar 16, 2020",,$221.93/$124.23,1
-BMY,Bristol-Myers Squibb Company Common Stock,$59.98,-0.83,1.36%,"1,799",01/05/2020,"136,917,268,487",Health Care,Major Pharmaceuticals,27.63,9.94,$69.00,$2.19,$60.87/$60.49,$1.80,2.92%,"Apr 2, 2020","May 1, 2020",,$68.34/$42.48,1
-AZN,Astrazeneca PLC Common Stock,$52.04,-0.24,0.46%,"37,917",01/05/2020,"135,710,334,838",Health Care,Major Pharmaceuticals,87.64,26.01,$53.35,$0.59,$52.03/$51.70,$1.86,3.67%,"Feb 27, 2020","Mar 30, 2020",,$54.00/$36.15,1
-UL,Unilever PLC Common Stock,$51.77,-0.10,0.19%,"9,203",01/05/2020,"135,211,422,413",Basic Industries,Package Goods/Cosmetics,N/A,19.28,$62.00,N/A,$51.94/$51.67,$1.758,3.46%,"May 14, 2020","Jun 4, 2020",,$64.84/$44.06,1
-NKE,"Nike, Inc. Common Stock",$85.50,-1.68,1.93%,"13,269",01/05/2020,"132,395,657,253",Consumer Non-Durables,Shoe Manufacturing,31.42,32.77,$96.00,$2.71,$86.11/$85.06,$0.98,1.11%,"Feb 28, 2020","Apr 1, 2020",,$105.62/$60.00,1
-COST,Costco Wholesale Corporation Common Stock,$301.00,-2.00,0.66%,"3,191",01/05/2020,"133,162,850,325",Consumer Services,Department/Specialty Retail Stores,35.39,34.75,$330.00,$8.52,$302.99/$300.18,$2.80,0.85%,"Apr 30, 2020","May 15, 2020",,$325.26/$233.05,1
-TMO,Thermo Fisher Scientific Inc Common Stock,$327.00,-7.68,2.29%,56,01/05/2020,"129,453,123,358",Capital Goods,Industrial Machinery/Components,35.94,28.17,$371.00,$9.12,$331.31/$326.55,$0.88,0.26%,"Mar 13, 2020","Apr 16, 2020",,$346.89/$250.21,1
-MDT,Medtronic plc. Ordinary Shares,$96.86,-0.77,0.79%,"1,817",01/05/2020,"128,134,624,525",Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus,24.27,18.92,$116.00,$3.94,$97.18/$95.60,$2.16,2.18%,"Mar 26, 2020","Apr 17, 2020",,$122.15/$72.13,1
-RDS.A,Royal Dutch Shell PLC Royal Dutch Shell American Depositary Shares (Each representing two Class A Ordinary Shares),$31.66,--,--,"154,761",01/05/2020,"124,714,452,046",N/A,N/A,13.13,N/A,$34.00,$2.43,$32.06/$31.80,$3.196,8.41%,"Feb 13, 2020","Mar 23, 2020",,$66.48/$21.25,1
-VNJA,Vanjia Corp,$14.38,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-NTDMF,NTT DoCoMo Inc,$30.34,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-ASML,ASML Holding N.V. New York Registry Shares,$283.10,-5.33,1.85%,34,01/05/2020,"119,397,546,972",Technology,Industrial Machinery/Components,40.42,39.62,$320.00,$6.94,$283.86/$280.50,$2.478,0.82%,"Apr 24, 2020","May 6, 2020",,$319.22/$186.31,1
-SNY,Sanofi ADR,$46.08,-0.75,1.60%,272,01/05/2020,"116,063,715,315",Health Care,Major Pharmaceuticals,30.53,13.61,$56.00,$1.52,$46.49/$46.00,$1.212,2.36%,"Apr 30, 2020","May 26, 2020",,$51.84/$37.62,1
-ABBV,AbbVie Inc. Common Stock,$82.03,-0.17,0.21%,"69,423",01/05/2020,"119,418,529,983",Health Care,Major Pharmaceuticals,15.32,8.09,$97.00,$5.28,$82.07/$80.50,$4.72,5.64%,"Apr 14, 2020","May 15, 2020",,$97.86/$62.55,1
-PROSY,Prosus NV - ADR,$14.81,-0.14,0.94%,"520,908",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.80/$14.50,N/A,N/A,N/A,N/A,,N/A,
-SNYNF,Sanofi,$96.25,-1.20,1.23%,"3,932",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-PROSF,Prosus NV - Ordinary Shares - Class N,$74.00,+0.9866,1.35%,"1,290",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-ACN,Accenture plc Class A Ordinary Shares (Ireland),$181.69,-3.50,1.89%,135,01/05/2020,"115,567,806,475",Miscellaneous,Business Services,23.63,24.46,$197.00,$7.67,$182.28/$180.35,$3.20,1.71%,"Apr 15, 2020","May 15, 2020",,$216.39/$137.15,1
-WFC,Wells Fargo & Company Common Stock,$28.23,-0.82,2.82%,"65,976",01/05/2020,"114,863,344,924",Finance,Major Banks,9.91,32.28,$34.00,$2.83,$28.53/$28.01,$2.04,6.8%,"May 7, 2020","Jun 1, 2020",,$54.75/$25.11,1
-CIHHF,China Merchants Bank Co Ltd,$4.66,+0.01,0.22%,"2,000",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-UN,Unilever NV Common Stock,$49.40,-0.02,0.04%,5,01/05/2020,"116,226,127,292",Basic Industries,Package Goods/Cosmetics,N/A,18.65,$57.00,N/A,$49.60/$49.10,$1.74,3.67%,"May 14, 2020","Jun 4, 2020",,$63.62/$42.00,1
-PM,Philip Morris International Inc Common Stock,$74.47,-0.13,0.17%,162,01/05/2020,"116,504,432,033",Consumer Non-Durables,Farming/Seeds/Milling,15.21,14.80,$90.00,$4.92,$74.89/$73.86,$4.68,6.12%,"Mar 20, 2020","Apr 9, 2020",,$90.17/$56.01,1
-CHTR,"Charter Communications, Inc. Class A Common Stock New",$495.23,--,--,"4,960",01/05/2020,"119,054,501,188",Consumer Services,Television Services,67.6,37.95,$540.00,$7.52,$511.00/$495.51,N/A,N/A,N/A,N/A,,$546.54/$345.67,1
-FMX,Fomento Economico Mexicano S.A.B. de C.V. Common Stock,$64.33,-2.04,3.07%,"969,936",01/05/2020,"115,719,837,572",Consumer Non-Durables,Beverages (Production/Distribution),17.07,20.68,$75.00,$3.79,$64.68/$63.28,$1.477,2.23%,"Nov 1, 2019","Nov 18, 2019",,$100.35/$55.40,1
-DHR,Danaher Corporation Common Stock,$162.30,-1.16,0.71%,"41,008",01/05/2020,"112,200,122,853",Capital Goods,Industrial Machinery/Components,39.75,33.50,$170.00,$4.05,$162.63/$160.32,$0.72,0.44%,"Mar 26, 2020","Apr 24, 2020",,$170.64/$119.60,1
-ISRMF,isrmf,--,--,--,--,01/05/2020,,,,,,,,,,,,,,,
-NEE,"NextEra Energy, Inc. Common Stock",$231.12,--,--,"6,604",01/05/2020,"111,210,637,836",Public Utilities,Electric Utilities: Central,31.47,25.54,$255.00,$7.22,$230.02/$226.27,$5.60,2.38%,"Feb 27, 2020","Mar 16, 2020",,$283.35/$174.80,1
-AAGIY,AIA Group Ltd. ADR (Sponsored),$36.37,-0.881,2.37%,"213,085",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$36.58/$35.30,N/A,N/A,N/A,N/A,,N/A,
-IBM,International Business Machines Corporation Common Stock,$123.03,-2.53,2.01%,"4,519",01/05/2020,"108,926,585,285",Technology,Computer Manufacturing,12.15,11.12,$135.00,$10.10,$123.19/$122.23,$6.52,5.04%,"May 7, 2020","Jun 10, 2020",,$158.75/$90.56,1
-UNP,Union Pacific Corporation Common Stock,$154.50,-5.29,3.31%,269,01/05/2020,"105,706,177,731",Transportation,Railroads,18.09,20.20,$169.00,$8.61,$157.70/$155.25,$3.88,2.38%,"Feb 27, 2020","Mar 31, 2020",,$188.96/$105.08,1
-TMUS,"T-Mobile US, Inc. Common Stock",$87.17,-0.63,0.72%,"4,414",01/05/2020,"107,647,504,718",Public Utilities,Telecommunications Equipment,21.64,40.28,$107.00,$4.03,$88.11/$86.73,N/A,N/A,N/A,N/A,,$101.35/$63.50,1
-BACHY,Bank of China Ltd ADR,$9.28,-0.20,2.11%,"74,690",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$9.25/$9.18,N/A,N/A,N/A,N/A,,N/A,
-AAIGF,AIA Group Ltd.,$9.03,-0.265,2.85%,"3,209",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-LMT,Lockheed Martin Corporation Common Stock,$383.75,-5.31,1.36%,481,01/05/2020,"107,587,606,040",Capital Goods,Military/Government/Technical,17.41,16.20,$410.00,$22.03,$387.41/$383.40,$9.60,2.47%,"May 29, 2020","Jun 26, 2020",,$442.53/$266.11,1
-AVGO,Broadcom Inc. Common Stock,$265.80,-5.82,2.14%,"1,755",01/05/2020,"104,879,262,491",Technology,Semiconductors,43.29,15.58,$315.00,$6.06,$267.85/$261.51,$13.00,4.71%,"Mar 20, 2020","Mar 31, 2020",,$331.58/$155.67,1
-BACHF,Bank of China Ltd,$0.3675,-0.0025,0.68%,"22,985",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-TXN,Texas Instruments Incorporated Common Stock,$112.77,-3.30,2.84%,"5,543",01/05/2020,"102,506,026,273",Technology,Semiconductors,21.44,28.73,$114.50,$5.21,$113.25/$111.44,$3.60,3.02%,"May 1, 2020","May 18, 2020",,$135.70/$93.09,1
-GILD,"Gilead Sciences, Inc. Common Stock",$81.00,-3.00,3.57%,"266,551",01/05/2020,"99,172,624,941",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),20.25,13.88,$80.00,$3.89,$81.40/$78.71,$2.72,3.27%,"Mar 12, 2020","Mar 30, 2020",,$85.97/$60.89,1
-AMT,American Tower Corporation (REIT) Common Stock,$232.50,-5.50,2.31%,84,01/05/2020,"103,909,635,852",Consumer Services,Real Estate Investment Trusts,54.88,28.81,$260.00,$4.27,$235.90/$232.59,$4.32,1.82%,"Apr 13, 2020","Apr 29, 2020",,$260.43/$174.32,1
-GSK,GlaxoSmithKline PLC Common Stock,$41.16,-0.91,2.16%,"17,105",01/05/2020,"102,910,357,074",Health Care,Major Pharmaceuticals,14.97,14.56,$50.50,$2.74,$41.18/$40.96,$1.858,5.35%,"May 14, 2020","Jul 9, 2020",,$48.25/$31.43,1
-HSBC,"HSBC Holdings, plc. Common Stock",$25.28,-0.45,1.75%,"2,726",01/05/2020,"102,517,475,518",Finance,Savings Institutions,27.97,14.70,$29.10,$0.90,$25.34/$25.17,N/A,N/A,N/A,N/A,,$44.93/$23.95,1
-BHPLF,BHP Group Ltd,$20.3425,-0.6575,3.13%,"140,000",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$19.50/$19.50,N/A,N/A,N/A,N/A,,N/A,
-BHP,BHP Group Limited American Depositary Shares (Each representing two Ordinary Shares),$38.93,-1.75,4.30%,"41,109",01/05/2020,"98,376,606,084",Basic Industries,Precious Metals,N/A,11.46,$37.90,N/A,$39.14/$38.77,$2.60,6.17%,"Mar 5, 2020","Mar 24, 2020",,$59.02/$29.78,1
-C,"Citigroup, Inc. Common Stock",$46.50,-2.06,4.24%,"119,610",01/05/2020,"95,096,624,000",Finance,Major Banks,6.33,15.27,$58.00,$7.22,$46.47/$45.63,$2.04,4.06%,"May 1, 2020","May 22, 2020",,$83.11/$32.00,1
-HON,Honeywell International Inc. Common Stock,$139.73,-2.17,1.53%,"5,304",01/05/2020,"95,682,095,443",Capital Goods,Aerospace,16.09,18.17,$158.00,$8.41,$139.50/$135.22,$3.60,2.46%,"May 14, 2020","Jun 5, 2020",,$184.06/$101.08,1
-RTX,Raytheon Technologies Corporation Common Stock,$63.25,-1.56,2.41%,"71,086",01/05/2020,"93,940,225,040",Capital Goods,Aerospace,9.67,18.00,$81.00,$6.41,$63.61/$61.76,$1.90,4.33%,"May 14, 2020","Jun 18, 2020",,$158.44/$48.05,
-LIN,Linde plc Ordinary Share,$183.99,-4.70,2.49%,"2,074,705",01/05/2020,"95,911,384,721",Basic Industries,Major Chemicals,43.48,24.37,$230.00,$4.20,$185.10/$182.22,$3.852,2.04%,"Jun 2, 2020","Jun 17, 2020",,$227.85/$146.71,1
-DCMYY,NTT DOCOMO Inc American Depositary Shares,$29.14,-1.08,3.57%,"95,328",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$29.45/$29.24,N/A,N/A,N/A,N/A,,N/A,
-CMXHF,Csl Ltd,$199.00,-9.48,4.55%,13,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$198.50/$198.50,N/A,N/A,N/A,N/A,,N/A,
-RTNTF,Rio Tinto Ltd Aud2 Ord,$57.69,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-SFTBY,SoftBank Group Corp ADR,$21.19,-0.94,4.25%,"821,891",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$21.65/$21.20,N/A,N/A,N/A,N/A,,N/A,
-BUD,Anheuser-Busch Inbev SA Sponsored ADR (Belgium),$45.75,-0.77,1.66%,"4,304",01/05/2020,"89,622,001,223",Consumer Non-Durables,Beverages (Production/Distribution),9.9,23.86,$54.00,$4.62,$46.48/$45.66,$1.313,2.7%,"Nov 19, 2019","Dec 18, 2019",,$102.70/$32.58,1
-TOT,Total S.A.,$34.49,-0.66,1.88%,105,01/05/2020,"88,105,471,836",Energy,Oil & Gas Production,8.21,36.24,$44.00,$4.17,$34.68/$34.04,$2.468,6.58%,"Mar 26, 2020","Apr 21, 2020",,$56.91/$22.13,1
-CSLLY,CSL Ltd ADR (Sponsored),$99.46,-4.63,4.45%,"40,697",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$96.77/$96.20,N/A,N/A,N/A,N/A,,N/A,
-QCOM,QUALCOMM Incorporated Common Stock,$76.88,-1.79,2.28%,"78,254",01/05/2020,"87,816,435,352",Technology,Radio And Television Broadcasting And Communications Equipment,22.73,25.88,$95.00,$3.38,$77.59/$76.33,$2.60,3.14%,"Jun 3, 2020","Jun 25, 2020",,$96.17/$58.00,1
-SBUX,Starbucks Corporation Common Stock,$75.20,-1.53,1.99%,"14,487",01/05/2020,"87,272,010,000",Consumer Services,Restaurants,26.58,55.20,$80.00,$2.81,$75.88/$74.46,$1.64,2.13%,"May 7, 2020","May 22, 2020",,$99.72/$50.02,1
-NPPXF,Nippon Tel & Tel Cp,$22.60,-1.60,6.61%,"3,408",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-SFTBF,Softbank Corp Fgn,$42.50,-2.05,4.6%,"7,369",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$42.75/$41.72,N/A,N/A,N/A,N/A,,N/A,
-RY,Royal Bank Of Canada Common Stock,$61.59,-2.06,3.24%,"1,315,688",01/05/2020,"85,605,950,100",Finance,Commercial Banks,8.87,10.16,$72.52,$6.78,$60.43/$59.85,$3.071,4.83%,"Apr 22, 2020","May 22, 2020",,$82.74/$49.55,1
-BTI,"British American Tobacco Industries, p.l.c. Common Stock ADR",$37.85,-0.30,0.79%,"68,441",01/05/2020,"86,628,943,202",Consumer Non-Durables,Farming/Seeds/Milling,N/A,9.11,$50.08,N/A,$37.93/$37.70,$2.688,6.72%,"Jul 9, 2020","Aug 24, 2020",,$45.64/$27.32,1
-MMM,3M Company Common Stock,$149.4498,-2.4702,1.63%,"1,070",01/05/2020,"85,399,405,202",Health Care,Medical/Dental Instruments,17.43,19.28,$160.00,$8.52,$149.59/$147.73,$5.88,3.76%,"Feb 13, 2020","Mar 12, 2020",,$189.71/$114.04,1
-KYCCF,Keyence Corp,$355.77,-9.43,2.58%,"2,620",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$376.50/$349.50,N/A,N/A,N/A,N/A,,N/A,
-BBL,BHP Group PlcSponsored ADR,$32.20,-1.24,3.71%,"35,402",01/05/2020,"81,519,997,352",Energy,Coal Mining,N/A,9.53,$33.05,N/A,$32.37/$32.07,$2.60,7.41%,"Mar 5, 2020","Mar 24, 2020",,$51.87/$23.64,1
-NTTYY,Nippon Telegraph & Telephone Corp (Japan) ADR (Sponsored),$22.6001,-1.2949,5.42%,"172,374",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$22.88/$22.65,N/A,N/A,N/A,N/A,,N/A,
-DGEAF,Diageo Plc Ord,$34.97,+0.93,2.73%,"3,550",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-FIS,"Fidelity National Information Services, Inc. Common Stock",$131.89,--,--,"37,045",01/05/2020,"80,213,141,919",Miscellaneous,Business Services,136.68,23.51,$147.00,$0.95,$130.43/$128.00,$1.40,1.04%,"Jun 11, 2020","Jun 26, 2020",,$158.21/$91.68,1
-UPS,"United Parcel Service, Inc. Common Stock",$93.15,-1.51,1.60%,"8,578",01/05/2020,"79,776,429,302",Transportation,Trucking Freight/Courier Services,18.77,15.91,$105.00,$4.94,$93.59/$92.20,$4.04,4.2%,"Feb 24, 2020","Mar 10, 2020",,$125.31/$82.00,1
-DEO,Diageo plc Common Stock,$139.04,+0.39,0.28%,"1,732",01/05/2020,,,,,,,,,,,,,,,
-CVS,CVS Health Corporation Common Stock,$60.49,-1.06,1.72%,"3,271",01/05/2020,"78,204,940,614",Health Care,Medical/Nursing Services,11.79,8.68,$81.50,$5.08,$60.80/$59.58,$2.00,3.19%,"Apr 22, 2020","May 4, 2020",,$77.03/$51.72,1
-BP,BP p.l.c. Common Stock,$22.93,-0.87,3.66%,"335,942",01/05/2020,"76,903,093,929",Energy,Integrated oil Companies,,-140.00,$25.50,$-0.97,$23.21/$22.73,$2.50,9.83%,"May 8, 2020","Jun 19, 2020",,$43.80/$15.51,1
-BA,Boeing Company (The) Common Stock,$143.80,+2.78,1.97%,"494,792",01/05/2020,"78,337,117,431",Capital Goods,Aerospace,,-33.34,$175.00,$-6.06,$143.71/$137.61,N/A,N/A,N/A,N/A,,$391.00/$89.00,1
-BLK,"BlackRock, Inc. Common Stock",$488.00,-14.04,2.80%,39,01/05/2020,"75,590,372,702",Finance,Investment Bankers/Brokers/Service,18.05,19.73,$520.00,$27.00,$492.47/$486.19,$14.52,2.84%,"Mar 4, 2020","Mar 23, 2020",,$576.81/$323.98,1
-HDB,HDFC Bank Limited Common Stock,$42.35,-1.00,2.31%,70,01/05/2020,"76,033,527,246",Finance,Commercial Banks,20.65,22.35,$53.00,$2.02,$42.32/$41.41,$0.411,0.92%,"Jul 31, 2019","Aug 23, 2019",,$65.89/$29.50,1
-LOW,"Lowe's Companies, Inc. Common Stock",$102.00,-2.75,2.63%,"1,488",01/05/2020,"78,167,383,014",Consumer Services,RETAIL: Building Materials,18.93,17.84,$121.00,$5.47,$104.28/$102.31,$2.20,2.07%,"Apr 21, 2020","May 6, 2020",,$126.73/$60.00,1
-HESAY,Hermes International SCA ADR,$75.64,+1.54,2.08%,"14,035",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$76.17/$76.17,N/A,N/A,N/A,N/A,,N/A,
-SNE,Sony Corporation Common Stock,$63.98,-0.27,0.42%,142,01/05/2020,"76,760,261,825",Consumer Non-Durables,Consumer Electronics/Appliances,13.19,14.60,$71.20,$4.77,$63.62/$62.87,$0.268,0.42%,"Sep 27, 2019","Dec 10, 2019",,$73.86/$47.29,1
-AXP,American Express Company Common Stock,$88.90,-2.35,2.58%,"4,093",01/05/2020,"70,740,895,332",Finance,Finance: Consumer Services,13.34,19.67,$104.00,$6.59,$88.67/$87.16,$1.72,1.79%,"Apr 2, 2020","May 8, 2020",,$138.13/$67.00,1
-CILJF,China Life Insurance Co Ltd,$2.135,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-SNEJF,Sony Corp,$62.24,-2.485,3.84%,"31,369",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$61.95/$61.95,N/A,N/A,N/A,N/A,,N/A,
-MPNGF,Meituan Dianping,$13.05,-0.365,2.72%,"176,284",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$13.48/$12.62,N/A,N/A,N/A,N/A,,N/A,
-TD,Toronto Dominion Bank (The) Common Stock,$40.95,-0.82,1.96%,63,01/05/2020,"72,908,912,385",Finance,Commercial Banks,8.16,9.69,$53.41,$4.96,$41.01/$40.35,$2.247,5.17%,"Apr 8, 2020","Apr 30, 2020",,$59.55/$33.74,1
-LFC,China Life Insurance Company Limited American Depositary Shares,$10.53,-0.34,3.13%,"894,765",01/05/2020,"72,911,406,960",Finance,Life Insurance,8.23,9.93,$14.10,$1.24,$10.40/$10.21,$0.084,0.78%,"Jun 6, 2019","Aug 13, 2019",,$14.70/$8.27,1
-SIEGY,Siemens AG (Germany) ADR (Sponsored),$46.1645,-1.6155,3.38%,"465,759",01/05/2020,"38,431,258,252",N/A,N/A,N/A,N/A,N/A,N/A,$46.54/$45.31,N/A,N/A,N/A,N/A,,N/A,
-HESAF,Hermes Intl Sa,$719.04,-17.30,2.35%,46,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$735.25/$735.25,N/A,N/A,N/A,N/A,,N/A,
-VWAGY,Volkswagen AG ADR Repstg 1/10th Sh,$14.94,-0.92,5.8%,"152,153",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.99/$14.54,N/A,N/A,N/A,N/A,,N/A,
-AMD,"Advanced Micro Devices, Inc. Common Stock",$51.00,-1.39,2.65%,"281,116",01/05/2020,"58,712,388,433",Technology,Semiconductors,116.62,58.21,$56.00,$0.43,$51.95/$49.73,N/A,N/A,N/A,N/A,,$59.27/$26.03,1
-SHOP,Shopify Inc. Class A Subordinate Voting Shares,$618.75,-13.54,2.14%,"6,072",01/05/2020,"64,932,610,530",Technology,Computer Software: Prepackaged Software,,-282.27,$500.00,$-1.11,$627.86/$612.00,N/A,N/A,N/A,N/A,,$665.74/$237.39,1
-MDLZ,"Mondelez International, Inc. Class A Common Stock",$50.61,-0.83,1.61%,109,01/05/2020,"73,715,038,985",Consumer Non-Durables,Packaged Foods,20.22,20.09,$58.00,$2.55,$51.68/$50.98,$1.14,2.23%,"Mar 30, 2020","Apr 14, 2020",,$59.96/$41.19,1
-MO,"Altria Group, Inc.",$38.99,-0.26,0.66%,"4,915",01/05/2020,"73,368,370,930",Consumer Non-Durables,Farming/Seeds/Milling,,9.09,$50.00,$-0.49,$39.82/$38.79,$3.36,8.3%,"Mar 24, 2020","Apr 30, 2020",,$54.74/$30.95,1
-CI,Cigna Corporation Common Stock,$192.00,-3.78,1.93%,"1,737",01/05/2020,"70,047,318,818",Health Care,Medical Specialities,14.47,10.62,$243.00,$13.02,$194.88/$187.77,$0.04,0.02%,"Mar 9, 2020","Apr 9, 2020",,$224.64/$118.50,1
-INTU,Intuit Inc. Common Stock,$264.30,-5.51,2.04%,48,01/05/2020,"69,032,312,590",Technology,Computer Software: Prepackaged Software,42.88,42.90,$300.00,$6.18,$266.65/$262.05,$2.12,0.78%,"Apr 9, 2020","Apr 20, 2020",,$306.89/$187.68,1
-CMWAY,Commonwealth Bank of Australia ADR (Sponsored),$40.28,+0.065,0.16%,"63,140",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$38.04/$36.36,N/A,N/A,N/A,N/A,,N/A,
-SPGI,S&P Global Inc. Common Stock,$286.99,-5.89,2.01%,"8,533",01/05/2020,"69,364,026,880",Finance,Finance: Consumer Services,30.11,29.20,$280.00,$9.56,$289.03/$286.22,$2.68,0.91%,"Feb 25, 2020","Mar 11, 2020",,$312.94/$186.06,1
-ANTM,"Anthem, Inc. Common Stock",$275.99,-4.74,1.69%,718,01/05/2020,"68,707,397,355",Health Care,Medical Specialities,14.75,12.66,$325.00,$18.47,$277.00/$270.49,$3.80,1.35%,"Jun 9, 2020","Jun 25, 2020",,$312.48/$171.03,1
-KDDIY,KDDI Corp ADR,$14.32,-0.89,5.85%,"68,653",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.45/$14.14,N/A,N/A,N/A,N/A,,N/A,
-BDX,"Becton, Dickinson and Company Common Stock",$249.50,-3.03,1.20%,2,01/05/2020,"68,552,571,814",Health Care,Medical/Dental Instruments,92.94,22.37,$272.50,$2.72,$252.81/$247.79,$3.16,1.23%,"Jun 8, 2020","Jun 30, 2020",,$286.72/$197.75,1
-SYK,Stryker Corporation Common Stock,$183.50,-2.93,1.57%,216,01/05/2020,"68,177,501,480",Health Care,Medical/Dental Instruments,31.97,25.97,$214.50,$5.69,$193.00/$176.45,$2.30,1.19%,"Mar 30, 2020","Apr 30, 2020",,$226.30/$124.54,1
-NAPRF,Naspers Ltd N Shs,$159.375,+0.375,0.24%,111,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-FISV,"Fiserv, Inc. Common Stock",$100.04,-3.02,2.93%,68,01/05/2020,"68,587,249,783",Technology,EDP Services,56.03,22.70,$115.00,$1.81,$102.10/$100.09,N/A,N/A,N/A,N/A,,$125.05/$73.50,1
-PCCYF,PetroChina Co Ltd,$0.3804,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$0.39/$0.39,N/A,N/A,N/A,N/A,,N/A,
-KOF,"Coca Cola Femsa S.A.B. de C.V. American Depositary Shares, each representing 10 Units (each Unit consists of 3 Series B Shares and 5 Series L Shares)",$41.31,-0.46,1.1%,"215,317",01/05/2020,"65,837,057,869",Consumer Non-Durables,Beverages (Production/Distribution),13.19,15.53,$54.00,$2.97,$39.83/$39.13,$2.517,4.35%,"May 1, 2020","May 15, 2020",,$65.58/$37.73,1
-DTEGY,Deutsche Telekom AG ADR (Sponsored),$14.5201,+0.0201,0.14%,"263,886",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.54/$13.91,N/A,N/A,N/A,N/A,,N/A,
-CHGCF,Chugai Pharmaceutical,$125.00,--,--,150,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-KDDIF,KDDI Corp,$29.45,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-NPSNY,Naspers Ltd ADR (Sponsored) Repstg Cl N (New),$30.89,-1.10,3.44%,"107,590",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$30.76/$30.00,N/A,N/A,N/A,N/A,,N/A,
-NOW,"ServiceNow, Inc. Common Stock",$341.00,-10.54,3.00%,"3,210",01/05/2020,"66,094,054,000",Technology,Computer Software: Prepackaged Software,101.82,428.71,$356.00,$3.42,$349.50/$341.00,N/A,N/A,N/A,N/A,,$362.95/$213.99,1
-CCI,Crown Castle International Corp. (REIT) Common Stock,$155.00,-4.43,2.78%,261,01/05/2020,"65,638,041,368",Consumer Services,Real Estate Investment Trusts,82.46,27.21,$176.50,$1.91,$158.00/$156.09,$4.80,3.09%,"Mar 12, 2020","Mar 31, 2020",,$168.75/$114.18,1
-PLD,"Prologis, Inc. Common Stock",$89.23,--,--,791,01/05/2020,"65,062,053,351",Consumer Services,Real Estate Investment Trusts,33.6,24.86,$95.00,$2.62,$88.25/$86.92,$2.32,2.57%,"Jun 15, 2020","Jun 30, 2020",,$99.79/$59.82,1
-AKSJF,Sberbank of Russia. - Ordinary Shares,$3.05,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-PTR,PetroChina Company Limited Common Stock,$35.83,-0.83,2.26%,"157,854",01/05/2020,"62,739,591,190",Energy,Oil & Gas Production,22.55,79.62,$37.80,$1.52,$35.29/$34.20,$1.743,4.75%,"Sep 13, 2019","Nov 12, 2019",,$63.84/$27.74,1
-VRTX,Vertex Pharmaceuticals Incorporated Common Stock,$249.92,-1.28,0.51%,216,01/05/2020,"65,386,541,471",Health Care,Major Pharmaceuticals,43.72,38.53,$275.00,$5.77,$252.29/$248.00,N/A,N/A,N/A,N/A,,$277.80/$164.07,1
-ENB,Enbridge Inc Common Stock,$30.10,-0.58,1.89%,796,01/05/2020,"61,077,025,108",Energy,Natural Gas Distribution,15.16,17.94,$42.48,$1.99,$30.18/$29.89,$2.286,7.64%,"May 14, 2020","Jun 1, 2020",,$43.15/$22.57,1
-BAYRY,Bayer AG ADR (Sponsored),$16.45,-0.26,1.56%,"655,414",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$16.50/$16.19,N/A,N/A,N/A,N/A,,N/A,
-D,"Dominion Energy, Inc. Common Stock",$76.10,-1.03,1.34%,188,01/05/2020,"63,738,304,720",Public Utilities,Electric Utilities: Central,45.27,17.90,$87.00,$1.68,$76.54/$75.23,$3.76,4.78%,"Feb 27, 2020","Mar 20, 2020",,$90.89/$57.79,1
-CAT,"Caterpillar, Inc. Common Stock",$113.45,-2.93,2.52%,"30,631",01/05/2020,"61,458,254,644",Capital Goods,Construction/Ag Equipment/Trucks,11.84,21.12,$128.50,$9.44,$114.59/$111.64,$4.12,3.43%,"Apr 17, 2020","May 20, 2020",,$150.55/$87.50,1
-CME,CME Group Inc. Class A Common Stock,$175.15,-3.06,1.72%,257,01/05/2020,"62,674,779,992",Finance,Investment Bankers/Brokers/Service,26.25,22.97,$207.50,$6.66,$176.95/$174.04,$3.40,1.87%,"Mar 9, 2020","Mar 25, 2020",,$225.36/$131.80,1
-DUK,Duke Energy Corporation (Holding Company) Common Stock,$83.845,-0.815,0.96%,810,01/05/2020,"61,445,535,780",Public Utilities,Power Generation,16.54,16.60,$96.00,$5.06,$83.95/$82.60,$3.78,4.36%,"Feb 13, 2020","Mar 16, 2020",,$103.79/$62.13,1
-EL,"Estee Lauder Companies, Inc. (The) Common Stock",$173.00,-3.40,1.93%,348,01/05/2020,"62,732,582,122",Consumer Non-Durables,Package Goods/Cosmetics,34.41,39.20,$180.00,$5.07,$179.44/$170.58,$1.92,1.09%,"Feb 27, 2020","Mar 16, 2020",,$220.42/$137.01,1
-ADP,"Automatic Data Processing, Inc. Common Stock",$145.00,-1.69,1.15%,375,01/05/2020,"62,220,105,256",Technology,EDP Services,24.72,25.60,$153.50,$5.83,$144.23/$142.42,$3.64,2.5%,"Jun 11, 2020","Jul 1, 2020",,$182.32/$103.11,1
-JD,"JD.com, Inc. American Depositary Shares",$41.75,-1.35,3.13%,"41,532",01/05/2020,"61,182,890,713",Consumer Services,Other Specialty Stores,34.72,102.62,$47.00,$1.20,$42.32/$41.44,N/A,N/A,N/A,N/A,,$47.98/$25.48,1
-GS,"Goldman Sachs Group, Inc. (The) Common Stock",$178.98,-4.44,2.42%,"4,320",01/05/2020,"61,450,238,232",Finance,Investment Bankers/Brokers/Service,9.71,13.63,$204.00,$18.40,$179.50/$176.65,$5.00,2.63%,"May 29, 2020","Jun 29, 2020",,$250.46/$130.85,1
-BX,The Blackstone Group Inc. Class A Common Stock,$50.65,-1.59,3.04%,"2,460",01/05/2020,"60,291,299,213",Finance,Investment Managers,68.84,25.61,$56.00,$0.73,$50.47/$49.69,$1.56,4.51%,"May 1, 2020","May 11, 2020",,$64.97/$33.00,1
-AGN,Allergan plc Ordinary Shares,$187.75,+0.41,0.22%,"48,446",01/05/2020,,,,,,,,,,,,,,,
-BKNG,Booking Holdings Inc. Common Stock,$1445.73,-34.84,2.35%,170,01/05/2020,"58,341,795,464",Consumer Services,Transportation Services,12.66,29.34,"$1,625.00",$112.58,"$1,460.30/$1,415.31",N/A,N/A,N/A,N/A,,"$2,094.00/$1,107.29",1
-MS,Morgan Stanley Common Stock,$38.19,-1.24,3.14%,"17,465",01/05/2020,"60,422,309,596",Finance,Investment Bankers/Brokers/Service,7.97,10.30,$43.00,$4.81,$38.52/$37.91,$1.40,3.43%,"Apr 29, 2020","May 15, 2020",,$57.57/$27.20,1
-IBDRY,Iberdrola S.A. - ADR - Level I,$39.56,-1.025,2.53%,"37,105",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$40.03/$38.09,N/A,N/A,N/A,N/A,,N/A,
-ZTS,Zoetis Inc. Class A Common Stock,$128.00,-1.31,1.01%,2,01/05/2020,"60,308,879,569",Health Care,Major Pharmaceuticals,40.7,35.33,$130.00,$3.12,$127.76/$124.92,$0.80,0.64%,"Apr 16, 2020","Jun 1, 2020",,$146.26/$90.14,1
-CL,Colgate-Palmolive Company Common Stock,$69.00,-1.27,1.81%,"4,080",01/05/2020,"60,012,732,538",Consumer Non-Durables,Package Goods/Cosmetics,25.45,24.74,$75.00,$2.75,$71.00/$69.80,$1.76,2.51%,"Apr 17, 2020","May 15, 2020",,$77.41/$58.49,1
-CNI,Canadian National Railway Company Common Stock,$82.87,-1.90,2.24%,"1,137,125",01/05/2020,"58,005,236,040",Transportation,Railroads,17.54,21.25,$82.00,$4.65,$81.66/$80.80,$1.642,1.98%,"Jun 8, 2020","Jun 30, 2020",,$96.53/$65.13,1
-AIQUY,Air Liquide S.A - ADR,$25.42,-0.70,2.68%,"82,526",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$25.45/$25.02,N/A,N/A,N/A,N/A,,N/A,
-SNP,China Petroleum & Chemical Corporation Common Stock,$49.68,-1.34,2.63%,"173,480",01/05/2020,,,,,,,,,,,,,,,
-SO,Southern Company (The) Common Stock,$56.20,-0.53,0.93%,822,01/05/2020,"58,465,258,908",Public Utilities,Electric Utilities: Central,16.46,18.12,$59.50,$3.36,$56.32/$54.95,$2.56,4.32%,"May 15, 2020","Jun 8, 2020",,$71.10/$41.96,1
-ISRG,"Intuitive Surgical, Inc. Common Stock",$502.70,-8.18,1.60%,269,01/05/2020,"58,483,818,676",Health Care,Industrial Specialties,43.2,75.35,$563.50,$11.61,$506.97/$496.80,N/A,N/A,N/A,N/A,,$619.00/$360.50,1
-REGN,"Regeneron Pharmaceuticals, Inc. Common Stock",$519.00,-6.88,1.31%,49,01/05/2020,"58,563,346,369",Health Care,Major Pharmaceuticals,28.19,27.52,$512.50,$18.46,$529.21/$515.60,N/A,N/A,N/A,N/A,,$574.32/$271.37,1
-GE,General Electric Company Common Stock,$6.6698,-0.1302,1.91%,"383,250",01/05/2020,"56,550,000,000",Energy,Consumer Electronics/Appliances,,21.94,$9.00,$-0.33,$6.74/$6.46,$0.04,0.61%,"Mar 6, 2020","Apr 27, 2020",,$13.26/$5.90,1
-TJX,"TJX Companies, Inc. (The) Common Stock",$47.50,-1.55,3.16%,"3,069",01/05/2020,"57,567,710,617",Consumer Services,Clothing/Shoe/Accessory Stores,17.93,28.68,$60.00,$2.68,$48.44/$47.84,$0.92,1.78%,"Feb 12, 2020","Mar 5, 2020",,$64.95/$32.72,1
-PDD,Pinduoduo Inc. American Depositary Shares,$46.50,-0.94,1.98%,"19,726",01/05/2020,"55,054,878,575",Miscellaneous,Business Services,,-64.99,$38.00,$-0.84,$46.98/$45.44,N/A,N/A,N/A,N/A,,$53.67/$18.46,1
-USB,U.S. Bancorp Common Stock,$35.50,-1.00,2.74%,"2,241",01/05/2020,"54,172,116,317",Finance,Major Banks,9.23,15.94,$40.50,$3.86,$35.82/$35.17,$1.68,4.37%,"Mar 30, 2020","Apr 15, 2020",,$61.11/$28.59,1
-SBRCY,Sberbank of Russia. - ADR,$10.51,-0.30,2.78%,"164,401",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$10.44/$10.36,N/A,N/A,N/A,N/A,,N/A,
-SNPMF,China Petroleum & Chemical Corp. Inc,$0.48,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$0.50/$0.48,N/A,N/A,N/A,N/A,,N/A,
-EQIX,"Equinix, Inc. Common Stock REIT",$675.20,-4.12,0.61%,"752,008",01/05/2020,"58,259,395,102",Consumer Services,Real Estate Investment Trusts,113,30.13,$680.00,$6.00,$680.89/$665.24,$10.64,1.57%,"Feb 25, 2020","Mar 18, 2020",,$715.75/$449.53,1
-RBGLY,Reckitt Benckiser Group Plc ADR (Sponsored),$17.11,+0.8695,5.35%,"6,356,603",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$17.27/$16.78,N/A,N/A,N/A,N/A,,N/A,
-RIO,Rio Tinto Plc Common Stock,$44.74,-1.45,3.14%,"20,419",01/05/2020,"56,069,424,905",Basic Industries,Precious Metals,N/A,10.02,$52.05,N/A,$45.06/$44.52,$4.62,9.45%,"Mar 6, 2020","Apr 16, 2020",,$64.02/$35.35,1
-ECL,Ecolab Inc. Common Stock,$194.00,+0.50,0.26%,50,01/05/2020,"54,895,321,659",Basic Industries,Package Goods/Cosmetics,35.89,36.10,$176.00,$5.29,$191.22/$187.84,$1.88,0.95%,"Mar 16, 2020","Apr 15, 2020",,$211.24/$124.60,1
-TAK,Takeda Pharmaceutical Company Limited American Depositary Shares (each representing 1/2 of a share of Common Stock),$17.25,-0.69,3.85%,"1,000",01/05/2020,"55,510,847,810",Health Care,Major Pharmaceuticals,68.54,9.86,$20.90,$0.26,$17.90/$17.71,$0.599,3.21%,"Sep 27, 2019","Dec 12, 2019",,$20.93/$12.43,1
-OGZPY,PJSC Gazprom ADR (Sponsored),$5.05,-0.21,3.99%,"1,162,745",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$5.00/$4.95,N/A,N/A,N/A,N/A,,N/A,
-TKPHF,Takeda Pharmaceutical Co Ltd,$35.62,-2.53,6.63%,207,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-NOC,Northrop Grumman Corporation Common Stock,$323.507,-7.163,2.17%,25,01/05/2020,"54,942,433,072",Capital Goods,Industrial Machinery/Components,24.75,14.94,$400.00,$13.27,$330.25/$325.81,$5.28,1.59%,"Feb 21, 2020","Mar 11, 2020",,$385.00/$263.31,1
-VMW,"Vmware, Inc. Common stock, Class A",$128.88,-2.64,2.01%,27,01/05/2020,"53,289,925,682",Technology,Computer Software: Prepackaged Software,8.33,35.64,$160.00,$15.30,$129.00/$126.54,N/A,N/A,N/A,N/A,,$206.80/$86.00,1
-TGT,Target Corporation Common Stock,$108.72,-1.02,0.93%,"2,704",01/05/2020,"53,872,371,043",Consumer Services,Department/Specialty Retail Stores,16.92,20.06,$121.00,$6.37,$109.48/$107.63,$2.64,2.36%,"May 19, 2020","Jun 10, 2020",,$130.24/$70.03,1
-UBER,"Uber Technologies, Inc. Common Stock",$29.10,-1.17,3.87%,"104,756",01/05/2020,"50,927,258,591",Miscellaneous,Business Services,,-11.29,$40.50,$-8.30,$29.72/$28.89,N/A,N/A,N/A,N/A,,$47.08/$13.71,1
-ESLOY,EssilorLuxottica ADR,$61.54,+0.74,1.22%,"35,479",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$61.30/$60.43,N/A,N/A,N/A,N/A,,N/A,
-MU,"Micron Technology, Inc. Common Stock",$46.40,-1.49,3.11%,"32,694",01/05/2020,"50,954,801,865",Technology,Semiconductors,22.68,25.61,$60.00,$2.02,$46.92/$45.28,N/A,N/A,N/A,N/A,,$61.19/$31.13,1
-BSX,Boston Scientific Corporation Common Stock,$37.00,-0.48,1.28%,"3,432",01/05/2020,"51,042,808,193",Health Care,Medical/Dental Instruments,12,34.39,$45.00,$3.04,$36.97/$36.14,N/A,N/A,N/A,N/A,,$46.62/$24.10,1
-ITW,Illinois Tool Works Inc. Common Stock,$162.50,--,--,"9,000",01/05/2020,"50,685,317,567",Technology,Industrial Machinery/Components,20.6,26.82,$143.00,$7.75,$160.23/$158.08,$4.28,2.56%,"Mar 30, 2020","Apr 15, 2020",,$190.85/$115.94,1
-MUFG,"Mitsubishi UFJ Financial Group, Inc. Common Stock",$3.99,-0.11,2.68%,"2,225,800",01/05/2020,"49,691,920,949",Finance,Commercial Banks,9.21,7.82,$5.80,$0.42,$3.91/$3.86,$0.193,4.7%,"Sep 27, 2019","Dec 16, 2019",,$5.54/$3.32,1
-BAM,Brookfield Asset Management Inc. Common Stock,$33.16,-0.66,1.95%,675,01/05/2020,"34,333,697,535",Consumer Services,Building operators,18.95,18.48,$42.00,$1.73,$33.22/$32.51,$0.48,1.36%,"Feb 27, 2020","Mar 31, 2020",,$45.61/$21.57,1
-SWGAY,Swatch Group AG (The) ADR,$9.915,-0.475,4.57%,"150,566",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$9.94/$9.50,N/A,N/A,N/A,N/A,,N/A,
-CSX,CSX Corporation Common Stock,$64.90,-1.33,2.01%,21,01/05/2020,"49,935,167,595",Transportation,Railroads,15.72,17.90,$71.00,$4.15,$65.59/$64.55,$1.04,1.53%,"Feb 27, 2020","Mar 13, 2020",,$80.73/$46.81,1
-BNS,Bank Nova Scotia Halifax Pfd 3 Ordinary Shares,$39.1798,-0.9602,2.39%,56,01/05/2020,"47,226,437,232",Finance,Major Banks,7.61,8.71,$49.58,$5.12,$39.11/$38.55,$2.56,6.15%,"Apr 6, 2020","Apr 28, 2020",,$58.22/$31.94,1
-HUM,Humana Inc. Common Stock,$363.60,-18.22,4.77%,53,01/05/2020,"49,089,295,229",Health Care,Medical Specialities,19.07,20.54,$400.00,$19.48,$381.17/$370.00,$2.50,0.66%,"Jun 29, 2020","Jul 31, 2020",,$392.57/$208.25,1
-TFC,Truist Financial Corporation Common Stock,$36.75,-0.57,1.53%,169,01/05/2020,"48,522,070,610",Finance,Major Banks,10.23,13.19,$40.75,$3.52,$36.38/$35.83,$1.80,4.59%,"May 14, 2020","Jun 1, 2020",,$56.92/$24.01,1
-CEO,CNOOC Limited Common Stock,$112.37,-4.18,3.59%,"138,375",01/05/2020,"1,168,492,402",Energy,Oil & Gas Production,N/A,21.36,$115.10,N/A,$111.58/$108.21,$10.407,6.46%,"Jun 3, 2020","Jul 17, 2020",,$182.30/$81.11,1
-SWRAF,Swire Pacific Ltd A,$6.68,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-SBGSY,Schneider Electric SE ADR,$18.165,-0.565,3.02%,"327,617",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$18.30/$18.02,N/A,N/A,N/A,N/A,,N/A,
-GPN,Global Payments Inc. Common Stock,$162.37,-3.65,2.20%,100,01/05/2020,"48,677,839,144",Miscellaneous,Business Services,68.72,29.75,$175.00,$2.36,$163.44/$160.96,$0.78,0.46%,"Mar 12, 2020","Mar 27, 2020",,$209.62/$105.54,1
-APD,"Air Products and Chemicals, Inc. Common Stock",$225.58,-5.09,2.21%,"1,257,890",01/05/2020,"48,641,027,455",Basic Industries,Major Chemicals,25.14,26.60,$247.50,$8.76,$222.38/$218.87,$5.36,2.32%,"Mar 31, 2020","May 11, 2020",,$257.01/$167.43,1
-EADSF,Airbus SE,$63.25,-0.66,1.03%,"43,975",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$64.05/$62.00,N/A,N/A,N/A,N/A,,N/A,
-EADSY,Airbus SE ADR,$15.75,-0.02,0.13%,"682,406",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$15.80/$15.14,N/A,N/A,N/A,N/A,,N/A,
-SHW,Sherwin-Williams Company (The) Common Stock,$536.37,--,--,"3,300",01/05/2020,"48,092,425,629",Consumer Services,RETAIL: Building Materials,30.26,26.20,$555.00,$17.31,$529.75/$520.07,$5.36,0.99%,"May 21, 2020","Jun 5, 2020",,$599.95/$325.43,1
-ICE,Intercontinental Exchange Inc. Common Stock,$89.21,-0.24,0.27%,89,01/05/2020,"49,477,299,292",Finance,Investment Bankers/Brokers/Service,24.03,20.24,$102.50,$3.75,$90.64/$88.13,$1.20,1.32%,"Jun 15, 2020","Jun 30, 2020",,$101.93/$63.51,1
-ATVI,"Activision Blizzard, Inc. Common Stock",$63.3498,-0.3802,0.60%,"3,092",01/05/2020,"49,711,923,895",Technology,Computer Software: Prepackaged Software,33.09,27.83,$69.00,$1.95,$64.82/$62.85,$0.41,0.63%,"Apr 14, 2020","May 6, 2020",,$68.32/$41.84,1
-MMC,"Marsh & McLennan Companies, Inc. Common Stock",$95.40,-1.93,1.98%,24,01/05/2020,"48,584,779,901",Finance,Specialty Insurers,27.7,20.07,$108.00,$3.48,$97.39/$94.51,$1.82,1.92%,"Apr 7, 2020","May 15, 2020",,$119.88/$74.33,1
-NTDOF,Nintendo Co. Ltd.,$411.63,-24.5586,5.63%,"2,428",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$431.50/$409.80,N/A,N/A,N/A,N/A,,N/A,
-NTDOY,Nintendo Co. Ltd. ADR,$51.44,-2.81,5.18%,"465,664",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$52.59/$51.82,N/A,N/A,N/A,N/A,,N/A,
-MBFJF,Mitsubishi UFJ Financial Group Inc,$3.80,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-HEINY,Heineken N.V. ADR (Sponsored) Level 1,$42.64,+0.105,0.25%,"71,184",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$42.53/$41.97,N/A,N/A,N/A,N/A,,N/A,
-CB,Chubb Limited Common Stock,$107.00,-1.01,0.94%,3,01/05/2020,"46,986,285,561",Finance,Property-Casualty Insurers,13.01,10.84,$143.50,$8.00,$106.04/$103.33,$3.00,2.68%,"Mar 19, 2020","Apr 10, 2020",,$167.74/$87.35,1
-SCHW,Charles Schwab Corporation (The) Common Stock,$36.22,-1.50,3.98%,"4,047",01/05/2020,"47,429,676,925",Finance,Investment Bankers/Brokers/Service,14.39,18.05,$41.00,$2.56,$36.95/$36.49,$0.72,1.86%,"May 7, 2020","May 22, 2020",,$51.65/$28.00,1
-BIIB,Biogen Inc. Common Stock,$297.01,+0.18,0.06%,935,01/05/2020,"48,565,411,771",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),9.19,9.05,$318.00,$32.40,$297.76/$291.88,N/A,N/A,N/A,N/A,,$374.99/$215.78,1
-NEM,Newmont Corporation,$58.37,-1.11,1.87%,"4,117",01/05/2020,"48,456,366,989",Basic Industries,Precious Metals,17.25,23.05,$59.00,$3.47,$60.29/$58.21,$1.00,0.9%,"Jun 3, 2020","Jun 18, 2020",,$64.65/$29.77,1
-FRCOF,Fast Retailing Co Ltd,$470.50,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-RCRRF,Recruit Holdings Co Ltd,$28.87,+0.70,2.48%,"2,930",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-GOLD,Barrick Gold Corporation Common Stock (BC),$25.17,-0.55,2.14%,"30,452",01/05/2020,"46,689,140,605",Basic Industries,Precious Metals,11.67,29.56,$28.00,$2.25,$26.29/$25.16,$0.28,1.05%,"Feb 27, 2020","Mar 16, 2020",,$28.50/$11.65,1
-KMB,Kimberly-Clark Corporation Common Stock,$138.96,+0.48,0.35%,62,01/05/2020,"47,485,311,343",Consumer Durables,Containers/Packaging,20.36,18.29,$148.50,$6.85,$139.45/$136.72,$4.28,3.08%,"Jun 4, 2020","Jul 2, 2020",,$149.23/$110.66,1
-BASFY,BASF SE ADR (Sponsored),$12.83,-0.61,4.54%,"237,071",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$12.84/$12.56,N/A,N/A,N/A,N/A,,N/A,
-ZFSVF,Zurich Ins Group Ord,$317.17,-8.96,2.75%,37,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$327.10/$327.10,N/A,N/A,N/A,N/A,,N/A,
-ILMN,"Illumina, Inc. Common Stock",$319.03,+1.58,0.5%,"991,277",01/05/2020,"44,967,008,993",Capital Goods,Biotechnology: Laboratory Analytical Instruments,48.23,50.40,$327.50,$6.35,$317.42/$304.45,N/A,N/A,N/A,N/A,,$380.76/$196.78,1
-LUKOY,PJSC Lukoil ADR (Sponsored),$64.57,-2.86,4.24%,"65,512",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$64.58/$63.71,N/A,N/A,N/A,N/A,,N/A,
-ZURVY,Zurich Insurance Group Ltd ADR (Sponsored),$31.49,-1.11,3.4%,"92,828",01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$32.29/$30.30,N/A,N/A,N/A,N/A,,N/A,
-OJSCY,Rosneft Oil Co OJSC (Moscow) GDR (Sponsored) Reg S,$4.3957,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-TRP,TC Energy Corporation Common Stock,$46.02,-0.34,0.73%,123,01/05/2020,"43,328,684,025",Public Utilities,Natural Gas Distribution,14.32,16.21,$57.38,$3.22,$46.48/$45.33,$2.284,4.7%,"Mar 30, 2020","Apr 30, 2020",,$57.92/$32.37,1
-MCO,Moody's Corporation Common Stock,$240.00,-3.90,1.60%,71,01/05/2020,"45,280,869,936",Finance,Finance: Consumer Services,30.01,30.11,$254.00,$8.06,$242.64/$238.13,$2.24,0.88%,"May 19, 2020","Jun 10, 2020",,$287.25/$164.19,1
-AMAT,"Applied Materials, Inc. Common Stock",$48.40,-1.28,2.58%,"11,213",01/05/2020,"43,008,820,014",Technology,Semiconductors,15.51,13.28,$62.50,$3.02,$48.36/$46.80,$0.88,1.55%,"May 20, 2020","Jun 11, 2020",,$69.44/$36.64,1
-DE,Deere & Company Common Stock,$141.00,-4.06,2.80%,1,01/05/2020,"43,276,015,956",Capital Goods,Industrial Machinery/Components,13.49,21.95,$160.00,$10.23,$143.05/$137.95,$3.04,2.07%,"Mar 30, 2020","May 8, 2020",,$181.99/$106.14,1
-DSKYF,Daiichi Sankyo Co Ltd,$70.00,--,--,0,01/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-COP,ConocoPhillips Common Stock,$40.88,-1.22,2.90%,"9,617",01/05/2020,"42,837,487,817",Energy,Integrated oil Companies,12.47,-40.10,$50.00,$3.19,$41.30/$39.46,$1.68,3.98%,"Feb 13, 2020","Mar 2, 2020",,$67.13/$20.84,1
-PGR,Progressive Corporation (The) Common Stock,$75.50,-1.80,2.33%,"2,001",01/05/2020,"44,465,124,462",Finance,Property-Casualty Insurers,12.54,12.25,$88.00,$6.06,$77.16/$75.93,$0.40,0.5%,"Apr 6, 2020","Apr 15, 2020",,$84.96/$62.18,1
-PNC,"PNC Financial Services Group, Inc. (The) Common Stock",$103.79,-2.88,2.70%,"1,221",01/05/2020,"44,316,480,000",Finance,Major Banks,9.73,16.54,$109.00,$10.74,$105.96/$103.35,$4.60,4.14%,"Apr 15, 2020","May 5, 2020",,$161.79/$79.41,1
-PBR,Petroleo Brasileiro S.A.- Petrobras Common Stock,$6.64,-0.27,3.91%,"15,878",01/05/2020,"42,622,893,719",Energy,Oil & Gas Production,4.88,-25.59,$10.00,$1.34,$6.75/$6.47,N/A,N/A,N/A,N/A,,$16.95/$4.01,1
-BAX,Baxter International Inc. Common Stock,$88.34,-0.44,0.50%,40,01/05/2020,"44,481,974,532",Health Care,Medical/Dental Instruments,N/A,25.44,$95.00,N/A,$88.51/$86.60,$0.88,0.96%,"Feb 27, 2020","Apr 1, 2020",,$95.19/$69.10,1
+SSNLF,ssnlf,--,--,--,--,02/05/2020,,,,,,,,,,,,,,,
+MSFT,Microsoft Corporation Common Stock,$174.57,-4.64,2.59%,"39,370,474",02/05/2020,"1,327,787,626,536",Technology,Computer Software: Prepackaged Software,29.09,32.29,$196.50,$6.00,$178.64/$174.01,$2.04,1.15%,"May 20, 2020","Jun 11, 2020",,$190.70/$119.01,1
+AAPL,Apple Inc. Common Stock,$289.07,-4.73,1.61%,"60,154,175",02/05/2020,"1,264,820,003,600",Technology,Computer Manufacturing,22.67,24.63,$315.00,$12.75,$299.00/$285.85,$3.08,1.07%,"Feb 7, 2020","Feb 13, 2020",,$327.85/$170.27,1
+AMZN,"Amazon.com, Inc. Common Stock",$2286.04,-187.96,7.6%,"9,772,605",02/05/2020,"1,139,648,143,579",Consumer Services,Catalog/Specialty Distribution,109.22,88.26,"$2,450.00",$20.93,"$2,362.44/$2,258.19",N/A,N/A,N/A,N/A,,"$2,475.00/$1,626.03",1
+GOOGL,Alphabet Inc. Class A Common Stock,$1317.32,-29.38,2.18%,"2,443,554",02/05/2020,"901,010,865,789",Technology,"Computer Software: Programming, Data Processing",26.59,33.06,"$1,475.00",$49.55,"$1,351.43/$1,309.66",N/A,N/A,N/A,N/A,,"$1,530.74/$1,008.87",1
+FB,"Facebook, Inc. Class A Common Stock",$202.27,-2.44,1.19%,"30,415,581",02/05/2020,"576,627,938,091",Technology,"Computer Software: Programming, Data Processing",27.71,28.43,$230.00,$7.30,$207.28/$199.05,N/A,N/A,N/A,N/A,,$224.20/$137.10,1
+BABA,Alibaba Group Holding Limited American Depositary Shares each representing eight Ordinary share,$194.48,-8.19,4.04%,"22,075,655",02/05/2020,"521,735,975,458",Miscellaneous,Business Services,20.91,34.47,$250.00,$9.30,$197.38/$192.86,N/A,N/A,N/A,N/A,,$231.14/$147.95,1
+TCEHY,Tencent Holdings Ltd. ADR,$51.05,-1.57,2.98%,"5,652,966",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$51.54/$50.91,N/A,N/A,N/A,N/A,,N/A,
+BRK/A,Berkshire Hathaway Inc.,$214748.3647,-66951.6353,23.77%,570,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,"$214,748.36/$214,748.36",N/A,N/A,N/A,N/A,,N/A,
+BRK/B,Berkshire Hathaway Inc.,$182.67,-4.69,2.5%,"7,516,538",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$185.89/$181.64,N/A,N/A,N/A,N/A,,N/A,
+V,Visa Inc.,$175.57,-3.15,1.76%,"10,040,880",02/05/2020,"389,044,546,801",Miscellaneous,Business Services,31.63,34.04,$190.00,$5.55,$179.64/$174.27,$1.20,0.66%,"May 13, 2020","Jun 2, 2020",,$214.17/$133.93,1
+JNJ,Johnson & Johnson Common Stock,$148.29,-1.75,1.17%,"7,197,709",02/05/2020,"390,944,675,004",Health Care,Major Pharmaceuticals,19.62,19.54,$165.00,$7.56,$149.67/$146.79,$4.04,2.53%,"May 22, 2020","Jun 9, 2020",,$157.00/$109.16,1
+WMT,Walmart Inc. Common Stock,$122.92,+1.37,1.13%,"10,312,863",02/05/2020,"348,318,637,794",Consumer Services,Department/Specialty Retail Stores,23.68,23.83,$133.50,$5.19,$123.69/$120.78,$2.16,1.75%,"May 7, 2020","Jun 1, 2020",,$133.38/$98.85,1
+NSRGY,Nestle SA ADR (Sponsored) Reg Shs Ser B,$104.38,-0.72,0.69%,"314,689",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$106.07/$104.00,N/A,N/A,N/A,N/A,,N/A,
+NSRGF,Nestle S.A Reg Ord,$104.00,-0.80,0.76%,"9,607",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$110.45/$100.00,N/A,N/A,N/A,N/A,,N/A,
+RHHBY,Roche Holding Ltd ADR (Sponsored),$42.84,-0.63,1.45%,"823,811",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$43.46/$42.51,N/A,N/A,N/A,N/A,,N/A,
+RHHVF,Roche Holding Div Rts,$341.00,-4.22,1.22%,677,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$351.46/$328.25,N/A,N/A,N/A,N/A,,N/A,
+PG,Procter & Gamble Company (The) Common Stock,$116.82,-1.05,0.89%,"7,251,246",02/05/2020,"289,204,570,051",Basic Industries,Package Goods/Cosmetics,66,23.81,$133.00,$1.77,$118.37/$116.32,$3.163,2.7%,"Apr 23, 2020","May 15, 2020",,$128.09/$94.34,1
+JPM,JP Morgan Chase & Co. Common Stock,$93.25,-2.51,2.62%,"18,546,967",02/05/2020,"284,089,582,244",Finance,Major Banks,10.54,18.70,$101.00,$8.85,$93.74/$91.84,$3.60,3.68%,"Apr 3, 2020","Apr 30, 2020",,$141.10/$76.91,1
+UNH,UnitedHealth Group Incorporated Common Stock (DE),$284.51,-7.96,2.72%,"3,464,793",02/05/2020,"269,552,215,644",Health Care,Medical Specialities,19.91,17.99,$322.50,$14.29,$289.00/$279.60,$4.32,1.5%,"Mar 13, 2020","Mar 24, 2020",,$306.71/$187.72,1
+MA,Mastercard Incorporated Common Stock,$268.74,-6.23,2.27%,"4,961,848",02/05/2020,"270,112,982,985",Miscellaneous,Business Services,34.37,38.67,$300.00,$7.82,$273.99/$267.21,$1.60,0.56%,"Apr 8, 2020","May 8, 2020",,$347.25/$199.99,1
+TSM,Taiwan Semiconductor Manufacturing Company Ltd.,$51.10,-2.03,3.82%,"10,107,819",02/05/2020,"265,008,488,250",Technology,Semiconductors,20.36,19.04,$57.00,$2.51,$52.56/$51.09,$1.314,2.42%,"Jun 18, 2020","Jul 16, 2020",,$60.64/$37.18,1
+INTC,Intel Corporation Common Stock,$57.47,-2.51,4.18%,"21,194,802",02/05/2020,"243,327,980,000",Technology,Semiconductors,11.14,12.44,$60.00,$5.16,$59.32/$57.31,$1.32,2.14%,"May 6, 2020","Jun 1, 2020",,$69.29/$42.86,1
+IDCBF,Industrial & Coml Bk H Sh,$0.6693,-0.0239,3.45%,"9,700",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$0.69/$0.64,N/A,N/A,N/A,N/A,,N/A,
+VZ,Verizon Communications Inc. Common Stock,$56.83,-0.62,1.08%,"13,715,243",02/05/2020,"235,162,278,866",Public Utilities,Telecommunications Equipment,12.83,12.04,$61.00,$4.43,$57.79/$56.53,$2.46,4.23%,"Apr 9, 2020","May 1, 2020",,$62.22/$48.84,1
+IDCBY,Industrial and Commercial Bank of China Ltd ADR,$12.86,-0.43,3.24%,"115,328",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$13.00/$12.82,N/A,N/A,N/A,N/A,,N/A,
+HD,"Home Depot, Inc. (The) Common Stock",$218.57,-1.26,0.57%,"3,771,050",02/05/2020,"234,769,565,157",Consumer Services,RETAIL: Building Materials,21.32,22.30,$228.00,$10.25,$219.70/$215.77,$6.00,2.7%,"Mar 11, 2020","Mar 26, 2020",,$247.36/$140.63,1
+T,AT&T Inc.,$29.90,-0.57,1.87%,"36,085,638",02/05/2020,"213,037,500,000",Public Utilities,Telecommunications Equipment,15.18,9.26,$36.00,$1.97,$30.79/$29.75,$2.08,6.62%,"Apr 8, 2020","May 1, 2020",,$39.70/$26.08,1
+PFE,"Pfizer, Inc. Common Stock",$37.64,-0.72,1.88%,"20,525,840",02/05/2020,"208,813,132,148",Health Care,Major Pharmaceuticals,13.44,13.70,$38.50,$2.80,$37.94/$37.39,$1.52,3.99%,"May 7, 2020","Jun 5, 2020",,$44.56/$27.88,1
+BAC,Bank of America Corporation Common Stock,$23.08,-0.97,4.03%,"50,444,786",02/05/2020,"200,230,250,000",Finance,Major Banks,9.46,16.25,$27.00,$2.44,$23.46/$22.81,$0.72,2.91%,"Jun 4, 2020","Jun 26, 2020",,$35.72/$17.95,1
+MRK,"Merck & Company, Inc. Common Stock (new)",$77.67,-1.67,2.1%,"9,036,319",02/05/2020,"196,123,484,843",Health Care,Major Pharmaceuticals,19.66,14.86,$93.00,$3.95,$78.86/$76.93,$2.44,3.02%,"Mar 13, 2020","Apr 7, 2020",,$92.64/$65.25,1
+KO,Coca-Cola Company (The) Common Stock,$45.60,-0.29,0.63%,"13,831,659",02/05/2020,"195,847,045,697",Consumer Non-Durables,Beverages (Production/Distribution),19.66,24.54,$52.00,$2.32,$46.39/$45.21,$1.64,3.48%,"Jun 12, 2020","Jul 1, 2020",,$60.13/$36.27,1
+XOM,Exxon Mobil Corporation Common Stock,$43.14,-3.33,7.17%,"35,399,315",02/05/2020,"182,500,767,370",Energy,Integrated oil Companies,12.84,-47.91,$46.00,$3.36,$46.39/$43.00,$3.48,7.33%,"May 12, 2020","Jun 10, 2020",,$80.26/$30.11,1
+DIS,Walt Disney Company (The) Common Stock,$105.50,-2.65,2.45%,"13,209,147",02/05/2020,"190,473,776,837",Consumer Services,Services-Misc. Amusement & Recreation,16.85,38.08,$132.50,$6.26,$106.91/$104.47,$1.76,1.57%,"Dec 13, 2019","Jan 16, 2020",,$153.41/$79.07,1
+NVS,Novartis AG Common Stock,$83.41,-1.32,1.56%,"1,366,849",02/05/2020,"190,898,645,075",Health Care,Major Pharmaceuticals,15.92,14.89,$103.00,$5.24,$84.30/$82.97,$2.007,2.34%,"Mar 3, 2020","Mar 12, 2020",,$99.84/$69.18,1
+LVMUY,LVMH Moet Hennessy Louis Vuitton ADR,$75.87,-1.11,1.44%,"112,284",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$77.24/$75.00,N/A,N/A,N/A,N/A,,N/A,
+CICHF,China Construction Bank Corp,$0.765,--,--,"6,302",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$0.79/$0.77,N/A,N/A,N/A,N/A,,N/A,
+PIAIF,Ping An Insurance (Group) Co of China Ltd.,$10.0599,-0.0801,0.79%,"8,150",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$10.10/$9.85,N/A,N/A,N/A,N/A,,N/A,
+NFLX,"Netflix, Inc. Common Stock",$415.27,-4.58,1.09%,"8,299,758",02/05/2020,"182,637,421,614",Consumer Services,Consumer Electronics/Video Chains,84.06,65.30,$482.50,$4.94,$427.97/$411.73,N/A,N/A,N/A,N/A,,$449.52/$252.28,1
+PEP,"PepsiCo, Inc. Common Stock",$130.14,-2.15,1.63%,"4,488,110",02/05/2020,"180,569,306,351",Consumer Non-Durables,Beverages (Production/Distribution),25.27,24.23,$141.50,$5.15,$132.23/$129.52,$3.82,2.86%,"Mar 5, 2020","Mar 31, 2020",,$147.20/$101.42,1
+CSCO,"Cisco Systems, Inc. Common Stock",$40.92,-1.46,3.45%,"22,095,255",02/05/2020,"173,536,816,188",Technology,Computer Communications Equipment,15.98,15.36,$48.00,$2.56,$41.81/$40.77,$1.44,3.32%,"Apr 2, 2020","Apr 22, 2020",,$58.26/$32.40,1
+NVDA,NVIDIA Corporation Common Stock,$282.78,-9.50,3.25%,"8,552,445",02/05/2020,"173,061,360,000",Technology,Semiconductors,62.56,47.45,$300.50,$4.52,$288.90/$280.84,$0.64,0.21%,"Feb 27, 2020","Mar 20, 2020",,$316.32/$132.60,1
+TM,Toyota Motor Corporation Common Stock,$121.12,-2.47,2%,"180,476",02/05/2020,"170,370,567,282",Capital Goods,Auto Manufacturing,7.63,8.38,$148.65,$15.87,$122.23/$121.01,$3.244,2.54%,"Sep 27, 2019","Dec 9, 2019",,$145.41/$108.01,1
+CVX,Chevron Corporation Common Stock,$89.44,-2.56,2.78%,"13,250,095",02/05/2020,"166,982,570,456",Energy,Integrated oil Companies,59.23,-102.22,$100.00,$1.51,$92.05/$87.04,$5.16,5.45%,"May 18, 2020","Jun 10, 2020",,$127.00/$51.60,1
+CMCSA,Comcast Corporation Class A Common Stock,$36.98,-0.65,1.73%,"19,950,891",02/05/2020,"168,782,548,714",Consumer Services,Television Services,14.67,13.44,$45.50,$2.52,$37.51/$36.78,$0.92,2.36%,"Mar 31, 2020","Apr 22, 2020",,$47.74/$31.70,1
+ADBE,Adobe Inc. Common Stock,$343.84,-9.80,2.77%,"2,578,615",02/05/2020,"165,662,404,264",Technology,Computer Software: Prepackaged Software,52.1,44.21,$332.00,$6.60,$350.31/$340.26,N/A,N/A,N/A,N/A,,$386.75/$255.13,1
+ORCL,Oracle Corporation Common Stock,$51.79,-1.18,2.23%,"8,504,744",02/05/2020,"163,324,115,360",Technology,Computer Software: Prepackaged Software,16.29,15.27,$55.00,$3.18,$52.44/$51.31,$0.96,1.78%,"Apr 8, 2020","Apr 23, 2020",,$60.50/$39.71,1
+CHL,China Mobile Limited Common Stock,$38.76,-1.21,3.03%,"1,229,395",02/05/2020,"158,725,943,402",Public Utilities,Telecommunications Equipment,N/A,10.74,$59.30,N/A,$39.43/$38.70,$1.999,4.13%,"May 21, 2020","Jul 6, 2020",,$47.89/$30.12,1
+ABT,Abbott Laboratories Common Stock,$89.85,-2.24,2.43%,"6,723,003",02/05/2020,"158,444,476,884",Health Care,Major Pharmaceuticals,45.15,32.77,$106.00,$1.99,$91.36/$88.75,$1.44,1.56%,"Apr 14, 2020","May 15, 2020",,$100.00/$61.61,1
+LRLCY,L'Oreal S.A. ADR,$57.18,-0.62,1.07%,"63,769",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$58.20/$57.00,N/A,N/A,N/A,N/A,,N/A,
+CHLKF,China Mobile (Hk) Ltd Ord,$7.84,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+NVO,Novo Nordisk A/S Common Stock,$63.43,+0.10,0.16%,"1,096,761",02/05/2020,"148,648,596,109",Health Care,Major Pharmaceuticals,25.78,23.54,$69.40,$2.46,$64.12/$62.83,$1.123,1.78%,"Mar 27, 2020","Apr 7, 2020",,$65.88/$46.47,1
+LLY,Eli Lilly and Company Common Stock,$153.63,-1.01,0.65%,"2,576,671",02/05/2020,"147,029,816,613",Health Care,Major Pharmaceuticals,25.39,22.71,$162.50,$6.05,$154.61/$151.57,$2.96,1.91%,"Feb 13, 2020","Mar 10, 2020",,$164.90/$101.36,1
+CRM,Salesforce.com Inc Common Stock,$156.37,-5.58,3.45%,"4,211,596",02/05/2020,"139,951,150,000",Technology,Computer Software: Prepackaged Software,781.85,131.67,$193.00,$0.20,$160.17/$155.26,N/A,N/A,N/A,N/A,,$195.72/$115.29,1
+PYPL,"PayPal Holdings, Inc. Common Stock",$120.61,-2.39,1.94%,"5,613,832",02/05/2020,"141,462,392,797",Miscellaneous,Business Services,58.27,48.81,$124.50,$2.07,$122.70/$119.43,N/A,N/A,N/A,N/A,,$124.45/$82.07,1
+TSLA,"Tesla, Inc. Common Stock",$701.32,-80.56,10.3%,"32,531,807",02/05/2020,"129,315,753,794",Capital Goods,Auto Manufacturing,,-407.23,$500.00,$-0.89,$772.77/$683.04,N/A,N/A,N/A,N/A,,$968.99/$176.99,1
+ACGBF,Agricultural Bank of China,$0.41,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+SAP,SAP SE ADS,$116.97,-1.57,1.32%,"643,450",02/05/2020,"139,621,226,230",Technology,Computer Software: Prepackaged Software,29.46,24.54,$125.00,$3.97,$117.85/$116.08,$1.23,1.01%,"May 21, 2020","Jun 2, 2020",,$140.67/$90.89,1
+AMGN,Amgen Inc. Common Stock,$230.98,-8.24,3.44%,"3,045,498",02/05/2020,"135,761,391,258",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),18.1,15.56,$250.00,$12.76,$237.05/$228.00,$6.40,2.72%,"May 15, 2020","Jun 8, 2020",,$244.99/$166.30,1
+MCD,McDonald's Corporation Common Stock,$182.66,-4.90,2.61%,"3,717,652",02/05/2020,"135,810,472,733",Consumer Services,Restaurants,23.94,31.68,$198.50,$7.63,$185.54/$182.15,$5.00,2.66%,"Feb 28, 2020","Mar 16, 2020",,$221.93/$124.23,1
+BMY,Bristol-Myers Squibb Company Common Stock,$60.26,-0.55,0.9%,"15,366,344",02/05/2020,"136,336,041,652",Health Care,Major Pharmaceuticals,27.52,9.94,$69.00,$2.19,$60.87/$59.68,$1.80,2.92%,"Apr 2, 2020","May 1, 2020",,$68.34/$42.48,1
+AZN,Astrazeneca PLC Common Stock,$51.86,-0.42,0.8%,"3,111,677",02/05/2020,"136,104,002,411",Health Care,Major Pharmaceuticals,87.9,26.01,$53.35,$0.59,$52.03/$51.26,$1.86,3.67%,"Feb 27, 2020","Mar 30, 2020",,$54.00/$36.15,1
+UL,Unilever PLC Common Stock,$51.50,-0.37,0.71%,"1,104,238",02/05/2020,"134,766,561,918",Basic Industries,Package Goods/Cosmetics,N/A,19.28,$62.00,N/A,$52.08/$51.36,$1.758,3.46%,"May 14, 2020","Jun 4, 2020",,$64.84/$44.06,1
+NKE,"Nike, Inc. Common Stock",$85.54,-1.64,1.88%,"6,053,554",02/05/2020,"133,017,671,146",Consumer Non-Durables,Shoe Manufacturing,31.56,32.77,$96.00,$2.71,$86.11/$84.81,$0.98,1.11%,"Feb 28, 2020","Apr 1, 2020",,$105.62/$60.00,1
+COST,Costco Wholesale Corporation Common Stock,$301.92,-1.08,0.36%,"2,525,563",02/05/2020,"133,321,819,108",Consumer Services,Department/Specialty Retail Stores,35.44,34.75,$330.00,$8.52,$304.82/$300.18,$2.80,0.85%,"Apr 30, 2020","May 15, 2020",,$325.26/$233.05,1
+TMO,Thermo Fisher Scientific Inc Common Stock,$329.81,-4.87,1.46%,"1,594,151",02/05/2020,"130,258,823,610",Capital Goods,Industrial Machinery/Components,36.16,28.17,$371.00,$9.12,$334.44/$326.55,$0.88,0.26%,"Mar 13, 2020","Apr 16, 2020",,$346.89/$250.21,1
+MDT,Medtronic plc. Ordinary Shares,$95.14,-2.49,2.55%,"4,104,749",02/05/2020,"127,503,406,274",Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus,24.15,18.92,$116.00,$3.94,$97.18/$94.60,$2.16,2.18%,"Mar 26, 2020","Apr 17, 2020",,$122.15/$72.13,1
+RDS.A,Royal Dutch Shell PLC Royal Dutch Shell American Depositary Shares (Each representing two Class A Ordinary Shares),$0.00,--,--,0,02/05/2020,0,N/A,N/A,,N/A,$34.00,$2.43,N/A,$3.196,8.41%,"Feb 13, 2020","Mar 23, 2020",,$66.48/$21.25,1
+VNJA,Vanjia Corp,$14.38,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+ASML,ASML Holding N.V. New York Registry Shares,$279.06,-9.37,3.25%,"862,796",02/05/2020,"118,784,596,998",Technology,Industrial Machinery/Components,40.21,39.62,$320.00,$6.94,$283.86/$278.20,$2.478,0.82%,"Apr 24, 2020","May 6, 2020",,$319.22/$186.31,1
+ABBV,AbbVie Inc. Common Stock,$82.84,+0.64,0.78%,"12,705,345",02/05/2020,"122,327,575,415",Health Care,Major Pharmaceuticals,15.69,8.09,$97.00,$5.28,$84.23/$80.50,$4.72,5.64%,"Apr 14, 2020","May 15, 2020",,$97.86/$62.55,1
+PROSY,Prosus NV - ADR,$14.43,-0.38,2.57%,"431,053",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.80/$14.33,N/A,N/A,N/A,N/A,,N/A,
+SNYNF,Sanofi,$95.00,-1.25,1.3%,"3,025",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$102.25/$94.66,N/A,N/A,N/A,N/A,,N/A,
+PROSF,Prosus NV - Ordinary Shares - Class N,$74.00,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+WFC,Wells Fargo & Company Common Stock,$27.59,-1.46,5.03%,"34,530,383",02/05/2020,"113,019,960,287",Finance,Major Banks,9.75,32.28,$34.00,$2.83,$28.53/$27.28,$2.04,6.8%,"May 7, 2020","Jun 1, 2020",,$54.75/$25.11,1
+ACN,Accenture plc Class A Ordinary Shares (Ireland),$180.09,-5.10,2.75%,"2,029,367",02/05/2020,"114,828,172,514",Miscellaneous,Business Services,23.48,24.46,$197.00,$7.67,$182.99/$179.26,$3.20,1.71%,"Apr 15, 2020","May 15, 2020",,$216.39/$137.15,1
+CIHHF,China Merchants Bank Co Ltd,$4.66,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+SNY,Sanofi ADR,$46.85,+0.02,0.04%,"1,311,275",02/05/2020,"117,164,082,364",Health Care,Major Pharmaceuticals,30.82,13.61,$56.00,$1.52,$46.85/$44.11,$1.212,2.36%,"Apr 30, 2020","May 26, 2020",,$51.84/$37.62,1
+UN,Unilever NV Common Stock,$49.11,-0.31,0.63%,"1,314,188",02/05/2020,"115,731,247,188",Basic Industries,Package Goods/Cosmetics,N/A,18.65,$57.00,N/A,$49.60/$48.92,$1.74,3.67%,"May 14, 2020","Jun 4, 2020",,$63.62/$42.00,1
+PM,Philip Morris International Inc Common Stock,$73.28,-1.32,1.77%,"4,721,928",02/05/2020,"114,106,452,545",Consumer Non-Durables,Farming/Seeds/Milling,14.89,14.80,$90.00,$4.92,$74.89/$72.91,$4.68,6.12%,"Mar 20, 2020","Apr 9, 2020",,$90.17/$56.01,1
+CHTR,"Charter Communications, Inc. Class A Common Stock New",$509.64,+14.41,2.91%,"1,671,348",02/05/2020,"119,355,442,526",Consumer Services,Television Services,67.77,37.95,$540.00,$7.52,$517.91/$495.51,N/A,N/A,N/A,N/A,,$546.54/$345.67,1
+FMX,Fomento Economico Mexicano S.A.B. de C.V. Common Stock,$62.51,-1.82,2.83%,"480,467",02/05/2020,"111,837,462,069",Consumer Non-Durables,Beverages (Production/Distribution),16.49,20.68,$75.00,$3.79,$64.68/$62.03,$1.477,2.23%,"Nov 1, 2019","Nov 18, 2019",,$100.35/$55.40,1
+ISRMF,isrmf,--,--,--,--,02/05/2020,,,,,,,,,,,,,,,
+DHR,Danaher Corporation Common Stock,$160.77,-2.69,1.65%,"2,094,729",02/05/2020,"112,039,836,963",Capital Goods,Industrial Machinery/Components,39.7,33.50,$170.00,$4.05,$162.63/$159.75,$0.72,0.44%,"Mar 26, 2020","Apr 24, 2020",,$170.64/$119.60,1
+NEE,"NextEra Energy, Inc. Common Stock",$227.05,-4.07,1.76%,"2,292,100",02/05/2020,"111,129,633,853",Public Utilities,Electric Utilities: Central,31.45,25.54,$255.00,$7.22,$230.02/$225.00,$5.60,2.38%,"Feb 27, 2020","Mar 16, 2020",,$283.35/$174.80,1
+IBM,International Business Machines Corporation Common Stock,$121.87,-3.69,2.94%,"4,887,360",02/05/2020,"108,207,392,800",Technology,Computer Manufacturing,12.07,11.12,$135.00,$10.10,$123.47/$121.39,$6.52,5.04%,"May 7, 2020","Jun 10, 2020",,$158.75/$90.56,1
+AAGIY,AIA Group Ltd. ADR (Sponsored),$35.33,-1.04,2.86%,"335,361",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$36.58/$35.10,N/A,N/A,N/A,N/A,,N/A,
+BACHY,Bank of China Ltd ADR,$9.14,-0.14,1.51%,"92,146",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$9.25/$9.07,N/A,N/A,N/A,N/A,,N/A,
+AAIGF,AIA Group Ltd.,$9.03,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+LMT,Lockheed Martin Corporation Common Stock,$383.47,-5.59,1.44%,"897,512",02/05/2020,"107,538,529,860",Capital Goods,Military/Government/Technical,17.41,16.20,$410.00,$22.03,$387.41/$381.09,$9.60,2.47%,"May 29, 2020","Jun 26, 2020",,$442.53/$266.11,1
+AVGO,Broadcom Inc. Common Stock,$259.70,-11.92,4.39%,"2,683,561",02/05/2020,"103,825,812,297",Technology,Semiconductors,42.85,15.58,$315.00,$6.06,$267.85/$258.20,$13.00,4.71%,"Mar 20, 2020","Mar 31, 2020",,$331.58/$155.67,1
+UNP,Union Pacific Corporation Common Stock,$156.64,-3.15,1.97%,"3,050,474",02/05/2020,"106,290,899,822",Transportation,Railroads,18.19,20.20,$169.00,$8.61,$157.70/$154.74,$3.88,2.38%,"Feb 27, 2020","Mar 31, 2020",,$188.96/$105.08,1
+TMUS,"T-Mobile US, Inc. Common Stock",$86.20,-1.60,1.82%,"3,162,074",02/05/2020,"106,413,014,985",Public Utilities,Telecommunications Equipment,21.39,40.28,$107.00,$4.03,$88.11/$85.81,N/A,N/A,N/A,N/A,,$101.35/$63.50,1
+BACHF,Bank of China Ltd,$0.364,-0.0035,0.95%,"1,000",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$0.36/$0.36,N/A,N/A,N/A,N/A,,N/A,
+TXN,Texas Instruments Incorporated Common Stock,$109.71,-5.46,4.74%,"5,839,885",02/05/2020,"100,688,836,444",Technology,Semiconductors,21.06,28.73,$114.50,$5.21,$113.25/$109.45,$3.60,3.02%,"May 1, 2020","May 18, 2020",,$135.70/$93.09,1
+GILD,"Gilead Sciences, Inc. Common Stock",$79.95,-4.05,4.82%,"34,497,949",02/05/2020,"100,658,262,842",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),20.55,13.88,$80.00,$3.89,$81.40/$77.62,$2.72,3.27%,"Mar 12, 2020","Mar 30, 2020",,$85.97/$60.89,1
+AMT,American Tower Corporation (REIT) Common Stock,$234.20,-3.80,1.6%,"1,865,600",02/05/2020,"103,856,421,631",Consumer Services,Real Estate Investment Trusts,54.85,28.81,$260.00,$4.27,$235.90/$232.59,$4.32,1.82%,"Apr 13, 2020","Apr 29, 2020",,$260.43/$174.32,1
+GSK,GlaxoSmithKline PLC Common Stock,$41.21,-0.86,2.04%,"3,114,755",02/05/2020,"103,376,189,601",Health Care,Major Pharmaceuticals,15.04,14.56,$50.50,$2.74,$41.24/$40.63,$1.858,5.35%,"May 14, 2020","Jul 9, 2020",,$48.25/$31.43,1
+HSBC,"HSBC Holdings, plc. Common Stock",$25.28,-0.45,1.75%,"3,485,996",02/05/2020,"102,965,505,804",Finance,Savings Institutions,28.09,14.70,$29.10,$0.90,$25.39/$25.12,N/A,N/A,N/A,N/A,,$44.93/$23.95,1
+BHPLF,BHP Group Ltd,$19.4629,-0.8796,4.32%,"156,000",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$19.50/$19.46,N/A,N/A,N/A,N/A,,N/A,
+BHP,BHP Group Limited American Depositary Shares (Each representing two Ordinary Shares),$38.44,-2.24,5.51%,"2,582,749",02/05/2020,"97,213,283,750",Basic Industries,Precious Metals,N/A,11.46,$37.90,N/A,$39.18/$38.32,$2.60,6.17%,"Mar 5, 2020","Mar 24, 2020",,$59.02/$29.78,1
+C,"Citigroup, Inc. Common Stock",$45.52,-3.04,6.26%,"28,078,944",02/05/2020,"94,763,536,000",Finance,Major Banks,6.3,15.27,$58.00,$7.22,$46.47/$45.22,$2.04,4.06%,"May 1, 2020","May 22, 2020",,$83.11/$32.00,1
+HON,Honeywell International Inc. Common Stock,$137.25,-4.65,3.28%,"3,609,031",02/05/2020,"97,075,096,556",Capital Goods,Aerospace,16.32,18.17,$158.00,$8.41,$139.50/$134.17,$3.60,2.46%,"May 14, 2020","Jun 5, 2020",,$184.06/$101.08,1
+RTX,Raytheon Technologies Corporation Common Stock,$61.11,-3.70,5.71%,"13,564,253",02/05/2020,"92,591,728,261",Capital Goods,Aerospace,9.53,18.00,$81.00,$6.41,$63.61/$60.22,$1.90,4.33%,"May 14, 2020","Jun 18, 2020",,$158.44/$48.05,
+E,ENI S.p.A. Common Stock,$18.10,-0.68,3.62%,"224,619",02/05/2020,,,,,,,,,,,,,,,
+LIN,Linde plc Ordinary Share,$180.33,-3.66,1.99%,"1,152,674",02/05/2020,"94,703,498,915",Basic Industries,Major Chemicals,42.94,24.37,$230.00,$4.20,$185.10/$179.78,$3.852,2.04%,"Jun 2, 2020","Jun 17, 2020",,$227.85/$146.71,1
+NTDMF,NTT DoCoMo Inc,$29.25,-1.09,3.59%,312,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$29.25/$29.25,N/A,N/A,N/A,N/A,,N/A,
+DCMYY,NTT DOCOMO Inc American Depositary Shares,$29.43,+0.29,1%,"38,628",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$29.57/$29.24,N/A,N/A,N/A,N/A,,N/A,
+RTNTF,Rio Tinto Ltd Aud2 Ord,$57.69,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+BUD,Anheuser-Busch Inbev SA Sponsored ADR (Belgium),$44.79,-1.73,3.72%,"1,621,026",02/05/2020,"87,760,591,054",Consumer Non-Durables,Beverages (Production/Distribution),9.69,23.86,$54.00,$4.62,$46.48/$44.71,$1.313,2.7%,"Nov 19, 2019","Dec 18, 2019",,$102.70/$32.58,1
+TOT,Total S.A.,$33.43,-1.72,4.89%,"6,512,456",02/05/2020,"86,021,201,037",Energy,Oil & Gas Production,8.02,36.24,$44.00,$4.17,$34.68/$32.40,$2.468,6.58%,"Mar 26, 2020","Apr 21, 2020",,$56.91/$22.13,1
+CMXHF,Csl Ltd,$191.50,-7.50,3.77%,385,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$198.50/$189.00,N/A,N/A,N/A,N/A,,N/A,
+CSLLY,CSL Ltd ADR (Sponsored),$96.65,-2.81,2.83%,"38,572",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$97.16/$95.32,N/A,N/A,N/A,N/A,,N/A,
+QCOM,QUALCOMM Incorporated Common Stock,$75.64,-3.03,3.85%,"9,742,126",02/05/2020,"86,459,757,846",Technology,Radio And Television Broadcasting And Communications Equipment,22.38,25.88,$95.00,$3.38,$77.59/$74.68,$2.60,3.14%,"Jun 3, 2020","Jun 25, 2020",,$96.17/$58.00,1
+SBUX,Starbucks Corporation Common Stock,$73.79,-2.94,3.83%,"11,216,703",02/05/2020,"86,208,857,000",Consumer Services,Restaurants,26.26,55.20,$80.00,$2.81,$75.88/$73.21,$1.64,2.13%,"May 7, 2020","May 22, 2020",,$99.72/$50.02,1
+SFTBF,Softbank Corp Fgn,$42.69,+0.19,0.45%,"6,531",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$42.87/$41.72,N/A,N/A,N/A,N/A,,N/A,
+RY,Royal Bank Of Canada Common Stock,$60.05,-1.54,2.5%,"1,279,031",02/05/2020,"85,506,275,840",Finance,Commercial Banks,8.86,10.16,$72.52,$6.78,$60.43/$59.60,$3.071,4.83%,"Apr 22, 2020","May 22, 2020",,$82.74/$49.55,1
+SFTBY,SoftBank Group Corp ADR,$21.36,+0.17,0.8%,"456,832",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$21.65/$21.20,N/A,N/A,N/A,N/A,,N/A,
+BTI,"British American Tobacco Industries, p.l.c. Common Stock ADR",$37.34,-0.81,2.12%,"2,415,563",02/05/2020,"85,654,037,844",Consumer Non-Durables,Farming/Seeds/Milling,N/A,9.11,$50.08,N/A,$37.93/$37.04,$2.688,6.72%,"Jul 9, 2020","Aug 24, 2020",,$45.64/$27.32,1
+MMM,3M Company Common Stock,$148.60,-3.32,2.19%,"2,885,802",02/05/2020,"85,474,180,731",Health Care,Medical/Dental Instruments,17.44,19.28,$160.00,$8.52,$150.04/$147.73,$5.88,3.76%,"Feb 13, 2020","Mar 12, 2020",,$189.71/$114.04,1
+KYCCF,Keyence Corp,$363.00,+7.23,2.03%,"3,387",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$376.50/$349.50,N/A,N/A,N/A,N/A,,N/A,
+BBL,BHP Group PlcSponsored ADR,$31.88,-1.56,4.67%,"1,689,759",02/05/2020,"80,609,724,428",Energy,Coal Mining,N/A,9.53,$33.05,N/A,$32.37/$31.81,$2.60,7.41%,"Mar 5, 2020","Mar 24, 2020",,$51.87/$23.64,1
+NTTYY,Nippon Telegraph & Telephone Corp (Japan) ADR (Sponsored),$22.6201,+0.02,0.09%,"131,317",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$22.88/$22.55,N/A,N/A,N/A,N/A,,N/A,
+NPPXF,Nippon Tel & Tel Cp,$22.60,--,--,672,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$22.60/$22.31,N/A,N/A,N/A,N/A,,N/A,
+DGEAF,Diageo Plc Ord,$32.64,-2.33,6.66%,"2,108",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$33.50/$32.60,N/A,N/A,N/A,N/A,,N/A,
+FIS,"Fidelity National Information Services, Inc. Common Stock",$129.29,-2.60,1.97%,"2,536,155",02/05/2020,"79,867,209,231",Miscellaneous,Business Services,136.09,23.51,$147.00,$0.95,$130.63/$128.00,$1.40,1.04%,"Jun 11, 2020","Jun 26, 2020",,$158.21/$91.68,1
+UPS,"United Parcel Service, Inc. Common Stock",$91.90,-2.76,2.92%,"5,292,307",02/05/2020,"79,083,694,006",Transportation,Trucking Freight/Courier Services,18.6,15.91,$105.00,$4.94,$93.71/$91.25,$4.04,4.2%,"Feb 24, 2020","Mar 10, 2020",,$125.31/$82.00,1
+DEO,Diageo plc Common Stock,$137.13,-1.52,1.1%,"557,223",02/05/2020,,,,,,,,,,,,,,,
+CVS,CVS Health Corporation Common Stock,$59.70,-1.85,3.01%,"7,661,556",02/05/2020,"77,943,822,281",Health Care,Medical/Nursing Services,11.75,8.68,$81.50,$5.08,$60.80/$59.27,$2.00,3.19%,"Apr 22, 2020","May 4, 2020",,$77.03/$51.72,1
+BP,BP p.l.c. Common Stock,$22.83,-0.97,4.08%,"13,141,260",02/05/2020,"76,851,590,235",Energy,Integrated oil Companies,,-140.00,$25.50,$-0.97,$23.21/$22.63,$2.50,9.83%,"May 8, 2020","Jun 19, 2020",,$43.80/$15.51,1
+BA,Boeing Company (The) Common Stock,$133.37,-7.65,5.42%,"36,515,765",02/05/2020,"75,250,802,015",Capital Goods,Aerospace,,-33.34,$175.00,$-6.06,$143.71/$132.85,N/A,N/A,N/A,N/A,,$391.00/$89.00,1
+HDB,HDFC Bank Limited Common Stock,$42.10,-1.25,2.88%,"1,375,400",02/05/2020,"76,928,899,233",Finance,Commercial Banks,20.89,22.35,$53.00,$2.02,$42.32/$41.41,$0.411,0.92%,"Jul 31, 2019","Aug 23, 2019",,$65.89/$29.50,1
+LOW,"Lowe's Companies, Inc. Common Stock",$104.46,-0.29,0.28%,"3,767,117",02/05/2020,"78,861,935,770",Consumer Services,RETAIL: Building Materials,19.1,17.84,$121.00,$5.47,$104.69/$102.31,$2.20,2.07%,"Apr 21, 2020","May 6, 2020",,$126.73/$60.00,1
+HESAY,Hermes International SCA ADR,$73.52,-2.12,2.8%,"8,146",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$77.99/$70.77,N/A,N/A,N/A,N/A,,N/A,
+SNE,Sony Corporation Common Stock,$62.73,-1.52,2.37%,"617,788",02/05/2020,"76,540,633,036",Consumer Non-Durables,Consumer Electronics/Appliances,13.15,14.60,$71.20,$4.77,$63.62/$62.16,$0.268,0.42%,"Sep 27, 2019","Dec 10, 2019",,$73.86/$47.29,1
+BLK,"BlackRock, Inc. Common Stock",$484.16,-17.88,3.56%,"521,165",02/05/2020,"75,086,343,833",Finance,Investment Bankers/Brokers/Service,17.93,19.73,$520.00,$27.00,$492.47/$483.15,$14.52,2.84%,"Mar 4, 2020","Mar 23, 2020",,$576.81/$323.98,1
+CILJF,China Life Insurance Co Ltd,$2.135,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+SNEJF,Sony Corp,$61.95,-0.29,0.47%,179,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$61.95/$61.95,N/A,N/A,N/A,N/A,,N/A,
+MPNGF,Meituan Dianping,$12.56,-0.49,3.75%,"124,130",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$13.48/$12.56,N/A,N/A,N/A,N/A,,N/A,
+TD,Toronto Dominion Bank (The) Common Stock,$40.56,-1.21,2.9%,"1,844,863",02/05/2020,"73,107,181,368",Finance,Commercial Banks,8.18,9.69,$53.41,$4.96,$41.01/$40.30,$2.247,5.17%,"Apr 8, 2020","Apr 30, 2020",,$59.55/$33.74,1
+LFC,China Life Insurance Company Limited American Depositary Shares,$10.17,-0.36,3.42%,"1,341,128",02/05/2020,"72,625,759,920",Finance,Life Insurance,8.2,9.93,$14.10,$1.24,$10.40/$10.14,$0.084,0.78%,"Jun 6, 2019","Aug 13, 2019",,$14.70/$8.27,1
+SIEGY,Siemens AG (Germany) ADR (Sponsored),$44.91,-1.2545,2.72%,"175,557",02/05/2020,"37,999,647,911",N/A,N/A,N/A,N/A,N/A,N/A,$46.54/$44.85,N/A,N/A,N/A,N/A,,N/A,
+HESAF,Hermes Intl Sa,$735.00,+15.96,2.22%,9,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$735.25/$735.00,N/A,N/A,N/A,N/A,,N/A,
+VWAGY,Volkswagen AG ADR Repstg 1/10th Sh,$14.37,-0.57,3.82%,"156,268",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.99/$14.37,N/A,N/A,N/A,N/A,,N/A,
+SHOP,Shopify Inc. Class A Subordinate Voting Shares,$613.64,-18.65,2.95%,"2,511,385",02/05/2020,"64,632,462,028",Technology,Computer Software: Prepackaged Software,,-282.27,$500.00,$-1.11,$627.86/$595.03,N/A,N/A,N/A,N/A,,$665.74/$237.39,1
+MDLZ,"Mondelez International, Inc. Class A Common Stock",$50.70,-0.74,1.44%,"7,063,036",02/05/2020,"72,485,501,872",Consumer Non-Durables,Packaged Foods,19.88,20.09,$58.00,$2.55,$51.70/$50.44,$1.14,2.23%,"Mar 30, 2020","Apr 14, 2020",,$59.96/$41.19,1
+AXP,American Express Company Common Stock,$88.32,-2.93,3.21%,"4,547,744",02/05/2020,"71,095,082,792",Finance,Finance: Consumer Services,13.4,19.67,$104.00,$6.59,$89.07/$87.16,$1.72,1.79%,"Apr 2, 2020","May 8, 2020",,$138.13/$67.00,1
+MO,"Altria Group, Inc.",$37.91,-1.34,3.41%,"11,420,226",02/05/2020,"70,450,733,079",Consumer Non-Durables,Farming/Seeds/Milling,,9.09,$50.00,$-0.49,$40.36/$37.67,$3.36,8.3%,"Mar 24, 2020","Apr 30, 2020",,$54.74/$30.95,1
+CI,Cigna Corporation Common Stock,$187.09,-8.69,4.44%,"1,585,381",02/05/2020,"69,582,419,442",Health Care,Medical Specialities,14.37,10.62,$243.00,$13.02,$194.88/$185.36,$0.04,0.02%,"Mar 9, 2020","Apr 9, 2020",,$224.64/$118.50,1
+CMWAY,Commonwealth Bank of Australia ADR (Sponsored),$37.67,-2.61,6.48%,"39,709",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$38.07/$36.36,N/A,N/A,N/A,N/A,,N/A,
+ANTM,"Anthem, Inc. Common Stock",$269.57,-11.16,3.98%,"1,210,421",02/05/2020,"67,968,635,248",Health Care,Medical Specialities,14.6,12.66,$325.00,$18.47,$277.00/$264.65,$3.80,1.35%,"Jun 9, 2020","Jun 25, 2020",,$312.48/$171.03,1
+SPGI,S&P Global Inc. Common Stock,$286.06,-6.82,2.33%,"1,140,515",02/05/2020,"68,923,107,886",Finance,Finance: Consumer Services,29.92,29.20,$280.00,$9.56,$289.03/$284.09,$2.68,0.91%,"Feb 25, 2020","Mar 11, 2020",,$312.94/$186.06,1
+INTU,Intuit Inc. Common Stock,$261.13,-8.68,3.22%,"1,193,575",02/05/2020,"68,021,613,473",Technology,Computer Software: Prepackaged Software,42.25,42.90,$300.00,$6.18,$267.53/$259.75,$2.12,0.78%,"Apr 9, 2020","Apr 20, 2020",,$306.89/$187.68,1
+SYK,Stryker Corporation Common Stock,$180.62,-5.81,3.12%,"2,088,594",02/05/2020,"67,701,469,665",Health Care,Medical/Dental Instruments,31.74,25.97,$214.50,$5.69,$193.00/$176.45,$2.30,1.19%,"Mar 30, 2020","Apr 30, 2020",,$226.30/$124.54,1
+NAPRF,Naspers Ltd N Shs,$159.375,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+FISV,"Fiserv, Inc. Common Stock",$100.25,-2.81,2.73%,"2,984,699",02/05/2020,"67,802,699,840",Technology,EDP Services,55.39,22.70,$115.00,$1.81,$102.15/$99.67,N/A,N/A,N/A,N/A,,$125.05/$73.50,1
+PCCYF,PetroChina Co Ltd,$0.385,+0.0046,1.21%,"2,000",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$0.39/$0.39,N/A,N/A,N/A,N/A,,N/A,
+KOF,"Coca Cola Femsa S.A.B. de C.V. American Depositary Shares, each representing 10 Units (each Unit consists of 3 Series B Shares and 5 Series L Shares)",$39.26,-2.05,4.96%,"201,846",02/05/2020,"65,982,939,661",Consumer Non-Durables,Beverages (Production/Distribution),13.22,15.53,$54.00,$2.97,$39.83/$38.90,$2.517,4.35%,"May 1, 2020","May 15, 2020",,$65.58/$37.73,1
+DTEGY,Deutsche Telekom AG ADR (Sponsored),$14.32,-0.2001,1.38%,"267,022",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.60/$13.91,N/A,N/A,N/A,N/A,,N/A,
+BDX,"Becton, Dickinson and Company Common Stock",$251.87,-0.66,0.26%,"1,401,931",02/05/2020,"68,300,380,787",Health Care,Medical/Dental Instruments,92.6,22.37,$272.50,$2.72,$253.89/$247.79,$3.16,1.23%,"Jun 8, 2020","Jun 30, 2020",,$286.72/$197.75,1
+CHGCF,Chugai Pharmaceutical,$125.00,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+KDDIF,KDDI Corp,$29.45,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+NPSNY,Naspers Ltd ADR (Sponsored) Repstg Cl N (New),$29.95,-0.94,3.04%,"193,939",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$30.76/$29.66,N/A,N/A,N/A,N/A,,N/A,
+NOW,"ServiceNow, Inc. Common Stock",$339.51,-12.03,3.42%,"2,449,831",02/05/2020,"64,438,998,000",Technology,Computer Software: Prepackaged Software,99.27,428.71,$356.00,$3.42,$351.00/$336.00,N/A,N/A,N/A,N/A,,$362.95/$213.99,1
+CCI,Crown Castle International Corp. (REIT) Common Stock,$156.41,-3.02,1.89%,"1,534,784",02/05/2020,"65,183,784,446",Consumer Services,Real Estate Investment Trusts,81.89,27.21,$176.50,$1.91,$158.00/$155.08,$4.80,3.09%,"Mar 12, 2020","Mar 31, 2020",,$168.75/$114.18,1
+PLD,"Prologis, Inc. Common Stock",$86.85,-2.38,2.67%,"2,614,575",02/05/2020,"64,189,927,678",Consumer Services,Real Estate Investment Trusts,33.15,24.86,$95.00,$2.62,$88.63/$86.09,$2.32,2.57%,"Jun 15, 2020","Jun 30, 2020",,$99.79/$59.82,1
+KDDIY,KDDI Corp ADR,$14.34,+0.02,0.14%,"51,596",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.56/$14.14,N/A,N/A,N/A,N/A,,N/A,
+AKSJF,Sberbank of Russia. - Ordinary Shares,$3.05,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+PTR,PetroChina Company Limited Common Stock,$34.35,-1.48,4.13%,"152,754",02/05/2020,"62,867,705,874",Energy,Oil & Gas Production,22.6,79.62,$37.80,$1.52,$35.29/$33.58,$1.743,4.75%,"Sep 13, 2019","Nov 12, 2019",,$63.84/$27.74,1
+VRTX,Vertex Pharmaceuticals Incorporated Common Stock,$254.90,+3.70,1.47%,"1,940,527",02/05/2020,"66,062,980,780",Health Care,Major Pharmaceuticals,44.18,38.53,$275.00,$5.77,$256.00/$248.00,N/A,N/A,N/A,N/A,,$277.80/$164.07,1
+BAYRY,Bayer AG ADR (Sponsored),$16.14,-0.31,1.88%,"436,715",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$16.50/$16.11,N/A,N/A,N/A,N/A,,N/A,
+D,"Dominion Energy, Inc. Common Stock",$75.61,-1.52,1.97%,"2,679,738",02/05/2020,"63,361,204,573",Public Utilities,Electric Utilities: Central,45.01,17.90,$87.00,$1.68,$76.62/$75.17,$3.76,4.78%,"Feb 27, 2020","Mar 20, 2020",,$90.89/$57.79,1
+CAT,"Caterpillar, Inc. Common Stock",$110.88,-5.50,4.73%,"3,896,234",02/05/2020,"60,993,159,797",Capital Goods,Construction/Ag Equipment/Trucks,11.75,21.12,$128.50,$9.44,$114.59/$110.57,$4.12,3.43%,"Apr 17, 2020","May 20, 2020",,$150.55/$87.50,1
+CME,CME Group Inc. Class A Common Stock,$173.65,-4.56,2.56%,"2,456,842",02/05/2020,"62,249,981,672",Finance,Investment Bankers/Brokers/Service,26.07,22.97,$207.50,$6.66,$176.95/$171.71,$3.40,1.87%,"Mar 9, 2020","Mar 25, 2020",,$225.36/$131.80,1
+EL,"Estee Lauder Companies, Inc. (The) Common Stock",$172.54,-3.86,2.19%,"2,190,284",02/05/2020,"62,035,074,045",Consumer Non-Durables,Package Goods/Cosmetics,34.03,39.20,$180.00,$5.07,$179.44/$170.58,$1.92,1.09%,"Feb 27, 2020","Mar 16, 2020",,$220.42/$137.01,1
+ADP,"Automatic Data Processing, Inc. Common Stock",$140.42,-6.27,4.27%,"2,616,878",02/05/2020,"60,626,932,066",Technology,EDP Services,24.09,25.60,$153.50,$5.83,$144.70/$139.46,$3.64,2.5%,"Jun 11, 2020","Jul 1, 2020",,$182.32/$103.11,1
+JD,"JD.com, Inc. American Depositary Shares",$41.38,-1.72,3.99%,"13,145,605",02/05/2020,"60,771,675,893",Consumer Services,Other Specialty Stores,34.48,102.62,$47.00,$1.20,$42.32/$40.59,N/A,N/A,N/A,N/A,,$47.98/$25.48,1
+GS,"Goldman Sachs Group, Inc. (The) Common Stock",$177.10,-6.32,3.45%,"2,615,380",02/05/2020,"60,900,040,240",Finance,Investment Bankers/Brokers/Service,9.63,13.63,$204.00,$18.40,$179.60/$176.65,$5.00,2.63%,"May 29, 2020","Jun 29, 2020",,$250.46/$130.85,1
+XEL,Xcel Energy Inc. Common Stock,$62.18,-1.38,2.17%,"3,324,161",02/05/2020,,,,,,,,,,,,,,,
+BX,The Blackstone Group Inc. Class A Common Stock,$50.42,-1.82,3.48%,"3,858,473",02/05/2020,"60,495,269,777",Finance,Investment Managers,69.07,25.61,$56.00,$0.73,$50.84/$49.66,$1.56,4.51%,"May 1, 2020","May 11, 2020",,$64.97/$33.00,1
+DUK,Duke Energy Corporation (Holding Company) Common Stock,$82.64,-2.02,2.39%,"3,000,388",02/05/2020,"60,660,125,157",Public Utilities,Power Generation,16.33,16.60,$96.00,$5.06,$83.95/$82.09,$3.78,4.36%,"Feb 13, 2020","Mar 16, 2020",,$103.79/$62.13,1
+ENB,Enbridge Inc Common Stock,$29.86,-0.82,2.67%,"3,260,169",02/05/2020,"60,469,495,018",Energy,Natural Gas Distribution,15.01,17.94,$42.48,$1.99,$30.41/$29.75,$2.286,7.64%,"May 14, 2020","Jun 1, 2020",,$43.15/$22.57,1
+MS,Morgan Stanley Common Stock,$38.40,-1.03,2.61%,"12,456,842",02/05/2020,"60,501,087,053",Finance,Investment Bankers/Brokers/Service,7.98,10.30,$43.00,$4.81,$38.72/$37.91,$1.40,3.43%,"Apr 29, 2020","May 15, 2020",,$57.57/$27.20,1
+IBDRY,Iberdrola S.A. - ADR - Level I,$39.04,-0.52,1.31%,"59,107",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$40.65/$38.09,N/A,N/A,N/A,N/A,,N/A,
+AGN,Allergan plc Ordinary Shares,$189.74,+2.40,1.28%,"5,751,748",02/05/2020,,,,,,,,,,,,,,,
+ZTS,Zoetis Inc. Class A Common Stock,$127.53,-1.78,1.38%,"1,721,822",02/05/2020,"60,565,331,219",Health Care,Major Pharmaceuticals,40.88,35.33,$130.00,$3.12,$127.88/$124.92,$0.80,0.64%,"Apr 16, 2020","Jun 1, 2020",,$146.26/$90.14,1
+AMD,"Advanced Micro Devices, Inc. Common Stock",$49.88,-2.51,4.79%,"69,562,656",02/05/2020,"58,402,112,574",Technology,Semiconductors,116,58.21,$56.00,$0.43,$51.95/$49.09,N/A,N/A,N/A,N/A,,$59.27/$26.03,1
+RBGLY,Reckitt Benckiser Group Plc ADR (Sponsored),$16.72,-0.39,2.28%,"2,032,213",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$17.27/$16.66,N/A,N/A,N/A,N/A,,N/A,
+BKNG,Booking Holdings Inc. Common Stock,$1448.79,-31.78,2.15%,"458,530",02/05/2020,"59,299,983,058",Consumer Services,Transportation Services,12.87,29.34,"$1,625.00",$112.58,"$1,460.30/$1,415.31",N/A,N/A,N/A,N/A,,"$2,094.00/$1,107.29",1
+CL,Colgate-Palmolive Company Common Stock,$68.53,-1.74,2.48%,"4,415,244",02/05/2020,"58,760,859,563",Consumer Non-Durables,Package Goods/Cosmetics,24.92,24.74,$75.00,$2.75,$71.00/$68.31,$1.76,2.51%,"Apr 17, 2020","May 15, 2020",,$77.41/$58.49,1
+AIQUY,Air Liquide S.A - ADR,$24.8501,-0.5699,2.24%,"61,535",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$25.45/$24.85,N/A,N/A,N/A,N/A,,N/A,
+SNP,China Petroleum & Chemical Corporation Common Stock,$48.14,-1.54,3.1%,"327,819",02/05/2020,,,,,,,,,,,,,,,
+SO,Southern Company (The) Common Stock,$54.41,-2.32,4.09%,"4,739,771",02/05/2020,"57,511,733,187",Public Utilities,Electric Utilities: Central,16.19,18.12,$59.50,$3.36,$56.32/$54.09,$2.56,4.32%,"May 15, 2020","Jun 8, 2020",,$71.10/$41.96,1
+ISRG,"Intuitive Surgical, Inc. Common Stock",$498.86,-12.02,2.35%,"680,512",02/05/2020,"58,175,947,726",Health Care,Industrial Specialties,42.97,75.35,$563.50,$11.61,$506.97/$492.00,N/A,N/A,N/A,N/A,,$619.00/$360.50,1
+REGN,"Regeneron Pharmaceuticals, Inc. Common Stock",$525.50,-0.38,0.07%,"482,339",02/05/2020,"59,130,458,666",Health Care,Major Pharmaceuticals,28.47,27.52,$512.50,$18.46,$529.21/$514.55,N/A,N/A,N/A,N/A,,$574.32/$271.37,1
+GE,General Electric Company Common Stock,$6.50,-0.30,4.41%,"110,015,953",02/05/2020,"56,550,000,000",Energy,Consumer Electronics/Appliances,,21.94,$9.00,$-0.33,$6.74/$6.41,$0.04,0.61%,"Mar 6, 2020","Apr 27, 2020",,$13.26/$5.90,1
+CNI,Canadian National Railway Company Common Stock,$80.53,-2.34,2.82%,"730,905",02/05/2020,"57,267,226,262",Transportation,Railroads,17.32,21.25,$82.00,$4.65,$81.66/$80.36,$1.642,1.98%,"Jun 8, 2020","Jun 30, 2020",,$96.53/$65.13,1
+TJX,"TJX Companies, Inc. (The) Common Stock",$48.25,-0.80,1.63%,"5,815,660",02/05/2020,"57,795,298,320",Consumer Services,Clothing/Shoe/Accessory Stores,18,28.68,$60.00,$2.68,$48.44/$47.47,$0.92,1.78%,"Feb 12, 2020","Mar 5, 2020",,$64.95/$32.72,1
+SNPMF,China Petroleum & Chemical Corp. Inc,$0.50,+0.02,4.17%,"6,205",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$0.50/$0.48,N/A,N/A,N/A,N/A,,N/A,
+EQIX,"Equinix, Inc. Common Stock REIT",$670.85,-4.35,0.64%,"346,717",02/05/2020,"57,644,157,467",Consumer Services,Real Estate Investment Trusts,111.81,30.13,$680.00,$6.00,$680.89/$665.24,$10.64,1.57%,"Feb 25, 2020","Mar 18, 2020",,$715.75/$449.53,1
+RIO,Rio Tinto Plc Common Stock,$45.04,-1.15,2.49%,"2,798,171",02/05/2020,"56,150,459,093",Basic Industries,Precious Metals,N/A,10.02,$52.05,N/A,$45.34/$44.52,$4.62,9.45%,"Mar 6, 2020","Apr 16, 2020",,$64.02/$35.35,1
+PDD,Pinduoduo Inc. American Depositary Shares,$45.43,-2.01,4.24%,"5,553,301",02/05/2020,"54,408,160,401",Miscellaneous,Business Services,,-64.99,$38.00,$-0.84,$46.98/$44.80,N/A,N/A,N/A,N/A,,$53.67/$18.46,1
+SBRCY,Sberbank of Russia. - ADR,$10.25,-0.26,2.47%,"180,571",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$10.44/$10.23,N/A,N/A,N/A,N/A,,N/A,
+ECL,Ecolab Inc. Common Stock,$190.00,-3.50,1.81%,"1,340,508",02/05/2020,"54,941,588,260",Basic Industries,Package Goods/Cosmetics,35.92,36.10,$176.00,$5.29,$191.22/$187.84,$1.88,0.95%,"Mar 16, 2020","Apr 15, 2020",,$211.24/$124.60,1
+TAK,Takeda Pharmaceutical Company Limited American Depositary Shares (each representing 1/2 of a share of Common Stock),$17.82,-0.12,0.67%,"607,929",02/05/2020,"55,510,847,810",Health Care,Major Pharmaceuticals,68.54,9.86,$20.90,$0.26,$17.90/$17.69,$0.599,3.21%,"Sep 27, 2019","Dec 12, 2019",,$20.93/$12.43,1
+OGZPY,PJSC Gazprom ADR (Sponsored),$4.97,-0.08,1.58%,"241,643",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$5.00/$4.92,N/A,N/A,N/A,N/A,,N/A,
+USB,U.S. Bancorp Common Stock,$34.94,-1.56,4.27%,"6,403,065",02/05/2020,"53,152,871,220",Finance,Major Banks,9.05,15.94,$40.50,$3.86,$35.82/$34.65,$1.68,4.37%,"Mar 30, 2020","Apr 15, 2020",,$61.11/$28.59,1
+TKPHF,Takeda Pharmaceutical Co Ltd,$35.28,-0.34,0.95%,"11,734",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$35.28/$35.28,N/A,N/A,N/A,N/A,,N/A,
+NOC,Northrop Grumman Corporation Common Stock,$328.06,-2.61,0.79%,"837,990",02/05/2020,"54,882,207,520",Capital Goods,Industrial Machinery/Components,24.72,14.94,$400.00,$13.27,$330.25/$324.27,$5.28,1.59%,"Feb 21, 2020","Mar 11, 2020",,$385.00/$263.31,1
+VMW,"Vmware, Inc. Common stock, Class A",$125.34,-6.18,4.7%,"873,044",02/05/2020,"52,393,295,564",Technology,Computer Software: Prepackaged Software,8.19,35.64,$160.00,$15.30,$129.00/$124.90,N/A,N/A,N/A,N/A,,$206.80/$86.00,1
+TGT,Target Corporation Common Stock,$108.23,-1.51,1.38%,"4,529,632",02/05/2020,"54,096,444,183",Consumer Services,Department/Specialty Retail Stores,16.99,20.06,$121.00,$6.37,$109.48/$106.10,$2.64,2.36%,"May 19, 2020","Jun 10, 2020",,$130.24/$70.03,1
+ESLOY,EssilorLuxottica ADR,$60.5085,-1.0315,1.68%,"41,322",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$61.30/$59.72,N/A,N/A,N/A,N/A,,N/A,
+MU,"Micron Technology, Inc. Common Stock",$45.06,-2.83,5.91%,"28,193,974",02/05/2020,"50,115,101,430",Technology,Semiconductors,22.31,25.61,$60.00,$2.02,$46.92/$44.52,N/A,N/A,N/A,N/A,,$61.19/$31.13,1
+BSX,Boston Scientific Corporation Common Stock,$35.99,-1.49,3.98%,"7,325,557",02/05/2020,"50,357,200,298",Health Care,Medical/Dental Instruments,11.84,34.39,$45.00,$3.04,$36.97/$35.76,N/A,N/A,N/A,N/A,,$46.62/$24.10,1
+TOELY,Tokyo Electron Ltd. ADR,$50.32,-3.13,5.86%,"57,380",02/05/2020,,,,,,,,,,,,,,,
+UBER,"Uber Technologies, Inc. Common Stock",$28.39,-1.88,6.21%,"18,679,122",02/05/2020,"49,037,941,900",Miscellaneous,Business Services,,-11.29,$40.50,$-8.30,$29.72/$28.33,N/A,N/A,N/A,N/A,,$47.08/$13.71,1
+ITW,Illinois Tool Works Inc. Common Stock,$159.45,-3.05,1.88%,"1,926,100",02/05/2020,"50,628,164,418",Technology,Industrial Machinery/Components,20.57,26.82,$143.00,$7.75,$160.23/$158.05,$4.28,2.56%,"Mar 30, 2020","Apr 15, 2020",,$190.85/$115.94,1
+MUFG,"Mitsubishi UFJ Financial Group, Inc. Common Stock",$3.88,-0.11,2.76%,"1,260,483",02/05/2020,"49,821,611,226",Finance,Commercial Banks,9.24,7.82,$5.80,$0.42,$3.91/$3.83,$0.193,4.7%,"Sep 27, 2019","Dec 16, 2019",,$5.54/$3.32,1
+BAM,Brookfield Asset Management Inc. Common Stock,$32.83,-0.99,2.93%,"1,722,367",02/05/2020,"34,454,387,592",Consumer Services,Building operators,19.01,18.48,$42.00,$1.73,$33.22/$32.40,$0.48,1.36%,"Feb 27, 2020","Mar 31, 2020",,$45.61/$21.57,1
+SWGAY,Swatch Group AG (The) ADR,$9.65,-0.265,2.67%,"36,473",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$9.94/$9.50,N/A,N/A,N/A,N/A,,N/A,
+CSX,CSX Corporation Common Stock,$65.00,-1.23,1.86%,"7,579,277",02/05/2020,"49,755,283,110",Transportation,Railroads,15.66,17.90,$71.00,$4.15,$65.59/$64.55,$1.04,1.53%,"Feb 27, 2020","Mar 13, 2020",,$80.73/$46.81,1
+HUM,Humana Inc. Common Stock,$372.24,-9.58,2.51%,"1,057,187",02/05/2020,"49,181,781,924",Health Care,Medical Specialities,19.11,20.54,$400.00,$19.48,$381.17/$365.24,$2.50,0.66%,"Jun 29, 2020","Jul 31, 2020",,$392.57/$208.25,1
+TFC,Truist Financial Corporation Common Stock,$35.44,-1.88,5.04%,"5,286,625",02/05/2020,"47,754,017,840",Finance,Major Banks,10.07,13.19,$40.75,$3.52,$36.38/$34.98,$1.80,4.59%,"May 14, 2020","Jun 1, 2020",,$56.92/$24.01,1
+CEO,CNOOC Limited Common Stock,$108.74,-3.63,3.23%,"148,461",02/05/2020,"1,167,633,374",Energy,Oil & Gas Production,N/A,21.36,$115.10,N/A,$111.58/$107.87,$10.407,6.46%,"Jun 3, 2020","Jul 17, 2020",,$182.30/$81.11,1
+SBGSY,Schneider Electric SE ADR,$17.517,-0.648,3.57%,"123,517",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$18.30/$17.41,N/A,N/A,N/A,N/A,,N/A,
+GPN,Global Payments Inc. Common Stock,$161.64,-4.38,2.64%,"1,099,121",02/05/2020,"48,512,768,477",Miscellaneous,Business Services,68.49,29.75,$175.00,$2.36,$163.44/$159.30,$0.78,0.46%,"Mar 12, 2020","Mar 27, 2020",,$209.62/$105.54,1
+APD,"Air Products and Chemicals, Inc. Common Stock",$222.25,-3.33,1.48%,"817,870",02/05/2020,"49,084,945,296",Basic Industries,Major Chemicals,25.37,26.60,$247.50,$8.76,$222.90/$218.87,$5.36,2.32%,"Mar 31, 2020","May 11, 2020",,$257.01/$167.43,1
+EADSF,Airbus SE,$62.475,-0.775,1.23%,"7,647",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$64.05/$61.00,N/A,N/A,N/A,N/A,,N/A,
+EADSY,Airbus SE ADR,$15.31,-0.44,2.79%,"424,957",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$15.80/$15.14,N/A,N/A,N/A,N/A,,N/A,
+SHW,Sherwin-Williams Company (The) Common Stock,$526.44,-9.93,1.85%,"409,165",02/05/2020,"48,329,279,861",Consumer Services,RETAIL: Building Materials,30.41,26.20,$555.00,$17.31,$529.75/$520.07,$5.36,0.99%,"May 21, 2020","Jun 5, 2020",,$599.95/$325.43,1
+ICE,Intercontinental Exchange Inc. Common Stock,$88.67,-0.78,0.87%,"3,026,210",02/05/2020,"48,692,032,499",Finance,Investment Bankers/Brokers/Service,23.65,20.24,$102.50,$3.75,$90.64/$88.12,$1.20,1.32%,"Jun 15, 2020","Jun 30, 2020",,$101.93/$63.51,1
+ATVI,"Activision Blizzard, Inc. Common Stock",$64.72,+0.99,1.55%,"5,103,496",02/05/2020,"49,858,294,042",Technology,Computer Software: Prepackaged Software,33.19,27.83,$69.00,$1.95,$64.94/$62.85,$0.41,0.63%,"Apr 14, 2020","May 6, 2020",,$68.32/$41.84,1
+MMC,"Marsh & McLennan Companies, Inc. Common Stock",$97.10,-0.23,0.24%,"2,609,097",02/05/2020,"48,947,729,077",Finance,Specialty Insurers,27.9,20.07,$108.00,$3.48,$97.39/$94.51,$1.82,1.92%,"Apr 7, 2020","May 15, 2020",,$119.88/$74.33,1
+NTDOF,Nintendo Co. Ltd.,$431.00,+19.37,4.71%,510,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$431.50/$409.80,N/A,N/A,N/A,N/A,,N/A,
+NTDOY,Nintendo Co. Ltd. ADR,$52.36,+0.92,1.79%,"272,370",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$52.59/$51.82,N/A,N/A,N/A,N/A,,N/A,
+MBFJF,Mitsubishi UFJ Financial Group Inc,$3.80,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+HEINY,Heineken N.V. ADR (Sponsored) Level 1,$41.96,-0.68,1.59%,"76,331",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$42.53/$41.51,N/A,N/A,N/A,N/A,,N/A,
+CB,Chubb Limited Common Stock,$101.59,-6.42,5.94%,"2,381,124",02/05/2020,"45,853,378,964",Finance,Property-Casualty Insurers,12.7,10.84,$143.50,$8.00,$106.04/$100.97,$3.00,2.68%,"Mar 19, 2020","Apr 10, 2020",,$167.74/$87.35,1
+BNS,Bank Nova Scotia Halifax Pfd 3 Ordinary Shares,$38.65,-1.49,3.71%,"1,433,949",02/05/2020,"46,838,639,954",Finance,Major Banks,7.55,8.71,$49.58,$5.12,$39.11/$38.49,$2.56,6.15%,"Apr 6, 2020","Apr 28, 2020",,$58.22/$31.94,1
+SCHW,Charles Schwab Corporation (The) Common Stock,$36.45,-1.27,3.37%,"7,948,238",02/05/2020,"46,921,202,983",Finance,Investment Bankers/Brokers/Service,14.24,18.05,$41.00,$2.56,$36.95/$36.28,$0.72,1.86%,"May 7, 2020","May 22, 2020",,$51.65/$28.00,1
+BIIB,Biogen Inc. Common Stock,$293.09,-3.74,1.26%,"1,538,658",02/05/2020,"47,828,620,272",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),9.05,9.05,$318.00,$32.40,$297.92/$291.88,N/A,N/A,N/A,N/A,,$374.99/$215.78,1
+NEM,Newmont Corporation,$60.99,+1.51,2.54%,"6,214,063",02/05/2020,"49,371,096,269",Basic Industries,Precious Metals,17.58,23.05,$59.00,$3.47,$61.31/$58.21,$1.00,0.9%,"Jun 3, 2020","Jun 18, 2020",,$64.65/$29.77,1
+FRCOF,Fast Retailing Co Ltd,$470.50,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+RCRRF,Recruit Holdings Co Ltd,$29.00,+0.13,0.45%,565,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$29.00/$28.93,N/A,N/A,N/A,N/A,,N/A,
+KMB,Kimberly-Clark Corporation Common Stock,$136.78,-1.70,1.23%,"1,432,172",02/05/2020,"46,580,034,937",Consumer Durables,Containers/Packaging,19.97,18.29,$148.50,$6.85,$139.55/$136.17,$4.28,3.08%,"Jun 4, 2020","Jul 2, 2020",,$149.23/$110.66,1
+BASFY,BASF SE ADR (Sponsored),$12.43,-0.40,3.12%,"190,290",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$12.84/$12.41,N/A,N/A,N/A,N/A,,N/A,
+ZFSVF,Zurich Ins Group Ord,$301.50,-15.67,4.94%,34,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$327.10/$301.50,N/A,N/A,N/A,N/A,,N/A,
+ILMN,"Illumina, Inc. Common Stock",$305.88,-13.15,4.12%,"1,009,893",02/05/2020,"44,907,549,213",Capital Goods,Biotechnology: Laboratory Analytical Instruments,48.17,50.40,$327.50,$6.35,$317.42/$303.31,N/A,N/A,N/A,N/A,,$380.76/$196.78,1
+ZURVY,Zurich Insurance Group Ltd ADR (Sponsored),$30.94,-0.55,1.75%,"114,310",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$32.29/$30.30,N/A,N/A,N/A,N/A,,N/A,
+OJSCY,Rosneft Oil Co OJSC (Moscow) GDR (Sponsored) Reg S,$4.3957,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+GOLD,Barrick Gold Corporation Common Stock (BC),$26.93,+1.21,4.7%,"18,819,549",02/05/2020,"47,880,371,534",Basic Industries,Precious Metals,11.97,29.56,$28.00,$2.25,$27.10/$25.16,$0.28,1.05%,"Feb 27, 2020","Mar 16, 2020",,$28.50/$11.65,1
+BK,The Bank of New York Mellon Corporation Common Stock,$36.00,-1.54,4.1%,"3,934,298",02/05/2020,,,,,,,,,,,,,,,
+MCO,Moody's Corporation Common Stock,$241.84,-2.06,0.84%,"769,653",02/05/2020,"45,274,317,665",Finance,Finance: Consumer Services,30,30.11,$254.00,$8.06,$242.66/$238.13,$2.24,0.88%,"May 19, 2020","Jun 10, 2020",,$287.25/$164.19,1
+AMAT,"Applied Materials, Inc. Common Stock",$46.89,-2.79,5.62%,"13,583,130",02/05/2020,"43,059,326,795",Technology,Semiconductors,15.53,13.28,$62.50,$3.02,$48.36/$46.37,$0.88,1.55%,"May 20, 2020","Jun 11, 2020",,$69.44/$36.64,1
+DE,Deere & Company Common Stock,$138.19,-6.87,4.74%,"1,602,946",02/05/2020,"43,339,147,662",Capital Goods,Industrial Machinery/Components,13.51,21.95,$160.00,$10.23,$143.05/$137.14,$3.04,2.07%,"Mar 30, 2020","May 8, 2020",,$181.99/$106.14,1
+DSKYF,Daiichi Sankyo Co Ltd,$70.00,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+COP,ConocoPhillips Common Stock,$39.14,-2.96,7.03%,"9,256,689",02/05/2020,"42,148,297,465",Energy,Integrated oil Companies,12.27,-40.10,$50.00,$3.19,$41.30/$38.71,$1.68,3.98%,"Feb 13, 2020","Mar 2, 2020",,$67.13/$20.84,1
+PGR,Progressive Corporation (The) Common Stock,$76.18,-1.12,1.45%,"2,840,826",02/05/2020,"44,588,037,140",Finance,Property-Casualty Insurers,12.57,12.25,$88.00,$6.06,$77.16/$75.51,$0.40,0.5%,"Apr 6, 2020","Apr 15, 2020",,$84.96/$62.18,1
+PNC,"PNC Financial Services Group, Inc. (The) Common Stock",$102.97,-3.70,3.47%,"2,351,004",02/05/2020,"43,659,280,000",Finance,Major Banks,9.59,16.54,$109.00,$10.74,$105.96/$101.73,$4.60,4.14%,"Apr 15, 2020","May 5, 2020",,$161.79/$79.41,1
+PBR,Petroleo Brasileiro S.A.- Petrobras Common Stock,$6.57,-0.34,4.92%,"18,798,892",02/05/2020,"42,851,172,415",Energy,Oil & Gas Production,4.9,-25.59,$10.00,$1.34,$6.75/$6.38,N/A,N/A,N/A,N/A,,$16.95/$4.01,1
+BAX,Baxter International Inc. Common Stock,$87.84,-0.94,1.06%,"2,618,594",02/05/2020,"44,552,983,385",Health Care,Medical/Dental Instruments,N/A,25.44,$95.00,N/A,$88.51/$86.60,$0.88,0.96%,"Feb 27, 2020","Apr 1, 2020",,$95.19/$69.10,1
+EW,Edwards Lifesciences Corporation Common Stock,$209.33,-8.17,3.76%,"837,897",02/05/2020,"43,238,106,027",Health Care,Industrial Specialties,40.02,43.94,$250.00,$5.23,$215.00/$207.76,N/A,N/A,N/A,N/A,,$247.64/$154.52,1
+EQNR,Equinor ASA,$12.96,-0.62,4.57%,"3,627,135",02/05/2020,"42,812,718,726",Energy,Integrated oil Companies,23.56,54.32,$11.80,$0.55,$13.33/$12.90,$0.76,5.48%,"Feb 18, 2020","Feb 27, 2020",,$22.23/$8.41,1
+ADDYY,Adidas AG ADR (Sponsored),$112.15,-2.05,1.8%,"38,799",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$113.79/$111.23,N/A,N/A,N/A,N/A,,N/A,
+DANOY,Danone ADR (Sponsored),$13.50,-0.29,2.1%,"346,609",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.00/$13.50,N/A,N/A,N/A,N/A,,N/A,
+LUKOY,PJSC Lukoil ADR (Sponsored),$63.92,-0.65,1.01%,"52,325",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$64.83/$63.49,N/A,N/A,N/A,N/A,,N/A,
+PBCRF,P.T. Bank Central Asia,$1.63,-0.17,9.44%,900,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$1.63/$1.63,N/A,N/A,N/A,N/A,,N/A,
+SEMHF,Siemens Healthineers AG,$44.26,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+NTES,"NetEase, Inc. American Depositary Shares",$325.34,-19.62,5.69%,"698,256",02/05/2020,"41,630,745,850",Miscellaneous,Business Services,14.01,23.01,$395.00,$23.23,$340.62/$324.42,$4.07,1.15%,"Mar 12, 2020","Mar 20, 2020",,$367.52/$209.01,1
+DG,Dollar General Corporation Common Stock,$173.00,-2.30,1.31%,"1,548,511",02/05/2020,"43,512,103,304",Consumer Services,Department/Specialty Retail Stores,26.02,23.50,$180.00,$6.65,$176.43/$172.66,$1.44,0.82%,"Apr 6, 2020","Apr 21, 2020",,$183.94/$116.15,1
+NSC,Norfolk Southern Corporation Common Stock,$170.73,-0.37,0.22%,"1,482,710",02/05/2020,"43,895,463,748",Transportation,Railroads,18.54,18.11,$189.00,$9.21,$170.90/$166.59,$3.76,2.09%,"May 7, 2020","Jun 10, 2020",,$219.88/$112.62,1
+RELX,RELX PLC PLC American Depositary Shares (Each representing One Ordinary Share),$22.51,-0.15,0.66%,"512,374",02/05/2020,"43,473,159,958",Consumer Services,Publishing,N/A,20.05,$27.40,N/A,$22.77/$22.34,$0.836,3.59%,"Apr 24, 2020","Jun 2, 2020",,$27.25/$16.81,1
+TRP,TC Energy Corporation Common Stock,$45.18,-1.18,2.55%,"1,843,975",02/05/2020,"42,463,990,113",Public Utilities,Natural Gas Distribution,14.03,16.21,$57.38,$3.22,$46.48/$45.16,$2.284,4.7%,"Mar 30, 2020","Apr 30, 2020",,$57.92/$32.37,1
+SHECF,Shin-Etsu Chemical Co. Ltd.,$104.525,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+NILSY,MMC Norilsk Nickel PJSC ADR (Sponsored),$26.73,-0.61,2.23%,"47,664",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$27.48/$26.51,N/A,N/A,N/A,N/A,,N/A,
+WMMVY,Wal-Mart de Mexico S.A.B. de C.V. ADR (Sponsored) Repstg Ser V Shs,$23.121,-1.289,5.28%,"84,958",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$24.95/$22.44,N/A,N/A,N/A,N/A,,N/A,
+DNNGY,Orsted A/S ADR,$33.36,-0.35,1.04%,"10,781",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$33.70/$32.96,N/A,N/A,N/A,N/A,,N/A,
+WM,"Waste Management, Inc. Common Stock",$98.21,-1.81,1.81%,"1,585,715",02/05/2020,"41,604,426,035",Public Utilities,Environmental Services,25.12,26.60,$117.00,$3.91,$98.66/$97.08,$2.18,2.16%,"Mar 5, 2020","Mar 20, 2020",,$126.79/$85.34,1
+VALE,VALE S.A. American Depositary Shares Each Representing one common share,$7.98,-0.27,3.27%,"14,399,409",02/05/2020,,,,,,,,,,,,,,,
+DOGEF,Orsted A/S,$100.2891,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+ATLKY,Atlas Copco AB ADR (Sponsored) repr Cl A (New),$33.31,-1.32,3.81%,"65,814",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$34.94/$33.25,N/A,N/A,N/A,N/A,,N/A,
+LHX,"L3Harris Technologies, Inc. Common Stock",$189.46,-4.24,2.19%,"852,279",02/05/2020,"41,093,153,105",Capital Goods,Industrial Machinery/Components,24.01,17.40,$250.00,$7.89,$190.92/$186.77,$3.40,1.74%,"Jun 1, 2020","Jun 16, 2020",,$230.99/$142.01,1
+AXAHY,AXA S.A. ADR (Sponsored),$17.08,-0.51,2.9%,"132,849",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$18.05/$16.80,N/A,N/A,N/A,N/A,,N/A,
+NOVKY,Novatek Joint Stock Co GDR (Sponsored) Reg S,$135.60,-3.40,2.45%,177,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$136.00/$135.25,N/A,N/A,N/A,N/A,,N/A,
+HMC,"Honda Motor Company, Ltd. Common Stock",$22.94,-1.11,4.62%,"700,966",02/05/2020,"39,623,630,508",Capital Goods,Auto Manufacturing,9.29,8.71,$27.70,$2.47,$23.09/$22.83,$0.829,3.47%,"Dec 27, 2019","Mar 11, 2020",,$29.44/$19.38,1
+AEP,"American Electric Power Company, Inc. Common Stock",$81.39,-1.72,2.07%,"2,708,017",02/05/2020,"40,274,437,034",Public Utilities,Electric Utilities: Central,20.92,19.42,$97.00,$3.89,$82.66/$81.05,$2.80,3.37%,"May 7, 2020","Jun 10, 2020",,$104.97/$65.14,1
+ITUB,Itau Unibanco Banco Holding SA American Depositary Shares (Each repstg 500 Preferred shares),$4.05,-0.16,3.8%,"15,858,488",02/05/2020,"39,537,149,177",Finance,Major Banks,5.79,7.65,$6.00,$0.70,$4.18/$4.01,$0.036,0.86%,"May 1, 2020","Jun 11, 2020",,$10.01/$3.59,1
+NGG,"National Grid Transco, PLC National Grid PLC (NEW) American Depositary Shares",$57.36,-1.20,2.05%,"688,662",02/05/2020,"40,247,277,599",Public Utilities,Natural Gas Distribution,N/A,16.09,$64.60,N/A,$58.61/$57.24,$2.115,3.6%,"Nov 27, 2019","Jan 15, 2020",,$69.08/$44.29,1
+FDX,FedEx Corporation Common Stock,$118.20,-8.57,6.76%,"3,079,635",02/05/2020,,,,,,,,,,,,,,,
+ADSK,"Autodesk, Inc. Common Stock",$174.90,-12.23,6.54%,"2,061,724",02/05/2020,"38,394,297,233",Technology,Computer Software: Prepackaged Software,182.19,67.07,$200.00,$0.96,$181.54/$172.22,N/A,N/A,N/A,N/A,,$211.58/$125.38,1
+OLCLF,Oriental Land Co Ltd,$125.28,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+WMMVF,Wal-Mart de Mexico S.A.B. de C.V.,$2.405,+0.055,2.34%,475,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$2.41/$2.41,N/A,N/A,N/A,N/A,,N/A,
+HNDAF,Honda Motor Co. Ltd.,$23.75,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+OLCLY,Oriental Land Co. Ltd. ADR,$25.67,+0.73,2.93%,"1,727",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$25.95/$25.67,N/A,N/A,N/A,N/A,,N/A,
+BKFCF,Bank of Communications Co. Ltd.,$0.55,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+CHWRF,China Tower Corp Ltd,$0.2315,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+HKXCY,Hong Kong Exchanges & Clearing Ltd. ADR,$31.01,-0.86,2.7%,"40,867",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$31.34/$30.91,N/A,N/A,N/A,N/A,,N/A,
+ADI,"Analog Devices, Inc. Common Stock",$103.64,-5.96,5.44%,"2,782,213",02/05/2020,"38,162,330,231",Technology,Semiconductors,31.99,25.37,$120.00,$3.24,$107.29/$103.23,$2.48,2.19%,"Feb 27, 2020","Mar 10, 2020",,$127.30/$79.08,1
+HKXCF,Hong Kong Exchanges & Clearing Ltd.,$30.89,-0.81,2.56%,500,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$30.89/$30.89,N/A,N/A,N/A,N/A,,N/A,
+ABB,ABB Ltd Common Stock,$18.39,-0.37,1.97%,"1,811,662",02/05/2020,,,,,,,,,,,,,,,
+AON,Aon plc Class A Ordinary Shares (Ireland),$178.21,+5.54,3.21%,"2,000,637",02/05/2020,"41,181,209,117",Finance,Specialty Insurers,28.06,17.00,$217.00,$6.35,$179.85/$169.29,$1.76,1.03%,"Jan 31, 2020","Feb 14, 2020",,$238.19/$143.93,1
+AMX,"America Movil, S.A.B. de C.V. American Depository Receipt Series L",$11.91,-0.13,1.08%,"4,108,950",02/05/2020,"39,297,262,250",Public Utilities,Telecommunications Equipment,39.7,18.81,$14.50,$0.30,$11.98/$11.66,$0.356,2.92%,"Nov 7, 2019","Nov 18, 2019",,$18.04/$10.12,1
+MIUFF,miuff,--,--,--,--,02/05/2020,,,,,,,,,,,,,,,
+SUHJF,Sun Hung Kai Properties Ltd,$13.64,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+BNPQY,BNP Paribas (France) ADR (Sponsored) repr 1/4 Shs,$15.20,-0.54,3.43%,"267,904",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$16.00/$15.03,N/A,N/A,N/A,N/A,,N/A,
+INFY,Infosys Limited American Depositary Shares,$9.06,-0.17,1.84%,"5,364,886",02/05/2020,,,,,,,,,,,,,,,
+PHG,Koninklijke Philips N.V. NY Registry Shares,$42.85,-1.06,2.41%,"912,924",02/05/2020,"38,032,760,150",Energy,Consumer Electronics/Appliances,33.22,20.91,$53.00,$1.29,$43.55/$42.67,$0.795,1.9%,"May 5, 2020","Jun 4, 2020",,$50.78/$30.50,1
+BAMXF,B.M.W. A.G.,$59.15,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+KAOCF,Kao Corp.,$81.00,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+BMWYY,B.M.W. A.G. ADR (Sponsored),$19.10,-0.565,2.87%,"80,829",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$19.60/$19.10,N/A,N/A,N/A,N/A,,N/A,
+LBSI,Liberty Bancshares Inc (OH) CDT-CAP STK,$50.25,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+DLR,"Digital Realty Trust, Inc. Common Stock",$145.92,-3.57,2.39%,"1,298,801",02/05/2020,"37,834,034,289",Consumer Services,Real Estate Investment Trusts,62.09,23.29,$149.50,$2.35,$149.21/$145.50,$4.48,3.01%,"Mar 16, 2020","Mar 31, 2020",,$158.36/$105.00,1
+RACE,Ferrari N.V. Common Shares,$148.99,-6.63,4.26%,"508,853",02/05/2020,"37,043,420,054",Capital Goods,Auto Manufacturing,35.73,47.45,$170.00,$4.17,$153.91/$147.08,N/A,N/A,N/A,N/A,,$180.95/$127.73,1
+UBS,UBS Group AG Registered Ordinary Shares,$10.39,-0.37,3.44%,"2,621,424",02/05/2020,"37,238,704,222",Finance,Major Banks,8.18,10.76,$12.50,$1.27,$10.53/$10.32,N/A,N/A,N/A,N/A,,$13.52/$7.48,1
+CNC,Centene Corporation Common Stock,$64.97,-1.61,2.42%,"3,385,349",02/05/2020,"37,626,038,287",Health Care,Medical Specialities,32.81,14.14,$85.00,$1.98,$66.57/$63.79,N/A,N/A,N/A,N/A,,$74.70/$41.62,1
+EPD,Enterprise Products Partners L.P. Common Stock,$17.13,-0.43,2.45%,"9,235,253",02/05/2020,"37,442,758,163",Public Utilities,Natural Gas Distribution,8.08,9.15,$24.00,$2.12,$17.48/$16.78,$1.78,9.69%,"Apr 29, 2020","May 12, 2020",,$30.86/$10.27,1
+TEAM,Atlassian Corporation Plc Class A Ordinary Shares,$154.59,-0.90,0.58%,"2,339,300",02/05/2020,"37,940,548,027",Technology,Computer Software: Prepackaged Software,,1196.08,$162.50,$-0.87,$157.25/$146.06,N/A,N/A,N/A,N/A,,$158.98/$106.11,1
+CAOVF,China Overseas Ld & Inv Ltd,$3.48,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+SAFRY,Safran S.A. ADR (Sponsored),$22.25,-0.49,2.15%,"110,225",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$22.73/$21.93,N/A,N/A,N/A,N/A,,N/A,
+WBA,"Walgreens Boots Alliance, Inc. Common Stock",$41.66,-1.63,3.77%,"7,066,109",02/05/2020,"36,544,993,324",Health Care,Medical/Nursing Services,10.68,7.83,$47.50,$3.90,$43.10/$41.40,$1.83,4.03%,"May 19, 2020","Jun 12, 2020",,$64.50/$39.41,1
+CHPXF,China Pacific Insurance (Group) Co. Ltd.,$3.02,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+DASTY,Dassault Systemes Sa Adr,$144.36,-2.14,1.46%,"24,187",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$149.25/$140.27,N/A,N/A,N/A,N/A,,N/A,
+GD,General Dynamics Corporation Common Stock,$127.80,-2.82,2.16%,"1,850,074",02/05/2020,"37,089,208,620",Capital Goods,Marine Transportation,10.78,11.96,$168.50,$11.85,$129.34/$126.39,$4.40,3.22%,"Apr 8, 2020","May 8, 2020",,$193.76/$100.55,1
+VOD,Vodafone Group Plc American Depositary Shares,$13.61,-0.53,3.75%,"8,824,988",02/05/2020,"36,436,915,939",Public Utilities,Telecommunications Equipment,N/A,22.44,$25.30,N/A,$14.05/$13.52,$0.967,6.51%,"Nov 27, 2019","Feb 7, 2020",,$21.72/$11.46,1
+ZM,"Zoom Video Communications, Inc. Class A Common Stock",$138.56,+3.39,2.51%,"13,806,992",02/05/2020,"38,658,463,913",Technology,"Computer Software: Programming, Data Processing",1732,6758.50,$122.50,$0.08,$141.63/$132.67,N/A,N/A,N/A,N/A,,$181.50/$60.97,1
+KDP,Keurig Dr Pepper Inc. Common Stock,$25.90,-0.56,2.12%,"1,422,459",02/05/2020,"36,443,370,731",Consumer Non-Durables,Beverages (Production/Distribution),31.2,19.17,$29.00,$0.83,$26.37/$25.73,$0.60,2.25%,"Jul 1, 2020","Jul 17, 2020",,$32.00/$18.98,1
+HCA,"HCA Healthcare, Inc. Common Stock",$104.86,-5.02,4.57%,"1,811,561",02/05/2020,"35,491,840,255",Health Care,Hospital/Nursing Management,11.93,25.92,$140.00,$8.79,$108.62/$103.70,$1.72,1.52%,"Feb 28, 2020","Mar 31, 2020",,$151.97/$58.38,1
+DDAIF,Daimler AG,$33.20,-1.50,4.32%,"36,986",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$33.95/$33.08,N/A,N/A,N/A,N/A,,N/A,
+LRCX,Lam Research Corporation Common Stock,$235.02,-20.26,7.94%,"5,715,069",02/05/2020,"34,116,027,060",Technology,Industrial Machinery/Components,16.9,16.59,$307.50,$13.91,$247.00/$229.69,$4.60,1.64%,"Mar 24, 2020","Apr 8, 2020",,$344.32/$171.04,1
+EA,Electronic Arts Inc. Common Stock,$113.27,-0.99,0.87%,"2,378,640",02/05/2020,,,,,,,,,,,,,,,
+KHC,The Kraft Heinz Company Common Stock,$29.38,-0.95,3.13%,"6,200,699",02/05/2020,"35,895,216,077",Consumer Non-Durables,Packaged Foods,18.71,12.74,$28.50,$1.57,$30.24/$29.15,$1.60,5.24%,"Mar 12, 2020","Mar 27, 2020",,$33.57/$19.99,1
+PUK,Prudential Public Limited Company Common Stock,$26.43,-1.83,6.48%,"507,952",02/05/2020,"34,476,032,939",Finance,Life Insurance,N/A,10.31,$36.30,N/A,$26.80/$26.29,$1.039,3.56%,"Mar 26, 2020","May 15, 2020",,$45.88/$15.68,1
+CUAEF,China Shenhua Engy Co H,$1.85,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+BSBR,"Banco Santander Brasil SA American Depositary Shares, each representing one unit",$4.69,-0.23,4.67%,"522,203",02/05/2020,"34,990,384,730",Finance,Commercial Banks,4.89,7.69,$7.50,$0.96,$4.94/$4.62,$0.545,10.37%,"Jan 6, 2020","Feb 28, 2020",,$12.85/$4.00,1
+LVS,Las Vegas Sands Corp. Common Stock,$45.61,-2.41,5.02%,"5,386,027",02/05/2020,"34,833,712,301",Consumer Services,Hotels/Resorts,16.59,-177.85,$61.00,$2.75,$46.54/$45.00,N/A,N/A,N/A,N/A,,$74.29/$33.30,1
+AMXVF,America Movil SAB de CV,$0.5556,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+DPSGY,Deutsche Post AG ADR (Sponsored),$28.95,-0.67,2.26%,"71,660",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$29.49/$28.91,N/A,N/A,N/A,N/A,,N/A,
+BCE,"BCE, Inc. Common Stock",$39.65,-0.79,1.95%,"903,980",02/05/2020,"35,856,594,415",Public Utilities,Telecommunications Equipment,15.55,16.71,$48.45,$2.55,$40.07/$39.56,$2.49,6.04%,"Mar 13, 2020","Apr 15, 2020",,$49.58/$31.66,1
+WBK,Westpac Banking Corporation Common Stock,$9.79,-0.64,6.14%,"521,961",02/05/2020,"34,166,402,688",Finance,Commercial Banks,N/A,12.42,$9.30,N/A,$10.17/$9.59,$1.092,10.42%,"Nov 8, 2019","Dec 30, 2019",,$20.56/$7.98,1
+GIS,"General Mills, Inc. Common Stock",$59.58,-0.31,0.52%,"2,565,228",02/05/2020,"36,113,756,734",Consumer Non-Durables,Packaged Foods,17.12,17.21,$58.50,$3.48,$60.55/$59.11,$1.96,3.25%,"Apr 8, 2020","May 1, 2020",,$61.66/$46.59,1
+SRE,Sempra Energy Common Stock,$119.93,-3.92,3.17%,"1,918,862",02/05/2020,"35,066,635,283",Public Utilities,Natural Gas Distribution,16.56,17.27,$142.00,$7.24,$122.05/$119.01,$4.18,3.23%,"Mar 19, 2020","Apr 15, 2020",,$161.87/$88.00,1
+MRAAF,Murata Manufacturing Co Ltd,$56.11,-0.49,0.87%,9,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$56.11/$56.11,N/A,N/A,N/A,N/A,,N/A,
+MRAAY,Murata Manufacturing Co Ltd ADR,$13.65,-0.47,3.33%,"148,902",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$13.90/$13.59,N/A,N/A,N/A,N/A,,N/A,
+EXC,Exelon Corporation Common Stock,$35.80,-1.28,3.45%,"4,856,259",02/05/2020,"34,866,688,558",Public Utilities,Power Generation,11.89,12.36,$51.50,$3.01,$36.85/$35.49,$1.53,3.99%,"May 14, 2020","Jun 10, 2020",,$51.18/$29.28,1
+SAN,"Banco Santander, S.A. Sponsored ADR (Spain)",$2.15,-0.02,0.92%,"3,896,210",02/05/2020,"35,710,820,938",Finance,Commercial Banks,7.17,9.43,$2.40,$0.30,$2.17/$2.12,$0.165,7.09%,"Oct 30, 2019","Nov 8, 2019",,$5.02/$2.01,1
+SMFG,Sumitomo Mitsui Financial Group Inc Unsponsored American Depositary Shares (Japan),$5.07,-0.19,3.61%,"1,156,082",02/05/2020,"34,715,986,523",Finance,Commercial Banks,5.45,5.60,$9.80,$0.93,$5.19/$5.02,$0.264,4.92%,"Sep 27, 2019","Dec 10, 2019",,$7.56/$4.49,1
+DKILF,Daikin Industries Ltd.,$123.00,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+WDAY,"Workday, Inc. Class A Common Stock",$146.66,-7.24,4.7%,"1,686,249",02/05/2020,"34,211,705,692",Technology,EDP Services,,-129.33,$192.00,$-2.12,$151.00/$145.56,N/A,N/A,N/A,N/A,,$226.83/$107.75,1
+BRDCF,Bridgestone Corp. (Japan),$54.66,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+DBSDY,DBS Group Holdings Ltd. ADR (Sponsored),$54.31,-1.59,2.84%,"74,693",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$54.90/$54.15,N/A,N/A,N/A,N/A,,N/A,
+ROP,"Roper Technologies, Inc. Common Stock",$339.38,-1.65,0.48%,"731,817",02/05/2020,"35,429,341,607",Capital Goods,Industrial Machinery/Components,21.78,28.02,$385.00,$15.58,$340.45/$333.22,$2.05,0.6%,"Apr 7, 2020","Apr 22, 2020",,$395.00/$240.00,1
+DBSDF,DBS Group Holdings Ltd.,$13.41,-0.49,3.53%,"1,281",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.14/$13.41,N/A,N/A,N/A,N/A,,N/A,
+WEBNF,Westpac Banking Corp,$10.08,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+CHVKF,China Vanke Co Ltd,$3.10,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+TRI,Thomson Reuters Corp Ordinary Shares,$69.08,-1.43,2.03%,"367,031",02/05/2020,"34,240,605,208",Consumer Services,Publishing,21.93,37.71,$76.10,$3.15,$70.01/$68.47,$1.52,2.12%,"Mar 5, 2020","Mar 18, 2020",,$82.50/$52.23,1
+NJDCY,Nihon Densan Kabushiki Kaisha ADR (Sponsored),$14.07,-0.83,5.57%,"92,175",02/05/2020,,,,,,,,,,,,,,,
+BIDU,"Baidu, Inc. ADS",$96.02,-4.91,4.86%,"4,622,502",02/05/2020,"33,208,352,806",Technology,"Computer Software: Programming, Data Processing",111.65,21.07,$139.50,$0.86,$98.20/$94.31,N/A,N/A,N/A,N/A,,$168.63/$82.00,1
+HOCPF,Hoya Corp.,$92.75,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+CSUAY,China Shenhua Energy Co. Ltd. ADR,$6.795,-0.155,2.23%,"55,548",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$6.90/$6.62,N/A,N/A,N/A,N/A,,N/A,
+SMFNF,Sumitomo Mitsui Financial Group Inc Tokyo,$25.20,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+DD,"DuPont de Nemours, Inc. Common Stock",$45.07,-1.95,4.15%,"4,550,253",02/05/2020,"33,072,138,442",Basic Industries,Major Chemicals,67.26,15.37,$55.00,$0.67,$46.82/$44.81,$1.20,2.49%,"May 28, 2020","Jun 15, 2020",,$77.03/$28.33,1
+KMI,"Kinder Morgan, Inc. Common Stock",$14.56,-0.67,4.4%,"15,823,527",02/05/2020,"32,933,673,384",Public Utilities,Natural Gas Distribution,25.1,19.53,$18.00,$0.58,$14.91/$14.36,$1.05,6.37%,"May 1, 2020","May 15, 2020",,$22.58/$9.42,1
+ETN,"Eaton Corporation, PLC Ordinary Shares",$82.07,-1.43,1.71%,"2,470,553",02/05/2020,"33,766,630,404",Technology,Industrial Machinery/Components,16.09,19.56,$92.00,$5.10,$82.89/$79.87,$2.92,3.4%,"May 13, 2020","May 29, 2020",,$105.78/$56.41,1
+HOCPY,Hoya Corp. ADR (Sponsored),$90.146,-0.824,0.91%,"13,546",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$90.80/$89.61,N/A,N/A,N/A,N/A,,N/A,
+EMR,Emerson Electric Company Common Stock,$53.79,-3.24,5.68%,"4,046,711",02/05/2020,"32,138,196,387",Energy,Consumer Electronics/Appliances,15.37,18.58,$63.00,$3.50,$55.99/$53.38,$2.00,3.39%,"Feb 13, 2020","Mar 10, 2020",,$78.38/$37.75,1
+TOELF,Tokyo Electron Ltd.,$217.00,--,--,0,02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+HENKY,Henkel AG & Co KGAA ADR (Sponsored) Repstg Ord Shs,$19.12,-0.36,1.85%,"29,794",02/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$19.33/$19.08,N/A,N/A,N/A,N/A,,N/A,
+ABEV,Ambev S.A. American Depositary Shares (Each representing 1 Common Share),$2.09,-0.06,2.79%,"17,726,121",02/05/2020,,,,,,,,,,,,,,,
+MTRJF,MTR Corp Ltd,$5.30,-0.18,3.28%,"1,500",02/05/2020,,,,,,,,,,,,,,,
+NNDNF,Nihon Densan Kabushiki Kaisha,$57.50,--,--,0,02/05/2020,,,,,,,,,,,,,,,
+JAPAF,Japan Tobacco,$18.30,-0.65,3.43%,"1,149",02/05/2020,,,,,,,,,,,,,,,
+MET,"MetLife, Inc. Common Stock",$34.68,-1.40,3.88%,"4,534,878",02/05/2020,,,,,,,,,,,,,,,
+TKOMF,Tokio Marine Holdings Inc,$47.18,--,--,0,02/05/2020,,,,,,,,,,,,,,,
+SCHYF,Sands China Ltd.,$3.87,-0.20,4.91%,100,02/05/2020,,,,,,,,,,,,,,,
+BNKHF,Boc Hong Kong Holdings Ltd,$3.1099,--,--,0,02/05/2020,,,,,,,,,,,,,,,
+TKOMY,Tokio Marine Holdings Inc ADR,$43.96,-2.98,6.35%,"33,448",02/05/2020,,,,,,,,,,,,,,,
+NABZY,National Australia Bank Ltd. ADR (Sponsored),$5.22,-0.25,4.57%,"186,900",02/05/2020,,,,,,,,,,,,,,,
+SNGNF,Singapore Telecommunications Ltd,$1.93,-0.07,3.5%,"1,108",02/05/2020,,,,,,,,,,,,,,,
+SCHYY,Sands China Ltd. ADR (Unsponsored),$38.579,-1.684,4.18%,"21,069",02/05/2020,,,,,,,,,,,,,,,
+BMO,Bank Of Montreal Common Stock,$48.78,-2.12,4.17%,"877,524",02/05/2020,,,,,,,,,,,,,,,
