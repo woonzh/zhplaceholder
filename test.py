@@ -32,7 +32,7 @@ url='https://zhplaceholder.herokuapp.com/nasdaqfull'
 #url='https://zhplaceholder.herokuapp.com/nasdaqupdatedetails'
 #url='https://zhplaceholder.herokuapp.com/nasdaqupdatebasic'
 params={
-    'useragent': 7
+    'useragent': 0
         }
 #result=requests.get(url, params=params)
 #result=requests.get(url)

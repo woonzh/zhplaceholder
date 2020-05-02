@@ -10,6 +10,12 @@ import pandas as pd
 import dbConnector as db
 import hkexDict
 import statistics
+from logger import logger
+import sys
+
+if not sys.warnoptions:
+    import warnings
+    warnings.simplefilter("ignore")
 
 url="https://www.hkex.com.hk/Market-Data/Securities-Prices/Equities?sc_lang=en"
 hkSum='data/HKsummary.csv'
@@ -20,6 +26,7 @@ currencyCols=['price','yearhigh', 'yearlow', 'dayhigh', 'daylow']
 numericCols=['turnover','market_cap','pe','dividend', 'volume']
 percenCols=['percen_traded', 'downside','upside']
 comDict=hkexDict.companyTag
+log=logger()
 
 def run():
     crawl=crawler()
@@ -217,6 +224,17 @@ def findCompany(df, comName=None, code=None):
     
     return df
 
+def runLogger(df):
+#    store=log.update('hkex',dfEngine, 'code','com_name')
+#    log.save()
+#    store=log.calStats()
+#    log.save()
+#    tables=None
+    store=None
+    tables=log.compileTable()
+    
+    return store, tables
+
 #df=run()
     
 dayChange={
@@ -244,7 +262,9 @@ upside={
 #dfEngine=dataEngineer(dfClean)
 #dfEngineView=filterView(dfEngine)
 #stats=getStats(dfEngine)
-##
+#
+#store, tables=runLogger(dfEngine)
+###
 #dfDayChange=sieveData(dfEngine,filters=dayChange)
 #dfDayChangeView=filterView(dfDayChange)
 ##

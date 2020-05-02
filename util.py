@@ -90,6 +90,12 @@ class timeClass:
         if cloud:
             now=now+timedelta(hours=8)
         return now.strftime('%d/%m/%Y')
+    
+    def getCurDateNumeric(self, cloud=False):
+        now=datetime.now()
+        if cloud:
+            now=now+timedelta(hours=8)
+        return now.strftime('%Y%m%d')
 
 class workerClass:
     def __init__(self):

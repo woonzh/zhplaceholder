@@ -189,8 +189,8 @@ def analytics(download=True):
 #crawl.urlDirect()
 #df=run(local=True)
 
-#df=analytics(False)
-#
+#df=analytics(True)
+##
 #dfClean=dataCleaning(df)
 #dfEngine=dataEngineering(dfClean)
 #breakdownIndustry=extractIndustries(df,'industry')
