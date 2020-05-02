@@ -40,7 +40,7 @@ def updateBasics(userAgentNum=0, local=False):
     
     if len(summary)>10:
         df=crawl.updateDetails(summary, dbname)
-        crawl.store(summary, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
+        crawl.store(df, fileLoc=nasdaqFile, dbName=dbname, write='cloud')
     else:
         df=summary
     

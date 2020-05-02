@@ -175,7 +175,7 @@ class crawler:
                 
                 oldPrice=self.convertNums(list(oldRow['price'])[0])
                 newPrice=self.convertNums(row['price'])
-                print('%s-%s'%(oldPrice, newPrice))
+#                print('%s-%s'%(oldPrice, newPrice))
                 
                 if oldPrice!=0 and newPrice!=0:
                     ratio=newPrice/oldPrice
@@ -192,7 +192,7 @@ class crawler:
                 for col in cols_to_update:
                     ratio=cols_to_update[col][0]
                     oldVal=self.convertNums(list(oldRow[col])[0])
-                    print('%s-%s'%(ratio,oldVal))
+#                    print('%s-%s'%(ratio,oldVal))
                     newval=self.updateCol(ratio,oldVal,cols_to_update[col][1])
                     oldRow[col]=newval
 #                print(oldRow.values)
@@ -220,7 +220,7 @@ class crawler:
         time.sleep(2)
         
         self.actions.move_to_element(top).perform()
-        time.sleep(3)
+        time.sleep(2)
         
         self.actions.move_to_element(ele).perform()
         time.sleep(2)
@@ -275,7 +275,7 @@ class crawler:
                 df=self.getNasdaqData(df)
                 nextBut=self.driver.find_element_by_xpath("""//li[@class="next"]//a""")
                 nextBut.click()
-                time.sleep(3)
+                time.sleep(5)
                 print('success')
             except:
                 print('fail')
