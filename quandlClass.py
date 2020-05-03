@@ -47,8 +47,8 @@ class quandlClass:
         
         if symbolLst is None:
             orgDf=db.extractTable(dbname)['result']
-            symbolLst=list(orgDf['code'][:2])
-            companyLst=list(orgDf['com_name'][:2])
+            symbolLst=list(orgDf['code'])
+            companyLst=list(orgDf['com_name'])
         
         print('quandl start-%s to call'%(len(symbolLst)))
         
