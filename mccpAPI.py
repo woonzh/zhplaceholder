@@ -156,6 +156,7 @@ def workerHKEXUpdateBasic():
     ret={}
     if request.method == 'GET':
         quandlBool = request.args.get("quandl", default=0)
+        print('api-%s'%(quandlBool))
         
         intJobId=util.stringGenerator()
         result=orc.wc.queueFunc('hkex update basic', orc.runHKEXUpdateBasic, (quandlBool) , intJobId)
