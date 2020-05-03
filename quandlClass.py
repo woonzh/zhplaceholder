@@ -84,7 +84,7 @@ class quandlClass:
         
         df2=self.engineerHKEXData(df)
         
-        return df,df2
+        return df2
                 
 #a=quandlClass()
 #symbolLst=['03988','00883']
