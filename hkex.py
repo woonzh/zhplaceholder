@@ -60,7 +60,7 @@ def updateDetails():
 
 def updateBasic(quandl=0):
     local=False
-#    crawl=crawler(local)
+    crawl=crawler(local)
     
     if quandl==0:
         quandlBool=False
@@ -69,20 +69,19 @@ def updateBasic(quandl=0):
     
     print('hkex quandl bool- %s-%s'%(quandl, quandlBool))
 #    
-#    if quandlBool:
-#        df=quan.updateHKEXData(dbname=dbName)
-#        df2=crawl.updatePriceQuandl(df=df,dbname=dbName)
-#    else:
-#        crawl.urlDirect(url)
-#        df=crawl.crawlHKEXSummary()
-#        df2=crawl.updatePrice(df=df, dbname=dbName)
-#    crawl.store(df2, hkSum, dbName)
-#    
-#    df3=crawl.updateHighLow(df2)
-#    crawl.store(df3, hkSum, dbName)
-#    
-#    crawl.closeDriver()
-    df3=None
+    if quandlBool:
+        df=quan.updateHKEXData(dbname=dbName)
+        df2=crawl.updatePriceQuandl(df=df,dbname=dbName)
+    else:
+        crawl.urlDirect(url)
+        df=crawl.crawlHKEXSummary()
+        df2=crawl.updatePrice(df=df, dbname=dbName)
+    crawl.store(df2, hkSum, dbName)
+    
+    df3=crawl.updateHighLow(df2)
+    crawl.store(df3, hkSum, dbName)
+    
+    crawl.closeDriver()
     
     return df3
 
