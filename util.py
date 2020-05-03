@@ -85,11 +85,18 @@ class timeClass:
         timeElapsed=(now-self.startTime)/60
         return timeElapsed
     
-    def getCurDate(self, cloud=False):
+    def getCurDate(self, cloud=False, quandl=False, daydelta=0):
         now=datetime.now()
+        delta=daydelta*24
         if cloud:
-            now=now+timedelta(hours=8)
-        return now.strftime('%d/%m/%Y')
+            delta+=8
+        now=now+timedelta(hours=delta)
+            
+        if quandl:
+            val=now.strftime('%Y-%m-%d')
+        else:
+            val=now.strftime('%d/%m/%Y')
+        return val
     
     def getCurDateNumeric(self, cloud=False):
         now=datetime.now()

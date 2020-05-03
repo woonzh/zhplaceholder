@@ -26,14 +26,20 @@ import pandas as pd
 #        }
 #t=1
 #url='https://zhplaceholder.herokuapp.com/hkexWorker'
-#url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
+url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
+params={
+    'quandl': 1
+        }
+#result=requests.get(url, params=params)
+#result=requests.get(url)
+
 #url='https://zhplaceholder.herokuapp.com/nasdaqfull'
 #url='https://zhplaceholder.herokuapp.com/nasdaqupdatedetails'
-url='https://zhplaceholder.herokuapp.com/nasdaqupdatebasic'
-params={
-    'useragent': 0
-        }
+#url='https://zhplaceholder.herokuapp.com/nasdaqupdatebasic'
+#params={
+#    'useragent': 0
+#        }
 #result=requests.get(url, params=params)
 #result=requests.get(url)
 

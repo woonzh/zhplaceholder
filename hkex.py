@@ -12,6 +12,7 @@ import hkexDict
 import statistics
 from logger import logger
 import sys
+from quandlClass import quandlClass
 
 if not sys.warnoptions:
     import warnings
@@ -27,9 +28,11 @@ numericCols=['turnover','market_cap','pe','dividend', 'volume']
 percenCols=['percen_traded', 'downside','upside']
 comDict=hkexDict.companyTag
 log=logger()
+quan=quandlClass()
 
 def run():
-    crawl=crawler()
+    local=False
+    crawl=crawler(local)
     crawl.urlDirect(url)
     
     df=crawl.crawlHKEXSummary()
@@ -44,7 +47,8 @@ def run():
     return df
 
 def updateDetails():
-    crawl=crawler()
+    local=False
+    crawl=crawler(local)
     crawl.urlDirect(url)
     
     df=crawl.getHKEXDetails(df=None, dbname=dbName)
@@ -54,12 +58,20 @@ def updateDetails():
     
     return df
 
-def updateBasic():
-    crawl=crawler()
+def updateBasic(quandl=0):
+    local=False
+    crawl=crawler(local)
     crawl.urlDirect(url)
     
-    df=crawl.crawlHKEXSummary()
-    df2=crawl.updatePrice(df=df, dbname=dbName)
+    quandl=quandl==1
+    print('hkex quandl bool- %s'%(quandl))
+    
+    if quandl:
+        df=quan.updateHKEXData(dbname=dbName)
+        df2=crawl.updatePriceQuandl(df=df,dbname=dbName)
+    else:
+        df=crawl.crawlHKEXSummary()
+        df2=crawl.updatePrice(df=df, dbname=dbName)
     crawl.store(df2, hkSum, dbName)
     
     df3=crawl.updateHighLow(df2)
@@ -67,7 +79,7 @@ def updateBasic():
     
     crawl.closeDriver()
     
-    return df,df2
+    return df3
 
 def dataEngineer(df):
     df=df.copy(deep=True)
@@ -253,6 +265,8 @@ upside={
     'percen_traded':['>',0,'percen_traded'],
     'suspended':['=','N','suspended']
         }
+
+#df3=updateBasic(local=True,quandl=True)
 
 #df=analytics(download=False)
 #dfClean=cleanData(df)

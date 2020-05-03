@@ -394,6 +394,82 @@ class crawler:
         return success, store
         
 ##update price and highlows
+#HKEX
+    def convertNumStr(self,numStr):
+#        print('new')
+        multiplier=1
+        lst=['HK$','%','B','M','K',',','x']
+        for itm in lst:
+            numStr=str(numStr).replace(itm,'')
+        
+        if 'B' in numStr:
+            multiplier=pow(10,9)
+        if 'M' in numStr:
+            multiplier=pow(10,6)
+        if 'K' in numStr:
+            multiplier=pow(10,3)
+            
+        try:
+            num=float(numStr)*multiplier
+        except:
+            num=0
+        
+        
+        
+        return num
+    
+    def updatePriceQuandl(self,df,dbname):
+        orgDf=db.extractTable(dbname)['result']
+        
+        colLst=['price', 'volume', 'dayhigh', 'daylow', 'upval','date_update','com_name', 'code']
+        ratioColLst={
+            'market_cap':'ratio',
+            'pe':'inverse',
+            'dividend':'inverse'}
+        
+        for count in range(len(df)):
+            code=str(int(df['code'][count]))
+#            print(code)
+            filterdf=orgDf[orgDf['code']==code]
+#            print(filterdf.values)
+            
+            if len(filterdf)>0:
+                ind=filterdf.index[0]
+                newprice=float(df['price'][count])
+                oldprice=self.convertNumStr(filterdf['price'].tolist()[0])
+#                print('%s-%s-%s-%s'%(df['price'][count],filterdf['price'].tolist()[0],newprice,oldprice))
+                if newprice!=0 and oldprice!=0:
+                    ratio=newprice/oldprice
+                    inverseRatio=1/ratio
+                else:
+                    ratio=0
+                    inverseRatio=0
+                for col in colLst:
+                    colNum=list(orgDf).index(col)
+                    val=df[col][count]
+                    if col=='code':
+                        val=str(int(val))
+                    orgDf.iloc[ind,colNum]=val
+                
+                for col in ratioColLst:
+                    colNum=list(orgDf).index(col)
+                    oldVal=self.convertNumStr(filterdf[col].tolist()[0])
+                    if ratioColLst[col]=='ratio':
+                        newVal=round(oldVal*ratio,2)
+                    else:
+                        newVal=round(oldVal*inverseRatio,2)
+                    orgDf.iloc[ind,colNum]=newVal
+            else:
+                ind=len(orgDf)
+                orgDf.loc[ind]=['']*len(list(orgDf))
+                for col in colLst:
+                    colNum=list(orgDf).index(col)
+                    val=df[col][count]
+                    if col=='code':
+                        val=str(int(val))
+                    orgDf.iloc[ind,colNum]=val
+        
+        return orgDf
     
     def updatePrice(self,df, dbname):
         orgDf=db.extractTable(dbname)['result']
@@ -410,8 +486,6 @@ class crawler:
                     colNum=list(orgDf).index(col)
                     val=df[col][count]
                     orgDf.iloc[ind,colNum]=val
-
-#missing high low update
                 
                 dateColNum=list(orgDf).index('date_update')
                 orgDf.iloc[ind,dateColNum]=self.dateStr
@@ -438,7 +512,7 @@ class crawler:
             lst2=[]
             for x in data[d]:
                 try:
-                    lst.append(float(x[3:]))
+                    lst.append(self.convertNumStr(x))
                     lst2.append(x)
                 except:
                     lst.append(0)
