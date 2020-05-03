@@ -1,6 +1,6 @@
 APScheduler==3.4.0
 selenium==3.141.0
-
+quandl
 pandas==0.21.0
 numpy==1.12.1
 numpydoc==0.6.0
