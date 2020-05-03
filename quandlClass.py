@@ -47,8 +47,8 @@ class quandlClass:
         
         if symbolLst is None:
             orgDf=db.extractTable(dbname)['result']
-            symbolLst=list(orgDf['code'])
-            companyLst=list(orgDf['com_name'])
+            symbolLst=list(orgDf['code'][:2])
+            companyLst=list(orgDf['com_name'][:2])
         
         print('quandl start-%s to call'%(len(symbolLst)))
         
@@ -56,6 +56,7 @@ class quandlClass:
             
         df=None
         count=0
+        suspendedCount=0
         for count,symbol in enumerate(symbolLst):
             if 'suspended' not in symbol.lower():
                 try:
@@ -75,14 +76,17 @@ class quandlClass:
                 
                 if count>0 and count%50==0:
                     self.timec.getTimeSplit('quandl-%s'%(str(count)))
-        
-        df=self.engineerHKEXData(df)
-        print('quandl done %s-%s'%(count,len(symbolLst)))
+            else:
+                suspendedCount+=1
+        print('quandl done %s/%s %s - suspended %s - not found'%(count,len(symbolLst),suspendedCount,len(symbolLst)-count-suspendedCount))
         self.timec.stopTime()
+        print('df length - %s'%(len(df)))
         
-        return df
+        df2=self.engineerHKEXData(df)
+        
+        return df,df2
                 
 #a=quandlClass()
 #symbolLst=['03988','00883']
 #companyLst=['test1','test2']
-#d=a.updateHKEXData(symbolLst, companyLst)
+#d,d2=a.updateHKEXData(symbolLst, companyLst)
