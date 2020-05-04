@@ -265,8 +265,8 @@ upside={
     'pe1':['>',1,'pe'],
     'pe2':['<',30,'pe'],
     'upside':['>',30,'upside'],
-    'downside':['<',30,'downside'],
-    'percen_traded':['>',0,'percen_traded'],
+#    'downside':['<',30,'downside'],
+    'percen_traded':['>',0.005,'percen_traded'],
     'suspended':['=','N','suspended']
         }
 

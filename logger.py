@@ -15,7 +15,8 @@ class logger:
                     'upside':'upside',
                     'downside':'downside',
                     'dayVolatility':'day_volatility',
-                    'weightedDayVolatility':'day_volatility_weighted'
+                    'weightedDayVolatility':'day_volatility_weighted',
+                    'dayVolume':'day_volume'
                         }
                     },
             'hkex':{

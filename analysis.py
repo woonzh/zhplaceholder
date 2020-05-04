@@ -51,9 +51,10 @@ def dfCleaner(df, cleanCol='prevclosedate', exceptions=[]):
             lst=list(df[header])
             newLst=[]
             for i in lst: 
-                i=str(i)                   
+                i=str(i)   
+                newVal=i.replace(',', '')                
                 if 'M' in i or 'B' in i:
-                    newVal=i.replace(',', '')
+#                    newVal=i.replace(',', '')
                     if 'M' in newVal:
                         newVal=newVal.replace('M', '')
                         try:
@@ -68,8 +69,8 @@ def dfCleaner(df, cleanCol='prevclosedate', exceptions=[]):
                             newVal=0
                         
                 else:
-                    newVal=i.replace('USD', '')
-                    newVal=i.replace('SGD', '')
+                    newVal=newVal.replace('USD', '')
+                    newVal=newVal.replace('SGD', '')
                     try:
                         newVal=float(newVal)
                     except:
@@ -288,13 +289,13 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
     if filters is None:
         filters={
             'peratio':['!=','nan',True],
-            'openprice':['>',0.2,True]
+            'openprice':['>',0.2,True],
 #            'industry':['!=','',True],
 #            'openprice':['>',1,False],
 #            'net_profit_margin':['>', 10],
-#            'volume traded %':['>', 0.0001,False],
-#            'p_nav':['<',1],
-#            'type':['=','reit',True],
+            'volume traded %':['>', 0.0001,False],
+            'p_nav':['<',1, True],
+            'type':['=','reit',True]
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
 #            'operating_margin':['>',10],
@@ -385,9 +386,9 @@ def cleanCols(df):
               'sharesoutstanding', 'pricebookvalue', 'type', 'industry', 'enterprisevalue', \
               'assets', 'cash', 'capex', 'financial_info']
     
-    display=['names','openprice','upside','downside','day_high','day_low','dayVolatility','percenchange','weightedDayVolatility','volume traded %','peratio','revenue','div_val','marketcap',\
+    display=['names','openprice','upside','downside','day_high','day_low','dayVolatility','percenchange','weightedDayVolatility','volume traded %','dayVolume','peratio','revenue','div_val','marketcap',\
              'operating_margin','net_profit_margin','debt_assets_ratio','shortdebt_over_profit',\
-             'p_nav','profitMarginGrowth','cash_percen','dayVolume',\
+             'p_nav','profitMarginGrowth','cash_percen',\
              'Revenue growth', 'Operating Income growth', 'Net Income growth', 'Cash growth', \
              'Total Receivables, Net growth', 'Accumulated Depreciation, Total growth', \
              'Total Assets growth', 'Total Current Liabilities growth', \
@@ -571,8 +572,9 @@ upsideFilter={
 #dfUpside=filterData(filters=upsideFilter,df=dfNew)
 #dfUpsideCmp=cleanCols(dfUpside)
 ##
-#dfFilter=filterData(industry=['Retailers', 'Cyclical Consumer Services', 'Restaurants & Bars', \
-#                              'Cyclical Consumer Products','Hotels, Motels & Cruise Lines','Apparel & Accessories Retailers'],df=dfNew)
+#industry=['Retailers', 'Cyclical Consumer Services', 'Restaurants & Bars', \
+                              'Cyclical Consumer Products','Hotels, Motels & Cruise Lines','Apparel & Accessories Retailers']
+#dfFilter=filterData(df=dfNew)
 #dfCmp=cleanCols(dfFilter)
 ##dfCmp.to_csv(cmpFile, index=False)
 #

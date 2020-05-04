@@ -29,9 +29,9 @@ import pandas as pd
 url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
 params={
-    'quandl': 1
+    'quandl': 0
         }
-result=requests.get(url, params=params)
+#result=requests.get(url, params=params)
 #result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/nasdaqfull'
