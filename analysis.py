@@ -572,8 +572,7 @@ upsideFilter={
 #dfUpside=filterData(filters=upsideFilter,df=dfNew)
 #dfUpsideCmp=cleanCols(dfUpside)
 ##
-#industry=['Retailers', 'Cyclical Consumer Services', 'Restaurants & Bars', \
-                              'Cyclical Consumer Products','Hotels, Motels & Cruise Lines','Apparel & Accessories Retailers']
+#industry=['Retailers', 'Cyclical Consumer Services', 'Restaurants & Bars', 'Cyclical Consumer Products','Hotels, Motels & Cruise Lines','Apparel & Accessories Retailers']
 #dfFilter=filterData(df=dfNew)
 #dfCmp=cleanCols(dfFilter)
 ##dfCmp.to_csv(cmpFile, index=False)

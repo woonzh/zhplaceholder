@@ -62,6 +62,8 @@ def updateBasic(quandl=0):
     local=False
     crawl=crawler(local)
     
+    quandl=int(quandl)
+    
     if quandl==0:
         quandlBool=False
     else:
