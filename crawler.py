@@ -305,6 +305,8 @@ class crawler:
         
 #        indexes=[0,1,2]
         
+        changeCount=0
+        
         print('scraping details-%s'%(str(len(indexes))))
         
         for count, ind in enumerate(indexes):
@@ -325,8 +327,10 @@ class crawler:
                 print(row)
                 df.loc[ind]=list(row)
                 self.timec.getTimeSplit('%s-%s data'%(str(ind),symbol))
+                
+                changeCount+=1
             
-            if count%self.dbBatch==0 and count >1:
+            if changeCount%self.dbBatch==0 and count >1:
                 self.store(df,dbName=dbName)
         return df
     
