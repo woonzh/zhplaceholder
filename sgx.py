@@ -606,7 +606,7 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
         'tradedval':'valTraded',
         'prevclosedate':'update_date',
         'day_high':'dayHigh',
-        'day_low':'dayLow
+        'day_low':'dayLow'
             }
     
     for itm in replace:
