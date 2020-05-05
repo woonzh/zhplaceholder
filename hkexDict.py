@@ -3,7 +3,8 @@ companyTag={
             'BANKOFJIUJIANG', 'BANKOFZHENGZHOU', 'ABC', 'BANK OF GANSU'],
     'oil':['CNOOC', 'PetroChina','kunlun energy','SINOPEC CORP','SINOPEC KANTONS','SINOPEC SEG',\
            'SINOPEC SSC', 'YANCHANG PETRO'],
-    'energy':['AGRITRADE RES', 'BE CLEAN ENERGY', 'GCL NEWENERGY', 'JNEC', 'XINYI ENERGY', 'CH RENEW EN INV']
+    'energy':['AGRITRADE RES', 'BE CLEAN ENERGY', 'GCL NEWENERGY', 'JNEC', 'XINYI ENERGY', 'CH RENEW EN INV',\
+              'CHINA LONGYUAN']
         }
 
 bankdict={

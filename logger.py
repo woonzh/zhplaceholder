@@ -25,7 +25,8 @@ class logger:
                     'upside':'upside',
                     'downside':'downside',
                     'day_volatility':'day_volatility',
-                    'day_volatility_weighted':'day_volatility_weighted'
+                    'day_volatility_weighted':'day_volatility_weighted',
+                    'day_perceninc':'day_perceninc'
                         }
                     },
             'nasdaq':{
@@ -35,7 +36,7 @@ class logger:
                         }
                     }
                 }
-        self.stats=['average']#, '5_day_avg', '30_day_avg']
+        self.stats=['average', 'sum', '5_day_sum']#, '5_day_avg', '30_day_avg']
         self.load()
         self.timec=util.timeClass()
         self.curDate=self.timec.getCurDateNumeric()
@@ -83,7 +84,10 @@ class logger:
                     storemetric['stats']={
                             'average':round(float(sum(valLst)/len(valLst)),4),
                             '5_day_avg':round(float(sum(valLst[-5:])/len(valLst[-5:])),4),
-                            '30_day_avg':round(float(sum(valLst[-22:])/len(valLst[-2:])),4)
+                            '30_day_avg':round(float(sum(valLst[-22:])/len(valLst[-2:])),4),
+                            'sum':round(float(sum(valLst)),4),
+                            '5_day_sum':round(float(sum(valLst[-5:])),4),
+                            '30_day_sum':round(float(sum(valLst[-22:])),4)
                             }
                     storesymbol['metrics'][metric]=storemetric
                 storexchange[symbol]=storesymbol

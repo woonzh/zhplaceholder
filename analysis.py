@@ -289,13 +289,13 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
     if filters is None:
         filters={
             'peratio':['!=','nan',True],
-            'openprice':['>',0.2,True],
+#            'openprice':['>',0.2,True],
 #            'industry':['!=','',True],
 #            'openprice':['>',1,False],
 #            'net_profit_margin':['>', 10],
             'volume traded %':['>', 0.0001,False],
-            'p_nav':['<',1, True],
-            'type':['=','reit',True]
+#            'p_nav':['<',1, True],
+            'type':['=','others',True]
 #            'revenue':['>',0]
 #            'debt_assets_ratio':['<',0.4],
 #            'operating_margin':['>',10],
@@ -386,7 +386,7 @@ def cleanCols(df):
               'sharesoutstanding', 'pricebookvalue', 'type', 'industry', 'enterprisevalue', \
               'assets', 'cash', 'capex', 'financial_info']
     
-    display=['names','openprice','upside','downside','day_high','day_low','dayVolatility','percenchange','weightedDayVolatility','volume traded %','dayVolume','peratio','revenue','div_val','marketcap',\
+    display=['names','openprice','industry','upside','downside','day_high','day_low','dayVolatility','percenchange','weightedDayVolatility','volume traded %','dayVolume','peratio','revenue','div_val','marketcap',\
              'operating_margin','net_profit_margin','debt_assets_ratio','shortdebt_over_profit',\
              'p_nav','profitMarginGrowth','cash_percen',\
              'Revenue growth', 'Operating Income growth', 'Net Income growth', 'Cash growth', \
@@ -519,30 +519,32 @@ def processFinancialInfo(df):
     
     return store, summary
 
-def runLogger(df):
-    store=log.update('sgx',df, 'names','names')
-    store=log.calStats()
-    log.save()
+def runLogger(df, run=False):
+    if run:
+        store=log.update('sgx',df, 'names','names')
+        store=log.calStats()
+        log.save()
     
     table=log.compileTable('sgx')
     
     df=pd.merge(df, table, how='outer', left_on='names', right_on='company')
     df.drop(['symbol','company'],axis=1, inplace=True)
     
-    return df, store, table
+    return df,table
     
 def run(pullFromDB=False):
     if pullFromDB:
         df=extractFileFromDB()
         df.to_csv(file, index=False)
     df=pd.read_csv(file)
+#    return df
     dfMain, dfDel, dfCheck, summary, dfNew, f=cleanAndProcess(summaryFName, file, newFile)
     return df,dfNew, dfMain, f
 
 dailyChangeFilter={
     'peratio':['!=','nan',True],
     'industry':['!=','',True],
-    'openprice':['>',0.8,False],
+    'openprice':['>',0.25,False],
     'volume traded %':['>', 0.0001,False]}
 
 upsideFilter={
@@ -561,24 +563,26 @@ upsideFilter={
     'upside':['>',0.3,True]
         }
 
+#df=run(False)
+
 #df,dfNew, dfMain, financial = run(False)
-#dfNew, store, table=runLogger(dfNew)
+#dfNew, table=runLogger(dfNew, False)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
-####
+#####
 #dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
 #dfDailyChangeCmp=cleanCols(dfDailyChange)
 ###
 #dfUpside=filterData(filters=upsideFilter,df=dfNew)
 #dfUpsideCmp=cleanCols(dfUpside)
 ##
-#industry=['Retailers', 'Cyclical Consumer Services', 'Restaurants & Bars', 'Cyclical Consumer Products','Hotels, Motels & Cruise Lines','Apparel & Accessories Retailers']
-#dfFilter=filterData(df=dfNew)
+#industry=['Electrical Components & Equipment', 'Electronic Equipment & Parts', 'Industrial Machinery & Equipment', 'Semiconductors']
+#dfFilter=filterData(df=dfNew, industry=industry)
 #dfCmp=cleanCols(dfFilter)
 ##dfCmp.to_csv(cmpFile, index=False)
 #
-#company=getCompany(dfNew,'names', 'mindchamp')
-#
+#company=getCompany(dfNew,'names', 'hyphens pharma')
+##
 #store, dfStore, clusters=extractIndustries(df=dfNew)
 #
 #f, fsummary=processFinancialInfo(dfNew)

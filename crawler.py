@@ -310,19 +310,21 @@ class crawler:
         for count, ind in enumerate(indexes):
             row=df.loc[ind]
             symbol=row['symbol'].lower()
-            try:
-                success, data=self.getSymbolData(symbol,url)
-                if success==False:
-                    return success, None
-            except:
-                print('get data failed - %s'%(symbol))
-                data={}
-            for itm in data:
-                row[itm]=data[itm]
             
-            print(row)
-            df.loc[ind]=list(row)
-            self.timec.getTimeSplit('%s-%s data'%(str(ind),symbol))
+            if str(row['market_cap'])=='':
+                try:
+                    success, data=self.getSymbolData(symbol,url)
+                    if success==False:
+                        return success, None
+                except:
+                    print('get data failed - %s'%(symbol))
+                    data={}
+                for itm in data:
+                    row[itm]=data[itm]
+                
+                print(row)
+                df.loc[ind]=list(row)
+                self.timec.getTimeSplit('%s-%s data'%(str(ind),symbol))
             
             if count%self.dbBatch==0 and count >1:
                 self.store(df,dbName=dbName)

@@ -29,8 +29,10 @@ class quandlClass:
     
     def engineerHKEXData(self, df):
         newDf=pd.DataFrame()
-        for col in self.hkexConvert:
-            newDf[self.hkexConvert[col]]=df[col]
+            
+        cols=['Nominal Price','Previous Close']
+        for col in cols:
+            df[col]=[float(x) if str(x)!='None' else 0 for x in df[col]]
         
         change=[round(x-y,2) if x!=0 and y!=0 else 0 for x,y in zip(df['Nominal Price'],df['Previous Close'])]
         changePercen=[round(100*x/y,2) if x!=0 and y!=0 else 0 for x,y in zip(change,df['Previous Close'])]
@@ -38,6 +40,9 @@ class quandlClass:
         newUpVal=[str(x)+" ("+str(y)+'%)' if x!=0 and y!=0 else 0 for x,y in zip(change,changePercen)]
         
         newDf['upval']=newUpVal
+        
+        for col in self.hkexConvert:
+            newDf[self.hkexConvert[col]]=df[col]
         
         return newDf
     
@@ -53,6 +58,9 @@ class quandlClass:
         print('quandl start-%s to call'%(len(symbolLst)))
         
         symbolLst=[x.zfill(5) for x in symbolLst]
+        
+        suspendedLst=[]
+        unsuccessLst=[]
             
         df=None
         count=0
@@ -72,19 +80,23 @@ class quandlClass:
                         df.loc[len(df)]=lst
                     count+=1
                 except:
+                    unsuccessLst.append(companyLst[count])
                     print('%s-%s not found'%(symbol,companyLst[count]))
                 
                 if count>0 and count%50==0:
                     self.timec.getTimeSplit('quandl-%s'%(str(count)))
             else:
+                suspendedLst.append(companyLst[count])
                 suspendedCount+=1
         print('quandl done %s/%s %s - suspended %s - not found'%(count,len(symbolLst),suspendedCount,len(symbolLst)-count-suspendedCount))
         self.timec.stopTime()
         print('df length - %s'%(len(df)))
         
+#        return df, suspendedLst, unsuccessLst
+        
         df2=self.engineerHKEXData(df)
         
-        return df2
+        return df2, suspendedLst, unsuccessLst
                 
 #a=quandlClass()
 #symbolLst=['03988','00883']

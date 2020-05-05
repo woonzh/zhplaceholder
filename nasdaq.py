@@ -113,7 +113,7 @@ def dataEngineering(df):
     return df
 
 def cleanView(df):
-    cols=['company','price','percen_change', 'market_cap', 'pe_ratio', 'yield', \
+    cols=['symbol','company','price','percen_change', 'market_cap', 'pe_ratio', 'yield', \
           'upside', 'downside', 'dayVolatility','day_percen_traded','fifty_day_percen_traded', 'sector','industry']
     return df[cols]
 
@@ -138,9 +138,9 @@ def sieveData(df, filters=None, industryCol=None, industries=[]):
     if filters is None:            
         filters={
             'price':['>',1,'price'],
-            'pe_ratio':['<',40,'pe_ratio'],
+#            'pe_ratio':['<',40,'pe_ratio'],
             'day_percen_traded':['>',0,'day_percen_traded'],
-            'upside':['>',30,'upside']
+#            'upside':['>',30,'upside']
             
                 }
         
@@ -179,35 +179,37 @@ def analytics(download=True):
     
     return df
 
+#df=db.extractTable(dbname)['result']
+
 #df=analytics(False)
 #dfClean=dataCleaning(df)
 #dfEngine=dataEngineering(dfClean)
 #breakdownIndustry=extractIndustries(df,'industry')
 #breakdownSector=extractIndustries(df,'sector')
 #
-#dayChange={
-#    'price':['>',1,'price'],
-#    'pe_ratio1':['>',2,'pe_ratio'],
+dayChange={
+    'price':['>',1,'price'],
+    'pe_ratio1':['>',2,'pe_ratio'],
+    'pe_ratio2':['<',40,'pe_ratio'],
+    'day_percen_traded':['>',0,'day_percen_traded'],
+    'upside':['>',30,'upside']
+        }
+
+upside={
+    'price':['>',1,'price'],
+    'pe_ratio1':['>',2,'pe_ratio'],
 #    'pe_ratio2':['<',40,'pe_ratio'],
-#    'day_percen_traded':['>',0,'day_percen_traded'],
+    'day_percen_traded':['>',0,'day_percen_traded']
 #    'upside':['>',30,'upside']
-#        }
-#
-#upside={
-#    'price':['>',1,'price'],
-#    'pe_ratio1':['>',2,'pe_ratio'],
-##    'pe_ratio2':['<',40,'pe_ratio'],
-#    'day_percen_traded':['>',0,'day_percen_traded']
-##    'upside':['>',30,'upside']
-#        }
+        }
 
 #dfDayVol=sieveData(dfEngine,filters=dayChange)
 #dfDayVolView=cleanView(dfDayVol)
 #
 #dfUpside=sieveData(dfEngine, filters=upside)
 #dfUpsideView=cleanView(dfUpside)
-##
-#dfFilter=sieveData(dfEngine)
+###
+#dfFilter=sieveData(dfEngine,industryCol='sector', industries=['Finance'])
 #dfView=cleanView(dfFilter)
 #
 #dfCmp=getCompany(dfEngine,'company', 'standard')

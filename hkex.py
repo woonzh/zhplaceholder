@@ -230,7 +230,7 @@ def getIndustryCompany(df, industry='bank'):
 
 def filterView(df):
     cols_to_show=['com_name', 'price', 'day_volatility', 'day_volatility_weighted','day_perceninc','downside', 'upside',\
-                  'turnover', 'market_cap', 'pe', 'dividend', 'percen_traded']
+                  'turnover', 'market_cap', 'pe', 'dividend', 'percen_traded', 'day_perceninc_sum','day_perceninc_5_day_sum']
     
     return df[cols_to_show]
 
@@ -242,13 +242,18 @@ def findCompany(df, comName=None, code=None):
     
     return df
 
-def runLogger(df):
-    store=log.update('hkex',df, 'code','com_name')
-    store=log.calStats()
-    log.save()
+def runLogger(df, run=False):
+    dfNew=df.copy(deep=True)
+    if run:
+        store=log.update('hkex',df, 'code','com_name')
+        store=log.calStats()
+        log.save()
     table=log.compileTable('hkex')
     
-    return store,table
+    dfNew=pd.merge(df, table, how='outer', left_on='code', right_on='symbol')
+    dfNew.drop(['symbol','company'],axis=1, inplace=True)
+    
+    return dfNew, table
 
 #df=run()
     
@@ -272,14 +277,17 @@ upside={
     'suspended':['=','N','suspended']
         }
 
-#df3=updateBasic(local=True,quandl=True)
+#df2, suspendedLst, unsuccessLst=quan.updateHKEXData(dbname=dbName)
+#df3=quan.engineerHKEXData(df2)
 
 #df=analytics(download=False)
 #dfClean=cleanData(df)
 #dfEngine=dataEngineer(dfClean)
+#dfEngine,table=runLogger(dfEngine, run=False)
+
 #dfEngineView=filterView(dfEngine)
 #stats=getStats(dfEngine)
-#
+##
 #dfDayChange=sieveData(dfEngine,filters=dayChange)
 #dfDayChangeView=filterView(dfDayChange)
 ##
@@ -289,7 +297,7 @@ upside={
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
 
-#dfCom=findCompany(dfEngine, comName='HEC PHARM')
+#dfCom=findCompany(dfEngine, comName='XINYI HK')
 #
 #indDf=getIndustryCompany(dfEngine, industry='energy')
 #indDf2=filterView(indDf)

@@ -91,8 +91,8 @@ def extractData(df2):
     df['changePercen']=retrieveText(changePercen)
     df['vol']=retrieveText(vol)
     df['valTraded']=retrieveText(valTraded)
-    df['day_high']=retrieveText(dayHigh)
-    df['day_low']=retrieveText(dayLow)
+    df['dayHigh']=retrieveText(dayHigh)
+    df['dayLow']=retrieveText(dayLow)
     df['address']=retrieveText(names, "href")
     df['update_date']=timec.getCurDate()
     
@@ -127,7 +127,7 @@ def crawlSummary():
     time.sleep(1)
     
     lst=[]
-    df=pd.DataFrame(columns=['names', 'last price', 'change','changePercen','vol', 'valTraded', 'day_high','day_low','address', 'update_date'])
+    df=pd.DataFrame(columns=['names', 'last price', 'change','changePercen','vol', 'valTraded', 'dayHigh','dayLow','address', 'update_date'])
     
     df, df2 = extractData(df)
     lst.append(df2)
@@ -604,7 +604,9 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
         'percenchange': 'changePercen',
         'tradedvol': 'vol',
         'tradedval':'valTraded',
-        'prevclosedate':'update_date'
+        'prevclosedate':'update_date',
+        'day_high':'dayHigh',
+        'day_low':'dayLow
             }
     
     for itm in replace:
