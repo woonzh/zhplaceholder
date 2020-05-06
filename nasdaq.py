@@ -36,7 +36,7 @@ def updateBasics(userAgentNum=0, local=False):
     print('nasdaq -%s'%(str(userAgentNum)))
     crawl=crawler(local=local,userAgentNum=userAgentNum)
     
-    summary=crawl.getNasdaqPrice(dbname=None,url=url)
+    summary=crawl.getNasdaqPrice(dbname=dbname,url=url,updateData=True)
     
     if len(summary)>10:
         df=crawl.updateDetails(summary, dbname)
@@ -180,6 +180,8 @@ def analytics(download=True):
     return df
 
 #df=db.extractTable(dbname)['result']
+    
+#a=updateBasics(userAgentNum=0, local=True)
 
 #df=analytics(False)
 #dfClean=dataCleaning(df)

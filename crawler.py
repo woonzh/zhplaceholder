@@ -248,7 +248,7 @@ class crawler:
         
         return df
     
-    def getNasdaqPrice(self, dbname=None,url=None, addRemainCols=False):
+    def getNasdaqPrice(self, dbname=None,url=None, addRemainCols=False, updateData=False):
         self.data={
             'symbol':[""".//th[@class="symbol-screener__cell symbol-screener__cell--ticker"]"""],
             'company':[""".//td[@class="symbol-screener__cell symbol-screener__cell--company"]"""],
@@ -270,7 +270,7 @@ class crawler:
         cont=True
         count=0
         
-        while cont==True:
+        while cont==True and count <1:
             try:
                 df=self.getNasdaqData(df)
                 nextBut=self.driver.find_element_by_xpath("""//li[@class="next"]//a""")
@@ -285,7 +285,11 @@ class crawler:
             
             if dbname is not None:
                 if count%self.dbBatch==0 and count > 1:
-                    self.store(df,dbName=dbname)
+                    if updateData:
+                        df2=self.updateDetails(df, dbname)
+                        self.store(df2, fileLoc="", dbName=dbname, write='cloud')
+                    else:
+                        self.store(df,dbName=dbname)
         
         if addRemainCols:
             for col in self.nasdaqDetailsHeaders:
@@ -332,7 +336,7 @@ class crawler:
             
             if changeCount%self.dbBatch==0 and count >1:
                 self.store(df,dbName=dbName)
-        return df
+        return True, df
     
     def getSymbolData(self, symbol, url):
         url=url%(symbol)

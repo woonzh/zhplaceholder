@@ -563,9 +563,7 @@ upsideFilter={
     'upside':['>',0.3,True]
         }
 
-#df=run(False)
-
-#df,dfNew, dfMain, financial = run(False)
+#df,dfNew, dfMain, financial = run(True)
 #dfNew, table=runLogger(dfNew, False)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
@@ -582,7 +580,7 @@ upsideFilter={
 ##dfCmp.to_csv(cmpFile, index=False)
 #
 #company=getCompany(dfNew,'names', 'hyphens pharma')
-##
+###
 #store, dfStore, clusters=extractIndustries(df=dfNew)
 #
 #f, fsummary=processFinancialInfo(dfNew)
