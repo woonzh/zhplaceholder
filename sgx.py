@@ -32,6 +32,7 @@ if host == 'local':
     capabilities = webdriver.DesiredCapabilities.CHROME
     options=webdriver.ChromeOptions()
     options.add_argument('--headless')
+    options.add_argument('log-level=3')
     driver = webdriver.Chrome(chromepath, chrome_options=options)
 else:
     GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
@@ -595,7 +596,7 @@ def updateCompanyInfo(dragCount=None, sumTries=None, downloadData=True):
     else:
         companyFullInfo=pd.read_csv(companyInfoFName)
         
-    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price','change','changePercen','vol', 'valTraded', 'day_high','day_low','update_date']], how='outer', left_on='names', right_on='names')
+    companyFullInfo=pd.merge(companyFullInfo, df[['names','last price','change','changePercen','vol', 'valTraded', 'dayHigh','dayLow','update_date']], how='outer', left_on='names', right_on='names')
     companyFullInfo=updateRatios(companyFullInfo)
     
     replace={

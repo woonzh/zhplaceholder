@@ -109,6 +109,7 @@ def dataEngineering(df):
     df['upside']=[round((x-y)*100/y,2) if x!=0 and y!=0 else 0 for x,y in zip(df['year_high'],df['price'])]
     df['downside']=[round((y-x)*100/y,2) if x!=0 and y!=0 else 0 for x,y in zip(df['year_low'],df['price'])]
     df['dayVolatility']=[round((x-y)*100/z,2) if x!=0 and y!=0 and z!=0 else 0 for x,y,z in zip(df['day_high'],df['day_low'],df['price'])]
+    df['percen_change']=[x if y>0 else -x for x,y in zip(df['percen_change'],df['change'])]
     
     return df
 
@@ -137,9 +138,10 @@ def sieveData(df, filters=None, industryCol=None, industries=[]):
                 
     if filters is None:            
         filters={
-            'price':['>',1,'price'],
-#            'pe_ratio':['<',40,'pe_ratio'],
+            'price':['>',20,'price'],
+            'pe_ratio':['<',40,'pe_ratio'],
             'day_percen_traded':['>',0,'day_percen_traded'],
+            'market_cap':['>',4*pow(10,8),'market_cap']
 #            'upside':['>',30,'upside']
             
                 }
@@ -183,7 +185,7 @@ def analytics(download=True):
     
 #a=updateBasics(userAgentNum=0, local=True)
 
-#df=analytics(False)
+#df=analytics(True)
 #dfClean=dataCleaning(df)
 #dfEngine=dataEngineering(dfClean)
 #breakdownIndustry=extractIndustries(df,'industry')
@@ -200,9 +202,9 @@ dayChange={
 upside={
     'price':['>',1,'price'],
     'pe_ratio1':['>',2,'pe_ratio'],
-#    'pe_ratio2':['<',40,'pe_ratio'],
-    'day_percen_traded':['>',0,'day_percen_traded']
-#    'upside':['>',30,'upside']
+    'pe_ratio2':['<',50,'pe_ratio'],
+    'day_percen_traded':['>',0,'day_percen_traded'],
+    'upside':['>',30,'upside']
         }
 
 #dfDayVol=sieveData(dfEngine,filters=dayChange)
@@ -210,8 +212,8 @@ upside={
 #
 #dfUpside=sieveData(dfEngine, filters=upside)
 #dfUpsideView=cleanView(dfUpside)
-###
-#dfFilter=sieveData(dfEngine,industryCol='sector', industries=['Finance'])
+#
+#dfFilter=sieveData(dfEngine,industryCol='industry', industries=['Investment Bankers','Major Banks'])
 #dfView=cleanView(dfFilter)
 #
 #dfCmp=getCompany(dfEngine,'company', 'standard')

@@ -70,6 +70,7 @@ class crawler:
             self.options.add_argument("--start-maximized")
             self.options.add_argument("--lang=en-us")
             self.options.add_argument("--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.75 Safari/537.36")
+            self.options.add_argument('log-level=3')
         else:
             self.GOOGLE_CHROME_BIN=os.environ.get('GOOGLE_CHROME_BIN', None)
             self.CHROMEDRIVER_PATH=os.environ.get('CHROMEDRIVER_PATH', None)
@@ -270,7 +271,7 @@ class crawler:
         cont=True
         count=0
         
-        while cont==True and count <1:
+        while cont==True:
             try:
                 df=self.getNasdaqData(df)
                 nextBut=self.driver.find_element_by_xpath("""//li[@class="next"]//a""")
@@ -334,7 +335,7 @@ class crawler:
                 
                 changeCount+=1
             
-            if changeCount%self.dbBatch==0 and count >1:
+            if changeCount%self.dbBatch==0 and changeCount >2:
                 self.store(df,dbName=dbName)
         return True, df
     
@@ -630,7 +631,7 @@ class crawler:
             df=self.extractSum(df,rows[len(df):])
             
             ele.click()
-            time.sleep(1)
+            time.sleep(2)
             
             self.timec.getTimeSplit(str(count))
         

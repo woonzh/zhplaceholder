@@ -59,7 +59,7 @@ def updateDetails():
     return df
 
 def updateBasic(quandl=0):
-    local=False
+    local=True
     crawl=crawler(local)
     
     quandl=int(quandl)
@@ -70,6 +70,8 @@ def updateBasic(quandl=0):
         quandlBool=True
     
     print('hkex quandl bool- %s-%s'%(quandl, quandlBool))
+    
+    success=True
 #    
     if quandlBool:
         df=quan.updateHKEXData(dbname=dbName)
@@ -77,11 +79,16 @@ def updateBasic(quandl=0):
     else:
         crawl.urlDirect(url)
         df=crawl.crawlHKEXSummary()
-        df2=crawl.updatePrice(df=df, dbname=dbName)
-    crawl.store(df2, hkSum, dbName)
+        if len(df)>5:
+            df2=crawl.updatePrice(df=df, dbname=dbName)
+        else:
+            success=False
     
-    df3=crawl.updateHighLow(df2)
-    crawl.store(df3, hkSum, dbName)
+    if success:
+        crawl.store(df2, hkSum, dbName, write='cloud')
+        
+        df3=crawl.updateHighLow(df2)
+        crawl.store(df3, hkSum, dbName, write='cloud')
     
     crawl.closeDriver()
     
@@ -260,7 +267,7 @@ def runLogger(df, run=False):
 dayChange={
     'price':['>',1,'price'],
     'pe1':['>',1,'pe'],
-    'pe2':['<',50,'pe'],
+#    'pe2':['<',50,'pe'],
 #    'day_perceninc':['<',-3,'day_perceninc'],
 #    'day_perceninc2':['>',3,'day_perceninc'],
     'percen_traded':['>',0,'percen_traded'],
@@ -277,17 +284,16 @@ upside={
     'suspended':['=','N','suspended']
         }
 
-#df2, suspendedLst, unsuccessLst=quan.updateHKEXData(dbname=dbName)
-#df3=quan.engineerHKEXData(df2)
+#df=updateBasic(quandl=0)
 
-#df=analytics(download=False)
+#df=analytics(download=True)
 #dfClean=cleanData(df)
 #dfEngine=dataEngineer(dfClean)
 #dfEngine,table=runLogger(dfEngine, run=False)
-
+#
 #dfEngineView=filterView(dfEngine)
 #stats=getStats(dfEngine)
-##
+#
 #dfDayChange=sieveData(dfEngine,filters=dayChange)
 #dfDayChangeView=filterView(dfDayChange)
 ##
@@ -299,8 +305,8 @@ upside={
 
 #dfCom=findCompany(dfEngine, comName='XINYI HK')
 #
-#indDf=getIndustryCompany(dfEngine, industry='energy')
-#indDf2=filterView(indDf)
+#dfInd=getIndustryCompany(dfEngine, industry='energy')
+#dfIndView=filterView(indDf)
 #comDf=engineDf[engineDf['com_name']=='ICBC']
 
 #store,table=runLogger(dfEngine)
