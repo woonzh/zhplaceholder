@@ -190,12 +190,16 @@ class iex:
         return data
         
     
-    def getAllKeyStats(self, dbname, df=None):
+    def getAllKeyStats(self, dbname, df=None, start=0, end=0):
+        print('iex - start:%s / end:%s'%(start,end))
         self.timec.startTimer()
         if df is None:
             df=db.extractTable(dbname)['result']
-            
-        symbols=df['symbol'][2:4]
+        
+        if end==0:
+            symbols=df['symbol'][end:]
+        else:
+            symbols=df['symbol'][start:end]
         
         lst=[]
         
@@ -231,12 +235,16 @@ class iex:
         
         return data
     
-    def getAllStockQuotes(self, dbname=None,df=None):
+    def getAllStockQuotes(self, dbname=None,df=None, start=0, end=0):
+        print('iex - start:%s / end:%s'%(start,end))
         self.timec.startTimer()
         if df is None:
             df=db.extractTable(dbname)['result']
-            
-        symbols=df['symbol'][0:2]
+        
+        if end==0:
+            symbols=df['symbol'][start:]
+        else:
+            symbols=df['symbol'][start:end]
         
         lst=[]
         

@@ -10,13 +10,15 @@ def updateSymbolList(apiExtract=False):
     
     return df
 
-def updateKeyStats():
-    df=iexc.getAllKeyStats(dbname=dbname)
+def updateKeyStats(start=0, end=0):
+    print('usstocks - start:%s / end:%s'%(start,end))
+    df=iexc.getAllKeyStats(dbname=dbname, start=int(start), end=int(end))
     
     return df
 
-def updateQuote():
-    df=iexc.getAllStockQuotes(dbname=dbname)
+def updateQuote(start=0, end=0):
+    print('usstocks - start:%s / end:%s'%(start,end))
+    df=iexc.getAllStockQuotes(dbname=dbname, start=int(start), end=int(end))
     return df
 
 def test(start=-1, end=-1):

@@ -4,6 +4,7 @@ import threading
 import pandas as pd
 
 url='https://zhplaceholder.herokuapp.com/iexupdatedetails'
+url='https://zhplaceholder.herokuapp.com/iexupdatebasics'
 params={
     'start': 10,
     'end':20

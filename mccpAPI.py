@@ -219,6 +219,24 @@ def workeriexupdatedetails():
         resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
+    
+@app.route('/iexupdatebasics', methods=['GET', 'OPTIONS'])
+def workeriexupdatebasics():
+    ret={}
+    if request.method == 'GET':
+        intJobId=util.stringGenerator()
+        start = request.args.get("start", default=0)
+        end = request.args.get("end", default=0)
+        print('api -%s-%s'%(str(start),str(end)))
+        result=orc.wc.queueFunc('iex update details', orc.runIEXBasics, (start,end) , intJobId)
+        ret={
+            'answer':result}
+            
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
 
 
 @app.route('/workerResult', methods=['GET', 'OPTIONS'])
