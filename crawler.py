@@ -5,10 +5,12 @@ import os
 import time
 import pandas as pd
 import dbConnector as db
+import tracemalloc
 
 class crawler:
     def __init__(self, local=False, userAgentNum=0):
         print('crawler -%s'%(str(userAgentNum)))
+        tracemalloc.start(1)
         if local:
             self.version='windows'
             self.host='local' 
@@ -94,6 +96,13 @@ class crawler:
             self.chrome_options.add_argument("--user-agent=%s"%(self.useragent))
         
         self.startDriver()
+    
+    def takeSnapShot(self):
+        time = tracemalloc.take_snapshot()
+        stats=time.statistics('filename')
+        
+        for stat in stats[:5]:
+            print(stat)
             
     def startDriver(self, url=None):
         if self.host=='local':
@@ -319,6 +328,7 @@ class crawler:
             symbol=row['symbol'].lower()
             
             if str(row['market_cap'])=='':
+                self.takeSnapShot()
                 try:
                     success, data=self.getSymbolData(symbol,url)
                     if success==False:
@@ -335,8 +345,8 @@ class crawler:
                 
                 changeCount+=1
             
-            if changeCount%self.dbBatch==0 and changeCount >2:
-                self.store(df,dbName=dbName)
+                if changeCount%self.dbBatch==0 and changeCount >2:
+                    self.store(df,dbName=dbName)
         return True, df
     
     def getSymbolData(self, symbol, url):

@@ -182,7 +182,9 @@ def analytics(download=True):
     return df
 
 #df=db.extractTable(dbname)['result']
-    
+
+
+#a=updateDetails(userAgentNum=0, local=True)
 #a=updateBasics(userAgentNum=0, local=True)
 
 #df=analytics(True)
