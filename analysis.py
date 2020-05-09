@@ -564,7 +564,7 @@ upsideFilter={
         }
 
 #df,dfNew, dfMain, financial = run(True)
-dfNew, table=runLogger(dfNew, False)
+#dfNew, table=runLogger(dfNew, False)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
 #####
