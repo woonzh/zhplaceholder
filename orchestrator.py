@@ -14,6 +14,7 @@ import util
 import test2
 import hkex
 import nasdaq
+import USStocks
 
 wc=workerClass()
 
@@ -54,6 +55,11 @@ def runNasdaqBasicUpdate(userAgentNum=0):
     print('orc -%s'%(str(userAgentNum)))
     params=(userAgentNum)
     util.runFunc(actFunc=nasdaq.updateBasics,actFuncParams=params)
+    
+def runIEXDetails(start=0, end=0):
+    print('orc -%s-%s'%(str(start),str(end)))
+    params=(start,end)
+    util.runFunc(actFunc=USStocks.test,actFuncParams=params)
     
 #def testFunc():
 #    r=10*3

@@ -752,7 +752,8 @@ FCAU,Fiat Chrysler Automobiles N.V. Common Shares,$8.15,-0.08,0.97%,"1,146,311",
 MRNA,"Moderna, Inc. Common Stock",$48.95,-0.39,0.79%,"6,692,345",07/05/2020,"16,233,021,342",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),0.0,-33.18,N/A,$-1.55,$50.96/$47.23,N/A,0.0%,N/A,N/A,,$56.38/$11.54,1
 MTD,"Mettler-Toledo International, Inc. Common Stock",$715.58,+5.85,0.82%,"109,323",07/05/2020,"17,159,980,502",Capital Goods,Biotechnology: Laboratory Analytical Instruments,31.78,32.16,$715.00,$22.52,$718.86/$697.62,N/A,N/A,N/A,N/A,,$873.51/$579.40,1
 BYDDF,BYD Co Ltd,$6.18,+0.02,0.32%,"822,557",07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,$6.19/$5.95,N/A,0.0%,N/A,N/A,,N/A,
-SEB,Seaboard Corporation Common Stock,$2890.01,-48.64,1.66%,"1,063",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
+NUAN,"Nuance Communications, Inc. Common Stock",$19.39,-0.20,1.02%,"2,549,826",07/05/2020,,,,,,,,,,,,,,,
+SEB,Seaboard Corporation Common Stock,$2890.01,-48.64,1.66%,"1,063",07/05/2020,"3,505,552,580",Finance,Investment Bankers/Brokers/Service,28.6,N/A,N/A,$105.61,"$3,054.97/$2,918.01",$9.00,0.31%,"May 6, 2020","May 18, 2020",,"$4,637.00/$2,614.00",1
 ALGN,"Align Technology, Inc. Common Stock",$215.93,+7.32,3.51%,"1,125,769",07/05/2020,"16,429,853,867",Health Care,Industrial Specialties,9.06,154.27,N/A,$23.85,$219.99/$207.58,N/A,0.0%,N/A,N/A,,$334.64/$127.88,1
 BYDDY,BYD Co Ltd ADR,$12.36,+0.07,0.57%,"84,833",07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,$12.34/$11.85,N/A,0.0%,N/A,N/A,,N/A,
 MTSFF,Mitsui Fudosan Co. Ltd.,$17.00,--,--,0,07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,,N/A,
@@ -796,7 +797,7 @@ NTRS,Northern Trust Corporation Common Stock,$72.07,-1.00,1.37%,"881,370",07/05/
 ALNY,"Alnylam Pharmaceuticals, Inc. Common Stock",$145.27,+4.04,2.86%,"2,229,320",07/05/2020,"16,105,285,496",Health Care,Major Pharmaceuticals,0.0,-19.41,N/A,$-8.14,$143.18/$137.05,N/A,0.0%,N/A,N/A,,$147.41/$65.81,1
 GMGSF,Goodman Gp Sydney Stpld,$8.52,--,--,0,07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,,N/A,
 CRRRF,CRRC Corp Ltd,$0.55,+0.01,1.85%,"14,554",07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,,N/A,
-ISDAF,Israel Disc Bk Ord,$2.9281,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
+ISDAF,Israel Disc Bk Ord,$2.9281,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 GLW,Corning Incorporated Common Stock,$20.71,+0.04,0.19%,"4,020,693",07/05/2020,"15,688,530,000",Basic Industries,Telecommunications Equipment,64.71,19.84,N/A,$0.32,$21.09/$20.62,$0.88,4.25%,"May 28, 2020","Jun 30, 2020",,$34.26/$17.44,1
 LEN,Lennar Corporation Class A Common Stock,$51.07,-0.04,0.08%,"3,025,642",07/05/2020,"15,958,630,661",Basic Industries,Homebuilding,8.12,8.57,N/A,$6.29,$51.97/$50.29,$0.50,1.01%,"Apr 20, 2020","May 5, 2020",,$71.38/$25.42,1
 SCBFF,Standard Chartered Plc,$4.95,+0.05,1.02%,"4,594",07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,,N/A,
@@ -950,6 +951,7 @@ SUI,"Sun Communities, Inc. Common Stock",$126.94,-4.84,3.67%,"575,651",07/05/202
 NUE,Nucor Corporation Common Stock,$40.50,-0.25,0.61%,"1,547,053",07/05/2020,"12,271,251,250",Basic Industries,Steel/Iron Ore,15.69,23.15,$45.00,$2.58,$42.15/$40.63,$1.61,3.94%,"Mar 30, 2020","May 11, 2020",,$58.70/$27.52,1
 DISH,DISH Network Corporation Class A Common Stock,$22.90,-1.41,5.8%,"3,256,656",07/05/2020,"12,715,381,625",Consumer Services,Television Services,8.81,10.6,$36.00,$2.60,$24.52/$23.64,N/A,0.0%,N/A,N/A,,$44.66/$17.09,1
 XYL,Xylem Inc. Common Stock New,$63.06,-1.99,3.06%,"1,733,464",07/05/2020,"11,703,534,304",Capital Goods,Fluid Controls,28.53,25.53,$77.00,$2.21,$65.76/$63.00,$1.04,1.57%,"Feb 26, 2020","Mar 26, 2020",,$89.34/$54.62,1
+NDVLF,New World Development Co. Ltd.,$1.05,--,--,0,07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,,N/A,
 ATO,Atmos Energy Corporation Common Stock,$96.55,-5.22,5.13%,"1,099,860",07/05/2020,"12,447,194,585",Public Utilities,Oil/Gas Transmission,21.65,20.59,$114.00,$4.46,$102.95/$101.11,$2.30,2.4%,"Feb 21, 2020","Mar 9, 2020",,$121.08/$77.92,1
 SWDBY,Swedbank AB ADR (Sponsored),$10.76,-0.18,1.65%,"33,347",07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,$11.08/$10.94,N/A,0.0%,N/A,N/A,,N/A,
 SKM,"SK Telecom Co., Ltd. Common Stock",$18.43,-0.29,1.55%,"299,733",07/05/2020,"12,334,363,105",Public Utilities,Telecommunications Equipment,0.0,12.71,$27.20,N/A,$18.99/$18.72,$1.327,7.22%,"Dec 30, 2019","Apr 28, 2020",,$25.16/$14.07,1
@@ -988,7 +990,7 @@ KEP,Korea Electric Power Corporation Common Stock,$9.02,-0.15,1.64%,"128,346",07
 MLM,"Martin Marietta Materials, Inc. Common Stock",$174.49,-7.02,3.87%,"1,042,336",07/05/2020,"11,279,704,076",Basic Industries,Mining & Quarrying of Nonmetallic Minerals (No Fuels),17.92,18.47,$241.00,$9.74,$189.68/$175.41,$2.20,1.2%,"Feb 28, 2020","Mar 31, 2020",,$281.82/$135.08,1
 STE,STERIS plc (Ireland) Ordinary Shares,$140.99,-0.67,0.47%,"572,199",07/05/2020,"12,014,626,721",Health Care,Industrial Specialties,30.65,25.27,$150.00,$4.60,$143.72/$140.53,$1.48,1.07%,"Feb 24, 2020","Mar 26, 2020",,$168.98/$105.69,1
 LN,LINE Corporation American Depositary Shares (each representing one share of Common Stock),$49.55,-0.28,0.56%,"94,621",07/05/2020,"11,939,704,013",Technology,"Computer Software: Programming, Data Processing",0.0,-30.03,$49.25,N/A,$49.88/$49.21,N/A,0.0%,N/A,N/A,,$51.97/$27.04,1
-LFUS,"Littelfuse, Inc. Common Stock",$139.60,-0.54,0.39%,"83,934",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
+LFUS,"Littelfuse, Inc. Common Stock",$139.60,-0.54,0.39%,"83,934",07/05/2020,"3,424,491,191",Consumer Durables,Electrical Products,27.6,36.08,$180.00,$5.11,$142.81/$140.27,$1.92,1.38%,"May 20, 2020","Jun 4, 2020",,$196.00/$103.63,1
 COUP,Coupa Software Incorporated Common Stock,$190.99,+1.26,0.66%,"990,584",07/05/2020,"12,643,782,131",Technology,Computer Software: Prepackaged Software,0.0,-201.05,$143.00,$-1.46,$194.49/$179.01,N/A,0.0%,N/A,N/A,,$194.49/$97.55,1
 NHOLF,Sompo Holdings Inc,$32.25,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 KSU,Kansas City Southern Common Stock,$127.25,+1.85,1.48%,"1,104,139",07/05/2020,"11,915,536,591",Transportation,Railroads,21.31,18.17,$154.00,$5.97,$127.56/$124.60,$1.60,1.27%,"Mar 6, 2020","Apr 8, 2020",,$178.59/$92.86,1
@@ -1065,7 +1067,6 @@ TEVA,Teva Pharmaceutical Industries Limited American Depositary Shares,$10.48,+0
 AU,AngloGold Ashanti Limited Common Stock,$25.55,-0.52,1.99%,"3,565,761",07/05/2020,"10,845,267,634",Basic Industries,Precious Metals,0.0,13.24,$25.00,N/A,$26.34/$24.65,$0.075,0.3%,"Mar 12, 2020","Apr 6, 2020",,$27.63/$11.29,1
 MT,Arcelor Mittal NY Registry Shares NEW,$10.51,-0.09,0.85%,"4,499,758",07/05/2020,"10,728,041,863",Basic Industries,Steel/Iron Ore,0.0,-7.15,$14.55,$-2.42,$10.95/$10.53,$0.17,1.61%,"May 16, 2019","Jun 13, 2019",,$20.58/$6.64,1
 CABO,"Cable One, Inc. Common Stock",$1925.33,+5.80,0.3%,"32,855",07/05/2020,"10,989,560,708",Consumer Services,Television Services,61.85,47.94,"$1,600.00",$31.13,"$1,919.53/$1,845.53",$9.00,0.48%,"Feb 14, 2020","Mar 6, 2020",,"$1,970.00/$1,031.39",1
-NDVLF,New World Development Co. Ltd.,$1.05,--,--,0,07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,N/A,N/A,0.0%,N/A,N/A,,N/A,
 JRONY,Jeronimo Martins S.G.P.S. SA ADR,$33.64,-0.18,0.53%,"1,830",07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,$33.94/$33.61,N/A,0.0%,N/A,N/A,,N/A,
 BGNE,"BeiGene, Ltd. American Depositary Shares",$144.38,+0.88,0.61%,"161,571",07/05/2020,"11,112,052,798",Health Care,Major Pharmaceuticals,0.0,-7.54,$200.50,$-15.74,$145.90/$138.00,N/A,0.0%,N/A,N/A,,$210.35/$113.01,1
 IEP,"Icahn Enterprises, L.P. Common Stock",$49.07,-1.59,3.14%,"76,281",07/05/2020,"10,845,219,748",Capital Goods,Auto Parts:O.E.M.,0.0,-15.83,$62.50,$-5.49,$51.50/$50.02,$8.00,16.68%,"Mar 19, 2020","Apr 28, 2020",,$79.37/$34.00,1
@@ -1145,9 +1146,10 @@ CDNTF,Canadian Tire Corp Ltd,$156.1923,--,--,0,07/05/2020,N/A,N/A,N/A,0.0,0.0,N/
 UMICY,Umicore SA ADR,$9.57,-0.21,2.15%,"59,980",07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,$9.99/$9.74,N/A,0.0%,N/A,N/A,,N/A,
 SIUIF,Semiconductor Manufacturing International Corp,$1.94,--,--,0,07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,$1.94/$1.94,N/A,0.0%,N/A,N/A,,N/A,
 HAS,"Hasbro, Inc. Common Stock",$65.89,-1.32,1.96%,"1,229,383",07/05/2020,"9,208,237,110",Consumer Non-Durables,Recreational Products/Toys,20.09,17.43,$85.00,$3.28,$70.65/$67.14,$2.72,4.02%,"Apr 30, 2020","May 15, 2020",,$126.87/$41.33,1
+CUCSF,China Communications Services Corporation Limited,$0.80,--,--,0,07/05/2020,,,,,,,,,,,,,,,
 EXPE,"Expedia Group, Inc. Common Stock",$64.38,+0.30,0.47%,"2,495,853",07/05/2020,"9,034,119,511",Consumer Services,Transportation Services,17.17,-16.39,$82.00,$3.75,$68.41/$63.80,$1.36,2.02%,"Mar 9, 2020","Mar 26, 2020",,$144.00/$40.76,1
 DLMAF,Dollarama Inc,$30.436,-0.029,0.1%,277,07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,$30.53/$30.47,N/A,0.0%,N/A,N/A,,N/A,
-EXPO,"Exponent, Inc. Common Stock",$65.26,-0.70,1.06%,"273,723",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
+EXPO,"Exponent, Inc. Common Stock",$65.26,-0.70,1.06%,"273,723",07/05/2020,"3,411,872,664",Consumer Services,Professional Services,41.38,49.24,$80.00,$1.60,$66.20/$65.94,$0.76,1.16%,"Jun 11, 2020","Jun 26, 2020",,$82.82/$54.38,1
 QGEN,Qiagen N.V. Common Shares,$41.91,+0.14,0.34%,"1,528,319",07/05/2020,"9,518,568,401",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),0.0,30.37,$36.00,$-0.20,$41.96/$41.48,N/A,0.0%,N/A,N/A,,$43.16/$25.04,1
 DNKEY,Danske Bank A/S ADR (Sponsored),$5.38,+0.01,0.19%,"139,676",07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,$5.46/$5.36,N/A,0.0%,N/A,N/A,,N/A,
 CAIXY,CaixaBank SA ADR,$0.5115,-0.026,4.84%,"111,358",07/05/2020,N/A,N/A,N/A,0.0,0.0,N/A,N/A,$0.57/$0.52,N/A,0.0%,N/A,N/A,,N/A,
@@ -1387,6 +1389,7 @@ FBHS,"Fortune Brands Home & Security, Inc. Common Stock",$51.94,-1.13,2.13%,"1,1
 KINUF,Kintetsu Group Holdings Co Ltd,$38.50,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 KOSCF,Kose Corp (Japan),$117.00,-11.00,8.59%,21,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$117.00/$117.00,N/A,N/A,N/A,N/A,,N/A,
 EBR.B,Centrais Electricas Brasileiras S.A.- Eletrobr?!s American Depositary Shares (Each representing one Preferred Share),$0.00,--,--,0,07/05/2020,0,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$0.334,7.17%,"May 9, 2019","Jan 7, 2020",,$11.57/$3.20,1
+SYFHF,Sony Financial Holdings Inc.,$15.40,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 LII,"Lennox International, Inc. Common Stock",$188.60,-2.13,1.12%,"447,838",07/05/2020,"7,213,423,806",Capital Goods,Industrial Machinery/Components,20.96,24.55,$205.00,$9.00,$192.39/$188.26,$3.08,1.66%,"Mar 31, 2020","Apr 15, 2020",,$298.49/$163.40,1
 XROLF,Xero Ltd Ord,$50.50,-0.86,1.67%,"2,979",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$52.25/$50.28,N/A,N/A,N/A,N/A,,N/A,
 ZNGA,Zynga Inc. Class A Common Stock,$7.95,+0.33,4.33%,"36,807,334",07/05/2020,"7,598,342,013",Technology,EDP Services,198.75,69.27,$8.25,$0.04,$8.00/$7.68,N/A,N/A,N/A,N/A,,$7.85/$5.51,1
@@ -1429,6 +1432,7 @@ TRYIY,Toray Industries Inc. ADR,$8.77,-0.06,0.68%,"9,526",07/05/2020,N/A,N/A,N/A
 SKFRY,Aktiebolaget SKF ADR (Sponsored),$15.24,-0.265,1.71%,"7,970",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$15.58/$15.24,N/A,N/A,N/A,N/A,,N/A,
 TRYIF,Toray Indus Inc Ord,$4.41,--,--,"7,000",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$4.41/$4.41,N/A,N/A,N/A,N/A,,N/A,
 BFAM,Bright Horizons Family Solutions Inc. Common Stock,$120.70,-0.45,0.37%,"970,197",07/05/2020,"7,022,379,832",Miscellaneous,Other Consumer Services,39.7,52.03,$135.00,$3.04,$122.86/$119.23,N/A,N/A,N/A,N/A,,$176.98/$64.23,1
+FRFHF,Fairfax Financial Holdings Ltd,$256.7781,+5.6981,2.27%,"42,885",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$258.97/$246.00,N/A,N/A,N/A,N/A,,N/A,
 MGM,MGM Resorts International Common Stock,$13.91,-0.36,2.52%,"16,146,626",07/05/2020,"6,860,657,873",Consumer Services,Hotels/Resorts,2.51,-5.75,$18.00,$5.55,$14.55/$13.86,$0.01,4.2%,"Jun 9, 2020","Jun 15, 2020",,$34.63/$5.90,1
 RSNHF,Resona Holdings Inc,$3.05,-0.015,0.49%,392,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$3.05/$3.05,N/A,N/A,N/A,N/A,,N/A,
 HMTLF,Hitachi Metals Ltd.,$16.45,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
@@ -1471,8 +1475,6 @@ AHEXY,Adecco Group AG ADR,$20.38,-0.49,2.35%,"49,182",07/05/2020,N/A,N/A,N/A,N/A
 CHE,Chemed Corp,$420.00,-5.00,1.18%,"73,121",07/05/2020,"6,666,883,440",Health Care,Medical/Nursing Services,30.04,25.75,$535.00,$13.98,$428.34/$420.00,$1.28,0.3%,"Feb 28, 2020","Mar 23, 2020",,$513.75/$324.31,1
 HPHTF,Hamamatsu Photonics KK,$43.52,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 SZEVY,SUEZ ADR Repstg 1/2 Com Shs,$5.32,-0.035,0.65%,"44,783",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$5.38/$5.31,N/A,N/A,N/A,N/A,,N/A,
-FRFHF,Fairfax Financial Holdings Ltd,$256.7781,+5.6981,2.27%,"42,885",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$258.97/$246.00,N/A,N/A,N/A,N/A,,N/A,
-SYFHF,Sony Financial Holdings Inc.,$15.40,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 TTC,Toro Company (The) Common Stock,$62.19,-0.40,0.64%,"466,348",07/05/2020,"6,653,042,418",Capital Goods,Tools/Hardware,23.65,18.45,$78.00,$2.63,$63.02/$62.02,$1.00,1.6%,"Mar 27, 2020","Apr 9, 2020",,$84.26/$52.07,1
 BNTGY,Brenntag AG Muehleim/Ruhr ADR,$8.61,-0.0375,0.43%,"25,274",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$8.75/$8.61,N/A,N/A,N/A,N/A,,N/A,
 ACCYY,Accor SA ADR (Sponsored) (New),$4.87,-0.26,5.07%,"205,510",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$5.06/$4.87,N/A,N/A,N/A,N/A,,N/A,
@@ -1598,46 +1600,44 @@ HULCF,Hulic Co Ltd (New),$8.70,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/
 TKCOF,Toho Co Ltd Tokyo,$32.50,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 SHCAY,Sharp Corp. ADR,$2.67,-0.045,1.66%,"37,932",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$2.77/$2.67,N/A,N/A,N/A,N/A,,N/A,
 BRKR,Bruker Corporation Common Stock,$37.95,+0.50,1.34%,"901,869",07/05/2020,"5,851,946,773",Capital Goods,Biotechnology: Laboratory Analytical Instruments,30.12,28.11,$42.00,$1.26,$38.75/$37.15,$0.16,0.43%,"Mar 6, 2020","Mar 20, 2020",,$54.49/$30.78,1
-TOTDF,Toto Ltd.,$34.10,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+TOTDF,Toto Ltd.,$34.10,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 TXT,Textron Inc. Common Stock,$25.07,-0.23,0.91%,"2,281,567",07/05/2020,"5,702,735,249",Capital Goods,Aerospace,8.44,16.83,$30.00,$2.97,$25.68/$24.64,$0.08,0.32%,"Jun 11, 2020","Jul 1, 2020",,$54.24/$20.26,1
 AMED,Amedisys Inc Common Stock,$180.61,+2.97,1.67%,"224,273",07/05/2020,"5,846,408,010",Health Care,Medical/Nursing Services,47.03,36.71,$211.50,$3.84,$184.00/$176.35,N/A,N/A,N/A,N/A,,$218.44/$106.65,1
-WILLF,Demant A/S,$23.8763,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-NMMRF,Nomura Real Estate Master Fund Inc,$1257.5353,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+WILLF,Demant A/S,$23.8763,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+NMMRF,Nomura Real Estate Master Fund Inc,$1257.5353,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 FELTF,Fuji Electric Co Ltd,$39.80,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 VER,"VEREIT, Inc. Common Stock",$5.11,-0.16,3.04%,"6,308,504",07/05/2020,"5,507,463,358",Consumer Services,Real Estate Investment Trusts,,8.38,$7.00,$-0.39,$5.33/$5.09,$0.55,10.44%,"Mar 30, 2020","Apr 15, 2020",,$10.18/$3.56,1
 CCOZF,China Coal Engy Co H Shs,$0.31,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-DNPUF,Dai Nippon Pharm Ord,$14.25,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+DNPUF,Dai Nippon Pharm Ord,$14.25,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 PNR,Pentair plc. Ordinary Share,$33.54,-0.61,1.79%,"815,250",07/05/2020,"5,558,422,806",Technology,Industrial Machinery/Components,15.04,16.28,$40.00,$2.23,$34.47/$33.46,$0.76,2.23%,"Jul 23, 2020","Aug 7, 2020",,$47.43/$22.01,1
 KROTF,CognaEducacao S.A. - Ordinary Shares,$3.0266,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 CASY,"Casey's General Stores, Inc. Common Stock",$149.85,-3.79,2.47%,"195,618",07/05/2020,"5,513,516,914",Consumer Durables,Automotive Aftermarket,24.53,22.91,$170.00,$6.11,$154.59/$149.52,$1.28,0.83%,"Apr 30, 2020","May 15, 2020",,$181.99/$114.01,1
 GWLLF,Great Wall Motor Co. Ltd.,$0.619,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-EGIEY,Engie Brasil Energia SA ADR (Sponsored),$6.92,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-LIOPF,Lion Corp,$19.40,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+EGIEY,Engie Brasil Energia SA ADR (Sponsored),$6.92,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+LIOPF,Lion Corp,$19.40,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 BTG,B2Gold Corp Common shares (Canada),$5.42,-0.01,0.18%,"9,296,405",07/05/2020,"5,619,989,702",Basic Industries,Precious Metals,16.42,11.53,$6.00,$0.33,$5.59/$5.31,$0.03,0.55%,"Mar 6, 2020","Mar 23, 2020",,$5.59/$2.16,1
 NWSA,News Corporation Class A Common Stock,$9.67,+0.12,1.26%,"1,965,459",07/05/2020,"5,688,533,845",Consumer Services,Newspapers/Magazines,,38.68,$10.00,$-0.32,$9.81/$9.50,$0.20,2.09%,"Mar 10, 2020","Apr 15, 2020",,$15.07/$7.90,1
 SYNH,"Syneos Health, Inc. Class A Common Stock",$53.47,-0.41,0.76%,"319,217",07/05/2020,"5,569,922,151",Health Care,Biotechnology: Commercial Physical & Biological Resarch,28.9,22.00,$67.00,$1.85,$54.31/$52.41,N/A,N/A,N/A,N/A,,$74.25/$30.02,1
 AACAY,AAC Technologies Holdings Inc ADR,$4.78,+0.14,3.02%,"38,165",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$4.83/$4.72,N/A,N/A,N/A,N/A,,N/A,
-STOSF,Santos Ltd,$2.69,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+STOSF,Santos Ltd,$2.69,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 ACM,AECOM Common Stock,$35.43,+0.13,0.37%,"1,702,291",07/05/2020,"5,620,004,458",Consumer Services,Military/Government/Technical,,18.65,$44.50,$-2.78,$36.20/$34.51,N/A,N/A,N/A,N/A,,$52.40/$21.76,1
-CCDBF,CCL Industries Inc,$31.2999,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+CCDBF,CCL Industries Inc,$31.2999,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 ALLY,Ally Financial Inc. Common Stock,$14.17,-0.77,5.15%,"6,535,345",07/05/2020,"5,287,614,597",Finance,Major Banks,5.51,35.43,$25.00,$2.57,$15.30/$14.14,$0.76,5.09%,"Apr 30, 2020","May 15, 2020",,$35.42/$10.22,1
 BWA,BorgWarner Inc. Common Stock,$28.07,+1.11,4.12%,"9,881,682",07/05/2020,"5,802,183,750",Capital Goods,Auto Parts:O.E.M.,8.11,12.88,$35.00,$3.46,$28.65/$27.15,$0.68,2.52%,"May 29, 2020","Jun 15, 2020",,$46.60/$17.00,1
-GTMEY,Globe Telecom Inc (Philippines) ADR,$41.83,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+GTMEY,Globe Telecom Inc (Philippines) ADR,$41.83,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 FLIR,"FLIR Systems, Inc. Common Stock",$45.41,+3.99,9.63%,"5,534,320",07/05/2020,"6,105,626,571",Capital Goods,Industrial Machinery/Components,49.36,22.26,$45.00,$0.92,$47.68/$43.12,$0.68,1.64%,"May 21, 2020","Jun 5, 2020",,$59.44/$23.85,1
 DLB,Dolby Laboratories Common Stock,$55.09,-0.06,0.11%,"516,665",07/05/2020,"5,545,284,533",Miscellaneous,Multi-Sector Companies,25.74,24.38,$69.00,$2.14,$56.49/$55.03,$0.88,1.6%,"May 15, 2020","May 27, 2020",,$73.20/$44.68,1
-ISUZF,Isuzu Motors Ltd. (Japan),$7.55,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+ISUZF,Isuzu Motors Ltd. (Japan),$7.55,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 GFL,"GFL Environmental Inc. Subordinate voting shares, no par value",$17.19,+0.14,0.82%,"619,931",07/05/2020,,,,,,,,,,,,,,,
-BCCLF,Becle SAB De CV,$1.46,-0.09,5.81%,"10,525",07/05/2020,,,,,,,,,,,,,,,
+BCCLF,Becle SAB De CV,$1.46,-0.09,5.81%,"10,525",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 BERY,"Berry Global Group, Inc. Common Stock",$41.50,-0.46,1.1%,"1,300,949",07/05/2020,"5,498,750,000",Consumer Non-Durables,Plastic Products,13.43,10.25,$52.00,$3.09,$42.70/$41.46,N/A,N/A,N/A,N/A,,$55.26/$25.00,1
 CACC,Credit Acceptance Corporation Common Stock,$301.01,-4.97,1.62%,"266,539",07/05/2020,"5,463,660,203",Finance,Finance: Consumer Services,8.68,15.21,$190.00,$34.66,$313.60/$296.03,N/A,N/A,N/A,N/A,,$498.06/$199.00,1
 WEX,WEX Inc. common stock,$130.15,+2.14,1.67%,"519,979",07/05/2020,"5,642,739,539",Miscellaneous,Business Services,57.59,19.45,$152.50,$2.26,$132.41/$125.94,N/A,N/A,N/A,N/A,,$236.51/$71.12,1
-VLEEY,Valeo SA ADR (Sponsored),$11.261,-0.339,2.92%,"15,730",07/05/2020,,,,,,,,,,,,,,,
-TSUSF,Tsuruha Holdings Inc,$122.00,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+VLEEY,Valeo SA ADR (Sponsored),$11.261,-0.339,2.92%,"15,730",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$11.20/$11.20,N/A,N/A,N/A,N/A,,N/A,
+TSUSF,Tsuruha Holdings Inc,$122.00,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 RS,Reliance Steel & Aluminum Co. Common Stock (DE),$86.62,-0.46,0.53%,"354,080",07/05/2020,"5,512,562,718",Basic Industries,Metal Fabrications,10.25,16.25,$90.00,$8.45,$88.23/$85.72,$2.50,2.87%,"May 28, 2020","Jun 12, 2020",,$122.17/$70.57,1
-NUAN,"Nuance Communications, Inc. Common Stock",$19.39,-0.20,1.02%,"2,549,826",07/05/2020,,,,,,,,,,,,,,,
-CUCSF,China Communications Services Corporation Limited,$0.80,--,--,0,07/05/2020,,,,,,,,,,,,,,,
 PRAH,"PRA Health Sciences, Inc. Common Stock",$86.98,-0.08,0.09%,"197,042",07/05/2020,"5,542,664,985",Health Care,Biotechnology: Commercial Physical & Biological Resarch,23.77,23.70,$104.00,$3.66,$88.47/$86.45,N/A,N/A,N/A,N/A,,$113.10/$58.67,1
-MAEOY,Manila Electric Co ADR,$10.08,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+MAEOY,Manila Electric Co ADR,$10.08,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 GLPI,"Gaming and Leisure Properties, Inc. Common Stock",$25.56,-0.14,0.54%,"1,678,593",07/05/2020,"5,498,405,089",Consumer Services,Real Estate Investment Trusts,13.97,8.06,$30.00,$1.83,$26.26/$25.39,$0.48,10.9%,"May 12, 2020","Jun 26, 2020",,$50.99/$13.04,1
 NYT,New York Times Company (The) Common Stock,$34.81,+1.45,4.35%,"2,662,999",07/05/2020,"5,773,331,478",Consumer Services,Newspapers/Magazines,40.48,43.51,$32.00,$0.86,$35.79/$32.26,$0.24,0.72%,"Apr 7, 2020","Apr 23, 2020",,$40.22/$26.13,1
 PPTDF,PeptiDream Inc,$40.24,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
@@ -1649,22 +1649,22 @@ HNP,Huaneng Power Intl Common Stock,$14.06,+0.04,0.29%,"39,528",07/05/2020,"5,51
 ENPH,"Enphase Energy, Inc. Common Stock",$52.68,+8.31,18.73%,"11,216,009",07/05/2020,"6,524,465,465",Technology,Semiconductors,31.17,71.19,$48.50,$1.69,$53.53/$46.50,N/A,N/A,N/A,N/A,,$59.15/$13.19,1
 AFG,"American Financial Group, Inc. Common Stock",$58.50,-2.62,4.29%,"511,701",07/05/2020,"5,256,654,156",Finance,Property-Casualty Insurers,5.93,7.77,$107.00,$9.87,$61.67/$58.48,$1.80,2.94%,"Apr 14, 2020","Apr 27, 2020",,$115.03/$44.01,1
 DCI,"Donaldson Company, Inc. Common Stock",$43.18,-0.03,0.07%,"375,467",07/05/2020,"5,473,992,420",Capital Goods,Pollution Control Equipment,21.17,23.47,$44.00,$2.04,$43.66/$42.74,$0.84,1.94%,"Feb 13, 2020","Feb 28, 2020",,$58.32/$31.08,1
-QBCRF,Quebecor Inc,$20.90,-0.61,2.84%,"2,953",07/05/2020,,,,,,,,,,,,,,,
+QBCRF,Quebecor Inc,$20.90,-0.61,2.84%,"2,953",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 GULRF,Guoco Group,$16.64,--,--,0,07/05/2020,,,,,,,,,,,,,,,
 UHAL,Amerco Common Stock,$280.03,+0.89,0.32%,"68,301",07/05/2020,"5,490,768,874",Consumer Services,Rental/Leasing Companies,17.13,20.93,$440.00,$16.35,$283.34/$273.76,N/A,N/A,N/A,N/A,,$426.50/$222.34,1
 LAMR,Lamar Advertising Company Class A Common Stock,$53.59,-0.75,1.38%,"731,832",07/05/2020,"5,397,217,065",Consumer Services,Real Estate Investment Trusts,14.48,10.96,$53.00,$3.70,$55.84/$53.37,$4.00,7.36%,"Mar 13, 2020","Mar 31, 2020",,$96.82/$30.89,1
-DNFGF,Dongfeng Motor Group Co Ltd,$0.635,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+DNFGF,Dongfeng Motor Group Co Ltd,$0.635,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 AACAF,AAC Technologies Holdings Inc,$4.52,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-WARFF,Wharf (Holdings) Ltd. (The),$1.79,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+WARFF,Wharf (Holdings) Ltd. (The),$1.79,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 WLK,Westlake Chemical Corporation Common Stock,$39.61,-3.14,7.35%,"642,038",07/05/2020,"5,057,035,991",Basic Industries,Major Chemicals,10.34,24.30,$46.00,$3.83,$43.25/$39.47,$1.05,2.46%,"Feb 24, 2020","Mar 10, 2020",,$75.65/$28.99,1
-JCYCF,Jardine Cycle & Carriage Ltd,$13.8051,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+JCYCF,Jardine Cycle & Carriage Ltd,$13.8051,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 AIV,Apartment Investment and Management Company Common Stock,$36.03,-0.56,1.53%,"760,136",07/05/2020,"5,365,962,384",Consumer Services,Real Estate Investment Trusts,11.29,13.70,$55.00,$3.19,$37.17/$36.01,$1.64,4.48%,"May 14, 2020","May 29, 2020",,$55.68/$24.53,1
-KAJMF,Kajima Corp.,$10.6095,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+KAJMF,Kajima Corp.,$10.6095,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 UMC,United Microelectronics Corporation (NEW) Common Stock,$2.48,-0.02,0.8%,"514,012",07/05/2020,"5,404,078,083",Technology,Semiconductors,17.71,N/A,N/A,$0.14,$2.51/$2.46,$0.065,2.59%,"Jul 15, 2019","Aug 13, 2019",,$2.85/$1.87,1
 JHIUF,James Hardie Industries Plc Chess Depositary Interests 1:1,$12.25,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-NGCRF,NagaCorp Ltd.,$1.25,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+NGCRF,NagaCorp Ltd.,$1.25,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$1.25/$1.25,N/A,N/A,N/A,N/A,,N/A,
 PLAN,"Anaplan, Inc. Common Stock",$40.37,+0.77,1.94%,"1,298,468",07/05/2020,"5,529,346,527",Technology,Computer Software: Prepackaged Software,,-34.50,$55.00,$-1.14,$41.05/$39.77,N/A,N/A,N/A,N/A,,$63.71/$26.04,1
-OCLDF,Orica Limited,$13.35,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+OCLDF,Orica Limited,$13.35,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 ARCC,Ares Capital Corporation Common Stock,$13.20,+0.50,3.94%,"4,595,993",07/05/2020,"5,583,600,000",N/A,N/A,,8.00,$15.50,$-0.06,$13.40/$12.68,$1.60,12.6%,"Jun 12, 2020","Jun 30, 2020",,$19.33/$7.90,1
 ST,Sensata Technologies Holding plc Ordinary Shares,$34.25,-0.09,0.26%,"464,462",07/05/2020,"5,382,789,013",Capital Goods,Industrial Machinery/Components,26.76,19.57,$42.00,$1.28,$34.83/$33.92,N/A,N/A,N/A,N/A,,$54.72/$18.25,1
 BG,Bunge Limited Bunge Limited,$34.20,-3.74,9.86%,"5,134,280",07/05/2020,"4,861,405,444",Consumer Non-Durables,Packaged Foods,,9.32,$51.00,$-11.08,$35.42/$32.68,$2.00,5.27%,"May 15, 2020","Jun 1, 2020",,$59.65/$29.00,1
@@ -1672,54 +1672,55 @@ RTMVY,Rightmove Plc Winterhill ADR,$12.53,+0.18,1.46%,"256,935",07/05/2020,N/A,N
 SWI,SolarWinds Corporation Common Stock,$17.09,-0.16,0.93%,"397,448",07/05/2020,"5,296,028,730",Technology,Computer Software: Prepackaged Software,427.25,23.09,$20.00,$0.04,$17.47/$16.96,N/A,N/A,N/A,N/A,,$21.66/$11.50,1
 SBNY,Signature Bank Common Stock,$101.98,+1.22,1.21%,"648,650",07/05/2020,"5,441,792,615",Finance,Major Banks,10.07,11.21,$110.00,$10.13,$109.88/$100.17,$2.24,2.22%,"May 1, 2020","May 15, 2020",,$148.64/$68.98,1
 LEA,Lear Corporation Common Stock,$91.09,+0.94,1.04%,"462,061",07/05/2020,"5,430,159,830",Capital Goods,Auto Parts:O.E.M.,7.16,25.88,$107.00,$12.73,$93.37/$89.88,$3.08,3.42%,"Feb 27, 2020","Mar 18, 2020",,$143.50/$63.20,1
-PNADF,Petronas Gas Berhad Ord,$5.40,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-ITTOF,Itochu Techno-Solutions Corp,$0.00,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+PNADF,Petronas Gas Berhad Ord,$5.40,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+ITTOF,Itochu Techno-Solutions Corp,$0.00,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 DCYHF,Discovery Ltd,$8.15,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+TKECF,Tokyo Electric Power Co Inc (The),$3.232,+0.032,1%,100,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$3.23/$3.23,N/A,N/A,N/A,N/A,,N/A,
 HAE,Haemonetics Corporation Common Stock,$100.37,-6.01,5.65%,"419,291",07/05/2020,"5,048,414,877",Health Care,Medical/Dental Instruments,68.28,28.19,$138.00,$1.47,$106.80/$100.20,N/A,N/A,N/A,N/A,,$140.36/$63.41,1
 SEDG,"SolarEdge Technologies, Inc. Common Stock",$125.75,+17.89,16.59%,"2,718,053",07/05/2020,"6,237,048,597",Technology,Semiconductors,37.43,37.88,$129.50,$3.36,$126.89/$112.00,N/A,N/A,N/A,N/A,,$143.73/$49.58,1
-ASMIY,ASM International N.V.,$109.30,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+ASMIY,ASM International N.V.,$109.30,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 RL,Ralph Lauren Corporation Common Stock,$71.13,-1.19,1.65%,"758,788",07/05/2020,"5,245,346,063",Consumer Non-Durables,Apparel,8.26,9.89,$84.00,$8.61,$73.80/$70.35,$2.75,3.8%,"Mar 26, 2020","Apr 10, 2020",,$128.29/$59.82,1
 HWM,Howmet Aerospace Inc. Common Stock,$11.49,-0.72,5.9%,"2,254,448",07/05/2020,,,,,,,,,,,,,,,
-RNLSY,Renault S.A. (France) ADR (New),$3.6101,-0.0549,1.5%,"48,385",07/05/2020,,,,,,,,,,,,,,,
+RNLSY,Renault S.A. (France) ADR (New),$3.6101,-0.0549,1.5%,"48,385",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$3.69/$3.69,N/A,N/A,N/A,N/A,,N/A,
 XLRN,Acceleron Pharma Inc. Common Stock,$101.26,+2.04,2.06%,"490,537",07/05/2020,"5,419,749,106",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),,-33.75,$112.00,$-2.38,$103.06/$98.94,N/A,N/A,N/A,N/A,,$103.60/$37.01,1
-CLZNF,Clariant Ag Nam Akt,$16.1059,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+CLZNF,Clariant Ag Nam Akt,$16.1059,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 MAURF,Marui Group Co Ltd,$21.80,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 PHI,PLDT Inc. Sponsored ADR,$25.00,+0.45,1.83%,"107,713",07/05/2020,"5,401,394,375",Public Utilities,Telecommunications Equipment,12.44,9.54,$21.00,$2.01,$25.26/$24.78,$1.036,4.22%,"Mar 17, 2020","Apr 16, 2020",,$26.28/$15.91,1
-HKUOF,Hakuhodo Dy Holdings Inc.,$14.35,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-AUKNY,Auckland International Airport Ltd ADR (Sponsored),$17.75,-0.75,4.05%,407,07/05/2020,,,,,,,,,,,,,,,
+HKUOF,Hakuhodo Dy Holdings Inc.,$14.35,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+AUKNY,Auckland International Airport Ltd ADR (Sponsored),$17.75,-0.75,4.05%,407,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 JLL,Jones Lang LaSalle Incorporated Common Stock,$96.48,-5.93,5.79%,"342,750",07/05/2020,"4,981,055,161",Finance,Real Estate,9.46,11.54,$172.00,$10.20,$103.45/$96.31,$0.86,0.84%,"Nov 14, 2019","Dec 13, 2019",,$178.55/$78.29,1
 SBSW,D/B/A Sibanye-Stillwater Limited ADS,$7.43,-0.49,6.19%,"2,162,520",07/05/2020,"4,959,579,336",N/A,N/A,N/A,2.78,$13.90,N/A,$7.71/$7.38,N/A,N/A,N/A,N/A,,$13.27/$3.16,
-GGNPF,Gudang Garam Pt,$2.74,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-KYYHF,Kyushu Railway Co,$33.95,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-NGKIF,Ngk Insulators,$16.63,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+GGNPF,Gudang Garam Pt,$2.74,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+KYYHF,Kyushu Railway Co,$33.95,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+NGKIF,Ngk Insulators,$16.63,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 NNN,National Retail Properties Common Stock,$30.33,-0.19,0.62%,"1,870,832",07/05/2020,"5,215,672,700",Consumer Services,Real Estate Investment Trusts,20.63,11.32,$44.00,$1.47,$30.96/$29.70,$2.06,6.75%,"Apr 29, 2020","May 15, 2020",,$59.26/$24.04,1
-DNTUF,Dentsu Group Inc - Ordinary Shares,$19.09,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+DNTUF,Dentsu Group Inc - Ordinary Shares,$19.09,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$20.11/$20.11,N/A,N/A,N/A,N/A,,N/A,
 RETA,"Reata Pharmaceuticals, Inc. Class A Common Stock",$160.44,+2.87,1.82%,"151,338",07/05/2020,"5,332,531,926",Health Care,Major Pharmaceuticals,,-19.45,$270.00,$-9.35,$164.03/$158.35,N/A,N/A,N/A,N/A,,$257.96/$70.00,1
 ACKDF,Auckland International Airport Ltd,$3.66,--,--,0,07/05/2020,"4,357,171,795",N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 JSAIY,J. Sainsbury PLC ADR (Sponsored) (New),$9.27,-0.16,1.7%,"44,887",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$9.43/$9.27,N/A,N/A,N/A,N/A,,N/A,
 MKSI,"MKS Instruments, Inc. Common Stock",$95.39,+0.22,0.23%,"231,264",07/05/2020,"5,234,183,418",Capital Goods,Industrial Machinery/Components,26.72,19.51,$121.00,$3.57,$97.51/$95.03,$0.80,0.84%,"Feb 21, 2020","Mar 6, 2020",,$122.30/$66.87,1
 HTA,"Healthcare Trust of America, Inc. Class A Common Stock",$24.51,+0.64,2.68%,"3,339,745",07/05/2020,"5,355,006,712",Consumer Services,Real Estate Investment Trusts,153.19,14.68,$27.00,$0.16,$24.68/$23.66,$1.26,5.28%,"Jul 1, 2020","Jul 9, 2020",,$34.22/$20.61,1
-LSRCF,Lasertec Corp,$57.80,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-TDHOF,T&D Holdings Inc,$9.00,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+LSRCF,Lasertec Corp,$57.80,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+TDHOF,T&D Holdings Inc,$9.00,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 ESTC,Elastic N.V. Ordinary Shares,$65.54,+1.86,2.92%,"1,196,578",07/05/2020,"5,355,968,255",Technology,Computer Software: Prepackaged Software,,-34.68,$84.50,$-2.23,$65.98/$64.50,N/A,N/A,N/A,N/A,,$104.10/$39.01,1
 SHLX,"Shell Midstream Partners, L.P. Common Units representing Limited Partner Interests",$12.86,-0.37,2.8%,"1,087,413",07/05/2020,"5,057,703,446",Energy,Natural Gas Distribution,7.7,8.81,$15.00,$1.67,$13.64/$12.60,$1.84,13.91%,"May 4, 2020","May 15, 2020",,$22.70/$5.70,1
 ENIC,Enel Chile S.A. American Depositary Shares (Each representing 50 shares of Common Stock),$3.73,-0.03,0.8%,"372,796",07/05/2020,,,,,,,,,,,,,,,
-RHCGF,Ryman Healthcare Ltd,$10.40,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-KUNUF,Kunlun Energy Co. Ltd.,$0.60,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-BPHLF,Bank of the Philippine Islands,$1.15,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+RHCGF,Ryman Healthcare Ltd,$10.40,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+KUNUF,Kunlun Energy Co. Ltd.,$0.60,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
+BPHLF,Bank of the Philippine Islands,$1.15,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$1.20/$1.20,N/A,N/A,N/A,N/A,,N/A,
 TYIBF,Turkiye Is Bankasi AS,$1.15,--,--,0,07/05/2020,,,,,,,,,,,,,,,
 KHOLY,Koc Holdings AS ADR,$10.00,-0.21,2.06%,"14,293",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$10.22/$9.87,N/A,N/A,N/A,N/A,,N/A,
-NPEXF,Nippon Express Co Ltd,$55.20,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+NPEXF,Nippon Express Co Ltd,$55.20,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 H,Hyatt Hotels Corporation Class A Common Stock,$50.20,-0.96,1.88%,"962,315",07/05/2020,"5,071,873,015",Consumer Services,Hotels/Resorts,8.87,-31.18,$55.00,$5.66,$52.03/$50.02,$0.80,1.56%,"Feb 25, 2020","Mar 9, 2020",,$94.98/$24.02,1
 SIELF,sielf,--,--,--,--,07/05/2020,,,,,,,,,,,,,,,
 BWXT,"BWX Technologies, Inc. Common Stock",$55.68,+1.53,2.83%,"714,748",07/05/2020,"5,302,329,172",Energy,Industrial Machinery/Components,19.67,19.89,$65.00,$2.83,$56.10/$54.21,$0.76,1.4%,"May 15, 2020","Jun 8, 2020",,$70.57/$40.40,1
 MINOF,Minor International Public Co Ltd,$1.14,--,--,0,07/05/2020,,,,,,,,,,,,,,,
-TSUKF,Toyo Suisan Kaisha Ord,$50.30,--,--,0,07/05/2020,,,,,,,,,,,,,,,
+TSUKF,Toyo Suisan Kaisha Ord,$50.30,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 STLD,"Steel Dynamics, Inc.",$23.88,-0.27,1.12%,"2,082,991",07/05/2020,"5,078,771,129",Basic Industries,Steel/Iron Ore,7.96,13.80,$27.50,$3.00,$24.36/$23.51,$1.00,4.14%,"Mar 30, 2020","Apr 10, 2020",,$35.78/$14.98,1
-NHMAF,Nihon M & A Center Inc,$32.75,+1.25,3.97%,"1,097",07/05/2020,,,,,,,,,,,,,,,
+NHMAF,Nihon M & A Center Inc,$32.75,+1.25,3.97%,"1,097",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 CYAGF,CyberAgent,$40.76,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 TKCZF,Turkcell Iletisim Hizmetleri AS,$2.4324,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
-TKECF,Tokyo Electric Power Co Inc (The),$3.232,+0.032,1%,100,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$3.23/$3.23,N/A,N/A,N/A,N/A,,N/A,
+STDAF,Stada Arzneimittel Ag Ord,$78.85,--,--,0,07/05/2020,,,,,,,,,,,,,,,
 ANGGF,Angang Steel Co Ltd Ord,$0.32,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 TNDM,"Tandem Diabetes Care, Inc. Common Stock",$87.04,+2.25,2.65%,"1,334,832",07/05/2020,"5,231,363,205",Health Care,Medical/Dental Instruments,,-174.08,$85.00,$-0.33,$88.01/$85.41,N/A,N/A,N/A,N/A,,$91.65/$43.69,1
 DNKN,"Dunkin' Brands Group, Inc. Common Stock",$63.51,+1.49,2.4%,"1,105,439",07/05/2020,"5,213,369,059",Consumer Services,Restaurants,21.98,25.10,$66.00,$2.89,$64.07/$61.79,$1.61,2.6%,"Mar 6, 2020","Mar 18, 2020",,$84.73/$38.51,1
@@ -1730,14 +1731,14 @@ HFC,HollyFrontier Corporation Common Stock,$30.01,-1.33,4.24%,"2,220,288",07/05/
 SBS,Companhia de saneamento Basico Do Estado De Sao Paulo - Sabesp American Depositary Shares (Each repstg 250 Common Shares),$7.05,-0.37,4.99%,"1,232,322",07/05/2020,"4,818,744,576",Public Utilities,Water Supply,5,N/A,N/A,$1.41,$7.34/$7.01,$0.201,2.72%,"May 1, 2020","Jul 6, 2020",,$15.40/$5.54,1
 BMCLF,BAIC Motor Corp Ltd,$0.632,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 GNGBY,Getinge AB ADR,$18.6755,+0.0855,0.46%,"6,748",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$18.68/$18.57,N/A,N/A,N/A,N/A,,N/A,
-JTEKF,JTEKT Corp,$6.5754,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
+JTEKF,JTEKT Corp,$6.5754,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 NWL,Newell Brands Inc. Common Stock,$11.69,-0.24,2.01%,"2,764,270",07/05/2020,"4,957,729,000",Consumer Non-Durables,Plastic Products,,10.72,$13.50,$-2.42,$12.12/$11.53,$0.92,7.71%,"Feb 27, 2020","Mar 13, 2020",,$20.99/$10.44,1
 SINGY,Singapore Airlines Ltd ADR,$12.50,+3.965,46.46%,"2,731",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$12.63/$8.65,N/A,N/A,N/A,N/A,,N/A,
 HTCMF,Hitachi Construction Machinery Co Ltd,$23.75,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 IAA,"IAA, Inc. Common Stock",$39.20,+1.51,4.01%,"2,086,575",07/05/2020,"5,250,784,846",Consumer Durables,Automotive Aftermarket,28.82,32.40,$44.00,$1.36,$40.59/$37.25,N/A,N/A,N/A,N/A,,$51.74/$21.79,1
 TONPF,Toppan Printing Co. Ltd.,$15.10,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 PPC,Pilgrim's Pride Corporation Common Stock,$19.68,-0.535,2.65%,"790,607",07/05/2020,"4,855,801,124",Consumer Non-Durables,Meat/Poultry/Fish,11.18,17.89,$28.00,$1.76,$20.55/$19.53,N/A,N/A,N/A,N/A,,$33.67/$15.75,1
-TMXXF,TMX Group Ltd,$90.60,+1.04,1.16%,"10,230",07/05/2020,,,,,,,,,,,,,,,
+TMXXF,TMX Group Ltd,$90.60,+1.04,1.16%,"10,230",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 MRVGF,Mirvac Group,$1.28,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 GTMEF,Globe Telecom Inc (Philippines),$37.76,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 WSM,"Williams-Sonoma, Inc. Common Stock (DE)",$66.16,+1.15,1.77%,"1,019,605",07/05/2020,"5,108,444,631",Consumer Services,Home Furnishings,14.73,21.27,$56.50,$4.49,$66.78/$64.41,$1.92,2.95%,"Apr 23, 2020","May 29, 2020",,$77.00/$26.01,1
@@ -1762,7 +1763,6 @@ PBCT,"People's United Financial, Inc. Common Stock",$11.36,-0.25,2.15%,"2,159,05
 LLESY,LendLease Group ADR (Sponsored),$7.46,+0.03,0.4%,"10,414",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$7.66/$7.37,N/A,N/A,N/A,N/A,,N/A,
 TECD,Tech Data Corporation Common Stock,$139.16,+0.76,0.55%,"392,758",07/05/2020,"4,940,009,807",Technology,Retail: Computer Software & Peripheral Equipment,13.48,11.95,$122.50,$10.32,$139.63/$138.00,N/A,N/A,N/A,N/A,,$151.47/$80.20,1
 UTHR,United Therapeutics Corporation Common Stock,$112.96,+1.40,1.25%,"386,257",07/05/2020,"4,971,632,119",Health Care,Major Pharmaceuticals,9.42,11.09,$129.00,$11.99,$115.39/$112.31,N/A,N/A,N/A,N/A,,$116.98/$74.31,1
-STDAF,Stada Arzneimittel Ag Ord,$78.85,--,--,0,07/05/2020,,,,,,,,,,,,,,,
 SPKKY,Spark New Zealand Ltd ADR (Sponsored),$13.35,--,--,"35,818",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$14.13/$13.35,N/A,N/A,N/A,N/A,,N/A,
 LPLA,LPL Financial Holdings Inc. Common Stock,$62.62,+0.45,0.72%,"705,784",07/05/2020,"4,938,076,250",Finance,Investment Bankers/Brokers/Service,9.3,10.72,$65.50,$6.73,$63.48/$61.21,$1.00,1.61%,"Mar 17, 2020","Mar 31, 2020",,$99.60/$32.01,1
 GPTGF,Gpt Group Stapled Sec,$2.51,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
@@ -1804,6 +1804,7 @@ KT,KT Corporation Common Stock,$9.55,-0.10,1.04%,"759,306",07/05/2020,"4,684,113
 UNEGF,United Energy Grp Ltd Ord,$0.18,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 IPSBF,Impulsora Del Desarrollo,$1.65,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 SON,Sonoco Products Company Common Stock,$46.63,-0.46,0.98%,"367,572",07/05/2020,"4,678,748,536",Consumer Durables,Containers/Packaging,15.86,14.35,$52.00,$2.94,$47.48/$46.21,$1.72,3.65%,"May 7, 2020","Jun 10, 2020",,$66.57/$37.30,1
+BLD,TopBuild Corp. Common Stock,$96.70,-1.38,1.41%,"383,942",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 CUBE,CubeSmart Common Shares,$24.14,-0.20,0.82%,"1,061,787",07/05/2020,"4,684,195,606",Consumer Services,Real Estate Investment Trusts,27.12,14.72,$27.50,$0.89,$24.64/$23.90,$1.32,5.42%,"Mar 31, 2020","Apr 15, 2020",,$36.32/$19.61,1
 KSFTF,Kingsoft Corp Limited,$3.66,+0.205,5.93%,"13,311",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$3.77/$3.60,N/A,N/A,N/A,N/A,,N/A,
 YOKEF,Yokogawa Electric Corp,$17.68,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
@@ -1841,6 +1842,7 @@ FR,"First Industrial Realty Trust, Inc. Common Stock",$35.58,-0.35,0.97%,"912,19
 FSLR,"First Solar, Inc. Common Stock",$43.12,+0.02,0.05%,"1,165,293",07/05/2020,"4,565,724,419",Technology,Semiconductors,,14.77,$59.50,$-1.09,$44.60/$43.07,N/A,N/A,N/A,N/A,,$69.23/$28.47,1
 CPCAY,Cathay Pacific Airways Ltd. ADR (Sponsored),$5.774,-0.026,0.45%,"7,368",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$6.00/$5.59,N/A,N/A,N/A,N/A,,N/A,
 REXR,"Rexford Industrial Realty, Inc. Common Stock",$39.65,+0.46,1.17%,"730,665",07/05/2020,"4,612,378,872",Consumer Services,Real Estate Investment Trusts,82.6,31.22,$43.00,$0.48,$40.03/$39.34,$0.86,2.19%,"Jun 29, 2020","Jul 15, 2020",,$53.48/$31.79,1
+IART,Integra LifeSciences Holdings Corporation Common Stock,$51.49,-0.40,0.77%,"466,463",07/05/2020,"4,366,749,812",Health Care,Medical/Dental Instruments,88.78,18.32,$56.50,$0.58,$52.37/$51.22,N/A,N/A,N/A,N/A,,$65.09/$34.21,1
 COR,CoreSite Realty Corporation Common Stock,$122.07,+1.91,1.59%,"1,668,228",07/05/2020,"4,626,862,301",Consumer Services,Real Estate Investment Trusts,61.34,23.70,$117.00,$1.99,$125.30/$120.76,$4.88,4.06%,"Mar 30, 2020","Apr 15, 2020",,$126.40/$90.07,1
 PGENY,Pigeon Corp ADR,$9.50,-0.01,0.11%,"2,468",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$9.55/$9.50,N/A,N/A,N/A,N/A,,N/A,
 SEE,Sealed Air Corporation Common Stock,$27.47,-1.75,5.99%,"1,413,014",07/05/2020,"4,275,913,887",Basic Industries,Major Chemicals,12.84,10.10,$35.00,$2.14,$29.53/$27.40,$0.64,2.19%,"Mar 5, 2020","Mar 20, 2020",,$45.86/$17.06,1
@@ -1880,7 +1882,7 @@ APA,Apache Corporation Common Stock,$11.61,-0.17,1.44%,"19,332,902",07/05/2020,"
 MANH,"Manhattan Associates, Inc. Common Stock",$71.62,+1.60,2.29%,"455,841",07/05/2020,"4,547,625,633",Technology,Computer Software: Prepackaged Software,53.05,59.68,$73.00,$1.35,$71.78/$70.01,N/A,N/A,N/A,N/A,,$90.46/$35.20,1
 USSJF,USS Co Ltd (Japan),$17.95,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 PSO,"Pearson, Plc Common Stock",$5.37,-0.48,8.21%,"951,813",07/05/2020,"4,040,413,443",Consumer Services,Books,N/A,13.43,$5.90,N/A,$5.66/$5.34,$0.348,5.95%,"Mar 26, 2020","May 12, 2020",,$11.51/$5.20,1
-IART,Integra LifeSciences Holdings Corporation Common Stock,$51.49,-0.40,0.77%,"466,463",07/05/2020,"4,366,749,812",Health Care,Medical/Dental Instruments,88.78,18.32,$56.50,$0.58,$52.37/$51.22,N/A,N/A,N/A,N/A,,$65.09/$34.21,1
+LNXSF,Lanxess AG,$47.30,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 KCDMY,Kimberly-Clark de Mexico S.A. de C.V. ADR (Sponsored) A,$7.0655,-0.0645,0.9%,"11,583",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$7.20/$6.97,N/A,N/A,N/A,N/A,,N/A,
 JBGS,JBG SMITH Properties Common Shares,$31.75,-0.84,2.58%,"1,942,435",07/05/2020,"4,282,525,185",Consumer Services,Real Estate Investment Trusts,52.92,18.57,$34.50,$0.60,$33.37/$31.69,$0.90,2.76%,"May 12, 2020","May 27, 2020",,$42.36/$21.88,1
 GRUB,GrubHub Inc. Common Stock,$50.83,+3.04,6.36%,"5,758,151",07/05/2020,"4,672,120,321",Miscellaneous,Business Services,,-48.41,$45.00,$-0.64,$51.19/$47.61,N/A,N/A,N/A,N/A,,$80.25/$29.35,1
@@ -1960,7 +1962,6 @@ HE,"Hawaiian Electric Industries, Inc. Common Stock",$36.44,-1.61,4.23%,"766,739
 USFD,US Foods Holding Corp. Common Stock,$18.29,-0.55,2.92%,"4,226,391",07/05/2020,"4,028,943,624",Consumer Non-Durables,Food Distributors,22.04,-40.64,$30.00,$0.83,$19.11/$18.05,N/A,N/A,N/A,N/A,,$43.10/$8.32,1
 IOVA,"Iovance Biotherapeutics, Inc. Common Stock",$32.63,-0.03,0.09%,"2,499,938",07/05/2020,"4,139,011,671",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),,-15.46,$44.00,$-1.83,$33.94/$30.03,N/A,N/A,N/A,N/A,,$39.00/$10.15,1
 TKC,Turkcell Iletisim Hizmetleri AS Common Stock,$4.63,-0.11,2.32%,"272,884",07/05/2020,"4,043,112,669",Public Utilities,Telecommunications Equipment,10.29,5.72,$7.00,$0.45,$4.68/$4.62,$0.14,2.96%,"Oct 31, 2019","Nov 8, 2019",,$6.31/$4.36,1
-LNXSF,Lanxess AG,$47.30,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 CW,Curtiss-Wright Corporation Common Stock,$94.77,-2.50,2.57%,"173,006",07/05/2020,"4,029,781,983",Technology,Industrial Machinery/Components,13.4,13.88,$140.00,$7.07,$98.34/$94.77,$0.68,0.7%,"Mar 25, 2020","Apr 9, 2020",,$149.90/$70.56,1
 LOPE,"Grand Canyon Education, Inc. Common Stock",$86.24,-1.09,1.25%,"377,116",07/05/2020,"4,080,301,493",Consumer Services,Other Consumer Services,16.06,16.03,$110.00,$5.37,$88.18/$86.20,N/A,N/A,N/A,N/A,,$132.72/$57.89,1
 PRI,"Primerica, Inc. Common Stock",$100.70,-1.38,1.35%,"238,118",07/05/2020,"4,040,836,531",Finance,Life Insurance,11.78,11.31,$135.00,$8.55,$103.85/$100.15,$1.60,1.57%,"May 21, 2020","Jun 15, 2020",,$138.05/$61.20,1
@@ -1999,6 +2000,7 @@ LEG,"Leggett & Platt, Incorporated Common Stock",$27.76,-2.58,8.5%,"3,541,649",0
 RHBAF,RHB Bank Berhad - Ordinary Shares,$1.00,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 UOLGF,UOL Group Ltd,$4.75,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 CCOI,"Cogent Communications Holdings, Inc.",$85.59,+0.76,0.9%,"351,453",07/05/2020,"3,976,944,707",Consumer Services,Telecommunications Equipment,102.73,81.51,$66.50,$0.82,$87.58/$83.02,$2.64,3.11%,"Mar 12, 2020","Mar 27, 2020",,$92.96/$53.24,1
+BYRSF,Bayan Resources Tbk PT,$1.16,--,--,0,07/05/2020,,,,,,,,,,,,,,,
 TPL,Texas Pacific Land Trust Common Stock,$491.12,-25.02,4.85%,"41,930",07/05/2020,"3,869,747,113",Energy,Oil & Gas Production,16.24,24.25,$684.00,$30.73,$498.93/$498.01,$10.00,1.94%,"Mar 6, 2020","Mar 16, 2020",,$879.25/$295.05,1
 MRTX,"Mirati Therapeutics, Inc. Common Stock",$92.15,+0.14,0.15%,"329,601",07/05/2020,"4,048,808,295",Health Care,Major Pharmaceuticals,,-12.91,$125.50,$-5.64,$94.23/$92.38,N/A,N/A,N/A,N/A,,$132.59/$62.53,1
 FQVLF,First Quantum Minerals Ltd.,$5.7692,-0.0358,0.62%,549,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$6.11/$5.85,N/A,N/A,N/A,N/A,,N/A,
@@ -2041,7 +2043,6 @@ UNPSF,Uni-President China Holdings Ltd.,$0.898,--,--,0,07/05/2020,N/A,N/A,N/A,N/
 CBCFF,Calbee Inc Ord,$29.00,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 EVBG,"Everbridge, Inc. Common Stock",$139.66,+26.80,23.75%,"1,940,052",07/05/2020,"4,944,704,420",Technology,Computer Software: Prepackaged Software,,-64.96,$130.00,$-1.89,$144.96/$139.67,N/A,N/A,N/A,N/A,,$140.72/$59.85,1
 ALLO,"Allogene Therapeutics, Inc. Common Stock",$30.07,-0.79,2.56%,"812,925",07/05/2020,"3,790,655,330",Health Care,Biotechnology: Biological Products (No Diagnostic Substances),,-12.08,$36.00,$-1.99,$30.94/$29.34,N/A,N/A,N/A,N/A,,$33.80/$17.43,1
-BYRSF,Bayan Resources Tbk PT,$1.16,--,--,0,07/05/2020,,,,,,,,,,,,,,,
 VEDL,Vedanta Limited American Depositary Shares (Each representing four equity shares),$4.11,-0.05,1.2%,"1,234,976",07/05/2020,"3,935,910,820",Capital Goods,Metal Fabrications,3.26,N/A,N/A,$1.30,$4.24/$4.16,$0.384,9.22%,"Mar 6, 2020","Mar 16, 2020",,$10.45/$3.24,1
 FFIN,"First Financial Bankshares, Inc. Common Stock",$26.58,-0.62,2.28%,"499,032",07/05/2020,"3,833,969,067",Finance,Major Banks,22.68,25.08,$26.00,$1.19,$27.37/$26.76,$0.52,1.76%,"Jun 15, 2020","Jul 1, 2020",,$36.45/$20.70,1
 RARE,Ultragenyx Pharmaceutical Inc. Common Stock,$66.26,+1.58,2.44%,"395,468",07/05/2020,"4,057,565,227",Health Care,Major Pharmaceuticals,,-10.99,$75.00,$-7.35,$68.90/$67.04,N/A,N/A,N/A,N/A,,$70.49/$31.99,1
@@ -2124,6 +2125,7 @@ MIMTF,Mitsubishi Materials Ord,$27.65,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A
 YZCAY,Yanzhou Coal Mining Co Ltd ADR (Sponsored) Repstg Cl H Shs,$7.42,+0.05,0.68%,"3,211",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$7.44/$7.44,N/A,N/A,N/A,N/A,,N/A,
 TKAMY,ThyssenKrupp AG ADR (Sponsored),$5.69,-0.125,2.15%,"5,501",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,$5.74/$5.74,N/A,N/A,N/A,N/A,,N/A,
 BC,Brunswick Corporation Common Stock,$45.10,-0.49,1.07%,"638,786",07/05/2020,"3,667,836,816",Energy,Industrial Machinery/Components,,16.58,$54.00,$-0.25,$46.96/$45.88,$0.96,2.11%,"May 18, 2020","Jun 12, 2020",,$66.32/$25.22,1
+CHFFF,China Everbright International Ltd.,$0.54,+0.005,0.93%,"2,895",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 ELUXF,Electrolux Ab B Ord,$13.512,+0.924,7.34%,"4,296",07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 SKLYF,Skylark Co Ltd,$18.30,--,--,0,07/05/2020,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,N/A,,N/A,
 GBCI,"Glacier Bancorp, Inc. Common Stock",$37.03,-0.80,2.11%,"396,430",07/05/2020,"3,587,828,144",Finance,Major Banks,16.64,16.91,$35.00,$2.26,$38.31/$37.46,$1.16,3.07%,"Apr 6, 2020","Apr 16, 2020",,$46.51/$26.66,1
@@ -2175,6 +2177,7 @@ UZAPF,Flughafen Zuerich AG,$113.00,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 LVZPF,Livzon Pharmaceutical Group Inc,$3.70,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 NKTR,Nektar Therapeutics Common Stock,$19.53,+0.05,0.26%,"701,284",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 PRSP,Perspecta Inc. Common Stock,$21.24,-0.22,1.03%,"471,049",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
+AN,"AutoNation, Inc. Common Stock",$36.63,-0.10,0.27%,"796,176",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 NTNX,"Nutanix, Inc. Class A Common Stock",$20.68,+2.91,16.38%,"7,610,055",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 FSV,FirstService Corporation Common Shares,$83.12,+0.03,0.04%,"54,708",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 QRTEB,"Qurate Retail, Inc. Series B Common Stock",$7.77,-0.52,6.27%,"1,344",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
@@ -2239,9 +2242,6 @@ EME,"EMCOR Group, Inc. Common Stock",$58.16,-1.89,3.15%,"299,920",07/05/2020,,,,
 CCOEY,Capcom Co. Ltd. (Japan) ADR,$15.3001,-0.1249,0.81%,379,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 WSTTF,Westports Holdings Bhd,$0.965,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 VIR,"Vir Biotechnology, Inc. Common Stock",$29.20,-0.75,2.5%,"560,215",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
-CHFFF,China Everbright International Ltd.,$0.54,+0.005,0.93%,"2,895",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
-AN,"AutoNation, Inc. Common Stock",$36.63,-0.10,0.27%,"796,176",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
-BLD,TopBuild Corp. Common Stock,$96.70,-1.38,1.41%,"383,942",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 CSIOF,Casio Computer Co. Ltd.,$13.50,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 MSM,"MSC Industrial Direct Company, Inc. Common Stock",$58.43,-0.66,1.12%,"323,754",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 ASR,"Grupo Aeroportuario del Sureste, S.A. de C.V. Common Stock",$109.67,+0.28,0.26%,"102,797",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
@@ -2304,6 +2304,7 @@ MTPOF,Metropolitan Bk & Tr,$0.70,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 APPN,Appian Corporation Class A Common Stock,$49.23,+2.71,5.83%,"1,135,392",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 HOG,"Harley-Davidson, Inc. Common Stock",$19.56,-0.97,4.72%,"3,323,697",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 NEWR,"New Relic, Inc. Common Stock",$54.02,+0.99,1.87%,"666,026",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
+HHC,Howard Hughes Corporation (The) Common Stock,$50.00,-1.99,3.83%,"564,100",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 CBD,Companhia Brasileira de Distribuicao American Depsitary Shares; each representing one Common Share,$11.38,-0.35,2.98%,"528,041",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 ACIW,"ACI Worldwide, Inc. Common Stock",$26.31,-0.78,2.88%,"812,558",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 PVH,PVH Corp. Common Stock,$42.50,-1.77,4%,"1,457,095",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
@@ -2430,7 +2431,7 @@ AWR,American States Water Company Common Stock,$74.18,-3.78,4.85%,"216,204",07/0
 MYOK,"MyoKardia, Inc. Common Stock",$63.20,+1.65,2.68%,"320,669",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 LSCC,Lattice Semiconductor Corporation Common Stock,$21.35,+0.05,0.23%,"1,001,136",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 KEX,Kirby Corporation Common Stock,$48.06,+0.28,0.59%,"484,572",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
-HHC,Howard Hughes Corporation (The) Common Stock,$50.00,-1.99,3.83%,"564,100",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
+NKNIF,nknif,--,--,--,--,07/05/2020,,,,0,0,,,,,0%,,,,,
 BJCHF,Beijing Capital International Airport Co. Ltd,$0.65,+0.025,4%,"30,000",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 TEO,Telecom Argentina SA,$6.82,+0.18,2.71%,"229,404",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 KNSL,"Kinsale Capital Group, Inc. Common Stock",$129.17,+0.67,0.52%,"271,368",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
@@ -2494,7 +2495,6 @@ HAIN,"Hain Celestial Group, Inc. (The) Common Stock",$26.81,+0.60,2.29%,"845,186
 MXCHF,Orbia Advance Corp SAB De CV,$1.3317,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 RDN,Radian Group Inc. Common Stock,$14.12,+0.10,0.71%,"1,686,733",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 SEOTF,Seino Transportation Co,$13.60,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
-NKNIF,nknif,--,--,--,--,07/05/2020,,,,0,0,,,,,0%,,,,,
 BNTC,Benitec Biopharma Inc. Common Stock,$8.77,+0.27,3.18%,"44,355",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 ISFFF,ISS A/S (Denmark),$14.7776,--,--,0,07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,
 KBR,"KBR, Inc. Common Stock",$18.62,-0.54,2.82%,"1,550,079",07/05/2020,,,,0.0,0.0,,,,,0.0%,,,,,

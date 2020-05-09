@@ -563,8 +563,8 @@ upsideFilter={
     'upside':['>',0.3,True]
         }
 
-#df,dfNew, dfMain, financial = run(False)
-#dfNew, table=runLogger(dfNew, False)
+#df,dfNew, dfMain, financial = run(True)
+dfNew, table=runLogger(dfNew, False)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
 #####

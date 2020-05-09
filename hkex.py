@@ -286,10 +286,10 @@ upside={
 
 #df=updateBasic(quandl=0)
 
-#df=analytics(download=True)
-#dfClean=cleanData(df)
-#dfEngine=dataEngineer(dfClean)
-#dfEngine,table=runLogger(dfEngine, run=False)
+df=analytics(download=True)
+dfClean=cleanData(df)
+dfEngine=dataEngineer(dfClean)
+dfEngine,table=runLogger(dfEngine, run=False)
 #
 #dfEngineView=filterView(dfEngine)
 #stats=getStats(dfEngine)

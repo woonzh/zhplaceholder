@@ -55,24 +55,6 @@ def keepAlive():
         resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
-    
-@app.route('/getFilterResult', methods=['GET', 'OPTIONS'])
-def filterResult():
-    ret={}
-    if request.method == 'GET':
-        industries = request.args.get("industries" ,type = str, default="") #split by ,
-        industries=list(filter(lambda x: x!='',[x.strip() for x in industries.split(',')]))
-        filters=request.args.get("filters", default=None)
-        print(industries)
-        
-        ret={
-            'answer':analysis.getFilteredResult(industry=industries, filters=filters).to_json(orient='split')}
-            
-        resp = flask.Response(json.dumps(ret))
-        resp.headers['Access-Control-Allow-Origin'] = '*'
-        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
-        resp.headers['Access-Control-Allow-Credentials'] = 'true'
-        return resp
 
 @app.route('/testWorker', methods=['GET', 'OPTIONS'])
 def workerCheck():
@@ -220,18 +202,24 @@ def workerNasdaqUpdateBasic():
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
 
-@app.route('/rawdata', methods=['GET', 'OPTIONS'])
-def rawdata():
+@app.route('/iexupdatedetails', methods=['GET', 'OPTIONS'])
+def workerNasdaqUpdateBasic():
     ret={}
     if request.method == 'GET':
-        result=analysis.extractFileFromDB()
-        print(result)
+        intJobId=util.stringGenerator()
+        start = request.args.get("start", default=0)
+        end = request.args.get("end", default=0)
+        print('api -%s-%s'%(str(start),str(end)))
+        result=orc.wc.queueFunc('iex update details', orc.runIEXDetails, (start,end) , intJobId)
+        ret={
+            'answer':result}
             
-        resp = make_response(result.to_csv(header=True, index=False))
+        resp = flask.Response(json.dumps(ret))
         resp.headers['Access-Control-Allow-Origin'] = '*'
         resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
+
 
 @app.route('/workerResult', methods=['GET', 'OPTIONS'])
 def workerResult():
