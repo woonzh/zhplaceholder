@@ -56,9 +56,9 @@ def runNasdaqBasicUpdate(userAgentNum=0):
     params=(userAgentNum)
     util.runFunc(actFunc=nasdaq.updateBasics,actFuncParams=params)
     
-def runIEXDetails(start=0, end=0):
-    print('orc -%s-%s'%(str(start),str(end)))
-    params=(start,end)
+def runIEXDetails(start_end_params=(0,0)):
+    print('orc -%s'%(str(start_end_params)))
+    params=start_end_params
     util.runFunc(actFunc=USStocks.test,actFuncParams=params)
     
 #def testFunc():

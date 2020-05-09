@@ -203,7 +203,7 @@ def workerNasdaqUpdateBasic():
         return resp
 
 @app.route('/iexupdatedetails', methods=['GET', 'OPTIONS'])
-def workerNasdaqUpdateBasic():
+def workeriexupdatedetails():
     ret={}
     if request.method == 'GET':
         intJobId=util.stringGenerator()
