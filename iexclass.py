@@ -92,9 +92,12 @@ class iex:
         df=None
 
         for itm in data:
+            temDf=pd.DataFrame(columns=list(itm))
+            temDf.loc[0]=list(itm.values())
             if df is None:
-                df=pd.DataFrame(columns=list(itm))
-            df.loc[len(df)]=list(itm.values())
+                df=temDf.copy(deep=True)
+            else:
+                df=df.append(temDf, sort=False)
         
         return df
             
