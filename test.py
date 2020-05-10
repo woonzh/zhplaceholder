@@ -6,10 +6,10 @@ import pandas as pd
 url='https://zhplaceholder.herokuapp.com/iexupdatedetails'
 #url='https://zhplaceholder.herokuapp.com/iexupdatebasics'
 params={
-    'start': 10,
+    'start': 0,
     'end':0
         }
-#result=requests.get(url, params=params)
+result=requests.get(url, params=params)
 
 #url='https://zhplaceholder.herokuapp.com/testWorker'
 #params={

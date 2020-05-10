@@ -209,6 +209,7 @@ class iex:
         for count, symbol in enumerate(symbols):
             data=self.getKeyStats(symbol)
             data['symbol']=symbol
+            print(symbol)
             lst.append(data)
             
             if count%self.apiBatch==0 and count>0:
