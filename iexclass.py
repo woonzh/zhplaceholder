@@ -28,7 +28,7 @@ class iex:
             self.pub_key=self.sand_pub_key
             self.secret_key=self.sand_secret_key
             
-        self.apiBatch=100
+        self.apiBatch=50
         
         self.baseParams={
             'token':self.secret_key
