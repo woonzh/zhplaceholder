@@ -97,7 +97,7 @@ class iex:
             if df is None:
                 df=temDf.copy(deep=True)
             else:
-                df=df.append(temDf, sort=False)
+                df=df.append(temDf)
         
         return df
             
