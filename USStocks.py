@@ -25,6 +25,9 @@ def test(start=-1, end=-1):
     print('start:%s / end:%s'%(start,end))
 
 #a=iexc.convertLstToDf(lst)
+#a['symbol']=['CYRN','CYRX']
+#    
+#b=iexc.updateData(df=a,mainDf=results, idCol='symbol')
 
 #data=iexc.getKeyStats('CYCN')
 #symbols=updateSymbolList()

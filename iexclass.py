@@ -99,6 +99,8 @@ class iex:
             else:
                 df=df.append(temDf)
         
+        df=df.reset_index(drop=True)
+        
         return df
             
     def store(self, df, ref=None, dbname=None):
@@ -143,7 +145,7 @@ class iex:
             for ind in list(df.index):
                 row=df.loc[ind]
                 identifier=row[idCol]
-#                print(identifier)
+                print(identifier)
 #                print(results)
                 
                 rowFound=results[results[idCol]==identifier]
