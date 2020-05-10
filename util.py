@@ -132,6 +132,16 @@ class workerClass:
         
         return returnVal
     
+    def cancelJob(self, jobId):
+        job=Job.fetch(jobId, connection=conn)
+        ans=job.cancel()
+        print(ans)
+        ans={
+            'result':str(ans)
+                }
+        
+        return ans
+    
     def getResult(self, jobId):
         job=Job.fetch(jobId, connection=conn)
         result={

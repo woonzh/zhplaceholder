@@ -192,26 +192,27 @@ class iex:
     
     def getAllKeyStats(self, dbname, df=None, start=0, end=0, overwrite=False):
         print('iex - start:%s / end:%s'%(start,end))
+        print('get all key stats')
         self.timec.startTimer()
         if df is None:
             df=db.extractTable(dbname)['result']
             
         if overwrite==False:
-            df=df[df['week52change']=='']
+            df2=df[df['week52change']=='']
             
-        print('symbol count: %s' %(str(len(df))))
+        print('symbol count: %s' %(str(len(df2))))
         
         if end==0:
-            symbols=df['symbol'][end:]
+            symbols=df2['symbol'][end:]
         else:
-            symbols=df['symbol'][start:end]
+            symbols=df2['symbol'][start:end]
         
         lst=[]
         
         for count, symbol in enumerate(symbols):
             data=self.getKeyStats(symbol)
             data['symbol']=symbol
-            print(symbol)
+            print('%s - %s'%(symbol,str(data)))
             lst.append(data)
             
             if count%self.apiBatch==0 and count>0:

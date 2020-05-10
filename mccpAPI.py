@@ -238,6 +238,18 @@ def workeriexupdatebasics():
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
 
+@app.route('/cancelworker', methods=['GET', 'OPTIONS'])
+def workerCancel():
+    ret={}
+    if request.method == 'GET':
+        jobid = request.args.get("jobId" ,type = str, default="")
+        ret=orc.wc.cancelJob(jobid)
+        resp = flask.Response(json.dumps(ret))
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        return resp
+
 
 @app.route('/workerResult', methods=['GET', 'OPTIONS'])
 def workerResult():
