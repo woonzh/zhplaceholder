@@ -9,7 +9,7 @@ params={
     'start': 0,
     'end':0
         }
-result=requests.get(url, params=params)
+#result=requests.get(url, params=params)
 
 #url='https://zhplaceholder.herokuapp.com/testWorker'
 #params={
@@ -45,13 +45,14 @@ result=requests.get(url, params=params)
 #url='https://zhplaceholder.herokuapp.com/rawdata'
 #result=requests.get(url)
 
-#ans=json.loads(result.text)
-#jobid=ans['answer']['result']
+ans=json.loads(result.text)
+jobid=ans['answer']['result']
 
 #
 #url='https://zhplaceholder.herokuapp.com/workerResult'
-#params={
-#    'jobId':jobid
-#        }
-#result=requests.get(url, params)
-#print(result.text)
+url='https://zhplaceholder.herokuapp.com/cancelworker'
+params={
+    'jobId':jobid
+        }
+result2=requests.get(url, params)
+print(result2.text)

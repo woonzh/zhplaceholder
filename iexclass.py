@@ -145,7 +145,7 @@ class iex:
             for ind in list(df.index):
                 row=df.loc[ind]
                 identifier=row[idCol]
-                print(identifier)
+#                print(identifier)
 #                print(results)
                 
                 rowFound=results[results[idCol]==identifier]
@@ -249,6 +249,7 @@ class iex:
     
     def getAllStockQuotes(self, dbname=None,df=None, start=0, end=0):
         print('iex - start:%s / end:%s'%(start,end))
+        print('get all stock quotes')
         self.timec.startTimer()
         if df is None:
             df=db.extractTable(dbname)['result']
