@@ -190,11 +190,14 @@ class iex:
         return data
         
     
-    def getAllKeyStats(self, dbname, df=None, start=0, end=0):
+    def getAllKeyStats(self, dbname, df=None, start=0, end=0, overwrite=False):
         print('iex - start:%s / end:%s'%(start,end))
         self.timec.startTimer()
         if df is None:
             df=db.extractTable(dbname)['result']
+            
+        if overwrite==False:
+            df=df[df['week52change']=='']
         
         if end==0:
             symbols=df['symbol'][end:]
