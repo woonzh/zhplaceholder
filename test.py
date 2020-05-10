@@ -3,13 +3,13 @@ import json
 import threading
 import pandas as pd
 
-url='https://zhplaceholder.herokuapp.com/iexupdatedetails'
-#url='https://zhplaceholder.herokuapp.com/iexupdatebasics'
+#url='https://zhplaceholder.herokuapp.com/iexupdatedetails'
+url='https://zhplaceholder.herokuapp.com/iexupdatebasics'
 params={
     'start': 0,
     'end':0
         }
-#result=requests.get(url, params=params)
+result=requests.get(url, params=params)
 
 #url='https://zhplaceholder.herokuapp.com/testWorker'
 #params={
@@ -50,9 +50,9 @@ jobid=ans['answer']['result']
 
 #
 #url='https://zhplaceholder.herokuapp.com/workerResult'
-url='https://zhplaceholder.herokuapp.com/cancelworker'
-params={
-    'jobId':jobid
-        }
-result2=requests.get(url, params)
-print(result2.text)
+#url='https://zhplaceholder.herokuapp.com/cancelworker'
+#params={
+#    'jobId':jobid
+#        }
+#result2=requests.get(url, params)
+#print(result2.text)

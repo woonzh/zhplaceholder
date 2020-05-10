@@ -265,6 +265,8 @@ class iex:
             data=self.getStockQuote(symbol)
             lst.append(data)
             
+            print('%s - %s'%(symbol,str(len(data))))
+            
             if count%self.apiBatch==0 and count>0:
                 self.timec.getTimeSplit(str(count)+'-api called')
                 updatedTable=self.convertLstToDf(lst)
