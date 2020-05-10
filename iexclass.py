@@ -198,6 +198,8 @@ class iex:
             
         if overwrite==False:
             df=df[df['week52change']=='']
+            
+        print('symbol count: %s' %(str(len(df))))
         
         if end==0:
             symbols=df['symbol'][end:]
