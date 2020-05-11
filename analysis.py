@@ -146,8 +146,9 @@ def featuresEngineering(df, details):
     df['upside']=[(x-y)/y if (x!=0 and y!=0) else 0 for x,y in zip(df['yearhigh'], price)]
     df['downside']= [(y-x)/y if (x!=0 and y!=0) else 0 for x,y in zip(price, df['yearlow'])]
     
-    df['dayVolume']=[float(x/y) if (x!=0 and y!=0) else 0 for x,y in zip(tradedVol, sharesOutstanding)]
-    
+    df['tradedvol']=[x*pow(10,3) if x!=0 else 0 for x in tradedVol]
+    df['dayVolume']=[float(x/y) if (x!=0 and y!=0) else 0 for x,y in zip(df['tradedvol'], sharesOutstanding)]
+    df['tradedval']=[round(x*y,2) if (x!=0 and y!=0) else 0 for x,y in zip(df['tradedvol'], price)]
     return df
 
 def removeNull(df, inclusions=[]):
@@ -293,7 +294,7 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
 #            'industry':['!=','',True],
 #            'openprice':['>',1,False],
 #            'net_profit_margin':['>', 10],
-            'volume traded %':['>', 0.0001,False],
+            'dayVolume':['>', 0.0001,False],
 #            'p_nav':['<',1, True],
             'type':['=','others',True]
 #            'revenue':['>',0]
@@ -330,6 +331,7 @@ def filterData(fname=newFile, industry=[], df=None, filters=None, name=None):
                     keepList.append(count)
                     
         df=df.loc[keepList]
+        df.drop_duplicates(subset ="names", inplace = True)
         df=df.reset_index(drop=True)
         dfStore=df.copy(deep=True)
         
@@ -386,7 +388,7 @@ def cleanCols(df):
               'sharesoutstanding', 'pricebookvalue', 'type', 'industry', 'enterprisevalue', \
               'assets', 'cash', 'capex', 'financial_info']
     
-    display=['names','openprice','industry','upside','downside','day_high','day_low','dayVolatility','percenchange','weightedDayVolatility','volume traded %','dayVolume','peratio','revenue','div_val','marketcap',\
+    display=['names','openprice','industry','upside','downside','dayVolatility','percenchange','weightedDayVolatility','volume traded %','tradedvol','tradedval','dayVolume','peratio','revenue','div_val','marketcap',\
              'operating_margin','net_profit_margin','debt_assets_ratio','shortdebt_over_profit',\
              'p_nav','profitMarginGrowth','cash_percen',\
              'Revenue growth', 'Operating Income growth', 'Net Income growth', 'Cash growth', \
@@ -544,8 +546,8 @@ def run(pullFromDB=False):
 dailyChangeFilter={
     'peratio':['!=','nan',True],
     'industry':['!=','',True],
-    'openprice':['>',0.25,False],
-    'volume traded %':['>', 0.0001,False]}
+    'openprice':['>',0.2,False],
+    'dayVolume':['>', 0.0003,False]}
 
 upsideFilter={
     'peratio':['<',20,True],
@@ -553,7 +555,8 @@ upsideFilter={
     'industry':['!=','',True],
     'openprice':['>',0.25,False],
     'net_profit_margin':['>', 0,True],
-    'volume traded %':['>', 0.00001,False],
+    'dayVolume':['>', 0.00001,False],
+#    'tradedval':['>',0,False],
 #    'dayVolume':['>', 0,False],
 #    'p_nav':['>',1],
     'type':['=','others',True],
@@ -563,20 +566,20 @@ upsideFilter={
     'upside':['>',0.3,True]
         }
 
-#df,dfNew, dfMain, financial = run(True)
-#dfNew, table=runLogger(dfNew, False)
-#stats=getStats(dfNew)
-#dfNewCmp=cleanCols(dfNew)
-#####
-#dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
-#dfDailyChangeCmp=cleanCols(dfDailyChange)
-###
-#dfUpside=filterData(filters=upsideFilter,df=dfNew)
-#dfUpsideCmp=cleanCols(dfUpside)
+df,dfNew, dfMain, financial = run(False)
+dfNew, table=runLogger(dfNew, False)
+stats=getStats(dfNew)
+dfNewCmp=cleanCols(dfNew)
+
+dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
+dfDailyChangeCmp=cleanCols(dfDailyChange)
+
+dfUpside=filterData(filters=upsideFilter,df=dfNew)
+dfUpsideCmp=cleanCols(dfUpside)
 ##
-#industry=['Electrical Components & Equipment', 'Electronic Equipment & Parts', 'Industrial Machinery & Equipment', 'Semiconductors']
-#dfFilter=filterData(df=dfNew, industry=industry)
-#dfCmp=cleanCols(dfFilter)
+industry=['Electrical Components & Equipment', 'Electronic Equipment & Parts', 'Industrial Machinery & Equipment', 'Semiconductors', 'Technology Equipment']
+dfFilter=filterData(df=dfNew, industry=industry)
+dfCmp=cleanCols(dfFilter)
 ##dfCmp.to_csv(cmpFile, index=False)
 #
 #company=getCompany(dfNew,'names', 'hyphens pharma')

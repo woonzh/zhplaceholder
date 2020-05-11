@@ -9,7 +9,7 @@ params={
     'start': 0,
     'end':0
         }
-result=requests.get(url, params=params)
+#result=requests.get(url, params=params)
 
 #url='https://zhplaceholder.herokuapp.com/testWorker'
 #params={
@@ -17,11 +17,11 @@ result=requests.get(url, params=params)
 #        }
 #t=1
 #url='https://zhplaceholder.herokuapp.com/hkexWorker'
-#url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
+url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
-#params={
-#    'quandl': 0
-#        }
+params={
+    'quandl': 0
+        }
 #result=requests.get(url, params=params)
 #result=requests.get(url)
 

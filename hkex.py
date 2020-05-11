@@ -157,7 +157,9 @@ def cleanData(df):
       if str(x) !='nan' and str(x)!='' else 0 for x in df['upval']]
     df=df.drop('upval', axis=1)
     
-    df['percen_traded']=[x/y if (x >0 and y>0 )else 0 for x,y in zip(df['volume'],df['market_cap'])]
+    df['shares_oustanding']=[y/x if (x >0 and y>0 )else 0 for x,y in zip(df['price'],df['market_cap'])]
+    
+    df['percen_traded']=[x/y if (x >0 and y>0 )else 0 for x,y in zip(df['volume'],df['shares_oustanding'])]
     
     return df
 
@@ -286,19 +288,19 @@ upside={
 
 #df=updateBasic(quandl=0)
 
-#df=analytics(download=True)
-#dfClean=cleanData(df)
-#dfEngine=dataEngineer(dfClean)
-#dfEngine,table=runLogger(dfEngine, run=False)
+df=analytics(download=False)
+dfClean=cleanData(df)
+dfEngine=dataEngineer(dfClean)
+dfEngine,table=runLogger(dfEngine, run=False)
 #
-#dfEngineView=filterView(dfEngine)
-#stats=getStats(dfEngine)
+dfEngineView=filterView(dfEngine)
+stats=getStats(dfEngine)
 #
-#dfDayChange=sieveData(dfEngine,filters=dayChange)
-#dfDayChangeView=filterView(dfDayChange)
-##
-#dfUpside=sieveData(dfEngine,filters=upside)
-#dfUpsideView=filterView(dfUpside)
+dfDayChange=sieveData(dfEngine,filters=dayChange)
+dfDayChangeView=filterView(dfDayChange)
+#
+dfUpside=sieveData(dfEngine,filters=upside)
+dfUpsideView=filterView(dfUpside)
 #
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)

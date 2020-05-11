@@ -258,6 +258,8 @@ class iex:
             symbols=df['symbol'][start:]
         else:
             symbols=df['symbol'][start:end]
+            
+        print('symbol count: %s' %(str(len(symbols))))
         
         lst=[]
         
