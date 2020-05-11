@@ -59,7 +59,7 @@ def updateDetails():
     return df
 
 def updateBasic(quandl=0):
-    local=True
+    local=False
     crawl=crawler(local)
     
     quandl=int(quandl)
