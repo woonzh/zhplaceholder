@@ -288,19 +288,19 @@ upside={
 
 #df=updateBasic(quandl=0)
 
-df=analytics(download=False)
-dfClean=cleanData(df)
-dfEngine=dataEngineer(dfClean)
-dfEngine,table=runLogger(dfEngine, run=False)
-#
-dfEngineView=filterView(dfEngine)
-stats=getStats(dfEngine)
-#
-dfDayChange=sieveData(dfEngine,filters=dayChange)
-dfDayChangeView=filterView(dfDayChange)
-#
-dfUpside=sieveData(dfEngine,filters=upside)
-dfUpsideView=filterView(dfUpside)
+#df=analytics(download=False)
+#dfClean=cleanData(df)
+#dfEngine=dataEngineer(dfClean)
+#dfEngine,table=runLogger(dfEngine, run=False)
+##
+#dfEngineView=filterView(dfEngine)
+#stats=getStats(dfEngine)
+##
+#dfDayChange=sieveData(dfEngine,filters=dayChange)
+#dfDayChangeView=filterView(dfDayChange)
+##
+#dfUpside=sieveData(dfEngine,filters=upside)
+#dfUpsideView=filterView(dfUpside)
 #
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)

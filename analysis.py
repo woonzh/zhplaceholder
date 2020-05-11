@@ -566,20 +566,20 @@ upsideFilter={
     'upside':['>',0.3,True]
         }
 
-df,dfNew, dfMain, financial = run(False)
-dfNew, table=runLogger(dfNew, False)
-stats=getStats(dfNew)
-dfNewCmp=cleanCols(dfNew)
-
-dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
-dfDailyChangeCmp=cleanCols(dfDailyChange)
-
-dfUpside=filterData(filters=upsideFilter,df=dfNew)
-dfUpsideCmp=cleanCols(dfUpside)
-##
-industry=['Electrical Components & Equipment', 'Electronic Equipment & Parts', 'Industrial Machinery & Equipment', 'Semiconductors', 'Technology Equipment']
-dfFilter=filterData(df=dfNew, industry=industry)
-dfCmp=cleanCols(dfFilter)
+#df,dfNew, dfMain, financial = run(False)
+#dfNew, table=runLogger(dfNew, False)
+#stats=getStats(dfNew)
+#dfNewCmp=cleanCols(dfNew)
+#
+#dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
+#dfDailyChangeCmp=cleanCols(dfDailyChange)
+#
+#dfUpside=filterData(filters=upsideFilter,df=dfNew)
+#dfUpsideCmp=cleanCols(dfUpside)
+###
+#industry=['Electrical Components & Equipment', 'Electronic Equipment & Parts', 'Industrial Machinery & Equipment', 'Semiconductors', 'Technology Equipment']
+#dfFilter=filterData(df=dfNew, industry=industry)
+#dfCmp=cleanCols(dfFilter)
 ##dfCmp.to_csv(cmpFile, index=False)
 #
 #company=getCompany(dfNew,'names', 'hyphens pharma')
