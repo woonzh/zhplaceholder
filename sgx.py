@@ -634,8 +634,8 @@ def closeDriver():
 
 #df=crawlSummary()
 
-df, companyFullInfo=updateCompanyInfo()
-closeDriver()
+#df, companyFullInfo=updateCompanyInfo()
+#closeDriver()
 
 #a=updateRatios(df)
 
