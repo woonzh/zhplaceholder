@@ -89,10 +89,11 @@ def updateBasic(quandl=0):
         
         df3=crawl.updateHighLow(df2)
         crawl.store(df3, hkSum, dbName, write='cloud')
+        df=df3
     
     crawl.closeDriver()
     
-    return df3
+    return df
 
 def dataEngineer(df):
     df=df.copy(deep=True)
