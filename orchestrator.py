@@ -6,15 +6,14 @@ Created on Sun Sep  1 14:53:35 2019
 """
 
 import sgx
-from rq import Queue
-from rq.job import Job
-from worker import conn
 from util import workerClass
 import util
 import test2
 import hkex
 import nasdaq
 import USStocks
+import analysis
+import pandas as pd
 
 wc=workerClass()
 
@@ -66,8 +65,21 @@ def runIEXBasics(start_end_params=(0,0)):
     params=start_end_params
     util.runFunc(actFunc=USStocks.updateQuote,actFuncParams=params)
     
-#def testFunc():
-#    r=10*3
-#    return r
+def runAnalytics(country='sg', pw='', clean=False):
+    print('orc analytics -%s-%s-%s'%(country, pw, clean))
+    correctPw='P@ssw0rd'
+    
+    nullVal=pd.DataFrame()
+    
+    if pw!=correctPw:
+        return nullVal
+    
+    if country=='sg':
+        df=analysis.run(cloud=True, clean=clean)
+    
+    if country=='hk':
+        df=hkex.fullCloudAnalytics(clean=clean)
+    
+    return df
 
-#result=wc.queueFunc('test', testFunc, 1)
+#df=runAnalytics(country='hk',pw='P@ssw0rd')

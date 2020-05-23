@@ -4,11 +4,11 @@ import threading
 import pandas as pd
 
 #url='https://zhplaceholder.herokuapp.com/iexupdatedetails'
-url='https://zhplaceholder.herokuapp.com/iexupdatebasics'
-params={
-    'start': 0,
-    'end':0
-        }
+#url='https://zhplaceholder.herokuapp.com/iexupdatebasics'
+#params={
+#    'start': 0,
+#    'end':0
+#        }
 #result=requests.get(url, params=params)
 
 #url='https://zhplaceholder.herokuapp.com/testWorker'
@@ -17,12 +17,12 @@ params={
 #        }
 #t=1
 #url='https://zhplaceholder.herokuapp.com/hkexWorker'
-url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
+#url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
-params={
-    'quandl': 0
-        }
-result=requests.get(url, params=params)
+#params={
+#    'quandl': 0
+#        }
+#result=requests.get(url, params=params)
 #result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/nasdaqfull'
@@ -44,9 +44,21 @@ result=requests.get(url, params=params)
 #        }
 #url='https://zhplaceholder.herokuapp.com/rawdata'
 #result=requests.get(url)
+#
+#ans=json.loads(result.text)
+#jobid=ans['answer']['result']
 
-ans=json.loads(result.text)
-jobid=ans['answer']['result']
+url='https://zhplaceholder.herokuapp.com/getAnalytics'
+#url='http://localhost/getAnalytics'
+params={
+    'pw':'P@ssw0rd',
+    'country':'sg'
+        }
+#result=requests.get(url, params=params)
+
+#ans=json.loads(result.text)
+#jobid=ans['answer']['result']
+
 
 #
 #url='https://zhplaceholder.herokuapp.com/workerResult'

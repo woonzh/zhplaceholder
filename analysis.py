@@ -149,6 +149,8 @@ def featuresEngineering(df, details):
     df['tradedvol']=[x*pow(10,3) if x!=0 else 0 for x in tradedVol]
     df['dayVolume']=[float(x/y) if (x!=0 and y!=0) else 0 for x,y in zip(df['tradedvol'], sharesOutstanding)]
     df['tradedval']=[round(x*y,2) if (x!=0 and y!=0) else 0 for x,y in zip(df['tradedvol'], price)]
+    
+    df['high_close']=[round(100*(x-y)/y,2) if x!=0 and y!=0 else 0 for x,y in zip(day_high, price)]
     return df
 
 def removeNull(df, inclusions=[]):
@@ -388,7 +390,7 @@ def cleanCols(df):
               'sharesoutstanding', 'pricebookvalue', 'type', 'industry', 'enterprisevalue', \
               'assets', 'cash', 'capex', 'financial_info']
     
-    display=['names','openprice','industry','upside','downside','dayVolatility','percenchange','weightedDayVolatility','volume traded %','tradedvol','tradedval','dayVolume','peratio','revenue','div_val','marketcap',\
+    display=['names','openprice','upside','downside','dayVolatility','percenchange','weightedDayVolatility','high_close','volume traded %','tradedvol','tradedval','dayVolume','peratio','revenue','div_val','marketcap',\
              'operating_margin','net_profit_margin','debt_assets_ratio','shortdebt_over_profit',\
              'p_nav','profitMarginGrowth','cash_percen',\
              'Revenue growth', 'Operating Income growth', 'Net Income growth', 'Cash growth', \
@@ -521,6 +523,31 @@ def processFinancialInfo(df):
     
     return store, summary
 
+def extractShortSell(url):
+    file='https://api2.sgx.com/sites/default/files/reports/short-sell/2020/05/website_DailyShortSell202005181815.txt'
+    a=pd.read_csv(file)
+    b=None
+    for ind in a.index:
+        row=a.iloc[ind,0]
+        cols=list(set(row.split('  ')))
+        if len(cols)>2:
+            newCol=[]
+            for val in cols:
+                if val!='':
+                    newCol.append(val)
+                    
+            if b is None:
+                cols=list(set(row.split(' ')))
+                newCol=[]
+                for val in cols:
+                    if val!='':
+                        newCol.append(val)
+                b=pd.DataFrame(columns=newCol)
+            else:
+                b.loc[len(b)]=newCol
+        else:
+            return b
+
 def runLogger(df, run=False):
     if run:
         store=log.update('sgx',df, 'names','names')
@@ -534,36 +561,56 @@ def runLogger(df, run=False):
     
     return df,table
     
-def run(pullFromDB=False):
-    if pullFromDB:
+def run(pullFromDB=False, cloud=False, clean=False):
+    if cloud:
         df=extractFileFromDB()
-        df.to_csv(file, index=False)
-    df=pd.read_csv(file)
+    else:
+        if pullFromDB:
+            df=extractFileFromDB()
+            df.to_csv(file, index=False)
+        df=pd.read_csv(file)
 #    return df
     dfMain, dfDel, dfCheck, summary, dfNew, f=cleanAndProcess(summaryFName, file, newFile)
-    return df,dfNew, dfMain, f
+    
+    if cloud:
+        if clean:
+            dfNew=cleanCols(dfNew)
+        return dfNew
+    else:
+        return df,dfNew, dfMain, f
 
 dailyChangeFilter={
     'peratio':['!=','nan',True],
     'industry':['!=','',True],
     'openprice':['>',0.2,False],
-    'dayVolume':['>', 0.0003,False]}
+#    'dayVolume':['>', 0.0003,False],
+    'tradedval':['>', pow(10,6),False]}
 
 upsideFilter={
     'peratio':['<',20,True],
 #    'peratio':['<',15,True],
     'industry':['!=','',True],
-    'openprice':['>',0.25,False],
-    'net_profit_margin':['>', 0,True],
+    'openprice':['>',0.2,False],
+#    'net_profit_margin':['>', 0,True],
     'dayVolume':['>', 0.00001,False],
-#    'tradedval':['>',0,False],
+    'tradedval':['>',pow(10,6),False],
 #    'dayVolume':['>', 0,False],
 #    'p_nav':['>',1],
-    'type':['=','others',True],
+#    'type':['=','others',True],
 #    'revenue':['>',100*pow(10,6),True],
 #    'operating_margin':['>',10],
     'downside':['>',-0.6,True],
     'upside':['>',0.3,True]
+        }
+
+daySwing={
+    'peratio':['!=','nan',True],
+    'industry':['!=','',True],
+    'openprice':['>',0.2,False],
+#    'dayVolume':['>', 0.0003,False],
+    'tradedval':['>', pow(10,6),False],
+    'percenchange':['>', 3,False],
+    'high_close':['<', 2,False]
         }
 
 #df,dfNew, dfMain, financial = run(False)
@@ -576,16 +623,22 @@ upsideFilter={
 #
 #dfUpside=filterData(filters=upsideFilter,df=dfNew)
 #dfUpsideCmp=cleanCols(dfUpside)
+#
+#dfNextDaySwing=filterData(filters=daySwing,df=dfNew)
+#dfNextDaySwingCmp=cleanCols(dfNextDaySwing)
 ###
 #industry=['Electrical Components & Equipment', 'Electronic Equipment & Parts', 'Industrial Machinery & Equipment', 'Semiconductors', 'Technology Equipment']
 #dfFilter=filterData(df=dfNew, industry=industry)
 #dfCmp=cleanCols(dfFilter)
-##dfCmp.to_csv(cmpFile, index=False)
-#
-#company=getCompany(dfNew,'names', 'hyphens pharma')
+#dfCmp.to_csv(cmpFile, index=False)
+###
+#company=getCompany(dfNew,'names', 'HongkongLand USD')
+#companyCmp=cleanCols(company)
 ###
 #store, dfStore, clusters=extractIndustries(df=dfNew)
 #
 #f, fsummary=processFinancialInfo(dfNew)
 #fstats=getStats(fsummary)
 
+#url='https://api2.sgx.com/sites/default/files/reports/short-sell/2020/05/website_DailyShortSell202005181815.txt'
+#short=extractShortSell(url)

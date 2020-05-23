@@ -226,22 +226,38 @@ def getStats(df):
     
     return store
 
-def analytics(download=False):
+def analytics(download=False, cloud=False):
+    if cloud:
+        df=db.extractTable(dbName)['result']
+        return df
     if download:
         df=db.extractTable(dbName)['result']
         df.to_csv(hkSum, index=False)
     df=pd.read_csv(hkSum)
     return df
 
+def fullCloudAnalytics(clean=False):
+    df=analytics(cloud=True)
+    dfClean=cleanData(df)
+    dfEngine=dataEngineer(dfClean)
+    
+    if clean:
+        dfEngine=filterView(dfEngine, cloud=True)
+    
+    return dfEngine
+
 def getIndustryCompany(df, industry='bank'):
     lst=comDict[industry]
     boolCheck=[True if x.lower() in lst else False for x in df['com_name']]
     return df[boolCheck]
 
-def filterView(df):
-    cols_to_show=['com_name', 'price', 'day_volatility', 'day_volatility_weighted','day_perceninc','downside', 'upside',\
-                  'turnover', 'market_cap', 'pe', 'dividend', 'percen_traded', 'day_perceninc_sum','day_perceninc_5_day_sum']
-    
+def filterView(df, cloud=False):
+    cols_to_show=['com_name', 'price', 'day_volatility', 'day_volatility_weighted','day_perceninc','day_perceninc_5_day_sum','downside', 'upside',\
+                  'turnover', 'market_cap', 'pe', 'dividend', 'percen_traded', 'day_perceninc_sum']
+    if cloud:
+        cols_to_show=['com_name', 'price', 'day_volatility', 'day_volatility_weighted','day_perceninc','downside', 'upside',\
+                  'turnover', 'market_cap', 'pe', 'dividend', 'percen_traded']
+
     return df[cols_to_show]
 
 def findCompany(df, comName=None, code=None):
@@ -283,8 +299,10 @@ upside={
     'pe2':['<',30,'pe'],
     'upside':['>',30,'upside'],
 #    'downside':['<',30,'downside'],
-    'percen_traded':['>',0.005,'percen_traded'],
-    'suspended':['=','N','suspended']
+    'percen_traded':['>',0,'percen_traded'],
+    'suspended':['=','N','suspended'],
+#    'day_perceninc':['>',1,'day_perceninc'],
+    'day_perceninc_5_day_sum':['>',3,'day_perceninc_5_day_sum']
         }
 
 #df=updateBasic(quandl=0)
@@ -306,7 +324,7 @@ upside={
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
 
-#dfCom=findCompany(dfEngine, comName='XINYI HK')
+#dfCom=findCompany(dfEngine, comName='SHOUGANG I-OLD')
 #
 #dfInd=getIndustryCompany(dfEngine, industry='energy')
 #dfIndView=filterView(indDf)

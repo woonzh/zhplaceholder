@@ -237,6 +237,24 @@ def workeriexupdatebasics():
         resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
         resp.headers['Access-Control-Allow-Credentials'] = 'true'
         return resp
+    
+@app.route('/getAnalytics', methods=['GET', 'OPTIONS'])
+def getAnalytics():
+    if request.method == 'GET':
+        country = request.args.get("country", default='sg')
+        pw = request.args.get("pw", default='')
+        clean= request.args.get("clean", default=False)
+        clean=(clean=='true')
+        print('api analytics -%s-%s-%s'%(country, pw, clean))
+        df=orc.runAnalytics(country,pw, clean)
+            
+        resp = make_response(df.to_csv(header=True, index=False))
+        resp.headers["Content-Disposition"] = "attachment; filename=error_reports.csv"
+        resp.headers["Content-Type"] = "text/csv"
+        resp.headers['Access-Control-Allow-Origin'] = '*'
+        resp.headers['Access-Control-Allow-Credentials'] = 'true'
+        resp.headers['Access-Control-Allow-Methods']= 'GET,PUT,POST,DELETE,OPTIONS'
+        return resp
 
 @app.route('/cancelworker', methods=['GET', 'OPTIONS'])
 def workerCancel():
