@@ -272,7 +272,7 @@ def runLogger(df, run=False):
     dfNew=df.copy(deep=True)
     if run:
         store=log.update('hkex',df, 'code','com_name')
-        store=log.calStats()
+        store=log.calStats('hkex')
         log.save()
     table=log.compileTable('hkex')
     

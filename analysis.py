@@ -551,7 +551,7 @@ def extractShortSell(url):
 def runLogger(df, run=False):
     if run:
         store=log.update('sgx',df, 'names','names')
-        store=log.calStats()
+        store=log.calStats('sgx')
         log.save()
     
     table=log.compileTable('sgx')

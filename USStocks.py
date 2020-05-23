@@ -1,6 +1,9 @@
 from iexclass import iex
+import dbConnector as db
+import pandas as pd
 
 dbname='nasdaqsummary'
+file='data/USStocks.csv'
 iexc=iex()
 
 def updateSymbolList(apiExtract=False):
@@ -23,6 +26,15 @@ def updateQuote(start=0, end=0):
 
 def test(start=-1, end=-1):
     print('start:%s / end:%s'%(start,end))
+    
+def run(pullFromDB=False):
+    if pullFromDB:
+        df=db.extractTable(dbname)['result']
+        df.to_csv(file, index=False)
+    df=pd.read_csv(file)
+    return df
+
+#df=run(True)
 
 #a=iexc.convertLstToDf(lst)
 #a['symbol']=['CYRN','CYRX']

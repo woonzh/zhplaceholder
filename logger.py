@@ -2,6 +2,7 @@ import json
 import util
 from functools import reduce
 import pandas as pd
+import numpy as np
 
 class logger:
     def __init__(self):
@@ -16,7 +17,9 @@ class logger:
                     'downside':'downside',
                     'dayVolatility':'day_volatility',
                     'weightedDayVolatility':'day_volatility_weighted',
-                    'dayVolume':'day_volume'
+                    'dayVolume':'day_volume',
+                    'percenchange':'percenchange',
+                    'high_close':'high_close'
                         }
                     },
             'hkex':{
@@ -73,25 +76,25 @@ class logger:
                 count+=1
         return round(sum(lst)/count,4)
             
-    def calStats(self):
-        for xchange in self.store:
-            storexchange=self.store[xchange]
-            for symbol in storexchange:
-                storesymbol=storexchange[symbol]
-                for metric in storesymbol['metrics']:
-                    storemetric=storesymbol['metrics'][metric]
-                    valLst=[storemetric['datedvals'][x] for x in storemetric['datedvals']]
-                    storemetric['stats']={
-                            'average':round(float(sum(valLst)/len(valLst)),4),
-                            '5_day_avg':round(float(sum(valLst[-5:])/len(valLst[-5:])),4),
-                            '30_day_avg':round(float(sum(valLst[-22:])/len(valLst[-2:])),4),
-                            'sum':round(float(sum(valLst)),4),
-                            '5_day_sum':round(float(sum(valLst[-5:])),4),
-                            '30_day_sum':round(float(sum(valLst[-22:])),4)
-                            }
-                    storesymbol['metrics'][metric]=storemetric
-                storexchange[symbol]=storesymbol
-            self.store[xchange]=storexchange
+    def calStats(self, xchange):
+        storexchange=self.store[xchange]
+        for symbol in storexchange:
+            storesymbol=storexchange[symbol]
+            for metric in storesymbol['metrics']:
+                storemetric=storesymbol['metrics'][metric]
+                valLst=[storemetric['datedvals'][x] for x in storemetric['datedvals']]
+                valLst2=[1+(x/100) if x!=0 else 1 for x in valLst]
+                storemetric['stats']={
+                        'average':round(float(sum(valLst)/len(valLst)),4),
+                        '5_day_avg':round(float(sum(valLst[-5:])/len(valLst[-5:])),4),
+                        '30_day_avg':round(float(sum(valLst[-22:])/len(valLst[-22:])),4),
+                        'sum': round(float((np.prod(valLst2)-1)*100),4),
+                        '5_day_sum':round(float((np.prod(valLst2[-5:])-1)*100),4),
+                        '30_day_sum':round(float((np.prod(valLst2[-22:])-1)*100),4)
+                        }
+                storesymbol['metrics'][metric]=storemetric
+            storexchange[symbol]=storesymbol
+        self.store[xchange]=storexchange
         return self.store
     
     def compileTable(self, xchange):
