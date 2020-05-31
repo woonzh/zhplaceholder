@@ -78,9 +78,14 @@ def workerSGXUpdate():
         intJobId=util.stringGenerator()
         dragIndex = request.args.get("dragIndex", default=None)
         sumTries = request.args.get("sumTries", default=None)
-        result=orc.wc.queueFunc('sgx update', orc.runSGXUpdate, (dragIndex, sumTries), intJobId)
-        ret={
-            'answer':result}
+        pw = request.args.get("pw", default='')
+        if pw=='Keppel2017':
+            result=orc.wc.queueFunc('sgx update', orc.runSGXUpdate, (dragIndex, sumTries), intJobId)
+            ret={
+                'answer':result}
+        else:
+            ret={
+                'answer':'pw error'}
             
         resp = flask.Response(json.dumps(ret))
         resp.headers['Access-Control-Allow-Origin'] = '*'
@@ -138,12 +143,18 @@ def workerHKEXUpdateBasic():
     ret={}
     if request.method == 'GET':
         quandlBool = request.args.get("quandl", default=0)
+        pw = request.args.get("pw", default='')
         print('api-%s'%(quandlBool))
         
         intJobId=util.stringGenerator()
-        result=orc.wc.queueFunc('hkex update basic', orc.runHKEXUpdateBasic, (quandlBool) , intJobId)
-        ret={
-            'answer':result}
+        
+        if pw=='Keppel2017':
+            result=orc.wc.queueFunc('hkex update basic', orc.runHKEXUpdateBasic, (quandlBool) , intJobId)
+            ret={
+                'answer':result}
+        else:
+            ret={
+                'answer':'pw error'}
             
         resp = flask.Response(json.dumps(ret))
         resp.headers['Access-Control-Allow-Origin'] = '*'

@@ -11,17 +11,15 @@ import pandas as pd
 #        }
 #result=requests.get(url, params=params)
 
-#url='https://zhplaceholder.herokuapp.com/testWorker'
-#params={
-#    'params': 10
-#        }
-#t=1
+url='https://zhplaceholder.herokuapp.com/sgxUpdate'
+#result=requests.get(url)
+
 #url='https://zhplaceholder.herokuapp.com/hkexWorker'
-#url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
+url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
-#params={
-#    'quandl': 0
-#        }
+params={
+    'quandl': 0
+        }
 #result=requests.get(url, params=params)
 #result=requests.get(url)
 
@@ -36,24 +34,16 @@ import pandas as pd
 
 #url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #result=requests.get(url)
-
-#url='https://zhplaceholder.herokuapp.com/sgxUpdate'
-#params={
-#    'dragIndex':5,
-#    'sumTries':10
-#        }
-#url='https://zhplaceholder.herokuapp.com/rawdata'
-#result=requests.get(url)
 #
 #ans=json.loads(result.text)
 #jobid=ans['answer']['result']
 
-url='https://zhplaceholder.herokuapp.com/getAnalytics'
+#url='https://zhplaceholder.herokuapp.com/getAnalytics'
 #url='http://localhost/getAnalytics'
-params={
-    'pw':'P@ssw0rd',
-    'country':'sg'
-        }
+#params={
+#    'pw':'P@ssw0rd',
+#    'country':'sg'
+#        }
 #result=requests.get(url, params=params)
 
 #ans=json.loads(result.text)

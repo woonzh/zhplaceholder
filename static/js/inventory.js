@@ -35,3 +35,53 @@ function trigger_download(){
     });
   }
 }
+
+function trigger_hk_update(){
+  var r = confirm("Confirm update?");
+  if (r==true){
+    document.getElementById("loading").style.display="block";
+    var quandl=0;
+    var password=document.getElementById("password").value;
+    url="https://zhplaceholder.herokuapp.com/hkexUpdateBasic";
+    $.ajax({
+      url: url,
+      type: 'GET',
+      data:{
+        quandl:quandl,
+        pw:password
+      },
+      success: function (data) {
+        alert(data);
+        document.getElementById("loading").style.display="none";
+      },
+      error: function(jqxhr, status, exception) {
+          alert('Exception:', exception);
+          document.getElementById("loading").style.display="none";
+      }
+    });
+  }
+}
+
+function trigger_sg_update(){
+  var r = confirm("Confirm update?");
+  if (r==true){
+    document.getElementById("loading").style.display="block";
+    url="https://zhplaceholder.herokuapp.com/sgxUpdate";
+    var password=document.getElementById("password").value;
+    $.ajax({
+      url: url,
+      type: 'GET',
+      data:{
+        pw:password
+      },
+      success: function (data) {
+        alert(data);
+        document.getElementById("loading").style.display="none";
+      },
+      error: function(jqxhr, status, exception) {
+          alert('Exception:', exception);
+          document.getElementById("loading").style.display="none";
+      }
+    });
+  }
+}

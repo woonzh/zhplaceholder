@@ -112,8 +112,21 @@ def dataEngineer(df):
     
     return df
 
+def removeNonUpdatedRows(df):
+    store=pd.DataFrame()
+    store['dates']=list(set(df['date_update']))
+    store['count']=[sum(df['date_update']==x) for x in store['dates']]
+    store=store.sort_values(by=['count'], ascending=False)
+    
+    curDate=store.iloc[0,0]
+    
+    return df[df['date_update']==curDate]
+
 def cleanData(df):
     df=df.copy(deep=True)
+    
+    df=removeNonUpdatedRows(df)
+    
     for col in currencyCols:
         newColVal=[float(x.split('$')[1].replace(',','')) if len(str(x).split('$'))>1 else 0 \
                    for x in df[col]]
@@ -158,9 +171,13 @@ def cleanData(df):
       if str(x) !='nan' and str(x)!='' else 0 for x in df['upval']]
     df=df.drop('upval', axis=1)
     
+    df['abs_day_perceninc']=[abs(x) for x in df['day_perceninc']]
+    
     df['shares_oustanding']=[y/x if (x >0 and y>0 )else 0 for x,y in zip(df['price'],df['market_cap'])]
     
     df['percen_traded']=[x/y if (x >0 and y>0 )else 0 for x,y in zip(df['volume'],df['shares_oustanding'])]
+    
+    
     
     return df
 
@@ -268,15 +285,19 @@ def findCompany(df, comName=None, code=None):
     
     return df
 
-def runLogger(df, run=False):
+def runLogger(df, run=False, calStats=False):
     dfNew=df.copy(deep=True)
     if run:
         store=log.update('hkex',df, 'code','com_name')
         store=log.calStats('hkex')
         log.save()
+    else:
+        if calStats:
+            store=log.calStats('hkex')
+            log.save()
     table=log.compileTable('hkex')
     
-    dfNew=pd.merge(df, table, how='outer', left_on='code', right_on='symbol')
+    dfNew=pd.merge(dfNew, table, how='left', left_on='code', right_on='symbol')
     dfNew.drop(['symbol','company'],axis=1, inplace=True)
     
     return dfNew, table
@@ -286,32 +307,36 @@ def runLogger(df, run=False):
 dayChange={
     'price':['>',1,'price'],
     'pe1':['>',1,'pe'],
-#    'pe2':['<',50,'pe'],
+#    'market_cap':['>',pow(10,7),'market_cap'],
+    'pe2':['<',50,'pe'],
 #    'day_perceninc':['<',-3,'day_perceninc'],
 #    'day_perceninc2':['>',3,'day_perceninc'],
+    'abs_day_perceninc':['>',3,'abs_day_perceninc'],
     'percen_traded':['>',0,'percen_traded'],
     'suspended':['=','N','suspended']
         }
 
 upside={
-    'price':['>',1,'price'],
-    'pe1':['>',1,'pe'],
-    'pe2':['<',30,'pe'],
+    'price':['>',2,'price'],
+#    'pe1':['>',1,'pe'],
+#    'pe2':['<',40,'pe'],
     'upside':['>',30,'upside'],
 #    'downside':['<',30,'downside'],
     'percen_traded':['>',0,'percen_traded'],
     'suspended':['=','N','suspended'],
 #    'day_perceninc':['>',1,'day_perceninc'],
-    'day_perceninc_5_day_sum':['>',3,'day_perceninc_5_day_sum']
+    'day_perceninc_5_day_sum':['>',3,'day_perceninc_5_day_sum'],
+#    'market_cap':['>',pow(10,8),'market_cap']
         }
 
 #df=updateBasic(quandl=0)
-
+#log.updateFromPrevLog('store/backup/20200522.json')
+#
 #df=analytics(download=False)
 #dfClean=cleanData(df)
 #dfEngine=dataEngineer(dfClean)
-#dfEngine,table=runLogger(dfEngine, run=False)
-##
+#dfEngine,table=runLogger(dfEngine, run=False, calStats=False)
+#
 #dfEngineView=filterView(dfEngine)
 #stats=getStats(dfEngine)
 ##
@@ -323,8 +348,9 @@ upside={
 #
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
-
-#dfCom=findCompany(dfEngine, comName='SHOUGANG I-OLD')
+#
+#dfCom=findCompany(dfEngine, comName='SAMSONITE')
+#dfComView=filterView(dfCom)
 #
 #dfInd=getIndustryCompany(dfEngine, industry='energy')
 #dfIndView=filterView(indDf)

@@ -37,9 +37,18 @@ class logger:
                     'upside':'upside',
                     'downside':'downside'
                         }
+                    },
+            'USStocks':{
+                'metrics':{
+                    'latestprice':'latestprice',
+                    'changepercent':'changepercent',
+                    'day_volatility':'day_volatility',
+                    'traded%':'traded%',
+                    'traded_val':'traded_val'
+                        }
                     }
-                }
-        self.stats=['average', 'sum', '5_day_sum']#, '5_day_avg', '30_day_avg']
+            }
+        self.stats=['average', '5_day_avg', 'sum', '5_day_sum']#, '5_day_avg', '30_day_avg']
         self.load()
         self.timec=util.timeClass()
         self.curDate=self.timec.getCurDateNumeric()
@@ -54,6 +63,31 @@ class logger:
                 self.store[cat]={
                     }
                 
+        for xchange in self.reference:
+            try:
+                a=self.store[xchange]
+            except:
+                self.store[xchange]={
+                        }
+                
+    def updateFromPrevLog(self, floc):
+        try:
+            with open(floc) as rfile:
+                tem=json.load(rfile)
+        except:
+            print('load error')
+            return
+        
+        for xchange in tem:
+            xchangeInfo=tem[xchange]
+            for comCode in xchangeInfo:
+                comInfo=xchangeInfo[comCode]
+                for metric in comInfo['metrics']:
+                    metricInfo=comInfo['metrics'][metric]
+                    for dateVal in metricInfo['datedvals']:
+                        self.store[xchange][comCode]['metrics'][metric]['datedvals'][dateVal]=metricInfo['datedvals'][dateVal]
+        self.save()
+        
     def save(self):
         wfile=open(self.storeLoc,'w')
         wfile.write(json.dumps(self.store))
