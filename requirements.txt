@@ -6,7 +6,7 @@ numpy==1.12.1
 numpydoc==0.6.0
 requests==2.18.4
 simplejson==3.13.2
-urllib3==1.22
+urllib3==1.24.2
 psycopg2==2.7.3.1
 jsonschema==2.5.1
 Flask==0.12
