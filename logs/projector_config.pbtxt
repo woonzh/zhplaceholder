@@ -1,4 +1,0 @@
-embeddings {
-  tensor_name: "Variable:0"
-  metadata_path: "D:\\stuff\\scrapy\\sgx\\logs\\metadata.txt"
-}

@@ -398,9 +398,9 @@ def cleanCols(df):
               'sharesoutstanding', 'pricebookvalue', 'type', 'industry', 'enterprisevalue', \
               'assets', 'cash', 'capex', 'financial_info']
     
-    display=['names','openprice','upside','downside','dayVolatility','percenchange','percenchange_5_day_sum','high_close','volume traded %','tradedvol','tradedval','dayVolume','peratio','roe','roa','revenue','div_val','marketcap',\
+    display=['names','openprice','upside','downside','dayVolatility','percenchange','percenchange_5_day_sum','high_close','volume traded %','tradedval','dayVolume','peratio','p_nav','roe','roa','revenue','div_val','marketcap',\
              'operating_margin','net_profit_margin','debt_assets_ratio','shortdebt_over_profit',\
-             'p_nav','profitMarginGrowth','cash_percen',\
+             'profitMarginGrowth','cash_percen',\
              'Revenue growth', 'Operating Income growth', 'Net Income growth', 'Cash growth', \
              'Total Receivables, Net growth', 'Accumulated Depreciation, Total growth', \
              'Total Assets growth', 'Total Current Liabilities growth', \
@@ -531,7 +531,7 @@ def processFinancialInfo(df):
     
     return store, summary
 
-def extractIndustries(df, industries):
+def indCmp(df, industries):
     store={}
     cleanStore={}
     for ind in industries:
@@ -618,8 +618,8 @@ companyLst={
 dailyChangeFilter={
 #    'peratio':['!=','nan',True],
 #    'industry':['!=','',True],
-    'openprice':['>',0.2,False],
-    'abs_percenchange':['>',2.5,False],
+    'openprice':['>',0.1,False],
+    'abs_percenchange':['>',2,False],
 #    'dayVolume':['>', 0.0003,False],
     'tradedval':['>', pow(10,6),False]}
 
@@ -627,7 +627,7 @@ upsideFilter={
 #    'peratio':['<',20,True],
 #    'peratio':['<',15,True],
 #    'industry':['!=','',True],
-    'openprice':['>',0.2,False],
+    'openprice':['>',0.1,False],
 #    'net_profit_margin':['>', 0,True],
 #    'dayVolume':['>', 0.00001,False],
     'tradedval':['>',5*pow(10,5),False],
@@ -644,10 +644,11 @@ upsideFilter={
 daySwing={
 #    'peratio':['!=','nan',True],
 #    'industry':['!=','',True],
-    'openprice':['>',0.2,False],
+    'openprice':['>',0.1,False],
 #    'dayVolume':['>', 0.0003,False],
     'tradedval':['>', pow(10,6),False],
-    'percenchange':['>', 3,False],
+#    'percenchange':['>', 3,False],
+    'percenchange_5_day_sum':['>',3,True]
 #    'high_close':['<', 2,False]
         }
 
@@ -655,8 +656,8 @@ daySwing={
 #dfNew, table=runLogger(dfNew, False)
 #stats=getStats(dfNew)
 #dfNewCmp=cleanCols(dfNew)
-#dfInd, dfIndCmp=extractIndustries(dfNew,companyLst)
-#
+#dfInd, dfIndCmp=indCmp(dfNew,companyLst)
+
 #dfDailyChange=filterData(filters=dailyChangeFilter,df=dfNew)
 #dfDailyChangeCmp=cleanCols(dfDailyChange)
 #
@@ -665,13 +666,13 @@ daySwing={
 #
 #dfNextDaySwing=filterData(filters=daySwing,df=dfNew)
 #dfNextDaySwingCmp=cleanCols(dfNextDaySwing)
-#
-#industry=['Healthcare Services']
+##
+#industry=['Commercial REITs']
 #dfFilter=filterData(df=dfNew, industry=industry)
 #dfCmp=cleanCols(dfFilter)
 ##dfCmp.to_csv(cmpFile, index=False)
 ####
-#company=getCompany(dfNew,'names', 'IX Biopharma')
+#company=getCompany(dfNew,'names', "PERENNIAL INT'L")
 #companyCmp=cleanCols(company)
 ####
 #store, dfStore, clusters=extractIndustries(df=dfNew)

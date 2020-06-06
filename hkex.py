@@ -325,7 +325,7 @@ upside={
     'percen_traded':['>',0,'percen_traded'],
     'suspended':['=','N','suspended'],
 #    'day_perceninc':['>',1,'day_perceninc'],
-    'day_perceninc_5_day_sum':['>',3,'day_perceninc_5_day_sum'],
+    'day_perceninc_5_day_sum':['>',0.5,'day_perceninc_5_day_sum'],
 #    'market_cap':['>',pow(10,8),'market_cap']
         }
 
@@ -339,21 +339,21 @@ upside={
 #
 #dfEngineView=filterView(dfEngine)
 #stats=getStats(dfEngine)
-##
+###
 #dfDayChange=sieveData(dfEngine,filters=dayChange)
 #dfDayChangeView=filterView(dfDayChange)
-##
+###
 #dfUpside=sieveData(dfEngine,filters=upside)
 #dfUpsideView=filterView(dfUpside)
 #
 #dfSieve=sieveData(dfEngine)
 #dfView=filterView(dfSieve)
-#
-#dfCom=findCompany(dfEngine, comName='SAMSONITE')
+##
+#dfCom=findCompany(dfEngine, comName='CHINA MOBILE')
 #dfComView=filterView(dfCom)
-#
-#dfInd=getIndustryCompany(dfEngine, industry='energy')
-#dfIndView=filterView(indDf)
+##
+#dfInd=getIndustryCompany(dfEngine, industry='telecom')
+#dfIndView=filterView(dfInd)
 #comDf=engineDf[engineDf['com_name']=='ICBC']
 
 #store,table=runLogger(dfEngine)

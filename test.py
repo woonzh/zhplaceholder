@@ -11,15 +11,15 @@ import pandas as pd
 #        }
 #result=requests.get(url, params=params)
 
-url='https://zhplaceholder.herokuapp.com/sgxUpdate'
+#url='https://zhplaceholder.herokuapp.com/sgxUpdate'
 #result=requests.get(url)
 
 #url='https://zhplaceholder.herokuapp.com/hkexWorker'
-url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
+#url='https://zhplaceholder.herokuapp.com/hkexUpdateBasic'
 #url='https://zhplaceholder.herokuapp.com/hkexUpdateDetails'
-params={
-    'quandl': 0
-        }
+#params={
+#    'quandl': 0
+#        }
 #result=requests.get(url, params=params)
 #result=requests.get(url)
 
@@ -32,7 +32,7 @@ params={
 #result=requests.get(url, params=params)
 #result=requests.get(url)
 
-#url='https://zhplaceholder.herokuapp.com/sgxWorker'
+url='https://zhplaceholder.herokuapp.com/sgxWorker'
 #result=requests.get(url)
 #
 #ans=json.loads(result.text)

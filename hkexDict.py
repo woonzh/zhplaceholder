@@ -4,7 +4,8 @@ companyTag={
     'oil':['CNOOC', 'PetroChina','kunlun energy','SINOPEC CORP','SINOPEC KANTONS','SINOPEC SEG',\
            'SINOPEC SSC', 'YANCHANG PETRO'],
     'energy':['AGRITRADE RES', 'BE CLEAN ENERGY', 'GCL NEWENERGY', 'JNEC', 'XINYI ENERGY', 'CH RENEW EN INV',\
-              'CHINA LONGYUAN']
+              'CHINA LONGYUAN'],
+    'telecom':['CHINA UNICOM', 'CHINA TELECOM', 'CHINA MOBILE' ]
         }
 
 bankdict={
